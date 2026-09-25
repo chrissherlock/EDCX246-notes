@@ -1493,6 +1493,27 @@
             margin-top: 4px;
         }
 
+        /* Sortable Theorists Table Header */
+        .sortable-header {
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.15s ease-in-out;
+        }
+        .sortable-header:hover {
+            background-color: #e2e8f0;
+        }
+        .sort-indicator {
+            display: inline-block;
+            margin-left: 6px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            vertical-align: middle;
+        }
+        @media print {
+            .sort-indicator {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1645,18 +1666,18 @@
     </section>
 
 <h2>Theorists, Ideas &amp; Philosophies</h2>
-    <table>
+    <table id="theorists-table">
         <thead>
             <tr>
                 <th style="width: 280px;">Portrait</th>
-                <th style="width: 22%;">Theorist / Philosophy</th>
+                <th style="width: 22%;" id="theorist-header" class="sortable-header" title="Click to sort by surname (A–Z, Z–A, Chapter Order)">Theorist / Philosophy <span id="theorist-sort-icon" class="sort-indicator">⇅</span></th>
                 <th style="width: 40%;">Core Idea</th>
                 <th style="width: 38%;">Relevant Myth(s) Challenged</th>
             </tr>
         </thead>
                         <tbody>
             <!-- CHAPTER 1: SOCIAL CLASS -->
-            <tr>
+            <tr data-surname="Bourdieu" data-order="0">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Pierre_Bourdieu" target="_blank" rel="noopener" title="View Pierre Bourdieu on Wikipedia">
@@ -1675,7 +1696,7 @@
                 <td><strong>Cultural Capital, Habitus &amp; Symbolic Violence:</strong> Schools are not meritocratic; they inherently value middle-class linguistic fluency, dispositions, and tastes (<em>cultural capital</em>), treating inherited social advantage as innate academic ability while committing <em>symbolic violence</em> against working-class students.</td>
                 <td>Myth: Schooling success is only about individual ability.<br>Myth: Social class is all about money.</td>
             </tr>
-            <tr>
+            <tr data-surname="Marx" data-order="1">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Karl_Marx" target="_blank" rel="noopener" title="View Karl Marx on Wikipedia">
@@ -1694,7 +1715,7 @@
                 <td><strong>Economic Reproduction &amp; Class Stratification:</strong> Class is an exploitative relation to the means of production. Mass education functions as an ideological apparatus that reproduces the capitalist division of labor, conditioning working-class youth for compliant wage labor while grooming elites for management.</td>
                 <td>Myth: Australia is an egalitarian society characterised by equality.<br>Myth: Schools provide equal opportunity for all.</td>
             </tr>
-            <tr>
+            <tr data-surname="Weber" data-order="2">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Max_Weber" target="_blank" rel="noopener" title="View Max Weber on Wikipedia">
@@ -1713,7 +1734,7 @@
                 <td><strong>Class, Status &amp; Party (Social Closure):</strong> Stratification operates across economic market position (<em>class</em>), social prestige and lifestyle honor (<em>status</em>), and political power (<em>party</em>). Elite schools maintain social closure by trading in cultural prestige and status credentials.</td>
                 <td>Myth: Social class is all about money.<br>Myth: School status reflects only academic performance.</td>
             </tr>
-            <tr>
+            <tr data-surname="Bernstein" data-order="3">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Basil_Bernstein" target="_blank" rel="noopener" title="View Basil Bernstein on Wikipedia">
@@ -1732,7 +1753,7 @@
                 <td><strong>Restricted vs. Elaborated Codes:</strong> Curricula and examinations operate exclusively through the <em>elaborated code</em> (context-independent, universalistic), structurally penalizing working-class students accustomed to <em>restricted codes</em> (context-dependent, particularistic).</td>
                 <td>Myth: School language and assessment standards are culturally neutral.</td>
             </tr>
-            <tr>
+            <tr data-surname="Willis" data-order="4">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Paul_Willis" target="_blank" rel="noopener" title="View Paul Willis on Wikipedia">
@@ -1753,7 +1774,7 @@
             </tr>
 
             <!-- CHAPTER 2: RACE, ETHNICITY AND INDIGENEITY -->
-            <tr>
+            <tr data-surname="Fanon" data-order="5">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Frantz_Fanon" target="_blank" rel="noopener" title="View Frantz Fanon on Wikipedia">
@@ -1772,7 +1793,7 @@
                 <td><strong>Colonisation of the Mind:</strong> Colonial educational apparatuses inflict profound psychological alienation, socialising colonised youth to internalise their presumed inferiority and severing them from native languages, cosmologies, and dignity.</td>
                 <td>Myth: Educational outcomes are unaffected by race.<br>Myth: Assimilationist schooling is benevolent.</td>
             </tr>
-            <tr>
+            <tr data-surname="Gillborn" data-order="6">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/David_Gillborn" target="_blank" rel="noopener" title="View David Gillborn on Wikipedia">
@@ -1793,7 +1814,7 @@
             </tr>
 
             <!-- CHAPTER 3: GENDER -->
-            <tr>
+            <tr data-surname="Connell" data-order="7">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Raewyn_Connell" target="_blank" rel="noopener" title="View Raewyn Connell on Wikipedia">
@@ -1812,7 +1833,7 @@
                 <td><strong>Hegemonic Masculinity &amp; Competitive Academic Curriculum:</strong> Dominant masculine archetypes subordinate women and non-conforming men through peer policing in schools. Connell also identified the <em>Competitive Academic Curriculum (CAC)</em>, which structurally generates working-class failure to protect credential scarcity.</td>
                 <td>Myth: Boys are the real victims of the schooling system.<br>Myth: Gender is an immutable biological binary.</td>
             </tr>
-            <tr>
+            <tr data-surname="Butler" data-order="8">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Judith_Butler" target="_blank" rel="noopener" title="View Judith Butler on Wikipedia">
@@ -1833,7 +1854,7 @@
             </tr>
 
             <!-- CHAPTER 4: SEXUALITIES -->
-            <tr>
+            <tr data-surname="Rich" data-order="9">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Adrienne_Rich" target="_blank" rel="noopener" title="View Adrienne Rich on Wikipedia">
@@ -1854,7 +1875,7 @@
             </tr>
 
             <!-- CHAPTER 5: GOVERNANCE -->
-            <tr>
+            <tr data-surname="Foucault" data-order="10">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Michel_Foucault" target="_blank" rel="noopener" title="View Michel Foucault on Wikipedia">
@@ -1873,7 +1894,7 @@
                 <td><strong>Governmentality, Disciplinary Power &amp; Regimes of Truth:</strong> Modern power operates "at a distance." Cellular seating, timetables, and exams instill internal self-discipline, causing students to internalize surveillance and become docile, self-governing subjects.</td>
                 <td>Myth: Schools are primarily about education, not regulation.<br>Myth: The structure of the school isn't important.</td>
             </tr>
-            <tr>
+            <tr data-surname="Bentham" data-order="11">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Jeremy_Bentham" target="_blank" rel="noopener" title="View Jeremy Bentham on Wikipedia">
@@ -1894,7 +1915,7 @@
             </tr>
 
             <!-- CHAPTER 6: SUBJECTIVITY -->
-            <tr>
+            <tr data-surname="Rose" data-order="12">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Nikolas_Rose" target="_blank" rel="noopener" title="View Nikolas Rose on Wikipedia">
@@ -1913,7 +1934,7 @@
                 <td><strong>The "Psy-Complex" &amp; Governing the Soul:</strong> Psychological and psychiatric vocabularies reframe institutional, environmental, and curricular frictions as individual internal psychological deficits, producing subjects who regulate their own souls.</td>
                 <td>Myth: Subjectivity, personality, and intelligence are purely innate qualities.</td>
             </tr>
-            <tr>
+            <tr data-surname="Conrad" data-order="13">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Peter_Conrad_(sociologist)" target="_blank" rel="noopener" title="View Peter Conrad on Wikipedia">
@@ -1934,7 +1955,7 @@
             </tr>
 
             <!-- CHAPTER 7: NEOLIBERALISM AND MARKETISATION -->
-            <tr>
+            <tr data-surname="Hayek" data-order="14">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Friedrich_Hayek" target="_blank" rel="noopener" title="View Friedrich Hayek on Wikipedia">
@@ -1953,7 +1974,7 @@
                 <td><strong>Spontaneous Order &amp; Critique of Central Planning:</strong> Knowledge in society is dispersed and decentralized; state-planned educational systems are inherently coercive and inefficient. Market competition functions as a discovery mechanism superior to state bureaucratic monopolies.</td>
                 <td>Myth: Centralized state planning is the only rational way to organize mass education.</td>
             </tr>
-            <tr>
+            <tr data-surname="Friedman" data-order="15">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Milton_Friedman" target="_blank" rel="noopener" title="View Milton Friedman on Wikipedia">
@@ -1972,7 +1993,7 @@
                 <td><strong>Educational Vouchers &amp; School Choice:</strong> Proposed funding students directly via educational vouchers rather than funding public school institutions. Compelling schools to compete for enrollments in a commercial marketplace forces institutional efficiency, accountability, and parental choice.</td>
                 <td>Myth: Market competition naturally raises educational quality for all students.<br>Myth: School choice is inherently equitable.</td>
             </tr>
-            <tr>
+            <tr data-surname="Ball" data-order="16">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Stephen_Ball_(sociologist)" target="_blank" rel="noopener" title="View Stephen Ball on Wikipedia">
@@ -1993,7 +2014,7 @@
             </tr>
 
             <!-- CHAPTER 8: PRE-ADULTHOOD -->
-            <tr>
+            <tr data-surname="Ariès" data-order="17">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Philippe_Ari%C3%A8s" target="_blank" rel="noopener" title="View Philippe Ariès on Wikipedia">
@@ -2012,7 +2033,7 @@
                 <td><strong>The Social "Invention" of Childhood (Historiographically Discredited):</strong> Argued that medieval society lacked a concept of childhood, treating young people as "miniature adults" until modern industrial schooling segregated them into protected, age-batched dependencies.</td>
                 <td>Myth: 'Childhood' and 'youth' are immutable facts of nature.</td>
             </tr>
-                        <tr>
+                        <tr data-surname="James" data-order="18">
                 <td class="theorist-portrait-cell">
                     <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #1d4ed8, #3b82f6);">
                         <div class="theorist-monogram-initials">AJ</div>
@@ -2026,7 +2047,7 @@
                 <td><strong>Childhood Identities &amp; Active Agency:</strong> Pioneered ethnographic research centering children's everyday lived cultures. Refutes biological reductionism by demonstrating that children are active social agents who construct distinct cultural worlds, negotiate identities, and shape the adult structures around them.</td>
                 <td>Myth: 'Childhood' and 'youth' are immutable facts of nature.<br>Myth: Children are passive recipients of adult socialization.</td>
             </tr>
-            <tr>
+            <tr data-surname="Prout" data-order="19">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://www.researchgate.net/scientific-contributions/Alan-Prout-2117435026" target="_blank" rel="noopener" title="View Alan Prout on ResearchGate">
@@ -2043,7 +2064,7 @@
             </tr>
 
             <!-- CHAPTER 9: DATAFICATION -->
-                        <tr>
+                        <tr data-surname="Lingard" data-order="20">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://about.uq.edu.au/experts/40" target="_blank" rel="noopener" title="View Bob Lingard at The University of Queensland">
@@ -2064,7 +2085,7 @@
             </tr>
 
             <!-- CHAPTER 10: THE MEDIA -->
-            <tr>
+            <tr data-surname="Hall" data-order="21">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Stuart_Hall_(cultural_theorist)" target="_blank" rel="noopener" title="View Stuart Hall on Wikipedia">
@@ -2083,7 +2104,7 @@
                 <td><strong>Encoding/Decoding &amp; Active Audience Theory:</strong> Media texts are polysemic; viewers do not passively absorb ideological messages (hypodermic model) but actively decode them via dominant-hegemonic, negotiated, or oppositional positions.</td>
                 <td>Myth: With the news media, you don't need to think, you just read and listen.</td>
             </tr>
-            <tr>
+            <tr data-surname="Cohen" data-order="22">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Stanley_Cohen_(sociologist)" target="_blank" rel="noopener" title="View Stanley Cohen on Wikipedia">
@@ -2104,7 +2125,7 @@
             </tr>
 
             <!-- CHAPTER 11: POPULAR CULTURE -->
-            <tr>
+            <tr data-surname="Fiske" data-order="23">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/John_Fiske_(media_scholar)" target="_blank" rel="noopener" title="View John Fiske on Wikipedia">
@@ -2123,7 +2144,7 @@
                 <td><strong>Semiotic Democracy &amp; Textual Poaching:</strong> Popular culture is an active battleground where ordinary youth repurpose, subvert, and resist commercial capitalist texts, constructing their own subcultural meanings and identities.</td>
                 <td>Myth: Popular culture is mindless rubbish without educational merit.</td>
             </tr>
-                        <tr>
+                        <tr data-surname="Kristeva" data-order="24">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Julia_Kristeva" target="_blank" rel="noopener" title="View Julia Kristeva on Wikipedia">
@@ -2142,7 +2163,7 @@
                 <td><strong>Intertextuality &amp; The Mosaic of Citations:</strong> Coined the term <em>intertextuality</em> (1966), establishing that no text exists as an isolated island; every cultural artifact is a "mosaic of citations," continually absorbing and transforming pre-existing discourses.</td>
                 <td>Myth: Classical high culture is the solitary repository of sophisticated textual meaning.<br>Myth: Media texts have fixed, singular authorial meanings.</td>
             </tr>
-            <tr>
+            <tr data-surname="Barthes" data-order="25">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Roland_Barthes" target="_blank" rel="noopener" title="View Roland Barthes on Wikipedia">
@@ -2163,7 +2184,7 @@
             </tr>
 
             <!-- CHAPTER 12: TECHNOLOGY -->
-            <tr>
+            <tr data-surname="Prensky" data-order="26">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Marc_Prensky" target="_blank" rel="noopener" title="View Marc Prensky on Wikipedia">
@@ -2182,7 +2203,7 @@
                 <td><strong>The "Digital Native" Fallacy:</strong> The flawed assumption that children innately possess critical information literacy and computational proficiency simply because they were born into an environment filled with consumer touchscreens.</td>
                 <td>Myth: Digital technology is the answer to all educational problems.<br>Myth: Technology signals the end of teaching.</td>
             </tr>
-            <tr>
+            <tr data-surname="Postman" data-order="27">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Neil_Postman" target="_blank" rel="noopener" title="View Neil Postman on Wikipedia">
@@ -2201,7 +2222,7 @@
                 <td><strong>The Faustian Bargain of Technology:</strong> Technological change is never additive; it is ecological and non-neutral. Every innovation exacts a social and cognitive cost (<em>"technology giveth and technology taketh away"</em>).</td>
                 <td>Myth: Technologies are neutral tools that simply accelerate learning.</td>
             </tr>
-            <tr>
+            <tr data-surname="Zuboff" data-order="28">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Shoshana_Zuboff" target="_blank" rel="noopener" title="View Shoshana Zuboff on Wikipedia">
@@ -2220,7 +2241,7 @@
                 <td><strong>Surveillance Capitalism &amp; Behavioral Modification:</strong> Commercial digital platforms extract student behavioral surplus, using algorithmic feedback loops to engineer attention retention, privatizing public educational data for corporate profit.</td>
                 <td>Myth: Edtech platforms exist solely for educational benefit.</td>
             </tr>
-                        <tr>
+                        <tr data-surname="Oliver" data-order="29">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Mike_Oliver_(disability_advocate)" target="_blank" rel="noopener" title="View Mike Oliver on Wikipedia">
@@ -2241,7 +2262,7 @@
             </tr>
 
             <!-- CHAPTER 13: GLOBALISATION -->
-            <tr>
+            <tr data-surname="Rizvi" data-order="30">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://aii.unimelb.edu.au/teams/prof-fazal-rizvi/" target="_blank" rel="noopener" title="View Fazal Rizvi at Australia India Institute">
@@ -2263,7 +2284,7 @@
 
 
             <!-- CHAPTER 14: PHILOSOPHY -->
-            <tr>
+            <tr data-surname="Dewey" data-order="31">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/John_Dewey" target="_blank" rel="noopener" title="View John Dewey on Wikipedia">
@@ -2282,7 +2303,7 @@
                 <td><strong>Pragmatism &amp; Democratic Schooling:</strong> Schools are embryonic democratic communities; learning is not the passive absorption of static facts, but active inquiry, problem-solving, and reflective experience (<em>"learning by doing"</em>).</td>
                 <td>Myth: Philosophy is an abstract, useless luxury for classroom teachers.</td>
             </tr>
-            <tr>
+            <tr data-surname="Freire" data-order="32">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Paulo_Freire" target="_blank" rel="noopener" title="View Paulo Freire on Wikipedia">
@@ -2303,7 +2324,7 @@
             </tr>
 
             <!-- CHAPTER 15: ETHICS AND THE LAW -->
-            <tr>
+            <tr data-surname="Noddings" data-order="33">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Nel_Noddings" target="_blank" rel="noopener" title="View Nel Noddings on Wikipedia">
@@ -2324,7 +2345,7 @@
             </tr>
 
             <!-- CHAPTER 16: CHILDREN'S RIGHTS -->
-            <tr>
+            <tr data-surname="Jebb" data-order="34">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Eglantyne_Jebb" target="_blank" rel="noopener" title="View Eglantyne Jebb on Wikipedia">
@@ -2343,7 +2364,7 @@
                 <td><strong>Codification of Children's Rights:</strong> Drafted the foundational charter that established children as universal rights-bearers rather than parental chattel or objects of welfare, leading directly to the 1989 UNCRC.</td>
                 <td>Myth: Rights are granted conditionally only upon reaching adulthood.</td>
             </tr>
-                        <tr>
+                        <tr data-surname="Gillett-Swan" data-order="35">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://research.qut.edu.au/c4ie/people/jenna-gillett-swan/" target="_blank" rel="noopener" title="View Jenna Gillett-Swan at QUT C4IE">
@@ -2364,7 +2385,7 @@
             </tr>
 
             <!-- CHAPTER 17: TRUTH AND POSTCOLONIALISM -->
-            <tr>
+            <tr data-surname="Nakata" data-order="36">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Martin_Nakata" target="_blank" rel="noopener" title="View Martin Nakata on Wikipedia">
@@ -2383,7 +2404,7 @@
                 <td><strong>The Cultural Interface:</strong> The complex, contested space where Indigenous ancestral traditions and oral ways of knowing intersect with Western disciplinary systems. Equips First Nations students to deploy Western analytical tools without sacrificing cultural sovereignty.</td>
                 <td>Myth: School curriculum is culturally neutral and universally true.<br>Myth: 'Closing the Gap' deficit models are objective.</td>
             </tr>
-            <tr>
+            <tr data-surname="Wolfe" data-order="37">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Patrick_Wolfe" target="_blank" rel="noopener" title="View Patrick Wolfe on Wikipedia">
@@ -2402,7 +2423,7 @@
                 <td><strong>Settler Colonialism as a Structure:</strong> Settler colonialism is not a historical event, but an ongoing institutional structure driven by the logic of elimination. Mission and state schooling functioned as assimilatory infrastructure.</td>
                 <td>Myth: Australia was legally or epistemically terra nullius.</td>
             </tr>
-            <tr>
+            <tr data-surname="Spivak" data-order="38">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak" target="_blank" rel="noopener" title="View Gayatri Spivak on Wikipedia">
@@ -2421,7 +2442,7 @@
                 <td><strong>Epistemic Violence:</strong> The systematic silencing, delegitimation, and destruction of non-Western knowledge traditions by imposing a Eurocentric curriculum as universal objective reality.</td>
                 <td>Myth: Western canon represents the summit of human truth.</td>
             </tr>
-                        <tr>
+                        <tr data-surname="Young" data-order="39">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Michael_Young_(educationalist)" target="_blank" rel="noopener" title="View Michael Young on Wikipedia">
@@ -2436,7 +2457,7 @@
                 <td><strong>Powerful Knowledge vs. Knowledge of the Powerful:</strong> Distinguishes who controls curriculum (<em>knowledge of the powerful</em>) from specialized, discipline-based conceptual knowledge (<em>powerful knowledge</em>). Denying disadvantaged students access to disciplinary canons under the guise of relativism deprives them of intellectual mobility.</td>
                 <td>Myth: Scientific empiricism and objective truth are inherently oppressive colonial constructs.<br>Myth: All school curriculum is merely arbitrary cultural power.</td>
             </tr>
-            <tr>
+            <tr data-surname="Muller" data-order="40">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://www.researchgate.net/profile/Johan-Muller-2" target="_blank" rel="noopener" title="View Johan Muller on ResearchGate">
@@ -2457,7 +2478,7 @@
             </tr>
 
             <!-- CHAPTER 18: ALTERNATIVE EDUCATION -->
-            <tr>
+            <tr data-surname="Neill" data-order="41">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/A._S._Neill" target="_blank" rel="noopener" title="View A.S. Neill on Wikipedia">
@@ -2476,7 +2497,7 @@
                 <td><strong>Democratic Self-Governance &amp; Freedom:</strong> Founded Summerhill; proved that schooling thrives on voluntary attendance, radical equality between children and adults, and community meetings where each member has an equal vote.</td>
                 <td>Myth: Compulsory coercion and age-batching are necessary for intellectual development.</td>
             </tr>
-            <tr>
+            <tr data-surname="Montessori" data-order="42">
                 <td class="theorist-portrait-cell">
                     <figure style="margin: 0;">
                         <a href="https://en.wikipedia.org/wiki/Maria_Montessori" target="_blank" rel="noopener" title="View Maria Montessori on Wikipedia">
@@ -4235,5 +4256,79 @@
     </section>
 
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const table = document.getElementById("theorists-table");
+            if (!table) return;
+
+            const tbody = table.querySelector("tbody");
+            const header = document.getElementById("theorist-header");
+            const icon = document.getElementById("theorist-sort-icon");
+            if (!tbody || !header || !icon) return;
+
+            // Cache original rows and preserve chapter progression
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+            rows.forEach((row, idx) => {
+                if (!row.dataset.order) {
+                    row.dataset.order = String(idx);
+                }
+            });
+
+            // Tri-state cycle: 'default' -> 'asc' -> 'desc' -> 'default'
+            let currentSortState = "default";
+
+            function extractSurname(row) {
+                if (row.dataset.surname) {
+                    return row.dataset.surname.trim();
+                }
+                const link = row.querySelector(".theorist-link");
+                if (!link) return "";
+                const cleanName = link.textContent.replace(/\(.*?\)/g, "").trim();
+                return cleanName.split(/\s+/).pop() || "";
+            }
+
+            function sortTheoristTable() {
+                if (currentSortState === "default") {
+                    currentSortState = "asc";
+                } else if (currentSortState === "asc") {
+                    currentSortState = "desc";
+                } else {
+                    currentSortState = "default";
+                }
+
+                const sortedRows = [...rows];
+
+                if (currentSortState === "asc") {
+                    sortedRows.sort((a, b) => {
+                        const sA = extractSurname(a);
+                        const sB = extractSurname(b);
+                        return sA.localeCompare(sB, "en", { sensitivity: "base" });
+                    });
+                    icon.textContent = "▲ (A–Z)";
+                    header.setAttribute("aria-sort", "ascending");
+                    header.setAttribute("title", "Sorted A–Z by surname. Click to sort Z–A.");
+                } else if (currentSortState === "desc") {
+                    sortedRows.sort((a, b) => {
+                        const sA = extractSurname(a);
+                        const sB = extractSurname(b);
+                        return sB.localeCompare(sA, "en", { sensitivity: "base" });
+                    });
+                    icon.textContent = "▼ (Z–A)";
+                    header.setAttribute("aria-sort", "descending");
+                    header.setAttribute("title", "Sorted Z–A by surname. Click to reset to Chapter Order.");
+                } else {
+                    sortedRows.sort((a, b) => Number(a.dataset.order) - Number(b.dataset.order));
+                    icon.textContent = "⇅";
+                    header.setAttribute("aria-sort", "none");
+                    header.setAttribute("title", "Chapter Order. Click to sort A–Z by surname.");
+                }
+
+                // Re-append sorted rows into tbody (auto-recalculates CSS zebra striping)
+                sortedRows.forEach(row => tbody.appendChild(row));
+            }
+
+            header.addEventListener("click", sortTheoristTable);
+        });
+    </script>
 </body>
 </html>
