@@ -957,6 +957,85 @@
             margin-bottom: 0 !important;
         }
 
+    
+        /* Chapter 12: Technology & Digital Education Aside */
+        .tech-aside {
+            background-color: #ffffff;
+            border: 1px solid #e11d48;
+            border-left: 5px solid #e11d48;
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 20px 0 24px 0;
+            box-shadow: 0 2px 6px rgba(225, 29, 72, 0.08);
+            clear: both;
+        }
+        .tech-aside h4 {
+            margin: 0 0 14px 0;
+            font-size: 1.15rem;
+            color: #be123c;
+        }
+        .tech-aside p {
+            font-size: 0.93rem !important;
+            line-height: 1.55 !important;
+            margin: 0 0 12px 0 !important;
+            color: #334155;
+            text-align: justify !important;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 16px;
+            margin: 14px 0;
+        }
+        .tech-card {
+            border-radius: 6px;
+            padding: 14px 16px;
+            font-size: 0.89rem;
+            line-height: 1.5;
+            color: #334155;
+        }
+        .tech-card strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.94rem;
+        }
+        .tech-card-pros {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #16a34a;
+        }
+        .tech-card-pros strong {
+            color: #15803d;
+        }
+        .tech-card-cons {
+            background-color: #fff1f2;
+            border: 1px solid #fecdd3;
+            border-left: 4px solid #e11d48;
+        }
+        .tech-card-cons strong {
+            color: #be123c;
+        }
+        .tech-card ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .tech-card li {
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+        .tech-card li:last-child {
+            margin-bottom: 0;
+        }
+        .tech-synthesis {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+            margin-top: 12px;
+            font-size: 0.91rem !important;
+            line-height: 1.55 !important;
+            color: #475569;
+            text-align: justify !important;
+        }
+
     </style>
 </head>
 <body>
@@ -1999,6 +2078,46 @@
         <p>This chapter challenges both uncritical techno-optimism and alarmist technophobia in educational discourse. The authors refute the technological determinist belief that digital devices will inevitably revolutionize learning or solve systemic educational inequalities. Technology is framed not as an autonomous, neutral collection of gadgets, but as a socially configured set of practices embedded within existing institutional, economic, and political power structures.</p>
         <p>A crucial conceptual critique targets Marc Prensky's "digital native" thesis. The authors argue that assuming young people possess innate, sophisticated technological fluency merely because they grew up with screens is a flawed pedagogical assumption. While students may be proficient consumers of entertainment apps, they often lack critical information literacy, algorithmic awareness, and the capacity to evaluate contested online knowledge. Furthermore, digital divides persist across socio-economic and geographic lines, meaning technology frequently exacerbates rather than closes achievement gaps.</p>
         <p>The chapter strongly asserts the centrality of the teacher as an indispensable pedagogical mediator. Technology does not signal the end of teaching; rather, it demands that educators teach *about* the digital landscape&mdash;analyzing privacy, corporate surveillance, algorithmic bias, and digital ethics&mdash;rather than merely using technology as an administrative transmission tool.</p>
+                <aside class="tech-aside">
+            <h4>Theoretical Aside: The Technosocial Dialectic — Assistive Empowerment vs Algorithmic Enclosure</h4>
+            <p>
+                In Chapter 12, Tait et al. deconstruct the sociological myth of technological neutrality. Drawing on media ecology (Neil Postman's insight that every technological innovation represents a Faustian bargain: <em>"technology giveth and technology taketh away"</em>) and social philosophy (Langdon Winner's classic thesis that technological artifacts possess inherent politics), educational technology cannot be analyzed as a mere value-free teaching aid. Instead, digital tools in schooling operate along a tense dialectic between <strong>emancipatory accessibility</strong> and <strong>extractive platform enclosure</strong>:
+            </p>
+            <div class="tech-grid">
+                <div class="tech-card tech-card-pros">
+                    <strong>The Emancipatory Pros: Assistive Technology &amp; UDL</strong>
+                    <ul>
+                        <li>
+                            <strong>Operationalizing the Social Model of Disability:</strong> Assistive technologies (screen readers, speech-to-text, eye-tracking peripherals, predictive text, dyslexia-tailored typefaces) materialize Mike Oliver's social model. They demonstrate that "learning difficulty" is not an innate biological deficiency located inside the child, but a structural mismatch between the student and rigid, print-monopolized classroom mediums.
+                        </li>
+                        <li>
+                            <strong>Universal Design for Learning (UDL):</strong> Multi-modal software transforms rigid one-size-fits-all curricula into flexible cognitive architectures, offering neurodivergent and ESL learners multiple means of knowledge representation, expression, and cognitive offloading without pathologizing stigma.
+                        </li>
+                        <li>
+                            <strong>Epistemic Democratization:</strong> Open-access educational repositories, digital libraries, and asynchronous collaboration dissolve traditional geographical barriers, granting students in regional or socio-economically marginalized schools direct access to global academic knowledge.
+                        </li>
+                    </ul>
+                </div>
+                <div class="tech-card tech-card-cons">
+                    <strong>The Extractive Cons: Social Media &amp; Surveillance Capitalism</strong>
+                    <ul>
+                        <li>
+                            <strong>Attention Extraction &amp; Behavioral Engineering:</strong> Commercial social platforms (TikTok, Instagram, Snapchat) operate under the logic of surveillance capitalism (Zuboff). Their algorithms are intentionally engineered to commodify student attention through variable-ratio reward schedules and outrage-driven dopamine loops, splintering sustained deep reading and contemplative thought.
+                        </li>
+                        <li>
+                            <strong>The Digital Panopticon &amp; Performativity:</strong> Social media translates Foucault's panoptic surveillance into peer-to-peer metric policing. Students navigate an unending audit culture of quantified popularity ("likes", view counts, snapstreaks), accelerating cyberbullying, social anxiety, and performative identity commodification.
+                        </li>
+                        <li>
+                            <strong>Corporate Enclosure &amp; Data Harvesting:</strong> Under the banner of "edtech efficiency", commercial platforms privatize public educational infrastructure, capturing student behavioral data, deepening socio-economic digital divides, and converting civic classrooms into captive corporate advertising markets.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="tech-synthesis">
+                <strong>Pedagogical Synthesis for Educators:</strong> Teachers must reject both naive <em>techno-utopian solutionism</em> (the assumption that handing every student a screen automatically solves inequity) and reactive <em>techno-pessimistic moral panics</em> (blanket bans that ignore students' lived reality). The critical educational task is twofold: aggressively leveraging assistive and open technologies to tear down institutional disability barriers, while cultivating critical digital literacy so students can interrogate the predatory algorithmic architecture of platform capitalism rather than remaining its passive data products.
+            </p>
+        </aside>
+
         <div class="chapter-evaluation-block strengths-evaluation">
             <h4>Strengths of the Argument</h4>
             <p>The chapter’s primary scholarly triumph is its decisive refutation of Marc Prensky's 'digital native' myth and crude technological determinism. It establishes the crucial pedagogical distinction between uncritical administrative gadgetry and teaching *about* technology—interrogating algorithmic bias, corporate surveillance, and unequal digital access.</p>
