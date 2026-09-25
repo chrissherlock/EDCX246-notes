@@ -1124,6 +1124,86 @@
             margin-bottom: 0;
         }
 
+    
+        /* Chapter 15: Ethics and the Law — Royal Commissions Aside */
+        .commissions-aside {
+            background-color: #ffffff;
+            border: 1px solid #1e293b;
+            border-left: 5px solid #1e293b;
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 20px 0 24px 0;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+            clear: both;
+        }
+        .commissions-aside h4 {
+            margin: 0 0 14px 0;
+            font-size: 1.15rem;
+            color: #0f172a;
+        }
+        .commissions-aside p {
+            font-size: 0.93rem !important;
+            line-height: 1.55 !important;
+            margin: 0 0 12px 0 !important;
+            color: #334155;
+            text-align: justify !important;
+        }
+        .commissions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .commission-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 16px 18px;
+            font-size: 0.89rem;
+            line-height: 1.5;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+        }
+        .commission-card h5 {
+            margin: 0 0 6px 0;
+            font-size: 0.98rem;
+            color: #0f172a;
+            line-height: 1.35;
+        }
+        .commission-badge {
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #0f172a;
+            background-color: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .commission-card p {
+            font-size: 0.88rem !important;
+            line-height: 1.48 !important;
+            margin: 0 0 8px 0 !important;
+            color: #475569;
+            text-align: justify !important;
+        }
+        .commission-card p:last-child {
+            margin-bottom: 0 !important;
+        }
+        .commissions-synthesis {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+            margin-top: 14px;
+            font-size: 0.91rem !important;
+            line-height: 1.55 !important;
+            color: #475569;
+            text-align: justify !important;
+        }
+
     </style>
 </head>
 <body>
@@ -2311,6 +2391,48 @@
         <p>The chapter maps the interconnected yet distinct terrains of legal obligations and ethical responsibilities in the teaching profession. Tait et al. debunk the myth that adhering strictly to legal mandates encompasses the entirety of a teacher's moral duty. While the law establishes mandatory minimum boundaries (such as duty of care, negligence prevention, and mandatory reporting), ethics addresses the broader, nuanced dilemmas of human care, justice, and professional integrity.</p>
         <p>The authors contrast major ethical paradigms: consequentialist (utilitarian) ethics that evaluate outcomes, deontological (duty-based) ethics centered on universal rules, and relational virtue ethics/ethics of care. In modern mass schooling, statutory compliance, standardized codes of conduct, and legal risk management frameworks often conflict with the immediate emotional and developmental needs of individual students. Bureaucratic rules can easily override ethical compassion if not actively interrogated.</p>
         <p>For educators, this chapter emphasizes that navigating modern classrooms requires deep professional ethical literacy. When legal mandates clash with moral duties&mdash;such as zero-tolerance policies versus restorative student support&mdash;teachers must rely on reasoned ethical deliberation. Cultivating an ethical classroom requires moving beyond fear of legal liability toward actively fostering relationships of mutual trust, dignity, and care.</p>
+                <aside class="commissions-aside">
+            <h4>Legal &amp; Ethical Aside: Australian Royal Commissions Reshaping Education &amp; Child Safety</h4>
+            <p>
+                In Chapter 15, Tait et al. explore the tension between abstract teacher ethics and binding legal statutes. In the Australian educational landscape, no instruments have exerted a more profound structural, legislative, and ethical impact on the doctrine of <em>in loco parentis</em> and institutional duty of care than federal Royal Commissions. Possessing coercive investigatory powers, these inquiries tore down historical shields of institutional self-protection, transforming child safeguarding from a matter of private school discretion into non-negotiable statutory compliance and proactive human rights obligations:
+            </p>
+            <div class="commissions-grid">
+                <div class="commission-card" style="border-top: 4px solid #b91c1c;">
+                    <h5>1. Institutional Responses to Child Sexual Abuse</h5>
+                    <span class="commission-badge" style="background-color: #fee2e2; color: #991b1b;">2013–2017 | McClellan Inquiry</span>
+                    <p>
+                        <strong>Findings:</strong> Uncovered catastrophic, systemic failures across state, independent, and religious educational sectors. Schools systematically prioritized reputation management, institutional brand preservation, and the protection of abusive personnel over the physical and psychological safety of children.
+                    </p>
+                    <p>
+                        <strong>Impact on Schooling:</strong> Sparked the codification of the <em>10 National Principles for Child Safe Organisations</em>. Overhauled mandatory reporting laws (removing internal administrative filters and criminalizing the failure to report), instituted rigorous Working With Children Check (WWCC) continuous monitoring, and eradicated historical statutes of limitations—reversing the onus of proof and holding school governing bodies vicariously liable for institutional abuse.
+                    </p>
+                </div>
+                <div class="commission-card" style="border-top: 4px solid #d97706;">
+                    <h5>2. Protection &amp; Detention of Children in the NT</h5>
+                    <span class="commission-badge" style="background-color: #fef3c7; color: #92400e;">2016–2017 | Don Dale Inquiry</span>
+                    <p>
+                        <strong>Findings:</strong> Triggered by revelations of systemic mistreatment, solitary confinement, and mechanical restraint of youth at the Don Dale Youth Detention Centre. Revealed the catastrophic failure of state systems to protect vulnerable First Nations children caught at the intersection of child protection and youth justice.
+                    </p>
+                    <p>
+                        <strong>Impact on Schooling:</strong> Critiqued the punitive "school-to-prison pipeline." The inquiry documented how arbitrary school suspensions, behavioral exclusions, and non-attendance policies disproportionately disenfranchise Indigenous students, accelerating their drift into carceral environments. It mandated a shift toward trauma-informed educational practices, early family engagement, and culturally grounded restorative justice models over exclusionary school discipline.
+                    </p>
+                </div>
+                <div class="commission-card" style="border-top: 4px solid #2563eb;">
+                    <h5>3. Violence, Abuse, Neglect &amp; Exploitation of People with Disability</h5>
+                    <span class="commission-badge" style="background-color: #dbeafe; color: #1e40af;">2019–2023 | Disability Royal Commission</span>
+                    <p>
+                        <strong>Findings:</strong> Documented deep-seated structural discrimination, informal suspensions, gatekeeping, and restrictive practices (such as physical restraint and chemical/environmental seclusion) inflicted upon disabled students within mainstream educational institutions.
+                    </p>
+                    <p>
+                        <strong>Impact on Schooling:</strong> Re-ignited the national debate over the phase-out of segregated "special schools" in alignment with Article 24 of the UN Convention on the Rights of Persons with Disabilities (CRPD). It legally compelled schools to provide genuine Universal Design for Learning (UDL), eliminated informal "part-time timetable" exclusions, and elevated reasonable adjustments under the <em>Disability Standards for Education 2005</em> from aspirational guidelines into enforceable civil rights.
+                    </p>
+                </div>
+            </div>
+            <p class="commissions-synthesis">
+                <strong>Pedagogical &amp; Ethical Synthesis for Educators:</strong> Collectively, these Royal Commissions dismantled the historical paternalism of <em>in loco parentis</em> ("in the place of a parent"). An educator's duty of care can no longer be treated as passive oversight. Legally and ethically, teachers are positioned as active, vigilant duty-bearers. Child protection, anti-carceral inclusion, and disability accommodations are not administrative burdens; they are non-delegable statutory responsibilities designed to ensure institutional authority never overrides the bodily autonomy, cultural dignity, and fundamental human rights of young people.
+            </p>
+        </aside>
+
         <div class="chapter-evaluation-block strengths-evaluation">
             <h4>Strengths of the Argument</h4>
             <p>This chapter provides valuable professional clarity by distinguishing statutory legal compliance from relational ethics. It accurately maps the institutional friction between defensive liability management and genuine pastoral care, equipping teachers with frameworks to navigate competing duties in complex school environments.</p>
