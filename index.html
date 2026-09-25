@@ -730,6 +730,160 @@
                 margin-bottom: 16px;
             }
         }
+        /* Chapter 5: Panopticon Aside */
+        .panopticon-aside {
+            background-color: #ffffff;
+            border: 1px solid #1e40af;
+            border-left: 5px solid #1e40af;
+            border-radius: 6px;
+            padding: 16px 18px;
+            margin: 18px 0 22px 0;
+            box-shadow: 0 2px 6px rgba(30, 64, 175, 0.08);
+            clear: both;
+        }
+        .panopticon-aside h4 {
+            margin: 0 0 12px 0;
+            font-size: 1.1rem;
+            color: #1e40af;
+        }
+        .panopticon-aside-layout {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .panopticon-figure {
+            width: 130px;
+            flex-shrink: 0;
+            margin: 0;
+        }
+        .panopticon-img-link {
+            display: block;
+        }
+        .panopticon-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            display: block;
+            transition: transform 0.15s ease-in-out;
+        }
+        .panopticon-img:hover {
+            transform: scale(1.02);
+        }
+        .panopticon-credit {
+            display: block;
+            font-size: 0.65rem;
+            line-height: 1.3;
+            color: #64748b;
+            margin-top: 6px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 5px;
+        }
+        .panopticon-credit a {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        .panopticon-content {
+            flex-grow: 1;
+        }
+        .panopticon-content p {
+            font-size: 0.92rem !important;
+            line-height: 1.55 !important;
+            margin: 0 0 10px 0 !important;
+            color: #334155;
+            text-align: justify !important;
+        }
+        .panopticon-content p:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* Chapter 6: Neurodevelopmental Pedagogical Note Aside */
+        .chapter-note {
+            background-color: #ffffff;
+            border: 1px solid #0284c7;
+            border-left: 5px solid #0284c7;
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 20px 0 24px 0;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+            clear: both;
+        }
+        .chapter-note h4 {
+            margin: 0 0 14px 0;
+            font-size: 1.15rem;
+            color: #0369a1;
+        }
+        .chapter-note-layout {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+        .chapter-note-figure {
+            width: 270px;
+            min-width: 250px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .chapter-note-img {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+            display: block;
+            opacity: 0.95;
+            transition: transform 0.2s ease-in-out;
+        }
+        .chapter-note-img:hover {
+            transform: scale(1.03);
+        }
+        .chapter-note-content {
+            flex-grow: 1;
+        }
+        .chapter-note-content p {
+            font-size: 0.93rem !important;
+            line-height: 1.55 !important;
+            margin: 0 0 10px 0 !important;
+            color: #334155;
+            text-align: justify !important;
+        }
+        .chapter-note-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.91rem;
+            line-height: 1.55;
+            color: #334155;
+        }
+        .chapter-note-list li {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+        .chapter-note-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Layout for Asides */
+        @media (max-width: 768px) {
+            .panopticon-aside-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .panopticon-figure {
+                width: 100%;
+                max-width: 140px;
+            }
+            .chapter-note-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .chapter-note-figure {
+                width: 100%;
+                max-width: 180px;
+                margin-bottom: 16px;
+            }
+        }
 
     </style>
 </head>
@@ -1517,7 +1671,7 @@
         <p>The focus of this chapter is on how schooling shapes student subjectivity&mdash;the internal sense of self, agency, and psychological normality. Tait et al. critique the assumption that an individual's personality, intelligence, and behavioral disposition are purely innate qualities. Instead, the text argues that individual subjectivity is produced through social interactions, institutional discourses, and the specialized vocabularies of modern educational bureaucracies.</p>
         <p>The authors provide a critical analysis of the "psy-complex"&mdash;the pervasive influence of psychology, psychiatry, and educational therapy in diagnosing and categorizing student behavior. The chapter unpacks how non-compliant, disruptive, or atypical student behaviors are increasingly pathologized as medical or cognitive disorders such as ADHD. While acknowledging that medical diagnoses can provide support, the text cautions that pathologization often reclassifies social, environmental, or pedagogical problems as individual chemical deficiencies, removing responsibility from institutional structures.</p>
         <p>For classroom practitioners, this chapter urges caution against relying on psychological labels to define a student's total capability. Teachers are encouraged to view behavioral challenges within their broader social and institutional contexts rather than jumping immediately to medical deficit models. Supporting student agency requires recognizing that subjectivities are fluid, socially constructed, and heavily influenced by classroom environments.</p>
-        <div class="chapter-note">
+        <aside class="chapter-note">
             <h4>Pedagogical Note: Neurodevelopmental Conditions in the Classroom</h4>
             <div class="chapter-note-layout">
                 <div class="chapter-note-figure">
@@ -1537,7 +1691,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </aside>
 
         <div class="chapter-evaluation-block strengths-evaluation">
             <h4>Strengths of the Argument</h4>
