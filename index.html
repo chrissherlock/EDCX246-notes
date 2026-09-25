@@ -1445,6 +1445,54 @@
             text-align: justify !important;
         }
 
+    
+        /* Monogram Avatar Styling for Extended Theorists */
+        .theorist-monogram-box {
+            width: 100%;
+            max-width: 250px;
+            height: 140px;
+            margin: 0 auto 10px auto;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(30, 64, 175, 0.15);
+            border: 1px solid #cbd5e1;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .theorist-monogram-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 18px rgba(30, 64, 175, 0.22);
+        }
+        .theorist-monogram-initials {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .theorist-monogram-tradition {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            opacity: 0.92;
+            text-align: center;
+            padding: 0 8px;
+        }
+        .theorist-tradition-tag {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-top: 4px;
+        }
+
     </style>
 </head>
 <body>
@@ -1606,118 +1654,622 @@
                 <th style="width: 38%;">Relevant Myth(s) Challenged</th>
             </tr>
         </thead>
-        <tbody>
+                <tbody>
+            <!-- CHAPTER 1: SOCIAL CLASS -->
             <tr>
                 <td class="theorist-portrait-cell">
-    <figure style="margin: 0;">
-        <a href="https://en.wikipedia.org/wiki/Pierre_Bourdieu" target="_blank" rel="noopener" title="View Pierre Bourdieu on Wikipedia">
-            <img src="images/bourdieu.jpg" alt="Pierre Bourdieu" class="theorist-portrait-img">
-        </a>
-        <figcaption class="photo-credit">
-            Photo: Bernard Lambert (1996)<br>
-            <a href="https://commons.wikimedia.org/w/index.php?title=File:Pierre_Bourdieu_(1).jpg&amp;oldid=927520173" target="_blank" rel="noopener">Wikimedia Commons</a>
-        </figcaption>
-    </figure>
-</td>
-                <td><a href="https://en.wikipedia.org/wiki/Pierre_Bourdieu" target="_blank" rel="noopener" class="theorist-link">Pierre Bourdieu</a></td>
-                <td><strong>Cultural Capital &amp; Habitus:</strong> Schools inherently reward middle-class cultural traits, speech, and dispositions, converting inherited advantage into academic success and reproducing class inequality.</td>
+                    <figure style="margin: 0;">
+                        <a href="https://en.wikipedia.org/wiki/Pierre_Bourdieu" target="_blank" rel="noopener" title="View Pierre Bourdieu on Wikipedia">
+                            <img src="images/bourdieu.jpg" alt="Pierre Bourdieu" class="theorist-portrait-img">
+                        </a>
+                        <figcaption class="photo-credit">
+                            Photo: Bernard Lambert (1996)<br>
+                            <a href="https://commons.wikimedia.org/w/index.php?title=File:Pierre_Bourdieu_(1).jpg&amp;oldid=927520173" target="_blank" rel="noopener">Wikimedia Commons</a>
+                        </figcaption>
+                    </figure>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Pierre_Bourdieu" target="_blank" rel="noopener" class="theorist-link">Pierre Bourdieu</a>
+                    <span class="theorist-tradition-tag">Cultural Reproduction Theory</span>
+                </td>
+                <td><strong>Cultural Capital, Habitus &amp; Symbolic Violence:</strong> Schools are not meritocratic; they inherently value middle-class linguistic fluency, dispositions, and tastes (*cultural capital*), treating inherited social advantage as innate academic ability while committing *symbolic violence* against working-class students.</td>
                 <td>Myth: Schooling success is only about individual ability.<br>Myth: Social class is all about money.</td>
             </tr>
             <tr>
                 <td class="theorist-portrait-cell">
-    <figure style="margin: 0;">
-        <a href="https://en.wikipedia.org/wiki/Raewyn_Connell" target="_blank" rel="noopener" title="View Raewyn Connell on Wikipedia">
-            <img src="images/connell.jpg" alt="R.W. Connell" class="theorist-portrait-img">
-        </a>
-        <figcaption class="photo-credit">
-            Photo: Dianne Reggett<br>
-            <a href="https://commons.wikimedia.org/w/index.php?title=File:Dianne-Reggett.jpg&amp;oldid=1204043113" target="_blank" rel="noopener">Wikimedia Commons</a>
-        </figcaption>
-    </figure>
-</td>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Raewyn_Connell" target="_blank" rel="noopener" class="theorist-link">R.W. Connell</a>
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #991b1b, #dc2626);">
+                        <div class="theorist-monogram-initials">KM</div>
+                        <div class="theorist-monogram-tradition">Historical Materialism</div>
+                    </div>
                 </td>
-                <td><strong>Hegemonic Masculinity:</strong> Dominant, culturally exalted masculine archetypes actively subordinate women and marginalized men to maintain systemic gender hierarchies.</td>
-                <td>Myth: Boys are the real victims of the schooling system.</td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Karl_Marx" target="_blank" rel="noopener" class="theorist-link">Karl Marx</a>
+                    <span class="theorist-tradition-tag">Classical Political Economy</span>
+                </td>
+                <td><strong>Economic Reproduction &amp; Class Stratification:</strong> Class is an exploitative relation to the means of production. Mass education functions as an ideological apparatus that reproduces the capitalist division of labor, conditioning working-class youth for compliant wage labor while grooming elites for management.</td>
+                <td>Myth: Australia is an egalitarian society characterised by equality.<br>Myth: Schools provide equal opportunity for all.</td>
             </tr>
             <tr>
                 <td class="theorist-portrait-cell">
-    <figure style="margin: 0;">
-        <a href="https://en.wikipedia.org/wiki/Michel_Foucault" target="_blank" rel="noopener" title="View Michel Foucault on Wikipedia">
-            <img src="images/foucault.jpg" alt="Michel Foucault" class="theorist-portrait-img">
-        </a>
-        <figcaption class="photo-credit">
-            Photo: Jerry Bauer (1970)<br>
-            <a href="https://commons.wikimedia.org/w/index.php?title=File:Photo_of_Michel_Foucault_on_1970_dustjacket_of_The_Order_of_Things.jpg&amp;oldid=1239725607" target="_blank" rel="noopener">Wikimedia Commons</a>
-        </figcaption>
-    </figure>
-</td>
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6);">
+                        <div class="theorist-monogram-initials">MW</div>
+                        <div class="theorist-monogram-tradition">Sociological Stratification</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Max_Weber" target="_blank" rel="noopener" class="theorist-link">Max Weber</a>
+                    <span class="theorist-tradition-tag">Multidimensional Stratification</span>
+                </td>
+                <td><strong>Class, Status &amp; Party (Social Closure):</strong> Stratification operates across economic market position (*class*), social prestige and lifestyle honor (*status*), and political power (*party*). Elite schools maintain social closure by trading in cultural prestige and status credentials.</td>
+                <td>Myth: Social class is all about money.<br>Myth: School status reflects only academic performance.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #0e7490, #06b6d4);">
+                        <div class="theorist-monogram-initials">BB</div>
+                        <div class="theorist-monogram-tradition">Sociolinguistic Theory</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Basil_Bernstein" target="_blank" rel="noopener" class="theorist-link">Basil Bernstein</a>
+                    <span class="theorist-tradition-tag">Sociology of Language &amp; Pedagogy</span>
+                </td>
+                <td><strong>Restricted vs. Elaborated Codes:</strong> Curricula and examinations operate exclusively through the *elaborated code* (context-independent, universalistic), structurally penalizing working-class students accustomed to *restricted codes* (context-dependent, particularistic).</td>
+                <td>Myth: School language and assessment standards are culturally neutral.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #4338ca, #6366f1);">
+                        <div class="theorist-monogram-initials">PW</div>
+                        <div class="theorist-monogram-tradition">Cultural Resistance Ethnography</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Paul_Willis" target="_blank" rel="noopener" class="theorist-link">Paul Willis</a>
+                    <span class="theorist-tradition-tag">Ethnography of Education</span>
+                </td>
+                <td><strong>Counter-School Resistance (Learning to Labour):</strong> Working-class youth actively develop counter-school cultures celebrating manual labor and rejecting scholastic authority; their defiance sees through meritocratic myths but paradoxically seals their own working-class reproduction.</td>
+                <td>Myth: Working-class underachievement stems from personal lack of ambition.</td>
+            </tr>
+
+            <!-- CHAPTER 2: RACE, ETHNICITY AND INDIGENEITY -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #7c2d12, #ea580c);">
+                        <div class="theorist-monogram-initials">FF</div>
+                        <div class="theorist-monogram-tradition">Anticolonial Psychoanalysis</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Frantz_Fanon" target="_blank" rel="noopener" class="theorist-link">Frantz Fanon</a>
+                    <span class="theorist-tradition-tag">Postcolonial Sociology</span>
+                </td>
+                <td><strong>Colonisation of the Mind:</strong> Colonial educational apparatuses inflict profound psychological alienation, socialising colonised youth to internalise their presumed inferiority and severing them from native languages, cosmologies, and dignity.</td>
+                <td>Myth: Educational outcomes are unaffected by race.<br>Myth: Assimilationist schooling is benevolent.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #9a3412, #c2410c);">
+                        <div class="theorist-monogram-initials">DG</div>
+                        <div class="theorist-monogram-tradition">Critical Race Theory</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/David_Gillborn" target="_blank" rel="noopener" class="theorist-link">David Gillborn</a>
+                    <span class="theorist-tradition-tag">Critical Race Theory (CRT)</span>
+                </td>
+                <td><strong>Institutional Racism &amp; Whiteness as Policy:</strong> Racism in education is not just individual bigotry; it is an institutionalized policy architecture where tracking, discipline policies, and assessment regimes maintain white racial dominance as an unexamined baseline.</td>
+                <td>Myth: We no longer discriminate on the basis of race or ethnicity.<br>Myth: There is an 'Indigenous problem' in education.</td>
+            </tr>
+
+            <!-- CHAPTER 3: GENDER -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <figure style="margin: 0;">
+                        <a href="https://en.wikipedia.org/wiki/Raewyn_Connell" target="_blank" rel="noopener" title="View Raewyn Connell on Wikipedia">
+                            <img src="images/connell.jpg" alt="R.W. Connell" class="theorist-portrait-img">
+                        </a>
+                        <figcaption class="photo-credit">
+                            Photo: Dianne Reggett<br>
+                            <a href="https://commons.wikimedia.org/w/index.php?title=File:Dianne-Reggett.jpg&amp;oldid=1204043113" target="_blank" rel="noopener">Wikimedia Commons</a>
+                        </figcaption>
+                    </figure>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Raewyn_Connell" target="_blank" rel="noopener" class="theorist-link">R.W. Connell</a>
+                    <span class="theorist-tradition-tag">Sociology of Gender &amp; Hegemony</span>
+                </td>
+                <td><strong>Hegemonic Masculinity &amp; Competitive Academic Curriculum:</strong> Dominant masculine archetypes subordinate women and non-conforming men through peer policing in schools. Connell also identified the *Competitive Academic Curriculum (CAC)*, which structurally generates working-class failure to protect credential scarcity.</td>
+                <td>Myth: Boys are the real victims of the schooling system.<br>Myth: Gender is an immutable biological binary.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #6b21a8, #a855f7);">
+                        <div class="theorist-monogram-initials">JB</div>
+                        <div class="theorist-monogram-tradition">Gender Performativity</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Judith_Butler" target="_blank" rel="noopener" class="theorist-link">Judith Butler</a>
+                    <span class="theorist-tradition-tag">Queer Theory &amp; Poststructuralism</span>
+                </td>
+                <td><strong>Gender Performativity:</strong> Gender is not a stable biological reality or internal essence, but a stylized repetition of bodily acts and linguistic codes continually enforced through social surveillance and institutional sanction.</td>
+                <td>Myth: Gender is a biological fact, and schools should teach accordingly.</td>
+            </tr>
+
+            <!-- CHAPTER 4: SEXUALITIES -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #be185d, #ec4899);">
+                        <div class="theorist-monogram-initials">AR</div>
+                        <div class="theorist-monogram-tradition">Feminist Theory</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Adrienne_Rich" target="_blank" rel="noopener" class="theorist-link">Adrienne Rich</a>
+                    <span class="theorist-tradition-tag">Critical Feminist Sexuality Studies</span>
+                </td>
+                <td><strong>Compulsory Heterosexuality:</strong> Heterosexuality operates as a pervasive regulatory institution rather than an innate preference, sustained in schools through curricular omissions, administrative defaults, and the erasure of LGBTQ+ experiences.</td>
+                <td>Myth: School silences around sexuality represent neutral, objective boundaries.</td>
+            </tr>
+
+            <!-- CHAPTER 5: GOVERNANCE -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <figure style="margin: 0;">
+                        <a href="https://en.wikipedia.org/wiki/Michel_Foucault" target="_blank" rel="noopener" title="View Michel Foucault on Wikipedia">
+                            <img src="images/foucault.jpg" alt="Michel Foucault" class="theorist-portrait-img">
+                        </a>
+                        <figcaption class="photo-credit">
+                            Photo: Jerry Bauer (1970)<br>
+                            <a href="https://commons.wikimedia.org/w/index.php?title=File:Photo_of_Michel_Foucault_on_1970_dustjacket_of_The_Order_of_Things.jpg&amp;oldid=1239725607" target="_blank" rel="noopener">Wikimedia Commons</a>
+                        </figcaption>
+                    </figure>
+                </td>
                 <td>
                     <a href="https://en.wikipedia.org/wiki/Michel_Foucault" target="_blank" rel="noopener" class="theorist-link">Michel Foucault</a>
+                    <span class="theorist-tradition-tag">Poststructuralism &amp; Power/Knowledge</span>
                 </td>
-                <td><strong>Governmentality &amp; Panopticon:</strong> Modern governance operates "at a distance." Continuous surveillance and institutional architecture cause individuals to internalize control and become self-regulating subjects.</td>
+                <td><strong>Governmentality, Disciplinary Power &amp; Regimes of Truth:</strong> Modern power operates "at a distance." Cellular seating, timetables, and exams instill internal self-discipline, causing students to internalize surveillance and become docile, self-governing subjects.</td>
                 <td>Myth: Schools are primarily about education, not regulation.<br>Myth: The structure of the school isn't important.</td>
             </tr>
             <tr>
                 <td class="theorist-portrait-cell">
-    <figure style="margin: 0;">
-        <a href="https://en.wikipedia.org/wiki/Philippe_Ari%C3%A8s" target="_blank" rel="noopener" title="View Philippe Ariès on Wikipedia">
-            <img src="images/ariès.jpg" alt="Philippe Ariès" class="theorist-portrait-img">
-        </a>
-        <figcaption class="photo-credit">
-            Photo: Unknown (Andersen?)<br>
-            <a href="https://en.wikipedia.org/wiki/File:Philippe_Ari%C3%A8s.jpg" target="_blank" rel="noopener">Wikipedia (Fair Use)</a>
-        </figcaption>
-    </figure>
-</td>
-                <td>
-                    <a href="https://en.wikipedia.org/wiki/Philippe_Ari%C3%A8s" target="_blank" rel="noopener" class="theorist-link">Philippe Ariès</a>
+                    <figure style="margin: 0;">
+                        <a href="https://en.wikipedia.org/wiki/Jeremy_Bentham" target="_blank" rel="noopener" title="View Jeremy Bentham on Wikipedia">
+                            <img src="images/panopticon.jpg" alt="Jeremy Bentham Panopticon" class="theorist-portrait-img">
+                        </a>
+                        <figcaption class="photo-credit">
+                            Plan: Jeremy Bentham (1791)<br>
+                            <a href="https://commons.wikimedia.org/w/index.php?title=File:Panopticon.jpg&amp;oldid=655309367" target="_blank" rel="noopener">Wikimedia Commons</a>
+                        </figcaption>
+                    </figure>
                 </td>
                 <td>
-                    <strong>The "Invention" of Childhood (Historiographically Discredited):</strong>
-                    Ariès argued in <em>Centuries of Childhood</em> (1962) that medieval society had no concept of childhood, treating children as "miniature adults" without sentimental attachment until modernity engineered schooling to segregate youth.
-                    <div style="margin-top: 8px; padding: 8px 12px; background-color: #fff1f2; border-left: 3px solid #e11d48; border-radius: 4px; font-size: 0.88rem; line-height: 1.45; color: #1e293b;">
-                        <strong>Why Historians Discredited the Thesis:</strong> Mainstream medieval historians (e.g., Nicholas Orme in <em>Medieval Children</em>, Linda Pollock, Shulamith Shahar) demonstrated that Ariès committed severe methodological errors. He relied almost entirely on aristocratic artwork and tomb effigies (inferring stylized religious iconography represented daily domestic life) while ignoring court rolls, wills, toys, and diaries proving medieval parents grieved, nurtured, and legally protected children as distinct beings.
+                    <a href="https://en.wikipedia.org/wiki/Jeremy_Bentham" target="_blank" rel="noopener" class="theorist-link">Jeremy Bentham</a>
+                    <span class="theorist-tradition-tag">Utilitarian Institutional Design</span>
+                </td>
+                <td><strong>The Architectural Panopticon:</strong> Circular institutional design featuring central inspection towers that induce in inmates the state of conscious and permanent visibility, laying the blueprint for modern school monitoring and behavioral surveillance.</td>
+                <td>Myth: School architecture is purely functional and unrelated to behavioral control.</td>
+            </tr>
+
+            <!-- CHAPTER 6: SUBJECTIVITY -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #0369a1, #0ea5e9);">
+                        <div class="theorist-monogram-initials">NR</div>
+                        <div class="theorist-monogram-tradition">Sociology of the Psy-Complex</div>
                     </div>
                 </td>
-                <td>Myth: 'Childhood' and 'youth' are facts of nature.</td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Nikolas_Rose" target="_blank" rel="noopener" class="theorist-link">Nikolas Rose</a>
+                    <span class="theorist-tradition-tag">Governmentality of Psychology</span>
+                </td>
+                <td><strong>The "Psy-Complex" &amp; Governing the Soul:</strong> Psychological and psychiatric vocabularies reframe institutional, environmental, and curricular frictions as individual internal psychological deficits, producing subjects who regulate their own souls.</td>
+                <td>Myth: Subjectivity, personality, and intelligence are purely innate qualities.</td>
             </tr>
             <tr>
                 <td class="theorist-portrait-cell">
-    <figure style="margin: 0;">
-        <a href="https://en.wikipedia.org/wiki/Stuart_Hall_(cultural_theorist)" target="_blank" rel="noopener" title="View Stuart Hall on Wikipedia">
-            <img src="images/hall.jpg" alt="Stuart Hall" class="theorist-portrait-img">
-        </a>
-        <figcaption class="photo-credit">
-            Photo: Windrush Foundation<br>
-            <a href="https://windrush70.co.uk/stuart-hall" target="_blank" rel="noopener">Windrush 70</a>
-        </figcaption>
-    </figure>
-</td>
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #0f766e, #14b8a6);">
+                        <div class="theorist-monogram-initials">PC</div>
+                        <div class="theorist-monogram-tradition">Medical Sociology</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Peter_Conrad_(sociologist)" target="_blank" rel="noopener" class="theorist-link">Peter Conrad</a>
+                    <span class="theorist-tradition-tag">Medicalisation of Deviance</span>
+                </td>
+                <td><strong>The Medicalisation of Deviance:</strong> Non-compliant, active, or disaffected school behaviors are transformed into medical and psychiatric disorders (e.g., ADHD), deflecting critique away from rigid school structures onto student neurochemistry.</td>
+                <td>Myth: Behavioral non-compliance is always an individual neurochemical pathology.</td>
+            </tr>
+
+            <!-- CHAPTER 7: NEOLIBERALISM AND MARKETISATION -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #047857, #10b981);">
+                        <div class="theorist-monogram-initials">HF</div>
+                        <div class="theorist-monogram-tradition">Neoliberal Market Economics</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Friedrich_Hayek" target="_blank" rel="noopener" class="theorist-link">F. Hayek &amp; M. Friedman</a>
+                    <span class="theorist-tradition-tag">Free Market Doctrine</span>
+                </td>
+                <td><strong>Marketisation, Competition &amp; School Vouchers:</strong> Treating schooling as a competitive market where parents are individual consumers and schools are corporate firms competing for vouchers and funding, positing that market discipline alone drives institutional excellence.</td>
+                <td>Myth: Market competition naturally raises educational quality for all students.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #065f46, #059669);">
+                        <div class="theorist-monogram-initials">SB</div>
+                        <div class="theorist-monogram-tradition">Critical Policy Sociology</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Stephen_Ball_(sociologist)" target="_blank" rel="noopener" class="theorist-link">Stephen Ball</a>
+                    <span class="theorist-tradition-tag">Policy Performativity</span>
+                </td>
+                <td><strong>Performativity, Audit Culture &amp; Privatisation:</strong> Neoliberal accountability systems force teachers into "performativity"—aligning work with measurable data targets and public league tables at the expense of authentic pedagogical relationships.</td>
+                <td>Myth: League tables and audit metrics provide objective measures of school success.</td>
+            </tr>
+
+            <!-- CHAPTER 8: PRE-ADULTHOOD -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <figure style="margin: 0;">
+                        <a href="https://en.wikipedia.org/wiki/Philippe_Ari%C3%A8s" target="_blank" rel="noopener" title="View Philippe Ariès on Wikipedia">
+                            <img src="images/ariès.jpg" alt="Philippe Ariès" class="theorist-portrait-img">
+                        </a>
+                        <figcaption class="photo-credit">
+                            Photo: Unknown (Andersen?)<br>
+                            <a href="https://en.wikipedia.org/wiki/File:Philippe_Ari%C3%A8s.jpg" target="_blank" rel="noopener">Wikipedia (Fair Use)</a>
+                        </figcaption>
+                    </figure>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Philippe_Ari%C3%A8s" target="_blank" rel="noopener" class="theorist-link">Philippe Ariès</a>
+                    <span class="theorist-tradition-tag">Social History of Childhood</span>
+                </td>
+                <td><strong>The Social "Invention" of Childhood (Historiographically Discredited):</strong> Argued that medieval society lacked a concept of childhood, treating young people as "miniature adults" until modern industrial schooling segregated them into protected, age-batched dependencies.</td>
+                <td>Myth: 'Childhood' and 'youth' are immutable facts of nature.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">
+                        <div class="theorist-monogram-initials">JP</div>
+                        <div class="theorist-monogram-tradition">New Sociology of Childhood</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Allison_James" target="_blank" rel="noopener" class="theorist-link">A. James &amp; A. Prout</a>
+                    <span class="theorist-tradition-tag">Childhood Agency Studies</span>
+                </td>
+                <td><strong>Children as Social Actors:</strong> Rejects developmental psychology models that treat children as incomplete, deficient "human becomings"; establishes children as competent social actors possessing agency in the present.</td>
+                <td>Myth: Children are passive recipients of adult socialization.</td>
+            </tr>
+
+            <!-- CHAPTER 9: DATAFICATION -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #1e40af, #3b82f6);">
+                        <div class="theorist-monogram-initials">BL</div>
+                        <div class="theorist-monogram-tradition">Educational Policy Studies</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Bob_Lingard" target="_blank" rel="noopener" class="theorist-link">Bob Lingard</a>
+                    <span class="theorist-tradition-tag">Governance by Numbers</span>
+                </td>
+                <td><strong>Governance by Numbers &amp; Datafication:</strong> National standardized assessments (NAPLAN) function as instruments of remote surveillance and political steering, creating high-stakes washback, test gaming, and curriculum narrowing.</td>
+                <td>Myth: Standardized assessment provides an unmediated, objective picture of school learning.</td>
+            </tr>
+
+            <!-- CHAPTER 10: THE MEDIA -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <figure style="margin: 0;">
+                        <a href="https://en.wikipedia.org/wiki/Stuart_Hall_(cultural_theorist)" target="_blank" rel="noopener" title="View Stuart Hall on Wikipedia">
+                            <img src="images/hall.jpg" alt="Stuart Hall" class="theorist-portrait-img">
+                        </a>
+                        <figcaption class="photo-credit">
+                            Photo: Windrush Foundation<br>
+                            <a href="https://windrush70.co.uk/stuart-hall" target="_blank" rel="noopener">Windrush 70</a>
+                        </figcaption>
+                    </figure>
+                </td>
                 <td>
                     <a href="https://en.wikipedia.org/wiki/Stuart_Hall_(cultural_theorist)" target="_blank" rel="noopener" class="theorist-link">Stuart Hall</a>
+                    <span class="theorist-tradition-tag">Birmingham Cultural Studies (CCCS)</span>
                 </td>
-                <td><strong>Active Audience Theory:</strong> Media texts are polysemic; audiences do not passively absorb messages but actively decode, negotiate, and interpret them through their own cultural frameworks.</td>
-                <td>Myth: With the news media, you don't need to think, you just need to read and listen.</td>
+                <td><strong>Encoding/Decoding &amp; Active Audience Theory:</strong> Media texts are polysemic; viewers do not passively absorb ideological messages (hypodermic model) but actively decode them via dominant-hegemonic, negotiated, or oppositional positions.</td>
+                <td>Myth: With the news media, you don't need to think, you just read and listen.</td>
             </tr>
             <tr>
                 <td class="theorist-portrait-cell">
-    <figure style="margin: 0;">
-        <a href="https://en.wikipedia.org/wiki/Marc_Prensky" target="_blank" rel="noopener" title="View Marc Prensky on Wikipedia">
-            <img src="images/prensky.jpg" alt="Marc Prensky" class="theorist-portrait-img">
-        </a>
-        <figcaption class="photo-credit">
-            Photo: Marc Prensky (2011)<br>
-            <a href="https://commons.wikimedia.org/w/index.php?title=File:Marc_Prensky.jpg&amp;oldid=1133575325" target="_blank" rel="noopener">Wikimedia Commons</a>
-        </figcaption>
-    </figure>
-</td>
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #b91c1c, #f87171);">
+                        <div class="theorist-monogram-initials">SC</div>
+                        <div class="theorist-monogram-tradition">Sociology of Deviance</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Stanley_Cohen_(sociologist)" target="_blank" rel="noopener" class="theorist-link">Stanley Cohen</a>
+                    <span class="theorist-tradition-tag">Moral Panic Theory</span>
+                </td>
+                <td><strong>Moral Panics &amp; Folk Devils:</strong> Media outlets manufacture exaggerated societal anxieties around youth deviance or falling school standards, creating "folk devils" to justify regulatory crackdowns and increased surveillance of teachers.</td>
+                <td>Myth: Media reports on education reflect objective public consensus.</td>
+            </tr>
+
+            <!-- CHAPTER 11: POPULAR CULTURE -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">
+                        <div class="theorist-monogram-initials">JF</div>
+                        <div class="theorist-monogram-tradition">Cultural Studies &amp; Semiotics</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/John_Fiske_(media_scholar)" target="_blank" rel="noopener" class="theorist-link">John Fiske</a>
+                    <span class="theorist-tradition-tag">Popular Culture Semiotics</span>
+                </td>
+                <td><strong>Semiotic Democracy &amp; Textual Poaching:</strong> Popular culture is an active battleground where ordinary youth repurpose, subvert, and resist commercial capitalist texts, constructing their own subcultural meanings and identities.</td>
+                <td>Myth: Popular culture is mindless rubbish without educational merit.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #6d28d9, #8b5cf6);">
+                        <div class="theorist-monogram-initials">KB</div>
+                        <div class="theorist-monogram-tradition">Literary Semiotics</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Julia_Kristeva" target="_blank" rel="noopener" class="theorist-link">J. Kristeva &amp; R. Barthes</a>
+                    <span class="theorist-tradition-tag">Intertextuality &amp; Poststructuralism</span>
+                </td>
+                <td><strong>Intertextuality:</strong> No text exists in isolation; all cultural artifacts are "mosaics of citations" deriving meaning from other texts. Memes, pop music, and films require youth to possess sophisticated cross-referential literacy.</td>
+                <td>Myth: Classical high culture is the solitary repository of sophisticated textual meaning.</td>
+            </tr>
+
+            <!-- CHAPTER 12: TECHNOLOGY -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <figure style="margin: 0;">
+                        <a href="https://en.wikipedia.org/wiki/Marc_Prensky" target="_blank" rel="noopener" title="View Marc Prensky on Wikipedia">
+                            <img src="images/prensky.jpg" alt="Marc Prensky" class="theorist-portrait-img">
+                        </a>
+                        <figcaption class="photo-credit">
+                            Photo: Marc Prensky (2011)<br>
+                            <a href="https://commons.wikimedia.org/w/index.php?title=File:Marc_Prensky.jpg&amp;oldid=1133575325" target="_blank" rel="noopener">Wikimedia Commons</a>
+                        </figcaption>
+                    </figure>
+                </td>
                 <td>
                     <a href="https://en.wikipedia.org/wiki/Marc_Prensky" target="_blank" rel="noopener" class="theorist-link">Marc Prensky</a> (Critiqued)
+                    <span class="theorist-tradition-tag">Technological Determinism</span>
                 </td>
-                <td><strong>Digital Natives / Technological Determinism:</strong> The flawed assumption that children innately possess critical information literacy simply because they grew up using consumer digital devices.</td>
-                <td>Myth: Digital technology is the answer to all our education problems.<br>Myth: Technology signals the end of teaching.</td>
+                <td><strong>The "Digital Native" Fallacy:</strong> The flawed assumption that children innately possess critical information literacy and computational proficiency simply because they were born into an environment filled with consumer touchscreens.</td>
+                <td>Myth: Digital technology is the answer to all educational problems.<br>Myth: Technology signals the end of teaching.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #be123c, #fb7185);">
+                        <div class="theorist-monogram-initials">NP</div>
+                        <div class="theorist-monogram-tradition">Media Ecology</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Neil_Postman" target="_blank" rel="noopener" class="theorist-link">Neil Postman</a>
+                    <span class="theorist-tradition-tag">Philosophy of Technology</span>
+                </td>
+                <td><strong>The Faustian Bargain of Technology:</strong> Technological change is never additive; it is ecological and non-neutral. Every innovation exacts a social and cognitive cost (*"technology giveth and technology taketh away"*).</td>
+                <td>Myth: Technologies are neutral tools that simply accelerate learning.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #9f1239, #e11d48);">
+                        <div class="theorist-monogram-initials">SZ</div>
+                        <div class="theorist-monogram-tradition">Political Economy of Tech</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Shoshana_Zuboff" target="_blank" rel="noopener" class="theorist-link">Shoshana Zuboff</a>
+                    <span class="theorist-tradition-tag">Surveillance Capitalism</span>
+                </td>
+                <td><strong>Surveillance Capitalism &amp; Behavioral Modification:</strong> Commercial digital platforms extract student behavioral surplus, using algorithmic feedback loops to engineer attention retention, privatizing public educational data for corporate profit.</td>
+                <td>Myth: Edtech platforms exist solely for educational benefit.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #15803d, #22c55e);">
+                        <div class="theorist-monogram-initials">MO</div>
+                        <div class="theorist-monogram-tradition">Disability Sociology</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Mike_Oliver_(disability_activist)" target="_blank" rel="noopener" class="theorist-link">Mike Oliver</a>
+                    <span class="theorist-tradition-tag">Social Model of Disability</span>
+                </td>
+                <td><strong>Social Model of Disability &amp; Assistive Tech:</strong> Disability is not an individual biological defect, but the result of social barriers. Assistive technologies (screen readers, speech-to-text) remove structural barriers, providing Universal Design for Learning (UDL).</td>
+                <td>Myth: Learning difficulties reside entirely within the individual student.</td>
+            </tr>
+
+            <!-- CHAPTER 13: GLOBALISATION -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #0891b2, #06b6d4);">
+                        <div class="theorist-monogram-initials">RL</div>
+                        <div class="theorist-monogram-tradition">Global Policy Sociology</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Fazal_Rizvi" target="_blank" rel="noopener" class="theorist-link">F. Rizvi &amp; B. Lingard</a>
+                    <span class="theorist-tradition-tag">Transnational Policy Studies</span>
+                </td>
+                <td><strong>The Global Education Policy Field:</strong> Supranational bodies (OECD, World Bank) exercise "soft governance by numbers" (PISA), compelling nation-states to harmonize domestic schooling to Human Capital Theory and global workforce competition.</td>
+                <td>Myth: National curriculum policy operates as a sovereign, isolated enterprise.</td>
+            </tr>
+
+            <!-- CHAPTER 14: PHILOSOPHY -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                        <div class="theorist-monogram-initials">JD</div>
+                        <div class="theorist-monogram-tradition">Educational Pragmatism</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/John_Dewey" target="_blank" rel="noopener" class="theorist-link">John Dewey</a>
+                    <span class="theorist-tradition-tag">Pragmatism &amp; Progressive Education</span>
+                </td>
+                <td><strong>Pragmatism &amp; Democratic Schooling:</strong> Schools are embryonic democratic communities; learning is not the passive absorption of static facts, but active inquiry, problem-solving, and reflective experience (*"learning by doing"*).</td>
+                <td>Myth: Philosophy is an abstract, useless luxury for classroom teachers.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #b45309, #d97706);">
+                        <div class="theorist-monogram-initials">PF</div>
+                        <div class="theorist-monogram-tradition">Critical Pedagogy</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Paulo_Freire" target="_blank" rel="noopener" class="theorist-link">Paulo Freire</a>
+                    <span class="theorist-tradition-tag">Pedagogy of the Oppressed</span>
+                </td>
+                <td><strong>The "Banking" Concept vs. Conscientisation:</strong> Traditional schooling treats students as empty accounts into which teachers deposit static knowledge. Critical pedagogy demands dialogical, problem-posing education that empowers learners to transform their world (*praxis*).</td>
+                <td>Myth: Teaching is a politically neutral act of knowledge transmission.</td>
+            </tr>
+
+            <!-- CHAPTER 15: ETHICS AND THE LAW -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #334155, #64748b);">
+                        <div class="theorist-monogram-initials">NN</div>
+                        <div class="theorist-monogram-tradition">Relational Ethics</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Nel_Noddings" target="_blank" rel="noopener" class="theorist-link">Nel Noddings</a>
+                    <span class="theorist-tradition-tag">Ethics of Care</span>
+                </td>
+                <td><strong>Relational Ethics of Care:</strong> Morality in education is founded upon authentic relationships, attentiveness, and responsiveness to the cared-for, rather than abstract, defensive rule-compliance or bureaucratic legalism.</td>
+                <td>Myth: Complying with legal statutory mandates encompasses a teacher's full moral duty.</td>
+            </tr>
+
+            <!-- CHAPTER 16: CHILDREN'S RIGHTS -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">
+                        <div class="theorist-monogram-initials">EJ</div>
+                        <div class="theorist-monogram-tradition">International Human Rights</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Eglantyne_Jebb" target="_blank" rel="noopener" class="theorist-link">Eglantyne Jebb</a>
+                    <span class="theorist-tradition-tag">1924 Geneva Declaration</span>
+                </td>
+                <td><strong>Codification of Children's Rights:</strong> Drafted the foundational charter that established children as universal rights-bearers rather than parental chattel or objects of welfare, leading directly to the 1989 UNCRC.</td>
+                <td>Myth: Rights are granted conditionally only upon reaching adulthood.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #0369a1, #0284c7);">
+                        <div class="theorist-monogram-initials">JG</div>
+                        <div class="theorist-monogram-tradition">Child Voice &amp; Participation</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Jenna_Gillett-Swan" target="_blank" rel="noopener" class="theorist-link">Jenna Gillett-Swan</a>
+                    <span class="theorist-tradition-tag">Participatory Rights in Education</span>
+                </td>
+                <td><strong>Voice &amp; Participatory Rights (UNCRC Art. 12):</strong> Analyzes how schools prioritize paternalistic protection over student participation, demonstrating that authentic democratic agency requires dismantling consultative barriers.</td>
+                <td>Myth: Children lack the maturity to have their voices heard in school governance.</td>
+            </tr>
+
+            <!-- CHAPTER 17: TRUTH AND POSTCOLONIALISM -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #c2410c, #f97316);">
+                        <div class="theorist-monogram-initials">MN</div>
+                        <div class="theorist-monogram-tradition">Indigenous Standpoint Theory</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Martin_Nakata" target="_blank" rel="noopener" class="theorist-link">Martin Nakata</a>
+                    <span class="theorist-tradition-tag">The Cultural Interface</span>
+                </td>
+                <td><strong>The Cultural Interface:</strong> The complex, contested space where Indigenous ancestral traditions and oral ways of knowing intersect with Western disciplinary systems. Equips First Nations students to deploy Western analytical tools without sacrificing cultural sovereignty.</td>
+                <td>Myth: School curriculum is culturally neutral and universally true.<br>Myth: 'Closing the Gap' deficit models are objective.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #9a3412, #ea580c);">
+                        <div class="theorist-monogram-initials">PW</div>
+                        <div class="theorist-monogram-tradition">Settler Colonial Studies</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Patrick_Wolfe" target="_blank" rel="noopener" class="theorist-link">Patrick Wolfe</a>
+                    <span class="theorist-tradition-tag">Structure of Settler Colonialism</span>
+                </td>
+                <td><strong>Settler Colonialism as a Structure:</strong> Settler colonialism is not a historical event, but an ongoing institutional structure driven by the logic of elimination. Mission and state schooling functioned as assimilatory infrastructure.</td>
+                <td>Myth: Australia was legally or epistemically terra nullius.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #7c2d12, #c2410c);">
+                        <div class="theorist-monogram-initials">GS</div>
+                        <div class="theorist-monogram-tradition">Postcolonial Epistemology</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Gayatri_Chakravorty_Spivak" target="_blank" rel="noopener" class="theorist-link">Gayatri Spivak</a>
+                    <span class="theorist-tradition-tag">Subaltern Studies</span>
+                </td>
+                <td><strong>Epistemic Violence:</strong> The systematic silencing, delegitimation, and destruction of non-Western knowledge traditions by imposing a Eurocentric curriculum as universal objective reality.</td>
+                <td>Myth: Western canon represents the summit of human truth.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #b91c1c, #dc2626);">
+                        <div class="theorist-monogram-initials">MY</div>
+                        <div class="theorist-monogram-tradition">Social Realism in Education</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Michael_Young_(sociologist)" target="_blank" rel="noopener" class="theorist-link">M. Young &amp; J. Muller</a>
+                    <span class="theorist-tradition-tag">Social Realism</span>
+                </td>
+                <td><strong>Powerful Knowledge vs. Knowledge of the Powerful:</strong> Distinguishes who controls curriculum (*knowledge of the powerful*) from specialized disciplinary knowledge (*powerful knowledge*). Denying disadvantaged students empirical and scientific standards under the guise of relativism locks them out of social leadership.</td>
+                <td>Myth: Scientific empiricism and objective truth are inherently oppressive colonial constructs.</td>
+            </tr>
+
+            <!-- CHAPTER 18: ALTERNATIVE EDUCATION -->
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #059669, #34d399);">
+                        <div class="theorist-monogram-initials">AN</div>
+                        <div class="theorist-monogram-tradition">Democratic Schooling</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/A._S._Neill" target="_blank" rel="noopener" class="theorist-link">A.S. Neill</a>
+                    <span class="theorist-tradition-tag">Summerhill School</span>
+                </td>
+                <td><strong>Democratic Self-Governance &amp; Freedom:</strong> Founded Summerhill; proved that schooling thrives on voluntary attendance, radical equality between children and adults, and community meetings where each member has an equal vote.</td>
+                <td>Myth: Compulsory coercion and age-batching are necessary for intellectual development.</td>
+            </tr>
+            <tr>
+                <td class="theorist-portrait-cell">
+                    <div class="theorist-monogram-box" style="background: linear-gradient(135deg, #047857, #10b981);">
+                        <div class="theorist-monogram-initials">MM</div>
+                        <div class="theorist-monogram-tradition">Progressive Self-Regulation</div>
+                    </div>
+                </td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Maria_Montessori" target="_blank" rel="noopener" class="theorist-link">Maria Montessori</a>
+                    <span class="theorist-tradition-tag">Child-Centered Pedagogy</span>
+                </td>
+                <td><strong>Prepared Environment &amp; Self-Directed Learning:</strong> Multi-age classrooms and didactic sensory materials foster intrinsic motivation and self-regulation, demonstrating that young children naturally seek focused learning when freed from arbitrary teacher control.</td>
+                <td>Myth: Traditional rote teacher-centered instruction is the solitary viable educational model.</td>
             </tr>
         </tbody>
     </table>
