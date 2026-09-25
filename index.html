@@ -410,7 +410,7 @@
         .book-header-layout {
             display: flex;
             gap: 24px;
-            align-items: flex-start;
+            align-items: stretch;
             margin: 16px 0;
         }
         .book-cover-img {
@@ -421,16 +421,20 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
             border: 1px solid #cbd5e1;
             flex-shrink: 0;
+            align-self: flex-start;
+            display: block;
         }
         .book-meta-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 16px;
             flex-grow: 1;
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 6px;
-            padding: 16px;
+            padding: 16px 20px;
+            box-sizing: border-box;
+            align-content: space-between;
         }
         .book-meta-item {
             font-size: 0.92rem;
@@ -455,6 +459,25 @@
             text-align: justify;
             line-height: 1.6;
             color: #334155;
+        }
+        .paradox-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #d97706;
+            border-radius: 0 6px 6px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .paradox-box h4 {
+            color: #92400e;
+            margin: 0 0 6px 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .paradox-box p {
+            margin: 6px 0 !important;
+            font-size: 0.94rem;
+            line-height: 1.55;
+            color: #451a03;
         }
         .part-grid {
             display: grid;
@@ -482,10 +505,13 @@
             }
             .book-cover-img {
                 width: 150px;
+                align-self: center;
             }
             .book-meta-grid {
                 width: 100%;
+                grid-template-columns: 1fr;
                 box-sizing: border-box;
+                align-content: stretch;
             }
         }
 
@@ -578,6 +604,32 @@
                 they serve as deliberate pedagogical entry points designed to provoke pre-service teachers to interrogate
                 unexamined assumptions and uncover the structural realities of schooling.
             </p>
+
+            <div class="paradox-box">
+                <h4>Methodological Critique: The Epistemological Paradox of the "Empirical Myth"</h4>
+                <p>
+                    A foundational contradiction exists between how the authors define a "myth" and how they construct
+                    their arguments. On page 2, Tait et al. define a myth as <em>"An idea or story that many people
+                    believe, but which is demonstrably false under empirical analysis."</em> This definition borrows the
+                    rhetoric and epistemic authority of hard positivism to delegitimize opposing viewpoints.
+                </p>
+                <p>
+                    Yet, across the text, the authors conduct virtually zero primary empirical research, and systematically
+                    dismiss quantitative testing, psychometrics, and empirical evaluation as instruments of state
+                    surveillance, the "psy-complex," and datafication. Instead, the authors redefine "empirical analysis"
+                    as <em>qualitative discourse analysis</em>—treating ministerial speeches, media headlines, and policy
+                    documents as empirical objects, and equating textual deconstruction with empirical disproof.
+                </p>
+                <p>
+                    This creates an <strong>asymmetric standard of proof</strong>: when debunking conservative or
+                    meritocratic "myths," the authors demand macro-statistical refutation (citing ABS wealth figures and
+                    Gini coefficients). Conversely, when asserting their own preferred "realities" (such as schools operating
+                    as Benthamite carceral Panopticons, ADHD as a social control fiction, or Philippe Ari&egrave;s' discredited
+                    medieval childhood thesis), they provide zero experimental evidence and rely purely on conceptual
+                    assertion. The work functions not as an empirical study, but as critical political philosophy framed
+                    in the language of empirical correction.
+                </p>
+            </div>
 
             <h3>Structural Architecture: The Four Pillars</h3>
             <div class="part-grid">
