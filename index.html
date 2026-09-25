@@ -564,53 +564,53 @@
         }
         .chapter-evaluation-block {
             clear: both;
-        }
-        .panopticon-sidebar {
-            float: right;
-            width: 300px;
-            max-width: 100%;
-            margin: 4px 0 16px 20px;
+        }@media (max-width: 768px) {
+        .panopticon-aside {
             background-color: #f8fafc;
             border: 1px solid #cbd5e1;
-            border-left: 4px solid #1e40af;
+            border-left: 5px solid #1e40af;
             border-radius: 6px;
-            padding: 14px;
-            box-sizing: border-box;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 18px 20px;
+            margin: 20px 0 24px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            clear: both;
         }
-        .panopticon-sidebar h4 {
-            margin: 0 0 8px 0;
-            font-size: 1.05rem;
+        .panopticon-aside h4 {
+            margin: 0 0 14px 0;
+            font-size: 1.15rem;
             color: #1e40af;
+        }
+        .panopticon-aside-layout {
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+        }
+        .panopticon-figure {
+            width: 240px;
+            flex-shrink: 0;
+            margin: 0;
         }
         .panopticon-img-link {
             display: block;
-            margin-bottom: 8px;
         }
         .panopticon-img {
             width: 100%;
             height: auto;
             border-radius: 4px;
             border: 1px solid #cbd5e1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
             display: block;
             transition: transform 0.15s ease-in-out;
         }
         .panopticon-img:hover {
             transform: scale(1.02);
         }
-        .panopticon-sidebar p {
-            font-size: 0.88rem !important;
-            line-height: 1.45 !important;
-            margin: 6px 0 !important;
-            color: #334155;
-            text-align: left !important;
-        }
         .panopticon-credit {
             display: block;
             font-size: 0.68rem;
-            line-height: 1.3;
+            line-height: 1.35;
             color: #64748b;
-            margin-top: 6px;
+            margin-top: 8px;
             border-top: 1px solid #e2e8f0;
             padding-top: 6px;
         }
@@ -618,11 +618,27 @@
             color: #2563eb;
             text-decoration: underline;
         }
+        .panopticon-content {
+            flex-grow: 1;
+        }
+        .panopticon-content p {
+            font-size: 0.93rem !important;
+            line-height: 1.55 !important;
+            margin: 0 0 10px 0 !important;
+            color: #334155;
+            text-align: justify !important;
+        }
+        .panopticon-content p:last-child {
+            margin-bottom: 0 !important;
+        }
         @media (max-width: 768px) {
-            .panopticon-sidebar {
-                float: none;
+            .panopticon-aside-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .panopticon-figure {
                 width: 100%;
-                margin: 16px 0;
+                max-width: 260px;
             }
         }
 
@@ -1359,31 +1375,36 @@
 
     <div class="chapter-summary">
         <h3>Chapter 5: Governance</h3>
-        <aside class="panopticon-sidebar">
-            <h4><a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" rel="noopener" class="theorist-link">The Panopticon</a></h4>
-            <figure style="margin: 0;">
-                <a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" rel="noopener" class="panopticon-img-link" title="Explore the Panopticon on Wikipedia">
-                    <img src="images/panopticon.jpg" alt="Jeremy Bentham's Panopticon Plan (1791)" class="panopticon-img">
-                </a>
-                <figcaption class="panopticon-credit">
-                    Drawing: Jeremy Bentham (1791; pub. 1843)<br>
-                    <em>The Works of Jeremy Bentham</em>, Vol. IV, 172&ndash;3<br>
-                    <a href="https://commons.wikimedia.org/w/index.php?title=File:Panopticon.jpg&amp;oldid=655309367" target="_blank" rel="noopener">Wikimedia Commons</a>
-                </figcaption>
-            </figure>
-            <p style="margin-top: 10px !important;">
-                <strong>Architectural Concept:</strong> Designed in 1791 by English utilitarian philosopher <strong>Jeremy Bentham</strong>, the Panopticon is a circular institutional structure featuring a central observation tower encircled by perimeter cells. Backlighting ensures the central inspector can see every inmate, while blinds prevent inmates from knowing whether they are being observed.
-            </p>
-            <p>
-                <strong>Foucault's Application (1975):</strong> In <em>Discipline and Punish</em>, Michel Foucault transformed Bentham's architectural blueprint into a foundational metaphor for modern <em>disciplinary power</em>. Because subjects never know when surveillance occurs, they must assume it is continuous, internalizing the gaze and policing their own behavior.
-            </p>
-            <p>
-                <strong>Educational Manifestation:</strong> In Chapter 5, Tait et al. apply this model to show how schooling replaced violent sovereign punishment with subtle architectural surveillance: sightlines, open classroom doors, glass observation panels, and continuous records that induce students to become self-regulating, docile subjects.
-            </p>
-        </aside>
         <p>This chapter reframes the fundamental purpose of mass schooling, shifting the perspective from a purely instructional service to a primary mechanism of social regulation and governance. The authors trace the historical evolution of modern schooling to the necessity of managing, training, and standardizing large industrial populations. Rather than existing as politically neutral sites, schools serve as vital intermediaries through which the state cultivates social order, moral uniformity, and productive labor.</p>
         <p>Drawing centrally on Michel Foucault's concepts of disciplinary power and governmentality, the text explores how power operates "at a distance" rather than through overt sovereign force. Schools utilize spatial distribution, cellular seating, rigid timetables, continuous testing, and hierarchical surveillance to instill self-discipline. The architectural and procedural model of the Panopticon illustrates how the constant possibility of being observed leads students to internalize behavioral norms, turning them into self-governing subjects.</p>
         <p>The pedagogical takeaway challenges educators to reflect on their own roles as agents of state governance. Standardized testing, attendance logs, and diagnostic categorizations are revealed as technologies of surveillance that sort and normalize youth. Educators are encouraged to cultivate critical reflexivity, questioning whether routine institutional practices prioritize bureaucratic social control over genuine, emancipatory learning.</p>
+                <aside class="panopticon-aside">
+            <h4><a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" rel="noopener" class="theorist-link">The Panopticon</a></h4>
+            <div class="panopticon-aside-layout">
+                <figure class="panopticon-figure">
+                    <a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" rel="noopener" class="panopticon-img-link" title="Explore the Panopticon on Wikipedia">
+                        <img src="images/panopticon.jpg" alt="Jeremy Bentham's Panopticon Plan (1791)" class="panopticon-img">
+                    </a>
+                    <figcaption class="panopticon-credit">
+                        Drawing: Jeremy Bentham (1791; pub. 1843)<br>
+                        <em>The Works of Jeremy Bentham</em>, Vol. IV, 172&ndash;3<br>
+                        <a href="https://commons.wikimedia.org/w/index.php?title=File:Panopticon.jpg&amp;oldid=655309367" target="_blank" rel="noopener">Wikimedia Commons</a>
+                    </figcaption>
+                </figure>
+                <div class="panopticon-content">
+                    <p>
+                        <strong>Architectural Concept:</strong> Designed in 1791 by English utilitarian philosopher <strong>Jeremy Bentham</strong>, the Panopticon is a circular institutional structure featuring an inspection tower at the center encircled by perimeter cells. Backlighting allows the central inspector to observe every inmate, while window blinds ensure inmates cannot see into the tower.
+                    </p>
+                    <p>
+                        <strong>Foucault's Application (1975):</strong> In <em>Discipline and Punish</em>, Michel Foucault adopted Bentham's blueprint as a foundational model for modern <em>disciplinary power</em>. Because subjects can never verify when they are being watched, they assume surveillance is continuous, internalizing the inspector's gaze and policing their own conduct without the need for physical force.
+                    </p>
+                    <p>
+                        <strong>Educational Manifestation:</strong> In Chapter 5, Tait et al. apply this model to show how mass schooling replaced sovereign violence with administrative surveillance: open corridors, sightlines into classrooms, timetables, and cumulative records that condition youth to become self-regulating, docile subjects.
+                    </p>
+                </div>
+            </div>
+        </aside>
+
         <div class="chapter-evaluation-block strengths-evaluation">
             <h4>Strengths of the Argument</h4>
             <p>Fulfilling the authors' post-structural intent, this chapter effectively de-neutralizes mundane institutional logistics. Utilizing Foucault's theories of governmentality and disciplinary power, it convincingly shows that modern schooling replaced overt sovereign physical coercion with diffuse surveillance, cellular organization, and temporal pacing to cultivate self-regulating, economically productive citizens.</p>
