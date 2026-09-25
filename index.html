@@ -391,8 +391,6 @@
             color: #1e293b;
             line-height: 1.55;
         }
-
-    
         .book-overview-card {
             background-color: #f8fafc;
             border: 1px solid #cbd5e1;
@@ -409,11 +407,26 @@
             padding-bottom: 8px;
             font-size: 1.45rem;
         }
+        .book-header-layout {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            margin: 16px 0;
+        }
+        .book-cover-img {
+            width: 170px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            border: 1px solid #cbd5e1;
+            flex-shrink: 0;
+        }
         .book-meta-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 16px;
-            margin: 16px 0;
+            flex-grow: 1;
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 6px;
@@ -434,7 +447,7 @@
         .book-overview-section h3 {
             color: #1e3a8a;
             font-size: 1.1rem;
-            margin: 16px 0 8px 0;
+            margin: 18px 0 8px 0;
         }
         .book-overview-section p {
             margin: 8px 0;
@@ -462,6 +475,19 @@
             display: block;
             margin-bottom: 4px;
         }
+        @media (max-width: 768px) {
+            .book-header-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .book-cover-img {
+                width: 150px;
+            }
+            .book-meta-grid {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
 
     </style>
 </head>
@@ -472,25 +498,28 @@
     <section id="book-overview" class="book-overview-card">
         <h2>About the Textbook: Making Sense of Mass Education (4th Edition)</h2>
 
-        <div class="book-meta-grid">
-            <div class="book-meta-item">
-                <strong>Publication &amp; Publisher</strong>
-                Cambridge University Press (4th Edition, 2022)<br>
-                Port Melbourne, VIC, Australia
-            </div>
-            <div class="book-meta-item">
-                <strong>Authorial Team (QUT)</strong>
-                Gordon Tait, Nerida Spina,<br>
-                Jenna Gillett-Swan, Peter O'Brien
-            </div>
-            <div class="book-meta-item">
-                <strong>Dedication</strong>
-                <em>"For all the students who've ever laughed with (or at) us."</em>
-            </div>
-            <div class="book-meta-item">
-                <strong>Primary Academic Disciplines</strong>
-                Sociology of Education, Critical Policy Studies,<br>
-                Philosophy of Education, Children's Rights
+        <div class="book-header-layout">
+            <img src="images/cover.jpg" alt="Making Sense of Mass Education (4th Edition) Cover" class="book-cover-img">
+            <div class="book-meta-grid">
+                <div class="book-meta-item">
+                    <strong>Publication &amp; Publisher</strong>
+                    Cambridge University Press (4th Edition, 2022)<br>
+                    Port Melbourne, VIC, Australia
+                </div>
+                <div class="book-meta-item">
+                    <strong>Authorial Team (QUT)</strong>
+                    Gordon Tait, Nerida Spina,<br>
+                    Jenna Gillett-Swan, Peter O'Brien
+                </div>
+                <div class="book-meta-item">
+                    <strong>Dedication</strong>
+                    <em>"For all the students who've ever laughed with (or at) us."</em>
+                </div>
+                <div class="book-meta-item">
+                    <strong>Primary Academic Disciplines</strong>
+                    Sociology of Education, Critical Policy Studies,<br>
+                    Philosophy of Education, Children's Rights
+                </div>
             </div>
         </div>
 
