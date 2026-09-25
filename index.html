@@ -3,431 +3,762 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDCX246 Exam Prep: Making Sense of Mass Education</title>
+    <title>EDCX246 Exam Revision Guide: Society and Education</title>
     <style>
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
+        :root {
+            --primary: #1e40af;
+            --primary-light: #dbeafe;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-table-alt: #f9fafb;
+            --border-color: #cbd5e1;
         }
-        h1, h2 {
-            color: #1e40af;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 5px;
-            margin-top: 30px;
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 24px;
+            color: var(--text-main);
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 6px;
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 24px;
+            margin-bottom: 8px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
+            font-size: 0.95rem;
             background-color: #ffffff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
         th, td {
-            border: 1px solid #cbd5e1;
+            border: 1px solid var(--border-color);
             padding: 12px 14px;
             text-align: left;
             vertical-align: top;
         }
         th {
-            background-color: #f8fafc;
+            background-color: #f1f5f9;
+            color: #0f172a;
             font-weight: 600;
         }
         tr:nth-child(even) td {
-            background-color: #fafbfc;
+            background-color: var(--bg-table-alt);
+        }
+        .chapter-summary {
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .chapter-summary p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+        @media print {
+            body {
+                max-width: 100%;
+                padding: 0;
+                font-size: 10pt;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .chapter-summary {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>EDCX246 Exam Prep: Society and Education</h1>
+    <h1>EDCX246 Exam Revision Guide: Society and Education</h1>
 
     <h2>Theorists, Ideas &amp; Philosophies</h2>
     <table>
-        <tr>
-            <th style="width: 20%;">Theorist / Philosophy</th>
-            <th style="width: 40%;">Core Idea</th>
-            <th style="width: 40%;">Relevant Myth(s) Challenged</th>
-        </tr>
-        <tr>
-            <td><strong>Pierre Bourdieu</strong></td>
-            <td><strong>Cultural Capital &amp; Habitus:</strong> Schools inherently reward middle-class cultural traits, manners, and speech, inadvertently reproducing inequality rather than acting as neutral grounds for merit.</td>
-            <td>Myth: Schooling success is only about individual ability.<br>Myth: Social class is all about money.</td>
-        </tr>
-        <tr>
-            <td><strong>R.W. Connell</strong></td>
-            <td><strong>Hegemonic Masculinity:</strong> Dominant masculine norms actively subordinate women and marginalized men to maintain systemic male dominance.</td>
-            <td>Myth: Boys are the real victims of the schooling system.</td>
-        </tr>
-        <tr>
-            <td><strong>Michel Foucault</strong></td>
-            <td><strong>Governmentality &amp; Panopticon:</strong> Institutions manage populations "at a distance." The constant possibility of being watched leads individuals to internalize discipline and self-govern.</td>
-            <td>Myth: Schools are primarily about education, not regulation.<br>Myth: The structure of the school isn’t important.</td>
-        </tr>
-        <tr>
-            <td><strong>Philippe Ariès</strong></td>
-            <td><strong>The "Invention" of Childhood:</strong> Childhood did not exist as a separate life stage in medieval times; it is a modern, historically constructed category used to categorize and process youth.</td>
-            <td>Myth: 'Childhood' and 'youth' are facts of nature.</td>
-        </tr>
-        <tr>
-            <td><strong>Stuart Hall</strong></td>
-            <td><strong>Active Audience Theory:</strong> Audiences do not passively absorb media; they actively decode, interpret, and negotiate messages based on their cultural backgrounds.</td>
-            <td>Myth: With the news media, you don't need to think, you just need to read and listen.</td>
-        </tr>
-        <tr>
-            <td><strong>Marc Prensky (Critiqued)</strong></td>
-            <td><strong>Digital Natives / Technological Determinism:</strong> The deeply flawed assumption that youth innately navigate technology critically simply because they grew up with it.</td>
-            <td>Myth: Digital technology is the answer to all our education problems.<br>Myth: Technology signals the end of teaching.</td>
-        </tr>
+        <thead>
+            <tr>
+                <th style="width: 22%;">Theorist / Philosophy</th>
+                <th style="width: 40%;">Core Idea</th>
+                <th style="width: 38%;">Relevant Myth(s) Challenged</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Pierre Bourdieu</strong></td>
+                <td><strong>Cultural Capital &amp; Habitus:</strong> Schools inherently reward middle-class cultural traits, speech, and dispositions, converting inherited advantage into academic success and reproducing class inequality.</td>
+                <td>Myth: Schooling success is only about individual ability.<br>Myth: Social class is all about money.</td>
+            </tr>
+            <tr>
+                <td><strong>R.W. Connell</strong></td>
+                <td><strong>Hegemonic Masculinity:</strong> Dominant, culturally exalted masculine archetypes actively subordinate women and marginalized men to maintain systemic gender hierarchies.</td>
+                <td>Myth: Boys are the real victims of the schooling system.</td>
+            </tr>
+            <tr>
+                <td><strong>Michel Foucault</strong></td>
+                <td><strong>Governmentality &amp; Panopticon:</strong> Modern governance operates "at a distance." Continuous surveillance and institutional architecture cause individuals to internalize control and become self-regulating subjects.</td>
+                <td>Myth: Schools are primarily about education, not regulation.<br>Myth: The structure of the school isn't important.</td>
+            </tr>
+            <tr>
+                <td><strong>Philippe Ariès</strong></td>
+                <td><strong>The "Invention" of Childhood:</strong> Childhood did not exist as a separate social category in medieval eras; it is a modern historical construct engineered to segregate, protect, and regulate youth.</td>
+                <td>Myth: 'Childhood' and 'youth' are facts of nature.</td>
+            </tr>
+            <tr>
+                <td><strong>Stuart Hall</strong></td>
+                <td><strong>Active Audience Theory:</strong> Media texts are polysemic; audiences do not passively absorb messages but actively decode, negotiate, and interpret them through their own cultural frameworks.</td>
+                <td>Myth: With the news media, you don't need to think, you just need to read and listen.</td>
+            </tr>
+            <tr>
+                <td><strong>Marc Prensky (Critiqued)</strong></td>
+                <td><strong>Digital Natives / Technological Determinism:</strong> The flawed assumption that children innately possess critical information literacy simply because they grew up using consumer digital devices.</td>
+                <td>Myth: Digital technology is the answer to all our education problems.<br>Myth: Technology signals the end of teaching.</td>
+            </tr>
+        </tbody>
     </table>
 
     <h2>Myths and Sociological Conclusions</h2>
     <table>
-        <tr>
-            <th style="width: 15%;">Topic</th>
-            <th style="width: 42%;">The Myth (The Exam Trap)</th>
-            <th style="width: 43%;">Sociological Conclusion (The Reality)</th>
-        </tr>
-        <tr>
-            <td rowspan="3"><strong>1. Social Class</strong></td>
-            <td>Australia is a society characterised by equality.</td>
-            <td>Australia has significant wealth and educational inequality heavily influenced by class structures.</td>
-        </tr>
-        <tr>
-            <td>Schooling success is only about individual ability.</td>
-            <td>Success is deeply tied to cultural capital and the social reproduction of advantage.</td>
-        </tr>
-        <tr>
-            <td>Social class is all about money.</td>
-            <td>Class encompasses cultural habits, social networks, and internalized behaviors (habitus).</td>
-        </tr>
-        <tr>
-            <td rowspan="4"><strong>2. Race &amp; Ethnicity</strong></td>
-            <td>Humanity is naturally divided into races.</td>
-            <td>Race is a social construct used to organize power and justify inequality, not a biological reality.</td>
-        </tr>
-        <tr>
-            <td>We no longer discriminate on the basis of race or ethnicity.</td>
-            <td>Institutional and systemic racism remains embedded in social structures, including schools.</td>
-        </tr>
-        <tr>
-            <td>Educational outcomes are unaffected by race or ethnicity.</td>
-            <td>Systemic biases directly and negatively impact student achievement and discipline rates.</td>
-        </tr>
-        <tr>
-            <td>There is an 'Indigenous problem' in education.</td>
-            <td>The problem lies within the colonial structures of the education system itself, not with Indigenous students.</td>
-        </tr>
-        <tr>
-            <td rowspan="3"><strong>3. Gender</strong></td>
-            <td>Gender is a biological fact, and schools should provide education for girls and boys accordingly.</td>
-            <td>Gender is socially constructed and fluid; rigid binary education limits student potential.</td>
-        </tr>
-        <tr>
-            <td>Schools are passive spectators to the fact that measures of gender inequality are decreasing.</td>
-            <td>Schools actively reproduce gender norms and must actively work to dismantle them.</td>
-        </tr>
-        <tr>
-            <td>Boys are the real victims of the schooling system.</td>
-            <td>While hegemonic masculinity pressures boys, girls and gender-diverse students face systemic structural disadvantages.</td>
-        </tr>
-        <tr>
-            <td rowspan="3"><strong>5. Governance</strong></td>
-            <td>Society has always been simply a collection of individuals.</td>
-            <td>Individuality is a modern construct shaped by systems of categorization and tracking.</td>
-        </tr>
-        <tr>
-            <td>Schools are primarily about education, not regulation.</td>
-            <td>Schools are central institutions designed for governing populations and managing behavior.</td>
-        </tr>
-        <tr>
-            <td>The structure of the school isn’t really that important to the education process.</td>
-            <td>The physical and temporal structure of schools enforces discipline and self-regulation.</td>
-        </tr>
-        <tr>
-            <td rowspan="2"><strong>8. Pre-Adulthood</strong></td>
-            <td>'Childhood' and 'youth' are facts of nature.</td>
-            <td>They are modern sociological categories created to define, manage, and process young people.</td>
-        </tr>
-        <tr>
-            <td>The categories of childhood and youth have nothing to do with governance.</td>
-            <td>Defining these stages allows the state and schools to regulate and correct behavior based on age.</td>
-        </tr>
-        <tr>
-            <td rowspan="3"><strong>10. The Media</strong></td>
-            <td>We do not need pointless subjects such as media studies in our already crowded curriculum.</td>
-            <td>Critical media literacy is essential because media actively shapes societal norms and power structures.</td>
-        </tr>
-        <tr>
-            <td>With the news media, you don't need to think, you just need to read and listen.</td>
-            <td>Audiences actively decode media; news is a constructed narrative rather than a neutral reflection of reality.</td>
-        </tr>
-        <tr>
-            <td>The media doesn't create moral panics, but even if they do, this doesn't affect education.</td>
-            <td>Media-driven moral panics directly influence education policy, school funding, and the intense scrutiny of teachers.</td>
-        </tr>
-        <tr>
-            <td rowspan="3"><strong>11. Popular Culture</strong></td>
-            <td>Popular culture is rubbish – in terms of taste, it's awful, and in terms of educational value, it's irrelevant.</td>
-            <td>It is a vital site of meaning-making, identity formation, and complex cultural coding for students.</td>
-        </tr>
-        <tr>
-            <td>Teachers need to be up to date with student cultures.</td>
-            <td>Teachers do not need to consume all youth media, but they must respect its validity and teach students critical analysis.</td>
-        </tr>
-        <tr>
-            <td>Popular culture has no place in the classroom.</td>
-            <td>Integrating popular culture bridges the gap between students' lived experiences and formal schooling.</td>
-        </tr>
-        <tr>
-            <td rowspan="3"><strong>12. Technology</strong></td>
-            <td>Technologies aren't that important; they don't affect the fundamentals of what it is to be human.</td>
-            <td>Technology completely reshapes social practices, human interaction, and the nature of knowledge itself.</td>
-        </tr>
-        <tr>
-            <td>Digital technology is the answer to all our education problems.</td>
-            <td>Uncritical tech adoption ignores underlying issues of equity, access, and the necessity of sound pedagogy.</td>
-        </tr>
-        <tr>
-            <td>Technology signals the end of teaching.</td>
-            <td>Teachers are more essential than ever as mediators to help students critically navigate and decode digital environments.</td>
-        </tr>
+        <thead>
+            <tr>
+                <th style="width: 18%;">Topic</th>
+                <th style="width: 41%;">The Myth (The Exam Trap)</th>
+                <th style="width: 41%;">Sociological Conclusion (The Reality)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3"><strong>1. Social Class</strong></td>
+                <td>Australia is a society characterised by equality.</td>
+                <td>Australia has significant wealth and educational inequality heavily influenced by socio-economic class structures.</td>
+            </tr>
+            <tr>
+                <td>Schooling success is only about individual ability.</td>
+                <td>Success is deeply tied to inherited cultural capital and the institutional reproduction of advantage.</td>
+            </tr>
+            <tr>
+                <td>Social class is all about money.</td>
+                <td>Class encompasses cultural dispositions, social networks, and internalized bodily practices (habitus).</td>
+            </tr>
+            <tr>
+                <td rowspan="4"><strong>2. Race &amp; Ethnicity</strong></td>
+                <td>Humanity is naturally divided into races.</td>
+                <td>Race is an ideological and social construct invented to justify colonial domination, not a biological fact.</td>
+            </tr>
+            <tr>
+                <td>We no longer discriminate on the basis of race or ethnicity.</td>
+                <td>Institutional and systemic racism remains embedded in curriculum, discipline policies, and school structures.</td>
+            </tr>
+            <tr>
+                <td>Educational outcomes are unaffected by race or ethnicity.</td>
+                <td>Systemic inequities directly and negatively impact minority and Indigenous student engagement and retention.</td>
+            </tr>
+            <tr>
+                <td>There is an 'Indigenous problem' in education.</td>
+                <td>The defect lies within the colonial structures of the schooling system itself, not within Indigenous students.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>3. Gender</strong></td>
+                <td>Gender is a biological fact, and schools should provide education for girls and boys accordingly.</td>
+                <td>Gender is fluid and socially constructed; rigid binary education limits student potential and reproduces sexism.</td>
+            </tr>
+            <tr>
+                <td>Schools are passive spectators to the fact that measures of gender inequality are decreasing.</td>
+                <td>Schools actively reinforce and reproduce dominant gender norms through language, sport, and behavioral policing.</td>
+            </tr>
+            <tr>
+                <td>Boys are the real victims of the schooling system.</td>
+                <td>While hegemonic masculinity pressures boys, girls and gender-diverse students face ongoing systemic structural inequality.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>5. Governance</strong></td>
+                <td>Society has always been simply a collection of individuals.</td>
+                <td>Individuality is a modern administrative construct created through categorization, surveillance, and testing systems.</td>
+            </tr>
+            <tr>
+                <td>Schools are primarily about education, not regulation.</td>
+                <td>Mass schooling originated as an apparatus of the state designed to manage populations and enforce social order.</td>
+            </tr>
+            <tr>
+                <td>The structure of the school isn't really that important to the education process.</td>
+                <td>The physical and temporal architecture of schools enforces surveillance, docility, and internal self-discipline.</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>8. Pre-Adulthood</strong></td>
+                <td>'Childhood' and 'youth' are facts of nature.</td>
+                <td>They are modern sociological categories created to define, isolate, and administratively process young people.</td>
+            </tr>
+            <tr>
+                <td>The categories of childhood and youth have nothing to do with governance.</td>
+                <td>Age-segregation allows institutions to establish developmental norms, identify anomalies, and enforce conformity.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>10. The Media</strong></td>
+                <td>We do not need pointless subjects such as media studies in our already crowded curriculum.</td>
+                <td>Critical media literacy is essential because mass communication platforms construct reality and reinforce political power.</td>
+            </tr>
+            <tr>
+                <td>With the news media, you don't need to think, you just need to read and listen.</td>
+                <td>Audiences actively decode media narratives; reporting is an engineered representation rather than objective reality.</td>
+            </tr>
+            <tr>
+                <td>The media doesn't create moral panics, but even if they do, this doesn't affect education.</td>
+                <td>Media-generated moral panics distort policy priorities, induce curriculum purges, and intensify scrutiny on teachers.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>11. Popular Culture</strong></td>
+                <td>Popular culture is rubbish &ndash; in terms of taste, it's awful, and in terms of educational value, it's irrelevant.</td>
+                <td>Popular culture is a critical site of student meaning-making, identity formation, and layered cultural communication.</td>
+            </tr>
+            <tr>
+                <td>Teachers need to be up to date with student cultures.</td>
+                <td>Teachers do not need to consume youth trends, but they must validate student lived culture and teach critical analysis.</td>
+            </tr>
+            <tr>
+                <td>Popular culture has no place in the classroom.</td>
+                <td>Integrating popular culture bridges out-of-school experiences with rigorous academic interrogation of power.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>12. Technology</strong></td>
+                <td>Technologies aren't that important; they don't affect the fundamentals of what it is to be human.</td>
+                <td>Digital technology profoundly reconfigures human relationships, social practices, and epistemological authority.</td>
+            </tr>
+            <tr>
+                <td>Digital technology is the answer to all our education problems.</td>
+                <td>Uncritical technology rollouts prioritize administrative gadgetry over pedagogy while reinforcing digital inequities.</td>
+            </tr>
+            <tr>
+                <td>Technology signals the end of teaching.</td>
+                <td>Teachers are more vital than ever to guide students in critically evaluating biased, contested online information.</td>
+            </tr>
+        </tbody>
     </table>
 
     <h2>Definitions Dictionary by Chapter</h2>
     <table>
-        <tr>
-            <th style="width: 22%;">Chapter</th>
-            <th style="width: 23%;">Term</th>
-            <th style="width: 55%;">Definition</th>
-        </tr>
-        <!-- Chapter 1 -->
-        <tr>
-            <td rowspan="7"><strong>Chapter 1: Social Class</strong></td>
-            <td><strong>Myth</strong></td>
-            <td>An idea or story that many people believe, but which is not true.</td>
-        </tr>
-        <tr>
-            <td><strong>Socioeconomic status (SES)</strong></td>
-            <td>A statistical measure of relative standing in society, usually based on income, education, and occupation.</td>
-        </tr>
-        <tr>
-            <td><strong>Sociological imagination</strong></td>
-            <td>A term coined by American sociologist C. Wright Mills to describe the ability to see the connection between the larger world and our personal lives.</td>
-        </tr>
-        <tr>
-            <td><strong>Cultural capital</strong></td>
-            <td>A term coined by French sociologist Pierre Bourdieu to describe the non-financial social assets that promote social mobility beyond economic means (e.g., education, intellect, style of speech, dress, or physical appearance).</td>
-        </tr>
-        <tr>
-            <td><strong>Habitus</strong></td>
-            <td>Bourdieu's term to describe the self-perceptions and beliefs that develop as part of one's social identity and shape one's conceptions of the world and where one fits in it.</td>
-        </tr>
-        <tr>
-            <td><strong>Social reproduction</strong></td>
-            <td>The processes by which the structures and activities of a given society are maintained and transmitted from one generation to the next.</td>
-        </tr>
-        <tr>
-            <td><strong>Meritocracy</strong></td>
-            <td>A social system in which individuals advance and earn rewards in direct proportion to their individual abilities and efforts.</td>
-        </tr>
-
-        <!-- Chapter 2 -->
-        <tr>
-            <td rowspan="6"><strong>Chapter 2: Race, Ethnicity and Indigeneity</strong></td>
-            <td><strong>Race</strong></td>
-            <td>A social construct used to categorise people based on physical characteristics.</td>
-        </tr>
-        <tr>
-            <td><strong>Ethnicity</strong></td>
-            <td>A social construct used to categorise people based on shared cultural heritage.</td>
-        </tr>
-        <tr>
-            <td><strong>Indigeneity</strong></td>
-            <td>Originating or occurring naturally in a particular place.</td>
-        </tr>
-        <tr>
-            <td><strong>Racism</strong></td>
-            <td>Prejudice, discrimination, or antagonism directed against someone of a different race based on the belief that one's own race is superior.</td>
-        </tr>
-        <tr>
-            <td><strong>Eugenics</strong></td>
-            <td>The study of how to arrange reproduction within a human population to increase the occurrence of heritable characteristics regarded as desirable.</td>
-        </tr>
-        <tr>
-            <td><strong>Whiteness</strong></td>
-            <td>The invisible, unexamined standard or norm against which all other racial identities are judged.</td>
-        </tr>
-
-        <!-- Chapter 3 -->
-        <tr>
-            <td rowspan="3"><strong>Chapter 3: Gender</strong></td>
-            <td><strong>Gender</strong></td>
-            <td>The socially constructed characteristics of women and men.</td>
-        </tr>
-        <tr>
-            <td><strong>Sex</strong></td>
-            <td>Biological characteristics that define humans as female or male.</td>
-        </tr>
-        <tr>
-            <td><strong>Hegemonic masculinity</strong></td>
-            <td>A practice that legitimises men's dominant position in society and justifies the subordination of women, and other marginalised ways of being a man.</td>
-        </tr>
-
-        <!-- Chapter 4 -->
-        <tr>
-            <td><strong>Chapter 4: Sexualities</strong></td>
-            <td><strong>Sexuality</strong></td>
-            <td>A person's sexual orientation or preference.</td>
-        </tr>
-
-        <!-- Chapter 5 -->
-        <tr>
-            <td rowspan="5"><strong>Chapter 5: Governance</strong></td>
-            <td><strong>Governance</strong></td>
-            <td>The action or manner of governing.</td>
-        </tr>
-        <tr>
-            <td><strong>Governmentality</strong></td>
-            <td>A term coined by philosopher Michel Foucault that refers to the way in which the state exercises control over, or governs, the body of its populace.</td>
-        </tr>
-        <tr>
-            <td><strong>Panopticon</strong></td>
-            <td>A disciplinary concept brought to life in the form of a central observation tower placed within a circle of prison cells.</td>
-        </tr>
-        <tr>
-            <td><strong>Sovereign power</strong></td>
-            <td>Power exercised through coercion.</td>
-        </tr>
-        <tr>
-            <td><strong>Disciplinary power</strong></td>
-            <td>Power exercised through surveillance and normalization.</td>
-        </tr>
-
-        <!-- Chapter 6 -->
-        <tr>
-            <td rowspan="2"><strong>Chapter 6: Subjectivity</strong></td>
-            <td><strong>Subjectivity</strong></td>
-            <td>How someone's judgment is shaped by personal opinions and feelings instead of outside influences.</td>
-        </tr>
-        <tr>
-            <td><strong>Pathologise</strong></td>
-            <td>To regard or treat someone or something as psychologically abnormal or unhealthy.</td>
-        </tr>
-
-        <!-- Chapter 7 -->
-        <tr>
-            <td><strong>Chapter 7: Neoliberalism and Marketisation</strong></td>
-            <td><strong>Neoliberalism</strong></td>
-            <td>A political approach that favours free-market capitalism, deregulation, and reduction in government spending.</td>
-        </tr>
-
-        <!-- Chapter 8 -->
-        <tr>
-            <td rowspan="2"><strong>Chapter 8: Pre-Adulthood</strong></td>
-            <td><strong>Pre-adulthood</strong></td>
-            <td>The period of human development leading up to adulthood.</td>
-        </tr>
-        <tr>
-            <td><strong>Developmentalism</strong></td>
-            <td>A theoretical approach that focuses on the cognitive, emotional, and social changes that occur throughout a person's lifespan.</td>
-        </tr>
-
-        <!-- Chapter 9 -->
-        <tr>
-            <td><strong>Chapter 9: Datafication</strong></td>
-            <td><strong>Datafication</strong></td>
-            <td>A modern technological trend turning many aspects of our life into computerised data and transforming this information into new forms of value.</td>
-        </tr>
-
-        <!-- Chapter 10 -->
-        <tr>
-            <td rowspan="3"><strong>Chapter 10: The Media</strong></td>
-            <td><strong>Media</strong></td>
-            <td>The main means of mass communication (broadcasting, publishing, and the internet) regarded collectively.</td>
-        </tr>
-        <tr>
-            <td><strong>Active audience</strong></td>
-            <td>A theory that argues that audiences do not just receive information passively but are actively involved, often unconsciously, in making sense of the message within their personal and social contexts.</td>
-        </tr>
-        <tr>
-            <td><strong>Moral panic</strong></td>
-            <td>A feeling of fear spread among a large number of people that some evil threatens the well-being of society.</td>
-        </tr>
-
-        <!-- Chapter 11 -->
-        <tr>
-            <td rowspan="3"><strong>Chapter 11: Popular Culture</strong></td>
-            <td><strong>Popular culture</strong></td>
-            <td>Culture based on the tastes of ordinary people rather than an educated elite.</td>
-        </tr>
-        <tr>
-            <td><strong>High culture</strong></td>
-            <td>Cultural products highly valued by a society.</td>
-        </tr>
-        <tr>
-            <td><strong>Polysemy</strong></td>
-            <td>The coexistence of many possible meanings for a word or phrase.</td>
-        </tr>
-
-        <!-- Chapter 12 -->
-        <tr>
-            <td rowspan="3"><strong>Chapter 12: Technology</strong></td>
-            <td><strong>Technology</strong></td>
-            <td>The application of scientific knowledge for practical purposes, especially in industry.</td>
-        </tr>
-        <tr>
-            <td><strong>Technological determinism</strong></td>
-            <td>A reductionist theory that assumes that a society's technology determines the development of its social structure and cultural values.</td>
-        </tr>
-        <tr>
-            <td><strong>Digital natives</strong></td>
-            <td>A person born or brought up during the age of digital technology and therefore familiar with computers and the internet from an early age.</td>
-        </tr>
-
-        <!-- Chapter 13 -->
-        <tr>
-            <td><strong>Chapter 13: Globalisation</strong></td>
-            <td><strong>Globalisation</strong></td>
-            <td>The process by which businesses or other organizations develop international influence or start operating on an international scale.</td>
-        </tr>
-
-        <!-- Chapter 14 -->
-        <tr>
-            <td><strong>Chapter 14: Philosophy</strong></td>
-            <td><strong>Philosophy</strong></td>
-            <td>The study of the fundamental nature of knowledge, reality, and existence.</td>
-        </tr>
-
-        <!-- Chapter 15 -->
-        <tr>
-            <td><strong>Chapter 15: Ethics and the Law</strong></td>
-            <td><strong>Ethics</strong></td>
-            <td>Moral principles that govern a person's behaviour or the conducting of an activity.</td>
-        </tr>
-
-        <!-- Chapter 16 -->
-        <tr>
-            <td><strong>Chapter 16: Children's Rights</strong></td>
-            <td><strong>Children's rights</strong></td>
-            <td>The human rights of children with particular attention to the rights of special protection and care afforded to minors.</td>
-        </tr>
-
-        <!-- Chapter 17 -->
-        <tr>
-            <td><strong>Chapter 17: Truth and Postcolonialism</strong></td>
-            <td><strong>Postcolonialism</strong></td>
-            <td>The academic study of the cultural legacy of colonialism and imperialism, focusing on the human consequences of the control and exploitation of colonized people and their lands.</td>
-        </tr>
-
-        <!-- Chapter 18 -->
-        <tr>
-            <td><strong>Chapter 18: Alternative Education</strong></td>
-            <td><strong>Alternative education</strong></td>
-            <td>Educational activities that fall outside the traditional, mainstream education system.</td>
-        </tr>
+        <thead>
+            <tr>
+                <th style="width: 20%;">Chapter</th>
+                <th style="width: 22%;">Term</th>
+                <th style="width: 58%;">Sociological Definition</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="7"><strong>Chapter 1: Social Class</strong></td>
+                <td><strong>Myth</strong></td>
+                <td>An idea or story that many people believe, but which is demonstrably false under empirical analysis.</td>
+            </tr>
+            <tr>
+                <td><strong>Socioeconomic status (SES)</strong></td>
+                <td>A statistical measure of relative standing in society based on income, educational attainment, and occupational prestige.</td>
+            </tr>
+            <tr>
+                <td><strong>Sociological imagination</strong></td>
+                <td>C. Wright Mills' concept describing the capacity to connect personal troubles with broader public, structural issues.</td>
+            </tr>
+            <tr>
+                <td><strong>Cultural capital</strong></td>
+                <td>Pierre Bourdieu's term for non-financial social assets (language codes, tastes, manners) that enable social mobility.</td>
+            </tr>
+            <tr>
+                <td><strong>Habitus</strong></td>
+                <td>Bourdieu's concept of deeply ingrained, subconscious dispositions and habits acquired through one's social class position.</td>
+            </tr>
+            <tr>
+                <td><strong>Social reproduction</strong></td>
+                <td>The structural processes through which existing social inequalities are transmitted from one generation to the next.</td>
+            </tr>
+            <tr>
+                <td><strong>Meritocracy</strong></td>
+                <td>A system wherein rewards and advancement are believed to be distributed purely according to individual talent and effort.</td>
+            </tr>
+            <tr>
+                <td rowspan="6"><strong>Chapter 2: Race, Ethnicity and Indigeneity</strong></td>
+                <td><strong>Race</strong></td>
+                <td>A social construct categorizing human populations based on physical traits, historically used to justify domination.</td>
+            </tr>
+            <tr>
+                <td><strong>Ethnicity</strong></td>
+                <td>A social category grouping individuals according to shared cultural heritage, ancestry, language, or traditions.</td>
+            </tr>
+            <tr>
+                <td><strong>Indigeneity</strong></td>
+                <td>The state of originating naturally from a specific geographic land, retaining primordial sovereignty and cultural continuity.</td>
+            </tr>
+            <tr>
+                <td><strong>Racism</strong></td>
+                <td>Prejudice and institutionalized power operating to disadvantage groups perceived as racially or ethnically inferior.</td>
+            </tr>
+            <tr>
+                <td><strong>Eugenics</strong></td>
+                <td>The pseudoscientific practice of engineering human reproduction to breed desired traits, weaponized in colonial schooling.</td>
+            </tr>
+            <tr>
+                <td><strong>Whiteness</strong></td>
+                <td>An unexamined institutional baseline that positions white Eurocentric culture as the universal, objective standard.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>Chapter 3: Gender</strong></td>
+                <td><strong>Gender</strong></td>
+                <td>The socially constructed roles, behaviors, and expectations attributed to individuals on the basis of perceived sex.</td>
+            </tr>
+            <tr>
+                <td><strong>Sex</strong></td>
+                <td>Biological categorizations based on chromosomal, hormonal, and anatomical characteristics.</td>
+            </tr>
+            <tr>
+                <td><strong>Hegemonic masculinity</strong></td>
+                <td>R.W. Connell's concept of culturally dominant masculine behaviors that maintain male dominance and subordinate femininity.</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 4: Sexualities</strong></td>
+                <td><strong>Sexuality</strong></td>
+                <td>An individual's emotional, romantic, and sexual attraction and identity within societal relational frameworks.</td>
+            </tr>
+            <tr>
+                <td rowspan="5"><strong>Chapter 5: Governance</strong></td>
+                <td><strong>Governance</strong></td>
+                <td>The coordinated actions, policies, and mechanisms through which populations and institutions are directed and regulated.</td>
+            </tr>
+            <tr>
+                <td><strong>Governmentality</strong></td>
+                <td>Michel Foucault's term for modern techniques that guide individual conduct so citizens willingly govern their own behavior.</td>
+            </tr>
+            <tr>
+                <td><strong>Panopticon</strong></td>
+                <td>An architectural model of circular prison surveillance where constant unverifiable observation induces self-policing.</td>
+            </tr>
+            <tr>
+                <td><strong>Sovereign power</strong></td>
+                <td>Top-down, coercive power historically exercised through direct physical force and absolute public authority.</td>
+            </tr>
+            <tr>
+                <td><strong>Disciplinary power</strong></td>
+                <td>Diffuse power operating through subtle administrative schedules, classification, surveillance, and normalization.</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>Chapter 6: Subjectivity</strong></td>
+                <td><strong>Subjectivity</strong></td>
+                <td>An individual's conscious internal sense of self, agency, and worldview, produced through social and institutional discourses.</td>
+            </tr>
+            <tr>
+                <td><strong>Pathologise</strong></td>
+                <td>The practice of defining normal social, behavioral, or cultural differences as psychological or medical disorders.</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 7: Neoliberalism</strong></td>
+                <td><strong>Neoliberalism</strong></td>
+                <td>An ideological framework prioritizing free-market competition, deregulation, privatization, and consumer choice in schooling.</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>Chapter 8: Pre-Adulthood</strong></td>
+                <td><strong>Pre-adulthood</strong></td>
+                <td>The historically constructed developmental transitional phase between infancy and legal, economic adulthood.</td>
+            </tr>
+            <tr>
+                <td><strong>Developmentalism</strong></td>
+                <td>The psychological doctrine positing universal, linear biological stages that schools utilize to batch students by chronological age.</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 9: Datafication</strong></td>
+                <td><strong>Datafication</strong></td>
+                <td>The systematic quantification of pedagogical processes, human performance, and school qualities into digital metrics.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>Chapter 10: The Media</strong></td>
+                <td><strong>Media</strong></td>
+                <td>The institutionalized collective channels of mass communication (print, broadcast, and interactive digital networks).</td>
+            </tr>
+            <tr>
+                <td><strong>Active audience</strong></td>
+                <td>A media theory asserting that recipients actively construct individual meaning through negotiation rather than passive absorption.</td>
+            </tr>
+            <tr>
+                <td><strong>Moral panic</strong></td>
+                <td>A collective societal anxiety engineered by sensationalized media coverage targeting a perceived threat to social order.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>Chapter 11: Popular Culture</strong></td>
+                <td><strong>Popular culture</strong></td>
+                <td>The commercialized cultural expressions, arts, and consumer practices widely engaged with by non-elite populations.</td>
+            </tr>
+            <tr>
+                <td><strong>High culture</strong></td>
+                <td>Cultural artifacts historically venerated by socio-political elites and granted privileged status in school curricula.</td>
+            </tr>
+            <tr>
+                <td><strong>Polysemy</strong></td>
+                <td>The structural property of cultural texts to contain multiple, diverse, and often contradictory interpretive meanings.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>Chapter 12: Technology</strong></td>
+                <td><strong>Technology</strong></td>
+                <td>The application of scientific and computational apparatuses within organized institutional and social practices.</td>
+            </tr>
+            <tr>
+                <td><strong>Technological determinism</strong></td>
+                <td>The reductive assumption that technical machinery autonomously drives historical, educational, and social change.</td>
+            </tr>
+            <tr>
+                <td><strong>Digital natives</strong></td>
+                <td>A disputed label presuming that generations born into digital environments possess instinctive technological proficiency.</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 13: Globalisation</strong></td>
+                <td><strong>Globalisation</strong></td>
+                <td>The worldwide integration of economic, financial, cultural, and political policies eroding nation-state autonomy.</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 14: Philosophy</strong></td>
+                <td><strong>Philosophy</strong></td>
+                <td>The critical investigation into foundational questions of knowledge (epistemology), reality (ontology), and values (ethics).</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 15: Ethics and Law</strong></td>
+                <td><strong>Ethics</strong></td>
+                <td>Moral frameworks guiding professional human action, exceeding statutory legal compliance to demand genuine justice and care.</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 16: Children's Rights</strong></td>
+                <td><strong>Children's rights</strong></td>
+                <td>Inalienable, legally codified protections granting youth both protective entitlements and participatory self-determination.</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 17: Postcolonialism</strong></td>
+                <td><strong>Postcolonialism</strong></td>
+                <td>The academic and political deconstruction of imperial epistemologies and their ongoing structural legacies in schooling.</td>
+            </tr>
+            <tr>
+                <td><strong>Chapter 18: Alternative Ed</strong></td>
+                <td><strong>Alternative education</strong></td>
+                <td>Pedagogical approaches diverging from state-mandated mass education to center democratic governance and learner autonomy.</td>
+            </tr>
+        </tbody>
     </table>
+
+    <h2>Chapter Summaries (Three-Paragraph Analysis)</h2>
+
+    <div class="chapter-summary">
+        <h3>Chapter 1: Social Class</h3>
+        <p>This chapter challenges the persistent egalitarian myth that Australia is an essentially classless society where schooling operates as an objective, meritocratic playing field. Tait et al. demonstrate that socio-economic status remains one of the strongest structural determinants of educational access, engagement, and post-school outcomes. By contrasting common-sense views of success as purely individual ability with empirical disparities, the text establishes that educational institutions reflect existing socio-economic hierarchies rather than functioning as neutral social escalators.</p>
+        <p>Drawing on the sociology of Pierre Bourdieu, the authors explain that social class encompasses far more than financial wealth; it includes cultural capital and habitus. Schools naturally validate and reward the middle- and upper-class linguistic codes, cultural knowledge, and dispositions, thereby converting inherited privilege into educational achievement. This dynamic drives social reproduction, ensuring that the existing class structure is perpetuated and legitimated under the guise of natural academic merit.</p>
+        <p>For educators, the chapter underscores the necessity of moving beyond deficit perspectives that pathologize working-class students and their families. Teachers are challenged to identify the hidden curriculum operating within assessment criteria, classroom discourses, and institutional cultures. By developing a critical sociological imagination, educators can adopt practices that support marginalized students, question class biases, and advocate for equitable resourcing rather than reinforcing systemic disadvantage.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 2: Race, Ethnicity and Indigeneity</h3>
+        <p>The chapter dismantles biological definitions of race, highlighting that human categorization based on physical characteristics is a historical, social, and political invention. The authors trace how historical racial hierarchies and pseudoscientific doctrines like eugenics were constructed to rationalize colonial exploitation, dispossession, and systemic oppression. In modern education, these constructed categories persist through institutional mechanisms that perpetuate systemic racism despite official commitments to equality and multiculturalism.</p>
+        <p>A central theoretical focus is the critique of the "Indigenous problem" discourse, which shifts the responsibility for educational disparities onto First Nations communities rather than the colonial education system itself. The text examines how "whiteness" functions as an unexamined, normative standard against which all curriculum, language, and behavior are judged. As a consequence, Indigenous and minority students often experience structural marginalization, disproportionately punitive discipline, and curricular alienation.</p>
+        <p>The pedagogical imperative of this chapter requires educators to actively de-center Eurocentric perspectives and unmask institutional racism within schooling. Teachers must cultivate culturally responsive and sustaining pedagogical practices that respect Indigenous ways of knowing and being. Moving beyond superficial celebrations of diversity, the text demands that schools critically analyze institutional structures and engage in genuine reconciliation that acknowledges sovereignty and self-determination.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 3: Gender</h3>
+        <p>This chapter critically deconstructs the assumption that gender is a binary biological imperative, distinguishing clearly between biological sex and socially constructed gender roles. The authors challenge the common-sense notion that schools should tailor learning to innate "male" and "female" brains, demonstrating that such essentialist views restrict student potential and perpetuate outdated gender stereotypes. Schools are positioned not as neutral observers of gender difference, but as powerful socializing sites that actively manufacture and reinforce gender norms.</p>
+        <p>Utilizing R.W. Connell's sociology of masculinity, the chapter analyzes how hegemonic masculinity operates within educational settings, particularly through sport, institutional hierarchies, and peer policing. Hegemonic masculinity subordinates both women and alternative ways of being a man, creating pressure on boys while perpetuating structural sexism. Furthermore, the text addresses the contemporary moral panic surrounding "failing boys," arguing that while working-class boys face genuine challenges, framing boys as the primary victims of schooling obscures the ongoing structural inequalities, workplace discrimination, and gendered violence faced by women.</p>
+        <p>Pedagogically, the chapter urges teachers to practice reflexive pedagogy and reject gender-segregated instructional strategies. Teachers are tasked with interrogating how classroom language, subject selection advising, and behavioral expectations reproduce limiting gender identities. By creating classrooms that affirm gender diversity and dismantle rigid binaries, educators can help students navigate and disrupt patriarchal expectations.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 4: Sexualities</h3>
+        <p>This chapter examines how heteronormativity functions as an unspoken, dominant regulatory framework throughout mass schooling. The authors illustrate that educational environments are organized around the presumption that heterosexuality is the natural, universal default, rendering diverse sexualities invisible or abnormal. By problematizing this silence, the text reveals how schools enforce compliance with dominant sexual norms through curriculum omissions, administrative policies, and everyday social interactions.</p>
+        <p>The theoretical discussion exposes the "hidden curriculum" of heteronormativity, which generates significant psychological and educational risks for LGBTQ+ youth. Bullying, homophobic language, and lack of representation in formal curricula leave sexual minority students vulnerable to marginalization and alienation. The authors also challenge the paternalistic argument that discussing sexuality corrupts childhood innocence, showing that such rhetoric is weaponized to prevent schools from providing inclusive pastoral care and comprehensive relationships education.</p>
+        <p>For educational practitioners, the chapter outlines a profound legal and ethical duty of care to protect and validate sexual diversity. Schools must actively incorporate diverse sexualities into curriculum areas, implement explicit anti-homophobia policies, and support student-led equity initiatives. Educators must move from passive tolerance to proactive affirmation, ensuring that schooling provides a safe and supportive environment for all identities.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 5: Governance</h3>
+        <p>This chapter reframes the fundamental purpose of mass schooling, shifting the perspective from a purely instructional service to a primary mechanism of social regulation and governance. The authors trace the historical evolution of modern schooling to the necessity of managing, training, and standardizing large industrial populations. Rather than existing as politically neutral sites, schools serve as vital intermediaries through which the state cultivates social order, moral uniformity, and productive labor.</p>
+        <p>Drawing centrally on Michel Foucault's concepts of disciplinary power and governmentality, the text explores how power operates "at a distance" rather than through overt sovereign force. Schools utilize spatial distribution, cellular seating, rigid timetables, continuous testing, and hierarchical surveillance to instill self-discipline. The architectural and procedural model of the Panopticon illustrates how the constant possibility of being observed leads students to internalize behavioral norms, turning them into self-governing subjects.</p>
+        <p>The pedagogical takeaway challenges educators to reflect on their own roles as agents of state governance. Standardized testing, attendance logs, and diagnostic categorizations are revealed as technologies of surveillance that sort and normalize youth. Educators are encouraged to cultivate critical reflexivity, questioning whether routine institutional practices prioritize bureaucratic social control over genuine, emancipatory learning.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 6: Subjectivity</h3>
+        <p>The focus of this chapter is on how schooling shapes student subjectivity&mdash;the internal sense of self, agency, and psychological normality. Tait et al. critique the assumption that an individual's personality, intelligence, and behavioral disposition are purely innate qualities. Instead, the text argues that individual subjectivity is produced through social interactions, institutional discourses, and the specialized vocabularies of modern educational bureaucracies.</p>
+        <p>The authors provide a critical analysis of the "psy-complex"&mdash;the pervasive influence of psychology, psychiatry, and educational therapy in diagnosing and categorizing student behavior. The chapter unpacks how non-compliant, disruptive, or atypical student behaviors are increasingly pathologized as medical or cognitive disorders such as ADHD. While acknowledging that medical diagnoses can provide support, the text cautions that pathologization often reclassifies social, environmental, or pedagogical problems as individual chemical deficiencies, removing responsibility from institutional structures.</p>
+        <p>For classroom practitioners, this chapter urges caution against relying on psychological labels to define a student's total capability. Teachers are encouraged to view behavioral challenges within their broader social and institutional contexts rather than jumping immediately to medical deficit models. Supporting student agency requires recognizing that subjectivities are fluid, socially constructed, and heavily influenced by classroom environments.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 7: Neoliberalism and Marketisation</h3>
+        <p>This chapter examines how neoliberal ideology has fundamentally transformed public schooling into a competitive marketplace. The authors demonstrate that principles derived from free-market economics&mdash;such as privatization, deregulation, competition, and consumer choice&mdash;now dominate educational policy. Schools are increasingly conceptualized as competitive service delivery firms, while parents and students are framed as individual consumers purchasing private educational advantages.</p>
+        <p>The text illustrates the mechanisms driving this transformation: public league tables, standardized assessment rankings (My School), corporate management techniques, and the growth of independent school sectors. Far from lifting all educational standards as free-market theory promises, marketisation deepens socio-spatial segregation. Well-resourced families leverage their economic and cultural capital to access elite schools, while under-resourced public schools are trapped in vicious cycles of residualisation and negative public branding.</p>
+        <p>For teachers, the consequences of neoliberal marketisation include an intensification of administrative workload, performative auditing, and a narrowing of professional autonomy. Pedagogical focus is frequently distorted toward measurable marketing metrics rather than holistic student well-being. The authors call on educators to defend the democratic, common-good vision of public education against encroaching commercialization.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 8: Pre-Adulthood</h3>
+        <p>The chapter deconstructs the naturalized categories of "childhood" and "youth" (pre-adulthood), demonstrating that they are modern social constructs rather than fixed biological realities. Engaging with the historiography of Philippe Ari&egrave;s, the text shows that prior to industrial modernity, children were integrated into the adult social fabric without distinct legal, developmental, or institutional boundaries. Modern pre-adulthood was invented in tandem with compulsory mass schooling to protect, segregate, and manage the young.</p>
+        <p>The authors critique rigid developmentalism&mdash;the dominant psychological belief that children must inevitably progress through universal, age-locked biological stages. By organizing schools strictly into age-segregated cohorts, educational systems treat age as an administrative batching mechanism. This linear normalization allows institutions to systematically identify, categorize, and correct deviations from the developmental mean, limiting recognition of children's diverse capacities.</p>
+        <p>In terms of teaching practice, the chapter challenges educators to respect the genuine autonomy, voice, and lived experiences of young people. Teachers are urged to reflect on how adultist assumptions lead to paternalistic classroom dynamics that provoke student resistance. By viewing pre-adulthood as fluid and culturally contingent, educators can build collaborative pedagogical relationships that treat young people as capable social actors.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 9: Datafication</h3>
+        <p>This chapter investigates the pervasive rise of datafication within education&mdash;the transformation of all facets of learning, teaching, and school life into quantifiable digital data. The authors critique the positivist assumption that numerical data provides an objective, unmediated representation of educational reality. Instead, they argue that data production is an ideologically driven practice that constructs a specific, narrow version of what counts as successful learning.</p>
+        <p>The text focuses on "governance by numbers," demonstrating how large-scale standardized testing like NAPLAN functions as a powerful instrument of remote accountability and surveillance. Data metrics are weaponized to create school comparisons, enforce bureaucratic compliance, and justify political interventions. Consequently, datafication produces a dramatic narrowing of the taught curriculum, promotes high-stakes "teaching to the test," and generates profound emotional anxiety for both students and teaching professionals.</p>
+        <p>For classroom practitioners, this chapter advocates for reclaiming professional judgment and qualitative evaluation over uncritical data-driven instruction. Educators are reminded that data always reflects socio-economic context and systemic inequities rather than simple school quality. Resisting excessive datafication requires asserting that holistic human growth, ethical development, and creative thinking cannot be meaningfully captured in a spreadsheet.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 10: The Media</h3>
+        <p>This chapter analyzes the role of mass media in shaping cultural understandings of schooling, educators, and youth. The authors reject the myth that media consumption is irrelevant to classroom practice, demonstrating that news, television, and digital platforms structure the public imagination. Mass media is not a neutral mirror of society; it is an active producer of meaning that frequently reproduces dominant political interests and cultural anxieties.</p>
+        <p>A central theoretical focus is Stuart Hall's encoding/decoding model and active audience theory. The authors reject the simplistic idea that audiences passively absorb media messages, emphasizing instead that students and communities actively interpret media texts through their own social contexts. However, the media regularly instigates moral panics&mdash;exaggerated representations of juvenile crime, falling literacy standards, or "bad" teachers&mdash;that distract the public from systemic educational underfunding and justify aggressive state intervention.</p>
+        <p>The pedagogical implication is the vital importance of critical media literacy across all curriculum areas. Teachers must equip students to deconstruct media biases, analyze representations of power, identify corporate interests, and decode multimodal texts. Additionally, teachers must understand how media reporting constructs unfair public expectations of their professional labor, maintaining a critical stance toward public education panics.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 11: Popular Culture</h3>
+        <p>The chapter challenges the traditional cultural hierarchy that dismisses popular culture as disposable, mindless "rubbish" lacking educational merit. Tait et al. critique the historical elitism that positions canonical "high culture" as the only valid knowledge worthy of classroom study. They argue that popular culture&mdash;including commercial music, social media, fashion, video games, and film&mdash;is a vital, sophisticated arena where young people actively construct their identities and make sense of their social worlds.</p>
+        <p>The theoretical discussion highlights the concepts of polysemy and intertextuality. Modern popular cultural texts contain complex, layered codes and contradictory meanings that audiences actively negotiate. The text emphasizes that the traditional divide between formal school knowledge and out-of-school popular culture has fundamentally eroded, making attempts to wall off the classroom from popular media counterproductive and alienating to students.</p>
+        <p>For teachers, embracing popular culture does not mean adopting student slang or pandering to commercial trends. Instead, it requires treating popular cultural texts as legitimate objects of rigorous critical inquiry. By analyzing popular texts in the classroom, educators can help students critique ideological messages regarding race, gender, sexuality, and consumerism, bridging the gap between student lived experience and academic analysis.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 12: Technology</h3>
+        <p>This chapter challenges both uncritical techno-optimism and alarmist technophobia in educational discourse. The authors refute the technological determinist belief that digital devices will inevitably revolutionize learning or solve systemic educational inequalities. Technology is framed not as an autonomous, neutral collection of gadgets, but as a socially configured set of practices embedded within existing institutional, economic, and political power structures.</p>
+        <p>A crucial conceptual critique targets Marc Prensky's "digital native" thesis. The authors argue that assuming young people possess innate, sophisticated technological fluency merely because they grew up with screens is a flawed pedagogical assumption. While students may be proficient consumers of entertainment apps, they often lack critical information literacy, algorithmic awareness, and the capacity to evaluate contested online knowledge. Furthermore, digital divides persist across socio-economic and geographic lines, meaning technology frequently exacerbates rather than closes achievement gaps.</p>
+        <p>The chapter strongly asserts the centrality of the teacher as an indispensable pedagogical mediator. Technology does not signal the end of teaching; rather, it demands that educators teach *about* the digital landscape&mdash;analyzing privacy, corporate surveillance, algorithmic bias, and digital ethics&mdash;rather than merely using technology as an administrative transmission tool.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 13: Globalisation</h3>
+        <p>This chapter explores the profound effects of globalisation on national education systems. The authors outline how accelerating flows of capital, people, culture, and information have eroded traditional boundaries, challenging the assumption that national education policy can operate in isolation. Globalisation is analyzed through three prominent lenses: hyperglobalist views that celebrate borderless markets, skeptical views emphasizing the persistence of national borders, and transformationalist views that track complex global-local adaptations.</p>
+        <p>The primary mechanism discussed is the emergence of a "global education policy field" driven by transnational organizations such as the OECD and the World Bank. Standardized international league tables, most notably PISA, exert immense pressure on nation-states to harmonize their curricula, adopt standardized testing, and align schooling outcomes with global economic competitiveness. This global governance fosters policy convergence, where national school systems increasingly resemble each other in prioritizing STEM and quantifiable economic skills over local social needs.</p>
+        <p>For educational professionals, understanding globalisation requires recognizing the ideological forces shaping local curricula and resource allocation. Teachers must prepare students to navigate global citizenship, cultural diversity, and international challenges like climate change, while resisting the reduction of education to an instrument of global corporate labor supply.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 14: Philosophy</h3>
+        <p>This chapter argues for the vital, enduring relevance of philosophy within contemporary teacher education. The authors critique the myth that philosophy is an obsolete, abstract academic luxury unsuited to twenty-first-century classrooms. They assert that every pedagogical decision, curriculum choice, and disciplinary action is inherently underpinned by philosophical assumptions about what knowledge is, what reality is, and what constitutes a good human life.</p>
+        <p>The text surveys classical and modern philosophical traditions&mdash;including idealism, realism, pragmatism (John Dewey), and critical philosophy&mdash;tracing how these frameworks conceptualize the core purpose of schooling. Epistemological questions regarding whether knowledge is an objective body of facts to be transmitted or a construct negotiated through social experience are shown to directly shape classroom pedagogy. Without philosophical reflection, schooling collapses into unexamined proceduralism and technical compliance.</p>
+        <p>The practical imperative for teachers is the development of an articulate, explicit personal philosophy of education. Possessing a coherent philosophical framework enables educators to navigate educational dilemmas, critique transient policy fads, and advocate for moral and democratic pedagogical practices that align with their foundational values.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 15: Ethics and the Law</h3>
+        <p>The chapter maps the interconnected yet distinct terrains of legal obligations and ethical responsibilities in the teaching profession. Tait et al. debunk the myth that adhering strictly to legal mandates encompasses the entirety of a teacher's moral duty. While the law establishes mandatory minimum boundaries (such as duty of care, negligence prevention, and mandatory reporting), ethics addresses the broader, nuanced dilemmas of human care, justice, and professional integrity.</p>
+        <p>The authors contrast major ethical paradigms: consequentialist (utilitarian) ethics that evaluate outcomes, deontological (duty-based) ethics centered on universal rules, and relational virtue ethics/ethics of care. In modern mass schooling, statutory compliance, standardized codes of conduct, and legal risk management frameworks often conflict with the immediate emotional and developmental needs of individual students. Bureaucratic rules can easily override ethical compassion if not actively interrogated.</p>
+        <p>For educators, this chapter emphasizes that navigating modern classrooms requires deep professional ethical literacy. When legal mandates clash with moral duties&mdash;such as zero-tolerance policies versus restorative student support&mdash;teachers must rely on reasoned ethical deliberation. Cultivating an ethical classroom requires moving beyond fear of legal liability toward actively fostering relationships of mutual trust, dignity, and care.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 16: Children's Rights</h3>
+        <p>This chapter traces the historical rise of children's rights, centering on the 1989 United Nations Convention on the Rights of the Child (UNCRC). The authors refute the traditional notion that rights are granted exclusively upon reaching adulthood or that young people are merely the property of parents and the state. The chapter emphasizes that children are full human beings holding universal, inalienable human rights that compulsory schooling is obligated to uphold.</p>
+        <p>The text balances the tension between protective rights (ensuring safety, nutrition, and freedom from harm) and participatory rights (enabling agency, expression, and involvement in decisions that affect them). Mass schooling systems historically prioritize paternalistic protection and institutional compliance at the expense of student participation. When children's voices are systematically silenced in school decision-making, their legal and moral status as citizens is compromised.</p>
+        <p>The pedagogical implications require a fundamental re-imagining of school governance and classroom interaction. Teachers and administrators are challenged to embed genuine student voice, democratic decision-making, and participatory rights into daily school routines. Operationalizing rights transforms schooling from an authoritarian sorting process into an empowering practice of democratic citizenship.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 17: Truth and Postcolonialism</h3>
+        <p>This chapter critiques the Western Enlightenment assumption that modern curricula represent objective, universal, and culturally neutral "Truth." The authors introduce postcolonial theory to expose how Eurocentric epistemologies were constructed through imperial domination, silencing and delegitimizing Indigenous, colonized, and non-Western systems of knowledge. School curricula continue to reflect these colonial legacies by presenting Western history, science, and literature as the universal pinnacle of human achievement.</p>
+        <p>Drawing on theorists like Edward Said, the text explores concepts of Orientalism, representation, and the construction of the non-Western "Other." The authors demonstrate that colonial discourse systematically constructed colonized peoples as primitive, deficient, and in need of Western civilization. Within contemporary Australian education, this legacy manifests in curricula that minimize colonial violence, present white settlement as peaceful progress, and marginalize Aboriginal and Torres Strait Islander epistemologies.</p>
+        <p>The chapter calls for a comprehensive decolonization of education. Teachers are challenged to interrogate curricular Eurocentrism, recognize Indigenous knowledges as valid, living, and rigorous, and teach multiple historical perspectives. Decolonizing pedagogy requires moving beyond superficial cultural tokenism to actively challenge the epistemic hierarchies embedded within institutional schooling.</p>
+    </div>
+
+    <div class="chapter-summary">
+        <h3>Chapter 18: Alternative Education</h3>
+        <p>The final chapter examines alternative education models that operate outside or in opposition to the traditional, compulsory mass schooling system. The authors challenge the myth that traditional schooling represents the only feasible or successful method for educating a society. By examining diverse alternatives&mdash;including democratic schools, progressive initiatives like Summerhill, Montessori and Steiner schools, and homeschooling&mdash;the chapter demonstrates that education can be organized around fundamentally different values.</p>
+        <p>The theoretical focus examines how alternative models reconfigure the relationships between power, time, space, and curriculum. Traditional schools rely heavily on standardized age-batching, rigid curricula, and external surveillance. In contrast, democratic and progressive schools emphasize student autonomy, self-directed exploration, non-hierarchical community governance, and experiential learning, proving that compulsory coercion is not necessary to foster intellectual growth.</p>
+        <p>For educators within the mainstream system, this chapter serves as an invitation to critical reflection and institutional reform. Understanding alternative models provides teachers with conceptual tools to challenge the taken-for-granted routines of regular classrooms. By importing principles of democratic decision-making, student-led inquiry, and flexible pacing, educators can make mainstream classrooms more humane, engaging, and responsive environments.</p>
+    </div>
+
+    <!-- EXAM STUDY NOTES EXTENSION -->
+    <section id="exam-notes-extension">
+        <style>
+            .callout-box {
+                background-color: #eff6ff;
+                border-left: 4px solid #1e40af;
+                padding: 16px;
+                margin: 20px 0;
+                border-radius: 0 6px 6px 0;
+            }
+            .practice-card {
+                background-color: #ffffff;
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                padding: 16px;
+                margin-bottom: 20px;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            }
+            .practice-card h4 {
+                margin-top: 0;
+                color: #1e40af;
+                font-size: 1.05rem;
+            }
+            .prompt {
+                font-weight: 600;
+                color: #0f172a;
+                margin-bottom: 8px;
+            }
+            .model-answer {
+                background-color: #f8fafc;
+                border-left: 3px solid #059669;
+                padding: 10px 14px;
+                font-size: 0.95rem;
+                margin: 0;
+            }
+            .rule-card {
+                margin-bottom: 14px;
+            }
+            .rule-title {
+                font-weight: 700;
+                color: #b91c1c;
+            }
+            .distinction-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 16px;
+                margin: 20px 0;
+            }
+            .distinction-card {
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                padding: 14px;
+                background-color: #ffffff;
+            }
+            .distinction-card h4 {
+                margin-top: 0;
+                color: #1e40af;
+                border-bottom: 1px solid #e2e8f0;
+                padding-bottom: 6px;
+            }
+        </style>
+
+        <h2>2-Mark Short-Answer Scoring Strategy</h2>
+        <div class="callout-box">
+            <p><strong>The Two-Sentence Scoring Formula:</strong></p>
+            <ul>
+                <li><strong>Sentence 1 (Sociological Definition - 1 Mark):</strong> Define the term precisely, explicitly stating that it is a <em>social construct</em>, <em>structural process</em>, or <em>institutional mechanism</em> rather than a natural, neutral, or biological fact.</li>
+                <li><strong>Sentence 2 (Educational Consequence - 1 Mark):</strong> Explain how this concept specifically manifests in schools—how it sorts students, disciplines behavior, reproduces class/gender inequality, or shapes curriculum.</li>
+            </ul>
+        </div>
+
+        <h2>High-Yield Practice Exam Bank (Model 2-Mark Answers)</h2>
+
+        <div class="practice-card">
+            <h4>Chapter 1: Social Class</h4>
+            <div class="prompt">Prompt: Explain how Pierre Bourdieu’s concept of "cultural capital" accounts for unequal schooling outcomes.</div>
+            <div class="model-answer">
+                <strong>Model Answer:</strong> Cultural capital refers to non-financial social assets—such as linguistic codes, aesthetic tastes, and academic mannerisms—inherited from one's social class background. Because schools implicitly treat middle-class cultural capital as the universal standard of merit, working-class students are systematically disadvantaged, reproducing existing socio-economic inequalities under the guise of individual ability.
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h4>Chapter 2: Race, Ethnicity and Indigeneity</h4>
+            <div class="prompt">Prompt: Why do sociological perspectives reject the notion of an "Indigenous problem" in Australian education?</div>
+            <div class="model-answer">
+                <strong>Model Answer:</strong> The "Indigenous problem" is a deficit discourse that wrongly locates the source of educational disadvantage within First Nations students and communities rather than within institutional structures. Sociological analysis demonstrates that educational disparities stem from historical colonization, systemic racism, and an unexamined standard of "whiteness" embedded in standard curricula and disciplinary policies.
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h4>Chapter 3: Gender</h4>
+            <div class="prompt">Prompt: How does Connell’s concept of "hegemonic masculinity" operate within school environments?</div>
+            <div class="model-answer">
+                <strong>Model Answer:</strong> Hegemonic masculinity is the culturally exalted form of manhood that legitimates the dominance of men and subordinates women and non-conforming masculinities. In schools, it is actively produced and policed through organized competitive sports, informal peer banter, and hierarchical dress codes that pressure boys to suppress emotional vulnerability and display physical dominance.
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h4>Chapter 5: Governance</h4>
+            <div class="prompt">Prompt: Explain how Foucault’s concept of the "Panopticon" relates to modern school discipline.</div>
+            <div class="model-answer">
+                <strong>Model Answer:</strong> The Panopticon is an architectural metaphor for disciplinary power wherein the continuous, unverifiable possibility of surveillance compels subjects to police their own conduct. In mass schooling, constant observation—via spatial classroom layouts, attendance rolls, and digital monitoring—trains students to internalize behavioral norms and become self-regulating, docile citizens.
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h4>Chapter 8: Pre-Adulthood</h4>
+            <div class="prompt">Prompt: What is the problem with relying on "developmentalism" to organize school cohorts?</div>
+            <div class="model-answer">
+                <strong>Model Answer:</strong> Developmentalism assumes children inevitably pass through universal, biological, age-locked stages of cognitive and emotional capability. By relying on age as an administrative batching mechanism, schools construct artificial norms that pathologize normal variations in student maturation and overlook children's genuine agency and capacity for autonomy.
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h4>Chapter 10: The Media</h4>
+            <div class="prompt">Prompt: How do media-generated "moral panics" impact education policy and teachers?</div>
+            <div class="model-answer">
+                <strong>Model Answer:</strong> A moral panic is an exaggerated societal fear engineered by mass media that depicts a particular group or issue as an imminent threat to social order. In education, sensationalized reports about falling literacy standards or classroom misconduct generate public anxiety that justifies top-down regulatory interventions, standardized testing regimes, and unfair surveillance of teachers' labor.
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h4>Chapter 11: Popular Culture</h4>
+            <div class="prompt">Prompt: Why do sociologists argue that popular culture texts are "polysemic"?</div>
+            <div class="model-answer">
+                <strong>Model Answer:</strong> Polysemy refers to the inherent capacity of cultural texts to carry multiple, simultaneous, and often contradictory meanings. This demonstrates that students are not passive consumers of "rubbish" media, but active interpreters who decode complex layers of social commentary, satire, and identity cues based on their lived experiences.
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <h4>Chapter 12: Technology</h4>
+            <div class="prompt">Prompt: Why is Marc Prensky’s concept of the "digital native" contested in sociology?</div>
+            <div class="model-answer">
+                <strong>Model Answer:</strong> The "digital native" thesis reductively assumes that all young people possess instinctive, sophisticated computational and information literacy simply by virtue of growing up with screens. This myth obscures persistent digital divides in access and infrastructure while excusing schools from the essential pedagogical duty to teach students how to critically evaluate contested, biased digital information.
+            </div>
+        </div>
+
+        <h2>Multiple-Choice &amp; True/False Elimination Rules</h2>
+        <div class="practice-card">
+            <div class="rule-card">
+                <span class="rule-title">1. The Individualist / Merit Trap:</span> Any option attributing student outcomes solely to innate intelligence, personal motivation, grit, or biological talent is a distractor. The correct answer will tie success to social structures, cultural capital, or institutional barriers.
+            </div>
+            <div class="rule-card">
+                <span class="rule-title">2. The "Neutral School" Trap:</span> Any statement framing the school, curriculum, or standardized test as a neutral, objective, or value-free instrument is incorrect. In mass education sociology, schools always reflect specific socio-cultural values and historical power interests.
+            </div>
+            <div class="rule-card">
+                <span class="rule-title">3. The Determinist Trap:</span> Any option claiming that technology autonomously dictates society or that gender, childhood, or race are immutable facts of nature is wrong. The correct choice emphasizes socially configured practices and social constructs.
+            </div>
+            <div class="rule-card">
+                <span class="rule-title">4. The Hypodermic Needle Trap (Media):</span> In Chapter 10, any option suggesting children are brainwashed, passively duped, or completely conditioned by media is false. The text explicitly favors Active Audience Theory (audiences negotiate and decode meaning).
+            </div>
+            <div class="rule-card">
+                <span class="rule-title">5. The Zero-Sum Gender Trap:</span> Watch for options arguing that acknowledging girls' structural disadvantages means boys face no challenges, or that boys struggling in literacy proves schools discriminate against males. Hegemonic masculinity harms boys through rigid policing, but does not erase broader structural inequalities faced by women.
+            </div>
+        </div>
+
+        <h2>Critical Conceptual Distinctions</h2>
+        <div class="distinction-grid">
+            <div class="distinction-card">
+                <h4>Cultural Capital vs. Habitus</h4>
+                <p><strong>Cultural Capital:</strong> The tangible/intangible <em>assets</em> you possess (language proficiency, artistic tastes, credentials, etiquette).</p>
+                <p><strong>Habitus:</strong> The <em>internalized lens</em> or subconscious disposition (instincts, body language, feelings of where one belongs).</p>
+            </div>
+            <div class="distinction-card">
+                <h4>Sovereign vs. Disciplinary Power</h4>
+                <p><strong>Sovereign Power:</strong> Top-down, visible, violent, and coercive (monarchical rule, physical punishment).</p>
+                <p><strong>Disciplinary Power:</strong> Invisible, diffuse, routine, and self-regulating (timetables, seating charts, report cards, the Panopticon).</p>
+            </div>
+            <div class="distinction-card">
+                <h4>Teaching With Tech vs. About Tech</h4>
+                <p><strong>Teaching With/From Tech:</strong> Using digital hardware as a transmission or administrative tool (gadgetry).</p>
+                <p><strong>Teaching About Tech:</strong> Guiding students to critically analyze privacy, algorithmic bias, surveillance capitalism, and digital equity.</p>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
