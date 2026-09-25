@@ -1123,38 +1123,45 @@
         .globalisation-aside-list li:last-child {
             margin-bottom: 0;
         }
-
-    
-        /* Chapter 15: Ethics and the Law — Royal Commissions Aside */
-        .commissions-aside {
+        /* Chapter 15: Legal Frameworks, Royal Commissions & Ethics Aside */
+        .legal-ethics-aside {
             background-color: #ffffff;
             border: 1px solid #1e293b;
             border-left: 5px solid #1e293b;
             border-radius: 6px;
-            padding: 20px 24px;
-            margin: 20px 0 24px 0;
+            padding: 22px 26px;
+            margin: 22px 0 26px 0;
             box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
             clear: both;
         }
-        .commissions-aside h4 {
-            margin: 0 0 14px 0;
-            font-size: 1.15rem;
+        .legal-ethics-aside h4 {
+            margin: 0 0 16px 0;
+            font-size: 1.18rem;
             color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
         }
-        .commissions-aside p {
+        .legal-ethics-aside h5 {
+            margin: 16px 0 8px 0;
+            font-size: 1.02rem;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .legal-ethics-aside p {
             font-size: 0.93rem !important;
             line-height: 1.55 !important;
             margin: 0 0 12px 0 !important;
             color: #334155;
             text-align: justify !important;
         }
-        .commissions-grid {
+        .frameworks-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 16px;
-            margin: 16px 0;
+            margin: 14px 0 18px 0;
         }
-        .commission-card {
+        .framework-card {
             background-color: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 6px;
@@ -1162,45 +1169,72 @@
             font-size: 0.89rem;
             line-height: 1.5;
             color: #334155;
-            display: flex;
-            flex-direction: column;
         }
-        .commission-card h5 {
-            margin: 0 0 6px 0;
-            font-size: 0.98rem;
+        .framework-card strong.card-header {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
             color: #0f172a;
-            line-height: 1.35;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .framework-card ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .framework-card li {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+        .framework-card li:last-child {
+            margin-bottom: 0;
+        }
+        .commissions-subgrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+            margin: 12px 0 16px 0;
+        }
+        .commission-subcard {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 14px 16px;
+            font-size: 0.88rem;
+            line-height: 1.48;
+            color: #334155;
+        }
+        .commission-subcard h6 {
+            margin: 0 0 4px 0;
+            font-size: 0.92rem;
+            color: #0f172a;
         }
         .commission-badge {
             display: inline-block;
-            align-self: flex-start;
-            font-size: 0.72rem;
+            font-size: 0.70rem;
             font-weight: 700;
-            color: #0f172a;
-            background-color: #e2e8f0;
-            padding: 2px 8px;
+            padding: 2px 7px;
             border-radius: 4px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.04em;
         }
-        .commission-card p {
-            font-size: 0.88rem !important;
-            line-height: 1.48 !important;
-            margin: 0 0 8px 0 !important;
+        .commission-subcard p {
+            font-size: 0.86rem !important;
+            line-height: 1.45 !important;
+            margin: 0 0 6px 0 !important;
             color: #475569;
             text-align: justify !important;
         }
-        .commission-card p:last-child {
-            margin-bottom: 0 !important;
-        }
-        .commissions-synthesis {
-            border-top: 1px solid #e2e8f0;
-            padding-top: 12px;
+        .legal-ethics-synthesis {
+            background-color: #f1f5f9;
+            border-left: 4px solid #475569;
+            border-radius: 4px;
+            padding: 12px 16px;
             margin-top: 14px;
             font-size: 0.91rem !important;
             line-height: 1.55 !important;
-            color: #475569;
+            color: #334155;
             text-align: justify !important;
         }
 
@@ -2391,46 +2425,158 @@
         <p>The chapter maps the interconnected yet distinct terrains of legal obligations and ethical responsibilities in the teaching profession. Tait et al. debunk the myth that adhering strictly to legal mandates encompasses the entirety of a teacher's moral duty. While the law establishes mandatory minimum boundaries (such as duty of care, negligence prevention, and mandatory reporting), ethics addresses the broader, nuanced dilemmas of human care, justice, and professional integrity.</p>
         <p>The authors contrast major ethical paradigms: consequentialist (utilitarian) ethics that evaluate outcomes, deontological (duty-based) ethics centered on universal rules, and relational virtue ethics/ethics of care. In modern mass schooling, statutory compliance, standardized codes of conduct, and legal risk management frameworks often conflict with the immediate emotional and developmental needs of individual students. Bureaucratic rules can easily override ethical compassion if not actively interrogated.</p>
         <p>For educators, this chapter emphasizes that navigating modern classrooms requires deep professional ethical literacy. When legal mandates clash with moral duties&mdash;such as zero-tolerance policies versus restorative student support&mdash;teachers must rely on reasoned ethical deliberation. Cultivating an ethical classroom requires moving beyond fear of legal liability toward actively fostering relationships of mutual trust, dignity, and care.</p>
-                <aside class="commissions-aside">
-            <h4>Legal &amp; Ethical Aside: Australian Royal Commissions Reshaping Education &amp; Child Safety</h4>
+
+                <aside class="legal-ethics-aside">
+            <h4>Comprehensive Legal &amp; Ethical Framework: Statutory Architecture, Duty of Care, and Professional Ethics</h4>
             <p>
-                In Chapter 15, Tait et al. explore the tension between abstract teacher ethics and binding legal statutes. In the Australian educational landscape, no instruments have exerted a more profound structural, legislative, and ethical impact on the doctrine of <em>in loco parentis</em> and institutional duty of care than federal Royal Commissions. Possessing coercive investigatory powers, these inquiries tore down historical shields of institutional self-protection, transforming child safeguarding from a matter of private school discretion into non-negotiable statutory compliance and proactive human rights obligations:
+                In Chapter 15, Tait et al. examine how teaching is constrained by the interplay of legislative mandates, common law torts, and professional ethics. In Australia, the legal architecture governing education is dual-layered: the Commonwealth establishes human rights, anti-discrimination, and privacy baselines, while State and Territory parliaments hold primary constitutional jurisdiction over school registration, compulsory attendance, child protection, and occupational safety.
             </p>
-            <div class="commissions-grid">
-                <div class="commission-card" style="border-top: 4px solid #b91c1c;">
-                    <h5>1. Institutional Responses to Child Sexual Abuse</h5>
+
+            <h5>1. The Dual Statutory Architecture: Federal vs. State Frameworks</h5>
+            <div class="frameworks-grid">
+                <div class="framework-card" style="border-top: 4px solid #1e40af;">
+                    <strong class="card-header">Commonwealth (Federal) Statutory Baselines</strong>
+                    <ul>
+                        <li>
+                            <strong>Disability Standards for Education 2005 (under <em>DDA 1992</em>):</strong> Imposes an active legal obligation on all educational providers to consult with students and carers, design and implement reasonable adjustments, and ensure equal access across enrolment, participation, curriculum delivery, and student support services without unjustified hardship.
+                        </li>
+                        <li>
+                            <strong>Anti-Discrimination Enactments:</strong> <em>Racial Discrimination Act 1975</em> and <em>Sex Discrimination Act 1984</em> prohibit direct and indirect discrimination in educational admissions, classroom environments, and school employment, establishing federal human rights accountability.
+                        </li>
+                        <li>
+                            <strong>Privacy Act 1988 &amp; Australian Privacy Principles (APPs):</strong> Regulates the collection, digital storage, dissemination, and destruction of sensitive student personal information, medical records, and academic data, heavily impacting third-party educational software adoption.
+                        </li>
+                        <li>
+                            <strong>Copyright Act 1968 (Part IVA):</strong> Governs statutory educational copying licenses, establishing legal limits on reproducing intellectual property for teaching purposes.
+                        </li>
+                    </ul>
+                </div>
+                <div class="framework-card" style="border-top: 4px solid #047857;">
+                    <strong class="card-header">State &amp; Territory Statutory Regimes</strong>
+                    <ul>
+                        <li>
+                            <strong>Compulsory Schooling &amp; Registration:</strong> State Education Acts (e.g., <em>Education Act 1990</em> NSW) establish school registration standards, compulsory student attendance ages (typically 6 to 17), curriculum mandates, and the legal parameters of home schooling.
+                        </li>
+                        <li>
+                            <strong>Child Protection &amp; Mandatory Reporting:</strong> Child safety statutes (e.g., <em>Children and Young Persons (Care and Protection) Act 1998</em> NSW and <em>Children's Guardian Act 2019</em> NSW) mandate that teachers must independently report suspected child abuse or risk of significant harm (ROSH) to child welfare authorities, criminalizing the failure to report and establishing strict Reportable Conduct Schemes.
+                        </li>
+                        <li>
+                            <strong>Work Health and Safety (WHS) Legislation:</strong> State-harmonized WHS Acts (2011) classify schools as Persons Conducting a Business or Undertaking (PCBUs). School authorities and staff hold a positive primary duty of care to ensure the physical and psychological safety of staff, students, and visitors.
+                        </li>
+                        <li>
+                            <strong>Working With Children Screening:</strong> Enacts mandatory, continuously monitored background vetting (WWCC) to legally bar disqualified persons from child-related employment.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h5>2. The Common Law Dimension: The Non-Delegable Duty of Care &amp; Negligence</h5>
+            <p>
+                Beyond statutory enactments, educational liability is fundamentally governed by the common law tort of negligence. Established in landmark High Court jurisprudence—including <em>Commonwealth v Introvigne</em> (1982) and <em>New South Wales v Lepore</em> (2003)—the relationship between a school authority, its teachers, and its students generates a <strong>special, non-delegable duty of care</strong>:
+            </p>
+            <div class="frameworks-grid">
+                <div class="framework-card" style="border-left: 4px solid #4338ca;">
+                    <strong class="card-header">Core Elements of Educational Negligence</strong>
+                    <ul>
+                        <li>
+                            <strong>Duty of Care:</strong> Recognised at law as an inherent feature of the school-pupil relationship. The duty is non-delegable: school authorities cannot contract out of, or transfer, their legal responsibility to maintain safety.
+                        </li>
+                        <li>
+                            <strong>Standard of Care:</strong> Historically derived from <em>in loco parentis</em> ("the careful and prudent parent"), modern common law now demands the higher objective standard of the <em>reasonable, competent professional educator</em>, proportional to the student's age, maturity, and vulnerability.
+                        </li>
+                        <li>
+                            <strong>Breach &amp; Foreseeability:</strong> Under the <em>Civil Liability Act 2002</em>, liability arises when an educator fails to take precautions against a risk of harm that was reasonably foreseeable, not insignificant, and which a reasonable educator in those circumstances would have guarded against.
+                        </li>
+                        <li>
+                            <strong>Causation &amp; Damage:</strong> The plaintiff must establish that the breach of duty directly caused the actual physical, psychological, or material injury sustained (factual causation and scope of liability).
+                        </li>
+                    </ul>
+                </div>
+                <div class="framework-card" style="border-left: 4px solid #0284c7;">
+                    <strong class="card-header">Operational Realities for Educators</strong>
+                    <ul>
+                        <li>
+                            <strong>Active vs. Passive Supervision:</strong> Physical presence alone is legally insufficient; educators must maintain active, vigilant scanning of high-risk environments (playgrounds, laboratories, sporting fields, industrial arts workshops, excursions).
+                        </li>
+                        <li>
+                            <strong>Vicarious Liability:</strong> Employers (Departments of Education or school councils) remain vicariously liable for tortious negligent acts committed by employees within the course and scope of employment, provided the teacher acted in good faith and without serious misconduct.
+                        </li>
+                        <li>
+                            <strong>Excursion &amp; Risk Mitigation Protocols:</strong> Documented risk assessment matrices, parental informed consents, medical emergency plans, and strict student-to-staff supervisor ratios are compulsory legal safeguards.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h5>3. Inquiries That Rewrote Educational Governance: The Royal Commissions</h5>
+            <p>
+                Australian educational child-safeguarding statutes were fundamentally rewritten following three historic federal inquiries that exposed how traditional institutional discretion compromised child welfare:
+            </p>
+            <div class="commissions-subgrid">
+                <div class="commission-subcard" style="border-top: 4px solid #b91c1c;">
+                    <h6>1. Child Sexual Abuse Royal Commission</h6>
                     <span class="commission-badge" style="background-color: #fee2e2; color: #991b1b;">2013–2017 | McClellan Inquiry</span>
                     <p>
-                        <strong>Findings:</strong> Uncovered catastrophic, systemic failures across state, independent, and religious educational sectors. Schools systematically prioritized reputation management, institutional brand preservation, and the protection of abusive personnel over the physical and psychological safety of children.
+                        <strong>Findings:</strong> Documented catastrophic historical failures across state, Catholic, and independent school systems where reputations were prioritized over child safety.
                     </p>
                     <p>
-                        <strong>Impact on Schooling:</strong> Sparked the codification of the <em>10 National Principles for Child Safe Organisations</em>. Overhauled mandatory reporting laws (removing internal administrative filters and criminalizing the failure to report), instituted rigorous Working With Children Check (WWCC) continuous monitoring, and eradicated historical statutes of limitations—reversing the onus of proof and holding school governing bodies vicariously liable for institutional abuse.
+                        <strong>Legal Legacy:</strong> Codified the <em>10 National Principles for Child Safe Organisations</em>, eliminated historical civil statutes of limitations, removed administrative filters in mandatory reporting, and reversed the onus of proof in institutional abuse torts.
                     </p>
                 </div>
-                <div class="commission-card" style="border-top: 4px solid #d97706;">
-                    <h5>2. Protection &amp; Detention of Children in the NT</h5>
+                <div class="commission-subcard" style="border-top: 4px solid #d97706;">
+                    <h6>2. Protection &amp; Detention of Children in the NT</h6>
                     <span class="commission-badge" style="background-color: #fef3c7; color: #92400e;">2016–2017 | Don Dale Inquiry</span>
                     <p>
-                        <strong>Findings:</strong> Triggered by revelations of systemic mistreatment, solitary confinement, and mechanical restraint of youth at the Don Dale Youth Detention Centre. Revealed the catastrophic failure of state systems to protect vulnerable First Nations children caught at the intersection of child protection and youth justice.
+                        <strong>Findings:</strong> Exposed the structural pipeline pushing vulnerable First Nations youth from welfare and school disengagement into carceral environments.
                     </p>
                     <p>
-                        <strong>Impact on Schooling:</strong> Critiqued the punitive "school-to-prison pipeline." The inquiry documented how arbitrary school suspensions, behavioral exclusions, and non-attendance policies disproportionately disenfranchise Indigenous students, accelerating their drift into carceral environments. It mandated a shift toward trauma-informed educational practices, early family engagement, and culturally grounded restorative justice models over exclusionary school discipline.
+                        <strong>Legal Legacy:</strong> Prompted systemic reviews of exclusionary school disciplinary policies (suspensions/expulsions), establishing mandates for trauma-informed teaching and restorative community alternatives.
                     </p>
                 </div>
-                <div class="commission-card" style="border-top: 4px solid #2563eb;">
-                    <h5>3. Violence, Abuse, Neglect &amp; Exploitation of People with Disability</h5>
+                <div class="commission-subcard" style="border-top: 4px solid #2563eb;">
+                    <h6>3. Disability Royal Commission</h6>
                     <span class="commission-badge" style="background-color: #dbeafe; color: #1e40af;">2019–2023 | Disability Royal Commission</span>
                     <p>
-                        <strong>Findings:</strong> Documented deep-seated structural discrimination, informal suspensions, gatekeeping, and restrictive practices (such as physical restraint and chemical/environmental seclusion) inflicted upon disabled students within mainstream educational institutions.
+                        <strong>Findings:</strong> Uncovered pervasive gatekeeping, informal exclusions, and unregulated restrictive practices (seclusion/restraint) against disabled pupils.
                     </p>
                     <p>
-                        <strong>Impact on Schooling:</strong> Re-ignited the national debate over the phase-out of segregated "special schools" in alignment with Article 24 of the UN Convention on the Rights of Persons with Disabilities (CRPD). It legally compelled schools to provide genuine Universal Design for Learning (UDL), eliminated informal "part-time timetable" exclusions, and elevated reasonable adjustments under the <em>Disability Standards for Education 2005</em> from aspirational guidelines into enforceable civil rights.
+                        <strong>Legal Legacy:</strong> Advanced the phase-out of segregated "special education" under UN CRPD Article 24, elevating reasonable adjustments into non-negotiable human rights.
                     </p>
                 </div>
             </div>
-            <p class="commissions-synthesis">
-                <strong>Pedagogical &amp; Ethical Synthesis for Educators:</strong> Collectively, these Royal Commissions dismantled the historical paternalism of <em>in loco parentis</em> ("in the place of a parent"). An educator's duty of care can no longer be treated as passive oversight. Legally and ethically, teachers are positioned as active, vigilant duty-bearers. Child protection, anti-carceral inclusion, and disability accommodations are not administrative burdens; they are non-delegable statutory responsibilities designed to ensure institutional authority never overrides the bodily autonomy, cultural dignity, and fundamental human rights of young people.
+
+            <h5>4. Professional Codes &amp; The Relational Ethics of Care</h5>
+            <p>
+                Teaching is not merely a technical exercise in statutory compliance; it is fundamentally an ethical vocation. In Australia, teacher conduct is formally governed by regulatory standards that intersect with broader philosophical traditions of care:
             </p>
+            <div class="frameworks-grid">
+                <div class="framework-card" style="border-top: 4px solid #64748b;">
+                    <strong class="card-header">Regulatory Codes &amp; AITSL Standards</strong>
+                    <ul>
+                        <li>
+                            <strong>AITSL Professional Standards:</strong> Standard 4.4 mandates maintaining student safety through compliance with statutory, school, and curriculum requirements. Standard 7.1/7.2 requires meeting professional ethics, codes of conduct, and understanding relevant legislative regimes.
+                        </li>
+                        <li>
+                            <strong>State Teaching Codes of Conduct:</strong> Formal codes (e.g., NESA and state employer codes) enforce strict rules regarding appropriate professional boundaries, conflicts of interest, social media engagement, and procedural fairness in disciplinary matters.
+                        </li>
+                    </ul>
+                </div>
+                <div class="framework-card" style="border-top: 4px solid #e11d48;">
+                    <strong class="card-header">The Philosophical Tension: Law vs. Ethics of Care</strong>
+                    <ul>
+                        <li>
+                            <strong>Deontological Legalism (Defensive Teaching):</strong> Strict focus on risk minimization, bureaucratic documentation, and liability avoidance, which risks reducing education to mechanical compliance and treating students as potential legal liabilities.
+                        </li>
+                        <li>
+                            <strong>Nel Noddings' Relational Ethics of Care:</strong> Positions education as an authentic moral relationship based on attentiveness, responsiveness, and trust. While statutory rules set the bare minimum floor of conduct, genuine pedagogical equity requires an ethic of care that prioritizes human relationships and student dignity.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="legal-ethics-synthesis">
+                <strong>Pedagogical &amp; Legal Synthesis for Exam Mastery:</strong> Modern Australian educators operate at the intersection of three demanding domains: <em>binding statutes</em> (child protection, WHS, anti-discrimination, DDA), <em>common law obligations</em> (non-delegable duty of care against reasonably foreseeable harm), and <em>ethical codes</em> (AITSL standards and relational care). The transformative educator does not hide behind defensive legalism, but leverages these legal protections as statutory tools to safeguard equity, bodily autonomy, and human dignity in the classroom.
+            </div>
         </aside>
 
         <div class="chapter-evaluation-block strengths-evaluation">
