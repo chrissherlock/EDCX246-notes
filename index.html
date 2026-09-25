@@ -648,6 +648,11 @@
                 max-width: 140px;
             }
         }
+            .chapter-note-figure {
+                width: 100px;
+                margin-bottom: 12px;
+            }
+        }
 
     
         .chapter-note {
@@ -655,26 +660,46 @@
             border: 1px solid #cbd5e1;
             border-left: 5px solid #0284c7;
             border-radius: 6px;
-            padding: 16px 20px;
-            margin: 18px 0 22px 0;
+            padding: 20px 24px;
+            margin: 20px 0 24px 0;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             clear: both;
         }
         .chapter-note h4 {
-            margin: 0 0 10px 0;
-            font-size: 1.08rem;
+            margin: 0 0 14px 0;
+            font-size: 1.15rem;
             color: #0369a1;
         }
         .chapter-note-layout {
             display: flex;
-            gap: 20px;
+            gap: 26px;
             align-items: center;
+        }
+        .chapter-note-figure {
+            width: 270px;
+            min-width: 250px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .chapter-note-img {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+            display: block;
+            opacity: 0.95;
+            transition: transform 0.2s ease-in-out;
+        }
+        .chapter-note-img:hover {
+            transform: scale(1.03);
         }
         .chapter-note-content {
             flex-grow: 1;
         }
         .chapter-note-content p {
-            font-size: 0.92rem !important;
+            font-size: 0.93rem !important;
             line-height: 1.55 !important;
             margin: 0 0 10px 0 !important;
             color: #334155;
@@ -694,29 +719,15 @@
         .chapter-note-list li:last-child {
             margin-bottom: 0;
         }
-        .chapter-note-figure {
-            width: 140px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-        }
-        .chapter-note-img {
-            width: 100%;
-            max-width: 130px;
-            height: auto;
-            display: block;
-            opacity: 0.92;
-        }
         @media (max-width: 768px) {
             .chapter-note-layout {
-                flex-direction: column-reverse;
+                flex-direction: column;
                 align-items: center;
             }
             .chapter-note-figure {
-                width: 100px;
-                margin-bottom: 12px;
+                width: 100%;
+                max-width: 180px;
+                margin-bottom: 16px;
             }
         }
 
@@ -1506,9 +1517,12 @@
         <p>The focus of this chapter is on how schooling shapes student subjectivity&mdash;the internal sense of self, agency, and psychological normality. Tait et al. critique the assumption that an individual's personality, intelligence, and behavioral disposition are purely innate qualities. Instead, the text argues that individual subjectivity is produced through social interactions, institutional discourses, and the specialized vocabularies of modern educational bureaucracies.</p>
         <p>The authors provide a critical analysis of the "psy-complex"&mdash;the pervasive influence of psychology, psychiatry, and educational therapy in diagnosing and categorizing student behavior. The chapter unpacks how non-compliant, disruptive, or atypical student behaviors are increasingly pathologized as medical or cognitive disorders such as ADHD. While acknowledging that medical diagnoses can provide support, the text cautions that pathologization often reclassifies social, environmental, or pedagogical problems as individual chemical deficiencies, removing responsibility from institutional structures.</p>
         <p>For classroom practitioners, this chapter urges caution against relying on psychological labels to define a student's total capability. Teachers are encouraged to view behavioral challenges within their broader social and institutional contexts rather than jumping immediately to medical deficit models. Supporting student agency requires recognizing that subjectivities are fluid, socially constructed, and heavily influenced by classroom environments.</p>
-                <div class="chapter-note">
+        <div class="chapter-note">
             <h4>Pedagogical Note: Neurodevelopmental Conditions in the Classroom</h4>
             <div class="chapter-note-layout">
+                <div class="chapter-note-figure">
+                    <img src="images/brain.png" alt="" role="presentation" class="chapter-note-img">
+                </div>
                 <div class="chapter-note-content">
                     <p>
                         Neurodevelopmental conditions are biologically grounded differences in brain growth and neurological functioning that emerge during early childhood and persist across the lifespan. Rather than arising from poor parenting, motivational deficits, or mere administrative pathologisation, these conditions influence cognitive processing, sensorimotor integration, communication, and executive functioning. In primary and secondary classrooms, conditions such as developmental language disorders, motor dyspraxia, and specific learning disabilities (e.g., dyslexia, dyscalculia) mean students experience learning environments differently. Rather than viewing atypical behaviors through a purely disciplinary or sociological lens, teachers must provide structured environmental adjustments, multimodal instructions, and evidence-based accommodations so students can equitably access curriculum content.
@@ -1521,9 +1535,6 @@
                             <strong>Autism Spectrum Disorder (ASD):</strong> A pervasive neurodevelopmental difference defined by distinctive patterns in social communication and interaction, intense special interests, atypical sensory processing (hypo- or hyper-reactivity to sound, light, or texture), and a strong preference for structural predictability. Autistic learners often experience significant cognitive fatigue from processing chaotic social environments or over-stimulating school sensory landscapes. Pedagogical support relies on explicit, unambiguous communication (avoiding idioms or sarcasm), providing visual schedules to preview classroom transitions, establishing quiet sensory decompression spaces, and recognizing externalized behaviors as stress responses rather than deliberate defiance.
                         </li>
                     </ul>
-                </div>
-                <div class="chapter-note-figure">
-                    <img src="images/brain.png" alt="" role="presentation" class="chapter-note-img">
                 </div>
             </div>
         </div>
