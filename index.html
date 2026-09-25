@@ -502,6 +502,14 @@
             .book-header-layout {
                 flex-direction: column;
                 align-items: center;
+            .media-figure {
+                float: none;
+                width: 100%;
+                max-width: 220px;
+                margin: 0 auto 14px auto;
+                text-align: center;
+            }
+
             }
             .book-cover-img {
                 width: 150px;
@@ -731,20 +739,15 @@
             box-shadow: 0 2px 6px rgba(79, 70, 229, 0.08);
             clear: both;
         }
+        .media-aside::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
         .media-aside h4 {
             margin: 0 0 14px 0;
             font-size: 1.15rem;
             color: #4338ca;
-        }
-        .media-aside-layout {
-            display: flex;
-            gap: 22px;
-            align-items: flex-start;
-        }
-        .media-figure {
-            width: 150px;
-            flex-shrink: 0;
-            margin: 0;
         }
         .media-img-link {
             display: block;
@@ -754,28 +757,34 @@
             height: auto;
             border-radius: 4px;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.09);
             display: block;
             transition: transform 0.15s ease-in-out;
         }
         .media-img:hover {
             transform: scale(1.02);
         }
+        .media-caption {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-top: 6px;
+            text-align: left;
+        }
         .media-credit {
             display: block;
             font-size: 0.68rem;
             line-height: 1.35;
             color: #64748b;
-            margin-top: 6px;
+            margin-top: 4px;
             border-top: 1px solid #e2e8f0;
-            padding-top: 5px;
+            padding-top: 4px;
+            text-align: left;
         }
         .media-credit a {
             color: #4338ca;
             text-decoration: underline;
-        }
-        .media-content {
-            flex-grow: 1;
         }
         .media-aside p {
             font-size: 0.93rem !important;
@@ -788,6 +797,7 @@
             margin-bottom: 0 !important;
         }
         .decoding-grid {
+            clear: both;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 12px;
@@ -807,6 +817,15 @@
             display: block;
             margin-bottom: 4px;
             font-size: 0.92rem;
+        }
+        .media-reference {
+            clear: both;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            line-height: 1.45;
+            color: #475569;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 8px;
         }
 </style>
 </head>
@@ -1714,46 +1733,45 @@
         <p>This chapter analyzes the role of mass media in shaping cultural understandings of schooling, educators, and youth. The authors reject the myth that media consumption is irrelevant to classroom practice, demonstrating that news, television, and digital platforms structure the public imagination. Mass media is not a neutral mirror of society; it is an active producer of meaning that frequently reproduces dominant political interests and cultural anxieties.</p>
         <p>A central theoretical focus is Stuart Hall's encoding/decoding model and active audience theory. The authors reject the simplistic idea that audiences passively absorb media messages, emphasizing instead that students and communities actively interpret media texts through their own social contexts. However, the media regularly instigates moral panics&mdash;exaggerated representations of juvenile crime, falling literacy standards, or "bad" teachers&mdash;that distract the public from systemic educational underfunding and justify aggressive state intervention.</p>
         <p>The pedagogical implication is the vital importance of critical media literacy across all curriculum areas. Teachers must equip students to deconstruct media biases, analyze representations of power, identify corporate interests, and decode multimodal texts. Additionally, teachers must understand how media reporting constructs unfair public expectations of their professional labor, maintaining a critical stance toward public education panics.</p>
-                                        <aside class="media-aside">
+                                                <aside class="media-aside">
             <h4><a href="https://en.wikipedia.org/wiki/Encoding/decoding_model_of_communication" target="_blank" rel="noopener" class="theorist-link" style="color: #4338ca;">Theoretical Aside: Stuart Hall's Encoding/Decoding Model &amp; Active Audience Theory</a></h4>
-            <div class="media-aside-layout">
-                <figure class="media-figure">
-                    <a href="https://www.stuarthallfoundation.org/stuart-hall/" target="_blank" rel="noopener" class="media-img-link" title="Stuart Hall Foundation">
-                        <img src="images/hall-2.jpeg" alt="Stuart Hall" class="media-img">
-                    </a>
-                    <figcaption class="media-credit">
+            <figure class="media-figure">
+                <a href="https://www.stuarthallfoundation.org/stuart-hall/" target="_blank" rel="noopener" class="media-img-link" title="Stuart Hall Foundation">
+                    <img src="images/hall-2.jpeg" alt="Stuart Hall" class="media-img">
+                </a>
+                <figcaption>
+                    <span class="media-caption">Stuart Hall</span>
+                    <span class="media-credit">
                         Photo: <a href="https://www.stuarthallfoundation.org/stuart-hall/" target="_blank" rel="noopener">Stuart Hall Foundation</a><br>
                         Retrieved: 25 September 2026
-                    </figcaption>
-                </figure>
-                <div class="media-content">
-                    <p>
-                        <strong>The Encoding/Decoding Model (1980):</strong> Cultural theorist <strong>Stuart Hall</strong> fundamentally revolutionized media sociology by rejecting traditional linear, behaviourist transmission models (the "hypodermic needle" or direct-effects model, which presumed media injected ideological messages into passive, helpless recipients). While first drafted in 1973 as a Centre for Contemporary Cultural Studies (CCCS) working paper, Hall's definitive essay—published in the landmark 1980 collection <em>Culture, media, language</em>—conceptualized mass communication as a contested, non-linear circuit of production, circulation, distribution/consumption, and reproduction. Media producers <em>encode</em> messages with preferred ideological frameworks, cultural assumptions, and institutional power relations. However, media texts are fundamentally <em>polysemic</em> (possessing multiple possible meanings), meaning that the encoded message is never automatically or passively absorbed by the viewer. Instead, meaning is only realized when the recipient actively <em>decodes</em> the text through their own cultural background, lived experience, and socio-economic position.
-                    </p>
-                    <p>
-                        <strong>The Three Decoding Positions:</strong> Hall identified three primary hypothetical interpretive stances that audiences adopt when reading media texts:
-                    </p>
-                    <div class="decoding-grid">
-                        <div class="decoding-card">
-                            <strong>1. Dominant-Hegemonic Position</strong>
-                            The viewer operates inside the dominant code. They decode the message directly using the reference framework in which it was encoded, unreservedly accepting the preferred ideological framing as universal, natural, and objective common sense.
-                        </div>
-                        <div class="decoding-card">
-                            <strong>2. Negotiated Position</strong>
-                            The viewer acknowledges the legitimacy of the hegemonic narrative in the abstract, but adapts and modifies it to reflect their own local circumstances, social background, or personal interests, often accepting the broad ideology while carving out specific contradictions or exceptions.
-                        </div>
-                        <div class="decoding-card">
-                            <strong>3. Oppositional Position</strong>
-                            The viewer understands both the literal meaning and the ideological subtext of the discourse, but consciously deconstructs the message within an alternative frame of reference, directly rejecting the preferred reading (e.g., reinterpreting a ministerial speech on "raising standards" as an attack on public school funding).
-                        </div>
-                    </div>
-                    <p>
-                        <strong>Active Audience Theory in Classroom Practice:</strong> In Chapter 10, Tait et al. utilize Hall to prove that school students are not empty vessels brainwashed by digital feeds, television, or advertising. Instead, young people bring active interpretive agency to popular culture, continually negotiating, parodying, and resisting media narratives. For educators, the pedagogical takeaway is the necessity of teaching <em>critical media literacy</em>: equipping students with semiotic and sociological tools to identify who encoded the text, what ideological interests are prioritized, which minority voices are silenced, and how corporate news coverage engineers moral panics around public schooling and teachers' professional labor.
-                    </p>
-                    <div style="margin-top: 12px; font-size: 0.8rem; line-height: 1.45; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 8px;">
-                        <strong>Reference (APA 7th):</strong> Hall, S. (1980). Encoding/decoding. In S. Hall, D. Hobson, A. Lowe, &amp; P. Willis (Eds.), <em>Culture, media, language: Working papers in cultural studies, 1972–79</em> (pp. 128–138). Hutchinson. <a href="https://spkb.blot.im/_readings/EncodingDecoding_HALL_1980.pdf" target="_blank" rel="noopener" style="color: #4338ca; text-decoration: underline;">https://spkb.blot.im/_readings/EncodingDecoding_HALL_1980.pdf</a>
-                    </div>
+                    </span>
+                </figcaption>
+            </figure>
+            <p>
+                <strong>The Encoding/Decoding Model (1980):</strong> Cultural theorist <strong>Stuart Hall</strong> fundamentally revolutionized media sociology by rejecting traditional linear, behaviourist transmission models (the "hypodermic needle" or direct-effects model, which presumed media injected ideological messages into passive, helpless recipients). While first drafted in 1973 as a Centre for Contemporary Cultural Studies (CCCS) working paper, Hall's definitive essay—published in the landmark 1980 collection <em>Culture, media, language</em>—conceptualized mass communication as a contested, non-linear circuit of production, circulation, distribution/consumption, and reproduction. Media producers <em>encode</em> messages with preferred ideological frameworks, cultural assumptions, and institutional power relations. However, media texts are fundamentally <em>polysemic</em> (possessing multiple possible meanings), meaning that the encoded message is never automatically or passively absorbed by the viewer. Instead, meaning is only realized when the recipient actively <em>decodes</em> the text through their own cultural background, lived experience, and socio-economic position.
+            </p>
+            <p>
+                <strong>The Three Decoding Positions:</strong> Hall identified three primary hypothetical interpretive stances that audiences adopt when reading media texts:
+            </p>
+            <div class="decoding-grid">
+                <div class="decoding-card">
+                    <strong>1. Dominant-Hegemonic Position</strong>
+                    The viewer operates inside the dominant code. They decode the message directly using the reference framework in which it was encoded, unreservedly accepting the preferred ideological framing as universal, natural, and objective common sense.
                 </div>
+                <div class="decoding-card">
+                    <strong>2. Negotiated Position</strong>
+                    The viewer acknowledges the legitimacy of the hegemonic narrative in the abstract, but adapts and modifies it to reflect their own local circumstances, social background, or personal interests, often accepting the broad ideology while carving out specific contradictions or exceptions.
+                </div>
+                <div class="decoding-card">
+                    <strong>3. Oppositional Position</strong>
+                    The viewer understands both the literal meaning and the ideological subtext of the discourse, but consciously deconstructs the message within an alternative frame of reference, directly rejecting the preferred reading (e.g., reinterpreting a ministerial speech on "raising standards" as an attack on public school funding).
+                </div>
+            </div>
+            <p>
+                <strong>Active Audience Theory in Classroom Practice:</strong> In Chapter 10, Tait et al. utilize Hall to prove that school students are not empty vessels brainwashed by digital feeds, television, or advertising. Instead, young people bring active interpretive agency to popular culture, continually negotiating, parodying, and resisting media narratives. For educators, the pedagogical takeaway is the necessity of teaching <em>critical media literacy</em>: equipping students with semiotic and sociological tools to identify who encoded the text, what ideological interests are prioritized, which minority voices are silenced, and how corporate news coverage engineers moral panics around public schooling and teachers' professional labor.
+            </p>
+            <div class="media-reference">
+                <strong>Reference (APA 7th):</strong> Hall, S. (1980). Encoding/decoding. In S. Hall, D. Hobson, A. Lowe, &amp; P. Willis (Eds.), <em>Culture, media, language: Working papers in cultural studies, 1972–79</em> (pp. 128–138). Hutchinson. <a href="https://spkb.blot.im/_readings/EncodingDecoding_HALL_1980.pdf" target="_blank" rel="noopener" style="color: #4338ca; text-decoration: underline;">https://spkb.blot.im/_readings/EncodingDecoding_HALL_1980.pdf</a>
             </div>
         </aside>
 
