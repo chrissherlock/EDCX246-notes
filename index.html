@@ -1134,12 +1134,54 @@
             box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
             clear: both;
         }
-        .legal-ethics-aside h4 {
-            margin: 0 0 16px 0;
+        .legal-header-layout {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .legal-coa-box {
+            width: 170px;
+            min-width: 145px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px 14px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease-in-out;
+        }
+        .legal-coa-box:hover {
+            transform: scale(1.02);
+        }
+        .legal-coa-img {
+            width: 100%;
+            max-width: 145px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+        }
+        .legal-header-text {
+            flex-grow: 1;
+        }
+        .legal-header-text h4 {
+            margin: 0 0 10px 0;
             font-size: 1.22rem;
             color: #0f172a;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 8px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .legal-header-text p {
+            margin: 0 !important;
+            font-size: 0.93rem !important;
+            line-height: 1.55 !important;
+            color: #334155;
+            text-align: justify !important;
         }
         .legal-section-title {
             margin: 20px 0 10px 0;
@@ -2437,10 +2479,17 @@
         <p>For educators, this chapter emphasizes that navigating modern classrooms requires deep professional ethical literacy. When legal mandates clash with moral duties&mdash;such as zero-tolerance policies versus restorative student support&mdash;teachers must rely on reasoned ethical deliberation. Cultivating an ethical classroom requires moving beyond fear of legal liability toward actively fostering relationships of mutual trust, dignity, and care.</p>
 
                 <aside class="legal-ethics-aside">
-            <h4>Comprehensive Legal &amp; Ethical Framework: Statutory Architecture, Duty of Care, and Professional Ethics</h4>
-            <p>
-                In Chapter 15, Tait et al. examine how the teaching profession is shaped by the interplay of statutory mandates, common law tort liability, and professional ethics. In Australia, the legal architecture governing education operates on a dual-track model: the Commonwealth sets non-negotiable human rights, anti-discrimination, and privacy baselines, while State and Territory parliaments hold constitutional responsibility for school registration, compulsory attendance, child protection systems, and occupational safety.
-            </p>
+            <div class="legal-header-layout">
+                <div class="legal-coa-box">
+                    <img src="images/coa-australia.svg" alt="Commonwealth of Australia Coat of Arms" class="legal-coa-img">
+                </div>
+                <div class="legal-header-text">
+                    <h4>Comprehensive Legal &amp; Ethical Framework: Statutory Architecture, Duty of Care, and Professional Ethics</h4>
+                    <p>
+                        In Chapter 15, Tait et al. examine how the teaching profession is shaped by the interplay of statutory mandates, common law tort liability, and professional ethics. In Australia, the legal architecture governing education operates on a dual-track model: the Commonwealth sets non-negotiable human rights, anti-discrimination, and privacy baselines, while State and Territory parliaments hold constitutional responsibility for school registration, compulsory attendance, child protection systems, and occupational safety.
+                    </p>
+                </div>
+            </div>
 
             <div class="legal-section-title">1. The Dual Statutory Architecture: Federal vs. State Frameworks</div>
             <div class="frameworks-grid">
