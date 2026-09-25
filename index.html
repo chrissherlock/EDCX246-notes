@@ -514,28 +514,38 @@
                 align-content: stretch;
             }
         }
-
-    
         .theorist-portrait-cell {
             text-align: center;
             vertical-align: top;
-            width: 115px;
-            padding: 10px 8px;
+            width: 165px;
+            padding: 12px 10px;
         }
         .theorist-portrait-img {
-            width: 95px;
+            width: 150px;
             max-width: 100%;
             height: auto;
-            border-radius: 4px;
+            border-radius: 6px;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
             display: block;
-            margin: 0 auto 6px auto;
+            margin: 0 auto 8px auto;
+            transition: transform 0.15s ease-in-out;
+        }
+        .theorist-portrait-img:hover {
+            transform: scale(1.02);
+        }
+        .theorist-link {
+            color: #1e40af;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+        .theorist-link:hover {
+            color: #1d4ed8;
         }
         .photo-credit {
             display: block;
-            font-size: 0.65rem;
-            line-height: 1.25;
+            font-size: 0.68rem;
+            line-height: 1.3;
             color: #64748b;
         }
         .photo-credit a {
@@ -698,7 +708,7 @@
     <table>
         <thead>
             <tr>
-                <th style="width: 115px;">Portrait</th>
+                <th style="width: 165px;">Portrait</th>
                 <th style="width: 22%;">Theorist / Philosophy</th>
                 <th style="width: 40%;">Core Idea</th>
                 <th style="width: 38%;">Relevant Myth(s) Challenged</th>
@@ -708,14 +718,16 @@
             <tr>
                 <td class="theorist-portrait-cell">
     <figure style="margin: 0;">
-        <img src="images/bourdieu.jpg" alt="Pierre Bourdieu" class="theorist-portrait-img">
+        <a href="https://en.wikipedia.org/wiki/Pierre_Bourdieu" target="_blank" rel="noopener" title="View Pierre Bourdieu on Wikipedia">
+            <img src="images/bourdieu.jpg" alt="Pierre Bourdieu" class="theorist-portrait-img">
+        </a>
         <figcaption class="photo-credit">
             Photo: Bernard Lambert (1996)<br>
             <a href="https://commons.wikimedia.org/w/index.php?title=File:Pierre_Bourdieu_(1).jpg&amp;oldid=927520173" target="_blank" rel="noopener">Wikimedia Commons</a>
         </figcaption>
     </figure>
 </td>
-                <td><strong>Pierre Bourdieu</strong></td>
+                <td><a href="https://en.wikipedia.org/wiki/Pierre_Bourdieu" target="_blank" rel="noopener" class="theorist-link">Pierre Bourdieu</a></td>
                 <td><strong>Cultural Capital &amp; Habitus:</strong> Schools inherently reward middle-class cultural traits, speech, and dispositions, converting inherited advantage into academic success and reproducing class inequality.</td>
                 <td>Myth: Schooling success is only about individual ability.<br>Myth: Social class is all about money.</td>
             </tr>
