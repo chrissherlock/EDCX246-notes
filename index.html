@@ -1627,41 +1627,170 @@
             text-align: justify !important;
         }
 
-        /* Part Divider Banners for Chapter Summaries */
+    
+        /* Evaluation Framework Banner */
+        .eval-framework-card {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 6px solid #475569;
+            border-radius: 8px;
+            padding: 22px 26px;
+            margin: 24px 0 36px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+        .eval-framework-card h3 {
+            color: #0f172a !important;
+            margin-top: 0 !important;
+            margin-bottom: 8px !important;
+            font-size: 1.25rem !important;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+        }
+        .eval-framework-card p.framework-intro {
+            color: #334155 !important;
+            font-size: 0.94rem !important;
+            line-height: 1.55 !important;
+            margin: 0 0 16px 0 !important;
+            text-align: justify !important;
+        }
+        .eval-framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 14px;
+        }
+        .eval-framework-box {
+            border-radius: 6px;
+            padding: 14px 16px;
+            font-size: 0.88rem;
+            line-height: 1.48;
+        }
+        .eval-framework-box strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.93rem;
+        }
+        .eval-framework-box p {
+            margin: 0 !important;
+            color: #1e293b !important;
+            text-align: justify !important;
+            font-size: 0.88rem !important;
+            line-height: 1.45 !important;
+        }
+        .eval-framework-box.strengths-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #16a34a;
+        }
+        .eval-framework-box.strengths-box strong {
+            color: #15803d;
+        }
+        .eval-framework-box.critique-box {
+            background-color: #fff1f2;
+            border: 1px solid #fecdd3;
+            border-left: 4px solid #e11d48;
+        }
+        .eval-framework-box.critique-box strong {
+            color: #be123c;
+        }
+        .eval-framework-box.judgement-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 4px solid #d97706;
+        }
+        .eval-framework-box.judgement-box strong {
+            color: #b45309;
+        }
+        .eval-framework-box.conclusion-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-left: 4px solid #2563eb;
+        }
+        .eval-framework-box.conclusion-box strong {
+            color: #1d4ed8;
+        }
+
+        /* Part Divider Banners with Chapter Roadmaps */
         .part-divider-banner {
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            background: linear-gradient(135deg, #1e293b, #1e40af);
             color: #ffffff;
             border-radius: 8px;
-            padding: 18px 24px;
-            margin: 40px 0 24px 0;
-            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
-            border-left: 6px solid #1e40af;
+            padding: 24px 28px;
+            margin: 48px 0 28px 0;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+            border-left: 6px solid #2563eb;
         }
-        .part-divider-banner h3 {
+        .part-banner-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+        }
+        .part-banner-header h3 {
             color: #ffffff !important;
-            margin: 0 0 6px 0 !important;
-            font-size: 1.3rem !important;
+            margin: 0 !important;
+            font-size: 1.35rem !important;
             letter-spacing: 0.02em;
         }
-        .part-divider-banner p {
-            color: #dbeafe !important;
-            margin: 0 !important;
-            font-size: 0.92rem !important;
+        .part-pill {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #dbeafe;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .part-lead-summary {
+            color: #f1f5f9 !important;
+            font-size: 0.96rem !important;
+            line-height: 1.6 !important;
+            margin: 0 0 18px 0 !important;
+            text-align: justify !important;
+        }
+        .part-chapter-roadmaps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+        }
+        .roadmap-item {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            padding: 12px 14px;
+            backdrop-filter: blur(4px);
+        }
+        .roadmap-item strong {
+            color: #93c5fd;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.92rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 3px;
+        }
+        .roadmap-item p {
+            color: #e2e8f0 !important;
+            font-size: 0.86rem !important;
             line-height: 1.45 !important;
+            margin: 0 !important;
+            text-align: justify !important;
         }
 
         /* Thematic Subheadings within Chapter Summaries */
         .summary-subheading {
             color: #1e3a8a !important;
-            font-size: 1.02rem !important;
+            font-size: 1.05rem !important;
             font-weight: 700 !important;
-            margin: 20px 0 8px 0 !important;
-            padding-bottom: 4px;
-            border-bottom: 1px solid #e2e8f0;
+            margin: 22px 0 10px 0 !important;
+            padding-bottom: 5px;
+            border-bottom: 1.5px solid #e2e8f0;
             letter-spacing: 0.015em;
         }
         .summary-subheading:first-of-type {
-            margin-top: 10px !important;
+            margin-top: 12px !important;
         }
     </style>
 </head>
@@ -2999,10 +3128,61 @@
 
     <h2>Chapter Summaries: Comprehensive Analytical Syntheses</h2>
 
-        <div class="part-divider-banner">
-        <h3>Part 1: The Pillars of Sociology (Chapters 1–4)</h3>
-        <p>Modern and post-structural sociologies of schooling: examining structural inequities across Social Class, Race/Ethnicity, Gender, and Sexualities.</p>
+        
+    <!-- EVALUATION FRAMEWORK ARCHITECTURE -->
+    <div class="eval-framework-card">
+        <h3>Evaluation Framework &amp; Dialectical Architecture</h3>
+        <p class="framework-intro">
+            Every chapter summary across the 18 chapters is structured around a four-part evaluative apparatus designed to balance critical sociological deconstruction against empirical evidence and everyday classroom practice:
+        </p>
+        <div class="eval-framework-grid">
+            <div class="eval-framework-box strengths-box">
+                <strong>1. Strengths of the Argument (Thesis)</strong>
+                <p>Articulates the diagnostic power of the chapter's conceptual toolkit, identifying how specific sociological and philosophical theories dismantle common-sense orthodoxies and expose structural inequities.</p>
+            </div>
+            <div class="eval-framework-box critique-box">
+                <strong>2. Inaccuracies &amp; Critique (Antithesis)</strong>
+                <p>Identifies where theoretical models overreach into structural fatalism, developmental or biological denialism, category errors, or empirical policy nihilism.</p>
+            </div>
+            <div class="eval-framework-box judgement-box">
+                <strong>3. Balanced Judgement (Synthesis)</strong>
+                <p>Reconciles theoretical leverage against empirical realities, weighing whether the authors deliver a pragmatic diagnostic toolbox or succumb to ideological determinism.</p>
+            </div>
+            <div class="eval-framework-box conclusion-box">
+                <strong>4. Pedagogical Conclusion (Application)</strong>
+                <p>Translates academic deconstruction into practical, high-expectations classroom practice, providing concrete instructional strategies for educators on Monday morning.</p>
+            </div>
+        </div>
     </div>
+    <!-- /EVALUATION FRAMEWORK ARCHITECTURE -->
+    <div class="part-divider-banner">
+        <div class="part-banner-header">
+            <h3>Part 1: The Pillars of Sociology (Chapters 1–4)</h3>
+            <span class="part-pill">Sociological Foundations</span>
+        </div>
+        <p class="part-lead-summary">
+            Part 1 interrogates the foundational sociological vectors of inequality—class, race, gender, and sexuality—demonstrating that educational disparities are not the result of individual deficits, biological wiring, or natural merit, but are structural outcomes engineered by institutional arrangements.
+        </p>
+        <div class="part-chapter-roadmaps">
+            <div class="roadmap-item">
+                <strong>Chapter 1: Social Class</strong>
+                <p>Deconstructs meritocracy and deficit models via Marx's correspondence principle, Weber's status credentialism, Bourdieu's cultural capital and symbolic violence, Bernstein's codes, Willis and Connell's counter-school resistance, and the Gonski funding crisis.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 2: Race &amp; Indigeneity</strong>
+                <p>Dismantles biological race and colonial eugenics via Fanon's colonisation of the mind, Gillborn's Critical Race Theory, the Stolen Generations, the school-to-prison pipeline, and inverting the 'Indigenous problem' deficit discourse.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 3: Gender</strong>
+                <p>Refutes neuro-myths and binary essentialism via neuroplasticity, Connell's gender regimes and hegemonic masculinity, Butler's gender performativity, the 'failing boys' moral panic, and cisnormative spatial inclusion.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 4: Sexualities</strong>
+                <p>Unmasks the heteronormative hidden curriculum via Rich's compulsory heterosexuality, the biological intersex matrix, legislative censorship from Section 28 to Safe Schools, minority stress, and proactive affirmative pedagogy.</p>
+            </div>
+        </div>
+    </div>
+
 
     <div class="chapter-summary">
         <h3>Chapter 1: Social Class</h3>
@@ -3311,11 +3491,38 @@
             <p>Fulfilling the teacher's fiduciary duty of care requires moving decisively beyond passive anti-bullying tolerance to proactive affirmative pedagogy. Educators must actively disrupt heteronormative erasure by embedding diverse sexualities, genders, and intersex variations into academic curricula as natural dimensions of human diversity. In the classroom, teachers must maintain zero tolerance for homophobic and transphobic microaggressions, establish affirming pastoral support systems, and defend students' rights to privacy, safety, and self-identification, ensuring that public schools function as safe, democratic spaces of human dignity.</p>
         </div>
     </div>
-
-        <div class="part-divider-banner">
-        <h3>Part 2: An Alternative Approach — Governance &amp; Subjectivity (Chapters 5–9)</h3>
-        <p>Institutional power, surveillance, and regulation: deconstructing Disciplinary Governance, Subjectivity, Neoliberal Marketisation, Pre-Adulthood, and Datafication.</p>
+    <div class="part-divider-banner">
+        <div class="part-banner-header">
+            <h3>Part 2: Governance &amp; Subjectivity (Chapters 5–9)</h3>
+            <span class="part-pill">Institutional Regulation</span>
+        </div>
+        <p class="part-lead-summary">
+            Part 2 examines the institutional technologies, managerial architectures, and economic ideologies through which mass education regulates populations, constructs internal psychological subjectivities, and commodifies public schooling.
+        </p>
+        <div class="part-chapter-roadmaps">
+            <div class="roadmap-item">
+                <strong>Chapter 5: Governance</strong>
+                <p>Demystifies school organization as neutral logistics via Foucault's disciplinary power and docile bodies, Bentham's Panopticon and the internalized gaze, the disciplinary triad, governmentality, and modern digital dataveillance.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 6: Subjectivity</strong>
+                <p>Challenges natural interiority via Rose's psy-complex and Conrad's medicalisation of deviance, unpacking the ADHD diagnostic dilemma, Singer and Walker's neurodiversity paradigm, and Universal Design for Learning (UDL).</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 7: Neoliberalism &amp; Marketisation</strong>
+                <p>Analyzes the dismantling of the public democratic commons via Hayek's critique of state planning, Friedman's vouchers, horizontal competition, Ball's performativity, and the socioeconomic residualisation of state schools.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 8: Pre-Adulthood</strong>
+                <p>Examines childhood as a modern institutional construct, evaluating Ariès's thesis against modern historiographical refutations, James and Prout's New Sociology of Childhood, developmentalism vs. biological ontogeny, and prolonged adolescence.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 9: Datafication</strong>
+                <p>Dismantles data positivism via Lingard's governance by numbers and Spina's accountability washback (curriculum narrowing, student triage, teacher moral distress), corporate EdTech surveillance, and diagnostic equity data.</p>
+            </div>
+        </div>
     </div>
+
 
     <div class="chapter-summary">
         <h3>Chapter 5: Governance</h3>
@@ -3629,11 +3836,34 @@
             <p>Teachers must reclaim professional judgment from metric tyranny, ensuring that quantitative data remains an instructional servant rather than an accountability master. Educators must actively resist curriculum narrowing and test-drilling, defending holistic, creative, and critical learning experiences that elude numerical calculation. Simultaneously, teachers must not surrender empirical evidence; objective diagnostic data should be used ethically and collaboratively within schools to identify individual learning gaps, calibrate instructional scaffolding, and advocate for systemic equity resources, balancing quantitative insights with qualitative relational care.</p>
         </div>
     </div>
-
-        <div class="part-divider-banner">
-        <h3>Part 3: Cultural Contexts of Education (Chapters 10–13)</h3>
-        <p>Mass culture and external socio-technical forces: interrogating the Media, Youth Popular Culture, Educational Technology, and Globalisation.</p>
+    <div class="part-divider-banner">
+        <div class="part-banner-header">
+            <h3>Part 3: Cultural Contexts of Education (Chapters 10–13)</h3>
+            <span class="part-pill">Culture &amp; Technology</span>
+        </div>
+        <p class="part-lead-summary">
+            Part 3 explores how mass schooling interacts with external cultural, technological, and transnational forces, challenging educators to move beyond reactionary moral panics and uncritical consumption toward critical media and global literacies.
+        </p>
+        <div class="part-chapter-roadmaps">
+            <div class="roadmap-item">
+                <strong>Chapter 10: The Media</strong>
+                <p>Rejects the dismissal of media as trivial distraction via Hall's encoding/decoding and active audience theory, Cohen's moral panics and folk devils, ideological deflection from school funding, and algorithmic outrage attention economies.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 11: Popular Culture</strong>
+                <p>Challenges cultural elitism via Fiske's semiotic democracy and textual poaching, Kristeva's intertextuality, Barthes' semiology, platform capitalism, and popular culture as a bridge to powerful disciplinary knowledge.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 12: Technology</strong>
+                <p>Refutes techno-solutionism by debunking Prensky's digital native fallacy, detailing Postman's media ecology and Faustian bargain, Zuboff's surveillance capitalism, and Oliver's social model of disability and assistive tech.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 13: Globalisation</strong>
+                <p>Challenges neutral modernization myths via Rizvi and Lingard's global policy field, OECD and PISA soft power and policy borrowing, postcolonial epistemic violence, and critical global literacy vs. superficial tourism.</p>
+            </div>
+        </div>
     </div>
+
 
     <div class="chapter-summary">
         <h3>Chapter 10: The Media</h3>
@@ -3947,11 +4177,38 @@
             <p>Educators must cultivate critical global literacy while remaining firmly anchored in local community needs. Teachers must reject superficial, decorative cultural tourism (such as isolated 'food, flags, and folklore' celebrations) and paternalistic charity drives that patronize the Global South. Instead, ethical pedagogy requires guiding students to investigate global supply chains, ecological interdependence, and historical colonial legacies, connecting local classroom inquiries with global struggles for climate justice, human rights, and the defense of public education as a universal democratic entitlement.</p>
         </div>
     </div>
-
-        <div class="part-divider-banner">
-        <h3>Part 4: Philosophy, Law &amp; Foundations of Practice (Chapters 14–18)</h3>
-        <p>Foundations of professional practice: engaging with Educational Philosophy, Ethics and the Law, Children's Rights, Truth and Postcolonialism, and Alternative Models.</p>
+    <div class="part-divider-banner">
+        <div class="part-banner-header">
+            <h3>Part 4: Philosophy, Law &amp; Foundations of Practice (Chapters 14–18)</h3>
+            <span class="part-pill">Normative Foundations</span>
+        </div>
+        <p class="part-lead-summary">
+            Part 4 anchors educational practice in its philosophical, legal, human rights, postcolonial, and institutional foundations, articulating the ethical responsibilities and democratic purposes of the teaching profession.
+        </p>
+        <div class="part-chapter-roadmaps">
+            <div class="roadmap-item">
+                <strong>Chapter 14: Philosophy</strong>
+                <p>Rebuts the myth that philosophy is an ivory-tower luxury, mapping schooling to epistemology, metaphysics, ethics, and logic, Socratic dialectic, Dewey's progressive pragmatism, Freire's critical pedagogy, and personal philosophy.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 15: Ethics &amp; The Law</strong>
+                <p>Demolishes intuitive morality via deontology, utilitarianism, and Noddings' ethics of care, common law negligence and the non-delegable duty, statutory child protection, and the McClellan Royal Commission.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 16: Children's Rights</strong>
+                <p>Displaces paternalism from Jebb's Geneva Declaration to the 1989 UNCRC, analyzing the '3 Ps' framework, Articles 28 and 29, Gillett-Swan's student voice critique, and restorative rights-respecting classrooms.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 17: Truth &amp; Postcolonialism</strong>
+                <p>Deconstructs curricular neutrality via Foucault's regimes of truth, Said's Orientalism, Spivak's epistemic violence, Wolfe's settler colonialism, the History Wars, Nakata's Cultural Interface, and Young's powerful knowledge.</p>
+            </div>
+            <div class="roadmap-item">
+                <strong>Chapter 18: Alternative Education</strong>
+                <p>Dismantles institutional determinism via Montessori's prepared environment, Neill's Summerhill democracy, Illich's deschooling, the paradox of class privilege in alternative enclaves, and humanizing public education.</p>
+            </div>
+        </div>
     </div>
+
 
     <div class="chapter-summary">
         <h3>Chapter 14: Philosophy</h3>
