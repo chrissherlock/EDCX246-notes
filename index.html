@@ -1974,12 +1974,175 @@
             color: inherit !important;
             font-weight: inherit !important;
         }
+
+        /* Smooth Scrolling for In-Page Navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Table of Contents Styling */
+        .toc-card {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 6px solid #1e40af;
+            border-radius: 8px;
+            padding: 22px 28px;
+            margin: 0 0 36px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+        .toc-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .toc-card-header h2 {
+            color: #1e40af !important;
+            margin: 0 !important;
+            font-size: 1.35rem !important;
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
+        }
+        .toc-badge {
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            border: 1px solid #bfdbfe;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .toc-column {
+            display: flex;
+            flex-direction: column;
+        }
+        .toc-column-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #0f172a;
+            border-bottom: 1.5px solid #e2e8f0;
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+        .toc-list li {
+            margin-bottom: 6px;
+        }
+        .toc-list a {
+            color: #1e40af;
+            text-decoration: none;
+            transition: color 0.15s ease-in-out;
+        }
+        .toc-list a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .toc-list .toc-sub {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-left: 2px;
+        }
+        @media print {
+            .toc-card {
+                page-break-after: always;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>EDCX246 Exam Revision Guide: Society and Education</h1>
 
-    <!-- BOOK CONTEXT & METHODOLOGY OVERVIEW -->
+    
+    <!-- TABLE OF CONTENTS -->
+    <nav id="table-of-contents" class="toc-card" aria-label="Table of Contents">
+        <div class="toc-card-header">
+            <h2>Table of Contents</h2>
+            <span class="toc-badge">Quick Navigation</span>
+        </div>
+        <div class="toc-grid">
+            <div class="toc-column">
+                <span class="toc-column-title">1. Orientation &amp; Reference</span>
+                <ul class="toc-list">
+                    <li><a href="#book-overview">Textbook Overview &amp; Methodology</a></li>
+                    <li><a href="#theorists-matrix">Theorists Directory <span class="toc-sub">(A–Z Sortable)</span></a></li>
+                    <li><a href="#myths-conclusions">Myths &amp; Sociological Conclusions</a></li>
+                    <li><a href="#definitions-dictionary">Definitions Dictionary <span class="toc-sub">(Ch 1–18)</span></a></li>
+                    <li><a href="#chapter-summaries">Evaluation Architecture &amp; Color Key</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <span class="toc-column-title">2. Pillars of Sociology</span>
+                <ul class="toc-list">
+                    <li><a href="#part-1">Part 1 Overview</a></li>
+                    <li><a href="#ch1">Ch 1: Social Class</a></li>
+                    <li><a href="#ch2">Ch 2: Race &amp; Indigeneity</a></li>
+                    <li><a href="#ch3">Ch 3: Gender</a></li>
+                    <li><a href="#ch4">Ch 4: Sexualities</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <span class="toc-column-title">3. Governance &amp; Subject</span>
+                <ul class="toc-list">
+                    <li><a href="#part-2">Part 2 Overview</a></li>
+                    <li><a href="#ch5">Ch 5: Governance</a></li>
+                    <li><a href="#ch6">Ch 6: Subjectivity</a></li>
+                    <li><a href="#ch7">Ch 7: Neoliberalism</a></li>
+                    <li><a href="#ch8">Ch 8: Pre-Adulthood</a></li>
+                    <li><a href="#ch9">Ch 9: Datafication</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <span class="toc-column-title">4. Cultural Contexts</span>
+                <ul class="toc-list">
+                    <li><a href="#part-3">Part 3 Overview</a></li>
+                    <li><a href="#ch10">Ch 10: The Media</a></li>
+                    <li><a href="#ch11">Ch 11: Popular Culture</a></li>
+                    <li><a href="#ch12">Ch 12: Technology</a></li>
+                    <li><a href="#ch13">Ch 13: Globalisation</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <span class="toc-column-title">5. Philosophy, Law &amp; Rights</span>
+                <ul class="toc-list">
+                    <li><a href="#part-4">Part 4 Overview</a></li>
+                    <li><a href="#ch14">Ch 14: Philosophy</a></li>
+                    <li><a href="#ch15">Ch 15: Ethics and the Law</a></li>
+                    <li><a href="#ch16">Ch 16: Children's Rights</a></li>
+                    <li><a href="#ch17">Ch 17: Truth &amp; Postcolonialism</a></li>
+                    <li><a href="#ch18">Ch 18: Alternative Education</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <span class="toc-column-title">6. Exam Practice &amp; Critique</span>
+                <ul class="toc-list">
+                    <li><a href="#exam-notes-extension">2-Mark Scoring Strategy</a></li>
+                    <li><a href="#exam-notes-extension">High-Yield Practice Exam Bank</a></li>
+                    <li><a href="#exam-notes-extension">MCQ Elimination Rules</a></li>
+                    <li><a href="#fundamental-problems">7 Fundamental Blind Spots</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- /TABLE OF CONTENTS -->
+
+<!-- BOOK CONTEXT & METHODOLOGY OVERVIEW -->
     <section id="book-overview" class="book-overview-card">
         <h2>About the Textbook: Making Sense of Mass Education (4th Edition)</h2>
 
@@ -2125,7 +2288,7 @@
         </div>
     </section>
 
-<h2>Theorists, Ideas &amp; Philosophies</h2>
+<h2 id="theorists-matrix">Theorists, Ideas &amp; Philosophies</h2>
     <table id="theorists-table">
         <thead>
             <tr>
@@ -2948,7 +3111,7 @@
         </tbody>
     </table>
 
-        <h2>Myths and Sociological Conclusions</h2>
+        <h2 id="myths-conclusions">Myths and Sociological Conclusions</h2>
     <table>
         <thead>
             <tr>
@@ -3105,7 +3268,7 @@
         </tbody>
     </table>
 
-    <h2>Definitions Dictionary by Chapter</h2>
+    <h2 id="definitions-dictionary">Definitions Dictionary by Chapter</h2>
     <table>
         <thead>
             <tr>
@@ -3308,7 +3471,7 @@
         </tbody>
     </table>
 
-    <h2>Chapter Summaries: Comprehensive Analytical Syntheses</h2>
+    <h2 id="chapter-summaries">Chapter Summaries: Comprehensive Analytical Syntheses</h2>
 
         
     <!-- EVALUATION FRAMEWORK ARCHITECTURE -->
@@ -3380,7 +3543,7 @@
     </div>
     <!-- /KEYWORDS & CONCEPTS COLOR KEY -->
 
-<div class="part-divider-banner">
+<div class="part-divider-banner" id="part-1">
         <div class="part-banner-header">
             <h3>Part 1: The Pillars of Sociology (Chapters 1–4)</h3>
             <span class="part-pill">Sociological Foundations</span>
@@ -3409,7 +3572,7 @@
     </div>
 
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch1">
         <h3>Chapter 1: Social Class</h3>
                         
         
@@ -3513,7 +3676,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch2">
         <h3>Chapter 2: Race, Ethnicity and Indigeneity</h3>
                         
         
@@ -3608,7 +3771,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch3">
         <h3>Chapter 3: Gender</h3>
                         
         
@@ -3694,7 +3857,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch4">
         <h3>Chapter 4: Sexualities</h3>
                         
         
@@ -3902,7 +4065,7 @@
             <p>Fulfilling the teacher's fiduciary duty of care requires moving decisively beyond passive anti-bullying tolerance to proactive affirmative pedagogy. Educators must actively disrupt heteronormative erasure by embedding diverse sexualities, genders, and intersex variations into academic curricula as natural dimensions of human diversity. In the classroom, teachers must maintain zero tolerance for homophobic and transphobic microaggressions, establish affirming pastoral support systems, and defend students' rights to privacy, safety, and self-identification, ensuring that public schools function as safe, democratic spaces of human dignity.</p>
         </div>
     </div>
-    <div class="part-divider-banner">
+    <div class="part-divider-banner" id="part-2">
         <div class="part-banner-header">
             <h3>Part 2: Governance &amp; Subjectivity (Chapters 5–9)</h3>
             <span class="part-pill">Institutional Regulation</span>
@@ -3935,7 +4098,7 @@
     </div>
 
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch5">
         <h3>Chapter 5: Governance</h3>
                         
         
@@ -4057,7 +4220,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch6">
         <h3>Chapter 6: Subjectivity</h3>
                         
         
@@ -4174,7 +4337,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch7">
         <h3>Chapter 7: Neoliberalism and Marketisation</h3>
                                 
         
@@ -4292,7 +4455,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch8">
         <h3>Chapter 8: Pre-Adulthood</h3>
                         
         
@@ -4378,7 +4541,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch9">
         <h3>Chapter 9: Datafication</h3>
                         
         
@@ -4463,7 +4626,7 @@
             <p>Teachers must reclaim professional judgment from metric tyranny, ensuring that quantitative data remains an instructional servant rather than an accountability master. Educators must actively resist curriculum narrowing and test-drilling, defending holistic, creative, and critical learning experiences that elude numerical calculation. Simultaneously, teachers must not surrender empirical evidence; objective diagnostic data should be used ethically and collaboratively within schools to identify individual learning gaps, calibrate instructional scaffolding, and advocate for systemic equity resources, balancing quantitative insights with qualitative relational care.</p>
         </div>
     </div>
-    <div class="part-divider-banner">
+    <div class="part-divider-banner" id="part-3">
         <div class="part-banner-header">
             <h3>Part 3: Cultural Contexts of Education (Chapters 10–13)</h3>
             <span class="part-pill">Culture &amp; Technology</span>
@@ -4492,7 +4655,7 @@
     </div>
 
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch10">
         <h3>Chapter 10: The Media</h3>
                         
         
@@ -4620,7 +4783,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch11">
         <h3>Chapter 11: Popular Culture</h3>
                         
         
@@ -4726,7 +4889,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch12">
         <h3>Chapter 12: Technology</h3>
                         
         
@@ -4852,7 +5015,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch13">
         <h3>Chapter 13: Globalisation</h3>
                         
         
@@ -4972,7 +5135,7 @@
             <p>Educators must cultivate critical global literacy while remaining firmly anchored in local community needs. Teachers must reject superficial, decorative cultural tourism (such as isolated 'food, flags, and folklore' celebrations) and paternalistic charity drives that patronize the Global South. Instead, ethical pedagogy requires guiding students to investigate global supply chains, ecological interdependence, and historical colonial legacies, connecting local classroom inquiries with global struggles for climate justice, human rights, and the defense of public education as a universal democratic entitlement.</p>
         </div>
     </div>
-    <div class="part-divider-banner">
+    <div class="part-divider-banner" id="part-4">
         <div class="part-banner-header">
             <h3>Part 4: Philosophy, Law &amp; Foundations of Practice (Chapters 14–18)</h3>
             <span class="part-pill">Normative Foundations</span>
@@ -5005,7 +5168,7 @@
     </div>
 
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch14">
         <h3>Chapter 14: Philosophy</h3>
                 
         
@@ -5094,7 +5257,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch15">
         <h3>Chapter 15: Ethics and the Law</h3>
                         
         
@@ -5358,7 +5521,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch16">
         <h3>Chapter 16: Children's Rights</h3>
                 
         
@@ -5496,7 +5659,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch17">
         <h3>Chapter 17: Truth and Postcolonialism</h3>
                         
         
@@ -5786,7 +5949,7 @@
         </div>
     </div>
 
-    <div class="chapter-summary">
+    <div class="chapter-summary" id="ch18">
         <h3>Chapter 18: Alternative Education</h3>
                 
         
