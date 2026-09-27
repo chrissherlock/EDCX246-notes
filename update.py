@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Purge any remaining citation tags from core-concepts.html and sync to main."""
+"""Refine the Symbolic Violence and Misrecognition entry in core-concepts.html
+
+to use plain-English mechanics and sync updates to the main branch via git.
+"""
 
 from pathlib import Path
 import subprocess
@@ -548,15 +551,15 @@ def produce_complete_html_document() -> str:
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
-                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change</em> (pp. 71–112). London: Tavistock. <em>[Initial formulation of cultural capital and the school's implicit demand for what it does not give]</em>.</li>
-                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. <em>[Bodily hexis, habitus, and the conductorless orchestration of class dispositions]</em>.</li>
-                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Harvard University Press. <em>[The aesthetic disposition, legitimate autodidacticism vs. scholastic pedantry, and the teacher vs. industrialist intraclass divide]</em>.</li>
-                    <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). Greenwood. <em>[Codification of Embodied, Objectified, and Institutionalized capital; the economy of labor-time and 'wasted time']</em>.</li>
-                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em>. London: Sage. <em>[Pedagogic authority, misrecognition, and symbolic violence in mass schooling]</em>.</li>
-                    <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298. <em>[Foundational counter-thesis: the culture of power and explicit pedagogy]</em>.</li>
-                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press. <em>[Full empirical exposition of minority pedagogical needs]</em>.</li>
-                    <li><strong>Rancière, J. (2003).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Duke University Press. <em>[The definitive critique of sociological paternalism and the myth of complicit misrecognition]</em>.</li>
-                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge. <em>[The Social Realist refutation of curricular relativism: Powerful Knowledge]</em>.</li>
+                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change</em> (pp. 71–112). London: Tavistock.</li>
+                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press.</li>
+                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Harvard University Press.</li>
+                    <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). Greenwood.</li>
+                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em>. London: Sage.</li>
+                    <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
+                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
+                    <li><strong>Rancière, J. (2003).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Duke University Press.</li>
+                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
                 </ul>
             </div>
         </div>
@@ -604,25 +607,54 @@ def produce_complete_html_document() -> str:
             <div class="entry-references">
                 <strong>Primary Foundations in Bourdieu's Works:</strong>
                 <ul>
-                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. <em>[The foundational exposition of habitus, bodily hexis, and the critique of subjectivism vs. objectivism]</em>.</li>
-                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em>. Harvard University Press. <em>[Class habitus, the space of lifestyles, and the somaticized sense of distinction]</em>.</li>
-                    <li><strong>Bourdieu, P. (1990).</strong> <em>The Logic of Practice</em> (R. Nice, Trans.). Stanford: Stanford University Press. <em>[Elaboration of practical logic, sens pratique, and the conductorless orchestration of social action]</em>.</li>
+                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press.</li>
+                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em>. Harvard University Press.</li>
+                    <li><strong>Bourdieu, P. (1990).</strong> <em>The Logic of Practice</em> (R. Nice, Trans.). Stanford: Stanford University Press.</li>
                 </ul>
             </div>
         </div>
 
         <div class="forensic-entry">
             <h4 class="concept-title">Symbolic Violence &amp; Misrecognition (Pierre Bourdieu &amp; Jean-Claude Passeron)</h4>
-            <p>Symbolic violence denotes the tacit, non-physical form of domination exerted through the complicity and misrecognition of dominated agents. It occurs when arbitrary cultural meanings, linguistic standards, and hierarchies of ruling groups are successfully imposed and internalized as natural, universal, and objective orders of reality.</p>
+            <p>
+                Symbolic violence is <strong>power without physical force</strong>. Instead of using police, threats, or guns,
+                ruling groups maintain dominance quietly through everyday rules, expectations, and cultural standards.
+                Crucially, this system relies on <span class="tooltip-term" tabindex="0" data-tooltip="Failing to recognize that social rules are rigged; mistaking arbitrary upper-class standards for natural talent and objective fairness.">misrecognition (méconnaissance)</span>
+                and <span class="tooltip-term" tabindex="0" data-tooltip="Unknowingly going along with your own oppression because you believe the system is fair and neutral.">complicity</span>:
+                because ordinary people are tricked into believing that the rules are natural and fair, they blame themselves
+                when they fail rather than questioning the system.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The "Professional" Dress Code</strong>
+                Imagine an elite corporate firm or university that enforces strict rules regarding presentation: banning natural ethnic hairstyles or regional accents in favor of a polished, upper-class "professional standard."
+                <ul>
+                    <li><strong>The Arbitrary Rule:</strong> There is nothing mathematically or functionally superior about an upper-class accent over a regional one; it is simply the dialect of the people currently holding power (<span class="tooltip-term" tabindex="0" data-tooltip="Culture and tastes made up by the ruling class and treated as universal excellence.">cultural arbitrary</span>).</li>
+                    <li><strong>The Symbolic Violence:</strong> When a qualified candidate is passed over for a job because their voice or appearance doesn't match that mold, they are not physically attacked. Instead, they are made to feel unpolished, inferior, and unsuited for success.</li>
+                    <li><strong>The Misrecognition:</strong> The excluded candidate internalizes the shame, thinking, <em>"I just need to work harder on myself,"</em> rather than realizing the institution is using arbitrary cultural boundaries to lock them out.</li>
+                </ul>
+            </div>
+
             <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed alongside Passeron in <em>Reproduction in Education, Society and Culture</em> (1970/1977) and elaborated in <em>Pascalian Meditations</em> (1997/2000). Built to address a core political question: why do deeply unequal social hierarchies remain stable without constant physical force or overt totalitarian surveillance? Classical Marxism posited false consciousness imposed from above. Bourdieu recognized that dominated agents actively participate in their own subordination because the cognitive tools they use to evaluate the world are themselves structured by the relations of domination.</p>
+
             <p><strong>2. Theoretical Mechanics:</strong> Schools exercise <em>pedagogic authority</em> to impose a <em>cultural arbitrary</em> (ruling-class culture). Through <em>misrecognition (méconnaissance)</em>, unequal outcomes are treated not as the consequence of class-biased curricula, but as reflections of natural talent and moral effort. The process is somaticized through feelings of shame, inadequacy, and verbal hesitation.</p>
+
             <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Explains how mass education neutralizes overt rebellion. Disadvantaged students who struggle with academic curricula internalize their exclusion as personal intellectual failure rather than structural sorting, preserving institutional legitimacy and converting class privilege into meritocratic achievement.</p>
+
             <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
             <ul>
                 <li><em>The Rancière Critique (The Paternalism of 'Complicity'):</em> Philosopher Jacques Rancière demonstrated that Bourdieu's claim that the dominated are complicit in their subjugation is intellectually condescending. It frames working-class people as blind dupes who walk passively to their slaughter, unable to understand their oppression until an elite sociologist explains it to them. In reality, marginalized students and parents frequently see through institutional hypocrisy with immense clarity.</li>
                 <li><em>Erasing Subcultural Dignity:</em> Subcultural studies demonstrate that working-class youth rarely internalize shame meekly; they mock scholastic pomposity, carve out autonomous cultural dignity, and consciously reject academic values.</li>
                 <li><em>Pedagogical Paralysis:</em> If every assessment, objective test, and behavioral standard is branded symbolic violence, educators are left morally paralyzed, unable to correct errors, maintain productive order, or assess real learning.</li>
             </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations in Bourdieu's Works:</strong>
+                <ul>
+                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. <em>[Pedagogic action, pedagogic authority, and the imposition of the cultural arbitrary]</em>.</li>
+                    <li><strong>Bourdieu, P. (2000).</strong> <em>Pascalian Meditations</em>. Stanford University Press. <em>[Elaboration of symbolic violence, bodily submission, and misrecognition]</em>.</li>
+                </ul>
+            </div>
         </div>
 
         <h3 class="tradition-header">Sociolinguistic &amp; Resistance Paradigms</h3>
@@ -929,14 +961,16 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully purged all citation tags from: {target_file.resolve()}")
+    print(f"Successfully refined Symbolic Violence entry in: {target_file.resolve()}")
 
     commit_message = (
-        "Purge accidental citation tags from core-concepts.html\n\n"
-        "Remove all bracketed citation markers from core-concepts.html\n"
-        "to maintain clean, unpolluted student coursework markup.\n\n"
-        "- Strip all bracketed reference indices from HTML entries.\n"
-        "- Ensure clean semantic presentation across all concept modules."
+        "Clarify Symbolic Violence entry in core-concepts with plain English\n\n"
+        "Replace dense academic jargon in the Symbolic Violence entry of\n"
+        "core-concepts.html with clear explanations of power without physical\n"
+        "force and arbitrary class standards mistaken for natural merit.\n\n"
+        "- Replace dense opening with plain-English breakdown of domination.\n"
+        "- Add interactive tooltip popovers for misrecognition and arbitrary culture.\n"
+        "- Preserve master bibliography and clean markup."
     )
 
     sync_repository(root_directory, commit_message)
