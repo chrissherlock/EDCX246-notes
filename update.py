@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with Max Weber added to the Master Bibliography,
+"""Regenerate core-concepts.html with Max Weber included in the Master Bibliography,
 
 maintaining separated Social Closure and Credentialism entries under Section 1,
 and sync updates to the main branch via git.
@@ -898,7 +898,7 @@ def produce_complete_html_document() -> str:
 
             <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Illuminates how non-economic factors—such as race, religion, institutional pedigree, and lifestyle conventions—are weaponized to secure structural advantages and protect professional monopolies from open, meritocratic competition.</p>
 
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span> While powerful for understanding prestige boundaries, classic Weberian closure can underside how underlying economic capital and capitalist relations of production ultimately shape and finance status group boundaries in advanced industrial societies.</p>
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span> While powerful for understanding prestige boundaries, classic Weberian closure can understate how underlying economic capital and capitalist relations of production ultimately shape and finance status group boundaries in advanced industrial societies.</p>
 
             <div class="entry-references">
                 <strong>Primary Foundations in Weberian Works:</strong>
@@ -1235,7 +1235,7 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully generated clean core-concepts.html with separated Weber and Collins entries: {target_file.resolve()}")
+    print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
         "Split Social Closure and Credentialism into separate entries\n\n"
