@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Refine the Habitus entry in core-concepts.html to use plain-English mechanics
-
-and sync updates to the main branch via git.
-"""
+"""Purge any remaining citation tags from core-concepts.html and sync to main."""
 
 from pathlib import Path
 import subprocess
@@ -569,7 +566,7 @@ def produce_complete_html_document() -> str:
             <p>
                 Habitus is the <strong>social muscle memory</strong> of human action. Just as an experienced tennis player
                 does not pause mid-rally to calculate physics formulas or consult an instruction manual, a person moves through
-                the social world guided by an internalized, subconscious <span class="tooltip-term" tabindex="0" data-tooltip="An intuitive 'feel for the game' operating automatically without conscious mental calculation.">"feel for the game" (sens pratique)</span>[cite: 4].
+                the social world guided by an internalized, subconscious <span class="tooltip-term" tabindex="0" data-tooltip="An intuitive 'feel for the game' operating automatically without conscious mental calculation.">"feel for the game" (sens pratique)</span>.
                 It is the permanent software installed in your nervous system by the class conditions of your upbringing.
             </p>
 
@@ -585,13 +582,13 @@ def produce_complete_html_document() -> str:
 
             <p><strong>1. History &amp; The Empirical Anomaly:</strong> Forged in Bourdieu's ethnographic studies of the Kabyle peasantry during the Algerian war of independence (late 1950s) and rural bachelorhood in his native Béarn. Bourdieu sought to break the French intellectual deadlock between Claude Lévi-Strauss's structuralism (which treated humans as passive automatons executing cultural rules) and Jean-Paul Sartre's existentialism (which asserted radical, unconstrained personal freedom). Algerian peasants could not simply choose to become industrial wage earners, nor were they running automated scripts; their traditional rural temporalities and honor codes clashed with the colonial money economy. Codified in <em>Outline of a Theory of Practice</em> (1972/1977) and <em>The Logic of Practice</em> (1980).</p>
 
-            <p><strong>2. Theoretical Mechanics:</strong> Defined in Bourdieu's famous formulation as <em>'structured structures predisposed to function as structuring structures[cite: 4].'</em> In plain terms, this means:</p>
+            <p><strong>2. Theoretical Mechanics:</strong> Defined in Bourdieu's famous formulation as <em>'structured structures predisposed to function as structuring structures.'</em> In plain terms, this means:</p>
             <ul>
-                <li><strong>The Software Loop:</strong> Your childhood environment shaped your brain (structured structure), and your brain now shapes how you interpret new situations (structuring structure)[cite: 4].</li>
-                <li><span class="tooltip-term" tabindex="0" data-tooltip="Habits that are stubborn, deeply ingrained, and travel with you across completely different settings (home, school, workplace).">Durable and Transposable Dispositions</span>: <em>Durable</em> means these habits are deeply rooted and resist change across a lifetime[cite: 4]. <em>Transposable</em> means a disposition learned at home (e.g., deference to authority or rhetorical debate) is automatically carried over and applied in completely foreign settings—classrooms, courtrooms, job interviews, and banks[cite: 4, 6].</li>
-                <li><span class="tooltip-term" tabindex="0" data-tooltip="The physical manifestation of class: posture, gait, vocal tension, space usage, eye contact, and physical poise.">Bodily Hexis (Class Written into the Body)</span>: Habitus is not merely a collection of intellectual thoughts; it is physically somaticized[cite: 4]. It lives in the way you walk, the volume and pitch of your voice, how you sit in a lecture theatre, your tolerance for physical proximity, and your tension when meeting authority figures[cite: 4].</li>
-                <li><strong>Internalized Objective Limits:</strong> Habitus converts the objective statistical probabilities of childhood into subjective, personal inclinations[cite: 4]. If higher education is statistically rare in a child's neighborhood, the habitus transforms that objective economic barrier into an unreflective personal choice: <em>"That is not for the likes of us[cite: 4]."</em></li>
-                <li><strong>The Conductorless Orchestra:</strong> People of the same social class act in striking harmony without ever holding a secret meeting or following a written rulebook[cite: 4]. Because they were conditioned by identical material circumstances, their internal clocks keep the exact same time[cite: 4].</li>
+                <li><strong>The Software Loop:</strong> Your childhood environment shaped your brain (structured structure), and your brain now shapes how you interpret new situations (structuring structure).</li>
+                <li><span class="tooltip-term" tabindex="0" data-tooltip="Habits that are stubborn, deeply ingrained, and travel with you across completely different settings (home, school, workplace).">Durable and Transposable Dispositions</span>: <em>Durable</em> means these habits are deeply rooted and resist change across a lifetime. <em>Transposable</em> means a disposition learned at home (e.g., deference to authority or rhetorical debate) is automatically carried over and applied in completely foreign settings—classrooms, courtrooms, job interviews, and banks.</li>
+                <li><span class="tooltip-term" tabindex="0" data-tooltip="The physical manifestation of class: posture, gait, vocal tension, space usage, eye contact, and physical poise.">Bodily Hexis (Class Written into the Body)</span>: Habitus is not merely a collection of intellectual thoughts; it is physically somaticized. It lives in the way you walk, the volume and pitch of your voice, how you sit in a lecture theatre, your tolerance for physical proximity, and your tension when meeting authority figures.</li>
+                <li><strong>Internalized Objective Limits:</strong> Habitus converts the objective statistical probabilities of childhood into subjective, personal inclinations. If higher education is statistically rare in a child's neighborhood, the habitus transforms that objective economic barrier into an unreflective personal choice: <em>"That is not for the likes of us."</em></li>
+                <li><strong>The Conductorless Orchestra:</strong> People of the same social class act in striking harmony without ever holding a secret meeting or following a written rulebook. Because they were conditioned by identical material circumstances, their internal clocks keep the exact same time.</li>
             </ul>
 
             <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Explains institutional affinity versus dislocation. Middle-class children navigate school with intuitive ease because their home habitus mirrors institutional culture. Explains self-elimination without overt coercion: working-class students internalize objective limits into subjective preferences (the feeling that higher education is <em>'not for the likes of us'</em>), walking away from academic pathways voluntarily.</p>
@@ -601,7 +598,7 @@ def produce_complete_html_document() -> str:
                 <li><em>The Béarn Postman Paradox (Performative Self-Contradiction):</em> If habitus is an inescapable, totalizing conditioning cage, how did Pierre Bourdieu—the son of an uneducated, low-ranking provincial postal worker in rural Béarn—ascend to the absolute summit of the elite French academy? If one person can transcend their originating habitus through intellectual discipline and public schooling, habitus is not an unbroken deterministic cycle; schooling can function as an engine of emancipation, not merely reproduction.</li>
                 <li><em>The Circular Tautology Trap:</em> In research and exam writing, habitus frequently collapses into circular reasoning: <em>Why did working-class students drop out? Because of their habitus. How do we know they have this habitus? Because they dropped out.</em> Unless isolated from the practices it claims to explain, habitus risks becoming a pseudo-scientific black box.</li>
                 <li><em>The Hysteresis Inadequacy:</em> Bourdieu's concept of hysteresis (the lag when habitus fails to adapt to altered field conditions) fails to account for modern multicultural learners who routinely exhibit multi-layered repertoires, contextual code-switching, and conscious reflexivity rather than static, unyielding dispositions.</li>
-                <li><em>Deficit-Labeling Hazard in Monday Morning Teaching:</em> When teachers accept habitus uncritically, it functions as a sophisticated, fatalistic excuse to lower expectations. Viewing a child's habits as permanently baked into their bodily hexis leads educators to write off disadvantaged students as culturally incompatible with academic rigor.</li>
+                <li><em>Deficit-Labeling Hazard in Monday Morning Teaching:</em> When teachers accept habitus uncritically, it functions as a sophisticated, fatalistic excuse to lower expectations, viewing working-class or minority learners as culturally incompatible with academic rigor.</li>
             </ul>
 
             <div class="entry-references">
@@ -932,16 +929,14 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully refined Habitus entry in: {target_file.resolve()}")
+    print(f"Successfully purged all citation tags from: {target_file.resolve()}")
 
     commit_message = (
-        "Refine Habitus entry in core-concepts with plain-English mechanics\n\n"
-        "Replace dense theoretical jargon in the Habitus entry of\n"
-        "core-concepts.html with clear explanations using the social muscle\n"
-        "memory and tennis player analogies.\n\n"
-        "- Demystify 'structured structures' and bodily hexis.\n"
-        "- Clarify internalized objective limits and the conductorless orchestra.\n"
-        "- Preserve master bibliography and interactive tooltips."
+        "Purge accidental citation tags from core-concepts.html\n\n"
+        "Remove all bracketed citation markers from core-concepts.html\n"
+        "to maintain clean, unpolluted student coursework markup.\n\n"
+        "- Strip all bracketed reference indices from HTML entries.\n"
+        "- Ensure clean semantic presentation across all concept modules."
     )
 
     sync_repository(root_directory, commit_message)
