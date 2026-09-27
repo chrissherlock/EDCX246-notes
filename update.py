@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Relocate the textbook impact critical synthesis box to its own dedicated card
+"""Elevate the critical synthesis impact box into its own standalone section card
 
-under Symbolic Violence & Misrecognition in core-concepts.html, and sync updates
-to the main branch via git.
+under Section 1 in core-concepts.html, and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -254,21 +253,28 @@ def produce_complete_html_document() -> str:
             color: #44403c;
         }
         .textbook-impact-box {
-            margin-top: 18px;
-            padding: 14px 18px;
+            margin-bottom: 20px;
+            padding: 18px 22px;
             background-color: #fffbeb;
             border: 1px solid #fde68a;
             border-left: 4px solid #d97706;
             border-radius: 6px;
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 0.92rem;
+            line-height: 1.65;
         }
-        .textbook-impact-box h6 {
-            margin: 0 0 6px 0;
+        .textbook-impact-box h4.concept-title {
             color: var(--primary-dark);
-            font-size: 0.95rem;
+            font-size: 1.08rem;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.03em;
+        }
+        .textbook-impact-box ul {
+            margin: 8px 0 0 18px;
+        }
+        .textbook-impact-box li {
+            margin-bottom: 8px;
+            text-align: justify;
         }
         .entry-references {
             margin-top: 14px;
@@ -667,30 +673,6 @@ def produce_complete_html_document() -> str:
                 <li><em>Pedagogical Paralysis:</em> If every assessment, objective test, and behavioral standard is branded symbolic violence, educators are left morally paralyzed, unable to correct errors, maintain productive order, or assess real learning.</li>
             </ul>
 
-            <!-- SYNTHESIS: HOW THE COUNTER-TRADITION IMPACTS MAKING SENSE OF MASS EDUCATION -->
-            <div class="textbook-impact-box">
-                <h6>Critical Synthesis: Impact on <em>Making Sense of Mass Education</em></h6>
-                <p>
-                    <strong>Does the counter-tradition cause problems for the textbook, support its thesis, or both?</strong><br>
-                    It does <strong>both simultaneously</strong>, creating a powerful dialectical tension that defines rigorous sociological analysis:
-                </p>
-                <ul>
-                    <li>
-                        <strong>How it SUPPORTS the Textbook's Thesis:</strong>
-                        The textbook relies heavily on Bourdieu to dismantle naive, uncritical views of meritocracy (e.g., proving that equal funding
-                        does not equal equal outcomes). The structural diagnosis of symbolic violence and misrecognition gives the textbook its sharpest
-                        empirical tools for explaining why disadvantaged students internalize failure as personal inadequacy rather than structural sorting.
-                    </li>
-                    <li>
-                        <strong>How it CAUSES PROBLEMS for the Textbook:</strong>
-                        When <em>Making Sense of Mass Education</em> adopts Bourdieu wholesale without the counter-tradition's warnings,
-                        it risks falling into <strong>pedagogical fatalism</strong> (believing that schools can never overcome class origins) and
-                        <strong>paternalistic determinism</strong> (framing dominated groups as passive dupes suffering from unconscious complicity, as Rancière critiques).
-                        Treating schooling as an airtight reproduction machine leaves educators with no theoretical pathway for student agency or transformative teaching.
-                    </li>
-                </ul>
-            </div>
-
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
@@ -699,6 +681,30 @@ def produce_complete_html_document() -> str:
                     <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
                 </ul>
             </div>
+        </div>
+
+        <!-- STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON MAKING SENSE OF MASS EDUCATION -->
+        <div class="textbook-impact-box">
+            <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em></h4>
+            <p>
+                <strong>Does the counter-tradition cause problems for the textbook, support its thesis, or does it do both?</strong><br>
+                It does <strong>both simultaneously</strong>, creating a powerful dialectical tension that defines rigorous sociological analysis across the curriculum:
+            </p>
+            <ul>
+                <li>
+                    <strong>How it SUPPORTS the Textbook's Thesis:</strong>
+                    The textbook relies heavily on Bourdieu to dismantle naive, uncritical views of meritocracy (e.g., proving that equal funding
+                    does not equal equal outcomes). The structural diagnosis of symbolic violence and misrecognition gives the textbook its sharpest
+                    empirical tools for explaining why disadvantaged students internalize systemic failure as personal inadequacy rather than structural sorting.
+                </li>
+                <li>
+                    <strong>How it CAUSES PROBLEMS for the Textbook:</strong>
+                    When <em>Making Sense of Mass Education</em> adopts Bourdieu wholesale without the counter-tradition's warnings,
+                    it risks falling into <strong>pedagogical fatalism</strong> (believing that schools can never overcome class origins) and
+                    <strong>paternalistic determinism</strong> (framing dominated groups as passive dupes suffering from unconscious complicity, as Rancière critiques).
+                    Treating schooling as an airtight reproduction machine leaves educators with no theoretical pathway for student agency or transformative teaching.
+                </li>
+            </ul>
         </div>
 
         <h3 class="tradition-header">Sociolinguistic &amp; Resistance Paradigms</h3>
@@ -1005,15 +1011,15 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully relocated textbook impact synthesis to Symbolic Violence entry: {target_file.resolve()}")
+    print(f"Successfully elevated textbook impact box to standalone section card in: {target_file.resolve()}")
 
     commit_message = (
-        "Relocate textbook impact synthesis to Symbolic Violence entry card\n\n"
-        "Move the critical synthesis card evaluating how the counter-tradition\n"
-        "impacts Making Sense of Mass Education from Cultural Capital into its\n"
-        "proper home under Symbolic Violence & Misrecognition in core-concepts.html.\n\n"
-        "- Relocate textbook impact synthesis box to Symbolic Violence entry.\n"
-        "- Verify correct section hierarchy and clean HTML markup."
+        "Elevate textbook impact synthesis into a standalone section card\n\n"
+        "Extract the critical synthesis box evaluating how the counter-tradition\n"
+        "impacts Making Sense of Mass Education out of the inner entry card and\n"
+        "position it as a standalone section card under Section 1 in core-concepts.html.\n\n"
+        "- Promote textbook impact box to a standalone section card.\n"
+        "- Verify correct document structure and styling."
     )
 
     sync_repository(root_directory, commit_message)
