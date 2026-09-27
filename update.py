@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a full forensic dossier for David Gillborn's
+"""Regenerate core-concepts.html with a full forensic dossier for Django Paris and
 
-Institutional Racism & Whiteness as Policy, maintaining all separated entries,
+H. Samy Alim's Culturally Sustaining Pedagogy, maintaining all separated entries,
 Master Bibliography updates, and clean markup free of citation tags, and sync
 updates to main via git.
 """
@@ -1193,10 +1193,58 @@ def produce_complete_html_document() -> str:
         </div>
 
         <div class="forensic-entry">
-            <h4 class="concept-title">Culturally Sustaining Pedagogy (Django Paris / H. Samy Alim)</h4>
-            <p>An equity framework requiring schools not merely to acknowledge minority cultural practices, but to actively sustain and revitalize linguistic, cultural, and community traditions as sovereign intellectual heritage.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Eliminates tokenistic multiculturalism, partnering with community Elders and embedding Indigenous epistemologies organically into curricular design.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Sustaining cultural vernaculars must not occur at the expense of mastering the dominant technical codes necessary for broader socioeconomic mobility. Equity requires balancing cultural sovereignty with uncompromising academic rigor.</p>
+            <h4 class="concept-title">Culturally Sustaining Pedagogy (Django Paris &amp; H. Samy Alim)</h4>
+            <p>
+                Pioneered by Django Paris (<span class="tooltip-term" tabindex="0" data-tooltip="Culturally Sustaining Pedagogy: A Needed Change in Stance, Terminology, and Practice (2012), published in Educational Researcher.">Paris, 2012</span>)
+                and elaborated alongside H. Samy Alim (<span class="tooltip-term" tabindex="0" data-tooltip="Culturally Sustaining Pedagogies: Teaching and Learning for Justice in a Changing World (2017), establishing the definitive framework for sustaining linguistic and cultural pluralism.">Paris &amp; Alim, 2014, 2017</span>),
+                <span class="tooltip-term" tabindex="0" data-tooltip="An educational framework requiring schools to actively perpetuate and foster linguistic, literate, and cultural pluralism as sovereign intellectual heritage, rather than using culture merely as a temporary bridge to white middle-class norms.">Culturally Sustaining Pedagogy (CSP)</span>
+                is an equity paradigm that requires schools not merely to acknowledge or tolerate minority cultural practices, but to actively perpetuate, sustain,
+                and revitalize the linguistic, literate, and cultural traditions of marginalized communities as sovereign intellectual heritage. CSP explicitly
+                builds upon and transforms Gloria Ladson-Billings's foundational concept of Culturally Relevant Pedagogy, shifting the goal of schooling from
+                assimilating students into white middle-class norms to sustaining multi-ethnic and multilingual community life.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: Aboriginal English &amp; Code-Meshing vs. Deficit Translation</strong>
+                Imagine a Year 10 English literature class analyzing narrative perspective and voice:
+                <ul>
+                    <li><strong>The Assimilationist / Transitional Approach:</strong> When a First Nations student writes in Aboriginal English or a bilingual student uses regional Creole syntax, the teacher corrects it in red ink, calling it "improper grammar." At best, the teacher treats the home dialect as a stepping stone or informal draft that must ultimately be translated into "proper Standard Australian English." The implicit message: your home tongue is an intellectual deficit to be overcome (<span class="tooltip-term" tabindex="0" data-tooltip="The harmful educational assumption that minority or working-class children fail because their homes and communities lack cultural, linguistic, or cognitive richness.">cultural deficit model</span>).</li>
+                    <li><strong>The Culturally Sustaining Approach:</strong> The teacher analyzes Aboriginal English as a sophisticated, rule-governed linguistic system with distinct aspectual markers and complex pragmatic conventions. Students practice <em>code-meshing</em>—intentionally weaving ancestral storytelling patterns, indigenous relational metaphors, and standard academic syntax into their essays. Community Elders are invited into the school to teach oral rhetoric as an equal partner to print canons.</li>
+                </ul>
+                The school does not use indigenous culture as temporary bait to induce compliance; it treats First Nations and youth literacies as enduring, sovereign intellectual traditions that belong permanently at the academic center.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Emerged in the United States and international educational research during the early 2010s. For decades, progressive education had embraced Gloria Ladson-Billings's landmark 1995 framework of *Culturally Relevant Pedagogy* (CRP), which demanded academic success, cultural competence, and critical consciousness. However, Paris and Alim observed a devastating empirical anomaly: in practice, CRP had been widely co-opted, watered down, and sanitized by educational bureaucracies into superficial "foods, festivals, and folkloric trivia" displays, or deployed merely as a transitional "hook" to accelerate students' assimilation into the <span class="tooltip-term" tabindex="0" data-tooltip="The unspoken assumption in curriculum design that white, middle-class, monolinguistic English communication represents the universal baseline of academic excellence.">white monocultural standard</span>. While schools claimed to be culturally responsive, demographic data revealed that Indigenous and minoritized youth were continuing to lose their native languages and heritage literacies at alarming rates. Paris and Alim developed CSP to declare that the fundamental purpose of education in a changing multiethnic society must be to foster and sustain cultural pluralism as a democratic end in itself.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Paris and Alim establish four central operational gears governing CSP:</p>
+            <ul>
+                <li><strong>Sustaining Pluralism as an End, Not a Bridge:</strong> Education must not use heritage culture merely as an onboarding ramp to standard white monolingualism. Cultural and linguistic dexterity must be cultivated permanently; the goal is additive, sustained multilingualism and multi-literacy where students master both the dominant codes and their community practices.</li>
+                <li><strong>Dynamic Youth Culture vs. Museumized Folklore:</strong> Culture is not a static collection of ancient artifacts or traditional rituals preserved in amber. CSP explicitly centers contemporary, evolving youth cultural practices—including hip-hop literacies, digital multi-modal remixing, and fluid cross-ethnic linguistic styling—recognizing youth as active producers of culture.</li>
+                <li><strong>Decentering Whiteness as the Universal Benchmark:</strong> Rejects the assumption that white middle-class language, aesthetic taste, and rhetorical structures represent the objective standard of human capability. CSP asks: what would educational assessment look like if Black, Brown, and Indigenous ways of knowing were the baseline from which competence was evaluated?</li>
+                <li><strong>The Inward Stance: "Loving Critique":</strong> Crucially, CSP rejects blind cultural romanticism. Drawing on radical traditions, Paris and Alim insist that sustaining culture requires <span class="tooltip-term" tabindex="0" data-tooltip="The practice within CSP of critically examining and challenging internal community traditions—such as sexism, homophobia, transphobia, or ableism—to ensure sustaining culture promotes universal emancipation.">loving critique</span>: actively interrogating, challenging, and transforming oppressive practices (such as sexism, homophobia, or elder autocracy) that exist within marginalized communities, ensuring that sustaining culture never means sustaining bigotry.</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Completely dismantles the lingering cultural deficit model that pathologizes non-standard linguistic communities. It aligns schooling directly with the United Nations Declaration on the Rights of Indigenous Peoples by treating linguistic and cultural preservation as a fundamental human right. Empirical studies consistently demonstrate that when students' linguistic identities are sustained through <span class="tooltip-term" tabindex="0" data-tooltip="Educational models that treat the languages, literacies, and cultural practices of marginalized students as intellectual resources and strengths to be fostered.">asset-based pedagogies</span>, attendance rates rise, cognitive flexibility increases through verified bilingual benefits, and systemic school alienation decreases.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Gatekeeping Mobility Dilemma (The Delpit Critique):</em> While sustaining heritage languages is vital for cultural sovereignty, progressive educators risk trapping marginalized students if they neglect explicit instruction in the dominant code of power. As African-American educational scholar Lisa Delpit proved, tertiary entrance exams, professional licensing boards, corporate hiring panels, and judicial courts operate ruthlessly through standard academic English. If teachers prioritize cultural preservation while failing to teach standard syntactic conventions explicitly, they leave disadvantaged students locked out of high-status socioeconomic mobility.</li>
+                <li><em>The Superdiversity Bandwidth Trap:</em> In hyper-diverse metropolitan public schools where a single classroom may contain students from 15 to 20 distinct linguistic and ethnic backgrounds, demanding that an individual teacher actively sustain and develop multiple divergent cultural traditions can create severe pedagogical fragmentation and cognitive overload for educators.</li>
+                <li><em>The Romanticization of Ephemeral Slang:</em> Conflating genuine, enduring sovereign heritage (such as ancient First Nations kinship languages or deep community oral traditions) with transient, commercialized corporate youth culture (such as TikTok slang or fast-fashion memes) dilutes the philosophical gravity of decolonization into trivial pop-culture pandering.</li>
+                <li><em>Curricular Relativism &amp; Powerful Knowledge:</em> When pushed to dogmatic extremes, CSP can lead to the abandonment of foundational disciplinary knowledge (calculus, thermodynamics, universal history) under the mistaken assumption that objective disciplinary standards are inherently oppressive. Equity requires coupling cultural sustainability with uncompromising academic rigor.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Paris, D. (2012).</strong> 'Culturally Sustaining Pedagogy: A Needed Change in Stance, Terminology, and Practice'. <em>Educational Researcher</em>, 41(3), 93–97. <em>[The foundational article defining culturally sustaining pedagogy]</em>.</li>
+                    <li><strong>Paris, D., &amp; Alim, H. S. (2014).</strong> 'What Are We Seeking to Sustain Through Culturally Sustaining Pedagogy? A Loving Critique Forward'. <em>Harvard Educational Review</em>, 84(1), 85–100.</li>
+                    <li><strong>Paris, D., &amp; Alim, H. S. (Eds.). (2017).</strong> <em>Culturally Sustaining Pedagogies: Teaching and Learning for Justice in a Changing World</em>. New York: Teachers College Press.</li>
+                    <li><strong>Ladson-Billings, G. (1995).</strong> 'Toward a Theory of Culturally Relevant Pedagogy'. <em>American Educational Research Journal</em>, 32(3), 465–491.</li>
+                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
+                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -1602,15 +1650,22 @@ def produce_complete_html_document() -> str:
             <li><strong>Foucault, M. (1977).</strong> <em>Discipline and Punish: The Birth of the Prison</em> (A. Sheridan, Trans.). London: Allen Lane. (Original work published in French 1975).</li>
             <li><strong>Freire, P. (1970).</strong> <em>Pedagogy of the Oppressed</em> (M. B. Ramos, Trans.). New York: Herder and Herder. (Original work published in Portuguese 1968).</li>
             <li><strong>Fricker, M. (2007).</strong> <em>Epistemic Injustice: Power and the Ethics of Knowing</em>. Oxford: Oxford University Press.</li>
+            <li><strong>Gillborn, D. (2005).</strong> 'Education policy as an act of white supremacy: Whiteness, critical race theory and education reform'. <em>Journal of Education Policy</em>, 20(4), 485–505.</li>
             <li><strong>Gillborn, D. (2008).</strong> <em>Racism and Education: Coincidence or Conspiracy?</em> London: Routledge.</li>
+            <li><strong>Kosciw, J. G., Clark, C. M., Truong, N. L., &amp; Zongrone, A. D. (2020).</strong> <em>The 2019 National School Climate Survey: The Experiences of Lesbian, Gay, Bisexual, Transgender, and Queer Youth in Our Nation's Schools</em>. New York: GLSEN.</li>
             <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press.</li>
+            <li><strong>Ladson-Billings, G. (1995).</strong> 'Toward a Theory of Culturally Relevant Pedagogy'. <em>American Educational Research Journal</em>, 32(3), 465–491.</li>
             <li><strong>Macaulay, T. B. (1835).</strong> <em>Minute on Indian Education</em>. London: British Parliamentary Papers.</li>
+            <li><strong>Mayo, C. (2014).</strong> <em>LGBTQ Youth and Education: Policies and Practices</em>. New York: Teachers College Press.</li>
             <li><strong>Meyer, I. H. (2003).</strong> 'Prejudice, Social Stress, and Mental Health in Lesbian, Gay, and Bisexual Populations: Conceptual Issues and Research Evidence'. <em>Psychological Bulletin</em>, 129(5), 674–697.</li>
             <li><strong>Ngũgĩ wa Thiong'o. (1986).</strong> <em>Decolonising the Mind: The Politics of Language in African Literature</em>. London: James Currey.</li>
             <li><strong>Nussbaum, M. (1999).</strong> 'The Professor of Parody: The Hip Defeatism of Judith Butler'. <em>The New Republic</em>, 220(8), 37–45.</li>
+            <li><strong>Paris, D. (2012).</strong> 'Culturally Sustaining Pedagogy: A Needed Change in Stance, Terminology, and Practice'. <em>Educational Researcher</em>, 41(3), 93–97.</li>
+            <li><strong>Paris, D., &amp; Alim, H. S. (Eds.). (2017).</strong> <em>Culturally Sustaining Pedagogies: Teaching and Learning for Justice in a Changing World</em>. New York: Teachers College Press.</li>
             <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
             <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660.</li>
             <li><strong>Spivak, G. C. (1988).</strong> 'Can the Subaltern Speak?' In C. Nelson &amp; L. Grossberg (Eds.), <em>Marxism and the Interpretation of Culture</em> (pp. 271–313). Urbana: University of Illinois Press.</li>
+            <li><strong>Ullman, J. (2021).</strong> <em>Free to Be? Exploring the Schooling Experiences of Australia's Sexuality and Gender Diverse High School Students</em>. Penrith: Western Sydney University.</li>
             <li><strong>Weber, M. (1978).</strong> <em>Economy and Society: An Outline of Interpretive Sociology</em> (G. Roth &amp; C. Wittich, Eds.). Berkeley: University of California Press. (Original work published 1922).</li>
             <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
             <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
@@ -1654,14 +1709,14 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand David Gillborn institutional racism entry to full dossier\n\n"
-        "Upgrade Institutional Racism & Whiteness as Policy (David Gillborn)\n"
-        "in core-concepts.html to a four-part forensic dossier examining tacit\n"
-        "intentionality, tier-capping, and interest convergence.\n\n"
-        "- Detail ordinary racism, assessment filters, and whiteness as policy.\n"
-        "- Add scenario box analyzing GCSE/HSC tier-capping and behavioral triage.\n"
-        "- Audit the Asian achievement anomaly, conspiracy trap, and class overlap.\n"
-        "- Update Master Bibliography with Gillborn (2008).\n"
+        "Expand Culturally Sustaining Pedagogy entry to full forensic dossier\n\n"
+        "Upgrade Culturally Sustaining Pedagogy (Django Paris & H. Samy Alim) in\n"
+        "core-concepts.html to a comprehensive four-part forensic dossier with\n"
+        "scenario analysis, theoretical gears, and a balanced audit.\n\n"
+        "- Detail pluralism as an end, dynamic youth culture, and loving critique.\n"
+        "- Add scenario box analyzing code-meshing and Aboriginal English syntax.\n"
+        "- Audit Delpit gatekeeping dilemma, superdiversity, and relativism.\n"
+        "- Update Master Bibliography with Paris (2012) and Paris & Alim (2017).\n"
         "- Ensure all HTML markup remains 100% free of citation tags."
     )
 
