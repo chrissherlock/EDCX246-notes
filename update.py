@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a re-scoped Bourdieusian synthesis card
+"""Upgrade the Gender Regimes & Hegemonic Masculinity entry in core-concepts.html
 
-and a comprehensive master synthesis card covering Sociolinguistic Codes,
-Counter-School Resistance, Social Closure, Credentialism, and Residualisation,
-keeping all HTML markup 100% free of citation tags, and sync updates via git.
+to a full forensic dossier with interactive tooltips, concrete scenarios,
+the quadripartite structural typology, and a balanced audit of male literacy
+underachievement, keeping all markup free of citation tags, and sync via git.
 """
 
 from pathlib import Path
@@ -1071,9 +1071,65 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Gender Regimes &amp; Hegemonic Masculinity (Raewyn Connell)</h4>
-            <p>Raewyn Connell's sociology of the gender order, describing an institutionalized power hierarchy with <em>hegemonic masculinity</em> at the apex—lionized through physical dominance, emotional detachment, and compulsory heterosexuality.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Analyzes schools as active factories of gender identity. Formal tracking, aggressive sports hierarchies, and playground peer policing systematically reward hegemonic conformity while punishing marginalized masculinities and non-conforming expressions.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Hegemonic masculinity can be deployed so broadly as to lose descriptive utility. Furthermore, male underachievement in literacy and educational completion requires concrete structural and developmental interventions, which pathologizing masculinity fails to address.</p>
+            <p>
+                Raewyn Connell's sociology of the gender order posits that gender is not a fixed biological dichotomy or simple sex role, but an evolving historical structure of power, labor, emotional investment, and symbolism. At the apex of this institutionalized hierarchy sits
+                <span class="tooltip-term" tabindex="0" data-tooltip="The culturally idealized form of manhood in a given time and place that legitimizes global male dominance over women and the subordination of non-conforming men.">hegemonic masculinity</span>—an
+                archetype lionized through physical dominance, emotional stoicism, and compulsory heterosexuality. Within schools, this hierarchy is actively engineered and enforced through institutional
+                <span class="tooltip-term" tabindex="0" data-tooltip="The structural patterns of gender relations, divisions of labor, and authority operating within a specific institution like a school.">gender regimes</span>
+                that distribute the <span class="tooltip-term" tabindex="0" data-tooltip="The unearned social, economic, and cultural advantages men collectively gain from the general subordination of women.">patriarchal dividend</span>.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The First XV Oval vs. The Drama Studio</strong>
+                Imagine two male Year 10 students inside an Australian secondary school:
+                <ul>
+                    <li><strong>Lachlan (First XV Rugby Captain):</strong> Embodies physical toughness, athletic aggression, emotional detachment, and heterosexual bravado. Elevated to school prefect, praised by male executive staff for "natural leadership," and given premier campus sporting facilities.</li>
+                    <li><strong>Toby (Drama &amp; Literature Enthusiast):</strong> Displays vulnerability, intellectual aesthetic interests, and expressive, non-stoic speech. Subjected to daily corridor policing, homophobic slurs (<em>"that's so gay"</em>), and institutional pressure to drop arts electives for contact sports.</li>
+                </ul>
+                The school operates as an active "masculinity mill": institutional timetabling, athletic funding, and peer surveillance combine to reward Lachlan's compliance with patriarchal authority while systematically degrading Toby into a <span class="tooltip-term" tabindex="0" data-tooltip="Expressions of masculinity that are actively degraded, policed, and expelled from legitimacy (most notably homosexual or gender-nonconforming boys).">subordinated masculinity</span>.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed during the 1980s and 1990s in Australia and codified in Connell's landmark works <em>Gender and Power</em> (1987) and <em>Masculinities</em> (1995). Connell confronted a major theoretical and empirical impasse: traditional structural-functionalist "sex role theory" (Talcott Parsons) treated gender as a peaceful, consensual process of internalizing fixed social norms. This model could not explain violent conflict, misogyny, homophobia, resistance, or historical shifts in gender relations. Simultaneously, early radical feminist models treated all men as an undifferentiated, universally powerful class, which failed to explain why working-class, racialized, or gay men suffered severe structural violence and marginalization. Connell resolved this by modeling masculinities as multiple, contested, and internally stratified.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Connell's framework establishes four institutional structures and a quadripartite relational hierarchy:</p>
+            <ul>
+                <li><strong>The Four Structures of the Gender Regime:</strong>
+                    <ul>
+                        <li><em>Power Relations:</em> Hierarchical authority, control, and state/institutional coercion (e.g., male domination of executive school leadership and sports administration).</li>
+                        <li><em>Production Relations:</em> The gendered division of labor (e.g., streaming girls toward nursing/humanities and boys toward STEM/manual trades; staffing primary and pastoral roles with women).</li>
+                        <li><em>Cathexis (Emotional Relations):</em> Institutional regulation of emotional, affective, and sexual attachments (e.g., compulsory heterosexuality, policing of adolescent intimacy).</li>
+                        <li><em>Symbolism:</em> Cultural coding expressed through school uniforms, gendered language, timetable traditions, and media canons.</li>
+                    </ul>
+                </li>
+                <li><strong>The Relational Typology of Masculinities:</strong>
+                    <ul>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="The culturally dominant standard of manhood that legitimizes patriarchy. Few embody it perfectly, but all men are measured against it.">Hegemonic Masculinity</span>: The normative standard at the apex. It does not require violence to rule; it wins consent through cultural ascendance, athletic lionization, and institutional prestige.</li>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Masculinities expelled from legitimacy, experiencing institutional discrimination and peer violence (e.g., gay or effeminate boys).">Subordinated Masculinity</span>: Groups at the bottom of the male hierarchy, bearing the brunt of homophobic abuse, disciplinary tracking, and cultural delegitimation.</li>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Men who do not meet the strenuous hegemonic ideal but benefit from the general subordination of women without challenging the gender order.">Complicit Masculinity</span>: The broad majority of men and boys who do not embody the frontline warrior archetype, but quietly support the system to reap the collective patriarchal dividend (career pathways, unearned authority).</li>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Masculinities formed at the intersection of gender with race or class (e.g., working-class or Indigenous boys).">Marginalized Masculinity</span>: Intersectional masculinities where male privilege is fractured by class or racial disempowerment. Working-class lads can display hyper-physical masculinity, yet remain structural casualties of the labor market.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Shatters biological determinism by proving that masculinities are socially constructed, multiple, and historically contested. It transforms how schools understand peer bullying and homophobia—diagnosing them not as isolated psychiatric deviance, but as institutionalized border-policing mechanisms that enforce hegemonic compliance. It also illuminates how boys actively suppress emotional vulnerability to avoid subordination, directly linking school gender regimes to adolescent male mental health crises.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The "Boy Crisis" &amp; The Pathologizing Trap:</em> When deployed uncritically, Connell's concept easily degenerates into moralistic pathologizing, framing all boys as proto-patriarchal oppressors or carriers of "toxic masculinity." Across Australia and OECD education systems, boys systematically lag behind girls in standardized literacy metrics, suffer significantly higher rates of school suspension and expulsion, and dominate special education and behavioral placements. Reducing this complex developmental and instructional challenge solely to "toxic hegemonic masculinity" distracts educators from addressing genuine pedagogical deficits (e.g., the urgent need for structured, explicit early phonics instruction, positive male mentorship, and neurodevelopmental support).</li>
+                <li><em>The Conceptual Bloat Fallacy (Demetriou's Critique):</em> Sociologist Demetriou demonstrated that hegemonic masculinity often becomes an unfalsifiable catch-all: any behavior displayed by dominant men is labeled hegemonic, while any positive male trait is claimed to be non-hegemonic. Hegemonic masculinity routinely survives not by pure dominance, but by hybridizing—absorbing elements of emotional sensitivity ("the new man") to maintain structural dominance while deflecting critique.</li>
+                <li><em>Underestimating Female Academic Dominance &amp; Agency:</em> Connell's framework was formulated during an era of overt male scholastic dominance. Today, young women consistently outpace young men in secondary graduation rates, higher education admissions, and professional degree attainment. Over-emphasizing patriarchal dominance risks blinding pre-service teachers to the contemporary realities of female institutional empowerment and male disengagement.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Connell, R. W. (1987).</strong> <em>Gender and Power: Society, the Person and Sexual Politics</em>. Stanford: Stanford University Press. <em>[The foundational formulation of gender regimes and the gender order]</em>.</li>
+                    <li><strong>Connell, R. W. (1995).</strong> <em>Masculinities</em>. Berkeley: University of California Press. <em>[Codification of the fourfold typology of hegemonic, subordinated, complicit, and marginalized masculinities]</em>.</li>
+                    <li><strong>Connell, R. W. (2000).</strong> <em>The Men and the Boys</em>. Berkeley: University of California Press.</li>
+                    <li><strong>Demetriou, D. Z. (2001).</strong> 'Connell's Concept of Hegemonic Masculinity: A Critique'. <em>Theory and Society</em>, 30(3), 337–361.</li>
+                    <li><strong>Mac an Ghaill, M. (1994).</strong> <em>The Making of Men: Masculinities, Sexualities and Schooling</em>. Buckingham: Open University Press.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -1259,12 +1315,16 @@ def produce_complete_html_document() -> str:
             <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
             <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
             <li><strong>Collins, R. (1979).</strong> <em>The Credential Society: An Historical Sociology of Education and Stratification</em>. New York: Academic Press.</li>
+            <li><strong>Connell, R. W. (1987).</strong> <em>Gender and Power: Society, the Person and Sexual Politics</em>. Stanford: Stanford University Press.</li>
+            <li><strong>Connell, R. W. (1995).</strong> <em>Masculinities</em>. Berkeley: University of California Press.</li>
             <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
             <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
+            <li><strong>Demetriou, D. Z. (2001).</strong> 'Connell's Concept of Hegemonic Masculinity: A Critique'. <em>Theory and Society</em>, 30(3), 337–361.</li>
             <li><strong>Fanon, F. (1967).</strong> <em>Black Skin, White Masks</em> (C. L. Markmann, Trans.). New York: Grove Press. (Original work published in French 1952).</li>
             <li><strong>Foucault, M. (1977).</strong> <em>Discipline and Punish: The Birth of the Prison</em> (A. Sheridan, Trans.). London: Allen Lane. (Original work published in French 1975).</li>
             <li><strong>Freire, P. (1970).</strong> <em>Pedagogy of the Oppressed</em> (M. B. Ramos, Trans.). New York: Herder and Herder. (Original work published in Portuguese 1968).</li>
             <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press.</li>
+            <li><strong>Mac an Ghaill, M. (1994).</strong> <em>The Making of Men: Masculinities, Sexualities and Schooling</em>. Buckingham: Open University Press.</li>
             <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
             <li><strong>Weber, M. (1978).</strong> <em>Economy and Society: An Outline of Interpretive Sociology</em> (G. Roth &amp; C. Wittich, Eds.). Berkeley: University of California Press. (Original work published 1922).</li>
             <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
@@ -1309,14 +1369,15 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Re-scope Bourdieusian verdict and add Section 1 master synthesis\n\n"
-        "Re-scope the Bourdieusian Critical Synthesis verdict specifically to\n"
-        "Bourdieu rather than the entire text, and embed a second master synthesis\n"
-        "card after Residualisation evaluating Bernstein, Labov, Willis, Weber,\n"
-        "Collins, and school residualisation under Section 1 in core-concepts.html.\n\n"
-        "- Scope Bourdieusian verdict strictly to class reproduction models.\n"
-        "- Add multi-paradigm synthesis evaluating micro and macro mechanisms.\n"
-        "- Maintain clean HTML output completely free of citation tags."
+        "Expand Connell gender regimes entry to full forensic dossier\n\n"
+        "Upgrade Gender Regimes & Hegemonic Masculinity (Raewyn Connell) in\n"
+        "core-concepts.html to a comprehensive four-part forensic dossier with\n"
+        "scenario analysis, typology mechanics, and boy crisis audit.\n\n"
+        "- Detail Connell's four structures and relational hierarchy of masculinities.\n"
+        "- Add scenario box analyzing athletic vs artistic institutional valuation.\n"
+        "- Audit conceptual bloat and educational underachievement in boys.\n"
+        "- Update Master Bibliography with Connell (1987, 1995).\n"
+        "- Keep all HTML markup 100% free of citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
