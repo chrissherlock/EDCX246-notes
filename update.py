@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Update core-concepts.html to append Bourdieu's specific referenced works directly
+"""Sanitize core-concepts.html to replace any leaked Markdown formatting
 
-to the end of the Cultural Capital entry while keeping the full bibliography below.
+with valid semantic HTML tags.
 """
 
 from pathlib import Path
@@ -317,7 +317,7 @@ def produce_complete_html_document() -> str:
 
             <p><strong>2. Theoretical Mechanics &amp; Advanced Operational Gears:</strong> Bourdieu's foundational texts establish four precise operational gears governing cultural capital:</p>
             <ul>
-                <li><strong>The Economy of Time &amp; "Wasted Time":</strong> Accumulating embodied capital (*Bildung*) requires personal labor-time that cannot be delegated. Because children of educated families begin accumulating usable cultural currency from birth, they gain an insurmountable head start. For the working-class child, early domestic socialization represents what Bourdieu terms <em>"wasted time"</em> in the eyes of the school—time that must be expensively spent unlearning, correcting, and retraining home speech patterns and postures. Furthermore, accumulating cultural capital requires <em>free time</em>—the suspension of economic urgency that only affluent families can purchase.</li>
+                <li><strong>The Economy of Time &amp; "Wasted Time":</strong> Accumulating embodied capital (<em>Bildung</em>) requires personal labor-time that cannot be delegated. Because children of educated families begin accumulating usable cultural currency from birth, they gain an insurmountable head start. For the working-class child, early domestic socialization represents what Bourdieu terms <em>"wasted time"</em> in the eyes of the school—time that must be expensively spent unlearning, correcting, and retraining home speech patterns and postures. Furthermore, accumulating cultural capital requires <em>free time</em>—the suspension of economic urgency that only affluent families can purchase.</li>
                 <li><strong>The Three Interdependent States:</strong>
                     <ul>
                         <li><em>Embodied State (État Incorporé):</em> Long-lasting dispositions of mind and body (syntax, accent, posture, bodily hexis). Fused to the biological individual; dies with the bearer.</li>
@@ -682,16 +682,15 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully integrated entry references and master bibliography into: {target_file.resolve()}")
+    print(f"Successfully sanitized markup in: {target_file.resolve()}")
 
     commit_message = (
-        "Add dedicated primary source references to Cultural Capital entry\n\n"
-        "Incorporate a targeted primary source reference box at the foot of the\n"
-        "Cultural Capital entry in core-concepts.html while keeping the full\n"
-        "master bibliography at the bottom of the page.\n\n"
-        "- Add inline primary works callout box to Cultural Capital entry.\n"
-        "- Reference 1973, 1977, 1984, and 1986 Bourdieusian source texts.\n"
-        "- Retain complete master bibliography at document bottom."
+        "Sanitize HTML in core-concepts to replace leaked Markdown with tags\n\n"
+        "Replace leaked Markdown formatting (*Bildung*) in core-concepts.html\n"
+        "with semantic HTML emphasis tags (<em>Bildung</em>) to maintain clean\n"
+        "markup consistency.\n\n"
+        "- Replace *Bildung* Markdown asterisk notation with <em> tags.\n"
+        "- Verify consistent HTML markup across all concept entries."
     )
 
     sync_repository(root_directory, commit_message)
