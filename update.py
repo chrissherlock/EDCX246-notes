@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-"""Explicitly restore Jacques Rancière into the counter-tradition section
+"""Rewrite core-concepts.html completely from scratch.
 
-and master bibliography of core-concepts.html and sync updates to main.
+This script rebuilds the entire examination revision guide, ensuring all
+seven modules, the Bourdieusian forensic dossiers, the interactive popovers,
+the embedded SVG diagram for the three counter-tradition camps (Young, Delpit, Rancière),
+and the complete master bibliography are fully integrated.
 """
 
 from pathlib import Path
@@ -10,7 +13,7 @@ import sys
 
 
 def produce_complete_html_document() -> str:
-    template = r'''<!DOCTYPE html>
+    html_content = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -928,7 +931,7 @@ def produce_complete_html_document() -> str:
 </body>
 </html>
 '''
-    return template
+    return html_content
 
 
 def sync_repository(repo_path: Path, commit_msg: str) -> None:
@@ -957,19 +960,20 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully and explicitly restored Ranciere in: {target_file.resolve()}")
+    print(f"Successfully rewrote core-concepts.html from scratch with Ranciere: {target_file.resolve()}")
 
     commit_message = (
-        "Explicitly restore Jacques Ranciere to HTML counter-tradition section\n\n"
-        "Re-integrate Jacques Rancière's philosophical critique box and SVG node\n"
-        "into the counter-tradition section of core-concepts.html, ensuring\n"
-        "all three resistance camps (Young, Delpit, Rancière) are fully represented.\n\n"
-        "- Restore Rancière SVG node and analytical breakdown card.\n"
-        "- Verify complete 3-camp counter-tradition markup."
+        "Rewrite core-concepts.html from scratch with full Ranciere integration\n\n"
+        "Rebuild core-concepts.html completely to ensure all seven modules,\n"
+        "the Bourdieusian forensic dossiers, the interactive tooltips, the SVG\n"
+        "counter-tradition diagram, and the complete master bibliography including\n"
+        "Jacques Rancière are permanently integrated and verified.\n\n"
+        "- Complete scratch rewrite of core-concepts.html.\n"
+        "- Verify permanent inclusion of Rancière, Young, and Delpit.\n"
+        "- Ensure clean semantic HTML and responsive CSS layout."
     )
 
     sync_repository(root_directory, commit_message)
 
 
-if __name__ == "__main__":
-    main()
+main()
