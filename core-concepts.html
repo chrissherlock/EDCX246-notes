@@ -117,7 +117,7 @@
             line-height: 1.55;
         }
         .forensic-entry li {
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             text-align: justify;
         }
         .scenario-box {
@@ -139,6 +139,47 @@
         }
         .scenario-box ul {
             margin: 4px 0 6px 16px;
+        }
+        /* Interactive Tooltip Popovers */
+        .tooltip-term {
+            position: relative;
+            cursor: help;
+            border-bottom: 1.5px dotted var(--primary);
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        .tooltip-term:hover::after,
+        .tooltip-term:focus::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            padding: 8px 12px;
+            background-color: #1c1917;
+            color: #fefce8;
+            font-size: 0.81rem;
+            font-weight: 400;
+            line-height: 1.45;
+            border-radius: 6px;
+            border: 1px solid #f59e0b;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 100;
+            white-space: normal;
+            text-align: left;
+        }
+        .tooltip-term:hover::before,
+        .tooltip-term:focus::before {
+            content: "";
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: #1c1917 transparent transparent transparent;
+            z-index: 100;
         }
         .entry-references {
             margin-top: 14px;
@@ -237,11 +278,16 @@
                 width: 56px;
                 height: 56px;
             }
+            .tooltip-term:hover::after,
+            .tooltip-term:focus::after {
+                width: 220px;
+            }
         }
         @media print {
             body { padding: 12px; font-size: 9.5pt; }
             .intro-card { break-inside: avoid; page-break-inside: avoid; }
             .forensic-entry { break-inside: avoid; page-break-inside: avoid; border: 1px solid #d6d3d1; }
+            .tooltip-term { border-bottom: none; }
         }
     </style>
 </head>
@@ -306,11 +352,11 @@
             <p><strong>2. Theoretical Mechanics &amp; Advanced Operational Gears:</strong> Bourdieu's foundational texts establish four precise operational gears governing cultural capital:</p>
             <ul>
                 <li><strong>The Economy of Time &amp; "Wasted Time":</strong> Accumulating embodied capital (<em>Bildung</em>) requires personal labor-time that cannot be delegated. Because children of educated families begin accumulating usable cultural currency from birth, they gain an insurmountable head start. For the working-class child, early domestic socialization represents what Bourdieu terms <em>"wasted time"</em> in the eyes of the school—time that must be expensively spent unlearning, correcting, and retraining home speech patterns and postures. Furthermore, accumulating cultural capital requires <em>free time</em>—the suspension of economic urgency that only affluent families can purchase.</li>
-                <li><strong>The Three Interdependent States:</strong>
+                <li><strong>The Three Interdependent States (The Ancient Greek Analogy):</strong>
                     <ul>
-                        <li><em>Embodied State (État Incorporé):</em> Long-lasting dispositions of mind and body (syntax, accent, posture, bodily hexis). Fused to the biological individual; dies with the bearer.</li>
-                        <li><em>Objectified State (État Objectivé):</em> Material cultural goods (classical texts, paintings, instruments, laboratory equipment). Transmissible legally via economic capital, but requiring embodied capital to decode and appropriate symbolically.</li>
-                        <li><em>Institutionalized State (État Institutionalisé):</em> Legally sanctioned academic qualifications that convert embodied cultural capital into a state-guaranteed currency with fixed conversion rates on the occupational labor market.</li>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="The internal software: vocabulary, accent, posture, and conversational confidence wired into your brain and body over years. Like knowing how to read ancient Greek.">Embodied State (État Incorporé)</span>: <strong>The personal skills, habits, and fluency carried inside you.</strong> This is the mental and bodily software: your vocabulary, accent, conversational ease, posture, and unthinking confidence when speaking to authority. It cannot be handed over like cash; it takes years of personal labor-time to absorb at home. Like knowing how to read ancient Greek, it is physically wired into your nervous system and dies with you.</li>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Physical objects requiring skill to decode: books, grand pianos, art, lab gear. Cash buys the object, but only embodied skill lets you play or read it.">Objectified State (État Objectivé)</span>: <strong>Physical cultural possessions.</strong> Books, art collections, grand pianos, classical music recordings, and scientific instruments. Anyone with lottery winnings can buy a grand piano with cash (economic capital), but it remains an expensive piece of furniture unless someone in the house has the <em>embodied</em> skill to sit down and play Beethoven on it.</li>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Official paper certificates: degrees, diplomas, licenses. Proves competence on paper so you don't have to re-prove your worth every single morning.">Institutionalized State (État Institutionalisé)</span>: <strong>Official qualifications and credentials.</strong> University degrees, diplomas, and state licenses. An uncertified genius must prove their skill from scratch to every employer they meet. But an official degree from an elite university acts as a state-guaranteed stamp of approval, setting an employee's salary and market value on paper without requiring daily proof.</li>
                     </ul>
                 </li>
                 <li><strong>The Intraclass Divide (Teachers vs. Industrialists):</strong> The ruling class is not monolithic; it is split between the <em>dominant fraction</em> (rich in economic capital, poorer in cultural capital, e.g., corporate heads and commercial executives) and the <em>dominated fraction</em> (rich in cultural capital, poorer in economic capital, e.g., academics, teachers, and artistic producers). Because schooling is run by the cultural fraction, the academic market rewards its own domestic culture above all else. This explains why teachers' children consistently outperform the children of wealthy commercial executives on purely academic tests.</li>
