@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
-"""Rewrite core-concepts.html completely from scratch.
+"""Add Jacques Rancière's The Philosopher and His Poor to the entry-references box
 
-This script rebuilds the entire examination revision guide, ensuring all
-seven modules, the Bourdieusian forensic dossiers, the interactive popovers,
-the embedded SVG diagram for the three counter-tradition camps (Young, Delpit, Rancière),
-and the complete master bibliography are fully integrated.
+in core-concepts.html and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -554,11 +551,15 @@ def produce_complete_html_document() -> str:
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
-                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change: Papers in the Sociology of Education</em> (pp. 71–112). London: Tavistock Publications.</li>
+                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change</em> (pp. 71–112). London: Tavistock Publications.</li>
                     <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. (Original work published in French 1972).</li>
                     <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
                     <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
                     <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
+                    <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
+                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
+                    <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
+                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
                 </ul>
             </div>
         </div>
@@ -960,20 +961,18 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully rewrote core-concepts.html from scratch with Ranciere: {target_file.resolve()}")
+    print(f"Successfully rewrote core-concepts.html with Ranciere included in entry references: {target_file.resolve()}")
 
     commit_message = (
-        "Rewrite core-concepts.html from scratch with full Ranciere integration\n\n"
-        "Rebuild core-concepts.html completely to ensure all seven modules,\n"
-        "the Bourdieusian forensic dossiers, the interactive tooltips, the SVG\n"
-        "counter-tradition diagram, and the complete master bibliography including\n"
-        "Jacques Rancière are permanently integrated and verified.\n\n"
-        "- Complete scratch rewrite of core-concepts.html.\n"
-        "- Verify permanent inclusion of Rancière, Young, and Delpit.\n"
-        "- Ensure clean semantic HTML and responsive CSS layout."
+        "Restore Ranciere bibliographic entry in core-concepts.html\n\n"
+        "Ensure Jacques Rancière's 1983/2004 text is explicitly listed in the\n"
+        "entry-references block for Cultural Capital alongside Delpit and Young.\n\n"
+        "- Add Rancière bibliographic entry to entry-references list.\n"
+        "- Verify complete alignment with master bibliography."
     )
 
     sync_repository(root_directory, commit_message)
 
 
-main()
+if __name__ == "__main__":
+    main()
