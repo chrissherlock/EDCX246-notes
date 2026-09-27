@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with Max Weber included in the Master Bibliography,
+"""Upgrade the Residualisation entry in core-concepts.html to a full forensic dossier
 
-maintaining separated Social Closure and Credentialism entries under Section 1,
+with plain-English mechanics, interactive tooltips, scenario boxes, and primary references,
 and sync updates to the main branch via git.
 """
 
