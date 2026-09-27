@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Upgrade the three states of cultural capital in core-concepts.html to plain,
+"""Expand the Credential Devaluation and Defensive Escalation mechanics in
 
-grounded explanations with interactive hover/touch popover tooltips.
+core-concepts.html and synchronize with Git.
 """
 
 from pathlib import Path
@@ -129,7 +129,7 @@ def produce_complete_html_document() -> str:
             line-height: 1.55;
         }
         .forensic-entry li {
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             text-align: justify;
         }
         .scenario-box {
@@ -372,7 +372,12 @@ def produce_complete_html_document() -> str:
                     </ul>
                 </li>
                 <li><strong>The Intraclass Divide (Teachers vs. Industrialists):</strong> The ruling class is not monolithic; it is split between the <em>dominant fraction</em> (rich in economic capital, poorer in cultural capital, e.g., corporate heads and commercial executives) and the <em>dominated fraction</em> (rich in cultural capital, poorer in economic capital, e.g., academics, teachers, and artistic producers). Because schooling is run by the cultural fraction, the academic market rewards its own domestic culture above all else. This explains why teachers' children consistently outperform the children of wealthy commercial executives on purely academic tests.</li>
-                <li><strong>Credential Devaluation &amp; Escalation:</strong> When democratic educational expansion increases the volume of basic university degrees, qualifications undergo inflation. The dominant classes preserve social closure by escalating credential thresholds—retreating into postgraduate degrees, elite institutional pedigrees (e.g., Grandes Écoles, Oxbridge), and non-scholastic criteria such as interview poise, accent, and social capital.</li>
+                <li><strong>Credential Devaluation &amp; Defensive Escalation:</strong> Educational qualifications derive their market exchange value from their <strong>scarcity</strong>. When democratic access expands the supply of basic university degrees, qualifications undergo inevitable inflation and currency devaluation. The dominant classes preserve social closure not by opposing mass education, but by dynamically <em>escalating the threshold</em> of entry:
+                    <ul>
+                        <li><em>Vertical Reconversion &amp; Pedigree:</em> Shifting the baseline goalposts from basic bachelor's degrees to costly postgraduate degrees, elite MBAs, and hyper-selective institutional tiers (e.g., French <em>Grandes Écoles</em>, Oxbridge, or Ivy League networks) that remain disproportionately monopolized by high-capital families.</li>
+                        <li><em>The Retreat to Informal Gatekeeping:</em> As paper qualifications equalize across applicants, employers pivot hiring criteria away from tested technical competence toward non-scholastic filters: unpaid corporate internships (which only wealthy families can financially subsidize), inherited social connections, and the evaluation of <span class="tooltip-term" tabindex="0" data-tooltip="Bodily mannerisms, unthinking confidence, accent, and conversational ease evaluated as 'culture fit'.">embodied 'interview poise'</span> and 'culture fit'—rubrics that covertly reward bourgeois domestic habitus over scholastic effort.</li>
+                    </ul>
+                </li>
             </ul>
 
             <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the naive meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It accurately diagnoses how subjective, open-ended grading rubrics penalize working-class students for lacking conversational ease and bourgeois mannerisms.</p>
@@ -728,17 +733,17 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully integrated plain-English states and tooltips into: {target_file.resolve()}")
+    print(f"Successfully expanded credential escalation mechanics in: {target_file.resolve()}")
 
     commit_message = (
-        "Clarify the three states of cultural capital with plain text and tooltips\n\n"
-        "Replace dense academic jargon in the three states of cultural capital\n"
-        "with clear, functional explanations (the Greek book analogy). Add\n"
-        "accessible interactive tooltip popovers for Embodied, Objectified, and\n"
-        "Institutionalized capital in core-concepts.html.\n\n"
-        "- Clarify Embodied, Objectified, and Institutionalized states.\n"
-        "- Add CSS-driven interactive tooltip popovers for instant definition.\n"
-        "- Preserve full syllabus coverage and authoritative master bibliography."
+        "Expand credential devaluation and defensive escalation in concepts\n\n"
+        "Detail the mechanisms of qualification inflation and defensive\n"
+        "escalation in core-concepts.html. Explain how mass education devalues\n"
+        "basic degrees, prompting dominant classes to retreat to postgraduate\n"
+        "pedigrees, unpaid internships, and subjective interview poise.\n\n"
+        "- Expand Credential Devaluation & Defensive Escalation mechanics.\n"
+        "- Add interactive tooltip for embodied interview poise.\n"
+        "- Retain dedicated source references and full master bibliography."
     )
 
     sync_repository(root_directory, commit_message)
