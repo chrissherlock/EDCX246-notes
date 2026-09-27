@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Explicitly restore Jacques Rancière into the counter-tradition section
 
-of core-concepts.html and sync updates to main.
+and master bibliography of core-concepts.html and sync updates to main.
 """
 
 from pathlib import Path
@@ -957,14 +957,14 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully restored Ranciere to HTML in: {target_file.resolve()}")
+    print(f"Successfully and explicitly restored Ranciere in: {target_file.resolve()}")
 
     commit_message = (
         "Explicitly restore Jacques Ranciere to HTML counter-tradition section\n\n"
-        "Ensure Jacques Rancière's philosophical critique box and SVG node\n"
-        "are fully present in the counter-tradition section of core-concepts.html\n"
-        "alongside Michael Young and Lisa Delpit.\n\n"
-        "- Restore Rancière camp card and SVG block in core-concepts.html.\n"
+        "Re-integrate Jacques Rancière's philosophical critique box and SVG node\n"
+        "into the counter-tradition section of core-concepts.html, ensuring\n"
+        "all three resistance camps (Young, Delpit, Rancière) are fully represented.\n\n"
+        "- Restore Rancière SVG node and analytical breakdown card.\n"
         "- Verify complete 3-camp counter-tradition markup."
     )
 
