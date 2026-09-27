@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Regenerate core-concepts.html with a master Critical Synthesis card for
 
-Section 2 (Postcolonial & Critical Race Paradigms), covering Fanon, Spivak,
-Gillborn, and Paris & Alim, keeping all markup 100% free of citation tags,
-and sync updates via git.
+Section 3 (Structural Gender Orders & Poststructuralist Performativity),
+covering Connell, Butler, Rich, and Meyer, keeping all markup 100% free
+of citation tags, and sync updates via git.
 """
 
 from pathlib import Path
@@ -1507,6 +1507,40 @@ def produce_complete_html_document() -> str:
                 </ul>
             </div>
         </div>
+
+        <!-- MASTER STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON STRUCTURAL GENDER ORDERS & PERFORMATIVITY -->
+        <div class="textbook-impact-box" style="margin-top: 24px;">
+            <h4 class="concept-title">Critical Synthesis: Impact of Structural Gender Orders &amp; Performativity on <em>Making Sense of Mass Education</em></h4>
+            <p>
+                <strong>How do Connell, Butler, Rich, and Meyer collectively shape and challenge the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
+                Together, these four frameworks provide the indispensable structural, linguistic, political, and epidemiological mechanisms that dismantle biological essentialism in education, demonstrating how schools actively construct, police, and enforce the gender and sexual order:
+            </p>
+            <ul>
+                <li>
+                    <strong>How they SUPPORT and Empower the Textbook's Thesis (The Deconstructive &amp; Institutional Engine):</strong>
+                    <ul>
+                        <li><em>Schools as Gender Factories (Connell):</em> Shatters the functionalist idea of natural "sex roles." Connell proves that schools are active institutional gender regimes where labor division, leadership power, and contact-sports hierarchies manufacture and celebrate hegemonic masculinity, demonstrating that corridor bullying and peer violence are structural border-policing mechanisms that maintain patriarchal dominance.</li>
+                        <li><em>De-Naturalizing the Binary (Butler):</em> Exposes the invisible, relentless hidden curriculum of schooling. Butler demonstrates that everyday administrative routines—gender-segregated lines, uniform policing, binary sports, and administrative forms—do not neutrally accommodate biology, but performatively cite the heterosexual matrix to fabricate the retroactive illusion of an innate binary essence.</li>
+                        <li><em>Unmasking Heteronormative Coercion (Rich):</em> Refutes the assumption that school heterosexuality is an unproblematic, natural default. Rich reveals how formal ceremonies (Senior Formals/Proms), sex education centered exclusively on reproduction, and literature canons operate as an institutionalized political apparatus that enforces compulsory heterosexuality while silencing queer existence and female solidarity.</li>
+                        <li><em>Depathologizing Minority Distress (Meyer):</em> Shifting the locus of pathology from the student to the school climate, Meyer connects public health epidemiology directly to affirmative pedagogy. Proves that elevated anxiety, depression, and absenteeism among LGBTQ+ youth are social products of distal prejudice and proximal hypervigilance, establishing that enumerated protections and GSAs are essential structural conditions for learning.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Where they CAUSE PROFOUND PROBLEMS for the Textbook (The Forensic Hazards &amp; Blind Spots):</strong>
+                    <ul>
+                        <li><em>The "Boy Crisis" &amp; The Pathologizing Trap (Connell):</em> When the textbook leans uncritically on hegemonic masculinity, it risks moralistically pathologizing boys as proto-oppressors, dismissing male academic disengagement as mere "toxic masculinity." Across Australian and OECD schooling, boys systematically lag behind girls in standardized literacy, dominate suspensions and expulsions, and represent the vast majority of behavioral placements. Reducing this complex developmental and instructional challenge to patriarchal privilege blinds educators to urgent pedagogical needs, such as explicit structured phonics instruction and positive male mentorship.</li>
+                        <li><em>Underestimating Female Scholastic Ascendancy:</em> The textbook's emphasis on patriarchal oppression can lag behind contemporary educational realities. Young women now systematically outpace young men in secondary school completion, top ATAR tiers, and higher education degree attainment across almost all academic faculties. Framing schooling exclusively as a mechanism of female subjugation fails to explain girls' sustained academic ascendancy.</li>
+                        <li><em>Linguistic Idealism vs. Biological Materiality (Butler):</em> Butler's radical reduction of the body to discursive citation and linguistic performativity collapses in the face of developmental medicine, endocrinology, and neurobiology. Chromosomal configurations, hormonal surges, sexual dimorphism, and the visceral biological transformations of puberty are material physical realities, not discursive word games. Over-reliance on Butler leaves teachers without a constructive framework to support adolescents through tangible bodily maturation.</li>
+                        <li><em>The Nussbaum Critique &amp; Political Quietism:</em> As philosopher Martha Nussbaum demonstrated, Butlerian theory frequently encourages an elitist retreat into stylistic parody and verbal subversion at the expense of material, structural reforms. Furthermore, Rich's totalizing framework erases heterosexual female agency and consensual pleasure, reducing heterosexual women to dupes of patriarchal false consciousness.</li>
+                        <li><em>The Statutory Transparency &amp; Parental Rights Dilemma (Meyer):</em> Affirmative pedagogy often runs into sharp legal and ethical conflict regarding student social transition without parental notification. Uncritically endorsing affirmative policies without addressing statutory parental rights places classroom teachers in precarious legal crossfires.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>The Section 3 Synthesis Verdict:</strong>
+                    Connell, Butler, Rich, and Meyer provide an indispensable diagnostic arsenal for unmasking gender regimes, deconstructing the binary hidden curriculum, and protecting marginalized youth. However, for educators, gender analysis cannot collapse into pathologizing boys, denying the material reality of biological puberty, or ignoring female educational success. Effective practice requires: <strong>dismantling coercive institutional gender policing and providing safe, affirming pastoral environments, while simultaneously delivering explicit instruction that overcomes boys' literacy gaps and supporting adolescents through the physical realities of biological development.</strong>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <!-- 4. GOVERNANCE & SUBJECTIVITY -->
@@ -1744,13 +1778,13 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Add Critical Synthesis for Postcolonial and Critical Race Paradigms\n\n"
-        "Insert a master Critical Synthesis card evaluating Fanon, Spivak,\n"
-        "Gillborn, and Paris & Alim at the conclusion of Section 2 in\n"
-        "core-concepts.html, keeping all HTML markup free of citation tags.\n\n"
-        "- Detail psychic subjugation, epistemicide, and ordinary racism.\n"
-        "- Audit Asian educational ascendancy and the Delpit code dilemma.\n"
-        "- Contrast cultural sustainability with Powerful Knowledge (Young).\n"
+        "Add Critical Synthesis for Gender Orders and Performativity\n\n"
+        "Insert a master Critical Synthesis card evaluating Connell, Butler,\n"
+        "Rich, and Meyer at the conclusion of Section 3 in core-concepts.html,\n"
+        "keeping all HTML markup completely free of citation tags.\n\n"
+        "- Detail gender regimes, the heterosexual matrix, and minority stress.\n"
+        "- Audit the boy crisis in literacy, biological materiality, and agency.\n"
+        "- Contrast performative deconstruction with adolescent development.\n"
         "- Maintain clean semantic markup without citation tags."
     )
 
