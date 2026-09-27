@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Upgrade core-concepts.html styling with a vibrant amber, gold, and burnt
+"""Calibrate core-concepts.html to a comfortable warm amber editorial palette
 
-orange visual theme to maximize visual contrast and brain engagement.
+and reduce font sizes for optimal readability.
 """
 
 from pathlib import Path
@@ -18,168 +18,171 @@ def produce_complete_html_document() -> str:
     <title>Core Sociological Concepts: Forensic Revision Guide</title>
     <style>
         :root {
-            --primary: #c2410c;          /* Deep Burnt Orange */
-            --primary-hover: #9a3412;
-            --secondary: #b45309;        /* Warm Amber */
-            --accent-gold: #f59e0b;      /* Bright Golden Yellow */
-            --bg-warm: #fffbeb;          /* Warm Amber Background Tint */
-            --bg-card: #fefce8;          /* Bright Cream/Yellow Card */
-            --text-heading: #7c2d12;     /* Deep Russet */
-            --text-main: #292524;        /* Dark Warm Gray/Charcoal */
-            --border-warm: #fcd34d;      /* Sunny Gold Border */
-            --border-accent: #f97316;    /* Vibrant Orange */
-            --badge-strength-bg: #dcfce7;
-            --badge-strength-text: #15803d;
-            --badge-audit-bg: #fee2e2;
-            --badge-audit-text: #b91c1c;
+            --primary: #b45309;          /* Refined Warm Amber / Cognac */
+            --primary-dark: #78350f;     /* Deep Russet */
+            --accent-orange: #ea580c;    /* Terracotta Accent */
+            --text-heading: #1c1917;     /* Warm Charcoal */
+            --text-main: #292524;        /* Crisp Charcoal Body Text */
+            --text-muted: #57534e;       /* Stone Muted Text */
+            --bg-page: #ffffff;          /* Clean White Canvas */
+            --bg-entry: #fafaf9;         /* Very Soft Warm Stone Tint */
+            --bg-banner: #fffbf5;        /* Subtle Warm Paper Tint */
+            --border-subtle: #e7e5e4;    /* Light Stone Border */
+            --border-accent: #f59e0b;    /* Warm Amber Line Accent */
+            --badge-strength-bg: #ecfdf5;
+            --badge-strength-text: #047857;
+            --badge-strength-border: #a7f3d0;
+            --badge-audit-bg: #fff1f2;
+            --badge-audit-text: #be123c;
+            --badge-audit-border: #fecdd3;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.8;
-            max-width: 980px;
+            line-height: 1.65;
+            max-width: 920px;
             margin: 0 auto;
-            padding: 50px 24px;
+            padding: 40px 20px;
             color: var(--text-main);
-            background-color: #ffffff;
+            background-color: var(--bg-page);
         }
         h1, h2, h3, h4 {
             color: var(--text-heading);
-            font-weight: 800;
+            font-weight: 700;
         }
         h1 {
-            font-size: 2.35rem;
-            color: var(--primary);
-            border-bottom: 4px solid var(--accent-gold);
-            padding-bottom: 14px;
-            margin-bottom: 24px;
+            font-size: 1.85rem;
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--border-accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
             letter-spacing: -0.01em;
         }
         h2 {
-            font-size: 1.5rem;
-            color: #9a3412;
-            margin-top: 56px;
-            margin-bottom: 22px;
-            border-bottom: 3px solid var(--border-accent);
-            padding-bottom: 8px;
+            font-size: 1.28rem;
+            color: var(--primary);
+            margin-top: 44px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #fed7aa;
+            padding-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
         }
         h3.tradition-header {
-            font-size: 1.28rem;
-            color: var(--secondary);
-            margin-top: 36px;
-            margin-bottom: 14px;
-            background: linear-gradient(90deg, #fef3c7 0%, #ffffff 100%);
-            padding: 6px 14px;
-            border-left: 4px solid var(--accent-gold);
+            font-size: 1.1rem;
+            color: var(--text-heading);
+            margin-top: 28px;
+            margin-bottom: 12px;
+            background: #fff7ed;
+            padding: 5px 12px;
+            border-left: 3px solid var(--primary);
             border-radius: 0 4px 4px 0;
             font-style: normal;
         }
         h4.concept-title {
-            font-size: 1.18rem;
-            color: #c2410c;
-            margin-top: 30px;
-            margin-bottom: 12px;
+            font-size: 1.02rem;
+            color: var(--accent-orange);
+            margin-top: 18px;
+            margin-bottom: 8px;
         }
         .intro-card {
             display: flex;
             align-items: center;
-            gap: 28px;
-            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-            border: 2px solid var(--border-warm);
-            border-left: 6px solid var(--border-accent);
-            border-radius: 12px;
-            padding: 26px 30px;
-            margin-bottom: 44px;
-            box-shadow: 0 4px 14px -3px rgba(245, 158, 11, 0.18);
+            gap: 20px;
+            background-color: var(--bg-banner);
+            border: 1px solid #fed7aa;
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 32px;
         }
         .intro-card svg {
             flex-shrink: 0;
-            width: 110px;
-            height: 110px;
-            filter: drop-shadow(0 2px 5px rgba(180, 83, 9, 0.2));
+            width: 78px;
+            height: 78px;
         }
         .intro-card p {
             margin: 0;
-            font-size: 1.05rem;
-            color: #451a03;
-            line-height: 1.75;
+            font-size: 0.92rem;
+            color: #44403c;
+            line-height: 1.6;
             text-align: justify;
         }
         .forensic-entry {
-            margin-bottom: 42px;
-            padding: 24px 26px;
-            background-color: #fffdfa;
-            border: 1px solid #fed7aa;
-            border-left: 4px solid var(--accent-gold);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px -2px rgba(249, 115, 22, 0.08);
+            margin-bottom: 24px;
+            padding: 18px 20px;
+            background-color: var(--bg-entry);
+            border: 1px solid var(--border-subtle);
+            border-left: 3px solid #fbbf24;
+            border-radius: 6px;
         }
         .forensic-entry p {
-            margin: 0 0 14px 0;
-            font-size: 0.98rem;
+            margin: 0 0 10px 0;
+            font-size: 0.91rem;
             text-align: justify;
         }
         .forensic-entry ul {
-            margin: 10px 0 16px 22px;
-            font-size: 0.96rem;
-            line-height: 1.7;
+            margin: 6px 0 12px 18px;
+            font-size: 0.89rem;
+            line-height: 1.6;
         }
         .forensic-entry li {
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             text-align: justify;
         }
         .audit-label-critique {
             display: inline-block;
             background-color: var(--badge-audit-bg);
             color: var(--badge-audit-text);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 800;
-            border: 1px solid #fca5a5;
+            padding: 1px 7px;
+            border-radius: 3px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            border: 1px solid var(--badge-audit-border);
         }
         .audit-label-strength {
             display: inline-block;
             background-color: var(--badge-strength-bg);
             color: var(--badge-strength-text);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 800;
-            border: 1px solid #86efac;
+            padding: 1px 7px;
+            border-radius: 3px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            border: 1px solid var(--badge-strength-border);
         }
         .back-link {
             display: inline-block;
-            margin-top: 40px;
-            padding: 10px 20px;
+            margin-top: 32px;
+            padding: 8px 16px;
             background-color: #fff7ed;
-            border: 2px solid var(--border-accent);
-            border-radius: 6px;
-            color: var(--primary);
+            border: 1px solid #fdba74;
+            border-radius: 5px;
+            color: var(--primary-dark);
             text-decoration: none;
-            font-weight: 700;
+            font-size: 0.88rem;
+            font-weight: 600;
             transition: all 0.15s ease-in-out;
         }
         .back-link:hover {
             background-color: var(--primary);
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25);
+            border-color: var(--primary);
         }
         @media (max-width: 640px) {
+            body { padding: 24px 14px; }
             .intro-card {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 20px;
+                padding: 16px;
             }
             .intro-card svg {
-                width: 80px;
-                height: 80px;
-                margin-bottom: 10px;
+                width: 60px;
+                height: 60px;
             }
         }
         @media print {
-            body { padding: 16px; font-size: 10pt; }
+            body { padding: 12px; font-size: 9.5pt; }
             .intro-card { break-inside: avoid; page-break-inside: avoid; }
-            .forensic-entry { break-inside: avoid; page-break-inside: avoid; border: 1px solid #cbd5e1; }
+            .forensic-entry { break-inside: avoid; page-break-inside: avoid; border: 1px solid #d6d3d1; }
         }
     </style>
 </head>
@@ -189,29 +192,29 @@ def produce_complete_html_document() -> str:
 
     <div class="intro-card">
         <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Forensic Dossier Icon">
-            <!-- Back Folder Flap (Rich Warm Gold/Amber) -->
-            <path d="M14 26C14 22.6863 16.6863 20 20 20H44L52 30H100C103.314 30 106 32.6863 106 36V90C106 93.3137 103.314 96 100 96H20C16.6863 96 14 93.3137 14 90V26Z" fill="#F59E0B"/>
-            <!-- Paper Sheet 2 (Underlying Manila Sheet) -->
-            <rect x="25" y="22" width="70" height="68" rx="3" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
-            <!-- Paper Sheet 1 (Main Crisp White/Cream Sheet) -->
-            <rect x="29" y="15" width="70" height="75" rx="3" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.5"/>
-            <!-- Dossier Text Lines (Warm Amber & Orange) -->
-            <line x1="38" y1="28" x2="68" y2="28" stroke="#C2410C" stroke-width="3" stroke-linecap="round"/>
-            <line x1="38" y1="36" x2="88" y2="36" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
-            <line x1="38" y1="43" x2="84" y2="43" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="38" y1="50" x2="76" y2="50" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round"/>
-            <!-- Red/Orange Audit Stamp Badge -->
-            <rect x="58" y="56" width="34" height="15" rx="3" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
-            <text x="61" y="67" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="900" fill="#DC2626" letter-spacing="1">AUDIT</text>
-            <!-- Front Folder Flap (Deep Burnt Orange/Amber) -->
-            <path d="M12 44C12 40.6863 14.6863 38 18 38H102C105.314 38 108 40.6863 108 44L103 94C103 97.3137 100.314 100 97 100H23C19.6863 100 17 97.3137 17 94L12 44Z" fill="#D97706"/>
+            <!-- Back Folder Flap (Rich Muted Manila Stock) -->
+            <path d="M14 26C14 22.6863 16.6863 20 20 20H44L52 30H100C103.314 30 106 32.6863 106 36V90C106 93.3137 103.314 96 100 96H20C16.6863 96 14 93.3137 14 90V26Z" fill="#D97706"/>
+            <!-- Paper Sheet 2 (Underlying Soft Cream Sheet) -->
+            <rect x="25" y="22" width="70" height="68" rx="3" fill="#F5F5F4" stroke="#D6D3D1" stroke-width="1.2"/>
+            <!-- Paper Sheet 1 (Main Document) -->
+            <rect x="29" y="15" width="70" height="75" rx="3" fill="#FFFFFF" stroke="#A8A29E" stroke-width="1.2"/>
+            <!-- Dossier Header & Text Lines -->
+            <line x1="38" y1="27" x2="65" y2="27" stroke="#B45309" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="38" y1="35" x2="88" y2="35" stroke="#78716C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="38" y1="41" x2="84" y2="41" stroke="#A8A29E" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="38" y1="47" x2="76" y2="47" stroke="#A8A29E" stroke-width="1.3" stroke-linecap="round"/>
+            <!-- Subtle Red Stamp Badge -->
+            <rect x="58" y="55" width="34" height="15" rx="2" fill="#FFF1F2" stroke="#BE123C" stroke-width="1.2"/>
+            <text x="61" y="66" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="700" fill="#BE123C" letter-spacing="0.8">AUDIT</text>
+            <!-- Front Folder Flap (Warm Deep Amber) -->
+            <path d="M12 44C12 40.6863 14.6863 38 18 38H102C105.314 38 108 40.6863 108 44L103 94C103 97.3137 100.314 100 97 100H23C19.6863 100 17 97.3137 17 94L12 44Z" fill="#B45309"/>
             <!-- Folder Fastener Clasp -->
-            <circle cx="60" cy="52" r="5" fill="#FEF3C7" stroke="#78350F" stroke-width="2"/>
-            <line x1="60" y1="48" x2="60" y2="56" stroke="#78350F" stroke-width="2"/>
-            <!-- Forensic Inspection Magnifying Lens (Bright Cyan/Gold Accents) -->
-            <circle cx="86" cy="80" r="14" fill="#FFFFFF" fill-opacity="0.35" stroke="#7C2D12" stroke-width="3"/>
-            <circle cx="86" cy="80" r="12" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="2 3"/>
-            <line x1="96" y1="90" x2="108" y2="102" stroke="#7C2D12" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="60" cy="52" r="4.5" fill="#FEF3C7" stroke="#78350F" stroke-width="1.5"/>
+            <line x1="60" y1="48" x2="60" y2="56" stroke="#78350F" stroke-width="1.5"/>
+            <!-- Forensic Inspection Magnifying Lens -->
+            <circle cx="86" cy="80" r="13" fill="#FFFFFF" fill-opacity="0.25" stroke="#44403C" stroke-width="2.5"/>
+            <circle cx="86" cy="80" r="11" stroke="#F59E0B" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <line x1="95" y1="89" x2="106" y2="100" stroke="#44403C" stroke-width="4" stroke-linecap="round"/>
         </svg>
         <p>
             This reference manual applies an uncompromising <strong>four-part forensic audit</strong> to the theoretical models
@@ -285,7 +288,7 @@ def produce_complete_html_document() -> str:
             <h4 class="concept-title">Counter-School Resistance (Paul Willis)</h4>
             <p>Paul Willis's ethnographic study (<em>Learning to Labour</em>, 1977) of working-class adolescent 'lads' constructing an anti-school subculture grounded in manual labor pride, physical solidarity, and opposition to institutional authority.</p>
             <p><strong>1. Mechanics &amp; Strengths:</strong> Directly countered Bourdieu's passive reproduction model by demonstrating agency. The lads saw through the meritocratic myth, correctly recognizing that hard academic work would not guarantee them middle-class parity.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Willis exposed a tragic paradox: the lads' active, counter-hegemonic cultural resistance sealed their own educational failure, channeling them directly into the shop-floor exploitation they sought to validate. Furthermore, the subculture was steeped in virulent sexism, racism, and homophobia, complicating romanticized readings of anti-school resistance.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Willis exposed a tragic paradox: the lads\' active, counter-hegemonic cultural resistance sealed their own educational failure, channeling them directly into the shop-floor exploitation they sought to validate. Furthermore, the subculture was steeped in virulent sexism, racism, and homophobia, complicating romanticized readings of anti-school resistance.</p>
         </div>
 
         <div class="forensic-entry">
@@ -555,16 +558,18 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully generated bright-themed concepts page at: {target_file.resolve()}")
+    print(f"Successfully tuned palette and font sizing in: {target_file.resolve()}")
 
     commit_message = (
-        "Upgrade core-concepts.html styling with vibrant amber and orange palette\n\n"
-        "Overhaul typography, borders, badges, and SVG assets in\n"
-        "core-concepts.html to use an energetic palette of warm amber, burnt\n"
-        "orange, and golden yellow highlights to maximize cognitive engagement.\n\n"
-        "- Replace cool slate blues with warm ambers (#b45309) and oranges (#ea580c).\n"
-        "- Update dossier SVG icon to vibrant Manila folder tones and badges.\n"
-        "- Add high-contrast pill styling to diagnostic strength and audit labels."
+        "Calibrate core-concepts palette to warm editorial amber and tune typography\n\n"
+        "Tame over-saturated yellow backgrounds in core-concepts.html to reduce\n"
+        "visual glare. Revert canvas to crisp white with warm stone and subtle\n"
+        "amber accents. Reduce typography sizing across headings and body text\n"
+        "for optimal revision reading comfort.\n\n"
+        "- Neutralize harsh yellow backgrounds in favor of crisp white canvas.\n"
+        "- Confine amber and orange to structural borders, headers, and badges.\n"
+        "- Scale down body font size to 0.91rem and adjust proportional headings.\n"
+        "- Soften introductory dossier SVG to rich manila and leather tones."
     )
 
     sync_repository(root_directory, commit_message)
