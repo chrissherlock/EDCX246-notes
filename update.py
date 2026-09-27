@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Upgrade the Social Closure and Credentialism entry in core-concepts.html
 
-to include comprehensive plain-English breakdowns of Max Weber's theory of social closure,
-Neo-Weberian sociology, and Randall Collins's credentialism, and sync updates to main via git.
+to comprehensively explain Max Weber's theory of social closure, Neo-Weberian sociology,
+and Randall Collins's credentialism, and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -874,7 +874,7 @@ def generate_complete_html_document() -> str:
             <p>
                 Neo-Weberian sociology showing how dominant status groups use educational credentials as
                 <span class="tooltip-term" tabindex="0" data-tooltip="Monopolistic barriers erected by elite groups to restrict access to lucrative professional markets and maintain social class boundaries.">monopolistic gatekeeping</span>
-                currencies to restrict access to lucrative professional markets, enforce class monopolies, and maintain social boundaries under the guise of neutral technical competence.
+                currencies to restrict access to lucrative professional markets, enforce class monopolies, and maintain social boundaries under equator-like conditions of neutral technical competence.
             </p>
 
             <div class="scenario-box">
