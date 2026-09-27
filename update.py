@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with separated Max Weber (Social Closure)
+"""Upgrade the Residualisation entry in core-concepts.html to explicitly articulate
 
-and Randall Collins (Credentialism) cards, fully expanded Residualisation entry,
-Max Weber in the Master Bibliography, and clean markup free of citation tags,
-syncing updates to main via git.
+the empirical research base (School Effectiveness and School Improvement, explicit instruction,
+and instructional leadership) while keeping all markup completely free of citation tags,
+and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -979,7 +979,11 @@ def produce_complete_html_document() -> str:
 
             <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Accurately diagnoses how unbridled educational markets and school choice policies exacerbate social segregation and structural inequality, exposing the fallacy that market competition inherently uplifts all public institutions.</p>
 
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span> Can be deployed fatalistically by educational administrators to explain away institutional stagnation and justify writing off local public schools. Empirical research demonstrates that exceptional leadership, evidence-based explicit instruction, and strong, positive school culture can defy residualisation and deliver outstanding educational outcomes even in heavily disadvantaged public settings.</p>
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Fatalism Trap:</em> Can be deployed fatalistically by educational administrators to explain away institutional stagnation and justify writing off local public schools.</li>
+                <li><em>The Empirical Counter-Evidence (Defying Decline):</em> Extensive empirical research within School Effectiveness and School Improvement (SESI) studies, cognitive science, and educational leadership literature demonstrates that exceptional instructional leadership, evidence-based explicit instruction (structured, teacher-led teaching), and strong, positive school culture can successfully defy residualisation and deliver outstanding educational outcomes even in heavily disadvantaged public settings.</li>
+            </ul>
 
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
@@ -1269,11 +1273,13 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Split Social Closure and Credentialism into separate entries\n\n"
-        "Separate Max Weber (Social Closure) and Randall Collins (Credentialism)\n"
-        "into two distinct forensic entries in core-concepts.html, adding comprehensive\n"
-        "plain-English explanations of Neo-Weberian sociology, social closure, and human\n"
-        "capital theory while keeping all HTML markup free of citation tags."
+        "Upgrade Residualisation entry with School Effectiveness research\n\n"
+        "Expand the Residualisation entry in core-concepts.html to incorporate\n"
+        "empirical findings from School Effectiveness and School Improvement (SESI)\n"
+        "studies, cognitive science, and explicit instruction research while\n"
+        "keeping all HTML markup free of citation tags.\n\n"
+        "- Detail SESI and explicit instruction counter-evidence.\n"
+        "- Ensure clean semantic presentation without citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
