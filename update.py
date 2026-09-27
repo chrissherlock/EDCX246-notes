@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Calibrate core-concepts.html to a comfortable warm amber editorial palette
+"""Tighten vertical margins and eliminate excess whitespace above concept titles
 
-and reduce font sizes for optimal readability.
+in core-concepts.html.
 """
 
 from pathlib import Path
@@ -41,7 +41,7 @@ def produce_complete_html_document() -> str:
             line-height: 1.65;
             max-width: 920px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 36px 20px;
             color: var(--text-main);
             background-color: var(--bg-page);
         }
@@ -54,26 +54,26 @@ def produce_complete_html_document() -> str:
             color: var(--primary-dark);
             border-bottom: 3px solid var(--border-accent);
             padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             letter-spacing: -0.01em;
         }
         h2 {
-            font-size: 1.28rem;
+            font-size: 1.25rem;
             color: var(--primary);
-            margin-top: 44px;
-            margin-bottom: 16px;
+            margin-top: 36px;
+            margin-bottom: 12px;
             border-bottom: 2px solid #fed7aa;
-            padding-bottom: 6px;
+            padding-bottom: 5px;
             text-transform: uppercase;
             letter-spacing: 0.04em;
         }
         h3.tradition-header {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-heading);
-            margin-top: 28px;
-            margin-bottom: 12px;
+            margin-top: 22px;
+            margin-bottom: 10px;
             background: #fff7ed;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-left: 3px solid var(--primary);
             border-radius: 0 4px 4px 0;
             font-style: normal;
@@ -81,24 +81,25 @@ def produce_complete_html_document() -> str:
         h4.concept-title {
             font-size: 1.02rem;
             color: var(--accent-orange);
-            margin-top: 18px;
-            margin-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 6px;
+            padding-top: 0;
         }
         .intro-card {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
             background-color: var(--bg-banner);
             border: 1px solid #fed7aa;
             border-left: 4px solid var(--primary);
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 32px;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 24px;
         }
         .intro-card svg {
             flex-shrink: 0;
-            width: 78px;
-            height: 78px;
+            width: 72px;
+            height: 72px;
         }
         .intro-card p {
             margin: 0;
@@ -108,25 +109,25 @@ def produce_complete_html_document() -> str:
             text-align: justify;
         }
         .forensic-entry {
-            margin-bottom: 24px;
-            padding: 18px 20px;
+            margin-bottom: 16px;
+            padding: 14px 18px;
             background-color: var(--bg-entry);
             border: 1px solid var(--border-subtle);
             border-left: 3px solid #fbbf24;
             border-radius: 6px;
         }
         .forensic-entry p {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             font-size: 0.91rem;
             text-align: justify;
         }
         .forensic-entry ul {
-            margin: 6px 0 12px 18px;
+            margin: 4px 0 10px 18px;
             font-size: 0.89rem;
-            line-height: 1.6;
+            line-height: 1.55;
         }
         .forensic-entry li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-align: justify;
         }
         .audit-label-critique {
@@ -151,8 +152,8 @@ def produce_complete_html_document() -> str:
         }
         .back-link {
             display: inline-block;
-            margin-top: 32px;
-            padding: 8px 16px;
+            margin-top: 28px;
+            padding: 7px 14px;
             background-color: #fff7ed;
             border: 1px solid #fdba74;
             border-radius: 5px;
@@ -168,15 +169,15 @@ def produce_complete_html_document() -> str:
             border-color: var(--primary);
         }
         @media (max-width: 640px) {
-            body { padding: 24px 14px; }
+            body { padding: 20px 12px; }
             .intro-card {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 16px;
+                padding: 14px;
             }
             .intro-card svg {
-                width: 60px;
-                height: 60px;
+                width: 56px;
+                height: 56px;
             }
         }
         @media print {
@@ -458,7 +459,7 @@ def produce_complete_html_document() -> str:
             <h4 class="concept-title">Active Audience Theory &amp; Polysemy (Stuart Hall)</h4>
             <p>Stuart Hall's encoding/decoding model demonstrating that media texts are polysemic (bearing multiple interpretations) and actively negotiated by audiences through dominant, negotiated, or oppositional stances.</p>
             <p><strong>1. Mechanics &amp; Strengths:</strong> Refutes paternalistic views that school students are passive victims brainwashed by screen media, highlighting their capacity to critically evaluate, mock, and subvert cultural messaging.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Hall's theory can lead educators to underestimate the coercive algorithmic engineering of modern social feeds, which exploit neurological dopamine loops far beyond active intellectual negotiation.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Hall\'s theory can lead educators to underestimate the coercive algorithmic engineering of modern social feeds, which exploit neurological dopamine loops far beyond active intellectual negotiation.</p>
         </div>
 
         <div class="forensic-entry">
@@ -558,18 +559,16 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully tuned palette and font sizing in: {target_file.resolve()}")
+    print(f"Successfully tightened spacing in: {target_file.resolve()}")
 
     commit_message = (
-        "Calibrate core-concepts palette to warm editorial amber and tune typography\n\n"
-        "Tame over-saturated yellow backgrounds in core-concepts.html to reduce\n"
-        "visual glare. Revert canvas to crisp white with warm stone and subtle\n"
-        "amber accents. Reduce typography sizing across headings and body text\n"
-        "for optimal revision reading comfort.\n\n"
-        "- Neutralize harsh yellow backgrounds in favor of crisp white canvas.\n"
-        "- Confine amber and orange to structural borders, headers, and badges.\n"
-        "- Scale down body font size to 0.91rem and adjust proportional headings.\n"
-        "- Soften introductory dossier SVG to rich manila and leather tones."
+        "Tighten spacing and margins above concept titles in core-concepts.html\n\n"
+        "Eliminate excess whitespace above concept titles by resetting the top\n"
+        "margin of h4.concept-title to zero and reducing padding within the\n"
+        "forensic-entry containers and tradition headers.\n\n"
+        "- Reset h4.concept-title top margin to 0.\n"
+        "- Compact padding in forensic-entry blocks from 18px to 14px.\n"
+        "- Reduce vertical margins on h3.tradition-header."
     )
 
     sync_repository(root_directory, commit_message)
