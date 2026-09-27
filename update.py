@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Elevate the critical synthesis impact box into its own standalone section card
+"""Regenerate core-concepts.html with the expanded standalone critical synthesis
 
-under Section 1 in core-concepts.html, and sync updates to the main branch via git.
+section card under Section 1, and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -253,28 +253,31 @@ def produce_complete_html_document() -> str:
             color: #44403c;
         }
         .textbook-impact-box {
-            margin-bottom: 20px;
-            padding: 18px 22px;
+            margin-bottom: 24px;
+            padding: 20px 24px;
             background-color: #fffbeb;
             border: 1px solid #fde68a;
-            border-left: 4px solid #d97706;
+            border-left: 5px solid #d97706;
             border-radius: 6px;
             font-size: 0.92rem;
             line-height: 1.65;
         }
         .textbook-impact-box h4.concept-title {
             color: var(--primary-dark);
-            font-size: 1.08rem;
-            margin-bottom: 8px;
+            font-size: 1.12rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.03em;
         }
         .textbook-impact-box ul {
-            margin: 8px 0 0 18px;
+            margin: 10px 0 0 20px;
         }
         .textbook-impact-box li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             text-align: justify;
+        }
+        .textbook-impact-box ul ul {
+            margin-top: 6px;
         }
         .entry-references {
             margin-top: 14px;
@@ -678,7 +681,7 @@ def produce_complete_html_document() -> str:
                 <ul>
                     <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications.</li>
                     <li><strong>Bourdieu, P. (2000).</strong> <em>Pascalian Meditations</em>. Stanford University Press.</li>
-                    <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
+                    <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
                 </ul>
             </div>
         </div>
@@ -688,21 +691,25 @@ def produce_complete_html_document() -> str:
             <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em></h4>
             <p>
                 <strong>Does the counter-tradition cause problems for the textbook, support its thesis, or does it do both?</strong><br>
-                It does <strong>both simultaneously</strong>, creating a powerful dialectical tension that defines rigorous sociological analysis across the curriculum:
+                It does <strong>both simultaneously</strong>, generating a vital dialectical tension that defines rigorous sociological analysis across the curriculum:
             </p>
             <ul>
                 <li>
-                    <strong>How it SUPPORTS the Textbook's Thesis:</strong>
-                    The textbook relies heavily on Bourdieu to dismantle naive, uncritical views of meritocracy (e.g., proving that equal funding
-                    does not equal equal outcomes). The structural diagnosis of symbolic violence and misrecognition gives the textbook its sharpest
-                    empirical tools for explaining why disadvantaged students internalize systemic failure as personal inadequacy rather than structural sorting.
+                    <strong>How it SUPPORTS and Empowers the Textbook's Thesis:</strong>
+                    <em>Making Sense of Mass Education</em> relies fundamentally on Bourdieu to demolish naive, meritocratic assumptions—proving that equal funding or open university access does not automatically produce equal outcomes. The structural diagnosis of symbolic violence, misrecognition, and cultural capital provides the textbook with its sharpest empirical weapons. It accounts for why working-class and marginalized students often internalize systemic institutional barriers as personal intellectual failure, preserving the legitimacy of an unequal hierarchy. Without Bourdieu, educational sociology would be reduced to superficial administrative tinkering.
                 </li>
                 <li>
-                    <strong>How it CAUSES PROBLEMS for the Textbook:</strong>
-                    When <em>Making Sense of Mass Education</em> adopts Bourdieu wholesale without the counter-tradition's warnings,
-                    it risks falling into <strong>pedagogical fatalism</strong> (believing that schools can never overcome class origins) and
-                    <strong>paternalistic determinism</strong> (framing dominated groups as passive dupes suffering from unconscious complicity, as Rancière critiques).
-                    Treating schooling as an airtight reproduction machine leaves educators with no theoretical pathway for student agency or transformative teaching.
+                    <strong>How it CAUSES PROFOUND PROBLEMS for the Textbook:</strong>
+                    When the textbook adopts Bourdieusian reproduction wholesale without the counter-tradition's corrective brakes, it pulls educators toward three hazardous ideological pitfalls:
+                    <ul>
+                        <li><em>Pedagogical Fatalism:</em> If schooling is an airtight machine dedicated exclusively to class reproduction, teachers are cast as helpless accomplices in sorting children for capital. This breeds defeatism and justifies lowering academic expectations for disadvantaged cohorts.</li>
+                        <li><em>Epistemic &amp; Pedagogical Relativism:</em> Treating all curriculum content as merely "arbitrary ruling-class etiquette" (as Bourdieu implies) collapses the vital distinction between arbitrary social manners and <strong>Powerful Knowledge</strong> (Young). As Lisa Delpit warns, when progressive educators refuse to explicitly teach standard academic codes under the banner of avoiding cultural violence, they abandon poor and minority students to functional disenfranchisement.</li>
+                        <li><em>Sociological Paternalism:</em> As Jacques Rancière unmasks, framing dominated groups as unconscious dupes suffering from total "misrecognition" robs students, families, and subcultures of their authentic agency and clear-eyed perception of institutional hypocrisy.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>The Ultimate Verdict for Exam Success:</strong>
+                    The counter-tradition does not invalidate <em>Making Sense of Mass Education</em>; rather, it <strong>rescues the textbook from its own fatalism</strong>. It teaches us to use Bourdieu as a brilliant <em>diagnostic X-ray</em> to spot hidden institutional bias, while refusing to use him as a permanent excuse to lower standards, abandon explicit instruction, or deny students access to powerful knowledge.
                 </li>
             </ul>
         </div>
@@ -1011,15 +1018,15 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully elevated textbook impact box to standalone section card in: {target_file.resolve()}")
+    print(f"Successfully regenerated core-concepts.html with standardized function name: {target_file.resolve()}")
 
     commit_message = (
-        "Elevate textbook impact synthesis into a standalone section card\n\n"
-        "Extract the critical synthesis box evaluating how the counter-tradition\n"
+        "Promote textbook impact synthesis to standalone section card\n\n"
+        "Extract the expanded critical synthesis box evaluating how the counter-tradition\n"
         "impacts Making Sense of Mass Education out of the inner entry card and\n"
         "position it as a standalone section card under Section 1 in core-concepts.html.\n\n"
-        "- Promote textbook impact box to a standalone section card.\n"
-        "- Verify correct document structure and styling."
+        "- Promote textbook impact synthesis box to a standalone section card.\n"
+        "- Expand analysis on pedagogical fatalism and epistemic relativism."
     )
 
     sync_repository(root_directory, commit_message)
