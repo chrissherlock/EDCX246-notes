@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a full forensic dossier for Michel Foucault's
+"""Regenerate core-concepts.html with an updated Forensic Dossier for Michel
 
-The Panopticon & The Disciplinary Triad, maintaining all separated entries,
+Foucault's Disciplinary Power & Docile Bodies, maintaining all separated entries,
 Master Bibliography updates, and clean markup free of citation tags, and sync
 updates to main via git.
 """
@@ -936,7 +936,7 @@ def produce_complete_html_document() -> str:
             <ul>
                 <li><strong>Monopolistic Gatekeeping &amp; Status Exclusion:</strong> Dominant status groups use educational institutions to erect exclusionary barriers. By tying professional licenses and job eligibility to formal schooling, elites transform cultural familiarity and economic endurance into legally protected market monopolies.</li>
                 <li><strong>The Credential Market &amp; Status Display:</strong> Most occupational training occurs on the job rather than in classrooms. Consequently, employers demand paper credentials not because specialized academic knowledge is required for daily tasks, but because degrees serve as cheap, bureaucratically safe proxies for character, social conformity, and class habitus.</li>
-                <li><strong>Deficiency Escalation &amp; Positional Competition:</strong> As democratic expansion floods the labor market with basic degrees, qualifications undergo rapid currency devaluation. Elite groups respond by dynamically escalating entry thresholds—requiring postgraduate degrees, specialized master's programs, or brand-name university pedigrees—forcing individuals to buy more years of schooling simply to maintain their employment position in the queue.</li>
+                <li><strong>Deficiency Escalation &amp; Positional Competition:</strong> As democratic expansion floods the labor market with basic degrees, qualifications undergo rapid currency devaluation. Elite groups respond by dynamically escalating entry thresholds—requiring postgraduate degrees, specialized master's programs, or brand-name university pedigree—forcing individuals to buy more years of schooling simply to maintain their employment position in the queue.</li>
             </ul>
 
             <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Brilliantly explains degree inflation and why the expansion of higher education does not automatically generate a meritocracy. It exposes how economic inequality and occupational sorting are legitimized through neutral-sounding paper certifications, preventing working-class entrants from breaking into lucrative professional fields without bearing massive financial costs.</p>
@@ -1246,267 +1246,6 @@ def produce_complete_html_document() -> str:
                 </ul>
             </div>
         </div>
-
-        <!-- MASTER STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON POSTCOLONIAL & CRITICAL RACE PARADIGMS -->
-        <div class="textbook-impact-box" style="margin-top: 24px;">
-            <h4 class="concept-title">Critical Synthesis: Impact of Postcolonial &amp; Critical Race Paradigms on <em>Making Sense of Mass Education</em></h4>
-            <p>
-                <strong>How do Fanon, Spivak, Gillborn, and Paris &amp; Alim collectively shape and challenge the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
-                Together, these four frameworks force educational sociology to confront the historical reality that modern mass schooling was not designed as an egalitarian project, but as an imperial apparatus of racial sorting, cultural assimilation, and epistemic enclosure:
-            </p>
-            <ul>
-                <li>
-                    <strong>How they SUPPORT and Empower the Textbook's Thesis (The Decolonial Diagnostic Engine):</strong>
-                    <ul>
-                        <li><em>Psychic Subjugation &amp; Internalized Inferiority (Fanon):</em> Grounds the textbook's analysis of racial disparities beyond simple material poverty. Fanon demonstrates that colonial schooling operates directly on the interiority of racialized and Indigenous children, inducing <em>lactification</em> (psychic whitening) and alienating them from their community traditions under the guise of civilizing benevolence.</li>
-                        <li><em>The Universalist Ruse &amp; Subaltern Inaudibility (Spivak):</em> Exposes the deep Eurocentric bias of national curricula. Spivak proves that Western Enlightenment knowledge masquerades as universal rationality while committing epistemicide against Indigenous cosmologies and oral traditions, ensuring that subaltern perspectives remain institutionally inaudible unless translated into the colonizer's lexicon.</li>
-                        <li><em>Ordinary Racism &amp; Whiteness as Policy (Gillborn):</em> Demolishes the naive liberal view that racism is confined to rare, prejudiced "bad apple" teachers. Gillborn demonstrates how colorblind meritocracy, tier-capping, gifted matrices, and disciplinary exclusions systematically function as "whiteness as policy," proving that equity reforms are only tolerated when they align with white majoritarian interests (Derrick Bell's <em>interest convergence</em>).</li>
-                        <li><em>Pluralism as Sovereign Heritage (Paris &amp; Alim):</em> Moves beyond superficial "foods and festivals" multiculturalism, providing the textbook with a robust model (Culturally Sustaining Pedagogy) that treats the languages, literacies, and practices of minoritized students as enduring, sovereign intellectual assets to be sustained rather than eradicated.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Where they CAUSE PROFOUND PROBLEMS for the Textbook (The Forensic Hazards &amp; Blind Spots):</strong>
-                    <ul>
-                        <li><em>The Epistemic Relativist Trap (Michael Young's Social Realism):</em> When postcolonial critiques brand all formal curricula as "white colonial violence," they collapse the vital distinction between arbitrary colonial manners and <strong>Powerful Knowledge</strong>. Disciplinary science, calculus, thermodynamics, and formal logic are testable, objective intellectual amplifiers; denying them to racialized youth under the guise of decolonization disarms them intellectually and traps them outside the global knowledge economy.</li>
-                        <li><em>The Asian Educational Ascendancy Anomaly:</em> Gillborn's totalizing thesis of "whiteness as policy" is confounded by an undeniable empirical reality: across the UK, Australia, and North America, East Asian (Chinese, Vietnamese) and South Asian (Indian) students—many from low-SES migrant backgrounds—systematically and dramatically outperform White majoritarian peers across secondary examinations, selective school entry, and elite university STEM admissions. If schooling is fundamentally an apparatus engineered to protect white supremacy, CRT struggles to explain this divergence without resorting to cultural essentialism.</li>
-                        <li><em>The Delpit Gatekeeping Dilemma:</em> As Lisa Delpit proved, tertiary entrance exams, professional licensing boards, and courts operate ruthlessly through standard academic English. When progressive educators celebrate home vernaculars while failing to teach standard academic codes explicitly, they leave disadvantaged students locked out of high-status socioeconomic mobility. Cultural sustainability must be paired with uncompromising instruction in the culture of power.</li>
-                        <li><em>The Trauma Fetish &amp; Fatalism:</em> Over-indexing on Fanonist psychological damage and Gillborn's "tacit intentionality" risks constructing First Nations and minority students exclusively as damaged, helpless victims of an inescapable white supremacist machine. This breeds administrative fatalism, discourages teacher ambition, and erases millennia of sovereign Indigenous intellectual endurance.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>The Section 2 Synthesis Verdict:</strong>
-                    These four paradigms provide an indispensable structural diagnosis that shatters liberal complacency and unmasks the colonial origins of modern schooling. However, for classroom educators, decolonizing pedagogy cannot mean retreating into curriculum relativism, lowering academic standards, or abandoning explicit instruction. True educational equity demands an uncompromising synthesis: <strong>sustaining cultural and linguistic sovereignty while unapologetically arming marginalized students with powerful knowledge and dominant academic codes</strong>.
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- 3. GENDER & SEXUALITIES -->
-    <section id="section-3">
-        <h2>3. Gender &amp; Sexualities</h2>
-        <h3 class="tradition-header">Structural Gender Orders &amp; Poststructuralist Performativity</h3>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Gender Regimes &amp; Hegemonic Masculinity (Raewyn Connell)</h4>
-            <p>
-                Raewyn Connell's sociology of the gender order posits that gender is not a fixed biological dichotomy or simple sex role, but an evolving historical structure of power, labor, emotional investment, and symbolism. At the apex of this institutionalized hierarchy sits
-                <span class="tooltip-term" tabindex="0" data-tooltip="The culturally idealized form of manhood in a given time and place that legitimizes global male dominance over women and the subordination of non-conforming men.">hegemonic masculinity</span>—an
-                archetype lionized through physical dominance, emotional stoicism, and compulsory heterosexuality. Within schools, this hierarchy is actively engineered and enforced through institutional
-                <span class="tooltip-term" tabindex="0" data-tooltip="The structural patterns of gender relations, divisions of labor, and authority operating within a specific institution like a school.">gender regimes</span>
-                that distribute the <span class="tooltip-term" tabindex="0" data-tooltip="The unearned social, economic, and cultural advantages men collectively gain from the general subordination of women.">patriarchal dividend</span>.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The First XV Oval vs. The Drama Studio</strong>
-                Imagine two male Year 10 students inside an Australian secondary school:
-                <ul>
-                    <li><strong>Lachlan (First XV Rugby Captain):</strong> Embodies physical toughness, athletic aggression, emotional detachment, and heterosexual bravado. Elevated to school prefect, praised by male executive staff for "natural leadership," and given premier campus sporting facilities.</li>
-                    <li><strong>Toby (Drama &amp; Literature Enthusiast):</strong> Displays vulnerability, intellectual aesthetic interests, and expressive, non-stoic speech. Subjected to daily corridor policing, homophobic slurs (<em>"that's so gay"</em>), and institutional pressure to drop arts electives for contact sports.</li>
-                </ul>
-                The school operates as an active "masculinity mill": institutional timetabling, athletic funding, and peer surveillance combine to reward Lachlan's compliance with patriarchal authority while systematically degrading Toby into a <span class="tooltip-term" tabindex="0" data-tooltip="Expressions of masculinity that are actively degraded, policed, and expelled from legitimacy (most notably homosexual or gender-nonconforming boys).">subordinated masculinity</span>.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed during the 1980s and 1990s in Australia and codified in Connell's landmark works <em>Gender and Power</em> (1987) and <em>Masculinities</em> (1995). Connell confronted a major theoretical and empirical impasse: traditional structural-functionalist "sex role theory" (Talcott Parsons) treated gender as a peaceful, consensual process of internalizing fixed social norms. This model could not explain violent conflict, misogyny, homophobia, resistance, or historical shifts in gender relations. Simultaneously, early radical feminist models treated all men as an undifferentiated, universally powerful class, which failed to explain why working-class, racialized, or gay men suffered severe structural violence and marginalization. Connell resolved this by modeling masculinities as multiple, contested, and internally stratified.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Connell's framework establishes four institutional structures and a quadripartite relational hierarchy:</p>
-            <ul>
-                <li><strong>The Four Structures of the Gender Regime:</strong>
-                    <ul>
-                        <li><em>Power Relations:</em> Hierarchical authority, control, and state/institutional coercion (e.g., male domination of executive school leadership and sports administration).</li>
-                        <li><em>Production Relations:</em> The gendered division of labor (e.g., streaming girls toward nursing/humanities and boys toward STEM/manual trades; staffing primary and pastoral roles with women).</li>
-                        <li><em>Cathexis (Emotional Relations):</em> Institutional regulation of emotional, affective, and sexual attachments (e.g., compulsory heterosexuality, policing of adolescent intimacy).</li>
-                        <li><em>Symbolism:</em> Cultural coding expressed through school uniforms, gendered language, timetable traditions, and media canons.</li>
-                    </ul>
-                </li>
-                <li><strong>The Relational Typology of Masculinities:</strong>
-                    <ul>
-                        <li><span class="tooltip-term" tabindex="0" data-tooltip="The culturally dominant standard of manhood that legitimizes patriarchy. Few embody it perfectly, but all men are measured against it.">Hegemonic Masculinity</span>: The normative standard at the apex. It does not require violence to rule; it wins consent through cultural ascendance, athletic lionization, and institutional prestige.</li>
-                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Masculinities expelled from legitimacy, experiencing institutional discrimination and peer violence (e.g., gay or effeminate boys).">Subordinated Masculinity</span>: Groups at the bottom of the male hierarchy, bearing the brunt of homophobic abuse, disciplinary tracking, and cultural delegitimation.</li>
-                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Men who do not meet the strenuous hegemonic ideal but benefit from the general subordination of women without challenging the gender order.">Complicit Masculinity</span>: The broad majority of men and boys who do not embody the frontline warrior archetype, but quietly support the system to reap the collective patriarchal dividend (career pathways, unearned authority).</li>
-                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Masculinities formed at the intersection of gender with race or class (e.g., working-class or Indigenous boys).">Marginalized Masculinity</span>: Intersectional masculinities where male privilege is fractured by class or racial disempowerment. Working-class lads can display hyper-physical masculinity, yet remain structural casualties of the labor market.</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Shatters biological determinism by proving that masculinities are socially constructed, multiple, and historically contested. It transforms how schools understand peer bullying and homophobia—diagnosing them not as isolated psychiatric deviance, but as institutionalized border-policing mechanisms that enforce hegemonic compliance. It also illuminates how boys actively suppress emotional vulnerability to avoid subordination, directly linking school gender regimes to adolescent male mental health crises.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The "Boy Crisis" &amp; The Pathologizing Trap:</em> When deployed uncritically, Connell's concept easily degenerates into moralistic pathologizing, framing all boys as proto-patriarchal oppressors or carriers of "toxic masculinity." Across Australia and OECD education systems, boys systematically lag behind girls in standardized literacy metrics, suffer significantly higher rates of school suspension and expulsion, and dominate special education and behavioral placements. Reducing this complex developmental and instructional challenge solely to "toxic hegemonic masculinity" distracts educators from addressing genuine pedagogical deficits (e.g., the urgent need for structured, explicit early phonics instruction, positive male mentorship, and neurodevelopmental support).</li>
-                <li><em>The Conceptual Bloat Fallacy (Demetriou's Critique):</em> Sociologist Demetriou demonstrated that hegemonic masculinity often becomes an unfalsifiable catch-all: any behavior displayed by dominant men is labeled hegemonic, while any positive male trait is claimed to be non-hegemonic. Hegemonic masculinity routinely survives not by pure dominance, but by hybridizing—absorbing elements of emotional sensitivity ("the new man") to maintain structural dominance while deflecting critique.</li>
-                <li><em>Underestimating Female Academic Dominance &amp; Agency:</em> Connell's framework was formulated during an era of overt male scholastic dominance. Today, young women consistently outpace young men in secondary graduation rates, higher education admissions, and professional degree attainment. Over-emphasizing patriarchal dominance risks blinding pre-service teachers to the contemporary realities of female institutional empowerment and male disengagement.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Connell, R. W. (1987).</strong> <em>Gender and Power: Society, the Person and Sexual Politics</em>. Stanford: Stanford University Press. <em>[The foundational formulation of gender regimes and the gender order]</em>.</li>
-                    <li><strong>Connell, R. W. (1995).</strong> <em>Masculinities</em>. Berkeley: University of California Press. <em>[Codification of the fourfold typology of hegemonic, subordinated, complicit, and marginalized masculinities]</em>.</li>
-                    <li><strong>Connell, R. W. (2000).</strong> <em>The Men and the Boys</em>. Berkeley: University of California Press.</li>
-                    <li><strong>Demetriou, D. Z. (2001).</strong> 'Connell's Concept of Hegemonic Masculinity: A Critique'. <em>Theory and Society</em>, 30(3), 337–361.</li>
-                    <li><strong>Mac an Ghaill, M. (1994).</strong> <em>The Making of Men: Masculinities, Sexualities and Schooling</em>. Buckingham: Open University Press.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Gender Performativity (Judith Butler)</h4>
-            <p>
-                Judith Butler's poststructuralist feminist thesis (<span class="tooltip-term" tabindex="0" data-tooltip="Gender Trouble: Feminism and the Subversion of Identity (1990), which fundamentally decoupled gender and sex from biological essentialism.">Gender Trouble, 1990</span>)
-                demonstrates that gender is not a stable biological reality, nor a direct cultural expression of anatomical sex. Instead, gender is fundamentally
-                <span class="tooltip-term" tabindex="0" data-tooltip="An act that brings into being what it names; repeating normative gestures and codes produces the retroactive illusion of an internal essence.">performative</span>:
-                an ongoing, stylized repetition of bodily gestures, speech acts, and regulatory citations that retroactively produces the illusion of an innate,
-                internal gender identity. In Butler's framework, identity is fabricated through compulsory performance within a dominant
-                <span class="tooltip-term" tabindex="0" data-tooltip="The normative cultural framework that requires anatomical sex, gender identity, and heterosexual desire to align in a rigid binary.">heterosexual matrix</span>.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Morning Assembly Binary</strong>
-                Imagine a Year 7 morning roll call and assembly line:
-                <ul>
-                    <li><strong>The Routine Directive:</strong> The teacher calls out, <em>"Boys on the left, girls on the right; skirts below the knee, ties pulled tight."</em> This instruction is not merely organizing bodies; it is a regulatory speech act. It does not reflect an already existing natural division; it actively commands and enforces the binary reality into physical existence.</li>
-                    <li><strong>The Citational Duress:</strong> A student who complies with expected postures—sitting with legs closed, walking with a specific cadence, modulating vocal pitch—is not expressing a biological "essence." They are executing a citational script under the constant surveillance of teachers and peers to avoid social penalty.</li>
-                    <li><strong>The Abject Boundary:</strong> A student assigned male at birth who experiments with makeup or expressive, fluid gestures is immediately policed through snickers, hallway shaming, and dress-code warnings. By transgressing the script, the student is pushed into <span class="tooltip-term" tabindex="0" data-tooltip="Bodies, identities, and desires expelled from cultural legitimacy and made socially or institutionally unintelligible.">abject unintelligibility</span>, revealing that binary gender must be continuously defended through institutional force.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Formulated in the late 1980s amidst the American culture wars, poststructuralist philosophy (Foucault, Derrida), and internal fractures within feminist theory. Butler confronted a critical empirical and philosophical puzzle: second-wave feminism had long relied on the distinction between biological <em>sex</em> (chromosomes, anatomy) and cultural <em>gender</em> (social roles and conditioning). However, this framework failed to explain why non-binary, intersex, and queer bodies were aggressively erased, or why biological "sex" itself was always described through pre-existing cultural lenses. Butler's anomaly: if sex was natural and prior to culture, why did medical, legal, and educational institutions spend immense energy violently coercing bodies into two rigid categories? Butler resolved this in <em>Gender Trouble</em> (1990) and <em>Bodies That Matter</em> (1993) by proposing that "sex" is as culturally constructed and discursively produced as "gender."</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Butler's poststructuralist model operates through four precise operational gears:</p>
-            <ul>
-                <li><strong>Performativity vs. Theatrical Performance:</strong> Butler explicitly distinguishes performativity from an actor choosing a costume on a stage. Performativity is not an act of free, voluntary will; it is an involuntary, repetitive citation of pre-existing historical norms enforced through social coercion, fear of ostracism, and regulatory punishment. You do not wake up and choose your gender performance; language and discourse perform you.</li>
-                <li><strong>The Retroactive Illusion of an Inner Core:</strong> The foundational deception of gender is that external behaviors are caused by an internal "true essence" or soul. Butler proves the causal arrow runs in reverse: the repetitive performance (walking, talking, dressing, posturing) generates the retroactive illusion that an authentic gendered interiority existed all along.</li>
-                <li><strong>The Heterosexual Matrix &amp; Abject Bodies:</strong> Institutional structures operate on an unwritten grid requiring anatomical sex, gender identity, and heterosexual attraction to line up linearly. Those who disrupt this chain (transgender, non-binary, or queer youth) are relegated to the <em>domain of the abject</em>—becoming socially unintelligible and subject to disciplinary policing.</li>
-                <li><strong>Subversion through Parody and Resignification:</strong> Because gender requires continuous repetition to remain real, it is perpetually unstable. Every repetition introduces the risk of failure, parody (such as drag), or slight disruption. By resignifying and exaggerating gender codes, individuals expose that the "original" gender is itself an imitation with no authentic biological original.</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Exposes the invisible, pervasive hidden curriculum of schools. It illuminates how daily administrative routines—gender-segregated sports, separate lines, uniform policies, male/female enrollment forms, and sex-segregated bathrooms—continuously manufacture and enforce the binary rather than neutrally accommodating nature. Furthermore, it shifts the analysis of homophobic and transphobic bullying away from individual student psychology, framing it correctly as institutional border-policing designed to punish performative failure.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Linguistic Idealism Trap (Denial of Biological Materiality):</em> Butler's radical poststructuralism reduces the physical body almost entirely to discursive citations and linguistic inscriptions. However, neurobiology, endocrinology, and developmental medicine establish that chromosomal configurations, hormonal cascades, secondary sex characteristics, and biological maturation during puberty are material, physiological realities—not mere discursive speech acts. Treating all sexual embodiment as pure linguistic fiction leaves teachers unable to address the visceral physical developmental realities of adolescence.</li>
-                <li><em>The Subject Agency Paradox (Who Performs?):</em> If the subject is entirely constituted by language and regulatory discourse, who or what is actually resisting? If there is no "doer behind the deed," political and personal resistance becomes a logical ghost in the machine. Butler's theoretical architecture frequently risks collapsing into fatalistic linguistic determinism where agents have no coherent autonomous grounding to fight oppression.</li>
-                <li><em>The Nussbaum Strike (Philosophical Quietism):</em> Philosopher Martha Nussbaum mounted a devastating critique of Butler (<em>The Professor of Parody</em>, 1999), unmasking Butler's dense, opaque prose as an elitist intellectual retreat. Nussbaum argued that Butler replaces concrete legal, political, and material reforms (such as equal pay, sexual harassment laws, and child health) with trivial verbal subversion and symbolic parody, abandoning real structural politics for stylistic self-absorption.</li>
-                <li><em>Pedagogical Bewilderment in Monday Morning Practice:</em> For a primary or secondary school teacher, Butler provides an uncompromising deconstructive scalpel, but virtually zero constructive pedagogical tools. While useful for spotting heteronormative bias in classroom language, it provides no positive framework for supporting young adolescents who experience the physical, hormonal disruptions of puberty as concrete bodily facts rather than semiotic word games.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Butler, J. (1990).</strong> <em>Gender Trouble: Feminism and the Subversion of Identity</em>. New York: Routledge. <em>[The foundational text decoupling sex, gender, and performativity]</em>.</li>
-                    <li><strong>Butler, J. (1993).</strong> <em>Bodies That Matter: On the Discursive Limits of "Sex"</em>. New York: Routledge. <em>[Butler's response to critics regarding the material reality of the physical body]</em>.</li>
-                    <li><strong>Nussbaum, M. (1999).</strong> 'The Professor of Parody: The Hip Defeatism of Judith Butler'. <em>The New Republic</em>, 220(8), 37–45. <em>[The landmark feminist critique of Butler's linguistic determinism, elitism, and political quietism]</em>.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Compulsory Heterosexuality (Adrienne Rich)</h4>
-            <p>
-                Adrienne Rich's radical feminist critique
-                (<span class="tooltip-term" tabindex="0" data-tooltip="Compulsory Heterosexuality and Lesbian Existence (1980), published in Signs: Journal of Women in Culture and Society.">Compulsory Heterosexuality and Lesbian Existence, 1980</span>)
-                demonstrates that heterosexuality is not an innate biological preference or natural human default, but an institutionalized, coercive
-                <span class="tooltip-term" tabindex="0" data-tooltip="An institutional apparatus engineered by law, economy, and culture to enforce social conformity, female domestic subservience, and male dominance.">political apparatus</span>.
-                Engineered to guarantee male access to women's sexual, reproductive, and economic labor, compulsory heterosexuality works through systemic erasure,
-                social coercion, and the suppression of the
-                <span class="tooltip-term" tabindex="0" data-tooltip="A broad historical spectrum of female-identified experience, emotional bonding, and mutual support across women's lifetimes, extending far beyond physical sexual practice.">lesbian continuum</span>.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Senior Formal &amp; Health Curriculum</strong>
-                Imagine two Year 12 female students navigating final-year rituals at a secondary school:
-                <ul>
-                    <li><strong>The Senior Formal Protocol:</strong> Formal invitations and ticket packages assume boy-girl partnerships; teachers tease girls about finding a male escort; photography backdrops, royalty crowns (King and Queen), and table arrangements are structured around male-female pairings. When a female student attempts to buy tickets for herself and a female partner, she is met with administrative discomfort and warnings against "causing a scene."</li>
-                    <li><strong>The Health &amp; Biology Curriculum:</strong> Sex education is structured exclusively around penile-vaginal penetration, pregnancy prevention, and nuclear domestic family planning. Female sexual desire and non-heterosexual relationships are omitted entirely.</li>
-                </ul>
-                The school does not need physical violence to enforce heterosexuality. Through everyday ceremonies, curricular omissions, and administrative rules, it establishes heterosexuality as the sole intelligible, socially rewarding lifestyle, coercing young women into compliance to preserve institutional belonging.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Published in 1980 in the feminist journal <em>Signs</em> during the height of second-wave radical feminism. Rich observed a profound empirical anomaly within mainstream psychoanalysis, sociology, and liberal feminism: while male homosexuality was historically criminalized and analyzed, female heterosexuality was simply taken for granted as an unproblematic, natural biological drive. Rich asked: if heterosexuality is truly natural and innate to women, why does patriarchal society require an immense apparatus of economic wage gaps, legal marriage protections, religious taboos, cultural romance scripts, and physical violence to enforce it? Rich exposed that heterosexuality is a compulsory political institution imposed upon women to secure their servitude to men.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Rich's framework operates through three core operational mechanisms:</p>
-            <ul>
-                <li><strong>The Enforcement Mechanism (Economic and Social Coercion):</strong> Women are steered into heterosexual marriage not purely by romantic attraction, but by material vulnerability: gender wage inequality, the glass ceiling, legal marriage incentives, and societal stigmatization of unmarried or autonomous women. Heterosexuality functions as an economic survival strategy under patriarchy.</li>
-                <li><strong>The Erasure of the Lesbian Continuum:</strong> Rich defines the <em>lesbian continuum</em> broadly as the spectrum of female bonding, political solidarity, emotional sustenance, and romantic love between women across history. Compulsory heterosexuality violently fractures this continuum by rendering female independence invisible, pathologizing lesbian sexuality, and isolating women from one another to ensure emotional and economic dependence on men.</li>
-                <li><strong>The Ideological Cloaking:</strong> Popular culture, literature canons, and school rituals continually naturalize heterosexual romance as the universal peak of emotional maturity, disguising an unequal political institution as natural romantic destiny.</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Unmasks the pervasive, subtle heteronormative hidden curriculum of schools: romance literature canons, sex education centered exclusively on reproduction, heteronormative prom rituals, and gendered administrative records. It validates female solidarity, providing a critical lens for understanding how schools subtly police young women into conventional domestic scripts and marginalize queer female students.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Erasure of Female Heterosexual Agency:</em> By framing all heterosexual relations as coerced patriarchal servitude, Rich's theory denies the authentic sexual desire, agency, and consensual choices of heterosexual women, condescendingly reducing millions of women to victims of patriarchal brainwashing.</li>
-                <li><em>The Desexualization of Lesbian Identity (The Queer Rebuttal):</em> By expanding the "lesbian continuum" to include any female friendship, mother-daughter bonding, or feminist political alliance, queer theorists and lesbian feminists argued that Rich erased the distinct, embodied sexual reality and lived discrimination experienced specifically by sexually active lesbians.</li>
-                <li><em>Historical Anachronism &amp; Homonormativity:</em> Formulated in 1980 under widespread legal criminalization, Rich's totalizing framework struggles to account for modern legal realities: marriage equality, anti-discrimination legislation, and the rise of liberal "homonormativity" where same-sex relationships are formally integrated into state and corporate life.</li>
-                <li><em>Pedagogical Hazards in Monday Morning Practice:</em> Deploying 1980s separatist radical feminism in secondary schools risks alienating students and families, and offers little constructive support for nuanced, diverse adolescent identities that move fluidly beyond rigid 1980s political dichotomies.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660. <em>[The foundational text establishing heterosexuality as an institutionalized political apparatus and introducing the lesbian continuum]</em>.</li>
-                    <li><strong>Ferguson, A., Gottschalk, P. H., Campbell, B. B., &amp; Rich, A. (1981).</strong> 'On "Compulsory Heterosexuality and Lesbian Existence": Defining the Issues'. <em>Signs: Journal of Women in Culture and Society</em>, 7(1), 158–199.</li>
-                    <li><strong>Warner, M. (1993).</strong> <em>Fear of a Queer Planet: Queer Politics and Social Theory</em>. Minneapolis: University of Minnesota Press.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Minority Stress &amp; Affirmative Pedagogy (Ilan Meyer)</h4>
-            <p>
-                The synthesis of Ilan Meyer's public health psychiatric framework (<span class="tooltip-term" tabindex="0" data-tooltip="Prejudice, Social Stress, and Mental Health in Lesbian, Gay, and Bisexual Populations (2003), establishing the epidemiological relationship between stigmatizing social environments and mental health disparities.">Minority Stress Model, 2003</span>)
-                with critical educational theory establishes that the elevated rates of psychological distress, anxiety, depression, and suicidality experienced by
-                LGBTQ+ students are not innate psychiatric vulnerabilities, but the chronic psychological toll of enduring hostile, invalidating, and stigmatizing
-                institutional environments.
-                <span class="tooltip-term" tabindex="0" data-tooltip="An active educational framework that moves beyond passive tolerance to explicitly validate, include, and protect diverse sexualities and gender identities across school policy, curriculum, and pastoral care.">Affirmative pedagogy</span>
-                counteracts this structural harm through explicit anti-bullying enforcement, inclusive health curricula, student privacy protections, and affirming pastoral support.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: Corridor Policing vs. The Affirming Campus</strong>
-                Imagine two secondary school environments responding to a gender-diverse or same-sex attracted Year 9 student:
-                <ul>
-                    <li><strong>The Hostile/Indifferent Climate:</strong> Homophobic slurs (<em>"that's so gay"</em>) echo across locker rooms and corridors while teachers ignore them as "harmless banter." The health curriculum omits queer relationships entirely (<span class="tooltip-term" tabindex="0" data-tooltip="Topics, perspectives, and identities deliberately omitted from formal school instruction, signaling to students that they lack institutional legitimacy.">the null curriculum</span>). When the student attempts to transition socially or establish a student alliance, administrators urge them to "keep a low profile." The student experiences intense hypervigilance, social isolation, and academic disengagement.</li>
-                    <li><strong>The Affirming Climate:</strong> The school enforces clear, explicit non-discrimination policies protecting sexual orientation and gender identity; provides gender-neutral facility options; embeds diverse authors and historical figures across the humanities; and supports an active, student-led Gender and Sexuality Alliance (GSA). When slurs occur, staff address them immediately. The student's chronic stress drops significantly, leading to higher attendance and improved academic focus.</li>
-                </ul>
-                The difference in psychological well-being is not driven by individual biological resilience; it is directly engineered by the school's institutional climate and cultural affirmation.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed in social epidemiology and psychiatric public health by Ilan H. Meyer (2003) and subsequently adapted into educational research (GLSEN, Australian national schooling surveys). Meyer confronted a glaring empirical anomaly: across Western societies, sexual and gender minority individuals consistently exhibited dramatically higher baseline rates of anxiety disorders, major depression, substance abuse, and suicidal ideation compared to heterosexual and cisgender peers—even decades after the American Psychiatric Association (1973) declassified homosexuality as a psychiatric illness. While conservative and psychoanalytic paradigms historically attributed this disparity to inherent psychological or moral deviance, Meyer proved that excess morbidity is caused by chronic, socially based toxic stress resulting from stigma, prejudice, discrimination, and structural heterosexism.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Meyer's model and affirmative educational theory operate through three core operational gears:</p>
-            <ul>
-                <li><strong>Distal Stressors (External, Objective Events):</strong> Environmental prejudice events that occur independent of the student's internal cognitive state: overt physical bullying, verbal slurs, interpersonal rejection, microaggressions from staff, and institutional policies that exclude non-binary or queer students from sports, formal events, or bathroom facilities.</li>
-                <li><strong>Proximal Stressors (Internalized Subjective Processes):</strong> Psychological burdens that develop as a direct consequence of enduring a hostile climate:
-                    <ul>
-                        <li><em>Expectation of Rejection &amp; Hypervigilance:</em> Chronically scanning classrooms and corridors for physical or verbal threat, causing cognitive overload and exhaustion.</li>
-                        <li><em>Concealment:</em> The ongoing labor of hiding one's authentic identity, pronouns, or family structure to avoid ostracism, driving deep emotional disconnection.</li>
-                        <li><em>Internalized Stigma:</em> Subconsciously absorbing dominant homophobic or transphobic cultural messaging, resulting in severe self-worth deficits and shame.</li>
-                    </ul>
-                </li>
-                <li><strong>Affirmative Pedagogy as an Institutional Buffer:</strong> Schools act as potent social determinants of health. By implementing affirmative interventions—enumerated anti-bullying policies, inclusive sexual health education, confidential pastoral care, visible teacher allies, and Gender and Sexuality Alliances (GSAs)—schools actively dismantle distal stressors and provide social support that buffers youth against proximal internalization.</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Completely depathologizes LGBTQ+ mental distress by shifting the locus of pathology from the student's identity to the school's structural climate. It elevates pastoral care from reactive, individual counseling into proactive civil rights protection. Extensive empirical research confirms that schools with affirming policies and visible GSAs demonstrate statistically significant reductions in student truancy, self-harm, and dropout rates, proving that institutional climate directly influences academic learning gains.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Fragility &amp; Deficit Trap (Victimhood Over-indexing):</em> By focusing exclusively on minority stress and trauma, educational research risks constructing LGBTQ+ youth purely as damaged, fragile victims incapable of agency. This pathologizing lens can obscure the profound personal resilience, creativity, joy, and thriving demonstrated by queer youth even within imperfect schooling environments.</li>
-                <li><em>The Statutory Neutrality &amp; Parental Rights Dilemma:</em> In many jurisdictions, school affirmative policies (such as respecting a student's chosen name or social transition at school without parental disclosure) run directly into statutory parental rights mandates and legal notification laws. Teachers frequently find themselves caught in severe legal and ethical crossfires between their professional duty of care to protect student mental health and statutory obligations to maintain parental transparency.</li>
-                <li><em>The Performative Tokenism Hazard:</em> Displaying rainbow flags and lanyards without enforcing classroom discipline against verbal slurs or providing explicit, rigorous instruction degenerates into shallow corporate virtue-signaling. Superficial branding creates a facade of inclusion while vulnerable students remain unsafe in unsupervised spaces (lockers, buses, sports ovals).</li>
-                <li><em>Community Polarization &amp; Backlash:</em> When affirmative policies are implemented without clear, transparent pedagogical framing anchored in universal student safety, dignity, and learning duty of care, they can trigger fierce political pushback from religious communities and parent groups, leading to reactionary curriculum censorship that leaves vulnerable students more exposed than before.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Meyer, I. H. (2003).</strong> 'Prejudice, Social Stress, and Mental Health in Lesbian, Gay, and Bisexual Populations: Conceptual Issues and Research Evidence'. <em>Psychological Bulletin</em>, 129(5), 674–697. <em>[The foundational epidemiological formulation of the Minority Stress Model]</em>.</li>
-                    <li><strong>Kosciw, J. G., Clark, C. M., Truong, N. L., &amp; Zongrone, A. D. (2020).</strong> <em>The 2019 National School Climate Survey: The Experiences of Lesbian, Gay, Bisexual, Transgender, and Queer Youth in Our Nation's Schools</em>. New York: GLSEN.</li>
-                    <li><strong>Mayo, C. (2014).</strong> <em>LGBTQ Youth and Education: Policies and Practices</em>. New York: Teachers College Press.</li>
-                    <li><strong>Ullman, J. (2021).</strong> <em>Free to Be? Exploring the Schooling Experiences of Australia's Sexuality and Gender Diverse High School Students</em>. Penrith: Western Sydney University.</li>
-                </ul>
-            </div>
-        </div>
     </section>
 
     <!-- 4. GOVERNANCE & SUBJECTIVITY -->
@@ -1516,9 +1255,55 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Disciplinary Power &amp; Docile Bodies (Michel Foucault)</h4>
-            <p>Michel Foucault's analysis (<em>Discipline and Punish</em>, 1975) of diffuse modern power that trains, optimizes, and coordinates the human body through meticulous spatial distribution, temporal routines, and continuous exercises.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Explains how classroom desks, timetable bells, uniform checks, and handwriting drills produce <em>docile bodies (corps dociles)</em>—individuals engineered for economic productivity while remaining politically obedient.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Foucault's reduction of all schooling to institutional subjugation ignores the emancipatory potential of discipline. Self-regulation, cognitive focus, and procedural routines are indispensable prerequisites for deep mathematical, artistic, and intellectual mastery.</p>
+            <p>
+                Michel Foucault's genealogy of modern disciplinary power (<span class="tooltip-term" tabindex="0" data-tooltip="Discipline and Punish: The Birth of the Prison (Surveiller et punir, 1975), tracing the historical transformation of state power from public sovereign torture to a continuous micro-physics of disciplinary training.">Discipline and Punish, 1975</span>)
+                demonstrates that power in modern institutions does not operate primarily through overt violence, sovereign decree, or the raw oppression of elites.
+                Instead, modern power is diffuse, productive, and operationalized across a
+                <span class="tooltip-term" tabindex="0" data-tooltip="A fine-grained, pervasive capillary network of disciplinary techniques applied directly to human bodies across institutions like schools, barracks, hospitals, and factories.">micro-physics of power</span>
+                that meticulously trains, optimizes, and coordinates the human body through spatial distribution, temporal scheduling, and continuous drill.
+                Through this disciplinary apparatus, schools manufacture
+                <span class="tooltip-term" tabindex="0" data-tooltip="Bodies that are simultaneously rendered economically useful and politically obedient through relentless physical and temporal training.">docile bodies (corps dociles)</span>—individuals
+                conditioned for workplace productivity while remaining politically compliant.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The Secondary School Timetable &amp; Seating Grid</strong>
+                Imagine walking into a standard comprehensive secondary school during a morning transition:
+                <ul>
+                    <li><strong>Spatial Partitioning (Cellular Enclosure):</strong> Students do not roam freely; they are assigned fixed seats in isolated classrooms arranged in parallel rows facing the teacher's panoptic desk. Each body occupies a specific spatial coordinate, preventing unauthorized communication and enabling total visual monitoring.</li>
+                    <li><strong>Temporal Regimentation (The Timetable &amp; Bell):</strong> The school day is carved into strict, unyielding 50-minute blocks governed by electric buzzers. Movement between spaces is timed down to the minute; a student lingering in the hallway without a physical hall pass is instantly flagged as a disciplinary anomaly.</li>
+                    <li><strong>Continuous Corrective Training:</strong> Through uniform checks, handwriting drills, posture correction, and silent line-ups, the body is subjected to endless repetition until obedience becomes muscle memory.</li>
+                </ul>
+                The school does not need guards or chains to maintain order. Through spatial and temporal design, it trains students to internalize surveillance and self-regulate their own physical posture and movement, producing an economically productive and politically docile subject.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Published in 1975 by French philosopher Michel Foucault during a period of intense radical critique of carceral and state institutions. Foucault confronted a profound historical and empirical anomaly: why did 19th-century Western nation-states simultaneously abolish the horrific, spectacular public tortures of the monarchy (such as drawing and quartering) and yet rapidly build massive, inescapable architectures of confinement—schools, barracks, asylums, and penitentiaries—that subjected human beings to daily, minute surveillance and regimentation? While liberal historiography celebrated this shift as a humanitarian evolution away from brutality, Foucault revealed that society had not abandoned punishment or control; it had simply perfected a far more efficient, insidious technology of power: disciplinary power.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Foucault's analysis of disciplinary power operates through four primary operational mechanisms:</p>
+            <ul>
+                <li><strong>Cellular Partitioning &amp; Spatial Enclosure:</strong> Disciplinary space is meticulously divided into functional units. In schools, bodies are segregated by age (grade levels), ability (streaming), and architectural enclosures (classrooms, cubicles, designated zones), ensuring that individuals can be located, accounted for, and managed instantly.</li>
+                <li><strong>Temporal Regimentation &amp; Continuous Exercise:</strong> Time is extracted from the body through standardized timetables. Repetitive physical and mental drills (handwriting posture, silent reading, exam preparation) break complex activities down into manageable increments, synchronizing individual bodies into an efficient collective machine.</li>
+                <li><strong>Hierarchical Observation:</strong> The architecture of the school is built around visual pyramids. Teachers are elevated on platforms or positioned at the front of rooms to observe every student simultaneously, while students are structurally prevented from observing one another with equal ease.</li>
+                <li><strong>The Production of Utility and Obedience:</strong> The ultimate economic-political synthesis of discipline is that it increases the physical and cognitive capacities of the body (making it a useful economic worker) while simultaneously decreasing its political autonomy (making it docile and obedient to authority).</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Unmasks the hidden physical and spatial mechanics of mass schooling, explaining why modern classrooms, bells, desks, and uniform policies look and function the way they do. It prevents educators from viewing school rules as neutral, common-sense arrangements, revealing them instead as historically contingent technologies designed to manage bodies and shape political subjectivity. It provides a brilliant diagnostic lens for identifying how daily institutional routines condition compliance.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Emancipatory Necessity of Discipline (Cognitive Mastery):</em> Foucault's radical critique paints all discipline as sinister subjugation. However, cognitive science and educational psychology establish that structure, procedural routines, attentional self-regulation, handwriting drills, and temporal focus are <strong>indispensable prerequisites for deep intellectual mastery</strong>. Without structured disciplinary routines, children cannot acquire complex mathematical algorithms, scientific literacy, or musical virtuosity. Dismissing all classroom structure as "docile body engineering" disarms teachers and harms student learning.</li>
+                <li><em>Totalizing Functionalism (Ignoring Pastoral Care):</em> Foucault's genealogical framework suffers from totalizing functionalism: it assumes that disciplinary power always achieves its exact oppressive aims without friction or resistance. In reality, school discipline is constantly negotiated, subverted, and repurposed by caring teachers to protect vulnerable children, maintain physical safety, and foster cooperative social spaces.</li>
+                <li><em>The Paradox of Student Agency:</em> By treating human subjects as entirely manufactured effects of disciplinary power architectures ("docile bodies"), Foucault struggles to account for how genuine political resistance, radical critique, and institutional transformation ever emerge from within disciplined systems.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Foucault, M. (1977).</strong> <em>Discipline and Punish: The Birth of the Prison</em> (A. Sheridan, Trans.). London: Allen Lane. (Original work published in French 1975). <em>[The foundational genealogical text on disciplinary power, spatial partitioning, and docile bodies]</em>.</li>
+                    <li><strong>Foucault, M. (1980).</strong> <em>Power/Knowledge: Selected Interviews and Other Writings, 1972–1977</em> (C. Gordon, Ed.). New York: Pantheon Books.</li>
+                    <li><strong>Ball, S. J. (2013).</strong> <em>Education, Equity and Social Control: Foucault and Education</em>. London: Routledge.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -1564,7 +1349,7 @@ def produce_complete_html_document() -> str:
             </ul>
 
             <div class="entry-references">
-                <strong>Primary Foundations in Foucaultian Works:</strong>
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
                     <li><strong>Foucault, M. (1977).</strong> <em>Discipline and Punish: The Birth of the Prison</em> (A. Sheridan, Trans.). London: Allen Lane. (Original work published in French 1975). <em>[The foundational text on panopticism and the disciplinary triad]</em>.</li>
                     <li><strong>Bentham, J. (1791).</strong> <em>Panopticon: or, the Inspection-House</em>. London: T. Payne.</li>
@@ -1789,15 +1574,11 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand Michel Foucault panopticon entry to full forensic dossier\n\n"
-        "Upgrade The Panopticon & The Disciplinary Triad (Michel Foucault) in\n"
-        "core-concepts.html to a four-part forensic dossier examining hierarchical\n"
-        "observation, normalizing judgment, and the examination.\n\n"
-        "- Detail panoptic internalization, the disciplinary triad, and exams.\n"
-        "- Add scenario box analyzing glass-walled classrooms and LMS telemetry.\n"
-        "- Audit the anti-assessment relativism trap and diagnostic necessity.\n"
-        "- Update Master Bibliography with Bentham (1791).\n"
-        "- Ensure all HTML markup remains 100% free of citation tags."
+        "Refine Disciplinary Power and Docile Bodies entry in core-concepts.html\n\n"
+        "Update the Disciplinary Power & Docile Bodies entry in core-concepts.html\n"
+        "to sharpen the dialectical tension between institutional subjugation and\n"
+        "the cognitive necessity of structured discipline, keeping all markup\n"
+        "completely free of citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
