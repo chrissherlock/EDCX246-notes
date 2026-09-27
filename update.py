@@ -1,42 +1,155 @@
 #!/usr/bin/env python3
-"""Clean up core-concepts.html by removing 'Detailed Explanation:' labels."""
+"""Generate core-concepts.html cleanly with expanded Cultural Capital and sync via git."""
 
 from pathlib import Path
 import subprocess
 import sys
 
 
-def clean_concepts_file(file_path: Path) -> None:
-    if not file_path.exists():
-        print(f"Error: Target file '{file_path.resolve()}' not found.", file=sys.stderr)
-        sys.exit(1)
+def generate_html_content() -> str:
+    lines = [
+        "<!DOCTYPE html>",
+        '<html lang="en">',
+        "<head>",
+        '    <meta charset="UTF-8">',
+        '    <meta name="viewport" content="width=device-width, initial-scale=1.0">',
+        "    <title>Core Sociological Concepts: EDCX246 Exam Revision Guide</title>",
+        "    <style>",
+        "        :root {",
+        '            --primary: #1e40af;',
+        '            --text-main: #1f2937;',
+        '            --text-muted: #4b5563;',
+        '            --border-color: #cbd5e1;',
+        "        }",
+        "        body {",
+        '            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;',
+        "            line-height: 1.7;",
+        "            max-width: 900px;",
+        "            margin: 0 auto;",
+        "            padding: 40px 24px;",
+        "            color: var(--text-main);",
+        "            background-color: #ffffff;",
+        "        }",
+        "        h1, h2, h3 {",
+        "            color: var(--primary);",
+        "            font-weight: 700;",
+        "        }",
+        "        h1 {",
+        "            font-size: 2.2rem;",
+        "            border-bottom: 3px solid var(--primary);",
+        "            padding-bottom: 12px;",
+        "            margin-bottom: 20px;",
+        "        }",
+        "        h2 {",
+        "            font-size: 1.4rem;",
+        "            color: var(--primary);",
+        "            margin-top: 48px;",
+        "            margin-bottom: 16px;",
+        "            border-bottom: 2px solid var(--border-color);",
+        "            padding-bottom: 6px;",
+        "            text-transform: uppercase;",
+        "            letter-spacing: 0.03em;",
+        "        }",
+        "        h3 {",
+        "            font-size: 1.1rem;",
+        "            color: #1e3a8a;",
+        "            margin-top: 24px;",
+        "            margin-bottom: 6px;",
+        "        }",
+        "        p.intro {",
+        "            font-size: 1.05rem;",
+        "            color: var(--text-muted);",
+        "            margin-bottom: 36px;",
+        "            text-align: justify;",
+        "        }",
+        "        .concept-entry {",
+        "            margin-bottom: 28px;",
+        "        }",
+        "        .concept-entry p {",
+        "            margin: 0 0 12px 0;",
+        "            font-size: 0.96rem;",
+        "            text-align: justify;",
+        "            color: #334155;",
+        "        }",
+        "        .concept-entry ul {",
+        "            margin: 8px 0 14px 20px;",
+        "            font-size: 0.95rem;",
+        "            color: #334155;",
+        "            line-height: 1.6;",
+        "        }",
+        "        .concept-entry li {",
+        "            margin-bottom: 6px;",
+        "            text-align: justify;",
+        "        }",
+        "        .back-link {",
+        "            display: inline-block;",
+        "            margin-top: 40px;",
+        "            color: var(--primary);",
+        "            text-decoration: none;",
+        "            font-weight: 600;",
+        "        }",
+        "        .back-link:hover {",
+        "            text-decoration: underline;",
+        "        }",
+        "        @media print {",
+        "            body { padding: 12px; font-size: 10pt; }",
+        "            .concept-entry { break-inside: avoid; page-break-inside: avoid; }",
+        "        }",
+        "    </style>",
+        "</head>",
+        "<body>",
+        "",
+        "    <h1>EDCX246 Exam Revision Guide: Core Sociological Concepts</h1>",
+        '    <p class="intro">',
+        "        This reference document provides a detailed editorial breakdown of the primary <strong>Core Sociological Concepts</strong> covered in <em>Making Sense of Mass Education</em> (4th Edition). Each entry explores the theoretical mechanism of the concept and its specific institutional function within schools.",
+        "    </p>",
+        "",
+        "    <!-- 1. SOCIAL CLASS & INEQUALITY -->",
+        "    <section>",
+        "        <h2>1. Social Class &amp; Inequality</h2>",
+        "",
+        '        <div class="concept-entry">',
+        "            <h3>Cultural Capital</h3>",
+        "            <p>Originally theorized by French sociologist Pierre Bourdieu in works such as <em>Reproduction in Education, Society and Culture</em> (1977) and <em>Distinction</em> (1984), cultural capital refers to the non-financial social assets that an individual inherits, accumulates, and deploys to navigate social structures. Bourdieu conceptualized cultural capital as a vital alternative to purely economic explanations of class stratification, demonstrating that class advantage is sustained not just by bank accounts and property ownership, but by the subtle, embodied inheritance of culture, knowledge, and style. Bourdieu categorized cultural capital into three distinct, interdependent forms:</p>",
+        "            <ul>",
+        "                <li><strong>Embodied Capital (<em>État Incorporé</em>):</strong> Long-lasting dispositions of the mind and body. This includes linguistic fluency, syntax, accent, bodily posture, gait, table manners, aesthetic preferences, and cultural competence. It cannot be instantly transmitted as a gift or purchased; it requires long-term, subconscious cultural absorption through family socialization and class milieu.</li>",
+        "                <li><strong>Objectified Capital (<em>État Objectivé</em>):</strong> Cultural goods and physical artifacts—such as classical literature, fine art collections, musical instruments, scholarly libraries, scientific equipment, and digital or technological apparatuses. While these goods can be legally purchased if one possesses economic capital, they can only be truly <em>consumed</em> and appreciated if the individual already possesses the requisite embodied capital (the cognitive schemas to decode them).</li>",
+        "                <li><strong>Institutionalized Capital (<em>État Institutionalisé</em>):</strong> Legally recognized academic credentials, university degrees, and professional certifications. Bourdieu treated institutionalized capital as a certificate of cultural competence that confers formal, guaranteed market value, transforming inherited embodied capital into officially sanctioned currency that can be exchanged directly on the occupational labor market.</li>",
+        "            </ul>",
+        "            <p><strong>Operational Role in Schooling:</strong> Mainstream schooling operates on the structural fiction of formal neutrality and universal meritocracy. In practice, however, educational institutions implicitly demand and reward the specific linguistic codes (Basil Bernstein\'s <em>elaborated codes</em>), elite aesthetic preferences, behavioral interaction styles, and psychological dispositions associated with the middle and ruling classes.</p>",
+        "            <p>When working-class students enter the classroom equipped with different, yet equally rich, vernaculars and forms of cultural knowledge, schools systematically <em>misrecognize</em> their inherited disadvantage as an innate intellectual deficit, personal motivational failure, or domestic deprivation. By treating dominant cultural capital as the universal yardstick of 'merit,' schools commit <strong>symbolic violence</strong>—legitimating class inequality and transmitting privilege across generations under the disarming guise of objective academic success.</p>",
+        "        </div>",
+        "",
+        '        <div class="concept-entry">',
+        "            <h3>Habitus</h3>",
+        "            <p>A Bourdieusian concept describing deeply ingrained, subconscious dispositions, bodily postures, values, and internalized expectations acquired through long-term exposure to a specific social class position.</p>",
+        "            <p><strong>Operational Role in Schooling:</strong> Habitus shapes how students perceive their place in the educational world. Working-class students frequently experience institutional alienation because their embodied dispositions clash with the implicit middle-class culture of the school, influencing academic engagement and post-school aspirations.</p>",
+        "        </div>",
+        "    </section>",
+        "",
+        '    <a href="index.html" class="back-link">&larr; Return to Main Exam Revision Guide</a>',
+        "",
+        "</body>",
+        "</html>",
+    ]
+    return "\n".join(lines)
 
-    content = file_path.read_text(encoding="utf-8")
 
-    # Remove the strong label tag entirely
-    cleaned_content = content.replace("<strong>Detailed Explanation:</strong>", "")
+def main() -> None:
+    root_directory = Path(__file__).resolve().parent
+    target_file = root_directory / "core-concepts.html"
 
-    if cleaned_content != content:
-        file_path.write_text(cleaned_content, encoding="utf-8")
-        print("Successfully stripped 'Detailed Explanation:' labels from core-concepts.html.")
-    else:
-        print("No matching labels found in core-concepts.html.")
-
-
-def sync_repository(repo_path: Path) -> None:
-    commit_message = (
-        "Remove Detailed Explanation label from core-concepts.html\n\n"
-        "Strip explanatory prefix tags from concept entries for cleaner formatting."
-    )
+    target_file.write_text(generate_html_content(), encoding="utf-8")
+    print(f"Successfully generated: {target_file.resolve()}")
 
     commands = [
         ["git", "add", "-A"],
-        ["git", "commit", "-m", commit_message],
+        ["git", "commit", "-m", "Generate comprehensive core-concepts.html page"],
         ["git", "push", "origin", "main"],
     ]
 
     for cmd in commands:
-        result = subprocess.run(cmd, cwd=repo_path, capture_output=True, text=True)
+        result = subprocess.run(cmd, cwd=root_directory, capture_output=True, text=True)
         if result.returncode != 0:
             if "nothing to commit" in result.stdout or "nothing to commit" in result.stderr:
                 print("Working tree clean; nothing new to commit.")
@@ -47,14 +160,6 @@ def sync_repository(repo_path: Path) -> None:
             print(result.stdout.strip())
 
     print("Git repository sync complete.")
-
-
-def main() -> None:
-    root_directory = Path(__file__).resolve().parent
-    target_file = root_directory / "core-concepts.html"
-
-    clean_concepts_file(target_file)
-    sync_repository(root_directory)
 
 
 if __name__ == "__main__":
