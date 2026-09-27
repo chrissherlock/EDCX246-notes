@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Add Jacques Rancière's The Philosopher and His Poor to the entry-references box
+"""Update the Symbolic Violence and Misrecognition entry in core-concepts.html
 
-in core-concepts.html and sync updates to the main branch via git.
+to include Jacques Rancière in the primary entry-references block,
+and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -551,15 +552,11 @@ def produce_complete_html_document() -> str:
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
-                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change</em> (pp. 71–112). London: Tavistock Publications.</li>
+                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change: Papers in the Sociology of Education</em> (pp. 71–112). London: Tavistock Publications.</li>
                     <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. (Original work published in French 1972).</li>
                     <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
                     <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
                     <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
-                    <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
-                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
-                    <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
-                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
                 </ul>
             </div>
         </div>
@@ -649,10 +646,11 @@ def produce_complete_html_document() -> str:
             </ul>
 
             <div class="entry-references">
-                <strong>Primary Foundations in Bourdieu's Works:</strong>
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
                     <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications.</li>
                     <li><strong>Bourdieu, P. (2000).</strong> <em>Pascalian Meditations</em>. Stanford University Press.</li>
+                    <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
                 </ul>
             </div>
         </div>
@@ -915,7 +913,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
             <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
             <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
-            <li><strong>Collins, R. (1979).</strong> <em>The Credential Society: An Historical Sociology of Education and Stratification</em>. New York: Academic Press.</li>
+            <li><strong>Collins, R. (1979).</strong> <i>The Credential Society: An Historical Sociology of Education and Stratification</i>. New York: Academic Press.</li>
             <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
             <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
             <li><strong>Fanon, F. (1967).</strong> <em>Black Skin, White Masks</em> (C. L. Markmann, Trans.). New York: Grove Press. (Original work published in French 1952).</li>
@@ -961,14 +959,14 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully rewrote core-concepts.html with Ranciere included in entry references: {target_file.resolve()}")
+    print(f"Successfully updated Symbolic Violence references in: {target_file.resolve()}")
 
     commit_message = (
-        "Restore Ranciere bibliographic entry in core-concepts.html\n\n"
-        "Ensure Jacques Rancière's 1983/2004 text is explicitly listed in the\n"
-        "entry-references block for Cultural Capital alongside Delpit and Young.\n\n"
-        "- Add Rancière bibliographic entry to entry-references list.\n"
-        "- Verify complete alignment with master bibliography."
+        "Add Ranciere reference to Symbolic Violence entry references box\n\n"
+        "Include Jacques Rancière's 1983/2004 text in the entry-references block\n"
+        "for the Symbolic Violence and Misrecognition entry in core-concepts.html.\n\n"
+        "- Add Rancière bibliographic entry to Symbolic Violence entry references.\n"
+        "- Verify complete parity between entry-references and master bibliography."
     )
 
     sync_repository(root_directory, commit_message)
