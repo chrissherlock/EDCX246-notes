@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Add Jacques Rancière's The Philosopher and His Poor (2004/1983)
+"""Restore Jacques Rancière's counter-tradition card and SVG node in
 
-to the master bibliography in core-concepts.html.
+core-concepts.html and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -957,15 +957,15 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully added Ranciere reference to bibliography in: {target_file.resolve()}")
+    print(f"Successfully restored Ranciere to counter-tradition in: {target_file.resolve()}")
 
     commit_message = (
-        "Add Jacques Ranciere's The Philosopher and His Poor to bibliography\n\n"
-        "Include the formal book reference for Jacques Rancière's 1983/2004\n"
-        "work in the master bibliography of core-concepts.html to support\n"
-        "the critique of sociological paternalism.\n\n"
-        "- Add Rancière (2004) bibliographic entry.\n"
-        "- Verify complete academic referencing for all counter-tradition camps."
+        "Restore Jacques Ranciere to counter-tradition and SVG diagram\n\n"
+        "Re-integrate Jacques Rancière's philosophical critique and SVG node\n"
+        "into the counter-tradition section of core-concepts.html, ensuring\n"
+        "all three resistance camps (Young, Delpit, Rancière) are fully represented.\n\n"
+        "- Restore Rancière SVG node and analytical breakdown card.\n"
+        "- Verify complete 3-camp counter-tradition framework."
     )
 
     sync_repository(root_directory, commit_message)
