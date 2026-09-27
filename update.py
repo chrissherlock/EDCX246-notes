@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Upgrade the Social Closure and Credentialism entry in core-concepts.html
 
-to include plain-English explanations of Neo-Weberian sociology, social closure,
-and the Human Capital vs. Credentialism debate, and sync updates to main via git.
+to comprehensively explain Max Weber's theory of social closure, Neo-Weberian sociology,
+and Randall Collins's credentialism, and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -531,7 +531,7 @@ def generate_complete_html_document() -> str:
                 </li>
             </ul>
 
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the naive meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It accurately diagnoses how subjective, open-ended grading rubrics penalize working-class students for lacking conversational ease and bourgeois mannerisms.</p>
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the naive meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It accurately diagnoses how subjective, open-ended grading rubrics penalize working-class students for lacking conversational ease and bourgeois manual/linguistic mannerisms.</p>
 
             <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
             <ul>
@@ -887,7 +887,7 @@ def generate_complete_html_document() -> str:
                 Even though both candidates have identical practical typing and organizational skills, the employer requires a Bachelor's degree as a screening filter. This requirement is not technically necessary to perform the job tasks; rather, it functions as a credential filter that screens out applicants without cultural privilege and legitimizes upper-class status boundaries.
             </div>
 
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Rooted in Max Weber's theory of social closure (the process by which social groups monopolize advantages by restricting access to rewards and opportunities) and systematically applied to modern schooling by Randall Collins in <em>The Credential Society</em> (1979). The central empirical anomaly driving the theory is <strong>degree inflation</strong>: historical and statistical data revealed that formal educational requirements for occupations skyrocketed far in advance of any actual increase in the technical skill complexity required to perform those jobs. Functionalist human capital theory argued that schools teach technical skills demanded by industrial modernization, but credentialism proved that paper degrees function primarily as cultural status markers and exclusionary mechanisms.</p>
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Rooted in Max Weber's theory of <span class="tooltip-term" tabindex="0" data-tooltip="The process by which social groups build legal or cultural fences around themselves to monopolize economic rewards, professional markets, and social privileges.">social closure</span>—the process by which privileged groups erect exclusionary barriers to monopolize rewards and lock outsiders out—and systematically applied to modern schooling by Randall Collins in <em>The Credential Society</em> (1979). As part of <span class="tooltip-term" tabindex="0" data-tooltip="Modern sociological scholarship that builds upon Max Weber's theories of power, status competition, and organizational stratification.">Neo-Weberian sociology</span>, Collins addressed a glaring empirical anomaly: <strong>degree inflation</strong>. Historical and statistical data revealed that formal educational requirements for occupations skyrocketed far in advance of any actual increase in the technical skill complexity required to perform those jobs. While functionalist <span class="tooltip-term" tabindex="0" data-tooltip="The economic theory claiming that formal schooling directly teaches the advanced technical skills demanded by industrial modernization.">Human Capital Theory</span> argued that schools train workers for modern technological demands, credentialism proved that paper degrees function primarily as cultural status markers and monopolistic gatekeeping mechanisms.</p>
 
             <p><strong>2. Theoretical Mechanics:</strong> Randall Collins and neo-Weberian sociology establish three core operational mechanisms governing credentialism:</p>
             <ul>
