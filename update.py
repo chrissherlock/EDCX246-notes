@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Incorporate the concrete Julian vs. Marcus comparative scenario directly into
+"""Upgrade Cultural Capital in core-concepts.html to a bulletproof forensic dossier
 
-the Cultural Capital entry in core-concepts.html.
+incorporating primary source mechanics and a formal bibliography.
 """
 
 from pathlib import Path
@@ -172,6 +172,29 @@ def produce_complete_html_document() -> str:
             font-weight: 700;
             border: 1px solid var(--badge-strength-border);
         }
+        .biblio-section {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 2px solid #fed7aa;
+        }
+        .biblio-section h2 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .biblio-list {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+        .biblio-list li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            text-indent: -24px;
+        }
         .back-link {
             display: inline-block;
             margin-top: 28px;
@@ -253,7 +276,7 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Cultural Capital (Pierre Bourdieu)</h4>
-            <p>Cultural capital represents the invisible inheritance of linguistic fluency, academic mannerisms, aesthetic tastes, and certified credentials that individuals absorb through domestic class socialization and deploy within competitive institutional fields. Rather than measuring neutral, innate cognitive ability, it operates as an institutionalized class currency that educational institutions covertly demand and reward.</p>
+            <p>Cultural capital represents the accumulated, embodied labor-time invested in non-financial social assets—syntactic fluency, academic mannerisms, aesthetic dispositions, and formal credentials—that individuals inherit through domestic class socialization and deploy within competitive institutional markets. Rather than reflecting neutral, biological intelligence, it operates as an institutionalized class currency that schools covertly demand and reward while pretending merely to evaluate innate merit.</p>
 
             <div class="scenario-box">
                 <strong class="label">Concrete Mechanism in Action: Julian vs. Marcus</strong>
@@ -266,18 +289,29 @@ def produce_complete_html_document() -> str:
             </div>
 
             <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed during the 1960s by Pierre Bourdieu and Jean-Claude Passeron in post-WWII France. State technocrats had eliminated university tuition fees, anticipating that open financial access would establish a pure meritocracy. However, statistical surveys revealed a glaring contradiction: despite free tuition, working-class and peasant students failed and withdrew at dramatically higher rates than bourgeois cohorts. Classical Marxism attributed reproduction almost exclusively to economic capital (property, wealth, and ownership of the means of production), but Bourdieu recognized that financial explanations could not account for why working-class students with adequate funding still struggled with the implicit cultural demands of the academy. Expanding capital into the cultural sphere, the term was formally introduced in print in the 1973 essay <em>Cultural Reproduction and Social Reproduction</em> and later codified into three states in the 1986 essay <em>The Forms of Capital</em>.</p>
-            <p><strong>2. Theoretical Mechanics:</strong> Operates across three interdependent states in relation to an institutional field:</p>
+
+            <p><strong>2. Theoretical Mechanics &amp; Advanced Operational Gears:</strong> Bourdieu's foundational texts establish four precise operational gears governing cultural capital:</p>
             <ul>
-                <li><strong>Embodied State (<em>État Incorporé</em>):</strong> Durable dispositions of mind and body (syntax, accent, posture, aesthetic ease, conceptual familiarity). Acquired slowly through subconscious immersion; cannot be purchased as an immediate commodity.</li>
-                <li><strong>Objectified State (<em>État Objectivé</em>):</strong> Physical cultural goods (books, scholarly libraries, art collections, musical instruments). Legal ownership requires economic capital, but actual academic appropriation requires prerequisite embodied capital to decode them.</li>
-                <li><strong>Institutionalized State (<em>État Institutionalisé</em>):</strong> State-certified academic credentials and degrees that confer guaranteed social and economic exchange value in the labor market.</li>
+                <li><strong>The Economy of Time &amp; "Wasted Time":</strong> Accumulating embodied capital (*Bildung*) requires personal labor-time that cannot be delegated. Because children of educated families begin accumulating usable cultural currency from birth, they gain an insurmountable head start. For the working-class child, early domestic socialization represents what Bourdieu terms <em>"wasted time"</em> in the eyes of the school—time that must be expensively spent unlearning, correcting, and retraining home speech patterns and postures. Furthermore, accumulating cultural capital requires <em>free time</em>—the suspension of economic urgency that only affluent families can purchase.</li>
+                <li><strong>The Three Interdependent States:</strong>
+                    <ul>
+                        <li><em>Embodied State (État Incorporé):</em> Long-lasting dispositions of mind and body (syntax, accent, posture, bodily hexis). Fused to the biological individual; dies with the bearer.</li>
+                        <li><em>Objectified State (État Objectivé):</em> Material cultural goods (classical texts, paintings, instruments, laboratory equipment). Transmissible legally via economic capital, but requiring embodied capital to decode and appropriate symbolically.</li>
+                        <li><em>Institutionalized State (État Institutionalisé):</em> Legally sanctioned academic qualifications that convert embodied cultural capital into a state-guaranteed currency with fixed conversion rates on the occupational labor market.</li>
+                    </ul>
+                </li>
+                <li><strong>The Intraclass Divide (Teachers vs. Industrialists):</strong> The ruling class is not monolithic; it is split between the <em>dominant fraction</em> (rich in economic capital, poorer in cultural capital, e.g., corporate heads and commercial executives) and the <em>dominated fraction</em> (rich in cultural capital, poorer in economic capital, e.g., academics, teachers, and artistic producers). Because schooling is run by the cultural fraction, the academic market rewards its own domestic culture above all else. This explains why teachers' children consistently outperform the children of wealthy commercial executives on purely academic tests.</li>
+                <li><strong>Credential Devaluation &amp; Escalation:</strong> When democratic educational expansion increases the volume of basic university degrees, qualifications undergo inflation. The dominant classes preserve social closure by escalating credential thresholds—retreating into postgraduate degrees, elite institutional pedigrees (e.g., Grandes Écoles, Oxbridge), and non-scholastic criteria such as interview poise, accent, and social capital.</li>
             </ul>
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It diagnoses the mechanics of subtle sorting in subjective assessment tasks.</p>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the naive meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It accurately diagnoses how subjective, open-ended grading rubrics penalize working-class students for lacking conversational ease and bourgeois mannerisms.</p>
+
             <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
             <ul>
                 <li><em>The Relativist Trap (Conflating Arbitrary Culture with Powerful Knowledge):</em> Bourdieu treats curriculum content as an arbitrary ruling-class power tool. However, formal logic, standard grammatical syntax, the calculus, and empirical science are not arbitrary cultural toys; they are objective cognitive amplifiers that allow humans to model, manipulate, and master the material and social world. Treating all curricula as arbitrary class violence collapses the vital distinction between arbitrary manners and empirically grounded, powerful knowledge (Michael Young).</li>
                 <li><em>The Delpit Dilemma &amp; Monday Morning Catastrophe:</em> As African-American educational scholar Lisa Delpit demonstrated, when progressive educators stop explicitly teaching standard grammar and academic rhetoric under the guise of avoiding cultural violence, they do not liberate marginalized kids; they strand them. Middle-class kids acquire the dominant codes at home, while disadvantaged kids are denied the explicit instruction needed to enter higher education and professional fields.</li>
-                <li><em>Structural Fatalism &amp; Measurement Circularity:</em> Bourdieu's model operates as an unbroken reproduction loop that minimizes student agency and high-expectations teaching. Empirically, cultural capital is notoriously difficult to isolate from general cognitive ability, regularly collapsing into circular logic: academic success proves cultural capital, while cultural capital is inferred from academic success.</li>
+                <li><em>The Intraclass Paradox:</em> If schooling is driven by the cultural fraction (teachers) against the economic fraction (industrialists), the curriculum cannot be characterized simply as a monolithic ruling-class conspiracy. It is an arena of conflict where teachers routinely promote critical inquiry, social mobility, and democratic debate against purely commercial demands.</li>
+                <li><em>Structural Fatalism &amp; Pedagogical Defeatism:</em> Bourdieu's model operates as an unbroken reproduction loop that minimizes student agency and high-expectations teaching. Empirically, cognitive psychology and explicit instruction research demonstrate that structured, systematic teaching dramatically accelerates domain learning, disproving Bourdieu's assumption that working-class children cannot overcome the domestic time-gap.</li>
             </ul>
         </div>
 
@@ -492,7 +526,7 @@ def produce_complete_html_document() -> str:
             <h4 class="concept-title">Active Audience Theory &amp; Polysemy (Stuart Hall)</h4>
             <p>Stuart Hall's encoding/decoding model demonstrating that media texts are polysemic (bearing multiple interpretations) and actively negotiated by audiences through dominant, negotiated, or oppositional stances.</p>
             <p><strong>1. Mechanics &amp; Strengths:</strong> Refutes paternalistic views that school students are passive victims brainwashed by screen media, highlighting their capacity to critically evaluate, mock, and subvert cultural messaging.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Hall\'s theory can lead educators to underestimate the coercive algorithmic engineering of modern social feeds, which exploit neurological dopamine loops far beyond active intellectual negotiation.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Hall's theory can lead educators to underestimate the coercive algorithmic engineering of modern social feeds, which exploit neurological dopamine loops far beyond active intellectual negotiation.</p>
         </div>
 
         <div class="forensic-entry">
@@ -558,6 +592,26 @@ def produce_complete_html_document() -> str:
         </div>
     </section>
 
+    <!-- FORMAL BIBLIOGRAPHY -->
+    <section class="biblio-section">
+        <h2>Primary Sources &amp; Critical References</h2>
+        <ul class="biblio-list">
+            <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change: Papers in the Sociology of Education</em> (pp. 71–112). London: Tavistock Publications.</li>
+            <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. (Original work published in French 1972).</li>
+            <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
+            <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
+            <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
+            <li><strong>Collins, R. (1979).</strong> <em>The Credential Society: An Historical Sociology of Education and Stratification</em>. New York: Academic Press.</li>
+            <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
+            <li><strong>Fanon, F. (1967).</strong> <em>Black Skin, White Masks</em> (C. L. Markmann, Trans.). New York: Grove Press. (Original work published in French 1952).</li>
+            <li><strong>Foucault, M. (1977).</strong> <em>Discipline and Punish: The Birth of the Prison</em> (A. Sheridan, Trans.). London: Allen Lane. (Original work published in French 1975).</li>
+            <li><strong>Freire, P. (1970).</strong> <em>Pedagogy of the Oppressed</em> (M. B. Ramos, Trans.). New York: Herder and Herder. (Original work published in Portuguese 1968).</li>
+            <li><strong>Rancière, J. (2003).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
+            <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
+            <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+        </ul>
+    </section>
+
     <a href="index.html" class="back-link">&larr; Return to Main Exam Revision Guide</a>
 
 </body>
@@ -592,16 +646,18 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully integrated concrete scenario into: {target_file.resolve()}")
+    print(f"Successfully deployed bulletproof Cultural Capital dossier to: {target_file.resolve()}")
 
     commit_message = (
-        "Incorporate concrete classroom scenario into Cultural Capital dossier\n\n"
-        "Enhance the Cultural Capital entry in core-concepts.html by adding a\n"
-        "concrete scenario contrasting two students (Julian and Marcus) to\n"
-        "demystify how domestic cultural inheritance is covertly rewarded.\n\n"
-        "- Add concrete Julian vs. Marcus comparative scenario.\n"
-        "- Contrast naive meritocracy view with Bourdieusian diagnostic reality.\n"
-        "- Maintain tuned font scale and compact card padding."
+        "Upgrade Cultural Capital dossier with exact primary mechanics and bibliography\n\n"
+        "Enhance the Cultural Capital entry in core-concepts.html with primary\n"
+        "mechanisms from Bourdieu's texts: the economy of acquisition time, the\n"
+        "intraclass teacher-vs-capitalist divide, legitimate autodidacticism, and\n"
+        "credential devaluation. Append an authoritative academic bibliography.\n\n"
+        "- Add labor-time economy and 'wasted time' mechanics from 1986 text.\n"
+        "- Detail the structural split between cultural and economic elites.\n"
+        "- Explain the devaluation of scholastic pedantry vs. natural ease.\n"
+        "- Append a primary and critical counterweight bibliography."
     )
 
     sync_repository(root_directory, commit_message)
