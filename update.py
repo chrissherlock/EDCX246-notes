@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Rewrite core-concepts.html using a robust, collision-free HTML delivery
+"""Inject an inline SVG forensic dossier illustration beside the opening
 
-mechanism that completely prevents Python quotation syntax errors.
+manifesto in core-concepts.html and synchronize via Git.
 """
 
 from pathlib import Path
@@ -10,8 +10,6 @@ import sys
 
 
 def produce_complete_html_document() -> str:
-    # Read or assemble the document using raw text with explicit HTML entities
-    # and zero unescaped internal string delimiters.
     template = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +25,7 @@ def produce_complete_html_document() -> str:
             --border-color: #cbd5e1;
             --accent-critique: #991b1b;
             --accent-strength: #166534;
+            --bg-neutral: #f8fafc;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -46,7 +45,7 @@ def produce_complete_html_document() -> str:
             color: var(--primary);
             border-bottom: 3px solid var(--primary);
             padding-bottom: 14px;
-            margin-bottom: 18px;
+            margin-bottom: 24px;
         }
         h2 {
             font-size: 1.45rem;
@@ -71,10 +70,27 @@ def produce_complete_html_document() -> str:
             margin-top: 28px;
             margin-bottom: 10px;
         }
-        p.intro {
-            font-size: 1.05rem;
-            color: #475569;
-            margin-bottom: 36px;
+        .intro-card {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background-color: var(--bg-neutral);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+        .intro-card svg {
+            flex-shrink: 0;
+            width: 105px;
+            height: 105px;
+        }
+        .intro-card p {
+            margin: 0;
+            font-size: 1.02rem;
+            color: #334155;
+            line-height: 1.7;
             text-align: justify;
         }
         .forensic-entry {
@@ -114,8 +130,21 @@ def produce_complete_html_document() -> str:
         .back-link:hover {
             text-decoration: underline;
         }
+        @media (max-width: 640px) {
+            .intro-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+            .intro-card svg {
+                width: 75px;
+                height: 75px;
+                margin-bottom: 8px;
+            }
+        }
         @media print {
             body { padding: 16px; font-size: 10pt; }
+            .intro-card { break-inside: avoid; page-break-inside: avoid; }
             .forensic-entry { break-inside: avoid; page-break-inside: avoid; }
         }
     </style>
@@ -123,11 +152,39 @@ def produce_complete_html_document() -> str:
 <body>
 
     <h1>EDCX246 Exam Revision Guide: Forensic Concept Analysis</h1>
-    <p class="intro">
-        This reference manual applies an uncompromising <strong>four-part forensic audit</strong> to the theoretical models
-        in <em>Making Sense of Mass Education</em> (4th Edition). Each entry is evaluated through: (1) its historical genesis and empirical anomaly,
-        (2) its internal theoretical architecture, (3) its legitimate diagnostic strengths in schooling, and (4) its critical blind spots, logical paradoxes, and practical pedagogical hazards.
-    </p>
+
+    <div class="intro-card">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Forensic Dossier Icon">
+            <!-- Back Folder Flap -->
+            <path d="M14 26C14 22.6863 16.6863 20 20 20H44L52 30H100C103.314 30 106 32.6863 106 36V90C106 93.3137 103.314 96 100 96H20C16.6863 96 14 93.3137 14 90V26Z" fill="#CBD5E1"/>
+            <!-- Paper Sheet 2 (Underlying) -->
+            <rect x="25" y="24" width="70" height="66" rx="3" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+            <!-- Paper Sheet 1 (Main Audit Dossier Document) -->
+            <rect x="29" y="16" width="70" height="74" rx="3" fill="#FFFFFF" stroke="#64748B" stroke-width="1.5"/>
+            <!-- Dossier Text Lines -->
+            <line x1="38" y1="28" x2="68" y2="28" stroke="#1E3A8A" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="38" y1="36" x2="88" y2="36" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="38" y1="42" x2="84" y2="42" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="38" y1="48" x2="76" y2="48" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Red Confidential / Audit Stamp Badge -->
+            <rect x="58" y="54" width="34" height="15" rx="2" fill="#FEE2E2" stroke="#991B1B" stroke-width="1.5"/>
+            <text x="61" y="65" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="800" fill="#991B1B" letter-spacing="0.8">AUDIT</text>
+            <!-- Front Folder Flap (Perspective Envelope) -->
+            <path d="M12 44C12 40.6863 14.6863 38 18 38H102C105.314 38 108 40.6863 108 44L103 94C103 97.3137 100.314 100 97 100H23C19.6863 100 17 97.3137 17 94L12 44Z" fill="#1E3A8A"/>
+            <!-- Folder Fastener Clasp -->
+            <circle cx="60" cy="52" r="4.5" fill="#F8FAFC" stroke="#0F172A" stroke-width="1.5"/>
+            <line x1="60" y1="48" x2="60" y2="56" stroke="#0F172A" stroke-width="1.5"/>
+            <!-- Forensic Inspection Magnifying Lens Overlay -->
+            <circle cx="86" cy="80" r="14" fill="#FFFFFF" fill-opacity="0.25" stroke="#0F172A" stroke-width="3"/>
+            <circle cx="86" cy="80" r="12" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2 3"/>
+            <line x1="96" y1="90" x2="108" y2="102" stroke="#0F172A" stroke-width="4.5" stroke-linecap="round"/>
+        </svg>
+        <p>
+            This reference manual applies an uncompromising <strong>four-part forensic audit</strong> to the theoretical models
+            in <em>Making Sense of Mass Education</em> (4th Edition). Each entry is evaluated through: (1) its historical genesis and empirical anomaly,
+            (2) its internal theoretical architecture, (3) its legitimate diagnostic strengths in schooling, and (4) its critical blind spots, logical paradoxes, and practical pedagogical hazards.
+        </p>
+    </div>
 
     <!-- 1. SOCIAL CLASS & STRATIFICATION -->
     <section>
@@ -194,7 +251,7 @@ def produce_complete_html_document() -> str:
             <h4 class="concept-title">Counter-School Resistance (Paul Willis)</h4>
             <p>Paul Willis's ethnographic study (<em>Learning to Labour</em>, 1977) of working-class adolescent 'lads' constructing an anti-school subculture grounded in manual labor pride, physical solidarity, and opposition to institutional authority.</p>
             <p><strong>1. Mechanics &amp; Strengths:</strong> Directly countered Bourdieu's passive reproduction model by demonstrating agency. The lads saw through the meritocratic myth, correctly recognizing that hard academic work would not guarantee them middle-class parity.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Willis exposed a tragic paradox: the lads' active, counter-hegemonic cultural resistance sealed their own educational failure, channeling them directly into the shop-floor exploitation they sought to validate. Furthermore, the subculture was steeped in virulent sexism, racism, and homophobia, complicating romanticized readings of anti-school resistance.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Willis exposed a tragic paradox: the lads\' active, counter-hegemonic cultural resistance sealed their own educational failure, channeling them directly into the shop-floor exploitation they sought to validate. Furthermore, the subculture was steeped in virulent sexism, racism, and homophobia, complicating romanticized readings of anti-school resistance.</p>
         </div>
 
         <div class="forensic-entry">
@@ -464,16 +521,17 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully generated: {target_file.resolve()}")
+    print(f"Successfully deployed forensic dossier banner to: {target_file.resolve()}")
 
     commit_message = (
-        "Resolve quote escaping syntax error in core-concepts update script\n\n"
-        "Replace brittle single-quoted array strings in update script with a\n"
-        "clean, raw multi-line string block to eliminate Python quote collision\n"
-        "errors on nested quotations like 'like a fish in water'.\n\n"
-        "- Fix SyntaxError caused by unescaped single quotes.\n"
-        "- Deploy full forensic dossiers for Bourdieu's core triad.\n"
-        "- Preserve complete syllabus coverage across all seven modules."
+        "Add forensic dossier SVG illustration to concepts page introduction\n\n"
+        "Enhance the opening reference manual statement in core-concepts.html\n"
+        "with a dedicated inline SVG dossier illustration. Use a flex-aligned\n"
+        "editorial card container to pair the visual asset beside the four-part\n"
+        "audit framing text.\n\n"
+        "- Design inline SVG dossier file folder with seal and inspection lens.\n"
+        "- Re-architect header intro paragraph into responsive flex card banner.\n"
+        "- Maintain robust collision-free script delivery via raw multi-line text."
     )
 
     sync_repository(root_directory, commit_message)
