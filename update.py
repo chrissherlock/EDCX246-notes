@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with an overhauled, deeply critical synthesis
+"""Regenerate core-concepts.html with a re-scoped Bourdieusian synthesis card
 
-evaluating the Bourdieusian Paradigm (Cultural Capital, Habitus, Symbolic
-Violence) and its impact on Making Sense of Mass Education, keeping all markup
-100% free of citation tags, and sync updates to main via git.
+and a comprehensive master synthesis card covering Sociolinguistic Codes,
+Counter-School Resistance, Social Closure, Credentialism, and Residualisation,
+keeping all HTML markup 100% free of citation tags, and sync updates via git.
 """
 
 from pathlib import Path
@@ -745,34 +745,33 @@ def produce_complete_html_document() -> str:
             </div>
         </div>
 
-        <!-- REVISED DEEPLY CRITICAL STANDALONE SYNTHESIS CARD: BOURDIEUSIAN PARADIGM -->
+        <!-- RE-SCOPED BOURDIEUSIAN CRITICAL SYNTHESIS CARD -->
         <div class="textbook-impact-box">
             <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em> (The Bourdieusian Paradigm)</h4>
             <p>
                 <strong>Is the textbook's reliance on Bourdieu right, wrong, or fatally incomplete?</strong><br>
-                Evaluating the true worth of <em>Making Sense of Mass Education</em> requires measuring its core Bourdieusian thesis—that schooling functions primarily to launder inherited class privilege into objective merit—against both empirical realities and its severe pedagogical hazards:
+                Evaluating the Bourdieusian pillar within <em>Making Sense of Mass Education</em> requires testing its reproduction thesis against its primary educational merits and its dangerous pedagogical hazards:
             </p>
             <ul>
                 <li>
-                    <strong>Where the Textbook is RIGHT (Its Indispensable Diagnostic Power):</strong>
+                    <strong>Where Bourdieu EMPOWERS the Textbook's Thesis (The Diagnostic Core):</strong>
                     <ul>
-                        <li><em>Demolishing the Meritocracy Myth:</em> The textbook's deploy of <strong>Cultural Capital</strong> is an essential demythologizing weapon. It demonstrates empirically why equal school funding, physical infrastructure rollouts, and free university tuition fail to produce equal outcomes. Schools do not evaluate raw cognitive capacity in a cultural vacuum; they evaluate class-transmitted linguistic facility, rhetorical posturing, and aesthetic familiarity.</li>
-                        <li><em>Diagnosing Institutional Friction (Habitus):</em> Bourdieu gives the text the vocabulary to explain why working-class and marginalized students experience school as culturally foreign territory. It accounts for voluntary self-elimination—the internalized psychological barrier that university or advanced academic streams are <em>"not for the likes of us"</em>—without having to invoke individual cognitive deficits.</li>
-                        <li><em>Unmasking Symbolic Violence:</em> It explains how the educational system legitimizes vast societal inequality without needing overt authoritarian force. Disadvantaged students who struggle with academic curricula misrecognize systemic sorting as personal intellectual failure, preserving the moral legitimacy of an unequal economic order.</li>
+                        <li><em>Demolishing Naive Meritocracy:</em> Cultural Capital provides the textbook with its sharpest weapon to disprove the claim that schools are neutral playing fields. It explains why purely material access (free tuition, digital devices) consistently fails to close equity gaps if implicit curriculum and assessment expectations remain unexamined.</li>
+                        <li><em>Explaining Dislocation without Deficit (Habitus):</em> Accounts for student alienation and voluntary self-elimination—the belief that higher education is <em>"not for the likes of us"</em>—without pathologizing students' raw cognitive capability.</li>
+                        <li><em>Unmasking Symbolic Violence:</em> Explains how unequal educational sorting preserves democratic legitimacy because students misrecognize class-biased curricula as reflections of innate talent and individual moral failure.</li>
                     </ul>
                 </li>
                 <li>
-                    <strong>Where the Textbook is WRONG and Vulnerable (The Forensic Hazards):</strong>
+                    <strong>Where Bourdieu ENDANGERS the Textbook's Thesis (The Critical Hazards):</strong>
                     <ul>
-                        <li><em>The Epistemic Relativist Trap (The Michael Young Critique):</em> By adopting Bourdieu's premise that school knowledge is merely an arbitrary ruling-class power play (<em>arbitraire culturel</em>), the textbook risks collapsing into dangerous intellectual nihilism. Calculus, evolutionary biology, formal grammatical syntax, and historical analysis are not arbitrary bourgeois manners; they are <strong>Powerful Knowledge</strong>—empirically testable, reliable cognitive amplifiers that allow human beings to model and transform reality. Treating rigorous curricula merely as ruling-class symbolic violence delegitimizes the very intellectual tools disadvantaged students need to master the world.</li>
-                        <li><em>The Delpit Dilemma &amp; Pedagogical Sabotage:</em> When teachers influenced by reproduction theory refuse to explicitly teach standard grammar, academic rhetoric, and structured analysis for fear of "imposing symbolic violence," they do not emancipate poor children; they intellectually abandon them (Lisa Delpit). Affluent children acquire these dominant academic codes at home through domestic osmosis; disadvantaged children acquire them exclusively through explicit, direct school instruction or not at all.</li>
-                        <li><em>Structural Fatalism &amp; Pedagogical Resignation:</em> Bourdieu's framework functions as an airtight reproduction machine. If habitus is permanent bodily software and the school is entirely rigged, individual teacher effort is rendered pointless. This fatalism contradicts cognitive psychology and School Effectiveness research, which prove that high-expectations explicit instruction dramatically closes academic gaps regardless of student background.</li>
-                        <li><em>Sociological Paternalism (The Jacques Rancière Strike):</em> Framing dominated groups as unconscious dupes suffering from total "misrecognition" and "complicity" robs working-class students and parents of their genuine agency, moral dignity, and clear-eyed understanding of institutional hypocrisy.</li>
+                        <li><em>The Epistemic Relativist Trap (Michael Young):</em> Treating curriculum content as an arbitrary ruling-class power tool collapses the distinction between arbitrary manners and <strong>Powerful Knowledge</strong>. Disciplinary knowledge (calculus, thermodynamics, historical evidence) provides objective intellectual leverage; denying it to disadvantaged children in the name of anti-elitism disarms them intellectually.</li>
+                        <li><em>The Delpit Dilemma:</em> Lisa Delpit demonstrated that when progressive educators refuse to explicitly teach standard grammatical syntax and academic rhetoric to avoid "symbolic violence," they abandon disadvantaged children. Affluent children acquire these codes at home; disadvantaged children master them only through direct, unapologetic instruction.</li>
+                        <li><em>Structural Fatalism &amp; Paternalism:</em> Bourdieu's model operates as an unbroken reproduction loop that ignores cognitive science and explicit instruction research proving that systematic teaching accelerates learning. Furthermore, Jacques Rancière unmasks Bourdieu's concept of "misrecognition" as condescending paternalism that reduces working-class agents to unconscious cultural dupes.</li>
                     </ul>
                 </li>
                 <li>
-                    <strong>The Forensic Verdict for Exam Success &amp; Professional Worth:</strong>
-                    <em>Making Sense of Mass Education</em> is <strong>indispensable as an anatomical X-ray, but toxic as a pedagogical compass</strong>. It is right in diagnosing systemic institutional sorting, but wrong whenever it pulls educators toward curriculum relativism or administrative defeatism. For the classroom teacher, Bourdieu's reproduction thesis must be deployed strictly as a diagnostic tool to expose unexamined institutional bias, while refusing to use it as an excuse to lower standards or abandon explicit instruction in powerful knowledge.
+                    <strong>The Forensic Verdict on the Bourdieusian Paradigm:</strong>
+                    Bourdieu's reproduction model within the textbook is <strong>indispensable as an anatomical X-ray of inherited privilege, but toxic as a standalone pedagogical compass</strong>. It correctly diagnoses how schools unconsciously reward domestic bourgeois socialization, but it fails whenever it is used to justify lowered academic expectations, curriculum relativism, or defeatist fatalism.
                 </li>
             </ul>
         </div>
@@ -1024,8 +1023,8 @@ def produce_complete_html_document() -> str:
                     </ul>
                 </li>
                 <li>
-                    <strong>The Ultimate Verdict for Exam Success &amp; Professional Practice:</strong>
-                    These paradigms are essential diagnostic X-rays that expose the institutional and market-driven traps of modern schooling. However, true professional mastery requires refusing to let diagnostic critique collapse into pedagogical defeatism. The textbook correctly reveals the structural hurdles students face; our role as educators is to meet that structural diagnosis with unapologetic, high-expectations explicit instruction that arms disadvantaged students with powerful knowledge.
+                    <strong>The Section 1 Synthesis Verdict:</strong>
+                    These five paradigms rescue the textbook from simplistic Bourdieusian cultural determinism by proving that educational inequality is forged across multiple interacting vectors: communicative syntax, youth counter-cultures, status monopolies, and market policies. However, professional teaching requires resisting the opposite traps: educators must refuse to romanticize self-defeating resistance, refuse to treat working-class language as deficient, and refuse to surrender to administrative fatalism in residualised public settings.
                 </li>
             </ul>
         </div>
@@ -1310,13 +1309,14 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Revise Bourdieusian critical synthesis in core-concepts.html\n\n"
-        "Overhaul the Bourdieusian Critical Synthesis card to rigorously evaluate\n"
-        "the true worth of Making Sense of Mass Education across Cultural Capital,\n"
-        "Habitus, and Symbolic Violence, keeping HTML free of citation tags.\n\n"
-        "- Balance diagnostic merits against epistemic relativism and fatalism.\n"
-        "- Integrate critiques from Young, Delpit, and Rancière.\n"
-        "- Maintain clean semantic markup without citation tags."
+        "Re-scope Bourdieusian verdict and add Section 1 master synthesis\n\n"
+        "Re-scope the Bourdieusian Critical Synthesis verdict specifically to\n"
+        "Bourdieu rather than the entire text, and embed a second master synthesis\n"
+        "card after Residualisation evaluating Bernstein, Labov, Willis, Weber,\n"
+        "Collins, and school residualisation under Section 1 in core-concepts.html.\n\n"
+        "- Scope Bourdieusian verdict strictly to class reproduction models.\n"
+        "- Add multi-paradigm synthesis evaluating micro and macro mechanisms.\n"
+        "- Maintain clean HTML output completely free of citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
