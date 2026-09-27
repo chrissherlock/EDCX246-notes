@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Adjust core-concepts.html to expand the space directly below tradition headers."""
+"""Incorporate the concrete Julian vs. Marcus comparative scenario directly into
+
+the Cultural Capital entry in core-concepts.html.
+"""
 
 from pathlib import Path
 import subprocess
@@ -32,6 +35,8 @@ def produce_complete_html_document() -> str:
             --badge-audit-bg: #fff1f2;
             --badge-audit-text: #be123c;
             --badge-audit-border: #fecdd3;
+            --scenario-box-bg: #f5f5f4;
+            --scenario-box-border: #d6d3d1;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -126,6 +131,26 @@ def produce_complete_html_document() -> str:
         .forensic-entry li {
             margin-bottom: 4px;
             text-align: justify;
+        }
+        .scenario-box {
+            margin: 10px 0 14px 0;
+            padding: 10px 14px;
+            background-color: var(--scenario-box-bg);
+            border-left: 3px solid var(--primary);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.88rem;
+            color: #334155;
+        }
+        .scenario-box strong.label {
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .scenario-box ul {
+            margin: 4px 0 6px 16px;
         }
         .audit-label-critique {
             display: inline-block;
@@ -228,7 +253,18 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Cultural Capital (Pierre Bourdieu)</h4>
-            <p>Cultural capital represents the non-financial social assets—embodied linguistic fluency, academic mannerisms, aesthetic dispositions, and formal credentials—that individuals inherit through class socialization and deploy within competitive institutional fields. Rather than reflecting neutral cognitive ability, it operates as an institutionalized class currency that educational institutions covertly demand and reward.</p>
+            <p>Cultural capital represents the invisible inheritance of linguistic fluency, academic mannerisms, aesthetic tastes, and certified credentials that individuals absorb through domestic class socialization and deploy within competitive institutional fields. Rather than measuring neutral, innate cognitive ability, it operates as an institutionalized class currency that educational institutions covertly demand and reward.</p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: Julian vs. Marcus</strong>
+                Imagine two 10-year-olds with identical raw working memory and cognitive aptitude:
+                <ul>
+                    <li><strong>Julian (Solicitor &amp; Teacher household):</strong> Absorbs thousands of hours of speculative debate, sophisticated vocabulary (<em>"tentatively"</em>, <em>"contradictory"</em>), and museum visits through domestic osmosis. He instinctively knows how to challenge authority politely, make eye contact, and structure arguments in an essay.</li>
+                    <li><strong>Marcus (Forklift driver &amp; Cleaner household):</strong> Absorbs practical problem-solving, trade knowledge, community solidarity, and direct, protective language (<em>"hurry up"</em>, <em>"don't get into trouble"</em>).</li>
+                </ul>
+                When the school tests <em>"authoritative voice,"</em> <em>"nuanced engagement,"</em> and <em>"formal rhetoric,"</em> it rewards Julian for speaking his home dialect while penalizing Marcus for lacking a code the school never explicitly taught him. The school acts like a foreign currency exchange that demands US Dollars, takes payment from the child raised in America, and penalizes the child holding Pesos—all while claiming to be an objective, meritocratic test.
+            </div>
+
             <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed during the 1960s by Pierre Bourdieu and Jean-Claude Passeron in post-WWII France. State technocrats had eliminated university tuition fees, anticipating that open financial access would establish a pure meritocracy. However, statistical surveys revealed a glaring contradiction: despite free tuition, working-class and peasant students failed and withdrew at dramatically higher rates than bourgeois cohorts. Classical Marxism attributed reproduction almost exclusively to economic capital (property, wealth, and ownership of the means of production), but Bourdieu recognized that financial explanations could not account for why working-class students with adequate funding still struggled with the implicit cultural demands of the academy. Expanding capital into the cultural sphere, the term was formally introduced in print in the 1973 essay <em>Cultural Reproduction and Social Reproduction</em> and later codified into three states in the 1986 essay <em>The Forms of Capital</em>.</p>
             <p><strong>2. Theoretical Mechanics:</strong> Operates across three interdependent states in relation to an institutional field:</p>
             <ul>
@@ -556,15 +592,16 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully updated tradition header margins in: {target_file.resolve()}")
+    print(f"Successfully integrated concrete scenario into: {target_file.resolve()}")
 
     commit_message = (
-        "Increase vertical spacing below tradition headers in core-concepts\n\n"
-        "Adjust h3.tradition-header styling in core-concepts.html to expand the\n"
-        "bottom margin from 10px to 16px, adding breathing room before the first\n"
-        "concept card entry.\n\n"
-        "- Increase h3.tradition-header bottom margin to 16px.\n"
-        "- Maintain consistent compact internal card padding."
+        "Incorporate concrete classroom scenario into Cultural Capital dossier\n\n"
+        "Enhance the Cultural Capital entry in core-concepts.html by adding a\n"
+        "concrete scenario contrasting two students (Julian and Marcus) to\n"
+        "demystify how domestic cultural inheritance is covertly rewarded.\n\n"
+        "- Add concrete Julian vs. Marcus comparative scenario.\n"
+        "- Contrast naive meritocracy view with Bourdieusian diagnostic reality.\n"
+        "- Maintain tuned font scale and compact card padding."
     )
 
     sync_repository(root_directory, commit_message)
