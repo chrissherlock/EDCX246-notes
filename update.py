@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Tighten vertical margins and eliminate excess whitespace above concept titles
-
-in core-concepts.html.
-"""
+"""Adjust core-concepts.html to expand the space directly below tradition headers."""
 
 from pathlib import Path
 import subprocess
@@ -70,10 +67,10 @@ def produce_complete_html_document() -> str:
         h3.tradition-header {
             font-size: 1.05rem;
             color: var(--text-heading);
-            margin-top: 22px;
-            margin-bottom: 10px;
+            margin-top: 24px;
+            margin-bottom: 16px;
             background: #fff7ed;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-left: 3px solid var(--primary);
             border-radius: 0 4px 4px 0;
             font-style: normal;
@@ -559,16 +556,15 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully tightened spacing in: {target_file.resolve()}")
+    print(f"Successfully updated tradition header margins in: {target_file.resolve()}")
 
     commit_message = (
-        "Tighten spacing and margins above concept titles in core-concepts.html\n\n"
-        "Eliminate excess whitespace above concept titles by resetting the top\n"
-        "margin of h4.concept-title to zero and reducing padding within the\n"
-        "forensic-entry containers and tradition headers.\n\n"
-        "- Reset h4.concept-title top margin to 0.\n"
-        "- Compact padding in forensic-entry blocks from 18px to 14px.\n"
-        "- Reduce vertical margins on h3.tradition-header."
+        "Increase vertical spacing below tradition headers in core-concepts\n\n"
+        "Adjust h3.tradition-header styling in core-concepts.html to expand the\n"
+        "bottom margin from 10px to 16px, adding breathing room before the first\n"
+        "concept card entry.\n\n"
+        "- Increase h3.tradition-header bottom margin to 16px.\n"
+        "- Maintain consistent compact internal card padding."
     )
 
     sync_repository(root_directory, commit_message)
