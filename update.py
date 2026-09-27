@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a full forensic dossier for Judith Butler's
+"""Regenerate core-concepts.html with a full forensic dossier for Adrienne Rich's
 
-Gender Performativity, maintaining all separated entries, Master Bibliography updates,
+Compulsory Heterosexuality, maintaining all separated entries, Master Bibliography updates,
 and clean markup free of citation tags, and sync updates to main via git.
 """
 
@@ -644,7 +644,7 @@ def produce_complete_html_document() -> str:
                     <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
                     <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
                     <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
-                    <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
+                    <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
                     <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
                 </ul>
             </div>
@@ -1184,9 +1184,53 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Compulsory Heterosexuality (Adrienne Rich)</h4>
-            <p>Adrienne Rich's feminist critique demonstrating that heterosexuality is an institutionalized political apparatus designed to enforce social conformity, female domestic subservience, and patriarchal stability.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Illuminates the pervasive heteronormative hidden curriculum of schools—prom events, literature canons, administrative forms, and staffroom discourse—which marginalizes LGBTQ+ identities.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Formulated in 1980, the theory struggles to capture the rapid, profound legal and cultural transformations of the 21st century, where affirmative policies and anti-discrimination frameworks have gained formal institutional grounding.</p>
+            <p>
+                Adrienne Rich's radical feminist critique
+                (<span class="tooltip-term" tabindex="0" data-tooltip="Compulsory Heterosexuality and Lesbian Existence (1980), published in Signs: Journal of Women in Culture and Society.">Compulsory Heterosexuality and Lesbian Existence, 1980</span>)
+                demonstrates that heterosexuality is not an innate biological preference or natural human default, but an institutionalized, coercive
+                <span class="tooltip-term" tabindex="0" data-tooltip="An institutional apparatus engineered by law, economy, and culture to enforce social conformity, female domestic subservience, and male dominance.">political apparatus</span>.
+                Engineered to guarantee male access to women's sexual, reproductive, and economic labor, compulsory heterosexuality works through systemic erasure,
+                social coercion, and the suppression of the
+                <span class="tooltip-term" tabindex="0" data-tooltip="A broad historical spectrum of female-identified experience, emotional bonding, and mutual support across women's lifetimes, extending far beyond physical sexual practice.">lesbian continuum</span>.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The Senior Formal &amp; Health Curriculum</strong>
+                Imagine two Year 12 female students navigating final-year rituals at a secondary school:
+                <ul>
+                    <li><strong>The Senior Formal Protocol:</strong> Formal invitations and ticket packages assume boy-girl partnerships; teachers tease girls about finding a male escort; photography backdrops, royalty crowns (King and Queen), and table arrangements are structured around male-female pairings. When a female student attempts to buy tickets for herself and a female partner, she is met with administrative discomfort and warnings against "causing a scene."</li>
+                    <li><strong>The Health &amp; Biology Curriculum:</strong> Sex education is structured exclusively around penile-vaginal penetration, pregnancy prevention, and nuclear domestic family planning. Female sexual desire and non-heterosexual relationships are omitted entirely.</li>
+                </ul>
+                The school does not need physical violence to enforce heterosexuality. Through everyday ceremonies, curricular omissions, and administrative rules, it establishes heterosexuality as the sole intelligible, socially rewarding lifestyle, coercing young women into compliance to preserve institutional belonging.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Published in 1980 in the feminist journal <em>Signs</em> during the height of second-wave radical feminism. Rich observed a profound empirical anomaly within mainstream psychoanalysis, sociology, and liberal feminism: while male homosexuality was historically criminalized and analyzed, female heterosexuality was simply taken for granted as an unproblematic, natural biological drive. Rich asked: if heterosexuality is truly natural and innate to women, why does patriarchal society require an immense apparatus of economic wage gaps, legal marriage protections, religious taboos, cultural romance scripts, and physical violence to enforce it? Rich exposed that heterosexuality is a compulsory political institution imposed upon women to secure their servitude to men.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Rich's framework operates through three core operational mechanisms:</p>
+            <ul>
+                <li><strong>The Enforcement Mechanism (Economic and Social Coercion):</strong> Women are steered into heterosexual marriage not purely by romantic attraction, but by material vulnerability: gender wage inequality, the glass ceiling, legal marriage incentives, and societal stigmatization of unmarried or autonomous women. Heterosexuality functions as an economic survival strategy under patriarchy.</li>
+                <li><strong>The Erasure of the Lesbian Continuum:</strong> Rich defines the <em>lesbian continuum</em> broadly as the spectrum of female bonding, political solidarity, emotional sustenance, and romantic love between women across history. Compulsory heterosexuality violently fractures this continuum by rendering female independence invisible, pathologizing lesbian sexuality, and isolating women from one another to ensure emotional and economic dependence on men.</li>
+                <li><strong>The Ideological Cloaking:</strong> Popular culture, literature canons, and school rituals continually naturalize heterosexual romance as the universal peak of emotional maturity, disguising an unequal political institution as natural romantic destiny.</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Unmasks the pervasive, subtle heteronormative hidden curriculum of schools: romance literature canons, sex education centered exclusively on reproduction, heteronormative prom rituals, and gendered administrative records. It validates female solidarity, providing a critical lens for understanding how schools subtly police young women into conventional domestic scripts and marginalize queer female students.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Erasure of Female Heterosexual Agency:</em> By framing all heterosexual relations as coerced patriarchal servitude, Rich's theory denies the authentic sexual desire, agency, and consensual choices of heterosexual women, condescendingly reducing millions of women to victims of patriarchal brainwashing.</li>
+                <li><em>The Desexualization of Lesbian Identity (The Queer Rebuttal):</em> By expanding the "lesbian continuum" to include any female friendship, mother-daughter bonding, or feminist political alliance, queer theorists and lesbian feminists argued that Rich erased the distinct, embodied sexual reality and lived discrimination experienced specifically by sexually active lesbians.</li>
+                <li><em>Historical Anachronism &amp; Homonormativity:</em> Formulated in 1980 under widespread legal criminalization, Rich's totalizing framework struggles to account for modern legal realities: marriage equality, anti-discrimination legislation, and the rise of liberal "homonormativity" where same-sex relationships are formally integrated into state and corporate life.</li>
+                <li><em>Pedagogical Hazards in Monday Morning Practice:</em> Deploying 1980s separatist radical feminism in secondary schools risks alienating students and families, and offers little constructive support for nuanced, diverse adolescent identities that move fluidly beyond rigid 1980s political dichotomies.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660. <em>[The foundational text establishing heterosexuality as an institutionalized political apparatus and introducing the lesbian continuum]</em>.</li>
+                    <li><strong>Ferguson, A., Gottschalk, P. H., Campbell, B. B., &amp; Rich, A. (1981).</strong> 'On "Compulsory Heterosexuality and Lesbian Existence": Defining the Issues'. <em>Signs: Journal of Women in Culture and Society</em>, 7(1), 158–199.</li>
+                    <li><strong>Warner, M. (1993).</strong> <em>Fear of a Queer Planet: Queer Politics and Social Theory</em>. Minneapolis: University of Minnesota Press.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -1368,6 +1412,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Freire, P. (1970).</strong> <em>Pedagogy of the Oppressed</em> (M. B. Ramos, Trans.). New York: Herder and Herder. (Original work published in Portuguese 1968).</li>
             <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press.</li>
             <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
+            <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660.</li>
             <li><strong>Weber, M. (1978).</strong> <em>Economy and Society: An Outline of Interpretive Sociology</em> (G. Roth &amp; C. Wittich, Eds.). Berkeley: University of California Press. (Original work published 1922).</li>
             <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
             <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
@@ -1411,14 +1456,14 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand Judith Butler gender performativity entry to full dossier\n\n"
-        "Upgrade Gender Performativity (Judith Butler) in core-concepts.html\n"
-        "to a four-part forensic dossier examining performative citation,\n"
-        "the heterosexual matrix, and the morning assembly binary.\n\n"
-        "- Detail performativity vs performance and the illusion of inner essence.\n"
-        "- Add scenario box analyzing school uniform inspection and line assembly.\n"
-        "- Audit linguistic idealism, bodily materiality, and Nussbaum's critique.\n"
-        "- Add Butler (1990) to the Master Bibliography.\n"
+        "Expand Adrienne Rich compulsory heterosexuality entry to full dossier\n\n"
+        "Upgrade Compulsory Heterosexuality (Adrienne Rich) in core-concepts.html\n"
+        "to a four-part forensic dossier examining institutional enforcement, the\n"
+        "lesbian continuum, and heteronormative school rituals.\n\n"
+        "- Detail economic and social coercion vs innate sexual preference.\n"
+        "- Add scenario box analyzing the Senior Formal and sex education canons.\n"
+        "- Audit heterosexual agency erasure, desexualization, and modern shifts.\n"
+        "- Update Master Bibliography with Rich (1980).\n"
         "- Ensure all HTML markup remains 100% free of citation tags."
     )
 
