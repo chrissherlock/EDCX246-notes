@@ -92,7 +92,7 @@
             border-left: 4px solid var(--primary);
             border-radius: 6px;
             padding: 14px 18px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
         .intro-card svg {
             flex-shrink: 0;
@@ -105,6 +105,44 @@
             color: #44403c;
             line-height: 1.6;
             text-align: justify;
+        }
+        /* Table of Contents Styling */
+        .toc-card {
+            background-color: var(--bg-banner);
+            border: 1px solid #fed7aa;
+            border-left: 4px solid var(--accent-orange);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+        }
+        .toc-card h3 {
+            font-size: 1.02rem;
+            color: var(--primary-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .toc-grid {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 20px;
+        }
+        .toc-grid li {
+            font-size: 0.88rem;
+        }
+        .toc-grid a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.15s ease-in-out;
+        }
+        .toc-grid a:hover {
+            color: var(--accent-orange);
+            text-decoration: underline;
         }
         .forensic-entry {
             margin-bottom: 20px;
@@ -354,6 +392,9 @@
             border-color: var(--primary);
         }
         @media (max-width: 768px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
             .camp-cards {
                 grid-template-columns: 1fr;
             }
@@ -377,6 +418,7 @@
         @media print {
             body { padding: 12px; font-size: 9.5pt; }
             .intro-card { break-inside: avoid; page-break-inside: avoid; }
+            .toc-card { break-inside: avoid; page-break-inside: avoid; }
             .forensic-entry { break-inside: avoid; page-break-inside: avoid; border: 1px solid #d6d3d1; }
             .tooltip-term { border-bottom: none; }
             .counter-tradition-box { break-inside: avoid; page-break-inside: avoid; }
@@ -421,8 +463,23 @@
         </p>
     </div>
 
+    <!-- TABLE OF CONTENTS NAVIGATION CARD -->
+    <nav class="toc-card" aria-label="Table of Contents">
+        <h3>Table of Contents: Exam Revision Modules</h3>
+        <ul class="toc-grid">
+            <li><a href="#section-1">1. Social Class &amp; Stratification</a></li>
+            <li><a href="#section-2">2. Race, Ethnicity &amp; Indigeneity</a></li>
+            <li><a href="#section-3">3. Gender &amp; Sexualities</a></li>
+            <li><a href="#section-4">4. Governance &amp; Subjectivity</a></li>
+            <li><a href="#section-5">5. Neoliberalism &amp; Datafication</a></li>
+            <li><a href="#section-6">6. Culture &amp; Technology</a></li>
+            <li><a href="#section-7">7. Philosophy, Law &amp; Rights</a></li>
+            <li><a href="#master-bibliography">Master Bibliography</a></li>
+        </ul>
+    </nav>
+
     <!-- 1. SOCIAL CLASS & STRATIFICATION -->
-    <section>
+    <section id="section-1">
         <h2>1. Social Class &amp; Educational Stratification</h2>
         <h3 class="tradition-header">The Bourdieusian Paradigm (Pierre Bourdieu &amp; Jean-Claude Passeron)</h3>
 
@@ -734,7 +791,7 @@
     </section>
 
     <!-- 2. RACE, ETHNICITY & INDIGENEITY -->
-    <section>
+    <section id="section-2">
         <h2>2. Race, Ethnicity &amp; Indigeneity</h2>
         <h3 class="tradition-header">Postcolonial &amp; Critical Race Paradigms</h3>
 
@@ -768,7 +825,7 @@
     </section>
 
     <!-- 3. GENDER & SEXUALITIES -->
-    <section>
+    <section id="section-3">
         <h2>3. Gender &amp; Sexualities</h2>
         <h3 class="tradition-header">Structural Gender Orders &amp; Poststructuralist Performativity</h3>
 
@@ -802,7 +859,7 @@
     </section>
 
     <!-- 4. GOVERNANCE & SUBJECTIVITY -->
-    <section>
+    <section id="section-4">
         <h2>4. Governance, Surveillance &amp; Subjectivity</h2>
         <h3 class="tradition-header">The Foucaultian Architecture of Power</h3>
 
@@ -843,7 +900,7 @@
     </section>
 
     <!-- 5. NEOLIBERALISM & DATAFICATION -->
-    <section>
+    <section id="section-5">
         <h2>5. Neoliberalism &amp; Datafication</h2>
         <h3 class="tradition-header">Marketization, Managerialism &amp; Platform Capitalism</h3>
 
@@ -877,7 +934,7 @@
     </section>
 
     <!-- 6. CULTURE & TECHNOLOGY -->
-    <section>
+    <section id="section-6">
         <h2>6. Culture &amp; Technology</h2>
         <h3 class="tradition-header">Media Studies, Subcultural Agency &amp; Cognitive Ecology</h3>
 
@@ -911,7 +968,7 @@
     </section>
 
     <!-- 7. PHILOSOPHY, LAW & RIGHTS -->
-    <section>
+    <section id="section-7">
         <h2>7. Philosophy, Law &amp; Educational Rights</h2>
         <h3 class="tradition-header">Critical Praxis, Ethics &amp; Jurisprudence</h3>
 
@@ -952,7 +1009,7 @@
     </section>
 
     <!-- MASTER FORMAL BIBLIOGRAPHY -->
-    <section class="biblio-section">
+    <section id="master-bibliography" class="biblio-section">
         <h2>Master Bibliography: Primary Sources &amp; Critical References</h2>
         <ul class="biblio-list">
             <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change: Papers in the Sociology of Education</em> (pp. 71–112). London: Tavistock Publications.</li>
