@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with the expanded standalone critical synthesis
+"""Regenerate core-concepts.html with the added Critical Synthesis section card
 
-section card for Sociolinguistic & Resistance Paradigms under Section 1,
+for Sociolinguistic & Resistance Paradigms, maintaining all separated entries,
+Max Weber in the Master Bibliography, and clean markup free of citation tags,
 and sync updates to the main branch via git.
 """
 
@@ -869,6 +870,29 @@ def produce_complete_html_document() -> str:
             </div>
         </div>
 
+        <!-- STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON SOCIOLINGUISTIC & RESISTANCE PARADIGMS -->
+        <div class="textbook-impact-box">
+            <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em></h4>
+            <p>
+                <strong>How do Sociolinguistic &amp; Resistance Paradigms impact the thesis of <em>Making Sense of Mass Education</em>?</strong><br>
+                They provide essential micro-level and subcultural corrective lenses that complement structural class reproduction models:
+            </p>
+            <ul>
+                <li>
+                    <strong>How they SUPPORTS and Empowers the Textbook's Thesis:</strong>
+                    By moving beyond broad economic categories, Bernstein's linguistic codes and Willis's resistance ethnography expose the everyday classroom and subcultural mechanisms through which educational inequality is lived and reproduced. They explain why working-class children encounter friction not just through abstract economic barriers, but through daily communicative mismatches (Bernstein) and active peer-group alienation from school norms (Willis).
+                </li>
+                <li>
+                    <strong>How they CAUSES PROFOUND PROBLEMS for the Textbook:</strong>
+                    If uncritical, code theory can easily slip back into a harmful cultural deficit model if educators interpret restricted codes as genuine intellectual inferiority (which Labov decisively disproved). Similarly, romanticizing counter-school resistance as proto-revolutionary politics ignores its reactionary underbelly (sexism, racism) and risks trapping students in fatalistic self-exclusion.
+                </li>
+                <li>
+                    <strong>The Ultimate Verdict for Exam Success:</strong>
+                    These paradigms teach educators to recognize structural communication hurdles and respect student agency, while insisting that equity requires explicitly teaching dominant academic codes rather than abandoning disadvantaged students to linguistic relativism.
+                </li>
+            </ul>
+        </div>
+
         <div class="forensic-entry">
             <h4 class="concept-title">Social Closure (Max Weber)</h4>
             <p>
@@ -1272,14 +1296,14 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Split Social Closure and Credentialism into separate entries\n\n"
-        "Separate Max Weber (Social Closure) and Randall Collins (Credentialism)\n"
-        "into two distinct forensic entries in core-concepts.html, adding comprehensive\n"
-        "plain-English explanations of Neo-Weberian sociology, social closure, and human\n"
-        "capital theory while keeping all HTML markup free of citation tags."
+        "Add sociolinguistic critical synthesis and separated Weber/Collins entries\n\n"
+        "Incorporate a dedicated Critical Synthesis card for Sociolinguistic & Resistance\n"
+        "Paradigms, separate Max Weber (Social Closure) and Randall Collins (Credentialism)\n"
+        "into distinct entries, add Weber to the bibliography, and expand Residualisation\n"
+        "with School Effectiveness empirical evidence, keeping all HTML markup free of citation tags."
     )
 
-    sync_repository(repo_path=root_directory, commit_msg=commit_message)
+    sync_repository(repo_path=repo_path if 'repo_path' in locals() else root_directory, commit_msg=commit_message)
 
 
 if __name__ == "__main__":
