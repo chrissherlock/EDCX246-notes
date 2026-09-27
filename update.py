@@ -1,382 +1,77 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html to include ALL 7 comprehensive thematic categories
+"""Update Cultural Capital in core-concepts.html to a comprehensive 5-part
 
-while preserving the expanded Cultural Capital breakdown and editorial layout.
+diagnostic entry and synchronize via Git.
 """
 
 from pathlib import Path
+import re
 import subprocess
 import sys
 
 
-def generate_html_content() -> str:
-    lines = [
-        "<!DOCTYPE html>",
-        '<html lang="en">',
-        "<head>",
-        '    <meta charset="UTF-8">',
-        '    <meta name="viewport" content="width=device-width, initial-scale=1.0">',
-        "    <title>Core Sociological Concepts: EDCX246 Exam Revision Guide</title>",
-        "    <style>",
-        "        :root {",
-        '            --primary: #1e40af;',
-        '            --text-main: #1f2937;',
-        '            --text-muted: #4b5563;',
-        '            --border-color: #cbd5e1;',
-        "        }",
-        "        body {",
-        '            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;',
-        "            line-height: 1.7;",
-        "            max-width: 900px;",
-        "            margin: 0 auto;",
-        "            padding: 40px 24px;",
-        "            color: var(--text-main);",
-        "            background-color: #ffffff;",
-        "        }",
-        "        h1, h2, h3 {",
-        "            color: var(--primary);",
-        "            font-weight: 700;",
-        "        }",
-        "        h1 {",
-        "            font-size: 2.2rem;",
-        "            border-bottom: 3px solid var(--primary);",
-        "            padding-bottom: 12px;",
-        "            margin-bottom: 20px;",
-        "        }",
-        "        h2 {",
-        "            font-size: 1.4rem;",
-        "            color: var(--primary);",
-        "            margin-top: 48px;",
-        "            margin-bottom: 16px;",
-        "            border-bottom: 2px solid var(--border-color);",
-        "            padding-bottom: 6px;",
-        "            text-transform: uppercase;",
-        "            letter-spacing: 0.03em;",
-        "        }",
-        "        h3 {",
-        "            font-size: 1.1rem;",
-        "            color: #1e3a8a;",
-        "            margin-top: 24px;",
-        "            margin-bottom: 6px;",
-        "        }",
-        "        p.intro {",
-        "            font-size: 1.05rem;",
-        "            color: var(--text-muted);",
-        "            margin-bottom: 36px;",
-        "            text-align: justify;",
-        "        }",
-        "        .concept-entry {",
-        "            margin-bottom: 28px;",
-        "        }",
-        "        .concept-entry p {",
-        "            margin: 0 0 12px 0;",
-        "            font-size: 0.96rem;",
-        "            text-align: justify;",
-        "            color: #334155;",
-        "        }",
-        "        .concept-entry ul {",
-        "            margin: 8px 0 14px 20px;",
-        "            font-size: 0.95rem;",
-        "            color: #334155;",
-        "            line-height: 1.6;",
-        "        }",
-        "        .concept-entry li {",
-        "            margin-bottom: 6px;",
-        "            text-align: justify;",
-        "        }",
-        "        .back-link {",
-        "            display: inline-block;",
-        "            margin-top: 40px;",
-        "            color: var(--primary);",
-        "            text-decoration: none;",
-        "            font-weight: 600;",
-        "        }",
-        "        .back-link:hover {",
-        "            text-decoration: underline;",
-        "        }",
-        "        @media print {",
-        "            body { padding: 12px; font-size: 10pt; }",
-        "            .concept-entry { break-inside: avoid; page-break-inside: avoid; }",
-        "        }",
-        "    </style>",
-        "</head>",
-        "<body>",
-        "",
-        "    <h1>EDCX246 Exam Revision Guide: Core Sociological Concepts</h1>",
-        '    <p class="intro">',
-        "        This reference document provides a detailed editorial breakdown of the primary <strong>Core Sociological Concepts</strong> covered in <em>Making Sense of Mass Education</em> (4th Edition). Each entry explores the theoretical mechanism of the concept and its specific institutional function within schools.",
-        "    </p>",
-        "",
-        "    <!-- 1. SOCIAL CLASS & INEQUALITY -->",
-        "    <section>",
-        "        <h2>1. Social Class &amp; Inequality</h2>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Cultural Capital</h3>",
-        "            <p>Cultural capital refers to the non-financial social assets—such as linguistic fluency, style, manners, and academic credentials—that individuals inherit from their family background and deploy to navigate social and educational hierarchies. Mainstream schooling implicitly rewards middle-class cultural capital while misrecognizing working-class vernaculars as deficits, thereby committing <strong>symbolic violence</strong> and converting class privilege into legitimate academic merit.</p>",
-        "            <p><strong>History &amp; Origins:</strong> The concept of cultural capital (<em>le capital culturel</em>) emerged from Pierre Bourdieu and Jean-Claude Passeron's empirical investigations into post-WWII French education during the 1960s. At the time, French technocrats argued that expanding university access and eliminating tuition fees would create a pure, democratic meritocracy. However, empirical surveys revealed a glaring contradiction: despite free tuition, working-class students continued to fail or drop out at drastically higher rates than bourgeois youth. Traditional Marxist theory attributed class reproduction solely to economic capital (money and property), but Bourdieu realized this failed to explain why a working-class student with a middle-class income still struggled with the implicit linguistic codes, aesthetic expectations, and examination styles of the academy. To solve this empirical puzzle, Bourdieu expanded Karl Marx's definition of capital beyond economics, reasoning that culture itself could function as an invisible currency. The term was formally introduced in print in their 1973 essay <em>'Cultural Reproduction and Social Reproduction'</em> and later refined into its three distinct states (embodied, objectified, institutionalized) in Bourdieu's 1986 essay <em>'The Forms of Capital'</em>.</p>",
-        "            <p><strong>Detailed Theoretical Breakdown:</strong> Originally theorized by French sociologist Pierre Bourdieu in works such as <em>Reproduction in Education, Society and Culture</em> (1977) and <em>Distinction</em> (1984), cultural capital refers to the non-financial social assets that an individual inherits, accumulates, and deploys to navigate social structures. Bourdieu conceptualized cultural capital as a vital alternative to purely economic explanations of class stratification, demonstrating that class advantage is sustained not just by bank accounts and property ownership, but by the subtle, embodied inheritance of culture, knowledge, and style. Bourdieu categorized cultural capital into three distinct, interdependent forms:</p>",
-        "            <ul>",
-        "                <li><strong>Embodied Capital (<em>État Incorporé</em>):</strong> Long-lasting dispositions of the mind and body. This includes linguistic fluency, syntax, accent, bodily posture, gait, table manners, aesthetic preferences, and cultural competence. It cannot be instantly transmitted as a gift or purchased; it requires long-term, subconscious cultural absorption through family socialization and class milieu.</li>",
-        "                <li><strong>Objectified Capital (<em>État Objectivé</em>):</strong> Cultural goods and physical artifacts—such as classical literature, fine art collections, musical instruments, scholarly libraries, scientific equipment, and digital or technological apparatuses. While these goods can be legally purchased if one possesses economic capital, they can only be truly <em>consumed</em> and appreciated if the individual already possesses the requisite embodied capital (the cognitive schemas to decode them).</li>",
-        "                <li><strong>Institutionalized Capital (<em>État Institutionalisé</em>):</strong> Legally recognized academic credentials, university degrees, and professional certifications. Bourdieu treated institutionalized capital as a certificate of cultural competence that confers formal, guaranteed market value, transforming inherited embodied capital into officially sanctioned currency that can be exchanged directly on the occupational labor market.</li>",
-        "            </ul>",
-        "            <p><strong>Operational Role in Schooling:</strong> Mainstream schooling operates on the structural fiction of formal neutrality and universal meritocracy. In practice, however, educational institutions implicitly demand and reward the specific linguistic codes (Basil Bernstein's <em>elaborated codes</em>), elite aesthetic preferences, behavioral interaction styles, and psychological dispositions associated with the middle and ruling classes.</p>",
-        "            <p>When working-class students enter the classroom equipped with different, yet equally rich, vernaculars and forms of cultural knowledge, schools systematically <em>misrecognize</em> their inherited disadvantage as an innate intellectual deficit, personal motivational failure, or domestic deprivation. By treating dominant cultural capital as the universal yardstick of 'merit,' schools commit <strong>symbolic violence</strong>—legitimating class inequality and transmitting privilege across generations under the disarming guise of objective academic success.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Habitus</h3>",
-        "            <p>A Bourdieusian concept describing deeply ingrained, subconscious dispositions, bodily postures, values, and internalized expectations acquired through long-term exposure to a specific social class position.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Habitus shapes how students perceive their place in the educational world. Working-class students frequently experience institutional alienation because their embodied dispositions clash with the implicit middle-class culture of the school, influencing academic engagement and post-school aspirations.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Symbolic Violence</h3>",
-        "            <p>The subtle, unacknowledged imposition of dominant ruling-class cultural standards as universal objective norms, enacted through the complicity of those who suffer from it.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> It occurs when schools devalue working-class culture, language codes, and history, causing marginalized students to internalize their institutional underperformance as a personal intellectual failure rather than a structural injustice.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Social Closure &amp; Credentialism</h3>",
-        "            <p>Drawing on Max Weber, social closure refers to exclusionary processes where dominant status groups monopolize credentials and cultural prestige. Credentialism is the inflation of educational requirements used as gatekeeping currency.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> High-status groups deliberately inflate educational qualification thresholds (e.g., requiring postgraduate degrees or elite school pedigrees) to restrict working-class entry into lucrative professional domains, protecting inherited privilege under the guise of meritocratic standards.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Restricted vs. Elaborated Codes</h3>",
-        "            <p>Basil Bernstein's linguistic theory distinguishing context-dependent, communal speech forms drawing on shared local assumptions (restricted codes) from universalistic, abstract language structures (elaborated codes).</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Because school curricula and examinations operate exclusively in elaborated codes, working-class children—who are perfectly articulate in their home codes—face structural pedagogical disadvantages because school language is culturally foreign to their daily experience.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Counter-School Resistance</h3>",
-        "            <p>Paul Willis's ethnographic concept describing how working-class youth actively construct anti-school subcultures celebrating manual labor, physical solidarity, and irreverent defiance against scholastic authority.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> The lads' active cultural resistance sees through meritocratic myths but paradoxically seals their own socioeconomic reproduction, guiding them directly into the manual industrial labor they celebrate.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Residualisation</h3>",
-        "            <p>The downward structural spiral of neighborhood state public schools driven by middle-class market exit, private school subsidization, and selective enrollment policies.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> As privileged families use their capital to exit local comprehensive schools, under-resourced public schools are left to shoulder high concentrations of poverty, developmental trauma, and learning difficulties, transforming them into residual safety nets.</p>",
-        "        </div>",
-        "    </section>",
-        "",
-        "    <!-- 2. RACE, ETHNICITY & INDIGENEITY -->",
-        "    <section>",
-        "        <h2>2. Race, Ethnicity &amp; Indigeneity</h2>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Colonisation of the Mind</h3>",
-        "            <p>Frantz Fanon’s postcolonial concept describing how assimilationist schooling operates as a potent instrument of psychological subjugation.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Colonial education systematically divorces minority and First Nations youth from their ancestral languages and oral histories, compelling them to measure their human worth against the colonizer's linguistic, moral, and cultural standards, thereby internalizing perceived inferiority.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Epistemic Violence</h3>",
-        "            <p>Gayatri Spivak’s term for the systematic silencing, marginalization, and invalidation of subaltern and non-Western knowledge traditions within dominant institutional discourses.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> It manifests through the active suppression of Indigenous epistemologies and languages within state curricula, establishing Eurocentric knowledge as universal objective reality while rendering subaltern histories structurally inaudible.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Institutional Racism &amp; Whiteness as Policy</h3>",
-        "            <p>David Gillborn's Critical Race Theory framework showing that racism in education is not reducible to isolated individual bigotry, but is an institutionalized policy architecture.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Whiteness functions as an unexamined, self-sustaining normative baseline. School systems maintain white racial advantage through mundane routines, ability streaming, subjective discipline, and culturally biased assessment regimes.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Culturally Sustaining Pedagogy</h3>",
-        "            <p>An equity-driven pedagogical framework requiring educators to reject deficit thinking, eliminate racially biased tracking, and actively center Indigenous and minority knowledge systems as sovereign intellectual traditions.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Replaces tokenistic \"add-and-stir\" multiculturalism with community co-designed syllabi, rejecting the soft bigotry of low expectations and partnering authentically with community Elders and knowledge holders.</p>",
-        "        </div>",
-        "    </section>",
-        "",
-        "    <!-- 3. GENDER & SEXUALITIES -->",
-        "    <section>",
-        "        <h2>3. Gender &amp; Sexualities</h2>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Gender Regines &amp; Hegemonic Masculinity</h3>",
-        "            <p>Drawing on Raewyn Connell, the gender order describes a relational hierarchy of power where hegemonic masculinity sits at the apex—lionized through physical dominance, emotional stoicism, and competitiveness.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Schools operate as active gender regimes. Through formal tracking, sports cultures, and playground policing, schools actively manufacture gender identities, rewarding aggressive conformity to hegemonic ideals while marginalizing non-conforming peers.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Gender Performativity</h3>",
-        "            <p>Judith Butler's poststructuralist theory that gender is not a stable biological essence, but a compulsory, ritualized repetition of bodily acts and linguistic codes continually enforced through institutional surveillance.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Schools operate as hyper-performative crucibles where everyday interactions (uniform codes, queueing, peer policing) function as disciplinary citations that naturalize the gender binary, punishing deviations with exclusion or ridicule.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Compulsory Heterosexuality</h3>",
-        "            <p>Adrienne Rich's theory that heterosexuality is an institutionalized political apparatus designed to enforce social compliance, patriarchal domination, and relational conformity.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Sustained through the heteronormative hidden curriculum—including administrative enrollment forms, prom rituals, reading lists, and casual staffroom assumptions—compulsory heterosexuality marginalizes LGBTQ+ experiences and enforces conformity.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Minority Stress &amp; Affirmative Pedagogy</h3>",
-        "            <p>Minority stress denotes the chronic psychological distress experienced by LGBTQ+ youth due to hostile school climates and institutional silencing.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Proactive affirmative pedagogy counters this by actively embedding diverse sexualities and genders into academic curricula, maintaining zero tolerance for slurs, and protecting student privacy and self-identification.</p>",
-        "        </div>",
-        "    </section>",
-        "",
-        "    <!-- 4. GOVERNANCE & SUBJECTIVITY -->",
-        "    <section>",
-        "        <h2>4. Governance &amp; Subjectivity</h2>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Disciplinary Power &amp; Docile Bodies</h3>",
-        "            <p>Michel Foucault's analysis of diffuse, continuous institutional power that operates not by destroying the body, but by meticulously training, organizing, and optimizing it.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Disciplinary power targets minute physical postures and spatial locations to produce \"docile bodies\" (corps dociles)—individuals maximized for economic productivity while remaining politically submissive and obedient.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>The Panopticon &amp; Internalized Gaze</h3>",
-        "            <p>Jeremy Bentham's architectural surveillance model adapted by Foucault. The unverifiable possibility of continuous observation compels inmates to police their own conduct.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Panoptic architecture (corridors, glass windows, podiums) detaches surveillance from any individual observer, causing students to internalize the institutional gaze and transform external coercion into self-policing and self-discipline.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>The Disciplinary Triad</h3>",
-        "            <p>Foucault's core instruments of institutional control: <em>hierarchical observation</em> (surveillance pyramids), <em>normalizing judgment</em> (penalizing deviations from an artificial norm), and <em>the examination</em> (quantifying individuals).</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Through standardized testing, report cards, and permanent behavioral files, the examination objectifies and individualizes each student, transmuting living human beings into quantifiable administrative cases.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Governmentality &amp; Technologies of the Self</h3>",
-        "            <p>Governing \"at a distance\" by structuring human agency. Rather than using overt physical force, power subtly guides the field of possible human actions.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Initiatives like self-reflection rubrics and goal-setting diaries co-opt student interiority, training children to become self-auditing entrepreneurs of their own compliance under the banner of \"personal responsibility.\"</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Digital Panopticon &amp; Dataveillance</h3>",
-        "            <p>Pervasive algorithmic tracking infrastructures that monitor, log, and analyze student behavioral and academic data across digital networks.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> LMS click-tracking, behavioral apps (ClassDojo), and biometrics extend institutional surveillance into private domestic spaces, conditioning youth to accept permanent algorithmic audit as normal.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>The Psy-Complex &amp; Medicalisation of Deviance</h3>",
-        "            <p>Nikolas Rose's psy-complex psychologises structural school frictions into internal mental deficits. Peter Conrad's medicalisation of deviance reframes classroom non-compliance as psychiatric pathology (e.g., ADHD).</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Transmuting \"badness\" into \"sickness\" depoliticizes institutional conflict, absolving schools of interrogating rigid timetables or uninspired curricula by pathologizing individual neurochemistry.</p>",
-        "        </div>",
-        "    </section>",
-        "",
-        "    <!-- 5. NEOLIBERALISM & DATAFICATION -->",
-        "    <section>",
-        "        <h2>5. Neoliberalism &amp; Datafication</h2>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Horizontal Competition</h3>",
-        "            <p>Zero-sum commercial rivalry between neighboring educational institutions operating at the exact same tier within a regional catchment.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Forces neighboring state and private schools into commercial conflict for student numbers, driving resources into marketing while incentivizing \"cream-skimming\" high achievers and shedding complex-needs learners.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Performativity &amp; Audit Culture</h3>",
-        "            <p>Stephen Ball's concept describing how neoliberal governance replaces professional trust with corporate managerialism, key performance indicators, and public surveillance.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Public league tables, NAPLAN rankings, and My School audit institutions, forcing schools into \"fabrication\"—narrowing curricula to test drills and subordinating pedagogy to data targets.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Governance by Numbers &amp; Accountability Washback</h3>",
-        "            <p>Bob Lingard's term for the state steering education remotely via census testing data. Accountability washback describes the negative classroom distortions induced by high-stakes testing.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Standardized testing drives curriculum narrowing, test-drilling, and the unethical triage of \"bubble\" students positioned just below reporting benchmarks, devaluing non-tested domains like the arts.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Surveillance Capitalism</h3>",
-        "            <p>Shoshana Zuboff's framework describing how commercial digital platforms extract human behavioral surplus as raw data for behavioral modification and corporate profit.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> EdTech platform monopolies enclose public school infrastructure, harvesting sensitive student learning analytics for commercial profit and normalizing continuous algorithmic monitoring.</p>",
-        "        </div>",
-        "    </section>",
-        "",
-        "    <!-- 6. CULTURE & TECHNOLOGY -->",
-        "    <section>",
-        "        <h2>6. Culture &amp; Technology</h2>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Active Audience Theory &amp; Polysemy</h3>",
-        "            <p>Stuart Hall's encoding/decoding model showing that media texts are polysemic (open to multiple interpretations) and actively decoded by audiences rather than passively absorbed.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Proves that school students are not empty vessels brainwashed by media feeds, but active interpreters who negotiate, parody, and resist media narratives through dominant, negotiated, or oppositional stances.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Semiotic Democracy &amp; Textual Poaching</h3>",
-        "            <p>John Fiske's concept that ordinary youth actively seize commercial cultural products (memes, fashion, music), subverting and remixing corporate signs to construct autonomous subcultural meanings.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Validates youth cultural agency against Frankfurt School pessimism, showing how students resist corporate co-optation by generating alternative meanings within popular culture.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Intertextuality &amp; Moral Panics</h3>",
-        "            <p>Intertextuality (Kristeva) denotes how every text is a mosaic of citations echoing prior discourse. Moral panics (Cohen) are media-manufactured societal anxieties framing youth deviance or teacher failure as existential threats.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Media outlets manufacture moral panics around school standards to justify top-down regulatory interventions, while youth culture relies on intertextual digital codes and sampling.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Media Ecology &amp; The Social Model of Disability</h3>",
-        "            <p>Media ecology (Postman) views technical change as an ecological Faustian bargain (giving convenience while altering cognitive habits). Mike Oliver's social model views disability as a structural mismatch between students and inaccessible mediums.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Highlights the cognitive costs of digital distraction while championing Universal Design for Learning (UDL) and assistive technologies (screen readers) to dismantle disabling classroom barriers.</p>",
-        "        </div>",
-        "    </section>",
-        "",
-        "    <!-- 7. PHILOSOPHY, LAW & RIGHTS -->",
-        "    <section>",
-        "        <h2>7. Philosophy, Law &amp; Rights</h2>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Critical Pedagogy &amp; Praxis</h3>",
-        "            <p>Paulo Freire's critique of the domesticating \"banking model of education\" in favor of problem-posing dialogue, conscientisation (critical consciousness), and praxis (uniting reflection and action for liberation).</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Replaces passive rote transmission with dialogical co-investigation of reality, empowering learners to transform oppressive social structures and democratize the classroom.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Normative Ethics &amp; Relational Care</h3>",
-        "            <p>Kantian deontology (treating students as ends, not means), utilitarian consequentialism, Aristotelian phronesis (practical wisdom), and Nel Noddings' relational ethics of care centered on attentiveness and trust.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Prohibits using students as instrumental stepping stones for league tables while demanding that teachers balance statutory compliance with empathetic, responsive pastoral care.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Non-Delegable Duty of Care &amp; Negligence</h3>",
-        "            <p>The common law obligation owed by schools to take reasonable precautions against foreseeable risks of physical and psychiatric harm. Because the duty is non-delegable, school authorities cannot contract out of their responsibility.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Establishes the legal floor for teachers, requiring active supervision across high-risk environments (laboratories, playgrounds, excursions) to avoid civil tort liability.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>UNCRC &amp; Participatory Rights (Art. 12)</h3>",
-        "            <p>The 1989 UN Convention on the Rights of the Child codifying youth as rights-bearers across Provision, Protection, and Participation. Article 12 guarantees children the right to express views in all matters affecting them.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Challenges paternalistic school cultures by demanding authentic student voice in pedagogical and disciplinary governance rather than decorative, tokenistic student councils.</p>",
-        "        </div>",
-        "",
-        '        <div class="concept-entry">',
-        "            <h3>Regimes of Truth &amp; Powerful Knowledge</h3>",
-        "            <p>Foucault's regimes of truth and power/knowledge hierarchies show how curricula validate dominant discourses. Social Realism (Michael Young) defends accessing \"powerful knowledge\"—specialized disciplinary knowledge.</p>",
-        "            <p><strong>Operational Role in Schooling:</strong> Demands that educators reject both colonial denialism and deficit-driven soft bigotry, equipping marginalized students with powerful scientific and analytical tools to transform society.</p>",
-        "        </div>",
-        "    </section>",
-        "",
-        '    <a href="index.html" class="back-link">&larr; Return to Main Exam Revision Guide</a>',
-        "",
-        "</body>",
-        "</html>",
-    ]
-    return "\n".join(lines)
+def build_cultural_capital_html() -> str:
+    return """        <div class="concept-entry">
+            <h3>Cultural Capital (Pierre Bourdieu)</h3>
+            <p>Cultural capital represents the non-financial social assets—embodied linguistic fluency, academic mannerisms, aesthetic dispositions, and formal credentials—that individuals inherit through class socialization and deploy to navigate social hierarchies. Rather than reflecting innate cognitive ability, it operates as an institutionalized class currency that educational systems covertly demand and reward.</p>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> The concept emerged from empirical investigations conducted across post-WWII French education during the 1960s by Pierre Bourdieu and Jean-Claude Passeron. State technocrats had eliminated university tuition fees, anticipating that open financial access would establish a pure meritocracy. However, statistical surveys revealed a glaring contradiction: despite free tuition, working-class and peasant students continued to fail and drop out at drastically higher rates than bourgeois cohorts. Classical Marxist theory attributed class reproduction almost exclusively to economic capital (property, wealth, and ownership of the means of production), but Bourdieu recognized that financial explanations could not account for why working-class students with adequate funding still struggled with the implicit cultural demands of the academy. To resolve this breakdown, Bourdieu expanded the definition of capital beyond economics into the cultural realm, demonstrating that schools trade in cultural wealth. The term was formally introduced in print in the 1973 essay <em>Cultural Reproduction and Social Reproduction</em> and later codified into its three distinct states in the 1986 essay <em>The Forms of Capital</em>.</p>
+
+            <p><strong>2. Internal Mechanics &amp; Three States:</strong> Bourdieu established that cultural capital exists and circulates in three interrelated states:</p>
+            <ul>
+                <li><strong>Embodied State (<em>État Incorporé</em>):</strong> Long-lasting dispositions of the mind and body. This encompasses linguistic syntax, ease with abstract concepts, pronunciation, bodily posture, aesthetic tastes, and conversational confidence. Embodied capital cannot be transmitted overnight or purchased as a commodity; it requires slow, subconscious habituation through early family socialization.</li>
+                <li><strong>Objectified State (<em>État Objectivé</em>):</strong> Cultural goods and physical artifacts—such as classical literature, scientific instruments, scholarly libraries, artwork, and technological tools. While these goods can be bought with money, their academic utility requires the prerequisite embodied capital needed to decode and appreciate them.</li>
+                <li><strong>Institutionalized State (<em>État Institutionalisé</em>):</strong> Formally certified academic degrees, diplomas, and credentials. This state converts embodied competence into state-recognized currency with guaranteed exchange value in the labor market, allowing elites to convert cultural fluency into economic reward.</li>
+            </ul>
+            <p>Crucially, cultural capital operates in relation to a <em>field</em> (a structured social arena of competition). In the educational field, middle- and upper-class cultural capital is treated as the natural, universal standard of competence.</p>
+
+            <p><strong>3. Diagnostic Strengths in Schooling:</strong> The concept provides immense explanatory leverage by exposing the structural mechanics of educational reproduction:</p>
+            <ul>
+                <li><em>Dismantling the Meritocracy Myth:</em> It reveals that academic success is largely the conversion of inherited cultural familiarity into academic merit.</li>
+                <li><em>Unmasking Misrecognition and Symbolic Violence:</em> Schools systematically misrecognize inherited class advantages as innate intellectual brilliance, while treating working-class vernaculars and cultural knowledge as cognitive deficits. By compelling marginalized students to internalize failure as personal inadequacy, schools commit symbolic violence.</li>
+                <li><em>Explaining Policy Inadequacy:</em> It demonstrates why purely material interventions (vouchers, fee waivers, hardware rollouts) consistently fail to close equity gaps if the implicit cultural expectations of curricula and assessments remain unexamined.</li>
+            </ul>
+
+            <p><strong>4. Critical Vulnerabilities &amp; Blind Spots:</strong> Despite its diagnostic power, the concept possesses significant theoretical limitations:</p>
+            <ul>
+                <li><em>Structural Fatalism:</em> Bourdieu's model operates as an almost unbroken cycle of reproduction, leaving little room for student agency, social mobility, or the documented ability of transformative teachers to break intergenerational disadvantage.</li>
+                <li><em>The "Delpit Dilemma" &amp; Relativism:</em> Characterizing standard academic English, formal rhetoric, and abstract mathematics purely as arbitrary ruling-class power tools risks sliding into anti-intellectual relativism. As educational scholar Lisa Delpit argues, disadvantaged students already possess rich local vernaculars; what they require from public education is explicit, systematic instruction in the "culture of power" and powerful disciplinary knowledge to achieve social mobility, not romantic validation that leaves them excluded from university access.</li>
+                <li><em>Empirical Quantification:</em> Unlike financial wealth, cultural capital is notoriously difficult to isolate and quantify, occasionally blurring into circular reasoning where academic success is explained by cultural capital, and cultural capital is proven by academic success.</li>
+            </ul>
+        </div>"""
 
 
-def main() -> None:
-    root_directory = Path(__file__).resolve().parent
-    target_file = root_directory / "core-concepts.html"
+def update_core_concepts_file(file_path: Path) -> None:
+    if not file_path.exists():
+        print(f"Error: Target file '{file_path.resolve()}' not found.", file=sys.stderr)
+        sys.exit(1)
 
-    target_file.write_text(generate_html_content(), encoding="utf-8")
-    print(f"Successfully generated full core-concepts.html: {target_file.resolve()}")
+    content = file_path.read_text(encoding="utf-8")
 
+    # Match the entire Cultural Capital concept-entry block
+    pattern = re.compile(
+        r'<div class="concept-entry">\s*<h3>Cultural Capital.*?</div>',
+        re.DOTALL
+    )
+
+    if not pattern.search(content):
+        print("Error: Could not locate Cultural Capital entry in core-concepts.html.", file=sys.stderr)
+        sys.exit(1)
+
+    updated_content = pattern.sub(build_cultural_capital_html(), content, count=1)
+    file_path.write_text(updated_content, encoding="utf-8")
+    print(f"Successfully updated Cultural Capital in: {file_path.resolve()}")
+
+
+def execute_git_sync(repo_path: Path, commit_msg: str) -> None:
     commands = [
         ["git", "add", "-A"],
-        ["git", "commit", "-m", "Restore all 7 thematic categories in core-concepts.html"],
+        ["git", "commit", "-m", commit_msg],
         ["git", "push", "origin", "main"],
     ]
 
     for cmd in commands:
-        result = subprocess.run(cmd, cwd=root_directory, capture_output=True, text=True)
+        result = subprocess.run(cmd, cwd=repo_path, capture_output=True, text=True)
         if result.returncode != 0:
             if "nothing to commit" in result.stdout or "nothing to commit" in result.stderr:
                 print("Working tree clean; nothing new to commit.")
@@ -387,6 +82,26 @@ def main() -> None:
             print(result.stdout.strip())
 
     print("Git repository sync complete.")
+
+
+def main() -> None:
+    root_directory = Path(__file__).resolve().parent
+    target_file = root_directory / "core-concepts.html"
+
+    update_core_concepts_file(target_file)
+
+    commit_message = (
+        "Expand Cultural Capital into comprehensive 5-part diagnostic entry\n\n"
+        "Upgrade the Cultural Capital section in core-concepts.html with a full\n"
+        "sociological breakdown covering its post-WWII empirical origins, the\n"
+        "three states of capital, field conversion, and critical blind spots.\n\n"
+        "- Trace historical genesis from post-WWII France to 1973/1986 works.\n"
+        "- Define embodied, objectified, and institutionalized capital states.\n"
+        "- Analyze institutional misrecognition and symbolic violence in schools.\n"
+        "- Critique theoretical fatalism and the Delpit Dilemma."
+    )
+
+    execute_git_sync(root_directory, commit_message)
 
 
 if __name__ == "__main__":
