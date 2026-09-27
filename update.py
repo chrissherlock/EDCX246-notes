@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Update the Symbolic Violence and Misrecognition entry in core-concepts.html
+"""Add a critical synthesis subsection to The Bourdieusian Paradigm in core-concepts.html
 
-to include Jacques Rancière in the primary entry-references block,
-and sync updates to the main branch via git.
+explaining how the counter-tradition praises, challenges, and complicates the
+thesis of Making Sense of Mass Education, and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -253,6 +253,23 @@ def produce_complete_html_document() -> str:
             text-align: left;
             color: #44403c;
         }
+        .textbook-impact-box {
+            margin-top: 18px;
+            padding: 14px 18px;
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 4px solid #d97706;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .textbook-impact-box h6 {
+            margin: 0 0 6px 0;
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
         .entry-references {
             margin-top: 14px;
             padding: 10px 14px;
@@ -366,6 +383,7 @@ def produce_complete_html_document() -> str:
             .forensic-entry { break-inside: avoid; page-break-inside: avoid; border: 1px solid #d6d3d1; }
             .tooltip-term { border-bottom: none; }
             .counter-tradition-box { break-inside: avoid; page-break-inside: avoid; }
+            .textbook-impact-box { break-inside: avoid; page-break-inside: avoid; }
         }
     </style>
 </head>
@@ -549,6 +567,31 @@ def produce_complete_html_document() -> str:
                 </div>
             </div>
 
+            <!-- SYNTHESIS: HOW THE COUNTER-TRADITION IMPACTS MAKING SENSE OF MASS EDUCATION -->
+            <div class="textbook-impact-box">
+                <h6>Critical Synthesis: Impact on <em>Making Sense of Mass Education</em></h6>
+                <p>
+                    <strong>Does the counter-tradition cause problems for the textbook, support its thesis, or both?</strong><br>
+                    It does <strong>both simultaneously</strong>, creating a powerful dialectical tension that defines rigorous sociological analysis:
+                </p>
+                <ul>
+                    <li>
+                        <strong>How it SUPPORTS the Textbook's Thesis:</strong>
+                        The textbook relies heavily on Bourdieu to dismantle naive, uncritical views of meritocracy (e.g., proving that equal funding
+                        does not equal equal outcomes). The structural diagnosis of cultural capital and symbolic violence gives the textbook its sharpest
+                        empirical tools for explaining persistent achievement gaps across socioeconomic lines.
+                    </li>
+                    <li>
+                        <strong>How it CAUSES PROBLEMS for the Textbook:</strong>
+                        When <em>Making Sense of Mass Education</em> adopts Bourdieu wholesale without the counter-tradition's warnings,
+                        it risks falling into <strong>pedagogical fatalism</strong> (believing that schools can never overcome class origins) and
+                        <strong>curricular relativism</strong> (dismissing rigorous academic knowledge as mere ruling-class ideology).
+                        As Young and Delpit demonstrate, treating all schooling as arbitrary class reproduction provides educators with an excuse
+                        to lower standards or abandon explicit instruction—ultimately harming the very disadvantaged students the textbook seeks to champion.
+                    </li>
+                </ul>
+            </div>
+
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
@@ -557,6 +600,10 @@ def produce_complete_html_document() -> str:
                     <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
                     <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
                     <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
+                    <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
+                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
+                    <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
+                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
                 </ul>
             </div>
         </div>
@@ -913,7 +960,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
             <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
             <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
-            <li><strong>Collins, R. (1979).</strong> <i>The Credential Society: An Historical Sociology of Education and Stratification</i>. New York: Academic Press.</li>
+            <li><strong>Collins, R. (1979).</strong> <em>The Credential Society: An Historical Sociology of Education and Stratification</em>. New York: Academic Press.</li>
             <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
             <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
             <li><strong>Fanon, F. (1967).</strong> <em>Black Skin, White Masks</em> (C. L. Markmann, Trans.). New York: Grove Press. (Original work published in French 1952).</li>
@@ -921,7 +968,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Freire, P. (1970).</strong> <em>Pedagogy of the Oppressed</em> (M. B. Ramos, Trans.). New York: Herder and Herder. (Original work published in Portuguese 1968).</li>
             <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
             <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
-            <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+            <li><strong>Young, M. (2008).</strong> <i>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</i>. London: Routledge.</li>
         </ul>
     </section>
 
@@ -959,14 +1006,15 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully updated Symbolic Violence references in: {target_file.resolve()}")
+    print(f"Successfully integrated textbook impact synthesis in: {target_file.resolve()}")
 
     commit_message = (
-        "Add Ranciere reference to Symbolic Violence entry references box\n\n"
-        "Include Jacques Rancière's 1983/2004 text in the entry-references block\n"
-        "for the Symbolic Violence and Misrecognition entry in core-concepts.html.\n\n"
-        "- Add Rancière bibliographic entry to Symbolic Violence entry references.\n"
-        "- Verify complete parity between entry-references and master bibliography."
+        "Add critical synthesis of counter-tradition impact on textbook thesis\n\n"
+        "Integrate a dedicated critical synthesis box into The Bourdieusian Paradigm\n"
+        "section of core-concepts.html. Analyze how the counter-tradition both\n"
+        "supports and challenges the thesis of Making Sense of Mass Education.\n\n"
+        "- Add textbook impact synthesis box detailing dual support and critique.\n"
+        "- Verify integration of all references and interactive elements."
     )
 
     sync_repository(root_directory, commit_message)
