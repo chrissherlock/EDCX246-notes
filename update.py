@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with fully harmonized function references,
+"""Upgrade the Social Closure and Credentialism entry in core-concepts.html
 
-incorporating all modular revisions, table of contents, and clean markup,
-and sync updates to the main branch via git.
+to include plain-English explanations of Neo-Weberian sociology, social closure,
+and the Human Capital vs. Credentialism debate, and sync updates to main via git.
 """
 
 from pathlib import Path
@@ -531,7 +531,7 @@ def generate_complete_html_document() -> str:
                 </li>
             </ul>
 
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the naive meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It accurately diagnoses how subjective, open-ended grading rubrics penalize working-class students for lacking conversational ease and bourgeois manual/linguistic mannerisms.</p>
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the naive meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It accurately diagnoses how subjective, open-ended grading rubrics penalize working-class students for lacking conversational ease and bourgeois mannerisms.</p>
 
             <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
             <ul>
@@ -1198,12 +1198,13 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Update Social Closure and Credentialism entry\n\n"
-        "Update the Social Closure and Credentialism entry to align with\n"
-        "Randall Collins's The Credential Society (1979), ensuring all\n"
-        "HTML markup remains completely free of citation tags.\n\n"
-        "- Add neo-Weberian gatekeeping and degree inflation mechanics.\n"
-        "- Ensure clean semantic presentation without citation tags."
+        "Clarify Symbolic Violence entry in core-concepts with plain English\n\n"
+        "Demystify the Symbolic Violence and Misrecognition dossier in\n"
+        "core-concepts.html using clear explanations of power without physical\n"
+        "force and arbitrary class rules mistaken for natural merit.\n\n"
+        "- Replace dense academic opening with plain-English breakdown.\n"
+        "- Add interactive tooltip popovers for key theoretical terms.\n"
+        "- Preserve master bibliography and clean markup."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
