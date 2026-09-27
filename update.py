@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Upgrade the Bernstein Restricted vs. Elaborated Codes entry in core-concepts.html
+"""Upgrade the Paul Willis Counter-School Resistance entry in core-concepts.html
 
 to plain-English mechanics, interactive tooltips, scenario boxes, and primary references,
 and sync updates to the main branch via git.
@@ -643,9 +643,9 @@ def produce_complete_html_document() -> str:
                     <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
                     <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
                     <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
-                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
-                    <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
-                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+                    <li><strong>Delpit, L. (1995).</strong> <i>Other People's Children: Cultural Conflict in the Classroom</i>. New York: The New Press.</li>
+                    <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
+                    <li><strong>Young, M. (2008).</strong> <i>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</i>. London: Routledge.</li>
                 </ul>
             </div>
         </div>
@@ -744,7 +744,7 @@ def produce_complete_html_document() -> str:
             </div>
         </div>
 
-        <!-- ENHANCED STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON MAKING SENSE OF MASS EDUCATION -->
+        <!-- STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON MAKING SENSE OF MASS EDUCATION -->
         <div class="textbook-impact-box">
             <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em></h4>
             <p>
@@ -823,9 +823,47 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Counter-School Resistance (Paul Willis)</h4>
-            <p>Paul Willis's ethnographic study (<em>Learning to Labour</em>, 1977) of working-class adolescent 'lads' constructing an anti-school subculture grounded in manual labor pride, physical solidarity, and opposition to institutional authority.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Directly countered Bourdieu's passive reproduction model by demonstrating agency. The lads saw through the meritocratic myth, correctly recognizing that hard academic work would not guarantee them middle-class parity.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Willis exposed a tragic paradox: the lads\' active, counter-hegemonic cultural resistance sealed their own educational failure, channeling them directly into the shop-floor exploitation they sought to validate. Furthermore, the subculture was steeped in virulent sexism, racism, and homophobia, complicating romanticized readings of anti-school resistance.</p>
+            <p>
+                Paul Willis's landmark ethnography
+                (<span class="tooltip-term" tabindex="0" data-tooltip="Learning to Labour (1977), studying working-class adolescent 'lads' in industrial England.">Learning to Labour, 1977</span>)
+                examines how working-class adolescent 'lads' construct an
+                <span class="tooltip-term" tabindex="0" data-tooltip="A peer group culture that actively rejects school authority, academic rules, and middle-class norms.">anti-school subculture</span>
+                grounded in manual labor pride, informal peer solidarity, and aggressive opposition to institutional authority.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The Ear'o vs. The Lad</strong>
+                Imagine two working-class teenagers inside a British secondary modern school:
+                <ul>
+                    <li><strong>The Conformist ("The Ear'o"):</strong> Plays by school rules, listens to teachers, and believes that working hard on academic assignments will earn him middle-class mobility.</li>
+                    <li><strong>The Rebel ("The Lad"):</strong> Rejects school rules as effeminate, authoritarian, and phony. He values physical toughness, practical jokes, avoiding academic work, and manual labor pride, anticipating the factory floor where he believes "real men" earn an honest wage.</li>
+                </ul>
+                The lads do not blindly swallow school propaganda; they actively decode the meritocratic promise and recognize it as a mirage for manual laborers.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Conducted in the mid-1970s amidst declining British manufacturing industries, Willis sought to resolve a glaring theoretical puzzle in reproduction theory: if schools are airtight machines that successfully brainwash children into accepting inequality, why do working-class youth often exhibit intense, organized, and creative hostility toward schooling? Classical Marxism posited that schools produced docile workers, but Willis observed that working-class lads actively formed a vibrant counter-culture that mocked academic authority long before stepping onto the factory floor.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Willis's ethnographic model operates through three core operational mechanisms:</p>
+            <ul>
+                <li><span class="tooltip-term" tabindex="0" data-tooltip="The capacity of working-class youth to pierce through official school ideology and see the limitations of meritocracy.">Cultural Penetration</span>: The lads achieve a partial, spontaneous insight into capitalist schooling. They see through the meritocratic myth, correctly recognizing that for sons of manual laborers, academic compliance rarely guarantees middle-class parity.</li>
+                <li><strong>Shop-Floor Masculinity:</strong> The subculture fuses manual labor pride with patriarchal machismo. Mental labor, sitting at a desk, and following school rules are coded as feminine, weak, and servile; physical labor, endurance, and informal peer solidarity are coded as authentic masculinity.</li>
+                <li><strong>Self-Exclusion:</strong> By actively rejecting academic learning and mocking conformist peers, the lads voluntarily participate in their own streaming, ensuring they exit school early and walk straight into shop-floor manual jobs.</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Shatters Bourdieu's assumption that working-class agents are passive, unresisting dupes caught in a total reproduction loop. It demonstrates that working-class youth possess critical agency, political intuition, and cultural creativity, recognizing structural hypocrisy where functionalists see only neutral sorting.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Tragic Paradox of Self-Damnation:</em> Willis exposed a heartbreaking sociological irony: the lads' active, counter-hegemonic cultural resistance sealed their own educational and economic entrapment. By celebrating anti-school defiance and manual pride, they cheerfully marched themselves straight into the exact capitalist exploitation and dead-end factory labor they thought they were outsmarting.</li>
+                <li><em>The Reactionary Underbelly:</em> The lads' counter-school subculture was intensely saturated with virulent sexism, racism, and homophobia. They bullied studious peers and female students ruthlessly, complicating romantic left-wing academic portrayals of working-class resistance as revolutionary politics.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House. <em>[The foundational ethnography of working-class counter-school resistance and cultural penetration]</em>.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -1118,17 +1156,16 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully upgraded Bernstein entry and synced repository: {target_file.resolve()}")
+    print(f"Successfully upgraded Paul Willis entry and synced repository: {target_file.resolve()}")
 
     commit_message = (
-        "Upgrade Bernstein Restricted vs Elaborated Codes entry to plain English\n\n"
-        "Transform the Basil Bernstein entry in core-concepts.html using plain-English\n"
-        "explanations, interactive tooltips, a concrete classroom scenario box,\n"
-        "and William Labov's linguistic counter-critique. Also add Bernstein and\n"
-        "Labov to the master bibliography.\n\n"
-        "- Upgrade Bernstein entry with interactive popovers and scenario box.\n"
-        "- Detail the Labovian linguistic critique against cultural deficit models.\n"
-        "- Add Bernstein (1971) and Labov (1972) to master bibliography."
+        "Upgrade Paul Willis Counter-School Resistance entry to plain English\n\n"
+        "Transform the Paul Willis entry in core-concepts.html using plain-English\n"
+        "explanations, interactive tooltips, a concrete scenario box comparing\n"
+        "conformist and rebel students, and deep forensic audit of the tragic paradox.\n\n"
+        "- Upgrade Willis entry with interactive popovers and scenario box.\n"
+        "- Detail cultural penetration and the tragic paradox of self-damnation.\n"
+        "- Verify complete integration across all modules."
     )
 
     sync_repository(root_directory, commit_message)
