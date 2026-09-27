@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Upgrade the Habitus entry in core-concepts.html to plain-English operational
+"""Refine the Habitus entry in core-concepts.html to use plain-English mechanics
 
-explanations with interactive popovers and primary source references.
+and sync updates to the main branch via git.
 """
 
 from pathlib import Path
@@ -569,7 +569,7 @@ def produce_complete_html_document() -> str:
             <p>
                 Habitus is the <strong>social muscle memory</strong> of human action. Just as an experienced tennis player
                 does not pause mid-rally to calculate physics formulas or consult an instruction manual, a person moves through
-                the social world guided by an internalized, subconscious <span class="tooltip-term" tabindex="0" data-tooltip="An intuitive 'feel for the game' operating automatically without conscious mental calculation.">"feel for the game" (sens pratique)</span>.
+                the social world guided by an internalized, subconscious <span class="tooltip-term" tabindex="0" data-tooltip="An intuitive 'feel for the game' operating automatically without conscious mental calculation.">"feel for the game" (sens pratique)</span>[cite: 4].
                 It is the permanent software installed in your nervous system by the class conditions of your upbringing.
             </p>
 
@@ -585,12 +585,13 @@ def produce_complete_html_document() -> str:
 
             <p><strong>1. History &amp; The Empirical Anomaly:</strong> Forged in Bourdieu's ethnographic studies of the Kabyle peasantry during the Algerian war of independence (late 1950s) and rural bachelorhood in his native Béarn. Bourdieu sought to break the French intellectual deadlock between Claude Lévi-Strauss's structuralism (which treated humans as passive automatons executing cultural rules) and Jean-Paul Sartre's existentialism (which asserted radical, unconstrained personal freedom). Algerian peasants could not simply choose to become industrial wage earners, nor were they running automated scripts; their traditional rural temporalities and honor codes clashed with the colonial money economy. Codified in <em>Outline of a Theory of Practice</em> (1972/1977) and <em>The Logic of Practice</em> (1980).</p>
 
-            <p><strong>2. Theoretical Mechanics:</strong> Defined in Bourdieu's famous formulation as <em>'structured structures predisposed to function as structuring structures.'</em> In plain terms, this means:</p>
+            <p><strong>2. Theoretical Mechanics:</strong> Defined in Bourdieu's famous formulation as <em>'structured structures predisposed to function as structuring structures[cite: 4].'</em> In plain terms, this means:</p>
             <ul>
-                <li><span class="tooltip-term" tabindex="0" data-tooltip="Habits that are stubborn, deeply ingrained, and travel with you across completely different settings (home, school, workplace).">Durable and Transposable Dispositions</span>: <em>Durable</em> means these habits are deeply rooted and resist change across a lifetime. <em>Transposable</em> means a disposition learned at home (e.g., deference to authority or rhetorical debate) is automatically carried over and applied in completely foreign settings—classrooms, courtrooms, job interviews, and banks.</li>
-                <li><span class="tooltip-term" tabindex="0" data-tooltip="The physical manifestation of class: posture, gait, vocal tension, space usage, eye contact, and physical poise.">Bodily Hexis (Class Written into the Body)</span>: Habitus is not merely a collection of intellectual thoughts; it is physically somaticized. It lives in the way you walk, the volume and pitch of your voice, how you sit in a lecture theatre, your tolerance for physical proximity, and your tension when meeting authority figures.</li>
-                <li><strong>Internalized Objective Limits:</strong> Habitus converts the objective statistical probabilities of childhood into subjective, personal inclinations. If higher education is statistically rare in a child's neighborhood, the habitus transforms that objective economic barrier into an unreflective personal choice: <em>"That is not for the likes of us."</em></li>
-                <li><strong>The Conductorless Orchestra:</strong> People of the same social class act in striking harmony without ever holding a secret meeting or following a written rulebook. Because they were conditioned by identical material circumstances, their internal clocks keep the exact same time.</li>
+                <li><strong>The Software Loop:</strong> Your childhood environment shaped your brain (structured structure), and your brain now shapes how you interpret new situations (structuring structure)[cite: 4].</li>
+                <li><span class="tooltip-term" tabindex="0" data-tooltip="Habits that are stubborn, deeply ingrained, and travel with you across completely different settings (home, school, workplace).">Durable and Transposable Dispositions</span>: <em>Durable</em> means these habits are deeply rooted and resist change across a lifetime[cite: 4]. <em>Transposable</em> means a disposition learned at home (e.g., deference to authority or rhetorical debate) is automatically carried over and applied in completely foreign settings—classrooms, courtrooms, job interviews, and banks[cite: 4, 6].</li>
+                <li><span class="tooltip-term" tabindex="0" data-tooltip="The physical manifestation of class: posture, gait, vocal tension, space usage, eye contact, and physical poise.">Bodily Hexis (Class Written into the Body)</span>: Habitus is not merely a collection of intellectual thoughts; it is physically somaticized[cite: 4]. It lives in the way you walk, the volume and pitch of your voice, how you sit in a lecture theatre, your tolerance for physical proximity, and your tension when meeting authority figures[cite: 4].</li>
+                <li><strong>Internalized Objective Limits:</strong> Habitus converts the objective statistical probabilities of childhood into subjective, personal inclinations[cite: 4]. If higher education is statistically rare in a child's neighborhood, the habitus transforms that objective economic barrier into an unreflective personal choice: <em>"That is not for the likes of us[cite: 4]."</em></li>
+                <li><strong>The Conductorless Orchestra:</strong> People of the same social class act in striking harmony without ever holding a secret meeting or following a written rulebook[cite: 4]. Because they were conditioned by identical material circumstances, their internal clocks keep the exact same time[cite: 4].</li>
             </ul>
 
             <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Explains institutional affinity versus dislocation. Middle-class children navigate school with intuitive ease because their home habitus mirrors institutional culture. Explains self-elimination without overt coercion: working-class students internalize objective limits into subjective preferences (the feeling that higher education is <em>'not for the likes of us'</em>), walking away from academic pathways voluntarily.</p>
@@ -931,18 +932,16 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully deployed clarified Habitus entry to: {target_file.resolve()}")
+    print(f"Successfully refined Habitus entry in: {target_file.resolve()}")
 
     commit_message = (
-        "Clarify Habitus entry with plain-English mechanics and tooltips\n\n"
-        "Demystify the Habitus dossier in core-concepts.html using the social\n"
-        "muscle memory and sports analogies. Add interactive tooltip popovers\n"
-        "for technical terms like bodily hexis and durable dispositions, and\n"
-        "embed a concrete classroom comparison box.\n\n"
-        "- Replace dense opening jargon with functional muscle memory analogy.\n"
-        "- Add accessible popover tooltips for key Habitus terms.\n"
-        "- Embed concrete practical scenario showing habitus in school routines.\n"
-        "- Append primary reference callout box for Habitus foundations."
+        "Refine Habitus entry in core-concepts with plain-English mechanics\n\n"
+        "Replace dense theoretical jargon in the Habitus entry of\n"
+        "core-concepts.html with clear explanations using the social muscle\n"
+        "memory and tennis player analogies.\n\n"
+        "- Demystify 'structured structures' and bodily hexis.\n"
+        "- Clarify internalized objective limits and the conductorless orchestra.\n"
+        "- Preserve master bibliography and interactive tooltips."
     )
 
     sync_repository(root_directory, commit_message)
