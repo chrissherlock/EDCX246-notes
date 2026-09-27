@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with the Critical Synthesis card correctly
+"""Regenerate core-concepts.html with Residualisation given its own standalone
 
-relocated to the Residualisation entry, maintaining all separated entries,
-Max Weber in the Master Bibliography, and clean markup free of citation tags,
-and sync updates to the main branch via git.
+Critical Synthesis section card, maintaining all separated entries, Max Weber in
+the Master Bibliography, and clean markup free of citation tags, and sync updates
+to the main branch via git.
 """
 
 from pathlib import Path
@@ -985,35 +985,35 @@ def produce_complete_html_document() -> str:
                 <li><em>The Empirical Counter-Evidence (Defying Decline):</em> Extensive empirical research within School Effectiveness and School Improvement (SESI) studies, cognitive science, and educational leadership literature demonstrates that exceptional instructional leadership, evidence-based explicit instruction (structured, teacher-led teaching), and strong, positive school culture can successfully defy residualisation and deliver outstanding educational outcomes even in heavily disadvantaged public settings.</li>
             </ul>
 
-            <!-- CRITICAL SYNTHESIS BOX PLACED UNDER RESIDUALISATION -->
-            <div class="textbook-impact-box" style="margin-top: 16px;">
-                <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em></h4>
-                <p>
-                    <strong>How does Residualisation impact the thesis of <em>Making Sense of Mass Education</em>?</strong><br>
-                    It serves as the textbook's primary empirical pivot for demonstrating the real-world consequences of neoliberal marketisation and policy sociology:
-                </p>
-                <ul>
-                    <li>
-                        <strong>How it SUPPORTS and Empowers the Textbook's Thesis:</strong>
-                        By tracing how state-subsidized school choice and middle-class flight actively hollow out neighborhood public schools, residualisation provides concrete empirical backing to the textbook's critique of educational markets. It unmasks the neoliberal myth that school choice operates as a neutral, consumer-driven meritocracy, revealing instead that quasi-markets deepen spatial segregation and concentrate disadvantage.
-                    </li>
-                    <li>
-                        <strong>How it CAUSES PROFOUND PROBLEMS for the Textbook:</strong>
-                        If framed purely through structural determinism, residualisation can breed administrative fatalism—leading educators and policymakers to conclude that public schools in disadvantaged areas are doomed to stagnation regardless of internal effort.
-                    </li>
-                    <li>
-                        <strong>The Ultimate Verdict for Exam Success:</strong>
-                        The concept is indispensable for critiquing market-driven policy. However, exam success requires pairing this macro-level structural critique with SESI and explicit instruction research, proving that professional agency, high expectations, and evidence-based teaching can successfully defy systemic decline.
-                    </li>
-                </ul>
-            </div>
-
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
                     <li><strong>Vinson, T. (2002).</strong> <em>Inquiry into the Provision of Public Education in New South Wales</em>. Sydney: NSW Teachers Federation &amp; Principals' Councils.</li>
                 </ul>
             </div>
+        </div>
+
+        <!-- STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON RESIDUALISATION -->
+        <div class="textbook-impact-box">
+            <h4 class="concept-title">Critical Synthesis: Impact of Residualisation on <em>Making Sense of Mass Education</em></h4>
+            <p>
+                <strong>How does Residualisation shape the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
+                It operationalizes the textbook's critique of neoliberal marketisation by demonstrating the concrete structural consequences of unbridled school choice:
+            </p>
+            <ul>
+                <li>
+                    <strong>How it SUPPORTS and Empowers the Textbook's Thesis:</strong>
+                    By detailing how state subsidies and quasi-markets actively siphon affluent families and high-achieving peers away from neighborhood schools, residualisation provides undeniable empirical grounding to the textbook's argument. It shatters the meritocratic illusion that educational markets operate as neutral, consumer-driven meritocracies, revealing instead that market choice deepens spatial segregation and concentrates disadvantage.
+                </li>
+                <li>
+                    <strong>How it CAUSES PROFOUND PROBLEMS for the Textbook:</strong>
+                    When presented solely through structural determinism, residualisation risks lapsing into administrative fatalism—leading educators to view neighborhood public schools as irredeemable victims of policy, thereby discouraging institutional ambition.
+                </li>
+                <li>
+                    <strong>The Ultimate Verdict for Exam Success:</strong>
+                    Residualisation is a vital tool for policy critique. However, robust exam analysis must pair this structural critique with School Effectiveness and School Improvement (SESI) research, proving that intentional instructional leadership, explicit evidence-based teaching, and strong school culture can successfully defy systemic decline.
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -1296,11 +1296,12 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Relocate critical synthesis card to Residualisation entry\n\n"
-        "Move the Critical Synthesis textbook impact card from the sociolinguistic\n"
-        "section to the Residualisation forensic entry in core-concepts.html,\n"
-        "aligning the School Effectiveness counter-evidence card with market choice\n"
-        "critiques while keeping all HTML markup free of citation tags."
+        "Update Social Closure and Credentialism entry in core-concepts.html\n\n"
+        "Update the Social Closure and Credentialism entry to align with\n"
+        "Randall Collins's The Credential Society (1979), ensuring all\n"
+        "HTML markup remains completely free of citation tags.\n\n"
+        "- Add neo-Weberian gatekeeping and degree inflation mechanics.\n"
+        "- Ensure clean semantic presentation without citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
