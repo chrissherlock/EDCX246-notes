@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Update index.html to bold 'Attention-Deficit/Hyperactivity Disorder (ADHD):'
+"""Update core-concepts.html to provide a more detailed and enriched
 
-in the Chapter 6 neurodevelopmental pedagogical note.
+academic explanation for Cultural Capital.
 """
 
 from pathlib import Path
@@ -10,25 +10,49 @@ import subprocess
 import sys
 
 
-def apply_adhd_bold_patch(file_path: Path) -> None:
+def update_cultural_capital_explanation(file_path: Path) -> None:
     if not file_path.exists():
         print(f"Error: Target file '{file_path.resolve()}' not found.", file=sys.stderr)
         sys.exit(1)
 
     content = file_path.read_text(encoding="utf-8")
 
-    # Target string to bold
-    target_string = "Attention-Deficit/Hyperactivity Disorder (ADHD):"
-    replacement_string = "<strong>Attention-Deficit/Hyperactivity Disorder (ADHD):</strong>"
+    # Target block for Cultural Capital to update
+    target_block = re.compile(
+        r'(<h3>Cultural Capital</h3>\s*<p>)<strong>Detailed Explanation:</strong>.*?(</p>\s*<p>)<strong>Operational Role in Schooling:</strong>.*?(</p>)',
+        re.DOTALL
+    )
 
-    if target_string in content and replacement_string not in content:
-        content = content.replace(target_string, replacement_string, 1)
-        print("Successfully bolded Attention-Deficit/Hyperactivity Disorder (ADHD):")
+    enriched_html = (
+        r'\1<strong>Detailed Explanation:</strong> Originally theorized by French sociologist Pierre Bourdieu '
+        r'in works such as <em>Reproduction in Education, Society and Culture</em>, cultural capital refers to '
+        r'the non-financial social assets that an individual inherits, accumulates, and deploys to navigate social '
+        r'structures. Bourdieu categorized these assets into three distinct forms: <em>embodied</em> (long-lasting '
+        r'dispositions of mind and body, including linguistic fluency, posture, and cultural competence), <em>objectified</em> '
+        r'(cultural goods such as books, instruments, artworks, and digital artifacts), and <em>institutionalized</em> '
+        r'(legally recognized academic credentials and degrees that confer formal market value).<br><br>'
+        r'Crucially, cultural capital is not a measure of individual intelligence or absolute moral worth; rather, '
+        r'it is an acquired class-based currency that grants distinct competitive advantages in hierarchical social fields.\2'
+        r'<strong>Operational Role in Schooling:</strong> Mainstream schooling operates on the structural fiction of '
+        r'formal neutrality and universal meritocracy. In practice, however, educational institutions implicitly '
+        r'demand and reward the specific linguistic codes, aesthetic preferences, and interaction styles associated '
+        r'with the middle and ruling classes.<br><br>'
+        r'When working-class students enter the classroom equipped with different, yet equally rich, vernaculars and '
+        r'forms of cultural knowledge, schools systematically <em>misrecognize</em> their inherited disadvantage as '
+        r'innate intellectual deficit or lack of motivation. By treating dominant cultural capital as the universal '
+        r'yardstick of "merit," schools commit <strong>symbolic violence</strong>—legitimating class inequality and '
+        r'transmitting privilege across generations under the disarming guise of objective academic success.\3'
+    )
+
+    if target_block.search(content):
+        content = target_block.sub(enriched_html, content, count=1)
+        print("Successfully updated Cultural Capital explanation in core-concepts.html.")
     else:
-        print("Target string already bolded or not found in index.html.", file=sys.stderr)
+        print("Error: Could not locate the Cultural Capital block in core-concepts.html.", file=sys.stderr)
+        sys.exit(1)
 
     file_path.write_text(content, encoding="utf-8")
-    print(f"Successfully updated and saved: {file_path.resolve()}")
+    print(f"Successfully saved updated file: {file_path.resolve()}")
 
 
 def execute_git_sync(repo_path: Path, commit_message: str) -> None:
@@ -54,15 +78,16 @@ def execute_git_sync(repo_path: Path, commit_message: str) -> None:
 
 def main() -> None:
     root_directory = Path(__file__).resolve().parent
-    target_file = root_directory / "index.html"
+    target_file = root_directory / "core-concepts.html"
 
-    apply_adhd_bold_patch(target_file)
+    update_cultural_capital_explanation(target_file)
 
     commit_message = (
-        "Bold Attention-Deficit/Hyperactivity Disorder (ADHD): in Chapter 6 note\n\n"
-        "Wrap Attention-Deficit/Hyperactivity Disorder (ADHD): in <strong> tags\n"
-        "within the neurodevelopmental pedagogical note in index.html.\n\n"
-        "- Bold ADHD heading.\n"
+        "Update Cultural Capital explanation in core-concepts.html\n\n"
+        "Provide a detailed academic breakdown of Bourdieu's three forms of cultural\n"
+        "capital (embodied, objectified, institutionalized) and its institutional role\n"
+        "in misrecognition and symbolic violence.\n\n"
+        "- Expand Cultural Capital section with rigorous theoretical depth.\n"
         "- Stage changes and push upstream via subprocess."
     )
 
