@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Upgrade the Residualisation entry in core-concepts.html to explicitly articulate
+"""Regenerate core-concepts.html with the expanded standalone critical synthesis
 
-the empirical research base (School Effectiveness and School Improvement, explicit instruction,
-and instructional leadership) while keeping all markup completely free of citation tags,
+section card for Sociolinguistic & Resistance Paradigms under Section 1,
 and sync updates to the main branch via git.
 """
 
@@ -1273,13 +1272,11 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Upgrade Residualisation entry with School Effectiveness research\n\n"
-        "Expand the Residualisation entry in core-concepts.html to incorporate\n"
-        "empirical findings from School Effectiveness and School Improvement (SESI)\n"
-        "studies, cognitive science, and explicit instruction research while\n"
-        "keeping all HTML markup free of citation tags.\n\n"
-        "- Detail SESI and explicit instruction counter-evidence.\n"
-        "- Ensure clean semantic presentation without citation tags."
+        "Split Social Closure and Credentialism into separate entries\n\n"
+        "Separate Max Weber (Social Closure) and Randall Collins (Credentialism)\n"
+        "into two distinct forensic entries in core-concepts.html, adding comprehensive\n"
+        "plain-English explanations of Neo-Weberian sociology, social closure, and human\n"
+        "capital theory while keeping all HTML markup free of citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
