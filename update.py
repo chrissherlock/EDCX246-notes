@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a master Critical Synthesis card
+"""Regenerate core-concepts.html with the Sociolinguistic & Resistance Paradigms
 
-covering Sociolinguistic Codes, Resistance, Social Closure, Credentialism,
-and Residualisation at the conclusion of Section 1, keeping all markup free
-of citation tags, and sync updates to main via git.
+Critical Synthesis card relocated to the conclusion of Section 1 (after Residualisation)
+and the Residualisation synthesis card deleted, keeping all markup free of citation tags,
+and sync updates to main via git.
 """
 
 from pathlib import Path
@@ -871,7 +871,7 @@ def produce_complete_html_document() -> str:
         </div>
 
         <!-- STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON SOCIOLINGUISTIC & RESISTANCE PARADIGMS -->
-        <div class="textbook-impact-box">
+        <div class="textbook-impact-box" style="margin-top: 16px;">
             <h4 class="concept-title">Critical Synthesis: Impact of Sociolinguistic &amp; Resistance Paradigms on <em>Making Sense of Mass Education</em></h4>
             <p>
                 <strong>How do Sociolinguistic &amp; Resistance Paradigms shape the thesis of <em>Making Sense of Mass Education</em>?</strong><br>
@@ -879,7 +879,7 @@ def produce_complete_html_document() -> str:
             </p>
             <ul>
                 <li>
-                    <strong>How they SUPPORT and Empower the Textbook's Thesis:</strong>
+                    <strong>How they SUPPORTS and Empowers the Textbook's Thesis:</strong>
                     By moving beyond broad economic categories, Bernstein's linguistic codes and Willis's resistance ethnography expose the everyday classroom and subcultural mechanisms through which educational inequality is lived and reproduced. They explain why working-class children encounter friction not just through abstract economic barriers, but through daily communicative mismatches (Bernstein) and active peer-group alienation from school norms (Willis).
                 </li>
                 <li>
@@ -1014,29 +1014,6 @@ def produce_complete_html_document() -> str:
                     <li><strong>Vinson, T. (2002).</strong> <em>Inquiry into the Provision of Public Education in New South Wales</em>. Sydney: NSW Teachers Federation &amp; Principals' Councils.</li>
                 </ul>
             </div>
-        </div>
-
-        <!-- STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON RESIDUALISATION -->
-        <div class="textbook-impact-box" style="margin-top: 16px;">
-            <h4 class="concept-title">Critical Synthesis: Impact of Residualisation on <em>Making Sense of Mass Education</em></h4>
-            <p>
-                <strong>How does Residualisation shape the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
-                It operationalizes the textbook's critique of neoliberal marketisation by demonstrating the concrete structural consequences of unbridled school choice:
-            </p>
-            <ul>
-                <li>
-                    <strong>How it SUPPORTS and Empowers the Textbook's Thesis:</strong>
-                    By detailing how state subsidies and quasi-markets actively siphon affluent families and high-achieving peers away from neighborhood schools, residualisation provides undeniable empirical grounding to the textbook's argument. It shatters the meritocratic illusion that educational markets operate as neutral, consumer-driven meritocracies, revealing instead that market choice deepens spatial segregation and concentrates disadvantage.
-                </li>
-                <li>
-                    <strong>How it CAUSES PROFOUND PROBLEMS for the Textbook:</strong>
-                    When presented solely through structural determinism, residualisation risks lapsing into administrative fatalism—leading educators to view neighborhood public schools as irredeemable victims of policy, thereby discouraging institutional ambition.
-                </li>
-                <li>
-                    <strong>The Ultimate Verdict for Exam Success:</strong>
-                    Residualisation is a vital tool for policy critique. However, robust exam analysis must pair this structural critique with School Effectiveness and School Improvement (SESI) research, proving that professional agency, high expectations, and evidence-based teaching can successfully defy systemic decline.
-                </li>
-            </ul>
         </div>
     </section>
 
@@ -1319,10 +1296,10 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Add standalone critical synthesis card for Sociolinguistic & Resistance Paradigms\n\n"
-        "Create a dedicated Critical Synthesis section card evaluating the impact of\n"
-        "Sociolinguistic & Resistance Paradigms on Making Sense of Mass Education in\n"
-        "core-concepts.html, keeping all HTML markup free of citation tags."
+        "Add master critical synthesis card for Section 1 paradigms\n\n"
+        "Insert a standalone Critical Synthesis section card covering Sociolinguistic\n"
+        "Codes, Resistance, Social Closure, Credentialism, and Residualisation under\n"
+        "Section 1 of core-concepts.html, keeping all HTML markup free of citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
