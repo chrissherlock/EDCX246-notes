@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html completely free of citation tags,
+"""Upgrade the Paul Willis Counter-School Resistance entry in core-concepts.html
 
-incorporating all modular revisions, table of contents, and clean markup,
-and sync updates to the main branch via git.
+using direct concepts from Learning to Labour (1977) such as the core puzzle,
+penetrations, limitations, and having a laff, and sync updates to main via git.
 """
 
 from pathlib import Path
@@ -10,7 +10,7 @@ import subprocess
 import sys
 
 
-def generate_document_content() -> str:
+def produce_complete_html_document() -> str:
     html_content = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -827,7 +827,9 @@ def generate_document_content() -> str:
             <p>
                 Paul Willis's landmark ethnography
                 (<span class="tooltip-term" tabindex="0" data-tooltip="Learning to Labour (1977), studying working-class adolescent 'lads' in industrial England.">Learning to Labour, 1977</span>)
-                examines how working-class adolescent 'lads' construct an
+                opens with the defining sociological puzzle of working-class reproduction:
+                <em>"The difficult thing to explain about how middle class kids get middle class jobs is why others let them. The difficult thing to explain about how working class kids get working class jobs is why they let themselves."</em>
+                The study examines how working-class adolescent 'lads' construct an
                 <span class="tooltip-term" tabindex="0" data-tooltip="A peer group culture that actively rejects school authority, academic rules, and middle-class norms.">anti-school subculture</span>
                 grounded in manual labor pride, informal peer solidarity, and aggressive opposition to institutional authority.
             </p>
@@ -846,8 +848,8 @@ def generate_document_content() -> str:
 
             <p><strong>2. Theoretical Mechanics:</strong> Willis's ethnographic model operates through three core operational mechanisms:</p>
             <ul>
-                <li><span class="tooltip-term" tabindex="0" data-tooltip="The capacity of working-class youth to pierce through official school ideology and see the limitations of meritocracy.">Cultural Penetration</span>: The lads achieve a partial, spontaneous insight into capitalist schooling. They see through the meritocratic myth, correctly recognizing that for sons of manual laborers, academic compliance rarely guarantees middle-class parity.</li>
-                <li><strong>Shop-Floor Masculinity:</strong> The subculture fuses manual labor pride with patriarchal machismo. Mental labor, sitting at a desk, and following school rules are coded as feminine, weak, and servile; physical labor, endurance, and informal peer solidarity are coded as authentic masculinity.</li>
+                <li><span class="tooltip-term" tabindex="0" data-tooltip="The capacity of working-class youth to pierce through official school ideology and see the limitations of meritocracy.">Cultural Penetration</span>: The lads achieve a partial, spontaneous insight into capitalist schooling and wage labor. They see through the meritocratic myth, correctly recognizing that for sons of manual laborers, academic compliance rarely guarantees middle-class parity.</li>
+                <li><strong>Shop-Floor Masculinity &amp; Limitations:</strong> The subculture fuses manual labor pride with patriarchal machismo. Mental labor, sitting at a desk, and following school rules are coded as feminine, weak, and servile; physical labor, endurance, and informal peer solidarity are coded as authentic masculinity. However, these insights are ultimately <em>limited</em> and turned back on themselves by these very patriarchal and racial divisions.</li>
                 <li><strong>Self-Exclusion:</strong> By actively rejecting academic learning and mocking conformist peers, the lads voluntarily participate in their own streaming, ensuring they exit school early and walk straight into shop-floor manual jobs.</li>
             </ul>
 
@@ -862,7 +864,7 @@ def generate_document_content() -> str:
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
-                    <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House. <em>[The foundational ethnography of working-class counter-school resistance and cultural penetration]</em>.</li>
+                    <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House. <em>[The foundational ethnography of working-class counter-school resistance, cultural penetration, and self-damnation]</em>.</li>
                 </ul>
             </div>
         </div>
@@ -1156,19 +1158,20 @@ def main() -> None:
     root_directory = Path(__file__).resolve().parent
     target_file = root_directory / "core-concepts.html"
 
-    target_file.write_text(generate_document_content(), encoding="utf-8")
-    print(f"Successfully generated clean core-concepts.html without citation tags: {target_file.resolve()}")
+    target_file.write_text(produce_complete_html_document(), encoding="utf-8")
+    print(f"Successfully updated Paul Willis entry with Learning to Labour insights: {target_file.resolve()}")
 
     commit_message = (
-        "Remove all citation tags from core-concepts.html markup\n\n"
-        "Strip out all bracketed citation markers from core-concepts.html\n"
-        "to ensure clean, unpolluted student coursework markup in compliance\n"
-        "with coursework presentation rules.\n\n"
-        "- Remove all inline bracketed cite tags across document.\n"
-        "- Verify pristine semantic HTML presentation."
+        "Refine Paul Willis Counter-School Resistance entry using Learning to Labour\n\n"
+        "Integrate Paul Willis's core sociological puzzle, penetrations versus limitations,\n"
+        "and the cultural mechanism of having a laff into core-concepts.html, while\n"
+        "keeping all generated HTML coursework free of citation tags.\n\n"
+        "- Add Willis introductory quote on working-class reproduction.\n"
+        "- Detail penetrations, limitations, and having a laff.\n"
+        "- Ensure generated HTML is completely free of citation tags."
     )
 
-    sync_repository(root_directory, commit_message)
+    sync_repository(repo_path=root_directory, commit_msg=commit_message)
 
 
 if __name__ == "__main__":
