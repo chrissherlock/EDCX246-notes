@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Upgrade Cultural Capital in core-concepts.html to a bulletproof forensic dossier
+"""Update core-concepts.html to append Bourdieu's specific referenced works directly
 
-incorporating primary source mechanics and a formal bibliography.
+to the end of the Cultural Capital entry while keeping the full bibliography below.
 """
 
 from pathlib import Path
@@ -151,6 +151,31 @@ def produce_complete_html_document() -> str:
         }
         .scenario-box ul {
             margin: 4px 0 6px 16px;
+        }
+        .entry-references {
+            margin-top: 14px;
+            padding: 10px 14px;
+            background-color: #fefce8;
+            border: 1px dashed #f59e0b;
+            border-radius: 4px;
+            font-size: 0.84rem;
+            color: #78350f;
+        }
+        .entry-references strong {
+            display: block;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            font-size: 0.76rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+        .entry-references ul {
+            margin: 2px 0 2px 14px;
+            padding-left: 0;
+            line-height: 1.5;
+        }
+        .entry-references li {
+            margin-bottom: 3px;
         }
         .audit-label-critique {
             display: inline-block;
@@ -313,6 +338,17 @@ def produce_complete_html_document() -> str:
                 <li><em>The Intraclass Paradox:</em> If schooling is driven by the cultural fraction (teachers) against the economic fraction (industrialists), the curriculum cannot be characterized simply as a monolithic ruling-class conspiracy. It is an arena of conflict where teachers routinely promote critical inquiry, social mobility, and democratic debate against purely commercial demands.</li>
                 <li><em>Structural Fatalism &amp; Pedagogical Defeatism:</em> Bourdieu's model operates as an unbroken reproduction loop that minimizes student agency and high-expectations teaching. Empirically, cognitive psychology and explicit instruction research demonstrate that structured, systematic teaching dramatically accelerates domain learning, disproving Bourdieu's assumption that working-class children cannot overcome the domestic time-gap.</li>
             </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations in Bourdieu's Works:</strong>
+                <ul>
+                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change</em> (pp. 71–112). London: Tavistock. <em>[Initial formulation of cultural capital and the school's implicit demand for what it does not give]</em>.</li>
+                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. <em>[Bodily hexis, habitus, and the conductorless orchestration of class dispositions]</em>.</li>
+                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Harvard University Press. <em>[The aesthetic disposition, legitimate autodidacticism vs. scholastic pedantry, and the teacher vs. industrialist intraclass divide]</em>.</li>
+                    <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). Greenwood. <em>[Codification of Embodied, Objectified, and Institutionalized capital; the economy of labor-time and 'wasted time']</em>.</li>
+                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em>. London: Sage. <em>[Pedagogic authority, misrecognition, and symbolic violence in mass schooling]</em>.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -526,7 +562,7 @@ def produce_complete_html_document() -> str:
             <h4 class="concept-title">Active Audience Theory &amp; Polysemy (Stuart Hall)</h4>
             <p>Stuart Hall's encoding/decoding model demonstrating that media texts are polysemic (bearing multiple interpretations) and actively negotiated by audiences through dominant, negotiated, or oppositional stances.</p>
             <p><strong>1. Mechanics &amp; Strengths:</strong> Refutes paternalistic views that school students are passive victims brainwashed by screen media, highlighting their capacity to critically evaluate, mock, and subvert cultural messaging.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Hall's theory can lead educators to underestimate the coercive algorithmic engineering of modern social feeds, which exploit neurological dopamine loops far beyond active intellectual negotiation.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Hall\'s theory can lead educators to underestimate the coercive algorithmic engineering of modern social feeds, which exploit neurological dopamine loops far beyond active intellectual negotiation.</p>
         </div>
 
         <div class="forensic-entry">
@@ -592,9 +628,9 @@ def produce_complete_html_document() -> str:
         </div>
     </section>
 
-    <!-- FORMAL BIBLIOGRAPHY -->
+    <!-- MASTER FORMAL BIBLIOGRAPHY -->
     <section class="biblio-section">
-        <h2>Primary Sources &amp; Critical References</h2>
+        <h2>Master Bibliography: Primary Sources &amp; Critical References</h2>
         <ul class="biblio-list">
             <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change: Papers in the Sociology of Education</em> (pp. 71–112). London: Tavistock Publications.</li>
             <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. (Original work published in French 1972).</li>
@@ -646,18 +682,16 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully deployed bulletproof Cultural Capital dossier to: {target_file.resolve()}")
+    print(f"Successfully integrated entry references and master bibliography into: {target_file.resolve()}")
 
     commit_message = (
-        "Upgrade Cultural Capital dossier with exact primary mechanics and bibliography\n\n"
-        "Enhance the Cultural Capital entry in core-concepts.html with primary\n"
-        "mechanisms from Bourdieu's texts: the economy of acquisition time, the\n"
-        "intraclass teacher-vs-capitalist divide, legitimate autodidacticism, and\n"
-        "credential devaluation. Append an authoritative academic bibliography.\n\n"
-        "- Add labor-time economy and 'wasted time' mechanics from 1986 text.\n"
-        "- Detail the structural split between cultural and economic elites.\n"
-        "- Explain the devaluation of scholastic pedantry vs. natural ease.\n"
-        "- Append a primary and critical counterweight bibliography."
+        "Add dedicated primary source references to Cultural Capital entry\n\n"
+        "Incorporate a targeted primary source reference box at the foot of the\n"
+        "Cultural Capital entry in core-concepts.html while keeping the full\n"
+        "master bibliography at the bottom of the page.\n\n"
+        "- Add inline primary works callout box to Cultural Capital entry.\n"
+        "- Reference 1973, 1977, 1984, and 1986 Bourdieusian source texts.\n"
+        "- Retain complete master bibliography at document bottom."
     )
 
     sync_repository(root_directory, commit_message)
