@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Generate core-concepts.html cleanly with expanded Cultural Capital and sync via git."""
+"""Update core-concepts.html to add a 'History' subsection to the Cultural Capital entry,
+
+detailing Bourdieu and Passeron's post-WWII empirical context, the theoretical leap from
+Marxist economic capital to cultural currency, and its formal codification.
+"""
 
 from pathlib import Path
 import subprocess
@@ -110,13 +114,14 @@ def generate_html_content() -> str:
         "",
         '        <div class="concept-entry">',
         "            <h3>Cultural Capital</h3>",
-        "            <p>Originally theorized by French sociologist Pierre Bourdieu in works such as <em>Reproduction in Education, Society and Culture</em> (1977) and <em>Distinction</em> (1984), cultural capital refers to the non-financial social assets that an individual inherits, accumulates, and deploys to navigate social structures. Bourdieu conceptualized cultural capital as a vital alternative to purely economic explanations of class stratification, demonstrating that class advantage is sustained not just by bank accounts and property ownership, but by the subtle, embodied inheritance of culture, knowledge, and style. Bourdieu categorized cultural capital into three distinct, interdependent forms:</p>",
+        "            <p><strong>History &amp; Origins:</strong> The concept of cultural capital (*le capital culturel*) emerged from Pierre Bourdieu and Jean-Claude Passeron's empirical investigations into post-WWII French education during the 1960s. At the time, French technocrats argued that expanding university access and eliminating tuition fees would create a pure, democratic meritocracy. However, empirical surveys revealed a glaring contradiction: despite free tuition, working-class students continued to fail or drop out at drastically higher rates than bourgeois youth. Traditional Marxist theory attributed class reproduction solely to economic capital (money and property), but Bourdieu realized this failed to explain why a working-class student with a middle-class income still struggled with the implicit linguistic codes, aesthetic expectations, and examination styles of the academy. To solve this empirical puzzle, Bourdieu expanded Karl Marx's definition of capital beyond economics, reasoning that culture itself could function as an invisible currency. The term was formally introduced in print in their 1973 essay <em>'Cultural Reproduction and Social Reproduction'</em> and later refined into its three distinct states (embodied, objectified, institutionalized) in Bourdieu's 1986 essay <em>'The Forms of Capital'</em>.</p>",
+        "            <p><strong>Detailed Theoretical Breakdown:</strong> Originally theorized by French sociologist Pierre Bourdieu in works such as <em>Reproduction in Education, Society and Culture</em> (1977) and <em>Distinction</em> (1984), cultural capital refers to the non-financial social assets that an individual inherits, accumulates, and deploys to navigate social structures. Bourdieu categorized cultural capital into three distinct, interdependent forms:</p>",
         "            <ul>",
         "                <li><strong>Embodied Capital (<em>État Incorporé</em>):</strong> Long-lasting dispositions of the mind and body. This includes linguistic fluency, syntax, accent, bodily posture, gait, table manners, aesthetic preferences, and cultural competence. It cannot be instantly transmitted as a gift or purchased; it requires long-term, subconscious cultural absorption through family socialization and class milieu.</li>",
         "                <li><strong>Objectified Capital (<em>État Objectivé</em>):</strong> Cultural goods and physical artifacts—such as classical literature, fine art collections, musical instruments, scholarly libraries, scientific equipment, and digital or technological apparatuses. While these goods can be legally purchased if one possesses economic capital, they can only be truly <em>consumed</em> and appreciated if the individual already possesses the requisite embodied capital (the cognitive schemas to decode them).</li>",
         "                <li><strong>Institutionalized Capital (<em>État Institutionalisé</em>):</strong> Legally recognized academic credentials, university degrees, and professional certifications. Bourdieu treated institutionalized capital as a certificate of cultural competence that confers formal, guaranteed market value, transforming inherited embodied capital into officially sanctioned currency that can be exchanged directly on the occupational labor market.</li>",
         "            </ul>",
-        "            <p><strong>Operational Role in Schooling:</strong> Mainstream schooling operates on the structural fiction of formal neutrality and universal meritocracy. In practice, however, educational institutions implicitly demand and reward the specific linguistic codes (Basil Bernstein\'s <em>elaborated codes</em>), elite aesthetic preferences, behavioral interaction styles, and psychological dispositions associated with the middle and ruling classes.</p>",
+        "            <p><strong>Operational Role in Schooling:</strong> Mainstream schooling operates on the structural fiction of formal neutrality and universal meritocracy. In practice, however, educational institutions implicitly demand and reward the specific linguistic codes (Basil Bernstein's <em>elaborated codes</em>), elite aesthetic preferences, behavioral interaction styles, and psychological dispositions associated with the middle and ruling classes.</p>",
         "            <p>When working-class students enter the classroom equipped with different, yet equally rich, vernaculars and forms of cultural knowledge, schools systematically <em>misrecognize</em> their inherited disadvantage as an innate intellectual deficit, personal motivational failure, or domestic deprivation. By treating dominant cultural capital as the universal yardstick of 'merit,' schools commit <strong>symbolic violence</strong>—legitimating class inequality and transmitting privilege across generations under the disarming guise of objective academic success.</p>",
         "        </div>",
         "",
@@ -144,7 +149,7 @@ def main() -> None:
 
     commands = [
         ["git", "add", "-A"],
-        ["git", "commit", "-m", "Generate comprehensive core-concepts.html page"],
+        ["git", "commit", "-m", "Add History section to Cultural Capital in core-concepts.html"],
         ["git", "push", "origin", "main"],
     ]
 
