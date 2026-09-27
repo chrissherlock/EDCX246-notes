@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a master Critical Synthesis card
+"""Regenerate core-concepts.html with an overhauled, deeply critical synthesis
 
-encompassing Sociolinguistic Codes, Counter-School Resistance, Social Closure,
-Credentialism, and Residualisation under Section 1, maintaining all separated
-entries, Max Weber in the Master Bibliography, and clean markup free of citation tags,
-and sync updates to the main branch via git.
+evaluating the Bourdieusian Paradigm (Cultural Capital, Habitus, Symbolic
+Violence) and its impact on Making Sense of Mass Education, keeping all markup
+100% free of citation tags, and sync updates to main via git.
 """
 
 from pathlib import Path
@@ -741,35 +740,39 @@ def produce_complete_html_document() -> str:
                 <ul>
                     <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications.</li>
                     <li><strong>Bourdieu, P. (2000).</strong> <em>Pascalian Meditations</em>. Stanford University Press.</li>
-                    <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
+                    <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON BOURDIEU -->
+        <!-- REVISED DEEPLY CRITICAL STANDALONE SYNTHESIS CARD: BOURDIEUSIAN PARADIGM -->
         <div class="textbook-impact-box">
-            <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em></h4>
+            <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em> (The Bourdieusian Paradigm)</h4>
             <p>
-                <strong>Does the counter-tradition cause problems for the textbook, support its thesis, or does it do both?</strong><br>
-                It does <strong>both simultaneously</strong>, generating a vital dialectical tension that defines rigorous sociological analysis across the curriculum:
+                <strong>Is the textbook's reliance on Bourdieu right, wrong, or fatally incomplete?</strong><br>
+                Evaluating the true worth of <em>Making Sense of Mass Education</em> requires measuring its core Bourdieusian thesis—that schooling functions primarily to launder inherited class privilege into objective merit—against both empirical realities and its severe pedagogical hazards:
             </p>
             <ul>
                 <li>
-                    <strong>How it SUPPORTS and Empowers the Textbook's Thesis:</strong>
-                    <em>Making Sense of Mass Education</em> relies fundamentally on Bourdieu to demolish naive, meritocratic assumptions—proving that equal funding or open university access does not automatically produce equal outcomes. The structural diagnosis of symbolic violence, misrecognition, and cultural capital provides the textbook with its sharpest empirical weapons. It accounts for why working-class and marginalized students often internalize systemic institutional barriers as personal intellectual failure, preserving the legitimacy of an unequal hierarchy. Without Bourdieu, educational sociology would be reduced to superficial administrative tinkering.
-                </li>
-                <li>
-                    <strong>How it CAUSES PROFOUND PROBLEMS for the Textbook:</strong>
-                    When the textbook adopts Bourdieusian reproduction wholesale without the counter-tradition's corrective brakes, it pulls educators toward three hazardous ideological pitfalls:
+                    <strong>Where the Textbook is RIGHT (Its Indispensable Diagnostic Power):</strong>
                     <ul>
-                        <li><em>Pedagogical Fatalism:</em> If schooling is an airtight machine dedicated exclusively to class reproduction, teachers are cast as helpless accomplices in sorting children for capital. This breeds defeatism and justifies lowering academic expectations for disadvantaged cohorts.</li>
-                        <li><em>Epistemic &amp; Pedagogical Relativism:</em> Treating all curriculum content as merely "arbitrary ruling-class etiquette" (as Bourdieu implies) collapses the vital distinction between arbitrary social manners and <strong>Powerful Knowledge</strong> (Young). As Lisa Delpit warns, when progressive educators refuse to explicitly teach standard academic codes under the banner of avoiding cultural violence, they abandon poor and minority students to functional disenfranchisement.</li>
-                        <li><em>Sociological Paternalism:</em> As Jacques Rancière unmasks, framing dominated groups as unconscious dupes suffering from total "misrecognition" robs students, families, and subcultures of their authentic agency and clear-eyed perception of institutional hypocrisy.</li>
+                        <li><em>Demolishing the Meritocracy Myth:</em> The textbook's deploy of <strong>Cultural Capital</strong> is an essential demythologizing weapon. It demonstrates empirically why equal school funding, physical infrastructure rollouts, and free university tuition fail to produce equal outcomes. Schools do not evaluate raw cognitive capacity in a cultural vacuum; they evaluate class-transmitted linguistic facility, rhetorical posturing, and aesthetic familiarity.</li>
+                        <li><em>Diagnosing Institutional Friction (Habitus):</em> Bourdieu gives the text the vocabulary to explain why working-class and marginalized students experience school as culturally foreign territory. It accounts for voluntary self-elimination—the internalized psychological barrier that university or advanced academic streams are <em>"not for the likes of us"</em>—without having to invoke individual cognitive deficits.</li>
+                        <li><em>Unmasking Symbolic Violence:</em> It explains how the educational system legitimizes vast societal inequality without needing overt authoritarian force. Disadvantaged students who struggle with academic curricula misrecognize systemic sorting as personal intellectual failure, preserving the moral legitimacy of an unequal economic order.</li>
                     </ul>
                 </li>
                 <li>
-                    <strong>The Ultimate Verdict for Exam Success:</strong>
-                    The counter-tradition does not invalidate <em>Making Sense of Mass Education</em>; rather, it <strong>rescues the textbook from its own fatalism</strong>. It teaches us to use Bourdieu as a brilliant <em>diagnostic X-ray</em> to spot hidden institutional bias, while refusing to use him as a permanent excuse to lower standards, abandon explicit instruction, or deny students access to powerful knowledge.
+                    <strong>Where the Textbook is WRONG and Vulnerable (The Forensic Hazards):</strong>
+                    <ul>
+                        <li><em>The Epistemic Relativist Trap (The Michael Young Critique):</em> By adopting Bourdieu's premise that school knowledge is merely an arbitrary ruling-class power play (<em>arbitraire culturel</em>), the textbook risks collapsing into dangerous intellectual nihilism. Calculus, evolutionary biology, formal grammatical syntax, and historical analysis are not arbitrary bourgeois manners; they are <strong>Powerful Knowledge</strong>—empirically testable, reliable cognitive amplifiers that allow human beings to model and transform reality. Treating rigorous curricula merely as ruling-class symbolic violence delegitimizes the very intellectual tools disadvantaged students need to master the world.</li>
+                        <li><em>The Delpit Dilemma &amp; Pedagogical Sabotage:</em> When teachers influenced by reproduction theory refuse to explicitly teach standard grammar, academic rhetoric, and structured analysis for fear of "imposing symbolic violence," they do not emancipate poor children; they intellectually abandon them (Lisa Delpit). Affluent children acquire these dominant academic codes at home through domestic osmosis; disadvantaged children acquire them exclusively through explicit, direct school instruction or not at all.</li>
+                        <li><em>Structural Fatalism &amp; Pedagogical Resignation:</em> Bourdieu's framework functions as an airtight reproduction machine. If habitus is permanent bodily software and the school is entirely rigged, individual teacher effort is rendered pointless. This fatalism contradicts cognitive psychology and School Effectiveness research, which prove that high-expectations explicit instruction dramatically closes academic gaps regardless of student background.</li>
+                        <li><em>Sociological Paternalism (The Jacques Rancière Strike):</em> Framing dominated groups as unconscious dupes suffering from total "misrecognition" and "complicity" robs working-class students and parents of their genuine agency, moral dignity, and clear-eyed understanding of institutional hypocrisy.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>The Forensic Verdict for Exam Success &amp; Professional Worth:</strong>
+                    <em>Making Sense of Mass Education</em> is <strong>indispensable as an anatomical X-ray, but toxic as a pedagogical compass</strong>. It is right in diagnosing systemic institutional sorting, but wrong whenever it pulls educators toward curriculum relativism or administrative defeatism. For the classroom teacher, Bourdieu's reproduction thesis must be deployed strictly as a diagnostic tool to expose unexamined institutional bias, while refusing to use it as an excuse to lower standards or abandon explicit instruction in powerful knowledge.
                 </li>
             </ul>
         </div>
@@ -1307,11 +1310,13 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Add master synthesis card for Section 1 sociological paradigms\n\n"
-        "Insert a unified Critical Synthesis section card encompassing sociolinguistic\n"
-        "codes, subcultural resistance, social closure, credentialism, and\n"
-        "residualisation at the conclusion of Section 1 in core-concepts.html,\n"
-        "keeping all HTML markup completely free of citation tags."
+        "Revise Bourdieusian critical synthesis in core-concepts.html\n\n"
+        "Overhaul the Bourdieusian Critical Synthesis card to rigorously evaluate\n"
+        "the true worth of Making Sense of Mass Education across Cultural Capital,\n"
+        "Habitus, and Symbolic Violence, keeping HTML free of citation tags.\n\n"
+        "- Balance diagnostic merits against epistemic relativism and fatalism.\n"
+        "- Integrate critiques from Young, Delpit, and Rancière.\n"
+        "- Maintain clean semantic markup without citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
