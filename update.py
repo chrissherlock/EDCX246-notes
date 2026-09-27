@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Upgrade the Paul Willis Counter-School Resistance entry in core-concepts.html
+"""Upgrade the Social Closure and Credentialism entry in core-concepts.html
 
-using direct concepts from Learning to Labour (1977) such as the core puzzle,
-penetrations, limitations, and having a laff, and sync updates to main via git.
+to a full forensic dossier with plain-English mechanics, interactive tooltips,
+concrete scenario boxes, and primary references, and sync updates to main via git.
 """
 
 from pathlib import Path
@@ -10,7 +10,7 @@ import subprocess
 import sys
 
 
-def produce_complete_html_document() -> str:
+def generate_complete_html_document() -> str:
     html_content = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -871,9 +871,45 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Social Closure &amp; Credentialism (Max Weber / Randall Collins)</h4>
-            <p>Neo-Weberian sociology showing how dominant status groups use educational credentials as monopolistic gatekeeping currencies to restrict access to lucrative professional markets and maintain social boundaries.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Explains degree inflation. As higher education access expands, elite groups continually escalate baseline credential requirements (requiring postgraduate degrees, unpaid internships, or elite institutional pedigrees) to preserve exclusivity.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Functionalist and human capital models emphasize that modern economies genuinely require sophisticated technological, legal, and biomedical knowledge. Reducing all credentialing to predatory gatekeeping understates the genuine technical skill required in modern professions.</p>
+            <p>
+                Neo-Weberian sociology showing how dominant status groups use educational credentials as
+                <span class="tooltip-term" tabindex="0" data-tooltip="Monopolistic barriers erected by elite groups to restrict access to lucrative professional markets and maintain social class boundaries.">monopolistic gatekeeping</span>
+                currencies to restrict access to lucrative professional markets, enforce class monopolies, and maintain social boundaries under the guise of neutral technical competence.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The Credential Inflation Trap</strong>
+                Imagine two job applicants for a routine corporate administrative role (e.g., managing office correspondence and scheduling meetings):
+                <ul>
+                    <li><strong>Applicant A:</strong> Holds a Bachelor's degree in English Literature, accumulated student debt, and comes from a professional middle-class family.</li>
+                    <li><strong>Applicant B:</strong> Possesses three years of direct administrative experience in a warehouse office, but no university degree.</li>
+                </ul>
+                Even though both candidates have identical practical typing and organizational skills, the employer requires a Bachelor's degree as a screening filter. This requirement is not technically necessary to perform the job tasks; rather, it functions as a credential filter that screens out applicants without cultural privilege and legitimizes upper-class status boundaries.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Rooted in Max Weber's theory of social closure (the process by which social groups monopolize advantages by restricting access to rewards and opportunities) and systematically applied to modern schooling by Randall Collins in <em>The Credential Society</em> (1979). The central empirical anomaly driving the theory is <strong>degree inflation</strong>: historical and statistical data revealed that formal educational requirements for occupations skyrocketed far in advance of any actual increase in the technical skill complexity required to perform those jobs. Functionalist human capital theory argued that schools teach technical skills demanded by industrial modernization, but credentialism proved that paper degrees function primarily as cultural status markers and exclusionary mechanisms.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Randall Collins and neo-Weberian sociology establish three core operational mechanisms governing credentialism:</p>
+            <ul>
+                <li><strong>Monopolistic Gatekeeping &amp; Status Exclusion:</strong> Dominant status groups use educational institutions to erect exclusionary barriers. By tying professional licenses and job eligibility to formal schooling, elites transform cultural familiarity and economic endurance into legally protected market monopolies.</li>
+                <li><strong>The Credential Market &amp; Status Display:</strong> Most occupational training occurs on the job rather than in classrooms. Consequently, employers demand paper credentials not because specialized academic knowledge is required for daily tasks, but because degrees serve as cheap, bureaucratically safe proxies for character, social conformity, and class habitus.</li>
+                <li><strong>Deficiency Escalation &amp; Positional Competition:</strong> As democratic expansion floods the labor market with basic degrees, qualifications undergo rapid currency devaluation. Elite groups respond by dynamically escalating entry thresholds—requiring postgraduate degrees, specialized master's programs, or brand-name university pedigrees—forcing individuals to buy more years of schooling simply to maintain their employment position in the queue.</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Brilliantly explains degree inflation and why the expansion of higher education does not automatically generate a meritocracy. It exposes how economic inequality and occupational sorting are legitimized through neutral-sounding paper certifications, preventing working-class entrants from breaking into lucrative professional fields without bearing massive financial costs.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Technocratic Oversight (Underestimating Technical Complexity):</em> Modern knowledge economies genuinely require advanced cognitive, scientific, legal, and biomedical capabilities. Reducing all educational credentials to purely predatory gatekeeping understates the real technical specialization and formal training demanded in modern professions.</li>
+                <li><em>The Anti-Credential Trap:</em> Dismissing all formal qualifications as bourgeois social closure can devalue legitimate professional standards, licensing, and public safety certifications, potentially opening vital professions to unqualified operators and intensifying nepotistic cronyism.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Collins, R. (1979).</strong> <em>The Credential Society: An Historical Sociology of Education and Stratification</em>. New York: Academic Press. <em>[The foundational neo-Weberian analysis of educational credentialism and social closure]</em>.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -1158,17 +1194,17 @@ def main() -> None:
     root_directory = Path(__file__).resolve().parent
     target_file = root_directory / "core-concepts.html"
 
-    target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully updated Paul Willis entry with Learning to Labour insights: {target_file.resolve()}")
+    target_file.write_text(generate_complete_html_document(), encoding="utf-8")
+    print(f"Successfully generated core-concepts.html with expanded credentialism entry: {target_file.resolve()}")
 
     commit_message = (
-        "Refine Paul Willis Counter-School Resistance entry using Learning to Labour\n\n"
-        "Integrate Paul Willis's core sociological puzzle, penetrations versus limitations,\n"
-        "and the cultural mechanism of having a laff into core-concepts.html, while\n"
-        "keeping all generated HTML coursework free of citation tags.\n\n"
-        "- Add Willis introductory quote on working-class reproduction.\n"
-        "- Detail penetrations, limitations, and having a laff.\n"
-        "- Ensure generated HTML is completely free of citation tags."
+        "Expand Social Closure and Credentialism forensic dossier entry\n\n"
+        "Upgrade the Social Closure and Credentialism entry in core-concepts.html\n"
+        "into a complete forensic audit covering degree inflation, neo-Weberian\n"
+        "gatekeeping, credential markets, and human capital counter-critiques.\n\n"
+        "- Add historical anomaly and Randall Collins credential society mechanics.\n"
+        "- Incorporate interactive tooltips and concrete scenario box.\n"
+        "- Ensure markup remains 100% free of citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
