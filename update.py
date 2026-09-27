@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a full forensic dossier for Frantz Fanon's
+"""Regenerate core-concepts.html with a full forensic dossier for Gayatri Spivak's
 
-Colonisation of the Mind, maintaining all separated entries, Master Bibliography
-updates, and clean markup free of citation tags, and sync updates via git.
+Epistemic Violence, maintaining all separated entries, Master Bibliography updates,
+and clean markup free of citation tags, and sync updates to main via git.
 """
 
 from pathlib import Path
@@ -1087,9 +1087,53 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Epistemic Violence (Gayatri Spivak)</h4>
-            <p>Gayatri Chakravorty Spivak's postcolonial formulation describing the institutional silencing, delegitimation, and destruction of subaltern knowledge traditions by dominant colonial epistemologies.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Unpacks how state curricula systematically treat Western Enlightenment epistemologies as universal rationality while categorizing Indigenous cosmologies as primitive folklore or decorative cultural artifacts.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> If pushed to radical extremes, epistemic critiques can drift into anti-scientific relativism, dismissing foundational universal sciences, empirical testing, and medicine as mere tools of colonial hegemony.</p>
+            <p>
+                Gayatri Chakravorty Spivak's postcolonial feminist thesis (<span class="tooltip-term" tabindex="0" data-tooltip="Can the Subaltern Speak? (1988), analyzing the discursive silencing of colonized subjects within imperial historiography and law.">Can the Subaltern Speak?, 1988</span>)
+                demonstrates that imperialism does not conquer solely through military invasion or administrative rule, but through
+                <span class="tooltip-term" tabindex="0" data-tooltip="The systematic destruction, invalidation, and delegitimation of a colonized society's knowledge frameworks, philosophy, and ways of understanding reality.">epistemic violence</span>:
+                the institutional silencing, delegitimation, and destruction of non-Western knowledge traditions by dominant colonial epistemologies that masquerade
+                as universal rationality. This violence renders the <span class="tooltip-term" tabindex="0" data-tooltip="Social groups completely excluded from the institutional channels of power, representation, and dominant discourse, unable to speak within imperial categories.">subaltern</span>
+                structurally inaudible within state education.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The Botany Field Trip vs. Indigenous Fire Ecology</strong>
+                Imagine a Year 9 Science ecology unit examining environmental management and forest conservation:
+                <ul>
+                    <li><strong>The Western Epistemological Paradigm:</strong> The teacher guides students through textbook taxonomy, statistical carbon cycles, and Western satellite modeling, treating these quantitative frameworks as the sole objective, scientific truth.</li>
+                    <li><strong>The Subaltern Knowledge Tradition:</strong> An Indigenous student shares generational, oral ecological knowledge passed down through kinship lineages regarding seasonal cool-burning regimes, relational animal indicators, and controlled mosaic burn patterns.</li>
+                    <li><strong>The Epistemic Strike:</strong> The teacher smiles politely, calls it <em>"fascinating cultural folklore,"</em> but instructs the class to return to <em>"real empirical science"</em> for the upcoming examination.</li>
+                </ul>
+                The school does not ban the Indigenous student from speaking; rather, it commits epistemic violence by reducing thousands of years of sophisticated, empirical, and sustainable land management to decorative folklore (<span class="tooltip-term" tabindex="0" data-tooltip="The systematic destruction or killing of an entire civilization's knowledge system, cosmology, and intellectual heritage.">epistemicide</span>), declaring it cognitively invalid within formal education.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Formulated in 1988 in Spivak's landmark essay <em>Can the Subaltern Speak?</em>, drawing on Derridean deconstruction, Foucaultian power/knowledge, and the Subaltern Studies Group. Spivak examined how the British colonial administration in 19th-century India (codified infamously in Lord Macaulay's 1835 <em>Minute on Indian Education</em>, which claimed that a single shelf of a good European library was worth the whole native literature of India and Arabia) rewrote Hindu and Islamic legal traditions, family structures, and educational codes through imperial English categories. The empirical anomaly: Western colonial schooling justified itself as a benevolent civilizing mission bringing universal reason to "ignorant" native populations, yet in practice, it systematically dismantled advanced, complex non-Western intellectual traditions, leaving colonized subjects illiterate in their own philosophical heritage.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Spivak's framework operates through three core operational mechanisms:</p>
+            <ul>
+                <li><strong>The Universalist Monopolization of Reason:</strong> Western Enlightenment epistemologies construct themselves not as a localized European cultural tradition, but as universal rationality itself. Any alternative cosmology, indigenous relational ontology, or oral taxonomy is automatically relegated to primitive myth, subjective belief, or irrational superstition.</li>
+                <li><strong>Subaltern Inaudibility (The Institutional Catch-22):</strong> Spivak's famous conclusion that <em>"the subaltern cannot speak"</em> does not mean marginalized individuals are physically mute. It means that the institutional structures and communicative channels of the state and academy are so completely constituted by colonial discourse that subaltern perspectives cannot be registered on their own terms. If a subaltern person speaks within the colonizer's linguistic and academic rules, they have already been co-opted; if they speak in their native vernacular, the institution dismisses them as unintelligible.</li>
+                <li><strong>The Erasure of the Archive &amp; Epistemic Injustice:</strong> Colonial authorities and modern school curricula systematically destroy or marginalize indigenous archives. By classifying European texts as the sole universal canon, schools commit what philosopher Miranda Fricker terms <span class="tooltip-term" tabindex="0" data-tooltip="A form of injustice related to knowledge, where someone is wronged specifically in their capacity as a knower (testimonial and hermeneutical marginalization).">epistemic injustice</span>, denying subaltern learners the credibility and collective conceptual resources needed to make their own lived social experience understood.</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Unmasks the profound Eurocentric bias embedded within ostensibly neutral national curricula. It exposes how standard school textbooks treat European scientific discoveries and philosophical treatises as human triumphs while treating Indigenous, Asian, and African intellectual history as ornamental add-ons. It establishes why authentic educational decolonization requires more than superficial multicultural tokenism: schools must legitimize diverse epistemologies as rigorous, valid ways of knowing and interpreting reality.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Anti-Scientific Relativist Trap (Young's Social Realism):</em> When pushed to radical extremes, postcolonial epistemic critiques risk collapsing into epistemological relativism, claiming that empirical testing, modern medicine, calculus, and physics are merely "white, Western cultural constructs." As sociologist Michael Young argues, disciplinary science provides objective intellectual leverage that transcends cultural origin; branding universal scientific truths as "epistemic violence" deprives marginalized children of the powerful knowledge needed to engage with the modern material world.</li>
+                <li><em>The Ventriloquism Paradox (Speaking for the Other):</em> Elite academics in Western universities who posture as radical champions of the subaltern frequently fall into the exact trap Spivak warned against: they appropriate subaltern suffering to advance their own academic prestige, projecting complex poststructuralist jargon onto impoverished communities while doing nothing to alleviate material deprivation.</li>
+                <li><em>Pedagogical Paralysis in the Classroom:</em> If teachers are led to believe that evaluating objective spelling, mathematical proof, or scientific fact constitutes "epistemic violence," they become paralyzed. Refusing to assess or correct student work out of cultural guilt abandons disadvantaged students to educational mediocrity, ensuring they fail high-stakes tertiary exams.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Spivak, G. C. (1988).</strong> 'Can the Subaltern Speak?' In C. Nelson &amp; L. Grossberg (Eds.), <em>Marxism and the Interpretation of Culture</em> (pp. 271–313). Urbana: University of Illinois Press. <em>[The foundational text establishing epistemic violence and subaltern inaudibility]</em>.</li>
+                    <li><strong>Macaulay, T. B. (1835).</strong> <em>Minute on Indian Education</em>. London: British Parliamentary Papers. <em>[The historical archetype of imperial epistemic violence and curricular destruction]</em>.</li>
+                    <li><strong>Fricker, M. (2007).</strong> <em>Epistemic Injustice: Power and the Ethics of Knowing</em>. Oxford: Oxford University Press.</li>
+                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -1507,12 +1551,15 @@ def produce_complete_html_document() -> str:
             <li><strong>Fanon, F. (1963).</strong> <em>The Wretched of the Earth</em> (C. Farrington, Trans.). New York: Grove Press. (Original work published in French 1961).</li>
             <li><strong>Foucault, M. (1977).</strong> <em>Discipline and Punish: The Birth of the Prison</em> (A. Sheridan, Trans.). London: Allen Lane. (Original work published in French 1975).</li>
             <li><strong>Freire, P. (1970).</strong> <em>Pedagogy of the Oppressed</em> (M. B. Ramos, Trans.). New York: Herder and Herder. (Original work published in Portuguese 1968).</li>
+            <li><strong>Fricker, M. (2007).</strong> <em>Epistemic Injustice: Power and the Ethics of Knowing</em>. Oxford: Oxford University Press.</li>
             <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press.</li>
+            <li><strong>Macaulay, T. B. (1835).</strong> <em>Minute on Indian Education</em>. London: British Parliamentary Papers.</li>
             <li><strong>Meyer, I. H. (2003).</strong> 'Prejudice, Social Stress, and Mental Health in Lesbian, Gay, and Bisexual Populations: Conceptual Issues and Research Evidence'. <em>Psychological Bulletin</em>, 129(5), 674–697.</li>
             <li><strong>Ngũgĩ wa Thiong'o. (1986).</strong> <em>Decolonising the Mind: The Politics of Language in African Literature</em>. London: James Currey.</li>
             <li><strong>Nussbaum, M. (1999).</strong> 'The Professor of Parody: The Hip Defeatism of Judith Butler'. <em>The New Republic</em>, 220(8), 37–45.</li>
             <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
             <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660.</li>
+            <li><strong>Spivak, G. C. (1988).</strong> 'Can the Subaltern Speak?' In C. Nelson &amp; L. Grossberg (Eds.), <em>Marxism and the Interpretation of Culture</em> (pp. 271–313). Urbana: University of Illinois Press.</li>
             <li><strong>Weber, M. (1978).</strong> <em>Economy and Society: An Outline of Interpretive Sociology</em> (G. Roth &amp; C. Wittich, Eds.). Berkeley: University of California Press. (Original work published 1922).</li>
             <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
             <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
@@ -1556,14 +1603,14 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand Frantz Fanon colonisation of mind entry to full dossier\n\n"
-        "Upgrade Colonisation of the Mind (Frantz Fanon) in core-concepts.html\n"
-        "to a four-part forensic dossier examining psychic subjugation,\n"
-        "lactification, linguistic deracination, and the mission school binary.\n\n"
-        "- Detail epidermalization of inferiority and Manichean school structures.\n"
-        "- Add scenario box analyzing mother tongue suppression vs fluency.\n"
-        "- Audit trauma over-indexing, epistemic relativism, and Achebe's paradox.\n"
-        "- Update Master Bibliography with Ngugi wa Thiong'o (1986).\n"
+        "Expand Spivak epistemic violence entry to full forensic dossier\n\n"
+        "Upgrade Epistemic Violence (Gayatri Spivak) in core-concepts.html to a\n"
+        "four-part forensic dossier examining subaltern silencing, Macaulayism,\n"
+        "the universalist ruse, and curriculum ecology.\n\n"
+        "- Detail epistemicide, archival destruction, and subaltern inaudibility.\n"
+        "- Add scenario box analyzing Indigenous fire ecology vs school science.\n"
+        "- Audit anti-scientific relativism, ventriloquism, and teacher paralysis.\n"
+        "- Update Master Bibliography with Spivak (1988).\n"
         "- Ensure all HTML markup remains 100% free of citation tags."
     )
 
