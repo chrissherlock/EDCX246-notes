@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Update Habitus in core-concepts.html to a comprehensive 5-part
-
+"""Update Symbolic Violence in core-concepts.html to a comprehensive 5-part
 diagnostic entry and synchronize via Git.
 """
 
@@ -10,34 +9,38 @@ import subprocess
 import sys
 
 
-def build_habitus_html() -> str:
-    return """        <div class="concept-entry">
-            <h3>Habitus (Pierre Bourdieu)</h3>
-            <p>Habitus denotes a system of durable, transposable dispositions—internalized schemes of perception, appreciation, bodily posture, and action—acquired through sustained immersion in a specific social class and material condition. It functions as a subconscious compass or "feel for the game" (<em>sens pratique</em>), orienting individual choices without requiring conscious rule-following or calculating deliberation.</p>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> The concept emerged directly from Pierre Bourdieu's ethnographic fieldwork in colonial Algeria during the late 1950s and early 1960s (studying the Kabyle peasants undergoing forced relocation) alongside his sociological studies of rural bachelorhood in his home region of Béarn, France. Bourdieu confronted an acute theoretical impasse between the two dominant intellectual paradigms of mid-twentieth-century France: Claude Lévi-Strauss's <em>structuralism</em> (which reduced human agents to passive automatons executing rigid, unconscious cultural rules) and Jean-Paul Sartre's <em>existentialism</em> (which posited radical, unconstrained personal freedom and sovereign choice). Neither model could explain what Bourdieu observed in Algeria: displaced peasants could not simply "choose" to become capitalist wage-earners overnight, nor were they merely following mechanical scripts. Instead, their traditional rural dispositions, temporal rhythms, and economic assumptions clashed fundamentally with the colonial monetary economy. To transcend this objectivist/subjectivist dualism, Bourdieu retrieved the classical Aristotelian concept of <em>hexis</em> (moral character acquired through bodily habit), passed through medieval scholasticism via Thomas Aquinas as <em>habitus</em>, and sociological antecedents in Marcel Mauss's bodily techniques. He codified habitus in <em>Outline of a Theory of Practice</em> (1972; English 1977) and <em>The Logic of Practice</em> (1980) as a generative apparatus bridging objective social structures and subjective human action.</p>
-
-            <p><strong>2. Internal Mechanics &amp; Generative Gears:</strong> Bourdieu defined habitus through a famous formulation: <em>"structured structures predisposed to function as structuring structures."</em> This mechanism operates on two interconnected levels:</p>
-            <ul>
-                <li><strong>A Structured Structure (Internalized Social Reality):</strong> Early childhood socialization within a specific material condition internalizes the objective probabilities, boundaries, and limits of that class position into deep-seated mental schemas. What is objectively impossible or rare for a social group is experienced internally as unthinkable or undesirable.</li>
-                <li><strong>A Structuring Structure (Generative Action):</strong> Habitus is not a rigid cage, but an open generative grammar (analogous to Chomsky's linguistic competence) that produces an infinite variety of improvisational practices, thoughts, tastes, and choices—all constrained within the unspoken boundaries of its originating class conditions.</li>
-                <li><strong>Bodily Hexis:</strong> Habitus is thoroughly somaticized. It lives in the body as "political mythology turned into a physical demeanor"—manifested in posture, vocal modulation, physical stance, laughter, walking gait, and relationship to physical space.</li>
-            </ul>
-
-            <p><strong>3. Diagnostic Strengths in Schooling:</strong> Habitus provides extraordinary diagnostic power for deciphering the informal, psychological sorting mechanisms of mass education:</p>
-            <ul>
-                <li><em>Institutional Affinity vs. Dislocation:</em> When a middle-class student enters formal schooling, their home habitus aligns organically with the institutional habitus of the school. They move through classrooms "like a fish in water," intuitively understanding conversational cadences, teacher expectations, and unwritten cultural codes. Conversely, working-class students experience visceral cultural dislocation, feeling clumsy, scrutinized, and out of place.</li>
-                <li><em>Explaining Self-Elimination:</em> Habitus unmasks how educational sorting occurs without visible coercion. Rather than schools actively expelling working-class youth, students perform self-selection and self-elimination, adopting attitudes such as <em>"that's not for the likes of us"</em> or viewing academic tracking as personal choice. Objective institutional barriers are translated into internalized subjective limits.</li>
-                <li><em>Explaining Compliance Without Conspiracy:</em> It demonstrates how teachers and administrators reproduce systemic class inequalities without harboring overt class prejudice or conscious malicious intent, simply by acting upon their own deeply ingrained, naturalized dispositions.</li>
-            </ul>
-
-            <p><strong>4. Critical Vulnerabilities &amp; Blind Spots:</strong> Despite its analytical brilliance, habitus faces substantial theoretical and operational critique:</p>
-            <ul>
-                <li><em>The Trap of Circular Determinism:</em> Critics (including Anthony Giddens and Jacques Rancière) argue that Bourdieu's formulation risks circular fatalism: past conditions produce the habitus, which generates practices that inevitably reproduce the original conditions. This over-socialized view struggles to account for genuine upward social mobility, radical counter-hegemonic political action, or intentional reinvention.</li>
-                <li><em>The "Hysteresis Effect" and Rapid Change:</em> Bourdieu coined the term <em>hysteresis</em> (or the "Don Quixote effect") to describe the temporal lag when an individual's habitus remains calibrated to past conditions that no longer match the changing objective structures of the field. However, in hyper-dynamic, digitally mediated societies, dispositions adapt far more rapidly and heterogeneously than a static, lifelong habitus model allows.</li>
-                <li><em>Reflexivity in Modern Learners:</em> Contemporary educational sociologists argue that diverse, multicultural, and modern youth routinely exhibit cross-cultural reflexivity—consciously code-switching and deploying multiple, fragmented "habitus repertoires" rather than remaining bound to a singular, monolithic class disposition.</li>
-            </ul>
-        </div>"""
+def build_symbolic_violence_html() -> str:
+    lines = [
+        '        <div class="concept-entry">',
+        '            <h3>Symbolic Violence (Pierre Bourdieu)</h3>',
+        '            <p>Symbolic violence denotes the insidious, non-physical form of domination exerted through the tacit complicity and misrecognition of dominated social agents. It operates when the arbitrary cultural meanings, linguistic codes, and social hierarchies of ruling groups are successfully imposed and internalized as natural, universal, and universally legitimate orders of reality.</p>',
+        '',
+        '            <p><strong>1. History &amp; The Empirical Anomaly:</strong> The concept was forged by Pierre Bourdieu and Jean-Claude Passeron throughout their empirical work in 1960s Algeria and France, receiving its definitive theoretical exposition in <em>Reproduction in Education, Society and Culture</em> (1970; English 1977) and later in <em>Pascalian Meditations</em> (1997; English 2000). Classical political philosophy struggled with a foundational anomaly: why do stratified societies remain remarkably stable without continuous physical coercion, martial violence, or overt economic bribery? Classical Marxism attributed this stability to crude ideology and "false consciousness" imposed from above, but Bourdieu recognized that ideology models treat agents as passive dupes. Bourdieu observed that subordinate groups actively cooperate in their own subjugation because the cognitive categories and perceptual schemes they use to understand the world are themselves structured by the relations of domination. Power succeeds precisely because it ceases to look like power; it conceals its arbitrary roots and presents itself as natural, neutral common sense.</p>',
+        '',
+        '            <p><strong>2. Internal Mechanics &amp; Structural Gears:</strong> Bourdieu broke down the apparatus of symbolic violence into several interlocking gears:</p>',
+        '            <ul>',
+        '                <li><strong>Pedagogic Action &amp; Cultural Arbitrariness:</strong> Every education system transmits a <em>cultural arbitrary</em>—a selective subset of values, knowledge canons, and linguistic registers that reflects the historical interests of dominant groups, yet is presented as universal truth.</li>',
+        '                <li><strong>Pedagogic Authority &amp; Legitimate Worth:</strong> Schools wield institutionalized authority that grants them the monopoly on legitimate cultural evaluation. Because this authority is accepted across society, the school can confer moral and intellectual value without appearing partisan or tyrannical.</li>',
+        '                <li><strong>Misrecognition (<em>Méconnaissance</em>):</strong> The indispensable cognitive engine of symbolic violence. Subordinate agents recognize the social and educational hierarchy, but <em>misrecognize</em> its arbitrary, class-based origins, believing instead that academic outcomes reflect natural cognitive distributions, genetic ability, or moral industriousness.</li>',
+        '                <li><strong>Somatic Inscription:</strong> Symbolic violence is not merely cognitive; it lives in the body. It manifests as visceral sensations of unworthiness, embarrassment, hesitation, posture slumping, and linguistic anxiety when dominated agents interact with dominant institutions.</li>',
+        '            </ul>',
+        '',
+        '            <p><strong>3. Diagnostic Strengths in Schooling:</strong> Symbolic violence provides indispensable diagnostic leverage for exposing how mass education legitimates social inequality:</p>',
+        '            <ul>',
+        '                <li><em>The Internalization of Personal Failure:</em> When working-class or marginalized students struggle with school curricula, symbolic violence ensures they do not blame the monocultural design of the institution. Instead, they internalize their failure as personal stupidity, lack of effort, or domestic inadequacy, feeling grateful to the system that excludes them.</li>',
+        '                <li><em>Neutralizing Conflict:</em> By laundering class privilege through the objective currency of examination results, degrees, and ranking metrics, schools prevent overt class rebellion. Social stratification is effectively depoliticized and recast as fair academic sorting.</li>',
+        '                <li><em>Exposing the Paradox of Merit:</em> It unmasks how the most democratic-sounding rhetoric—universal testing, open competitions, blind grading—functions as the ideal vehicle for symbolic domination because it treats unequal competitors as equal, guaranteeing unequal outcomes while manufacturing fairness.</li>',
+        '            </ul>',
+        '',
+        '            <p><strong>4. Critical Vulnerabilities &amp; Blind Spots:</strong> Despite its analytical power, symbolic violence faces serious theoretical and practical critiques:</p>',
+        '            <ul>',
+        '                <li><em>The Trap of Hyper-Determinism and Fatalism:</em> By asserting that the dominated cannot help but use the oppressor\'s cognitive schemes, Bourdieu\'s framework risks totalizing pessimism. It leaves little conceptual room for genuine counter-hegemonic resistance, radical student consciousness, or emancipatory education.</li>',
+        '                <li><em>The Problem of Dominated "Complicity":</em> Calling the dominated "complicit" in their own subordination edges uncomfortably close to paternalism or victim-blaming. Critics like Jacques Rancière argue that this view patronizingly assumes marginalized people are trapped in blindness until enlightened sociologists reveal their subjugation.</li>',
+        '                <li><em>Overlooking Resilient Subcultural Defiance:</em> Ethnographies of education (such as Paul Willis\'s working-class lads or modern youth subcultures) demonstrate that marginalized students frequently see through the school\'s arbitrary demands, parodying authority and carving out autonomous cultural dignity rather than meekly absorbing institutional shame.</li>',
+        '            </ul>',
+        '        </div>'
+    ]
+    return "\n".join(lines)
 
 
 def update_core_concepts_file(file_path: Path) -> None:
@@ -47,19 +50,18 @@ def update_core_concepts_file(file_path: Path) -> None:
 
     content = file_path.read_text(encoding="utf-8")
 
-    # Match the entire Habitus concept-entry block
     pattern = re.compile(
-        r'<div class="concept-entry">\s*<h3>Habitus.*?</div>',
+        r'<div class="concept-entry">\s*<h3>Symbolic Violence.*?</div>',
         re.DOTALL
     )
 
     if not pattern.search(content):
-        print("Error: Could not locate Habitus entry in core-concepts.html.", file=sys.stderr)
+        print("Error: Could not locate Symbolic Violence entry in core-concepts.html.", file=sys.stderr)
         sys.exit(1)
 
-    updated_content = pattern.sub(build_habitus_html(), content, count=1)
+    updated_content = pattern.sub(build_symbolic_violence_html(), content, count=1)
     file_path.write_text(updated_content, encoding="utf-8")
-    print(f"Successfully updated Habitus in: {file_path.resolve()}")
+    print(f"Successfully updated Symbolic Violence in: {file_path.resolve()}")
 
 
 def execute_git_sync(repo_path: Path, commit_msg: str) -> None:
@@ -90,15 +92,14 @@ def main() -> None:
     update_core_concepts_file(target_file)
 
     commit_message = (
-        "Expand Habitus into comprehensive 5-part diagnostic entry\n\n"
-        "Upgrade the Habitus section in core-concepts.html with a deep\n"
-        "sociological breakdown covering Bourdieu's Algerian ethnographic roots,\n"
-        "the critique of structuralism and existentialism, generative bodily hexis,\n"
-        "and critical limitations.\n\n"
-        "- Detail origins in 1950s/60s Algerian fieldwork and Béarn studies.\n"
-        "- Break down structured structure, structuring structure, and bodily hexis.\n"
-        "- Analyze institutional affinity, self-elimination, and schooling outcomes.\n"
-        "- Critique circular determinism and the hysteresis effect."
+        "Expand Symbolic Violence into comprehensive 5-part diagnostic entry\n\n"
+        "Upgrade the Symbolic Violence section in core-concepts.html with a deep\n"
+        "sociological breakdown covering Bourdieu and Passeron's Algerian roots,\n"
+        "the mechanics of misrecognition, pedagogic authority, and limits.\n\n"
+        "- Detail origins in Algerian fieldwork and Reproduction (1970/1977).\n"
+        "- Break down pedagogic action, misrecognition, and cultural arbitrariness.\n"
+        "- Analyze the internalization of academic failure and meritocracy traps.\n"
+        "- Critique theoretical fatalism and the paradox of dominated complicity."
     )
 
     execute_git_sync(root_directory, commit_message)
