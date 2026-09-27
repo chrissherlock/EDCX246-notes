@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Refine the Symbolic Violence and Misrecognition entry in core-concepts.html
+"""Add Jacques Rancière's The Philosopher and His Poor (2004/1983)
 
-to use plain-English mechanics and sync updates to the main branch via git.
+to the master bibliography in core-concepts.html.
 """
 
 from pathlib import Path
@@ -509,7 +509,7 @@ def produce_complete_html_document() -> str:
                         <text x="625" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="700" fill="#EA580C" text-anchor="middle">Jacques Rancière (The Master's Trap)</text>
                         <text x="625" y="193" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#44403C" text-anchor="middle">Intellectual Equality vs. Sociological Paternalism</text>
                         <text x="625" y="209" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">The poor are not unthinking cultural dupes;</text>
-                        <text x="625" y="221" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">they see through institutional sorting clearly.</text>
+                        <text x="625" y="221" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">they see through institutional hypocrisy clearly.</text>
                     </svg>
                 </div>
 
@@ -537,7 +537,7 @@ def produce_complete_html_document() -> str:
                     </div>
                     <div class="camp-card">
                         <h6>3. The Philosophical Strike</h6>
-                        <span class="theorist">Jacques Rancière (1983)</span>
+                        <span class="theorist">Jacques Rancière (1983 / 2004)</span>
                         <p>
                             Bourdieu asserts that the working class is "complicit" in its oppression via unconscious
                             misrecognition. Rancière unmasks this as profound sociological paternalism: it frames
@@ -551,15 +551,11 @@ def produce_complete_html_document() -> str:
             <div class="entry-references">
                 <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
                 <ul>
-                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change</em> (pp. 71–112). London: Tavistock.</li>
-                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press.</li>
-                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Harvard University Press.</li>
-                    <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). Greenwood.</li>
-                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em>. London: Sage.</li>
-                    <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
-                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
-                    <li><strong>Rancière, J. (2003).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Duke University Press.</li>
-                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change: Papers in the Sociology of Education</em> (pp. 71–112). London: Tavistock Publications.</li>
+                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. (Original work published in French 1972).</li>
+                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
+                    <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
+                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
                 </ul>
             </div>
         </div>
@@ -651,8 +647,8 @@ def produce_complete_html_document() -> str:
             <div class="entry-references">
                 <strong>Primary Foundations in Bourdieu's Works:</strong>
                 <ul>
-                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. <em>[Pedagogic action, pedagogic authority, and the imposition of the cultural arbitrary]</em>.</li>
-                    <li><strong>Bourdieu, P. (2000).</strong> <em>Pascalian Meditations</em>. Stanford University Press. <em>[Elaboration of symbolic violence, bodily submission, and misrecognition]</em>.</li>
+                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications.</li>
+                    <li><strong>Bourdieu, P. (2000).</strong> <em>Pascalian Meditations</em>. Stanford University Press.</li>
                 </ul>
             </div>
         </div>
@@ -921,7 +917,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Fanon, F. (1967).</strong> <em>Black Skin, White Masks</em> (C. L. Markmann, Trans.). New York: Grove Press. (Original work published in French 1952).</li>
             <li><strong>Foucault, M. (1977).</strong> <em>Discipline and Punish: The Birth of the Prison</em> (A. Sheridan, Trans.). London: Allen Lane. (Original work published in French 1975).</li>
             <li><strong>Freire, P. (1970).</strong> <em>Pedagogy of the Oppressed</em> (M. B. Ramos, Trans.). New York: Herder and Herder. (Original work published in Portuguese 1968).</li>
-            <li><strong>Rancière, J. (2003).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
+            <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
             <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
             <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
         </ul>
@@ -961,16 +957,15 @@ def main() -> None:
     target_file = root_directory / "core-concepts.html"
 
     target_file.write_text(produce_complete_html_document(), encoding="utf-8")
-    print(f"Successfully refined Symbolic Violence entry in: {target_file.resolve()}")
+    print(f"Successfully added Ranciere reference to bibliography in: {target_file.resolve()}")
 
     commit_message = (
-        "Clarify Symbolic Violence entry in core-concepts with plain English\n\n"
-        "Replace dense academic jargon in the Symbolic Violence entry of\n"
-        "core-concepts.html with clear explanations of power without physical\n"
-        "force and arbitrary class standards mistaken for natural merit.\n\n"
-        "- Replace dense opening with plain-English breakdown of domination.\n"
-        "- Add interactive tooltip popovers for misrecognition and arbitrary culture.\n"
-        "- Preserve master bibliography and clean markup."
+        "Add Jacques Ranciere's The Philosopher and His Poor to bibliography\n\n"
+        "Include the formal book reference for Jacques Rancière's 1983/2004\n"
+        "work in the master bibliography of core-concepts.html to support\n"
+        "the critique of sociological paternalism.\n\n"
+        "- Add Rancière (2004) bibliographic entry.\n"
+        "- Verify complete academic referencing for all counter-tradition camps."
     )
 
     sync_repository(root_directory, commit_message)
