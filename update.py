@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a full forensic dossier for Django Paris and
+"""Regenerate core-concepts.html with a master Critical Synthesis card for
 
-H. Samy Alim's Culturally Sustaining Pedagogy, maintaining all separated entries,
-Master Bibliography updates, and clean markup free of citation tags, and sync
-updates to main via git.
+Section 2 (Postcolonial & Critical Race Paradigms), covering Fanon, Spivak,
+Gillborn, and Paris & Alim, keeping all markup 100% free of citation tags,
+and sync updates via git.
 """
 
 from pathlib import Path
@@ -1246,6 +1246,39 @@ def produce_complete_html_document() -> str:
                 </ul>
             </div>
         </div>
+
+        <!-- MASTER STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON POSTCOLONIAL & CRITICAL RACE PARADIGMS -->
+        <div class="textbook-impact-box" style="margin-top: 24px;">
+            <h4 class="concept-title">Critical Synthesis: Impact of Postcolonial &amp; Critical Race Paradigms on <em>Making Sense of Mass Education</em></h4>
+            <p>
+                <strong>How do Fanon, Spivak, Gillborn, and Paris &amp; Alim collectively shape and challenge the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
+                Together, these four frameworks force educational sociology to confront the historical reality that modern mass schooling was not designed as an egalitarian project, but as an imperial apparatus of racial sorting, cultural assimilation, and epistemic enclosure:
+            </p>
+            <ul>
+                <li>
+                    <strong>How they SUPPORT and Empower the Textbook's Thesis (The Decolonial Diagnostic Engine):</strong>
+                    <ul>
+                        <li><em>Psychic Subjugation &amp; Internalized Inferiority (Fanon):</em> Grounds the textbook's analysis of racial disparities beyond simple material poverty. Fanon demonstrates that colonial schooling operates directly on the interiority of racialized and Indigenous children, inducing <em>lactification</em> (psychic whitening) and alienating them from their community traditions under the guise of civilizing benevolence.</li>
+                        <li><em>The Universalist Ruse &amp; Subaltern Inaudibility (Spivak):</em> Exposes the deep Eurocentric bias of national curricula. Spivak proves that Western Enlightenment knowledge masquerades as universal rationality while committing epistemicide against Indigenous cosmologies and oral traditions, ensuring that subaltern perspectives remain institutionally inaudible unless translated into the colonizer's lexicon.</li>
+                        <li><em>Ordinary Racism &amp; Whiteness as Policy (Gillborn):</em> Demolishes the naive liberal view that racism is confined to rare, prejudiced "bad apple" teachers. Gillborn demonstrates how colorblind meritocracy, tier-capping, gifted matrices, and disciplinary exclusions systematically function as "whiteness as policy," proving that equity reforms are only tolerated when they align with white majoritarian interests (Derrick Bell's <em>interest convergence</em>).</li>
+                        <li><em>Pluralism as Sovereign Heritage (Paris &amp; Alim):</em> Moves beyond superficial "foods and festivals" multiculturalism, providing the textbook with a robust model (Culturally Sustaining Pedagogy) that treats the languages, literacies, and practices of minoritized students as enduring, sovereign intellectual assets to be sustained rather than eradicated.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Where they CAUSE PROFOUND PROBLEMS for the Textbook (The Forensic Hazards &amp; Blind Spots):</strong>
+                    <ul>
+                        <li><em>The Epistemic Relativist Trap (Michael Young's Social Realism):</em> When postcolonial critiques brand all formal curricula as "white colonial violence," they collapse the vital distinction between arbitrary colonial manners and <strong>Powerful Knowledge</strong>. Disciplinary science, calculus, thermodynamics, and formal logic are testable, objective intellectual amplifiers; denying them to racialized youth under the guise of decolonization disarms them intellectually and traps them outside the global knowledge economy.</li>
+                        <li><em>The Asian Educational Ascendancy Anomaly:</em> Gillborn's totalizing thesis of "whiteness as policy" is confounded by an undeniable empirical reality: across the UK, Australia, and North America, East Asian (Chinese, Vietnamese) and South Asian (Indian) students—many from low-SES migrant backgrounds—systematically and dramatically outperform White majoritarian peers across secondary examinations, selective school entry, and elite university STEM admissions. If schooling is fundamentally an apparatus engineered to protect white supremacy, CRT struggles to explain this divergence without resorting to cultural essentialism.</li>
+                        <li><em>The Delpit Gatekeeping Dilemma:</em> As Lisa Delpit proved, tertiary entrance exams, professional licensing boards, and courts operate ruthlessly through standard academic English. When progressive educators celebrate home vernaculars while failing to teach standard academic codes explicitly, they leave disadvantaged students locked out of high-status socioeconomic mobility. Cultural sustainability must be paired with uncompromising instruction in the culture of power.</li>
+                        <li><em>The Trauma Fetish &amp; Fatalism:</em> Over-indexing on Fanonist psychological damage and Gillborn's "tacit intentionality" risks constructing First Nations and minority students exclusively as damaged, helpless victims of an inescapable white supremacist machine. This breeds administrative fatalism, discourages teacher ambition, and erases millennia of sovereign Indigenous intellectual endurance.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>The Section 2 Synthesis Verdict:</strong>
+                    These four paradigms provide an indispensable structural diagnosis that shatters liberal complacency and unmasks the colonial origins of modern schooling. However, for classroom educators, decolonizing pedagogy cannot mean retreating into curriculum relativism, lowering academic standards, or abandoning explicit instruction. True educational equity demands an uncompromising synthesis: <strong>sustaining cultural and linguistic sovereignty while unapologetically arming marginalized students with powerful knowledge and dominant academic codes</strong>.
+                </li>
+            </ul>
+        </div>
     </section>
 
     <!-- 3. GENDER & SEXUALITIES -->
@@ -1656,6 +1689,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press.</li>
             <li><strong>Ladson-Billings, G. (1995).</strong> 'Toward a Theory of Culturally Relevant Pedagogy'. <em>American Educational Research Journal</em>, 32(3), 465–491.</li>
             <li><strong>Macaulay, T. B. (1835).</strong> <em>Minute on Indian Education</em>. London: British Parliamentary Papers.</li>
+            <li><strong>Macpherson, W. (1999).</strong> <em>The Stephen Lawrence Inquiry: Report of an Inquiry by Sir William Macpherson of Cluny</em>. London: The Stationery Office.</li>
             <li><strong>Mayo, C. (2014).</strong> <em>LGBTQ Youth and Education: Policies and Practices</em>. New York: Teachers College Press.</li>
             <li><strong>Meyer, I. H. (2003).</strong> 'Prejudice, Social Stress, and Mental Health in Lesbian, Gay, and Bisexual Populations: Conceptual Issues and Research Evidence'. <em>Psychological Bulletin</em>, 129(5), 674–697.</li>
             <li><strong>Ngũgĩ wa Thiong'o. (1986).</strong> <em>Decolonising the Mind: The Politics of Language in African Literature</em>. London: James Currey.</li>
@@ -1664,6 +1698,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Paris, D., &amp; Alim, H. S. (Eds.). (2017).</strong> <em>Culturally Sustaining Pedagogies: Teaching and Learning for Justice in a Changing World</em>. New York: Teachers College Press.</li>
             <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
             <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660.</li>
+            <li><strong>Sewell, T. (2021).</strong> <em>Commission on Race and Ethnic Disparities: The Report</em>. London: UK Cabinet Office.</li>
             <li><strong>Spivak, G. C. (1988).</strong> 'Can the Subaltern Speak?' In C. Nelson &amp; L. Grossberg (Eds.), <em>Marxism and the Interpretation of Culture</em> (pp. 271–313). Urbana: University of Illinois Press.</li>
             <li><strong>Ullman, J. (2021).</strong> <em>Free to Be? Exploring the Schooling Experiences of Australia's Sexuality and Gender Diverse High School Students</em>. Penrith: Western Sydney University.</li>
             <li><strong>Weber, M. (1978).</strong> <em>Economy and Society: An Outline of Interpretive Sociology</em> (G. Roth &amp; C. Wittich, Eds.). Berkeley: University of California Press. (Original work published 1922).</li>
@@ -1709,15 +1744,14 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand Culturally Sustaining Pedagogy entry to full forensic dossier\n\n"
-        "Upgrade Culturally Sustaining Pedagogy (Django Paris & H. Samy Alim) in\n"
-        "core-concepts.html to a comprehensive four-part forensic dossier with\n"
-        "scenario analysis, theoretical gears, and a balanced audit.\n\n"
-        "- Detail pluralism as an end, dynamic youth culture, and loving critique.\n"
-        "- Add scenario box analyzing code-meshing and Aboriginal English syntax.\n"
-        "- Audit Delpit gatekeeping dilemma, superdiversity, and relativism.\n"
-        "- Update Master Bibliography with Paris (2012) and Paris & Alim (2017).\n"
-        "- Ensure all HTML markup remains 100% free of citation tags."
+        "Add Critical Synthesis for Postcolonial and Critical Race Paradigms\n\n"
+        "Insert a master Critical Synthesis card evaluating Fanon, Spivak,\n"
+        "Gillborn, and Paris & Alim at the conclusion of Section 2 in\n"
+        "core-concepts.html, keeping all HTML markup free of citation tags.\n\n"
+        "- Detail psychic subjugation, epistemicide, and ordinary racism.\n"
+        "- Audit Asian educational ascendancy and the Delpit code dilemma.\n"
+        "- Contrast cultural sustainability with Powerful Knowledge (Young).\n"
+        "- Maintain clean semantic markup without citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
