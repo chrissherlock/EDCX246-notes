@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a full forensic dossier for Nikolas Rose
+"""Regenerate core-concepts.html with a full forensic dossier for Digital
 
-and Peter Conrad's The Psy-Complex & Medicalisation of Deviance, maintaining all
-separated entries, Master Bibliography updates, and clean markup free of citation
-tags, and sync updates to main via git.
+Panopticon & Dataveillance in Section 4, maintaining all separated entries,
+Master Bibliography updates, and clean markup free of citation tags, and sync
+updates to main via git.
 """
 
 from pathlib import Path
@@ -1761,9 +1761,56 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Digital Panopticon &amp; Dataveillance</h4>
-            <p>Ubiquitous algorithmic architectures (LMS telemetry, ClassDojo, biometric scanning) tracking real-time student activity across physical and digital school spaces.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Exposes how digital platforms extend institutional surveillance into domestic spaces, conditioning youth to accept permanent algorithmic surveillance as natural.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Fails to acknowledge the pedagogical necessity of learning analytics in identifying learning gaps, automating grading workloads, and safeguarding vulnerable children online.</p>
+            <p>
+                Synthesizing Michel Foucault's panopticism with Roger Clarke's foundational sociology of information systems (<span class="tooltip-term" tabindex="0" data-tooltip="Information Technology and Dataveillance (1988), defining dataveillance as the systematic use of personal data systems in the investigation or monitoring of the actions or communications of one or more persons.">Dataveillance, 1988</span>)
+                and contemporary critical digital sociology (Neil Selwyn, Ben Williamson), the
+                <span class="tooltip-term" tabindex="0" data-tooltip="The pervasive architectural integration of digital monitoring, telemetry tracking, and predictive algorithms across educational environments, replacing periodic human observation with continuous automated auditing.">digital panopticon</span>
+                describes the ubiquitous algorithmic monitoring of student cognitive, behavioral, and physical presence across school and domestic environments.
+                Through <span class="tooltip-term" tabindex="0" data-tooltip="The systematic monitoring of people through digital trails, metadata, keystrokes, browsing histories, and LMS telemetry rather than direct physical observation.">dataveillance</span>,
+                routine educational software (Learning Management Systems [LMS], ClassDojo, remote proctoring, cloud telemetry, biometric scanners) transforms everyday
+                student learning activities into continuous streams of predictive behavioral data, operationalizing
+                <span class="tooltip-term" tabindex="0" data-tooltip="A mode of governance that uses automated data collection, predictive modeling, and algorithmic feedback loops to steer and constrain human behavior.">algorithmic governmentality</span>.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The 9:30 PM Chromebook Telemetry &amp; Behavioral Points</strong>
+                Imagine a Year 8 student completing homework on a school-issued laptop at 9:30 PM in their bedroom:
+                <ul>
+                    <li><strong>Ambient Telemetry (Continuous Extraction):</strong> The school's cloud-monitoring software silently records keystroke velocity, active tab dwell times, document revision histories, and search queries. If the student searches for a controversial term or pauses activity, an automated flag alerts the school's central IT dashboard.</li>
+                    <li><strong>Behavioral Point-Scoring (ClassDojo / Hero):</strong> In the classroom, positive behaviors earn instant green "compliance points" while whispering or delayed compliance triggers red deductions broadcast publicly on the interactive whiteboard and pushed instantly to parents' smartphones (<span class="tooltip-term" tabindex="0" data-tooltip="Surveillance networks that enlist peers and parents as active co-monitors through live mobile push notifications and shared social feeds.">the participatory panopticon</span>).</li>
+                    <li><strong>Predictive Sorting:</strong> The LMS algorithm calculates an automated "student engagement index." Before the teacher has marked a single essay, the predictive model flags the student as "at-risk" based on timestamp telemetry, steering them into remedial digital pathways.</li>
+                </ul>
+                The physical boundary of the school has dissolved entirely. Surveillance is no longer confined to classroom walls or timetable bells; it accompanies the child into their domestic bedroom, conditioning them to accept ambient algorithmic surveillance as a natural condition of modern life.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Emerged in the late 2000s and accelerated massively following the global remote-learning pivot of 2020. Computer scientist Roger Clarke coined *dataveillance* in 1988 to predict how cheap computing power would replace expensive physical guards with automated data extraction. In education, critical digital sociologists (Neil Selwyn, Ben Williamson) addressed a glaring empirical anomaly: during the exact decades when educational policymakers promised that 1-to-1 laptop rollouts, educational technology (EdTech), and flexible digital learning platforms would "liberate" students from rigid industrial classroom discipline, schools installed an unprecedented surveillance apparatus. Students were subjected to automated keystroke logging, facial emotion recognition, remote web-filtering, and permanent algorithmic dossiers far more intrusive than any 19th-century disciplinary school ever conceived.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> The digital panopticon operates through four interlocking operational gears:</p>
+            <ul>
+                <li><strong>Dissolution of Spatiotemporal Boundaries:</strong> Traditional disciplinary power ended when the final school bell rang. Dataveillance operates 24/7 across physical and domestic spaces through school-managed accounts, monitoring students' home browsing, weekend communications, and late-night assignment revisions.</li>
+                <li><strong>Algorithmic Behavioral Scoring:</strong> Software platforms deploy operant conditioning mechanisms (badges, reward chimes, color-coded behavioral tiers) to modify behavior in real time. Compliance is gamified and rewarded; friction or quiet disengagement is flagged, logged, and penalized.</li>
+                <li><strong>The Participatory Panopticon (Parental Enclosure):</strong> Platforms enlist parents as auxiliary surveillance agents. Real-time push notifications regarding missed homework deadlines, behavioral demerits, and bathroom pass durations enlist domestic caregivers into the school's regulatory machinery.</li>
+                <li><strong>Predictive Sorting &amp; Algorithmic Triage:</strong> Rather than evaluating human work holistically, machine learning models analyze behavioral surplus (clickstream metadata, time-on-task, submission timestamps) to predict future academic trajectory, sorting students into automated intervention tracks before intellectual difficulties have visibly manifested.</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Unmasks how multi-billion-dollar commercial EdTech monopolies exploit public school systems to harvest student behavioral surplus. It exposes how digital platforms condition youth into docile, self-monitoring subjects of corporate surveillance capitalism, naturalizing the continuous extraction of personal privacy. Furthermore, it reveals how gamified behavioral tracking apps (like ClassDojo) enforce conformist docility while deflecting attention away from unengaging curricula or inadequate teacher support.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Technophobic Fatalism Trap (Denying Pedagogical Analytics):</em> When sociological critique brands all educational data collection as "sinister digital panopticism," it falls into technophobic fatalism. Objective, well-governed learning analytics provide <strong>indispensable diagnostic tools</strong>: identifying hidden phonics and numeracy reading gaps early, automating crushing teacher assessment and grading workloads, and providing adaptive scaffolding tailored to neurodivergent learners.</li>
+                <li><em>The Child Safeguarding &amp; Duty of Care Dilemma:</em> School monitoring software is frequently a statutory requirement to fulfill affirmative common law and statutory child protection mandates: detecting cyberbullying, grooming, self-harm ideation, and extremist recruitment. Banning algorithmic safety monitoring under the banner of pure privacy rights exposes vulnerable children to unmonitored digital predators and acute psychological harm.</li>
+                <li><em>Romanticizing Pre-Digital Opacity:</em> Anti-surveillance critiques often romanticize the pre-digital classroom as a haven of authentic human connection, ignoring that historical offline classrooms relied on arbitrary teacher favoritism, invisible bullying in unsupervised corridors, and undetectable learning failure. Transparent, accountable data systems can democratize support and hold negligent institutions accountable.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Clarke, R. (1988).</strong> 'Information Technology and Dataveillance'. <em>Communications of the ACM</em>, 31(5), 498–512. <em>[The foundational paper defining dataveillance and automated surveillance systems]</em>.</li>
+                    <li><strong>Selwyn, N. (2016).</strong> <em>Is Technology Good for Education?</em> Cambridge: Polity Press.</li>
+                    <li><strong>Williamson, B. (2017).</strong> <em>Big Data in Education: The Digital Future of Learning, Policy and Practice</em>. London: Sage Publications. <em>[The definitive text mapping algorithmic governance, commercial EdTech platforms, and student data extraction]</em>.</li>
+                    <li><strong>Zuboff, S. (2019).</strong> <em>The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power</em>. New York: PublicAffairs.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -1881,6 +1928,7 @@ def produce_complete_html_document() -> str:
         <h2>Master Bibliography: Primary Sources &amp; Critical References</h2>
         <ul class="biblio-list">
             <li><strong>Achebe, C. (1975).</strong> <em>Morning Yet on Creation Day: Essays</em>. London: Heinemann.</li>
+            <li><strong>Ball, S. J. (2013).</strong> <em>Foucault, Power, and Education</em>. New York: Routledge.</li>
             <li><strong>Barkley, R. A. (2015).</strong> <em>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</em> (4th ed.). New York: Guilford Press.</li>
             <li><strong>Bell, D. A. (1980).</strong> 'Brown v. Board of Education and the Interest-Convergence Dilemma'. <em>Harvard Law Review</em>, 93(3), 518–533.</li>
             <li><strong>Bentham, J. (1791).</strong> <em>Panopticon: or, the Inspection-House</em>. London: T. Payne.</li>
@@ -1892,6 +1940,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
             <li><strong>Butler, J. (1990).</strong> <em>Gender Trouble: Feminism and the Subversion of Identity</em>. New York: Routledge.</li>
             <li><strong>Butler, J. (1993).</strong> <em>Bodies That Matter: On the Discursive Limits of "Sex"</em>. New York: Routledge.</li>
+            <li><strong>Clarke, R. (1988).</strong> 'Information Technology and Dataveillance'. <em>Communications of the ACM</em>, 31(5), 498–512.</li>
             <li><strong>Collins, R. (1979).</strong> <em>The Credential Society: An Historical Sociology of Education and Stratification</em>. New York: Academic Press.</li>
             <li><strong>Connell, R. W. (1987).</strong> <em>Gender and Power: Society, the Person and Sexual Politics</em>. Stanford: Stanford University Press.</li>
             <li><strong>Connell, R. W. (1995).</strong> <em>Masculinities</em>. Berkeley: University of California Press.</li>
@@ -1921,10 +1970,12 @@ def produce_complete_html_document() -> str:
             <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press.</li>
             <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660.</li>
             <li><strong>Rose, N. (1999).</strong> <em>Governing the Soul: The Shaping of the Private Self</em> (2nd ed.). London: Free Association Books.</li>
+            <li><strong>Selwyn, N. (2016).</strong> <em>Is Technology Good for Education?</em> Cambridge: Polity Press.</li>
             <li><strong>Sewell, T. (2021).</strong> <em>Commission on Race and Ethnic Disparities: The Report</em>. London: UK Cabinet Office.</li>
             <li><strong>Spivak, G. C. (1988).</strong> 'Can the Subaltern Speak?' In C. Nelson &amp; L. Grossberg (Eds.), <em>Marxism and the Interpretation of Culture</em> (pp. 271–313). Urbana: University of Illinois Press.</li>
             <li><strong>Ullman, J. (2021).</strong> <em>Free to Be? Exploring the Schooling Experiences of Australia's Sexuality and Gender Diverse High School Students</em>. Penrith: Western Sydney University.</li>
             <li><strong>Weber, M. (1978).</strong> <em>Economy and Society: An Outline of Interpretive Sociology</em> (G. Roth &amp; C. Wittich, Eds.). Berkeley: University of California Press. (Original work published 1922).</li>
+            <li><strong>Williamson, B. (2017).</strong> <em>Big Data in Education: The Digital Future of Learning, Policy and Practice</em>. London: Sage Publications.</li>
             <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
             <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
         </ul>
@@ -1967,14 +2018,14 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand psy-complex and medicalisation entry to full forensic dossier\n\n"
-        "Upgrade The Psy-Complex & Medicalisation of Deviance (Nikolas Rose /\n"
-        "Peter Conrad) in core-concepts.html to a four-part forensic dossier\n"
-        "examining depoliticisation, behavioral triage, and clinical gatekeeping.\n\n"
-        "- Detail the psy-complex, diagnostic loops, and pharmaceutical compliance.\n"
-        "- Add scenario box analyzing classroom restlessness vs ADHD pipelines.\n"
-        "- Audit anti-psychiatric denialism against genuine neurodivergent support.\n"
-        "- Update Master Bibliography with Conrad (2007) and Rose (1999).\n"
+        "Expand Digital Panopticon & Dataveillance entry to full dossier\n\n"
+        "Upgrade Digital Panopticon & Dataveillance in core-concepts.html to a\n"
+        "four-part forensic dossier examining algorithmic governmentality,\n"
+        "LMS telemetry, ambient domestic surveillance, and child safeguarding.\n\n"
+        "- Detail dataveillance, behavioral scoring, and participatory monitoring.\n"
+        "- Add scenario box analyzing Chromebook telemetry and ClassDojo triage.\n"
+        "- Audit technophobic fatalism against learning analytics and safety.\n"
+        "- Update Master Bibliography with Clarke, Selwyn, and Williamson.\n"
         "- Ensure all HTML markup remains 100% free of citation tags."
     )
 
