@@ -1,889 +1,108 @@
 #!/usr/bin/env python3
-"""Expand Module 1 (Social Class & Educational Stratification) into full
+"""Add linear Back, Home, and Next navigation controls to all module pages
 
-unabridged forensic dossiers, update module-1.html, and sync changes via git.
+in the EDCX246 revision guide, maintaining semantic HTML and git sync.
 """
 
 from pathlib import Path
+import re
 import subprocess
 import sys
 
-
-def produce_module_1_html() -> str:
-    html_content = r'''<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 1: Social Class & Stratification</title>
-    <style>
-        :root {
-            --primary: #b45309;          /* Refined Warm Amber / Cognac */
-            --primary-dark: #78350f;     /* Deep Russet */
-            --accent-orange: #ea580c;    /* Terracotta Accent */
-            --text-heading: #1c1917;     /* Warm Charcoal */
-            --text-main: #292524;        /* Crisp Charcoal Body Text */
-            --text-muted: #57534e;       /* Stone Muted Text */
-            --bg-page: #ffffff;          /* Clean White Canvas */
-            --bg-entry: #fafaf9;         /* Very Soft Warm Stone Tint */
-            --bg-banner: #fffbf5;        /* Subtle Warm Paper Tint */
-            --border-subtle: #e7e5e4;    /* Light Stone Border */
-            --border-accent: #f59e0b;    /* Warm Amber Line Accent */
-            --badge-strength-bg: #ecfdf5;
-            --badge-strength-text: #047857;
-            --badge-strength-border: #a7f3d0;
-            --badge-audit-bg: #fff1f2;
-            --badge-audit-text: #be123c;
-            --badge-audit-border: #fecdd3;
-            --scenario-box-bg: #f5f5f4;
-            --scenario-box-border: #d6d3d1;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.65;
-            max-width: 920px;
-            margin: 0 auto;
-            padding: 36px 20px;
-            color: var(--text-main);
-            background-color: var(--bg-page);
-        }
-        h1, h2, h3, h4, h5 {
-            color: var(--text-heading);
-            font-weight: 700;
-        }
-        h1 {
-            font-size: 1.85rem;
-            color: var(--primary-dark);
-            border-bottom: 3px solid var(--border-accent);
-            padding-bottom: 10px;
-            margin-bottom: 18px;
-            letter-spacing: -0.01em;
-        }
-        h2 {
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-top: 36px;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #fed7aa;
-            padding-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        h3.tradition-header {
-            font-size: 1.05rem;
-            color: var(--text-heading);
-            margin-top: 24px;
-            margin-bottom: 16px;
-            background: #fff7ed;
-            padding: 5px 12px;
-            border-left: 3px solid var(--primary);
-            border-radius: 0 4px 4px 0;
-            font-style: normal;
-        }
-        h4.concept-title {
-            font-size: 1.02rem;
-            color: var(--accent-orange);
-            margin-top: 0;
-            margin-bottom: 6px;
-            padding-top: 0;
-        }
-        h5.counter-header {
-            font-size: 0.95rem;
-            color: var(--primary-dark);
-            margin-top: 22px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-        .intro-card {
+NAV_STYLE = """
+        .module-nav {
             display: flex;
-            align-items: flex-start;
-            gap: 18px;
-            background-color: var(--bg-banner);
-            border: 1px solid #fed7aa;
-            border-left: 4px solid var(--primary);
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin-bottom: 24px;
-        }
-        .intro-card p {
-            margin: 0;
-            font-size: 0.92rem;
-            color: #44403c;
-            line-height: 1.6;
-            text-align: justify;
-        }
-        .forensic-entry {
-            margin-bottom: 20px;
-            padding: 16px 20px;
-            background-color: var(--bg-entry);
-            border: 1px solid var(--border-subtle);
-            border-left: 3px solid #fbbf24;
-            border-radius: 6px;
-        }
-        .forensic-entry p {
-            margin: 0 0 8px 0;
-            font-size: 0.91rem;
-            text-align: justify;
-        }
-        .forensic-entry ul {
-            margin: 4px 0 10px 18px;
-            font-size: 0.89rem;
-            line-height: 1.55;
-        }
-        .forensic-entry li {
-            margin-bottom: 6px;
-            text-align: justify;
-        }
-        .scenario-box {
-            margin: 10px 0 14px 0;
-            padding: 10px 14px;
-            background-color: var(--scenario-box-bg);
-            border-left: 3px solid var(--primary);
-            border-radius: 0 4px 4px 0;
-            font-size: 0.88rem;
-            color: #334155;
-        }
-        .scenario-box strong.label {
-            color: var(--primary-dark);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.03em;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .scenario-box ul {
-            margin: 4px 0 6px 16px;
-        }
-        .tooltip-term {
-            position: relative;
-            cursor: help;
-            border-bottom: 1.5px dotted var(--primary);
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-        .tooltip-term:hover::after,
-        .tooltip-term:focus::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 280px;
-            padding: 8px 12px;
-            background-color: #1c1917;
-            color: #fefce8;
-            font-size: 0.81rem;
-            font-weight: 400;
-            line-height: 1.45;
-            border-radius: 6px;
-            border: 1px solid #f59e0b;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-            z-index: 100;
-            white-space: normal;
-            text-align: left;
-        }
-        .tooltip-term:hover::before,
-        .tooltip-term:focus::before {
-            content: "";
-            position: absolute;
-            bottom: 110%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 6px;
-            border-style: solid;
-            border-color: #1c1917 transparent transparent transparent;
-            z-index: 100;
-        }
-        .counter-svg-container {
-            margin: 16px 0;
-            text-align: center;
-        }
-        .counter-svg-container svg {
-            max-width: 100%;
-            height: auto;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
-        }
-        .counter-tradition-box {
-            margin-top: 18px;
-            padding: 16px 18px;
-            background-color: #ffffff;
-            border: 1px solid #fed7aa;
-            border-left: 4px solid var(--accent-orange);
-            border-radius: 6px;
-        }
-        .camp-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-between;
+            align-items: center;
             gap: 12px;
-            margin-top: 14px;
+            margin: 20px 0;
+            padding: 10px 0;
+            border-top: 1px solid var(--border-subtle, #e7e5e4);
+            border-bottom: 1px solid var(--border-subtle, #e7e5e4);
         }
-        .camp-card {
-            background-color: #fffdfa;
-            border: 1px solid #fed7aa;
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: var(--bg-banner, #fffbf5);
+            border: 1px solid var(--border-accent, #f59e0b);
             border-radius: 6px;
-            padding: 10px 12px;
-            font-size: 0.86rem;
-            line-height: 1.5;
-        }
-        .camp-card h6 {
-            margin: 0 0 4px 0;
-            color: var(--primary-dark);
-            font-size: 0.88rem;
-            font-weight: 700;
-        }
-        .camp-card .theorist {
-            color: var(--accent-orange);
-            font-weight: 600;
-            font-size: 0.8rem;
-            display: block;
-            margin-bottom: 6px;
-        }
-        .camp-card p {
-            margin: 0;
-            font-size: 0.84rem;
-            text-align: left;
-            color: #44403c;
-        }
-        .textbook-impact-box {
-            margin-bottom: 24px;
-            padding: 20px 24px;
-            background-color: #fffbeb;
-            border: 1px solid #fde68a;
-            border-left: 5px solid #d97706;
-            border-radius: 6px;
-            font-size: 0.92rem;
-            line-height: 1.65;
-        }
-        .textbook-impact-box h4.concept-title {
-            color: var(--primary-dark);
-            font-size: 1.12rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-        .textbook-impact-box ul {
-            margin: 10px 0 0 20px;
-        }
-        .textbook-impact-box li {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-        .textbook-impact-box ul ul {
-            margin-top: 6px;
-        }
-        .entry-references {
-            margin-top: 14px;
-            padding: 10px 14px;
-            background-color: #fefce8;
-            border: 1px dashed #f59e0b;
-            border-radius: 4px;
-            font-size: 0.84rem;
-            color: #78350f;
-        }
-        .entry-references strong {
-            display: block;
-            color: var(--primary-dark);
-            text-transform: uppercase;
-            font-size: 0.76rem;
-            letter-spacing: 0.04em;
-            margin-bottom: 4px;
-        }
-        .entry-references ul {
-            margin: 2px 0 2px 14px;
-            padding-left: 0;
-            line-height: 1.5;
-        }
-        .entry-references li {
-            margin-bottom: 3px;
-        }
-        .audit-label-critique {
-            display: inline-block;
-            background-color: var(--badge-audit-bg);
-            color: var(--badge-audit-text);
-            padding: 1px 7px;
-            border-radius: 3px;
-            font-size: 0.84rem;
-            font-weight: 700;
-            border: 1px solid var(--badge-audit-border);
-        }
-        .audit-label-strength {
-            display: inline-block;
-            background-color: var(--badge-strength-bg);
-            color: var(--badge-strength-text);
-            padding: 1px 7px;
-            border-radius: 3px;
-            font-size: 0.84rem;
-            font-weight: 700;
-            border: 1px solid var(--badge-strength-border);
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 28px;
-            margin-bottom: 24px;
-            padding: 7px 14px;
-            background-color: #fff7ed;
-            border: 1px solid #fdba74;
-            border-radius: 5px;
-            color: var(--primary-dark);
+            color: var(--primary-dark, #78350f);
             text-decoration: none;
             font-size: 0.88rem;
             font-weight: 600;
-            transition: all 0.15s ease-in-out;
+            transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
         }
-        .back-link:hover {
-            background-color: var(--primary);
+        .nav-btn:hover {
+            background-color: var(--primary, #b45309);
             color: #ffffff;
-            border-color: var(--primary);
+            border-color: var(--primary, #b45309);
         }
-        @media (max-width: 768px) {
-            .camp-cards { grid-template-columns: 1fr; }
+        .nav-btn.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+            cursor: default;
+            border-color: var(--border-subtle, #e7e5e4);
         }
-        @media print {
-            body { padding: 12px; font-size: 9.5pt; }
-            .intro-card, .forensic-entry, .counter-tradition-box, .textbook-impact-box { break-inside: avoid; page-break-inside: avoid; }
-        }
-    </style>
-</head>
-<body>
-
-    <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>
-
-    <section id="section-1">
-        <h2>1. Social Class &amp; Educational Stratification</h2>
-
-        <div class="intro-card">
-            <p>
-                <strong>Module Overview:</strong> This module examines how modern mass education acts as an apparatus of social class reproduction rather than a neutral engine of meritocracy. Through Pierre Bourdieu's foundational concepts of <em>cultural capital</em>, <em>habitus</em>, and <em>symbolic violence</em>, alongside sociolinguistic codes (Basil Bernstein), working-class resistance (Paul Willis), neo-Weberian social closure, credentialism, and school residualisation, we interrogate the structural mechanisms that convert inherited class privilege into academic success.
-            </p>
-        </div>
-
-        <h3 class="tradition-header">The Bourdieusian Paradigm (Pierre Bourdieu &amp; Jean-Claude Passeron)</h3>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Cultural Capital (Pierre Bourdieu)</h4>
-            <p>Cultural capital represents the accumulated, embodied labor-time invested in non-financial social assets—syntactic fluency, academic mannerisms, aesthetic dispositions, and formal credentials—that individuals inherit through domestic class socialization and deploy within competitive institutional markets. Rather than reflecting neutral, biological intelligence, it operates as an institutionalized class currency that schools covertly demand and reward while pretending merely to evaluate innate merit.</p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: Julian vs. Marcus</strong>
-                Imagine two 10-year-olds with identical raw working memory and cognitive aptitude:
-                <ul>
-                    <li><strong>Julian (Solicitor &amp; Teacher household):</strong> Absorbs thousands of hours of speculative debate, sophisticated vocabulary (<em>"tentatively"</em>, <em>"contradictory"</em>), and museum visits through domestic osmosis. He instinctively knows how to challenge authority politely, make eye contact, and structure arguments in an essay.</li>
-                    <li><strong>Marcus (Forklift driver &amp; Cleaner household):</strong> Absorbs practical problem-solving, trade knowledge, community solidarity, and direct, protective language (<em>"hurry up"</em>, <em>"don't get into trouble"</em>).</li>
-                </ul>
-                When the school tests <em>"authoritative voice,"</em> <em>"nuanced engagement,"</em> and <em>"formal rhetoric,"</em> it rewards Julian for speaking his home dialect while penalizing Marcus for lacking a code the school never explicitly taught him. The school acts like a foreign currency exchange that demands US Dollars, takes payment from the child raised in America, and penalizes the child holding Pesos—all while claiming to be an objective, meritocratic test.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed during the 1960s by Pierre Bourdieu and Jean-Claude Passeron in post-WWII France. State technocrats had eliminated university tuition fees, anticipating that open financial access would establish a pure meritocracy. However, statistical surveys revealed a glaring contradiction: despite free tuition, working-class and peasant students failed and withdrew at dramatically higher rates than bourgeois cohorts. Classical Marxism attributed reproduction almost exclusively to economic capital (property, wealth, and ownership of the means of production), but Bourdieu recognized that financial explanations could not account for why working-class students with adequate funding still struggled with the implicit cultural demands of the academy. Expanding capital into the cultural sphere, the term was formally introduced in print in the 1973 essay <em>Cultural Reproduction and Social Reproduction</em> and later codified into three states in the 1986 essay <em>The Forms of Capital</em>.</p>
-
-            <p><strong>2. Theoretical Mechanics &amp; Advanced Operational Gears:</strong> Bourdieu's foundational texts establish four precise operational gears governing cultural capital:</p>
-            <ul>
-                <li><strong>The Economy of Time &amp; "Wasted Time":</strong> Accumulating embodied capital (<em>Bildung</em>) requires personal labor-time that cannot be delegated. Because children of educated families begin accumulating usable cultural currency from birth, they gain an insurmountable head start. For the working-class child, early domestic socialization represents what Bourdieu terms <em>"wasted time"</em> in the eyes of the school—time that must be expensively spent unlearning, correcting, and retraining home speech patterns and postures. Furthermore, accumulating cultural capital requires <em>free time</em>—the suspension of economic urgency that only affluent families can purchase.</li>
-                <li><strong>The Three Interdependent States (The Ancient Greek Analogy):</strong>
-                    <ul>
-                        <li><span class="tooltip-term" tabindex="0" data-tooltip="The internal software: vocabulary, accent, posture, and conversational confidence wired into your brain and body over years. Like knowing how to read ancient Greek.">Embodied State (État Incorporé)</span>: <strong>The personal skills, habits, and fluency carried inside you.</strong> This is the mental and bodily software: your vocabulary, accent, conversational ease, posture, and unthinking confidence when speaking to authority. It cannot be handed over like cash; it takes years of personal labor-time to absorb at home. Like knowing how to read ancient Greek, it is physically wired into your nervous system and dies with you.</li>
-                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Physical objects requiring skill to decode: books, grand pianos, art, lab gear. Cash buys the object, but only embodied skill lets you play or read it.">Objectified State (État Objectivé)</span>: <strong>Physical cultural possessions.</strong> Books, art collections, grand pianos, classical music recordings, and scientific instruments. Anyone with lottery winnings can buy a grand piano with cash (economic capital), but it remains an expensive piece of furniture unless someone in the house has the <em>embodied</em> skill to sit down and play Beethoven on it.</li>
-                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Official paper certificates: degrees, diplomas, licenses. Proves competence on paper so you don't have to re-prove your worth every single morning.">Institutionalized State (État Institutionalisé)</span>: <strong>Official qualifications and credentials.</strong> University degrees, diplomas, and state licenses. An uncertified genius must prove their skill from scratch to every employer they meet. But an official degree from an elite university acts as a state-guaranteed stamp of approval, setting an employee's salary and market value on paper without requiring daily proof.</li>
-                    </ul>
-                </li>
-                <li><strong>The Intraclass Divide (Teachers vs. Industrialists):</strong> The ruling class is not monolithic; it is split between the <em>dominant fraction</em> (rich in economic capital, poorer in cultural capital, e.g., corporate heads and commercial executives) and the <em>dominated fraction</em> (rich in cultural capital, poorer in economic capital, e.g., academics, teachers, and artistic producers). Because schooling is run by the cultural fraction, the academic market rewards its own domestic culture above all else. This explains why teachers' children consistently outperform the children of wealthy commercial executives on purely academic tests.</li>
-                <li><strong>Credential Devaluation &amp; Defensive Escalation:</strong> Educational qualifications derive their market exchange value from their <strong>scarcity</strong>. When democratic access expands the supply of basic university degrees, qualifications undergo inevitable inflation and currency devaluation. The dominant classes preserve social closure not by opposing mass education, but by dynamically <em>escalating the threshold</em> of entry:
-                    <ul>
-                        <li><em>Vertical Reconversion &amp; Pedigree:</em> Shifting the baseline goalposts from basic bachelor's degrees to costly postgraduate degrees, elite MBAs, and hyper-selective institutional tiers (e.g., French <em>Grandes Écoles</em>, Oxbridge, or Ivy League networks) that remain disproportionately monopolized by high-capital families.</li>
-                        <li><em>The Retreat to Informal Gatekeeping:</em> As paper qualifications equalize across applicants, employers pivot hiring criteria away from tested technical competence toward non-scholastic filters: unpaid corporate internships (which only wealthy families can financially subsidize), inherited social connections, and the evaluation of <span class="tooltip-term" tabindex="0" data-tooltip="Bodily mannerisms, unthinking confidence, accent, and conversational ease evaluated as 'culture fit'.">embodied 'interview poise'</span> and 'culture fit'—rubrics that covertly reward bourgeois domestic habitus over scholastic effort.</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the naive meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It accurately diagnoses how subjective, open-ended grading rubrics penalize working-class students for lacking conversational ease and bourgeois manual/linguistic mannerisms.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Relativist Trap (Conflating Arbitrary Culture with Powerful Knowledge):</em> Bourdieu treats curriculum content as an arbitrary ruling-class power tool. However, formal logic, standard grammatical syntax, the calculus, and empirical science are not arbitrary cultural toys; they are objective cognitive amplifiers that allow humans to model, manipulate, and master the material and social world. Treating all curricula as arbitrary class violence collapses the vital distinction between arbitrary manners and empirically grounded, powerful knowledge (Michael Young).</li>
-                <li><em>The Delpit Dilemma &amp; Monday Morning Catastrophe:</em> As African-American educational scholar Lisa Delpit demonstrated, when progressive educators stop explicitly teaching standard grammar and academic rhetoric under the guise of avoiding cultural violence, they do not liberate marginalized kids; they strand them. Middle-class kids acquire the dominant codes at home, while disadvantaged kids are denied the explicit instruction needed to enter higher education and professional fields.</li>
-                <li><em>The Intraclass Paradox:</em> If schooling is driven by the cultural fraction (teachers) against the economic fraction (industrialists), the curriculum cannot be characterized simply as a monolithic ruling-class conspiracy. It is an arena of conflict where teachers routinely promote critical inquiry, social mobility, and democratic debate against purely commercial demands.</li>
-                <li><em>Structural Fatalism &amp; Pedagogical Defeatism:</em> Bourdieu's model operates as an unbroken reproduction loop that minimizes student agency and high-expectations teaching. Empirically, cognitive psychology and explicit instruction research demonstrate that structured, systematic teaching dramatically accelerates domain learning, disproving Bourdieu's assumption that working-class children cannot overcome the domestic time-gap.</li>
-            </ul>
-
-            <!-- THE CRITICAL COUNTER-TRADITION & SVG DIAGRAM -->
-            <div class="counter-tradition-box">
-                <h5 class="counter-header">The Critical Counter-Tradition: Three Camps of Resistance</h5>
-                <p>
-                    Sociological textbooks frequently present Bourdieu's reproduction thesis as an uncontested terminal diagnosis.
-                    In reality, an authoritative counter-tradition of educational realists, sociologists, and philosophers exposes
-                    fatal blind spots in his framework across three distinct vectors of attack:
-                </p>
-
-                <div class="counter-svg-container">
-                    <svg viewBox="0 0 760 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The Three Counter-Argument Camps">
-                        <rect x="10" y="10" width="740" height="240" rx="8" fill="#FFFDF8" stroke="#FED7AA" stroke-width="1.5"/>
-                        <rect x="250" y="25" width="260" height="52" rx="6" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
-                        <text x="380" y="47" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11.5" font-weight="800" fill="#FEF3C7" text-anchor="middle">BOURDIEU'S REPRODUCTION THESIS</text>
-                        <text x="380" y="63" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#FDE68A" text-anchor="middle">Schooling as Closed Symbolic Violence &amp; Arbitrary Sorting</text>
-                        <path d="M310 77 V 110 H 135 V 130" stroke="#B45309" stroke-width="2" stroke-dasharray="3 3"/>
-                        <path d="M380 77 V 130" stroke="#B45309" stroke-width="2"/>
-                        <path d="M450 77 V 110 H 625 V 130" stroke="#B45309" stroke-width="2" stroke-dasharray="3 3"/>
-                        <polygon points="135,135 131,125 139,125" fill="#B45309"/>
-                        <polygon points="380,135 376,125 384,125" fill="#B45309"/>
-                        <polygon points="625,135 621,125 629,125" fill="#B45309"/>
-                        <rect x="25" y="136" width="220" height="98" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
-                        <rect x="25" y="136" width="220" height="24" rx="6" fill="#FEF3C7"/>
-                        <text x="135" y="152" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#78350F" text-anchor="middle">1. THE EPISTEMIC CRITIQUE</text>
-                        <text x="135" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="700" fill="#EA580C" text-anchor="middle">Michael Young (Social Realism)</text>
-                        <text x="135" y="193" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#44403C" text-anchor="middle">Powerful Knowledge vs. Power's Knowledge</text>
-                        <text x="135" y="209" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">Curriculum is not arbitrary etiquette;</text>
-                        <text x="135" y="221" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">it is testable, objective intellectual power.</text>
-                        <rect x="270" y="136" width="220" height="98" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
-                        <rect x="270" y="136" width="220" height="24" rx="6" fill="#FEF3C7"/>
-                        <text x="380" y="152" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#78350F" text-anchor="middle">2. PEDAGOGICAL REALISM</text>
-                        <text x="380" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="700" fill="#EA580C" text-anchor="middle">Lisa Delpit (The Culture of Power)</text>
-                        <text x="380" y="193" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#44403C" text-anchor="middle">Explicit Teaching vs. Progressive Sabotage</text>
-                        <text x="380" y="209" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">Hiding the rules strands poor kids;</text>
-                        <text x="380" y="221" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">equity demands teaching codes explicitly.</text>
-                        <rect x="515" y="136" width="220" height="98" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
-                        <rect x="515" y="136" width="220" height="24" rx="6" fill="#FEF3C7"/>
-                        <text x="625" y="152" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#78350F" text-anchor="middle">3. PHILOSOPHICAL AGENCY</text>
-                        <text x="625" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="700" fill="#EA580C" text-anchor="middle">Jacques Rancière (The Master's Trap)</text>
-                        <text x="625" y="193" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#44403C" text-anchor="middle">Intellectual Equality vs. Sociological Paternalism</text>
-                        <text x="625" y="209" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">The poor are not unthinking cultural dupes;</text>
-                        <text x="625" y="221" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">they see through institutional hypocrisy clearly.</text>
-                    </svg>
-                </div>
-
-                <div class="camp-cards">
-                    <div class="camp-card">
-                        <h6>1. The Epistemic Strike</h6>
-                        <span class="theorist">Michael Young (2008)</span>
-                        <p>
-                            Bourdieu treats academic knowledge as arbitrary ruling-class etiquette. Young demonstrates
-                            the vital boundary between <em>Knowledge of the Powerful</em> (bourgeois accents, social manners)
-                            and <em>Powerful Knowledge</em> (calculus, thermodynamics, historical evidence). Disciplinary
-                            knowledge is testable and universally reliable; denying it to the poor in the name of
-                            "anti-elitism" disarms them intellectually.
-                        </p>
-                    </div>
-                    <div class="camp-card">
-                        <h6>2. The Pedagogical Strike</h6>
-                        <span class="theorist">Lisa Delpit (1988, 1995)</span>
-                        <p>
-                            Progressive educators inspired by reproduction theory abandoned explicit grammar and direct
-                            instruction to avoid "imposing symbolic violence." Delpit proves that middle-class kids
-                            learn the "culture of power" at home, leaving poor and minority students stranded.
-                            True educational equity requires unapologetic, structured instruction in the dominant code.
-                        </p>
-                    </div>
-                    <div class="camp-card">
-                        <h6>3. The Philosophical Strike</h6>
-                        <span class="theorist">Jacques Rancière (1983 / 2004)</span>
-                        <p>
-                            Bourdieu asserts that the working class is "complicit" in its oppression via unconscious
-                            misrecognition. Rancière unmasks this as profound sociological paternalism: it frames
-                            workers as blind dupes unable to perceive reality until an enlightened sociologist demystifies
-                            it for them. In practice, students recognize structural hypocrisy with immense clarity.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change: Papers in the Sociology of Education</em> (pp. 71–112). London: Tavistock Publications.</li>
-                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. (Original work published in French 1972).</li>
-                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
-                    <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
-                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
-                    <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
-                    <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
-                    <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
-                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Habitus (Pierre Bourdieu)</h4>
-            <p>
-                Habitus is the <strong>social muscle memory</strong> of human action. Just as an experienced tennis player
-                does not pause mid-rally to calculate physics formulas or consult an instruction manual, a person moves through
-                the social world guided by an internalized, subconscious <span class="tooltip-term" tabindex="0" data-tooltip="An intuitive 'feel for the game' operating automatically without conscious mental calculation.">"feel for the game" (sens pratique)</span>.
-                It is the permanent software installed in your nervous system by the class conditions of your upbringing.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: Habitus in the Corridor</strong>
-                Imagine how two students respond when a teacher announces a harsh, unexpected assignment deadline:
-                <ul>
-                    <li><strong>Middle-Class Habitus (Julian):</strong> Grew up in a home where rules were negotiated and adult authority was reasoned with. His gut reaction is relaxed entitlement: he instinctively approaches the teacher after class, maintains confident eye contact, and politely negotiates an extension. He navigates the school <em>"like a fish in water."</em></li>
-                    <li><strong>Working-Class Habitus (Marcus):</strong> Grew up in an environment where adult directives were non-negotiable and challenging authority invited trouble. His gut reaction is protective silence: he accepts the failing mark or quietly disengages, thinking, <em>"That's just how the system is; what's the point of arguing?"</em></li>
-                </ul>
-                Neither student calculated their response using a conscious strategy. Their background simply generated an immediate, physical, and unthinking sense of what is possible, reasonable, and safe to do.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Forged in Bourdieu's ethnographic studies of the Kabyle peasantry during the Algerian war of independence (late 1950s) and rural bachelorhood in his native Béarn. Bourdieu sought to break the French intellectual deadlock between Claude Lévi-Strauss's structuralism (which treated humans as passive automatons executing cultural rules) and Jean-Paul Sartre's existentialism (which asserted radical, unconstrained personal freedom). Algerian peasants could not simply choose to become industrial wage earners, nor were they running automated scripts; their traditional rural temporalities and honor codes clashed with the colonial money economy. Codified in <em>Outline of a Theory of Practice</em> (1972/1977) and <em>The Logic of Practice</em> (1980).</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Defined in Bourdieu's famous formulation as <em>'structured structures predisposed to function as structuring structures.'</em> In plain terms, this means:</p>
-            <ul>
-                <li><strong>The Software Loop:</strong> Your childhood environment shaped your brain (structured structure), and your brain now shapes how you interpret new situations (structuring structure).</li>
-                <li><span class="tooltip-term" tabindex="0" data-tooltip="Habits that are stubborn, deeply ingrained, and travel with you across completely different settings (home, school, workplace).">Durable and Transposable Dispositions</span>: <em>Durable</em> means these habits are deeply rooted and resist change across a lifetime. <em>Transposable</em> means a disposition learned at home (e.g., deference to authority or rhetorical debate) is automatically carried over and applied in completely foreign settings—classrooms, courtrooms, job interviews, and banks.</li>
-                <li><span class="tooltip-term" tabindex="0" data-tooltip="The physical manifestation of class: posture, gait, vocal tension, space usage, eye contact, and physical poise.">Bodily Hexis (Class Written into the Body)</span>: Habitus is not merely a collection of intellectual thoughts; it is physically somaticized. It lives in the way you walk, the volume and pitch of your voice, how you sit in a lecture theatre, your tolerance for physical proximity, and your tension when meeting authority figures.</li>
-                <li><strong>Internalized Objective Limits:</strong> Habitus converts the objective statistical probabilities of childhood into subjective, personal inclinations. If higher education is statistically rare in a child's neighborhood, the habitus transforms that objective economic barrier into an unreflective personal choice: <em>"That is not for the likes of us."</em></li>
-                <li><strong>The Conductorless Orchestra:</strong> People of the same social class act in striking harmony without ever holding a secret meeting or following a written rulebook. Because they were conditioned by identical material circumstances, their internal clocks keep the exact same time.</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Explains institutional affinity versus dislocation. Middle-class children navigate school with intuitive ease because their home habitus mirrors institutional culture. Explains self-elimination without overt coercion: working-class students internalize objective limits into subjective preferences (the feeling that higher education is <em>'not for the likes of us'</em>), walking away from academic pathways voluntarily.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Béarn Postman Paradox (Performative Self-Contradiction):</em> If habitus is an inescapable, totalizing conditioning cage, how did Pierre Bourdieu—the son of an uneducated, low-ranking provincial postal worker in rural Béarn—ascend to the absolute summit of the elite French academy? If one person can transcend their originating habitus through intellectual discipline and public schooling, habitus is not an unbroken deterministic cycle; schooling can function as an engine of emancipation, not merely reproduction.</li>
-                <li><em>The Circular Tautology Trap:</em> In research and exam writing, habitus frequently collapses into circular reasoning: <em>Why did working-class students drop out? Because of their habitus. How do we know they have this habitus? Because they dropped out.</em> Unless isolated from the practices it claims to explain, habitus risks becoming a pseudo-scientific black box.</li>
-                <li><em>The Hysteresis Inadequacy:</em> Bourdieu's concept of hysteresis (the lag when habitus fails to adapt to altered field conditions) fails to account for modern multicultural learners who routinely exhibit multi-layered repertoires, contextual code-switching, and conscious reflexivity rather than static, unyielding dispositions.</li>
-                <li><em>Deficit-Labeling Hazard in Monday Morning Teaching:</em> When teachers accept habitus uncritically, it functions as a sophisticated, fatalistic excuse to lower expectations, viewing working-class or minority learners as culturally incompatible with academic rigor.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations in Bourdieu's Works:</strong>
-                <ul>
-                    <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press.</li>
-                    <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em>. Harvard University Press.</li>
-                    <li><strong>Bourdieu, P. (1990).</strong> <em>The Logic of Practice</em> (R. Nice, Trans.). Stanford: Stanford University Press.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Symbolic Violence &amp; Misrecognition (Pierre Bourdieu &amp; Jean-Claude Passeron)</h4>
-            <p>
-                Symbolic violence is <strong>power without physical force</strong>. Instead of using police, threats, or guns,
-                ruling groups maintain dominance quietly through everyday rules, expectations, and cultural standards.
-                Crucially, this system relies on <span class="tooltip-term" tabindex="0" data-tooltip="Failing to recognize that social rules are rigged; mistaking arbitrary upper-class standards for natural talent and objective fairness.">misrecognition (méconnaissance)</span>
-                and <span class="tooltip-term" tabindex="0" data-tooltip="Unknowingly going along with your own oppression because you believe the system is fair and neutral.">complicity</span>:
-                because ordinary people are tricked into believing that the rules are natural and fair, they blame themselves
-                when they fail rather than questioning the system.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The "Professional" Dress Code</strong>
-                Imagine an elite corporate firm or university that enforces strict rules regarding presentation: banning natural ethnic hairstyles or regional accents in favor of a polished, upper-class "professional standard."
-                <ul>
-                    <li><strong>The Arbitrary Rule:</strong> There is nothing mathematically or functionally superior about an upper-class accent over a regional one; it is simply the dialect of the people currently holding power (<span class="tooltip-term" tabindex="0" data-tooltip="Culture and tastes made up by the ruling class and treated as universal excellence.">cultural arbitrary</span>).</li>
-                    <li><strong>The Symbolic Violence:</strong> When a qualified candidate is passed over for a job because their voice or appearance doesn't match that mold, they are not physically attacked. Instead, they are made to feel unpolished, inferior, and unsuited for success.</li>
-                    <li><strong>The Misrecognition:</strong> The excluded candidate internalizes the shame, thinking, <em>"I just need to work harder on myself,"</em> rather than realizing the institution is using arbitrary cultural boundaries to lock them out.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed alongside Passeron in <em>Reproduction in Education, Society and Culture</em> (1970/1977) and elaborated in <em>Pascalian Meditations</em> (1997/2000). Built to address a core political question: why do deeply unequal social hierarchies remain stable without constant physical force or overt totalitarian surveillance? Classical Marxism posited false consciousness imposed from above. Bourdieu recognized that dominated agents actively participate in their own subordination because the cognitive tools they use to evaluate the world are themselves structured by the relations of domination.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Schools exercise <em>pedagogic authority</em> to impose a <em>cultural arbitrary</em> (ruling-class culture). Through <em>misrecognition (méconnaissance)</em>, unequal outcomes are treated not as the consequence of class-biased curricula, but as reflections of natural talent and moral effort. The process is somaticized through feelings of shame, inadequacy, and verbal hesitation.</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Explains how mass education neutralizes overt rebellion. Disadvantaged students who struggle with academic curricula internalize their exclusion as personal intellectual failure rather than structural sorting, preserving institutional legitimacy and converting class privilege into meritocratic achievement.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Rancière Critique (The Paternalism of 'Complicity'):</em> Philosopher Jacques Rancière demonstrated that Bourdieu's claim that the dominated are complicit in their subjugation is intellectually condescending. It frames working-class people as blind dupes who walk passively to their slaughter, unable to understand their oppression until an elite sociologist explains it to them. In reality, marginalized students and parents frequently see through institutional hypocrisy with immense clarity.</li>
-                <li><em>Erasing Subcultural Dignity:</em> Subcultural studies demonstrate that working-class youth rarely internalize shame meekly; they mock scholastic pomposity, carve out autonomous cultural dignity, and consciously reject academic values.</li>
-                <li><em>Pedagogical Paralysis:</em> If every assessment, objective test, and behavioral standard is branded symbolic violence, educators are left morally paralyzed, unable to correct errors, maintain productive order, or assess real learning.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications.</li>
-                    <li><strong>Bourdieu, P. (2000).</strong> <em>Pascalian Meditations</em>. Stanford University Press.</li>
-                    <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983). <em>[The foundational philosophical critique of Bourdieu's concept of complicity and sociological paternalism]</em>.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="textbook-impact-box">
-            <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em> (The Bourdieusian Paradigm)</h4>
-            <p>
-                <strong>Is the textbook's reliance on Bourdieu right, wrong, or fatally incomplete?</strong><br>
-                Evaluating the Bourdieusian pillar within <em>Making Sense of Mass Education</em> requires testing its reproduction thesis against its primary educational merits and its dangerous pedagogical hazards:
-            </p>
-            <ul>
-                <li>
-                    <strong>Where Bourdieu EMPOWERS the Textbook's Thesis (The Diagnostic Core):</strong>
-                    <ul>
-                        <li><em>Demolishing Naive Meritocracy:</em> Cultural Capital provides the textbook with its sharpest weapon to disprove the claim that schools are neutral playing fields. It explains why purely material access (free tuition, digital devices) consistently fails to close equity gaps if implicit curriculum and assessment expectations remain unexamined.</li>
-                        <li><em>Explaining Dislocation without Deficit (Habitus):</em> Accounts for student alienation and voluntary self-elimination—the belief that higher education is <em>"not for the likes of us"</em>—without pathologizing students' raw cognitive capability.</li>
-                        <li><em>Unmasking Symbolic Violence:</em> Explains how unequal educational sorting preserves democratic legitimacy because students misrecognize class-biased curricula as reflections of innate talent and individual moral failure.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Where Bourdieu ENDANGERS the Textbook's Thesis (The Critical Hazards):</strong>
-                    <ul>
-                        <li><em>The Epistemic Relativist Trap (Michael Young):</em> Treating curriculum content as an arbitrary ruling-class power tool collapses the distinction between arbitrary manners and <strong>Powerful Knowledge</strong>. Disciplinary knowledge (calculus, thermodynamics, historical evidence) provides objective intellectual leverage; denying it to disadvantaged children in the name of anti-elitism disarms them intellectually.</li>
-                        <li><em>The Delpit Dilemma:</em> Lisa Delpit demonstrated that when progressive educators refuse to explicitly teach standard grammar and academic rhetoric to avoid "symbolic violence," they abandon disadvantaged children. Affluent children acquire these codes at home; disadvantaged children master them only through direct, unapologetic instruction.</li>
-                        <li><em>Structural Fatalism &amp; Paternalism:</em> Bourdieu's model operates as an unbroken reproduction loop that ignores cognitive science and explicit instruction research proving that systematic teaching accelerates learning. Furthermore, Jacques Rancière unmasks Bourdieu's concept of "misrecognition" as condescending paternalism that reduces working-class agents to unconscious cultural dupes.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>The Forensic Verdict on the Bourdieusian Paradigm:</strong>
-                    Bourdieu's reproduction model within the textbook is <strong>indispensable as an anatomical X-ray of inherited privilege, but toxic as a standalone pedagogical compass</strong>. It correctly diagnoses how schools unconsciously reward domestic bourgeois socialization, but it fails whenever it is used to justify lowered academic expectations, curriculum relativism, or defeatist fatalism.
-                </li>
-            </ul>
-        </div>
-
-        <!-- 1.2 SOCIOLINGUISTIC & RESISTANCE PARADIGMS -->
-        <h3 class="tradition-header">Sociolinguistic, Resistance &amp; Closure Paradigms</h3>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Restricted vs. Elaborated Codes (Basil Bernstein &amp; William Labov)</h4>
-            <p>
-                Basil Bernstein's structural sociolinguistic framework differentiating speech forms:
-                <span class="tooltip-term" tabindex="0" data-tooltip="Context-dependent, condensed syntax rooted in shared local assumptions and tight community bonds.">restricted codes</span>
-                (context-dependent, condensed speech based on shared local assumptions) and
-                <span class="tooltip-term" tabindex="0" data-tooltip="Universalistic, explicit syntax orienting meaning toward abstract conceptualization and context-independent analysis.">elaborated codes</span>
-                (universalistic, explicit syntax designed for abstract conceptualization). Codes act as organizing planning principles that regulate syntactic prediction and lexical selection.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Classroom Explanation</strong>
-                Imagine a teacher asking students to explain why an object floats or sinks in water:
-                <ul>
-                    <li><strong>Elaborated Code (Middle-Class Socialization):</strong> The student articulates an explicit, context-independent causal chain: <em>"The displacement of water generates an upward buoyant force equal to the gravitational weight of the fluid moved..."</em></li>
-                    <li><strong>Restricted Code (Working-Class Socialization):</strong> The student relies on shared local context and shorthand: <em>"It just pops right back up because of that stuff underneath, miss."</em></li>
-                </ul>
-                The school rewards the elaborated code not because it is the only logical way to understand physics, but because formal schooling demands context-independent explicitness. When teachers penalize the restricted code, they misinterpret a difference in communicative style as a deficit in abstract thinking.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed during the 1960s in post-WWII Britain. Basil Bernstein, working as a sociologist in London working-class schools, observed a persistent anomaly: working-class children consistently struggled with formal school literacy and abstract academic examinations, despite displaying normal intelligence in everyday practical settings. Classical sociology assumed language was a transparent medium, but Bernstein recognized that family class socialization generates distinct linguistic orientations that either align with or clash against the communicative demands of formal schooling.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Bernstein's model operates through two primary linguistic orientations and their institutional mismatch:</p>
-            <ul>
-                <li><strong>Restricted Code (Public Language):</strong> Syntax is condensed, context-dependent, and relies heavily on shared background assumptions, local idiom, and affective solidarity. Meaning is implicit and tied to immediate physical or communal settings.</li>
-                <li><strong>Elaborated Code (Formal Language):</strong> Syntax is universalistic, explicit, and decontextualized. Meaning is made clear through language alone without needing shared local background, orienting speakers toward abstract conceptualization and theoretical analysis.</li>
-                <li><strong>Pedagogical Transmission:</strong> School curricula, examination rubrics, and textbook instructions operate almost exclusively through the elaborated code. Disadvantaged students who rely primarily on communal restricted codes face structural barriers because schooling requires a culturally specific communicative orientation.</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Explains why purely material equity measures (such as funding school buildings or equalizing student-teacher ratios) fail to bridge achievement gaps if the implicit linguistic demands of academic transmission and assessment remain unexamined. It uncovers how schools convert communicative style differences into formal academic sorting.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Labovian Rebuttal (William Labov):</em> Linguistic anthropologist William Labov demolished the <span class="tooltip-term" tabindex="0" data-tooltip="The harmful assumption that working-class or minority children possess deficient, illogical language structures.">cultural deficit model</span> by studying the Black English Vernacular (BEV) in Harlem. Labov proved that non-standard working-class dialects possess rich grammatical complexity, rigorous internal logic, and immense abstract capacity. Bernstein's categories were frequently misconstrued by educational bureaucracies as endorsing a cultural deficit model, driving remedial tracking that degraded disadvantaged learners.</li>
-                <li><em>The Contextual Adaptability Fallacy:</em> Bernstein's framework underestimates human linguistic agility. Modern learners routinely exhibit multi-layered repertoires and contextual code-switching, operating fluently in restricted codes within peer groups and elaborated codes within formal study.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Bernstein, B. (1971).</strong> <em>Class, Codes and Control: Volume 1, Theoretical Studies Towards a Sociology of Language</em>. London: Routledge &amp; Kegan Paul.</li>
-                    <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press. <em>[The empirical refutation of linguistic deficit models]</em>.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Counter-School Resistance (Paul Willis)</h4>
-            <p>
-                Paul Willis's landmark ethnography
-                (<span class="tooltip-term" tabindex="0" data-tooltip="Learning to Labour (1977), studying working-class adolescent 'lads' in industrial England.">Learning to Labour, 1977</span>)
-                opens with the defining sociological puzzle of working-class reproduction:
-                <em>"The difficult thing to explain about how middle class kids get middle class jobs is why others let them. The difficult thing to explain about how working class kids get working class jobs is why they let themselves."</em>
-                The study examines how working-class adolescent 'lads' construct an
-                <span class="tooltip-term" tabindex="0" data-tooltip="A peer group culture that actively rejects school authority, academic rules, and middle-class norms.">anti-school subculture</span>
-                grounded in manual labor pride, informal peer solidarity, and aggressive opposition to institutional authority.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Ear'o vs. The Lad</strong>
-                Imagine two working-class teenagers inside a British secondary modern school:
-                <ul>
-                    <li><strong>The Conformist ("The Ear'o"):</strong> Plays by school rules, listens to teachers, and believes that working hard on academic assignments will earn him middle-class mobility.</li>
-                    <li><strong>The Rebel ("The Lad"):</strong> Rejects school rules as effeminate, authoritarian, and phony. He values physical toughness, practical jokes, avoiding academic work, and manual labor pride, anticipating the factory floor where he believes "real men" earn an honest wage.</li>
-                </ul>
-                The lads do not blindly swallow school propaganda; they actively decode the meritocratic promise and recognize it as a mirage for manual laborers.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Conducted in the mid-1970s amidst declining British manufacturing industries, Willis sought to resolve a glaring theoretical puzzle in reproduction theory: if schools are airtight machines that successfully brainwash children into accepting inequality, why do working-class youth often exhibit intense, organized, and creative hostility toward schooling? Classical Marxism posited that schools produced docile workers, but Willis observed that working-class lads actively formed a vibrant counter-culture that mocked academic authority long before stepping onto the factory floor.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Willis's ethnographic model operates through three core operational mechanisms:</p>
-            <ul>
-                <li><span class="tooltip-term" tabindex="0" data-tooltip="The capacity of working-class youth to pierce through official school ideology and see the limitations of meritocracy.">Cultural Penetration</span>: The lads achieve a partial, spontaneous insight into capitalist schooling and wage labor. They see through the meritocratic myth, correctly recognizing that for sons of manual laborers, academic compliance rarely guarantees middle-class parity.</li>
-                <li><strong>Shop-Floor Masculinity &amp; Limitations:</strong> The subculture fuses manual labor pride with patriarchal machismo. Mental labor, sitting at a desk, and following school rules are coded as feminine, weak, and servile; physical labor, endurance, and informal peer solidarity are coded as authentic masculinity. However, these insights are ultimately <em>limited</em> and turned back on themselves by these very patriarchal and racial divisions.</li>
-                <li><strong>Self-Exclusion:</strong> By actively rejecting academic learning and mocking conformist peers, the lads voluntarily participate in their own streaming, ensuring they exit school early and walk straight into shop-floor manual jobs.</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Shatters Bourdieu's assumption that working-class agents are passive, unresisting dupes caught in a total reproduction loop. It demonstrates that working-class youth possess critical agency, political intuition, and cultural creativity, recognizing structural hypocrisy where functionalists see only neutral sorting.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Tragic Paradox of Self-Damnation:</em> Willis exposed a heartbreaking sociological irony: the lads' active, counter-hegemonic cultural resistance sealed their own educational and economic entrapment. By celebrating anti-school defiance and manual pride, they cheerfully marched themselves straight into the exact capitalist exploitation and dead-end factory labor they thought they were outsmarting.</li>
-                <li><em>The Reactionary Underbelly:</em> The lads' counter-school subculture was intensely saturated with virulent sexism, racism, and homophobia. They bullied studious peers and female students ruthlessly, complicating romanticized readings of anti-school resistance as revolutionary politics.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House. <em>[The foundational ethnography of working-class counter-school resistance, cultural penetration, and self-damnation]</em>.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Social Closure (Max Weber)</h4>
-            <p>
-                Max Weber's foundational theory of
-                <span class="tooltip-term" tabindex="0" data-tooltip="The exclusionary process by which privileged groups build legal, cultural, or social fences around themselves to monopolize economic rewards, professional markets, and privileges while locking outsiders out.">social closure</span>.
-                Unlike Karl Marx—who argued that social class is determined solely by ownership of factories or land—Max Weber argued that social power operates across multiple distinct dimensions, including economic class, social status, and cultural prestige. Social closure is the process by which a dominant group builds a positional "fence" around itself to monopolize rewards, privileges, and good jobs while excluding outsiders.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Professional Licensing Board</strong>
-                Imagine two individuals attempting to establish a specialized professional practice:
-                <ul>
-                    <li><strong>The Insider:</strong> Belongs to an established professional association with inherited social networks, formal board certifications, and strict entry vetting.</li>
-                    <li><strong>The Outsider:</strong> Possesses equivalent practical training and client success, but lacks formal initiation into the privileged licensing body.</li>
-                </ul>
-                The professional association uses social closure—imposing mandatory examinations, costly supervision hours, and formal vetting committees—not merely to guarantee competence, but to build a defensive fence that restricts supply, eliminates competition, and guarantees high compensation for incumbents.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed by classical sociologist Max Weber in the early 20th century to explain why social stratification cannot be reduced solely to economic property relations. Weber observed historical societies (such as medieval trade guilds, caste systems, or aristocratic orders) where dominant groups maintained their superior standing by restricting access to specialized knowledge, apprenticeships, and social honours. The empirical anomaly was that economic wealth alone did not guarantee high social standing or professional monopoly; groups actively engineered legal and cultural barriers to restrict competition.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Weberian sociology establishes core mechanisms governing social closure:</p>
-            <ul>
-                <li><strong>Class vs. Status Groups:</strong> Class is determined by market position and economic production; status groups are communities organized around shared lifestyles, cultural prestige, and consumption patterns.</li>
-                <li><strong>Exclusionary Fencing:</strong> Privileged status groups practice social closure by establishing formal and informal rules to ensure that only individuals who share their background, culture, speech, or credentials can enter lucrative fields.</li>
-                <li><strong>Usurpation vs. Exclusion:</strong> Closure operates both from above (elites excluding masses from elite positions) and from below (subordinate groups organizing trade unions or professional associations to carve out and protect their own bounded occupational turf).</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Illuminates how non-economic factors—such as race, religion, institutional pedigree, and lifestyle conventions—are weaponized to secure structural advantages and protect professional monopolies from open, meritocratic competition.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span> While powerful for understanding prestige boundaries, classic Weberian closure can understate how underlying economic capital and capitalist relations of production ultimately shape and finance status group boundaries in advanced industrial societies.</p>
-
-            <div class="entry-references">
-                <strong>Primary Foundations in Weberian Works:</strong>
-                <ul>
-                    <li><strong>Weber, M. (1978).</strong> <em>Economy and Society: An Outline of Interpretive Sociology</em> (G. Roth &amp; C. Wittich, Eds.). Berkeley: University of California Press. (Original work published 1922). <em>[The foundational formulation of social closure and status stratification]</em>.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Credentialism &amp; The Credential Society (Randall Collins)</h4>
-            <p>
-                Neo-Weberian sociology applied to modern schooling by Randall Collins in <em>The Credential Society</em> (1979). It demonstrates how dominant status groups use educational credentials as
-                <span class="tooltip-term" tabindex="0" data-tooltip="Monopolistic barriers erected by elite groups to restrict access to lucrative professional markets and maintain social class boundaries.">monopolistic gatekeeping</span>
-                currencies to restrict access to lucrative professional markets and maintain social boundaries under the guise of neutral technical competence.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Credential Inflation Trap</strong>
-                Imagine two job applicants for a routine corporate administrative role (managing office correspondence and scheduling meetings):
-                <ul>
-                    <li><strong>Applicant A:</strong> Holds a Bachelor's degree in English Literature, accumulated student debt, and comes from a professional middle-class family.</li>
-                    <li><strong>Applicant B:</strong> Possesses three years of direct administrative experience in a warehouse office, but no university degree.</li>
-                </ul>
-                Even though both candidates have identical practical typing and organizational skills, the employer requires a Bachelor's degree as a screening filter. This requirement is not technically necessary to perform the job tasks; rather, it functions as a credential filter that screens out applicants without cultural privilege and legitimizes upper-class status boundaries.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Systematically formulated by neo-Weberian sociologist Randall Collins in <em>The Credential Society</em> (1979). Collins addressed a glaring empirical anomaly: <strong>degree inflation</strong>. Historical and statistical data revealed that formal educational requirements for occupations skyrocketed far in advance of any actual increase in the technical skill complexity required to perform those jobs. While functionalist <span class="tooltip-term" tabindex="0" data-tooltip="The economic theory claiming that formal schooling directly teaches the advanced technical skills demanded by industrial modernization.">Human Capital Theory</span> argued that schools train workers for modern technological demands, credentialism proved that paper degrees function primarily as cultural status markers and monopolistic gatekeeping mechanisms.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Randall Collins and neo-Weberian sociology establish three core operational mechanisms governing credentialism:</p>
-            <ul>
-                <li><strong>Monopolistic Gatekeeping &amp; Status Exclusion:</strong> Dominant status groups use educational institutions to erect exclusionary barriers. By tying professional licenses and job eligibility to formal schooling, elites transform cultural familiarity and economic endurance into legally protected market monopolies.</li>
-                <li><strong>The Credential Market &amp; Status Display:</strong> Most occupational training occurs on the job rather than in classrooms. Consequently, employers demand paper credentials not because specialized academic knowledge is required for daily tasks, but because degrees serve as cheap, bureaucratically safe proxies for character, social conformity, and class habitus.</li>
-                <li><strong>Deficiency Escalation &amp; Positional Competition:</strong> As democratic expansion floods the labor market with basic degrees, qualifications undergo rapid currency devaluation. Elite groups respond by dynamically escalating entry thresholds—requiring postgraduate degrees, specialized master's programs, or brand-name university pedigrees—forcing individuals to buy more years of schooling simply to maintain their employment position in the queue.</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Brilliantly explains degree inflation and why the expansion of higher education does not automatically generate a meritocracy. It exposes how economic inequality and occupational sorting are legitimized through neutral-sounding paper certifications, preventing working-class entrants from breaking into lucrative professional fields without bearing massive financial costs.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Technocratic Oversight (Underestimating Technical Complexity):</em> Modern knowledge economies genuinely require advanced cognitive, scientific, legal, and biomedical capabilities. Reducing all educational credentials to purely predatory gatekeeping understates the real technical specialization and formal training demanded in modern professions.</li>
-                <li><em>The Anti-Credential Trap:</em> Dismissing all formal qualifications as bourgeois social closure can devalue legitimate professional standards, licensing, and public safety certifications, potentially opening vital professions to unqualified operators and intensifying nepotistic cronyism.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Collins, R. (1979).</strong> <em>The Credential Society: An Historical Sociology of Education and Stratification</em>. New York: Academic Press. <em>[The foundational neo-Weberian analysis of educational credentialism and social closure]</em>.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title">Residualisation</h4>
-            <p>
-                The structural decline of comprehensive public neighborhood schools caused by state subsidization of private education, selective school streaming, and middle-class flight from state schools.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Catchment Divergence</strong>
-                Imagine two neighboring secondary schools in a metropolitan region:
-                <ul>
-                    <li><strong>The Aided/Private Alternative:</strong> Attracts families with disposable income, active parent associations, and high baseline academic entry standards, accumulating surplus capital and premium facilities.</li>
-                    <li><strong>The Local Comprehensive:</strong> Absorbs all remaining students within its geographic catchment, including children with complex learning needs, behavioral difficulties, and English as an additional language, while suffering declining per-capita funding as enrollment drops.</li>
-                </ul>
-                Marketized choice policies systematically peel affluent families and high-performing students away from local state schools, leaving them with concentrated disadvantage and strained community resources.
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Emerged in educational policy sociology (particularly in Australia, the UK, and New Zealand) during the late 20th-century shift toward marketized school choice and neoliberal restructuring. The central empirical anomaly driving the concept: as governments introduced quasi-markets, vouchers, and public subsidies for private and selective schooling under the banner of parental choice, public neighborhood schools did not flourish through competition. Instead, they experienced systemic decay as affluent families and high-achieving peers exited the public system.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Residualisation operates through three interlocking cycles:</p>
-            <ul>
-                <li><strong>Cream-Skimming:</strong> Marketized choice allows selective and private schools to attract academically or behaviorally advantaged students, leaving local comprehensive schools to absorb students with high learning and welfare support needs without proportional resource scaling.</li>
-                <li><strong>Middle-Class Flight &amp; Social Disinvestment:</strong> As affluent families exit local state schools, political and social capital—such as active fundraising, volunteerism, and vocal parent advocacy—vanishes from the public system.</li>
-                <li><strong>The Stigmatization Spiral:</strong> Declining enrolments trigger funding cuts and narrow curricula, reinforcing negative public perceptions and accelerating further flight.</li>
-            </ul>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Accurately diagnoses how unbridled educational markets and school choice policies exacerbate social segregation and structural inequality, exposing the fallacy that market competition inherently uplifts all public institutions.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Fatalism Trap:</em> Can be deployed fatalistically by educational administrators to explain away institutional stagnation and justify writing off local public schools.</li>
-                <li><em>The Empirical Counter-Evidence (Defying Decline):</em> Extensive empirical research within School Effectiveness and School Improvement (SESI) studies, cognitive science, and educational leadership literature demonstrates that exceptional instructional leadership, evidence-based explicit instruction (structured, teacher-led teaching), and strong, positive school culture can successfully defy residualisation and deliver outstanding educational outcomes even in heavily disadvantaged public settings.</li>
-            </ul>
-
-            <div class="entry-references">
-                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
-                <ul>
-                    <li><strong>Vinson, T. (2002).</strong> <em>Inquiry into the Provision of Public Education in New South Wales</em>. Sydney: NSW Teachers Federation &amp; Principals' Councils.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- MASTER STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON SOCIOLINGUISTIC, RESISTANCE & CLOSURE PARADIGMS -->
-        <div class="textbook-impact-box" style="margin-top: 24px;">
-            <h4 class="concept-title">Critical Synthesis: Impact of Sociolinguistic, Resistance &amp; Closure Paradigms on <em>Making Sense of Mass Education</em></h4>
-            <p>
-                <strong>How do Sociolinguistic Codes, Counter-School Resistance, Social Closure, Credentialism, and Residualisation collectively shape and test the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
-                Together, these five frameworks provide the indispensable micro-level communicative, subcultural, institutional, and spatial gears that turn Bourdieu's broad macro-reproduction thesis into an empirically operational model:
-            </p>
-            <ul>
-                <li>
-                    <strong>How they SUPPORT and Empower the Textbook's Thesis (The Multi-Level Pincer):</strong>
-                    <ul>
-                        <li><em>Linguistic &amp; Cultural Sorting (Bernstein):</em> Grounds the textbook's abstract claims of symbolic violence in everyday classroom reality. Bernstein proves that schools demand an elaborated code that they do not explicitly teach, penalizing working-class restricted codes under the guise of objective merit.</li>
-                        <li><em>Student Agency over Brainwashing (Willis):</em> Rescues the textbook from portraying students as passive automatons. Willis demonstrates that working-class reproduction operates through active, creative cultural penetration: youth see through meritocracy's false promises, showing that reproduction is lived through active resistance rather than mindless socialization.</li>
-                        <li><em>Monopolies over Human Capital (Weber &amp; Collins):</em> Demolishes the functionalist myth that schooling simply trains technical skills for a modern economy. Neo-Weberian credentialism proves that paper degrees function as monopolistic status currencies, gatekeeping devices, and positional fences designed to protect elite occupations.</li>
-                        <li><em>Spatial Stratification (Residualisation):</em> Provides the textbook's sharpest policy critique of neoliberal education markets, proving that state-subsidized school choice and selective streaming siphon affluent families away, systematically residualising neighborhood public schools.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>How they CAUSE PROFOUND PROBLEMS for the Textbook (The Forensic Hazards):</strong>
-                    <ul>
-                        <li><em>The Cultural Deficit Hazard:</em> Without William Labov's crucial sociolinguistic rebuttal, Bernstein's framework can be easily weaponized by schools into a deficit model that labels working-class speech patterns as intellectually impoverished.</li>
-                        <li><em>The Romanticization of Self-Exclusion:</em> Glorifying anti-school resistance overlooks its deeply reactionary underbelly (sexism, homophobia, racism) and Willis's heartbreaking central finding: the lads' rebellion ultimately accelerates their own economic self-damnation into factory labor.</li>
-                        <li><em>Technocratic Cynicism:</em> Reducing all educational qualifications to Weberian social closure and Collinsian credential gatekeeping understates the genuine technical, scientific, and cognitive complexity required by modern professions.</li>
-                        <li><em>Administrative Fatalism:</em> Treating residualisation as an inescapable structural cage provides an excuse for defeatist educational administration. It ignores rigorous School Effectiveness and School Improvement (SESI) research proving that explicit instruction, strong school culture, and high instructional leadership can systematically defy demographic odds.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>The Section 1 Synthesis Verdict:</strong>
-                    These five paradigms rescue the textbook from simplistic Bourdieusian cultural determinism by proving that educational inequality is forged across multiple interacting vectors: communicative syntax, youth counter-cultures, status monopolies, and market policies. However, professional teaching requires resisting the opposite traps: educators must refuse to romanticize self-defeating resistance, refuse to treat working-class language as deficient, and refuse to surrender to administrative fatalism in residualised public settings.
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>
-
-</body>
-</html>
-'''
-    return html_content
+"""
+
+
+def construct_nav_bar(prev_url: str | None, prev_label: str, next_url: str | None, next_label: str) -> str:
+    back_html = (
+        f'<a href="{prev_url}" class="nav-btn">&larr; {prev_label}</a>'
+        if prev_url
+        else '<span class="nav-btn disabled">&larr; Previous</span>'
+    )
+    home_html = '<a href="core-concepts.html" class="nav-btn">&#8962; Home</a>'
+    next_html = (
+        f'<a href="{next_url}" class="nav-btn">{next_label} &rarr;</a>'
+        if next_url
+        else '<span class="nav-btn disabled">Next &rarr;</span>'
+    )
+
+    return f"""    <nav class="module-nav" aria-label="Module Navigation">
+        {back_html}
+        {home_html}
+        {next_html}
+    </nav>"""
+
+
+def modify_module_files(root_dir: Path) -> None:
+    modules = [
+        {"file": "module-1.html", "prev": None, "prev_lbl": "", "next": "module-2.html", "next_lbl": "Module 2"},
+        {"file": "module-2.html", "prev": "module-1.html", "prev_lbl": "Module 1", "next": "module-3.html", "next_lbl": "Module 3"},
+        {"file": "module-3.html", "prev": "module-2.html", "prev_lbl": "Module 2", "next": "module-4.html", "next_lbl": "Module 4"},
+        {"file": "module-4.html", "prev": "module-3.html", "prev_lbl": "Module 3", "next": "module-5.html", "next_lbl": "Module 5"},
+        {"file": "module-5.html", "prev": "module-4.html", "prev_lbl": "Module 4", "next": "module-6.html", "next_lbl": "Module 6"},
+        {"file": "module-6.html", "prev": "module-5.html", "prev_lbl": "Module 5", "next": "module-7.html", "next_lbl": "Module 7"},
+        {"file": "module-7.html", "prev": "module-6.html", "prev_lbl": "Module 6", "next": "bibliography.html", "next_lbl": "Bibliography"},
+        {"file": "bibliography.html", "prev": "module-7.html", "prev_lbl": "Module 7", "next": None, "next_lbl": ""},
+    ]
+
+    for item in modules:
+        target = root_dir / item["file"]
+        if not target.exists():
+            continue
+
+        content = target.read_text(encoding="utf-8")
+
+        # Inject CSS if not already present
+        if ".module-nav" not in content:
+            content = content.replace("</style>", f"{NAV_STYLE}\n    </style>")
+
+        # Remove standalone legacy back-link anchors
+        content = re.sub(r'<a\s+href="core-concepts\.html"\s+class="back-link">.*?</a>\s*', "", content)
+
+        nav_bar = construct_nav_bar(item["prev"], item["prev_lbl"], item["next"], item["next_lbl"])
+
+        # Insert navigation at the top inside <body>
+        content = re.sub(r"(<body[^>]*>\s*)", rf"\1\n{nav_bar}\n", content, count=1)
+
+        # Append navigation at the bottom before </body>
+        content = re.sub(r"(\s*</body>)", rf"\n{nav_bar}\n\1", content, count=1)
+
+        target.write_text(content, encoding="utf-8")
+        print(f"Updated navigation in {item['file']}")
 
 
 def sync_repository(repo_path: Path, commit_msg: str) -> None:
@@ -909,16 +128,12 @@ def sync_repository(repo_path: Path, commit_msg: str) -> None:
 
 def main() -> None:
     root_directory = Path(__file__).resolve().parent
-    target_file = root_directory / "module-1.html"
-
-    target_file.write_text(produce_module_1_html(), encoding="utf-8")
-    print(f"Successfully generated expanded Module 1: {target_file.resolve()}")
+    modify_module_files(root_directory)
 
     commit_message = (
-        "Expand Module 1 into full unabridged forensic dossiers\n\n"
-        "Expand Bernstein, Willis, Weber, Collins, and residualisation into\n"
-        "complete forensic entries with classroom scenarios, operational gears,\n"
-        "and critical audits in module-1.html, maintaining citation-free markup."
+        "Add linear Back, Home, and Next navigation to all modules\n\n"
+        "Inject dual top and bottom navigation bars across modules 1 to 7\n"
+        "and bibliography.html linking previous, index, and next resources."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
