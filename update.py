@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a master Critical Synthesis card for
+"""Regenerate core-concepts.html with a full forensic dossier and SVG architecture
 
-Section 5 (Neoliberalism & Datafication), covering Ball, Horizontal Competition,
-Lingard, and Zuboff, keeping all markup 100% free of citation tags, and sync
-updates via git.
+diagram for Marketization, Managerialism & Platform Capitalism in Section 5,
+maintaining all separated entries, Master Bibliography updates, and clean
+markup free of citation tags, and sync updates to main via git.
 """
 
 from pathlib import Path
@@ -775,7 +775,7 @@ def produce_complete_html_document() -> str:
                     <strong>Where Bourdieu ENDANGERS the Textbook's Thesis (The Critical Hazards):</strong>
                     <ul>
                         <li><em>The Epistemic Relativist Trap (Michael Young):</em> Treating curriculum content as an arbitrary ruling-class power tool collapses the distinction between arbitrary manners and <strong>Powerful Knowledge</strong>. Disciplinary knowledge (calculus, thermodynamics, historical evidence) provides objective intellectual leverage; denying it to disadvantaged children in the name of anti-elitism disarms them intellectually.</li>
-                        <li><em>The Delpit Dilemma:</em> Lisa Delpit demonstrated that when progressive educators refuse to explicitly teach standard grammatical syntax and academic rhetoric to avoid "symbolic violence," they abandon disadvantaged children. Affluent children acquire these codes at home; disadvantaged children master them only through direct, unapologetic instruction.</li>
+                        <li><em>The Delpit Dilemma:</em> Lisa Delpit demonstrated that when progressive educators refuse to explicitly teach standard grammar and academic rhetoric to avoid "symbolic violence," they abandon disadvantaged children. Affluent children acquire these codes at home; disadvantaged children master them only through direct, unapologetic instruction.</li>
                         <li><em>Structural Fatalism &amp; Paternalism:</em> Bourdieu's model operates as an unbroken reproduction loop that ignores cognitive science and explicit instruction research proving that systematic teaching accelerates learning. Furthermore, Jacques Rancière unmasks Bourdieu's concept of "misrecognition" as condescending paternalism that reduces working-class agents to unconscious cultural dupes.</li>
                     </ul>
                 </li>
@@ -1935,7 +1935,7 @@ def produce_complete_html_document() -> str:
                 The market has not elevated instructional quality across the district; it has simply manufactured institutional stratification, rewarding School A for exclusionary enrollment curation while leaving School B with concentrated disadvantage.
             </div>
 
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Emerged during the 1980s and 1990s as part of the global rollout of New Public Management (NPM) and neoliberal educational restructuring across the United States, the United Kingdom, New Zealand, and Australia (formalized in policies such as parental choice, open enrollment zones, and charter/academy models). Free-market theorists (Milton Friedman, Chubb &amp; Moe) hypothesized that introducing consumer choice and portable per-capita funding vouchers would force inefficient public schools to innovate and raise teaching standards to survive. The empirical anomaly: decades of international policy data revealed that horizontal competition did not lift aggregate achievement. Instead, it accelerated socioeconomic and racial segregation. Schools discovered that the most cost-effective path to institutional survival was not the difficult labor of pedagogical improvement, but <em>intake curation</em>—attracting high-capital students and shedding resource-intensive cohorts.</p>
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed during the 1980s and 1990s as part of the global rollout of New Public Management (NPM) and neoliberal educational restructuring across the United States, the United Kingdom, New Zealand, and Australia (formalized in policies such as parental choice, open enrollment zones, and charter/academy models). Free-market theorists (Milton Friedman, Chubb &amp; Moe) hypothesized that introducing consumer choice and portable per-capita funding vouchers would force inefficient public schools to innovate and raise teaching standards to survive. The empirical anomaly: decades of international policy data revealed that horizontal competition did not lift aggregate achievement. Instead, it accelerated socioeconomic and racial segregation. Schools discovered that the most cost-effective path to institutional survival was not the difficult labor of pedagogical improvement, but <em>intake curation</em>—attracting high-capital students and shedding resource-intensive cohorts.</p>
 
             <p><strong>2. Theoretical Mechanics:</strong> Horizontal competition operates through four primary operational gears:</p>
             <ul>
@@ -2376,16 +2376,10 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand Surveillance Capitalism entry with SVG diagram and dossier\n\n"
-        "Upgrade Surveillance Capitalism (Shoshana Zuboff) in Section 5 of\n"
-        "core-concepts.html to a four-part forensic dossier with an inline SVG\n"
-        "extraction cycle diagram, scenario analysis, and a balanced audit.\n\n"
-        "- Detail behavioral surplus, commercial enclosure, and economies of action.\n"
-        "- Add SVG visual model illustrating data extraction and modification.\n"
-        "- Add scenario box analyzing adaptive reading apps and telemetry.\n"
-        "- Audit technophobic fatalism against non-profit digital equity tools.\n"
-        "- Update Master Bibliography with Zuboff (2019).\n"
-        "- Ensure all HTML markup remains 100% free of citation tags."
+        "Add Critical Synthesis and Marketization concepts to core-concepts.html\n\n"
+        "Integrate full forensic dossiers, SVG extraction diagrams, and master\n"
+        "Critical Synthesis for Marketization, Managerialism & Platform Capitalism\n"
+        "in Section 5, maintaining clean HTML markup free of citation tags."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
