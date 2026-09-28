@@ -1,408 +1,33 @@
 #!/usr/bin/env python3
-"""Automate the integration of rebuttal.html into the revision portal, update
+"""Add a navigation link back to index.html at the top of core-concepts.html
 
-linear module navigation, and link root index.html to core-concepts.html.
+and sync the changes via git.
 """
 
 from pathlib import Path
-import re
 import subprocess
 import sys
 
-REBUTTAL_HTML_CONTENT = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Critical Rebuttal: Making Sense of Mass Education</title>
-    <style>
-        :root {
-            --primary: #b45309;          /* Refined Warm Amber / Cognac */
-            --primary-dark: #78350f;     /* Deep Russet */
-            --accent-orange: #ea580c;    /* Terracotta Accent */
-            --text-heading: #1c1917;     /* Warm Charcoal */
-            --text-main: #292524;        /* Crisp Charcoal Body Text */
-            --text-muted: #57534e;       /* Stone Muted Text */
-            --bg-page: #ffffff;          /* Clean White Canvas */
-            --bg-entry: #fafaf9;         /* Very Soft Warm Stone Tint */
-            --bg-banner: #fffbf5;        /* Subtle Warm Paper Tint */
-            --border-subtle: #e7e5e4;    /* Light Stone Border */
-            --border-accent: #f59e0b;    /* Warm Amber Line Accent */
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.65;
-            max-width: 920px;
-            margin: 0 auto;
-            padding: 36px 20px;
-            color: var(--text-main);
-            background-color: var(--bg-page);
-        }
-        h1, h2, h3, h4 {
-            color: var(--text-heading);
-            font-weight: 700;
-        }
-        h1 {
-            font-size: 1.85rem;
-            color: var(--primary-dark);
-            border-bottom: 3px solid var(--border-accent);
-            padding-bottom: 10px;
-            margin-bottom: 18px;
-            letter-spacing: -0.01em;
-        }
-        h2 {
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-top: 36px;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #fed7aa;
-            padding-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        .intro-card {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            background-color: var(--bg-banner);
-            border: 1px solid #fed7aa;
-            border-left: 4px solid var(--primary);
-            border-radius: 6px;
-            padding: 20px 24px;
-            margin-bottom: 28px;
-        }
-        .intro-card p {
-            margin: 0;
-            font-size: 0.94rem;
-            color: #44403c;
-            line-height: 1.65;
-            text-align: justify;
-        }
-        .forensic-entry {
-            margin-bottom: 24px;
-            padding: 20px 24px;
-            background-color: var(--bg-entry);
-            border: 1px solid var(--border-subtle);
-            border-left: 4px solid var(--accent-orange);
-            border-radius: 6px;
-        }
-        .forensic-entry h3 {
-            color: var(--primary-dark);
-            font-size: 1.15rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .forensic-entry p {
-            margin: 0 0 10px 0;
-            font-size: 0.93rem;
-            text-align: justify;
-            line-height: 1.65;
-        }
-        .rebuttal-verdict {
-            background-color: #fff1f2;
-            border: 1px solid #fecdd3;
-            border-left: 4px solid #be123c;
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin-top: 14px;
-            font-size: 0.91rem;
-            line-height: 1.6;
-            color: #881337;
-            text-align: justify;
-        }
-        .rebuttal-verdict strong {
-            color: #9f1239;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.03em;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .module-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            margin: 20px 0;
-            padding: 10px 0;
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        .nav-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 16px;
-            background-color: var(--bg-banner);
-            border: 1px solid var(--border-accent);
-            border-radius: 6px;
-            color: var(--primary-dark);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
-            transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
-        }
-        .nav-btn:hover { background-color: var(--primary); color: #ffffff; border-color: var(--primary); }
-        .toc-card {
-            background-color: var(--bg-banner);
-            border: 1px solid #fed7aa;
-            border-left: 3px solid var(--primary);
-            border-radius: 6px;
-            padding: 14px 18px 16px 18px;
-            margin: 20px 0 28px 0;
-        }
-        .toc-header-row {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 6px;
-            border-bottom: 1px dashed #fed7aa;
-        }
-        .toc-card h3 {
-            font-size: 0.82rem;
-            color: var(--primary-dark);
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 800;
-        }
-        .toc-grid {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 6px 20px;
-        }
-        .toc-grid li { margin: 0; padding: 0; }
-        .toc-grid a {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-            padding: 3px 0;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 500;
-        }
-        .toc-index {
-            font-size: 0.74rem;
-            font-weight: 700;
-            color: var(--primary);
-            opacity: 0.8;
-            font-variant-numeric: tabular-nums;
-            flex-shrink: 0;
-        }
-        .toc-grid a:hover { color: var(--accent-orange); text-decoration: underline; }
-    </style>
-</head>
-<body>
 
-    <nav class="module-nav" aria-label="Module Navigation">
-        <a href="module-7.html" class="nav-btn">&larr; Module 7</a>
-        <a href="core-concepts.html" class="nav-btn">&#8962; Home Portal</a>
-        <a href="bibliography.html" class="nav-btn">Master Bibliography &rarr;</a>
-    </nav>
-
-    <h1>Critical Rebuttal: Making Sense of Mass Education</h1>
-
-    <!-- FORMAL ACADEMIC INTRODUCTION -->
-    <div class="intro-card">
-        <h3 style="margin-top: 0; color: var(--primary-dark); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.04em;">Meta-Theoretical Introduction &amp; Intellectual Framing</h3>
-        <p>
-            Initial teacher education (ITE) texts in Australia frequently operate under the premise that pre-service teachers require an immersion in poststructuralist deconstruction, critical theory, and neo-Marxist sociology to immunize them against naive technocratic compliance. Among these texts, <em>Making Sense of Mass Education</em> (4th Edition) by Gordon Tait et al. stands as a pre-eminent programmatic statement of this pedagogical orientation.
-        </p>
-        <p>
-            While the textbook offers an invaluable diagnostic X-ray for unmasking hidden institutional hierarchies, audit cultures, and historical power relations, its overarching theoretical architecture suffers from profound epistemological contradictions and structural overreach. By prioritizing ideological critique over empirical balance, the text frequently lapses into structural fatalism, dismisses cognitive science, and treats standard disciplinary knowledge as mere ruling-class imposition.
-        </p>
-        <p>
-            This rebuttal page provides a systematic, macro-level meta-critique of the textbook's core tenets. It does not reject sociological inquiry; rather, it audits the textbook's internal contradictions across five major vectors, ensuring that pre-service educators can utilize critical theory as an analytical tool without succumbing to instructional nihilism or educational defeatism.
-        </p>
-    </div>
-
-    <!-- QUICK NAVIGATION -->
-    <nav class="toc-card" aria-label="Rebuttal Quick Index">
-        <div class="toc-header-row">
-            <h3>Rebuttal Index</h3>
-            <span class="toc-badge" style="font-size: 0.72rem; font-weight: 600; color: var(--primary);">5 Vectors</span>
-        </div>
-        <ul class="toc-grid">
-            <li><a href="#rebuttal-epistemology"><span class="toc-index">01</span><span>The Asymmetric Epistemological Trap</span></a></li>
-            <li><a href="#rebuttal-cognitive-load"><span class="toc-index">02</span><span>The Discovery Learning &amp; Cognitive Load Fallacy</span></a></li>
-            <li><a href="#rebuttal-carceral-hyperbole"><span class="toc-index">03</span><span>Carceral Hyperbole &amp; Governance Distortion</span></a></li>
-            <li><a href="#rebuttal-relativism"><span class="toc-index">04</span><span>Curricular Relativism &amp; Powerful Knowledge</span></a></li>
-            <li><a href="#rebuttal-fatalism"><span class="toc-index">05</span><span>Structural Fatalism &amp; Teacher Nihilism</span></a></li>
-        </ul>
-    </nav>
-
-    <section id="rebuttal-content">
-        <h2>Five Vectors of Critical Rebuttal</h2>
-
-        <div class="forensic-entry">
-            <h3 id="rebuttal-epistemology">1. The Asymmetric Epistemological Trap (Defining "Myths")</h3>
-            <p>
-                The textbook's foundational methodology relies on defining popular or conservative positions as "myths"—defined strictly as ideas that are <em>"demonstrably false under empirical analysis."</em> However, the authors commit a major methodological sleight of hand: they appropriate the epistemic authority of hard empiricism and positivism to dismiss opposing viewpoints, yet they conduct zero primary empirical research themselves.
-            </p>
-            <p>
-                Instead of statistical or experimental verification, the authors systematically rely on qualitative discourse analysis, treating ministerial press releases, tabloid headlines, and policy documents as self-evident proof of systemic conspiracy. They demand rigorous quantitative proof when debunking meritocracy, but rely entirely on conceptual assertion and poststructuralist rhetoric when establishing their own orthodoxies (such as Foucaultian panopticism or medicalisation as social control).
-            </p>
-            <div class="rebuttal-verdict">
-                <strong>Rebuttal Verdict:</strong>
-                A textbook cannot invalidate empirical psychometrics and census testing as "positivist surveillance" while simultaneously using the rhetorical authority of empirical truth to validate its own theoretical dogmas.
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h3 id="rebuttal-cognitive-load">2. The Discovery Learning &amp; Cognitive Load Fallacy</h3>
-            <p>
-                Across multiple chapters (particularly regarding critical pedagogy, sociolinguistic codes, and cultural reproduction), the textbook implicitly or explicitly disparages explicit instruction, standard grammatical syntax, and structured instructional framing as forms of cultural imposition, symbolic violence, or authoritarian "banking."
-            </p>
-            <p>
-                This ideological posture stands in direct contradiction to decades of rigorous cognitive science, working-memory research, and explicit instruction literature (e.g., John Sweller's Cognitive Load Theory). Decades of empirical evidence prove that novice learners—especially disadvantaged working-class children who do not encounter academic codes at home—suffer severe working-memory overload under unstructured, inquiry-based discovery learning.
-            </p>
-            <div class="rebuttal-verdict">
-                <strong>Rebuttal Verdict:</strong>
-                Refusing to explicitly teach standard academic codes, phonics, and disciplinary syntax under the banner of avoiding "symbolic violence" does not liberate disadvantaged students; it abandons them, locking them out of tertiary education and professional mobility.
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h3 id="rebuttal-carceral-hyperbole">3. Carceral Hyperbole &amp; Governance Distortion</h3>
-            <p>
-                In Chapter 5, the textbook extends Michel Foucault's genealogical critique of penal institutions to mass schooling, drawing an unsupportable equivalence between comprehensive public classrooms and Jeremy Bentham's Panopticon prison. It characterizes timetables, assigned seating, attendance rolls, and laboratory safety rules as carceral technologies designed to manufacture "docile bodies."
-            </p>
-            <p>
-                This hyperbole distorts professional reality. Mass education requires predictable spatial and temporal organization not as a sinister plot of state domination, but as an indispensable operational prerequisite to shelter, protect, and educate hundreds of minors simultaneously. Conflating basic organizational coordination and child protection supervision with totalitarian carceral control creates paralyzing staffroom cynicism.
-            </p>
-            <div class="rebuttal-verdict">
-                <strong>Rebuttal Verdict:</strong>
-                Consistent routines, predictable timetables, and structured boundaries are not acts of violence; they are protective pedagogical scaffolds that enable focused collective study and safeguard child well-being.
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h3 id="rebuttal-relativism">4. Curricular Relativism vs. Powerful Knowledge</h3>
-            <p>
-                By frequently adopting poststructuralist and extreme social constructivist frameworks, the textbook flirts dangerously with curricular relativism—treating standard grammar, formal mathematics, scientific inquiry, and historical evidence as merely arbitrary "bourgeois cultural arbitrary" or "white European regimes of truth."
-            </p>
-            <p>
-                As sociologist Michael Young demonstrates through Social Realism, specialized disciplinary knowledge is not an arbitrary ruling-class power toy; it is testable, objective intellectual power that takes learners beyond their immediate daily experiences and provides the tools to transform society.
-            </p>
-            <div class="rebuttal-verdict">
-                <strong>Rebuttal Verdict:</strong>
-                Branding universal scientific truths and formal academic disciplines as "epistemic violence" disarms marginalized students intellectually, trapping them outside the global knowledge economy under the false banner of anti-elitism.
-            </div>
-        </div>
-
-        <div class="forensic-entry">
-            <h3 id="rebuttal-fatalism">5. Structural Fatalism &amp; Teacher Nihilism</h3>
-            <p>
-                The cumulative structural weight of the textbook's reproduction theories (Bourdieu's habitus loops, Gillborn's whiteness as policy, Ball's performative terror) frequently fosters deep structural fatalism. If every institutional practice is an unyielding machine of class and racial reproduction, teachers are left feeling that individual classroom effort is futile.
-            </p>
-            <p>
-                Extensive School Effectiveness and School Improvement (SESI) research proves that exceptional instructional leadership, high teacher expectations, explicit instruction, and positive school culture can successfully defy demographic odds and deliver outstanding learning gains in heavily disadvantaged communities.
-            </p>
-            <div class="rebuttal-verdict">
-                <strong>Rebuttal Verdict:</strong>
-                Sociological critique must serve as a diagnostic tool to reform unjust systems, not as an excuse for administrative fatalism or teacher nihilism that writes off disadvantaged children before instruction even begins.
-            </div>
-        </div>
-
-    </section>
-
-    <nav class="module-nav" aria-label="Module Navigation">
-        <a href="module-7.html" class="nav-btn">&larr; Module 7</a>
-        <a href="core-concepts.html" class="nav-btn">&#8962; Home Portal</a>
-        <a href="bibliography.html" class="nav-btn">Master Bibliography &rarr;</a>
-    </nav>
-
-</body>
-</html>
-"""
-
-
-def modify_root_index(root_dir: Path) -> None:
-    index_file = root_dir / "index.html"
-    if not index_file.exists():
-        print("index.html not found, skipping root update.")
-        return
-
-    content = index_file.read_text(encoding="utf-8")
-    banner_html = """
-    <!-- ACCESS BANNER TO FORENSIC REVISION PORTAL -->
-    <div style="background: linear-gradient(135deg, #fffbf5, #fef3c7); border: 1px solid #fed7aa; border-left: 6px solid #b45309; border-radius: 8px; padding: 20px 24px; margin-bottom: 36px; box-shadow: 0 2px 6px rgba(180, 83, 9, 0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-        <div>
-            <h3 style="margin: 0 0 6px 0; color: #78350f; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.03em;">Interactive Forensic Revision Portal</h3>
-            <p style="margin: 0; font-size: 0.93rem; color: #44403c; line-height: 1.5;">Access the complete modular revision guide featuring four-part dossiers, interactive popovers, concrete classroom scenarios, SVG architecture diagrams, and critical rebuttals.</p>
-        </div>
-        <a href="core-concepts.html" style="display: inline-flex; align-items: center; padding: 10px 18px; background-color: #b45309; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em; transition: background-color 0.15s ease-in-out;">Launch Portal &rarr;</a>
-    </div>
-"""
-
-    if "core-concepts.html" not in content:
-        # Insert after <body>
-        content = re.sub(r"(<body[^>]*>\s*)", rf"\1\n{banner_html}\n", content, count=1)
-        index_file.write_text(content, encoding="utf-8")
-        print("Added portal access banner to index.html")
-    else:
-        print("Portal access banner already present in index.html")
-
-
-def modify_core_concepts(root_dir: Path) -> None:
-    concepts_file = root_dir / "core-concepts.html"
-    if not concepts_file.exists():
+def inject_index_link(root_dir: Path) -> None:
+    target = root_dir / "core-concepts.html"
+    if not target.exists():
         print("core-concepts.html not found.")
         return
 
-    content = concepts_file.read_text(encoding="utf-8")
+    content = target.read_text(encoding="utf-8")
 
-    rebuttal_card_html = """        <a href="rebuttal.html" style="background-color: #fdf2f8; border: 1px solid #fbcfe8; border-left: 4px solid #db2777; border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
-            <h3 style="font-size: 1.05rem; color: #831843; margin-top: 0; margin-bottom: 8px;">Critical Rebuttal</h3>
-            <p style="margin: 0; font-size: 0.88rem; color: #9d174d; line-height: 1.5; text-align: justify;">A comprehensive evaluation of the textbook's epistemological paradoxes, cognitive load oversights, carceral hyperbole, and structural fatalism.</p>
-            <span style="margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: #db2777; text-transform: uppercase; letter-spacing: 0.03em;">Open Rebuttal &rarr;</span>
-        </a>"""
+    back_link_html = """    <nav style="margin-bottom: 20px;">
+        <a href="index.html" style="display: inline-flex; align-items: center; padding: 6px 12px; background-color: #fff7ed; border: 1px solid #fdba74; border-radius: 5px; color: #78350f; text-decoration: none; font-size: 0.88rem; font-weight: 600;">&larr; Back to Main Overview</a>
+    </nav>"""
 
-    if "rebuttal.html" not in content:
-        # Insert right before the bibliography card
-        if 'href="bibliography.html"' in content:
-            content = content.replace(
-                '<a href="bibliography.html"',
-                f"{rebuttal_card_html}\n\n        <a href=\"bibliography.html\"",
-                1,
-            )
-            concepts_file.write_text(content, encoding="utf-8")
-            print("Injected Critical Rebuttal card into core-concepts.html portal grid.")
+    if 'href="index.html"' not in content:
+        # Insert right after <body>
+        content = content.replace("<body>", f"<body>\n{back_link_html}")
+        target.write_text(content, encoding="utf-8")
+        print("Added link back to index.html in core-concepts.html")
     else:
-        print("Critical Rebuttal card already present in core-concepts.html")
-
-
-def generate_rebuttal_page(root_dir: Path) -> None:
-    target = root_dir / "rebuttal.html"
-    target.write_text(REBUTTAL_HTML_CONTENT, encoding="utf-8")
-    print("Successfully generated rebuttal.html")
-
-
-def modify_module_seven(root_dir: Path) -> None:
-    target = root_dir / "module-7.html"
-    if not target.exists():
-        return
-    content = target.read_text(encoding="utf-8")
-    # Point Next to rebuttal.html instead of bibliography.html
-    content = content.replace('href="bibliography.html"', 'href="rebuttal.html"')
-    content = content.replace(">Bibliography &rarr;", ">Critical Rebuttal &rarr;")
-    target.write_text(content, encoding="utf-8")
-    print("Updated module-7.html navigation to point to rebuttal.html")
-
-
-def modify_bibliography(root_dir: Path) -> None:
-    target = root_dir / "bibliography.html"
-    if not target.exists():
-        return
-    content = target.read_text(encoding="utf-8")
-    # Point Previous back to rebuttal.html instead of module-7.html
-    content = content.replace('href="module-7.html" class="nav-btn">&larr; Module 7', 'href="rebuttal.html" class="nav-btn">&larr; Critical Rebuttal')
-    target.write_text(content, encoding="utf-8")
-    print("Updated bibliography.html navigation to point back to rebuttal.html")
+        print("Link back to index.html already present in core-concepts.html")
 
 
 def execute_git_sync(repo_path: Path, commit_msg: str) -> None:
@@ -428,18 +53,12 @@ def execute_git_sync(repo_path: Path, commit_msg: str) -> None:
 
 def main() -> None:
     root_directory = Path(__file__).resolve().parent
-
-    modify_root_index(root_directory)
-    generate_rebuttal_page(root_directory)
-    modify_core_concepts(root_directory)
-    modify_module_seven(root_directory)
-    modify_bibliography(root_directory)
+    inject_index_link(root_directory)
 
     commit_message = (
-        "Incorporate Critical Rebuttal into portal grid and navigation flow\n\n"
-        "Generate rebuttal.html with formal academic introduction, add access\n"
-        "banner to root index.html, insert rebuttal card into core-concepts.html\n"
-        "before master bibliography, and update module-7 and bibliography links."
+        "Add link back to root index.html on core-concepts.html portal\n\n"
+        "Insert a clean navigation link at the top of core-concepts.html\n"
+        "pointing back to the main overview page (index.html)."
     )
 
     execute_git_sync(repo_path=root_directory, commit_msg=commit_message)
