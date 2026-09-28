@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a full forensic dossier for Digital
+"""Regenerate core-concepts.html with a full forensic dossier for Stephen Ball's
 
-Panopticon & Dataveillance in Section 4, maintaining all separated entries,
+Performativity & Audit Culture in Section 5, maintaining all separated entries,
 Master Bibliography updates, and clean markup free of citation tags, and sync
 updates to main via git.
 """
@@ -1812,6 +1812,39 @@ def produce_complete_html_document() -> str:
                 </ul>
             </div>
         </div>
+
+        <!-- MASTER STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON FOUCAULTIAN ARCHITECTURE -->
+        <div class="textbook-impact-box" style="margin-top: 24px;">
+            <h4 class="concept-title">Critical Synthesis: Impact of The Foucaultian Architecture of Power on <em>Making Sense of Mass Education</em></h4>
+            <p>
+                <strong>How do Foucault, Rose, Conrad, and Digital Dataveillance collectively shape and challenge the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
+                Together, these five frameworks provide the textbook with an indispensable anatomical map of institutional control, demonstrating how modern schooling manufactures compliance not through brute force, but through spatial, temporal, psychological, and algorithmic architecture:
+            </p>
+            <ul>
+                <li>
+                    <strong>How they SUPPORT and Empower the Textbook's Thesis (The Architecture of Control):</strong>
+                    <ul>
+                        <li><em>The Anatomy of Compliance (Discipline &amp; Panopticism):</em> Rescues the textbook from assuming that school order is natural or benign. Foucault proves that the physical arrangement of classrooms, timetables, uniform checks, and standardized examinations are historically contingent technologies designed specifically to manufacture "docile bodies" and internalize surveillance.</li>
+                        <li><em>The Co-optation of Freedom (Governmentality):</em> Explains how modern schools manage populations without relying on archaic corporal punishment. By deploying "technologies of the self" (growth-mindset logs, self-auditing rubrics), schools train students to view themselves as neoliberal enterprises, effectively governing "at a distance" by managing their psychological and emotional conduct.</li>
+                        <li><em>The Depoliticisation of Friction (The Psy-Complex &amp; Medicalisation):</em> Provides the textbook with a devastating critique of the explosion of ADHD/ODD diagnoses. Rose and Conrad demonstrate how schools neutralize political and pedagogical friction (e.g., poor ventilation, passive teaching, rigid timetables) by translating student resistance into individual, neurochemical pathologies that can be managed with pharmaceuticals.</li>
+                        <li><em>The Ambient Extraction of Capital (Dataveillance):</em> Updates Foucault for the 21st century, showing how digital LMS telemetry, ClassDojo, and cloud computing dissolve the physical boundary of the school, transforming every keystroke into predictive, behavioral metadata harvested by commercial monopolies.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Where they CAUSE PROFOUND PROBLEMS for the Textbook (The Forensic Hazards &amp; Blind Spots):</strong>
+                    <ul>
+                        <li><em>The Cognitive Necessity of Discipline:</em> When Foucault's critique is taken to its extreme, all classroom structure is branded as sinister "docile body" engineering. This ignores cognitive science: structured, repetitive procedural routines (handwriting drills, phonics, focused attention) are indispensable prerequisites for deep mathematical and intellectual mastery. Eradicating structure harms disadvantaged learners most.</li>
+                        <li><em>The Anti-Psychiatric Denialism Trap:</em> While critiquing the medicalisation of deviance is crucial, denying the material reality of neurodevelopmental divergence (Autism, severe ADHD) is dangerous. It revives the toxic moral paradigm of the "lazy" or "naughty" child and blocks students from accessing vital clinical support, therapeutic intervention, and statutory learning accommodations.</li>
+                        <li><em>The Technophobic Fatalism Trap:</em> Branding all digital data collection as an Orwellian panopticon forces educators into a Luddite retreat. Objective learning analytics are vital for automating teacher workloads, identifying hidden literacy gaps, and safeguarding vulnerable children from online predators or self-harm.</li>
+                        <li><em>The Eradication of Authentic Agency:</em> If every act of student self-reflection, metacognition, and ethical behavior is cynically reduced to a "technology of the self" manipulated by the state, then true human empowerment becomes logically impossible, leaving educators paralyzed by suspicion.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>The Section 4 Synthesis Verdict:</strong>
+                    The Foucaultian architecture provides an indispensable X-ray of how schools manufacture compliance, medicalise resistance, and extract digital surplus. However, educators must balance this diagnostic skepticism with practical pedagogical necessity. They must maintain the structured discipline required for cognitive mastery, utilize learning analytics for genuine student support, and advocate for neurodivergent students without collapsing into anti-psychiatric denialism.
+                </li>
+            </ul>
+        </div>
     </section>
 
     <!-- 5. NEOLIBERALISM & DATAFICATION -->
@@ -1821,9 +1854,54 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Performativity &amp; Audit Culture (Stephen Ball)</h4>
-            <p>Stephen Ball's critique of neoliberal education policy, where professional trust is replaced by corporate managerialism, key performance indicators (KPIs), public rankings, and incessant data auditing.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Diagnoses how public league tables and audit pressures compel schools to practice fabrication—narrowing the curriculum to test drills, gaming attendance data, and subordinating pedagogy to public metrics.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Completely abandoning performance transparency risks entrenching educational mediocrity, shielding underperforming institutions from accountability to the public and disadvantaged communities.</p>
+            <p>
+                Stephen J. Ball's landmark sociological critique of neoliberal education policy (<span class="tooltip-term" tabindex="0" data-tooltip="The Teacher's Soul and the Terrors of Performativity (2003), Journal of Education Policy, analyzing how accountability regimes re-engineer teacher subjectivity and institutional practice.">The Terrors of Performativity, 2003</span>)
+                demonstrates that modern educational governance has replaced professional trust and democratic public interest with corporate managerialism.
+                Under <span class="tooltip-term" tabindex="0" data-tooltip="A technology, a culture, and a mode of regulation that employs judgements, comparisons, and displays of output as means of incentive, control, and transformation.">performativity</span>,
+                schools and educators are evaluated not by intrinsic pedagogical values or human relationships, but by their capacity to produce quantifiable
+                performance indicators, league table rankings, and inspection metrics within an all-pervasive
+                <span class="tooltip-term" tabindex="0" data-tooltip="An institutional regime where the continuous generation, auditing, and public display of quantitative metrics (KPIs, benchmark targets) replaces professional autonomy and relational trust.">audit culture</span>.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The NAPLAN / GCSE "Data Wall" &amp; The Bubble-Student Triage</strong>
+                Imagine an executive faculty meeting in a secondary school three months prior to national census testing:
+                <ul>
+                    <li><strong>The Performance Wall:</strong> Student records are color-coded on a massive wall chart: Red (critically behind national minimum standards), Amber (the "bubble" students sitting right on the edge of meeting the benchmark target), and Green (securely passing).</li>
+                    <li><strong>The Strategic Triage:</strong> The principal directs faculty heads to deploy supplementary tutoring and smaller class sizes <em>almost exclusively to the Amber cohort</em>. Students with profound reading disabilities in the Red band are effectively written off as statistical casualties incapable of moving the school's public aggregate score, while Green-band students are left to work independently without extension.</li>
+                    <li><strong>The Culture of Fabrication:</strong> The school's public website trumpets "outstanding annual value-added growth," presenting a carefully manufactured image of institutional excellence (<span class="tooltip-term" tabindex="0" data-tooltip="The deliberate construction of synthetic representations, curated metrics, and staged displays designed specifically to satisfy external audits rather than reflect authentic educational reality.">fabrication</span>).</li>
+                </ul>
+                The school has optimized its performance data while committing moral and pedagogical triage: educational resources are not allocated according to human learning need, but according to what will boost the school's public market ranking.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed between 1994 and 2003 as Ball analyzed the radical restructuring of public education under Thatcherism, New Labour, and subsequent global Neoliberal Education Reforms (GERM). Ball addressed a striking empirical anomaly: why did decades of aggressive accountability reforms—introducing standardized testing, performance-based pay, public school league tables, and corporate inspection regimes under the banner of "raising standards"—fail to close the educational achievement gap between rich and poor students, while simultaneously producing unprecedented rates of teacher demoralization, curriculum narrowing, and institutional fraud? Ball proved that performativity does not improve real education; it simply forces institutions to become hyper-efficient at manufacturing metric displays.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Ball's performative framework operates through four interlocking gears:</p>
+            <ul>
+                <li><strong>The Epistemological Shift (Numbers as Truth):</strong> What cannot be counted does not exist. Qualitative pedagogical complexity, pastoral empathy, character formation, and deep intellectual inquiry are erased because they cannot be rendered into standardized numerical benchmarks.</li>
+                <li><strong>Fabrications (The Staged Self):</strong> Institutions and teachers are forced to dedicate immense labor to producing fabrications: curated portfolios, synthetic lesson plans designed solely for inspector walkthroughs, and coached classroom observations. Authenticity is subordinated to auditability.</li>
+                <li><strong>Values Schizophrenia:</strong> Performativity produces acute psychological and ethical distress within educators. Teachers experience a painful internal fracture between their personal moral commitments (caring for vulnerable children, fostering curiosity) and the institutional demands of the market (demanding higher test scores, discarding non-metric activities).</li>
+                <li><strong>The Triage Economy:</strong> Under competitive market pressures, educational care is rationed. Schools game admissions, quietly shed difficult students, and redirect teaching budgets toward marketing and public relations to secure competitive market survival.</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Unmasks the systemic causes of the global teacher retention and burnout crisis, diagnosing teacher exhaustion not as individual psychological weakness, but as structural moral injury inflicted by audit culture. It exposes how public league tables mislead parents by measuring socioeconomic intake advantage rather than authentic instructional value, and explains why high-stakes accountability inevitably induces institutional corruption, teaching to the test, and curriculum fragmentation.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Accountability Vacuum &amp; Complacency Trap:</em> Completely abandoning objective performance transparency risks creating an accountability vacuum that protects failing schools and ineffective pedagogical practices from public scrutiny. Historically, disadvantaged working-class and minority students were routinely failed by public school systems that operated with complete opacity, allowing educational mediocrity to fester behind closed staffroom doors under the banner of "professional autonomy."</li>
+                <li><em>Romanticizing Pre-Audit Opacity:</em> Critics of performativity frequently romanticize the pre-1980s era as a golden age of pastoral teacher trust, ignoring that historical systems often suffered from unchecked teacher bias, low academic expectations for marginalized groups, and total indifference to measurable literacy outcomes.</li>
+                <li><em>The Democratic Necessity of Baseline Data:</em> Standardized performance data is essential for democratic governance and redistributive funding. Without objective census testing (such as NAPLAN or national literacy screens), governments and educational reformers cannot identify systemic regional disparities or direct targeted equity funding to under-resourced public communities.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Ball, S. J. (2003).</strong> 'The Teacher's Soul and the Terrors of Performativity'. <em>Journal of Education Policy</em>, 18(2), 215–228. <em>[The foundational text defining performativity, fabrications, and values schizophrenia in teaching]</em>.</li>
+                    <li><strong>Ball, S. J. (1994).</strong> <em>Education Reform: A Critical and Post-Structural Approach</em>. Buckingham: Open University Press.</li>
+                    <li><strong>Power, M. (1997).</strong> <em>The Audit Society: Rituals of Verification</em>. Oxford: Oxford University Press. <em>[The definitive sociological analysis of audit culture across modern public services]</em>.</li>
+                    <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -1928,6 +2006,8 @@ def produce_complete_html_document() -> str:
         <h2>Master Bibliography: Primary Sources &amp; Critical References</h2>
         <ul class="biblio-list">
             <li><strong>Achebe, C. (1975).</strong> <em>Morning Yet on Creation Day: Essays</em>. London: Heinemann.</li>
+            <li><strong>Ball, S. J. (1994).</strong> <em>Education Reform: A Critical and Post-Structural Approach</em>. Buckingham: Open University Press.</li>
+            <li><strong>Ball, S. J. (2003).</strong> 'The Teacher's Soul and the Terrors of Performativity'. <em>Journal of Education Policy</em>, 18(2), 215–228.</li>
             <li><strong>Ball, S. J. (2013).</strong> <em>Foucault, Power, and Education</em>. New York: Routledge.</li>
             <li><strong>Barkley, R. A. (2015).</strong> <em>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</em> (4th ed.). New York: Guilford Press.</li>
             <li><strong>Bell, D. A. (1980).</strong> 'Brown v. Board of Education and the Interest-Convergence Dilemma'. <em>Harvard Law Review</em>, 93(3), 518–533.</li>
@@ -1967,6 +2047,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Nussbaum, M. (1999).</strong> 'The Professor of Parody: The Hip Defeatism of Judith Butler'. <em>The New Republic</em>, 220(8), 37–45.</li>
             <li><strong>Paris, D. (2012).</strong> 'Culturally Sustaining Pedagogy: A Needed Change in Stance, Terminology, and Practice'. <em>Educational Researcher</em>, 41(3), 93–97.</li>
             <li><strong>Paris, D., &amp; Alim, H. S. (Eds.). (2017).</strong> <em>Culturally Sustaining Pedagogies: Teaching and Learning for Justice in a Changing World</em>. New York: Teachers College Press.</li>
+            <li><strong>Power, M. (1997).</strong> <em>The Audit Society: Rituals of Verification</em>. Oxford: Oxford University Press.</li>
             <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press.</li>
             <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660.</li>
             <li><strong>Rose, N. (1999).</strong> <em>Governing the Soul: The Shaping of the Private Self</em> (2nd ed.). London: Free Association Books.</li>
@@ -1978,6 +2059,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Williamson, B. (2017).</strong> <em>Big Data in Education: The Digital Future of Learning, Policy and Practice</em>. London: Sage Publications.</li>
             <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
             <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+            <li><strong>Zuboff, S. (2019).</strong> <em>The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power</em>. New York: PublicAffairs.</li>
         </ul>
     </section>
 
@@ -2018,14 +2100,14 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand Digital Panopticon & Dataveillance entry to full dossier\n\n"
-        "Upgrade Digital Panopticon & Dataveillance in core-concepts.html to a\n"
-        "four-part forensic dossier examining algorithmic governmentality,\n"
-        "LMS telemetry, ambient domestic surveillance, and child safeguarding.\n\n"
-        "- Detail dataveillance, behavioral scoring, and participatory monitoring.\n"
-        "- Add scenario box analyzing Chromebook telemetry and ClassDojo triage.\n"
-        "- Audit technophobic fatalism against learning analytics and safety.\n"
-        "- Update Master Bibliography with Clarke, Selwyn, and Williamson.\n"
+        "Expand Stephen Ball performativity entry to full forensic dossier\n\n"
+        "Upgrade Performativity & Audit Culture (Stephen Ball) in Section 5 of\n"
+        "core-concepts.html to a four-part forensic dossier examining fabrication,\n"
+        "values schizophrenia, bubble-student triage, and accountability.\n\n"
+        "- Detail performativity, audit culture, and New Public Management.\n"
+        "- Add scenario box analyzing the data wall and borderline triage.\n"
+        "- Audit the accountability vacuum trap and democratic transparency.\n"
+        "- Update Master Bibliography with Ball (2003).\n"
         "- Ensure all HTML markup remains 100% free of citation tags."
     )
 
