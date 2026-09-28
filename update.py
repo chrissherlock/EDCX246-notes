@@ -1,97 +1,273 @@
 #!/usr/bin/env python3
-"""Safely split core-concepts.html into 7 modular section pages, a master
+"""Regenerate core-concepts.html as a comprehensive, richly detailed landing
 
-bibliography page, and rebuild core-concepts.html as the primary landing index
-portal, preserving every line of data.
+portal and introduction to the EDCX246 forensic revision guide, maintaining
+clean citation-free markup and automated git synchronization.
 """
 
 from pathlib import Path
-import re
 import subprocess
 import sys
 
 
-def split_and_generate_modules() -> None:
-    root_directory = Path(__file__).resolve().parent
-    source_file = root_directory / "core-concepts.html"
-
-    if not source_file.exists():
-        print(f"Error: Could not find {source_file}", file=sys.stderr)
-        sys.exit(1)
-
-    html_content = source_file.read_text(encoding="utf-8")
-
-    # 1. Extract the <head> block safely
-    head_match = re.search(r"(<head>.*?</head>)", html_content, re.DOTALL)
-    head_html = head_match.group(1) if head_match else "<head><title>Exam Revision Guide</title></head>"
-
-    # 2. Extract Intro Card & Table of Contents Card for the landing index portal
-    intro_card_match = re.search(r'(<div class="intro-card">.*?</div>)', html_content, re.DOTALL)
-    toc_card_match = re.search(r'(<nav class="toc-card".*?</nav>)', html_content, re.DOTALL)
-
-    intro_html = intro_card_match.group(1) if intro_card_match else ""
-    toc_html = toc_card_match.group(1) if toc_card_match else ""
-
-    # Rewrite TOC links in core-concepts.html to point to the module files
-    index_toc_html = toc_html
-    for i in range(1, 8):
-        index_toc_html = index_toc_html.replace(f'href="#section-{i}"', f'href="module-{i}.html"')
-    index_toc_html = index_toc_html.replace('href="#master-bibliography"', 'href="bibliography.html"')
-
-    index_page_content = f"""<!DOCTYPE html>
+def produce_index_html() -> str:
+    html_content = r'''<!DOCTYPE html>
 <html lang="en">
-{head_html}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Sociological Concepts: Forensic Revision Portal</title>
+    <style>
+        :root {
+            --primary: #b45309;          /* Refined Warm Amber / Cognac */
+            --primary-dark: #78350f;     /* Deep Russet */
+            --accent-orange: #ea580c;    /* Terracotta Accent */
+            --text-heading: #1c1917;     /* Warm Charcoal */
+            --text-main: #292524;        /* Crisp Charcoal Body Text */
+            --text-muted: #57534e;       /* Stone Muted Text */
+            --bg-page: #ffffff;          /* Clean White Canvas */
+            --bg-entry: #fafaf9;         /* Very Soft Warm Stone Tint */
+            --bg-banner: #fffbf5;        /* Subtle Warm Paper Tint */
+            --border-subtle: #e7e5e4;    /* Light Stone Border */
+            --border-accent: #f59e0b;    /* Warm Amber Line Accent */
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.65;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 36px 20px;
+            color: var(--text-main);
+            background-color: var(--bg-page);
+        }
+        h1, h2, h3, h4 {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 1.95rem;
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--border-accent);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+        h2 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 36px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #fed7aa;
+            padding-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .intro-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            background-color: var(--bg-banner);
+            border: 1px solid #fed7aa;
+            border-left: 5px solid var(--primary);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+        }
+        .intro-card svg {
+            flex-shrink: 0;
+            width: 72px;
+            height: 72px;
+            margin-top: 4px;
+        }
+        .intro-card div p {
+            margin: 0 0 10px 0;
+            font-size: 0.94rem;
+            color: #44403c;
+            line-height: 1.65;
+            text-align: justify;
+        }
+        .intro-card div p:last-child {
+            margin-bottom: 0;
+        }
+        /* Module Grid Portal Styling */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .module-card {
+            background-color: var(--bg-entry);
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid var(--accent-orange);
+            border-radius: 6px;
+            padding: 18px 20px;
+            transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+        .module-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+            border-color: #fed7aa;
+        }
+        .module-card h3 {
+            font-size: 1.05rem;
+            color: var(--primary-dark);
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .module-card p {
+            margin: 0;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            text-align: justify;
+        }
+        .module-card .module-link-text {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .bibliography-card {
+            grid-column: span 2;
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 4px solid #d97706;
+            border-radius: 6px;
+            padding: 18px 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .bibliography-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        }
+        .bibliography-card h3 {
+            font-size: 1.05rem;
+            color: #78350f;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .bibliography-card p {
+            margin: 0;
+            font-size: 0.88rem;
+            color: #78350f;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        @media (max-width: 768px) {
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+            .bibliography-card {
+                grid-column: span 1;
+            }
+        }
+        @media print {
+            body { padding: 12px; font-size: 9.5pt; }
+            .module-card, .bibliography-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #d6d3d1; }
+        }
+    </style>
+</head>
 <body>
+
     <h1>EDCX246 Exam Revision Guide: Forensic Concept Analysis</h1>
-    {intro_html}
-    {index_toc_html}
+
+    <div class="intro-card">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Forensic Dossier Icon">
+            <path d="M14 26C14 22.6863 16.6863 20 20 20H44L52 30H100C103.314 30 106 32.6863 106 36V90C106 93.3137 103.314 96 100 96H20C16.6863 96 14 93.3137 14 90V26Z" fill="#D97706"/>
+            <rect x="25" y="22" width="70" height="68" rx="3" fill="#F5F5F4" stroke="#D6D3D1" stroke-width="1.2"/>
+            <rect x="29" y="15" width="70" height="75" rx="3" fill="#FFFFFF" stroke="#A8A29E" stroke-width="1.2"/>
+            <line x1="38" y1="27" x2="65" y2="27" stroke="#B45309" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="38" y1="35" x2="88" y2="35" stroke="#78716C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="38" y1="41" x2="84" y2="41" stroke="#A8A29E" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="38" y1="47" x2="76" y2="47" stroke="#A8A29E" stroke-width="1.3" stroke-linecap="round"/>
+            <rect x="58" y="55" width="34" height="15" rx="2" fill="#FFF1F2" stroke="#BE123C" stroke-width="1.2"/>
+            <text x="61" y="66" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="700" fill="#BE123C" letter-spacing="0.8">AUDIT</text>
+            <path d="M12 44C12 40.6863 14.6863 38 18 38H102C105.314 38 108 40.6863 108 44L103 94C103 97.3137 100.314 100 97 100H23C19.6863 100 17 97.3137 17 94L12 44Z" fill="#B45309"/>
+            <circle cx="60" cy="52" r="4.5" fill="#FEF3C7" stroke="#78350F" stroke-width="1.5"/>
+            <line x1="60" y1="48" x2="60" y2="56" stroke="#78350F" stroke-width="1.5"/>
+            <circle cx="86" cy="80" r="13" fill="#FFFFFF" fill-opacity="0.25" stroke="#44403C" stroke-width="2.5"/>
+            <circle cx="86" cy="80" r="11" stroke="#F59E0B" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <line x1="95" y1="89" x2="106" y2="100" stroke="#44403C" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div>
+            <p>
+                Welcome to the official exam revision portal for <strong>EDCX246 (Sociology of Education)</strong>, designed around
+                <em>Making Sense of Mass Education</em> (4th Edition). This resource applies an uncompromising
+                <strong>four-part forensic audit</strong> to core sociological theories: unpacking historical genesis and empirical anomalies,
+                internal theoretical mechanisms, legitimate diagnostic strengths, and rigorous critical blind spots.
+            </p>
+            <p>
+                Select a thematic module below to enter the modular study dossiers, complete with interactive popover definitions,
+                concrete classroom scenario models, and inline architectural SVG flow diagrams.
+            </p>
+        </div>
+    </div>
+
+    <h2>Examination Revision Modules</h2>
+
+    <div class="module-grid">
+        <a href="module-1.html" class="module-card">
+            <h3>1. Social Class &amp; Stratification</h3>
+            <p>Examines cultural capital, habitus, symbolic violence, sociolinguistic codes, counter-school resistance, social closure, credentialism, and residualisation.</p>
+            <span class="module-link-text">Open Module 1 &rarr;</span>
+        </a>
+
+        <a href="module-2.html" class="module-card">
+            <h3>2. Race, Ethnicity &amp; Indigeneity</h3>
+            <p>Investigates colonial psychology, epistemic violence, institutional racism, whiteness as policy, and culturally sustaining pedagogies.</p>
+            <span class="module-link-text">Open Module 2 &rarr;</span>
+        </a>
+
+        <a href="module-3.html" class="module-card">
+            <h3>3. Gender &amp; Sexualities</h3>
+            <p>Analyzes institutional gender regimes, hegemonic masculinity, gender performativity, compulsory heterosexuality, and minority stress models.</p>
+            <span class="module-link-text">Open Module 3 &rarr;</span>
+        </a>
+
+        <a href="module-4.html" class="module-card">
+            <h3>4. Governance &amp; Subjectivity</h3>
+            <p>Deconstructs Foucaultian disciplinary power, panopticism, governmentality, technologies of the self, the psy-complex, and digital dataveillance.</p>
+            <span class="module-link-text">Open Module 4 &rarr;</span>
+        </a>
+
+        <a href="module-5.html" class="module-card">
+            <h3>5. Neoliberalism &amp; Datafication</h3>
+            <p>Evaluates performativity, audit cultures, horizontal market competition, governance by numbers, accountability washback, and surveillance capitalism.</p>
+            <span class="module-link-text">Open Module 5 &rarr;</span>
+        </a>
+
+        <a href="module-6.html" class="module-card">
+            <h3>6. Culture &amp; Technology</h3>
+            <p>Explores active audience theory, polysemy, semiotic democracy, moral panics, media ecology, and the social model of disability.</p>
+            <span class="module-link-text">Open Module 6 &rarr;</span>
+        </a>
+
+        <a href="module-7.html" class="module-card">
+            <h3>7. Philosophy, Law &amp; Rights</h3>
+            <p>Synthesizes critical pedagogy, normative ethics, non-delegable duty of care, UNCRC participatory rights, and powerful knowledge frameworks.</p>
+            <span class="module-link-text">Open Module 7 &rarr;</span>
+        </a>
+
+        <a href="bibliography.html" class="bibliography-card">
+            <h3>Master Bibliography &amp; References</h3>
+            <p>Comprehensive, alphabetized catalogue of all primary sociological texts, empirical studies, and critical counter-texts referenced across the revision modules.</p>
+            <span class="module-link-text" style="margin-top: 10px; display: inline-block;">Open Master Bibliography &rarr;</span>
+        </a>
+    </div>
+
 </body>
 </html>
-"""
-    source_file.write_text(index_page_content, encoding="utf-8")
-    print("Rebuilt core-concepts.html as the landing index portal.")
-
-    # 3. Extract and write each of the 7 sections into module-X.html files
-    for i in range(1, 8):
-        # Match from <section id="section-i"> to the closing </section>
-        pattern = rf'(<section id="section-{i}"\s*>.*?</section>)'
-        match = re.search(pattern, html_content, re.DOTALL)
-        if match:
-            section_content = match.group(1)
-            module_html = f"""<!DOCTYPE html>
-<html lang="en">
-{head_html}
-<body>
-    <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>
-    {section_content}
-    <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>
-</body>
-</html>
-"""
-            mod_file = root_directory / f"module-{i}.html"
-            mod_file.write_text(module_html, encoding="utf-8")
-            print(f"Generated: module-{i}.html")
-
-    # 4. Extract and write the Master Bibliography into bibliography.html
-    bib_match = re.search(r'(<section id="master-bibliography".*?</section>)', html_content, re.DOTALL)
-    if bib_match:
-        bib_content = bib_match.group(1)
-        bibliography_html = f"""<!DOCTYPE html>
-<html lang="en">
-{head_html}
-<body>
-    <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>
-    {bib_content}
-    <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>
-</body>
-</html>
-"""
-        bib_file = root_directory / "bibliography.html"
-        bib_file.write_text(bibliography_html, encoding="utf-8")
-        print("Generated: bibliography.html")
-
-    # 5. Git sync repository
-    sync_repository(root_directory, "Modularize revision guide into 7 pages and index portal")
+'''
+    return html_content
 
 
 def sync_repository(repo_path: Path, commit_msg: str) -> None:
@@ -115,5 +291,24 @@ def sync_repository(repo_path: Path, commit_msg: str) -> None:
     print("Git repository sync complete.")
 
 
+def main() -> None:
+    root_directory = Path(__file__).resolve().parent
+    target_file = root_directory / "core-concepts.html"
+
+    target_file.write_text(produce_index_html(), encoding="utf-8")
+    print("Successfully generated rich landing portal: core-concepts.html")
+
+    commit_message = (
+        "Expand core-concepts.html into rich landing portal\n\n"
+        "Transform core-concepts.html into a comprehensive, professionally styled\n"
+        "index portal with structured overview cards linking to modular section pages.\n\n"
+        "- Detail forensic audit methodology in executive intro card.\n"
+        "- Add responsive grid linking to modules 1-7 and master bibliography.\n"
+        "- Ensure 100% citation-free markup."
+    )
+
+    sync_repository(repo_path=root_directory, commit_msg=commit_message)
+
+
 if __name__ == "__main__":
-    split_and_generate_modules()
+    main()
