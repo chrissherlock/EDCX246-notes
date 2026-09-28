@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate core-concepts.html with a full forensic dossier for Horizontal
+"""Regenerate core-concepts.html with a full forensic dossier and SVG pipeline
 
-Competition in Section 5, maintaining all separated entries, Master Bibliography
-updates, and clean markup free of citation tags, and sync updates to main via git.
+diagram for Bob Lingard's Governance by Numbers & Accountability Washback in
+Section 5, maintaining all separated entries, Master Bibliography updates, and
+clean markup free of citation tags, and sync updates to main via git.
 """
 
 from pathlib import Path
@@ -239,6 +240,16 @@ def produce_complete_html_document() -> str:
             border-style: solid;
             border-color: #1c1917 transparent transparent transparent;
             z-index: 100;
+        }
+        /* Visual Flow Diagram Container */
+        .diagram-container {
+            margin: 16px 0;
+            text-align: center;
+        }
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
         }
         /* Counter-Tradition Section Styling */
         .counter-tradition-box {
@@ -776,7 +787,7 @@ def produce_complete_html_document() -> str:
         </div>
 
         <!-- 1.2 SOCIOLINGUISTIC & RESISTANCE PARADIGMS -->
-        <h3 class="tradition-header">Sociolinguistic &amp; Resistance Paradigms</h3>
+        <h3 class="tradition-header">Sociolinguistic &amp; Resistance ParadigMS</h3>
 
         <div class="forensic-entry">
             <h4 class="concept-title">Restricted vs. Elaborated Codes (Basil Bernstein &amp; William Labov)</h4>
@@ -1955,9 +1966,102 @@ def produce_complete_html_document() -> str:
 
         <div class="forensic-entry">
             <h4 class="concept-title">Governance by Numbers &amp; Accountability Washback (Bob Lingard)</h4>
-            <p>Bob Lingard's framework describing how the state steers education systems remotely through centralized census testing data, producing severe pedagogical washback.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Explains how high-stakes census testing (e.g., NAPLAN) leads to curriculum distortion, the unethical triage of 'bubble' students near reporting thresholds, and the abandonment of arts and humanities.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Objective, standardized baseline data is vital for identifying macroscopic literacy gaps and directing targeted equity funding to under-resourced public school sectors.</p>
+            <p>
+                Bob Lingard's critical policy sociology (<span class="tooltip-term" tabindex="0" data-tooltip="Politics, Policies and Pedagogies in Education (2013) and Globalizing Education Policy (2010), analyzing how census testing and quantification steer education systems remotely.">Lingard et al., 2013</span>)
+                demonstrates how the contemporary state regulates mass schooling through
+                <span class="tooltip-term" tabindex="0" data-tooltip="An evaluative mode of governance where centralized census testing regimes (e.g., NAPLAN, PISA, league tables) allow the state to steer schooling systems remotely at a distance through numerical indicators.">governance by numbers</span>.
+                Tied to public institutional rankings, national reporting dashboards, and market pressures, numerical governance produces severe
+                <span class="tooltip-term" tabindex="0" data-tooltip="The structural distortion where the high-stakes format, narrow metrics, and anxiety of external census testing retroactively dictate and corrupt classroom pedagogy.">accountability washback</span>,
+                compelling schools to cannibalize curriculum, game student data, and replace authentic holistic education with mechanical test drills.
+            </p>
+
+            <div class="diagram-container">
+                <svg viewBox="0 0 760 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Governance by Numbers and Accountability Washback Pipeline">
+                    <!-- Background Panel -->
+                    <rect x="10" y="10" width="740" height="280" rx="8" fill="#FFFDF8" stroke="#FED7AA" stroke-width="1.5"/>
+
+                    <!-- Top Box: Transnational Census Testing -->
+                    <rect x="230" y="24" width="300" height="42" rx="6" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
+                    <text x="380" y="42" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="800" fill="#FEF3C7" text-anchor="middle">CENTRALIZED CENSUS TESTING</text>
+                    <text x="380" y="56" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#FDE68A" text-anchor="middle">NAPLAN / PISA / League Tables / Standardized Benchmarks</text>
+
+                    <!-- Down Arrow 1 -->
+                    <line x1="380" y1="66" x2="380" y2="88" stroke="#B45309" stroke-width="2"/>
+                    <polygon points="380,93 376,85 384,85" fill="#B45309"/>
+
+                    <!-- Middle Box: Steering at a Distance -->
+                    <rect x="250" y="94" width="260" height="38" rx="6" fill="#B45309" stroke="#78350F" stroke-width="1.5"/>
+                    <text x="380" y="110" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">GOVERNANCE BY NUMBERS</text>
+                    <text x="380" y="123" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#FEF3C7" text-anchor="middle">The Evaluative State: Steering System Autonomy at a Distance</text>
+
+                    <!-- Down Arrow 2 -->
+                    <line x1="380" y1="132" x2="380" y2="152" stroke="#B45309" stroke-width="2"/>
+                    <polygon points="380,157 376,149 384,149" fill="#B45309"/>
+
+                    <!-- Washback Header Box -->
+                    <rect x="220" y="158" width="320" height="28" rx="4" fill="#EA580C" stroke="#9A3412" stroke-width="1.2"/>
+                    <text x="380" y="176" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">SEVERE ACCOUNTABILITY WASHBACK</text>
+
+                    <!-- Split Connectors -->
+                    <path d="M300 186 V 204 H 170 V 214" stroke="#B45309" stroke-width="1.8"/>
+                    <polygon points="170,218 166,210 174,210" fill="#B45309"/>
+
+                    <path d="M460 186 V 204 H 590 V 214" stroke="#B45309" stroke-width="1.8"/>
+                    <polygon points="590,218 586,210 594,210" fill="#B45309"/>
+
+                    <!-- Left Branch: Curriculum Cannibalism -->
+                    <rect x="40" y="219" width="260" height="58" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
+                    <text x="170" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="800" fill="#78350F" text-anchor="middle">CURRICULUM CANNIBALISM</text>
+                    <text x="170" y="250" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#44403C" text-anchor="middle">Arts, humanities, and inquiry evacuated</text>
+                    <text x="170" y="262" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">Replaced by 2D shading drills and writing templates</text>
+
+                    <!-- Right Branch: Strategic Triage -->
+                    <rect x="460" y="219" width="260" height="58" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
+                    <text x="590" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="800" fill="#78350F" text-anchor="middle">STRATEGIC EDUCATIONAL TRIAGE</text>
+                    <text x="590" y="250" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#44403C" text-anchor="middle">Resources poured exclusively into 'bubble' students</text>
+                    <text x="590" y="262" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">Complex-needs and high-growth cohorts marginalized</text>
+                </svg>
+            </div>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The NAPLAN Drill Season &amp; Term 1 Cannibalism</strong>
+                Imagine a Year 5 teaching team in an outer-suburban state primary school during Term 1:
+                <ul>
+                    <li><strong>Curricular Evacuation:</strong> Ten weeks prior to the national testing window, school leadership mandates the suspension of integrated science units, instrumental music, drama, and visual arts (<span class="tooltip-term" tabindex="0" data-tooltip="The progressive elimination of non-tested subjects (arts, humanities, critical thinking) from the school timetable to maximize hours dedicated to mechanical test drills.">curriculum cannibalism</span>). Instruction is restructured around daily timed drills practicing 2D multiple-choice shading and formulaic five-paragraph persuasive writing templates.</li>
+                    <li><strong>The Triage Protocol:</strong> Practice test results are mapped against national minimum standards. The assistant principal directs the specialist literacy intervention teacher to cease working with three students with severe dyslexia (classified as "incapable of moving up a band") and instead dedicate all intervention periods to six borderline students sitting just below Band 5 (the school’s public reporting target).</li>
+                    <li><strong>Affective Distress:</strong> Primary students report stomach aches and test anxiety, while teachers spend staff meetings analyzing spreadsheet heatmaps rather than student creative portfolios.</li>
+                </ul>
+                The state did not mandate the elimination of the arts; rather, by governing through the comparative number, the state steered institutional behavior remotely, compelling the school to voluntarily cannibalize its own rich curriculum to protect its public standing.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed between 2007 and 2016 by Australian educational policy sociologist Bob Lingard (alongside Sam Sellar and Wayne Martino) following the introduction of Australia's National Assessment Program – Literacy and Numeracy (NAPLAN) and the launch of the *My School* website in 2010. Technocrats marketed census testing as an objective, low-stakes diagnostic tool designed to guarantee national standards and direct equity funding to struggling schools. The empirical anomaly: decades of intensive testing failed to close socioeconomic and Indigenous achievement gaps, while national performance on international measures (PISA) flatlined or declined. Instead of lifting standards, governing through numbers created widespread systemic corruption: curriculum narrowing, teaching to the test, student exclusion on test days, and unprecedented teacher demoralization.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Governance by numbers operates through four interlocking operational gears:</p>
+            <ul>
+                <li><strong>Steering at a Distance (<span class="tooltip-term" tabindex="0" data-tooltip="The state apparatus that no longer directly manages daily operational routines, but steers institutions remotely through competitive market rules and quantitative performance audits.">The Evaluative State</span>):</strong> The state decentralizes daily operational management to local school principals while centralizing accountability through standardized numerical indicators. Autonomy is granted only on the condition of meeting the state's quantitative benchmarks.</li>
+                <li><strong>Curriculum Cannibalism:</strong> What is tested becomes what is taught. Because census testing can only evaluate easily standardized, multiple-choice or formulaic proxies of literacy and numeracy, non-tested disciplines—humanities, arts, physical education, critical ethics, and deep scientific inquiry—are systematically squeezed out of the school timetable.</li>
+                <li><strong>Strategic Educational Triage &amp; Gaming:</strong> When institutional reputations and leadership contracts are linked to performance benchmarks, schools engage in rational gaming: discouraging low-achieving students from sitting exams, and concentrating remedial resources exclusively on "bubble" students positioned directly beneath reporting thresholds.</li>
+                <li><strong>The Ontological Inversion (Goodhart's Law):</strong> When a measure becomes a target, it ceases to be a good measure. The numerical test score ceases to be an imperfect proxy for learning and is treated as learning itself; a child's human capability is ontologically reduced to a statistical band on an online dashboard.</li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Provides a rigorous sociological framework for understanding why teachers experience intense pedagogical alienation, explaining how external policy metrics distort daily classroom instruction. It unmasks how standardized testing regimes reduce complex, relational human learning to sterile quantitative indicators, and proves that institutional gaming is not a personal moral failure of teachers, but a structural imperative manufactured by the evaluative state.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Equity Transparency Dilemma (The Blind-Spot Hazard):</em> Totalizing opposition to standardized census testing risks dismantling the sole objective diagnostic tool available to identify macroscopic, systemic inequality. Without system-wide baseline data across regional, socioeconomic, and racial lines, educational bureaucracies cannot identify where catastrophic literacy gaps exist, nor can governments justify redistributive, needs-based funding models (such as the Gonski funding reforms). Abandoning all census data risks returning to an era of staffroom opacity where failing schools hide behind rhetoric while disadvantaged children remain illiterate.</li>
+                <li><em>Conflating the Measurement Tool with Political Weaponization:</em> The diagnostic failure lies not in the psychometrics of census testing per se, but in the high-stakes political publication of the data (league tables, media shaming, *My School* rankings). Conflating the measurement tool with its neoliberal market misuse can lead educators into anti-testing dogmatism that dismisses valid cognitive assessments and early diagnostic screeners.</li>
+                <li><em>The Defeatist Fatalism of Complete Rejection:</em> Treating all testing as neoliberal oppression can paralyze teachers into refusing to engage with performance data formatively. Skilled instructional leaders routinely use baseline diagnostic data—not to drill for exams, but to identify specific phonemic, decoding, and numeracy deficits to ensure vulnerable students achieve foundational academic mastery.</li>
+            </ul>
+
+            <div class="entry-references">
+                <strong>Primary Foundations &amp; Critical Counter-Texts:</strong>
+                <ul>
+                    <li><strong>Lingard, B. (2010).</strong> 'Policy borrowing, policy learning, and the politics of education policy: A critical review'. <em>Journal of Education Policy</em>, 25(2), 129–147.</li>
+                    <li><strong>Lingard, B., Martino, W., Rezai-Rashti, G., &amp; Sellar, S. (2013).</strong> 'Globalizing education policy: Treating the disease with the disease?'. <em>Globalisation, Societies and Education</em>, 11(3), 390–408. <em>[The foundational text analyzing governance by numbers and accountability washback in schooling]</em>.</li>
+                    <li><strong>Sellar, S., &amp; Lingard, B. (2014).</strong> 'The OECD and the expansion of PISA: New global modes of governance in education'. <em>British Educational Research Journal</em>, 40(6), 917–936.</li>
+                    <li><strong>Gonski, D., Boston, K., Greiner, K., Lawrence, C., Scales, B., &amp; Tannock, P. (2011).</strong> <em>Review of Funding for Schooling: Final Report</em>. Canberra: Department of Education, Employment and Workplace Relations. <em>[Demonstrating the necessity of baseline standardized data for redistributive equity funding]</em>.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="forensic-entry">
@@ -2080,9 +2184,12 @@ def produce_complete_html_document() -> str:
             <li><strong>Fricker, M. (2007).</strong> <em>Epistemic Injustice: Power and the Ethics of Knowing</em>. Oxford: Oxford University Press.</li>
             <li><strong>Gillborn, D. (2005).</strong> 'Education policy as an act of white supremacy: Whiteness, critical race theory and education reform'. <em>Journal of Education Policy</em>, 20(4), 485–505.</li>
             <li><strong>Gillborn, D. (2008).</strong> <em>Racism and Education: Coincidence or Conspiracy?</em> London: Routledge.</li>
+            <li><strong>Gonski, D., Boston, K., Greiner, K., Lawrence, C., Scales, B., &amp; Tannock, P. (2011).</strong> <em>Review of Funding for Schooling: Final Report</em>. Canberra: Department of Education, Employment and Workplace Relations.</li>
             <li><strong>Kosciw, J. G., Clark, C. M., Truong, N. L., &amp; Zongrone, A. D. (2020).</strong> <em>The 2019 National School Climate Survey: The Experiences of Lesbian, Gay, Bisexual, Transgender, and Queer Youth in Our Nation's Schools</em>. New York: GLSEN.</li>
             <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press.</li>
             <li><strong>Ladson-Billings, G. (1995).</strong> 'Toward a Theory of Culturally Relevant Pedagogy'. <em>American Educational Research Journal</em>, 32(3), 465–491.</li>
+            <li><strong>Lingard, B. (2010).</strong> 'Policy borrowing, policy learning, and the politics of education policy: A critical review'. <em>Journal of Education Policy</em>, 25(2), 129–147.</li>
+            <li><strong>Lingard, B., Martino, W., Rezai-Rashti, G., &amp; Sellar, S. (2013).</strong> 'Globalizing education policy: Treating the disease with the disease?'. <em>Globalisation, Societies and Education</em>, 11(3), 390–408.</li>
             <li><strong>Macaulay, T. B. (1835).</strong> <em>Minute on Indian Education</em>. London: British Parliamentary Papers.</li>
             <li><strong>Macpherson, W. (1999).</strong> <em>The Stephen Lawrence Inquiry: Report of an Inquiry by Sir William Macpherson of Cluny</em>. London: The Stationery Office.</li>
             <li><strong>Mayo, C. (2014).</strong> <em>LGBTQ Youth and Education: Policies and Practices</em>. New York: Teachers College Press.</li>
@@ -2095,6 +2202,7 @@ def produce_complete_html_document() -> str:
             <li><strong>Rancière, J. (2004).</strong> <i>The Philosopher and His Poor</i> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press.</li>
             <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660.</li>
             <li><strong>Rose, N. (1999).</strong> <em>Governing the Soul: The Shaping of the Private Self</em> (2nd ed.). London: Free Association Books.</li>
+            <li><strong>Sellar, S., &amp; Lingard, B. (2014).</strong> 'The OECD and the expansion of PISA: New global modes of governance in education'. <em>British Educational Research Journal</em>, 40(6), 917–936.</li>
             <li><strong>Selwyn, N. (2016).</strong> <em>Is Technology Good for Education?</em> Cambridge: Polity Press.</li>
             <li><strong>Sewell, T. (2021).</strong> <em>Commission on Race and Ethnic Disparities: The Report</em>. London: UK Cabinet Office.</li>
             <li><strong>Spivak, G. C. (1988).</strong> 'Can the Subaltern Speak?' In C. Nelson &amp; L. Grossberg (Eds.), <em>Marxism and the Interpretation of Culture</em> (pp. 271–313). Urbana: University of Illinois Press.</li>
@@ -2145,14 +2253,15 @@ def main() -> None:
     print(f"Successfully generated clean core-concepts.html: {target_file.resolve()}")
 
     commit_message = (
-        "Expand Horizontal Competition entry to full forensic dossier\n\n"
-        "Upgrade Horizontal Competition in Section 5 of core-concepts.html to a\n"
-        "four-part forensic dossier examining catchment marketization, per-capita\n"
-        "voucher dynamics, cream-skimming, and promotional budget diversion.\n\n"
-        "- Detail voucher mechanics, covert gatekeeping, and residual cascades.\n"
-        "- Add scenario box analyzing the catchment enrollment arms race.\n"
-        "- Audit the bureaucratic monopolism trap and legitimate SESI drivers.\n"
-        "- Update Master Bibliography with Chubb & Moe (1990) and Friedman (1955).\n"
+        "Expand Bob Lingard governance by numbers entry with SVG diagram\n\n"
+        "Upgrade Governance by Numbers & Accountability Washback (Bob Lingard)\n"
+        "in core-concepts.html to a four-part forensic dossier with an inline SVG\n"
+        "pipeline diagram, triage scenario box, and diagnostic equity audit.\n\n"
+        "- Detail evaluative state steering, curriculum cannibalism, and gaming.\n"
+        "- Add SVG visual model illustrating the accountability washback chain.\n"
+        "- Add scenario box analyzing NAPLAN drill season and bubble triage.\n"
+        "- Audit census data necessity for redistributive equity (Gonski).\n"
+        "- Update Master Bibliography with Lingard (2013) and Sellar (2014).\n"
         "- Ensure all HTML markup remains 100% free of citation tags."
     )
 
