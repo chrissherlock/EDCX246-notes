@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Core Sociological Concepts: Forensic Revision Guide</title>
+    <title>Module 7: Philosophy, Law & Rights</title>
     <style>
         :root {
             --primary: #b45309;          /* Refined Warm Amber / Cognac */
@@ -17,14 +17,6 @@
             --bg-banner: #fffbf5;        /* Subtle Warm Paper Tint */
             --border-subtle: #e7e5e4;    /* Light Stone Border */
             --border-accent: #f59e0b;    /* Warm Amber Line Accent */
-            --badge-strength-bg: #ecfdf5;
-            --badge-strength-text: #047857;
-            --badge-strength-border: #a7f3d0;
-            --badge-audit-bg: #fff1f2;
-            --badge-audit-text: #be123c;
-            --badge-audit-border: #fecdd3;
-            --scenario-box-bg: #f5f5f4;
-            --scenario-box-border: #d6d3d1;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -85,19 +77,14 @@
         }
         .intro-card {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 18px;
             background-color: var(--bg-banner);
             border: 1px solid #fed7aa;
             border-left: 4px solid var(--primary);
             border-radius: 6px;
-            padding: 14px 18px;
-            margin-bottom: 20px;
-        }
-        .intro-card svg {
-            flex-shrink: 0;
-            width: 72px;
-            height: 72px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
         }
         .intro-card p {
             margin: 0;
@@ -105,44 +92,6 @@
             color: #44403c;
             line-height: 1.6;
             text-align: justify;
-        }
-        /* Table of Contents Styling */
-        .toc-card {
-            background-color: var(--bg-banner);
-            border: 1px solid #fed7aa;
-            border-left: 4px solid var(--accent-orange);
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin-bottom: 32px;
-        }
-        .toc-card h3 {
-            font-size: 1.02rem;
-            color: var(--primary-dark);
-            margin-top: 0;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        .toc-grid {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px 20px;
-        }
-        .toc-grid li {
-            font-size: 0.88rem;
-        }
-        .toc-grid a {
-            color: var(--primary-dark);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.15s ease-in-out;
-        }
-        .toc-grid a:hover {
-            color: var(--accent-orange);
-            text-decoration: underline;
         }
         .forensic-entry {
             margin-bottom: 20px;
@@ -169,7 +118,7 @@
         .scenario-box {
             margin: 10px 0 14px 0;
             padding: 10px 14px;
-            background-color: var(--scenario-box-bg);
+            background-color: #f5f5f4;
             border-left: 3px solid var(--primary);
             border-radius: 0 4px 4px 0;
             font-size: 0.88rem;
@@ -186,7 +135,6 @@
         .scenario-box ul {
             margin: 4px 0 6px 16px;
         }
-        /* Interactive Tooltip Popovers */
         .tooltip-term {
             position: relative;
             cursor: help;
@@ -215,29 +163,15 @@
             white-space: normal;
             text-align: left;
         }
-        .tooltip-term:hover::before,
-        .tooltip-term:focus::before {
-            content: "";
-            position: absolute;
-            bottom: 110%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 6px;
-            border-style: solid;
-            border-color: #1c1917 transparent transparent transparent;
-            z-index: 100;
-        }
-        /* Visual Flow Diagram Container */
-        .diagram-container {
+        .diagram-container, .counter-svg-container {
             margin: 16px 0;
             text-align: center;
         }
-        .diagram-container svg {
+        .diagram-container svg, .counter-svg-container svg {
             max-width: 100%;
             height: auto;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
         }
-        /* Counter-Tradition Section Styling */
         .counter-tradition-box {
             margin-top: 18px;
             padding: 16px 18px;
@@ -245,15 +179,6 @@
             border: 1px solid #fed7aa;
             border-left: 4px solid var(--accent-orange);
             border-radius: 6px;
-        }
-        .counter-svg-container {
-            margin: 16px 0;
-            text-align: center;
-        }
-        .counter-svg-container svg {
-            max-width: 100%;
-            height: auto;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
         }
         .camp-cards {
             display: grid;
@@ -312,9 +237,6 @@
             margin-bottom: 10px;
             text-align: justify;
         }
-        .textbook-impact-box ul ul {
-            margin-top: 6px;
-        }
         .entry-references {
             margin-top: 14px;
             padding: 10px 14px;
@@ -342,23 +264,23 @@
         }
         .audit-label-critique {
             display: inline-block;
-            background-color: var(--badge-audit-bg);
-            color: var(--badge-audit-text);
+            background-color: #fff1f2;
+            color: #be123c;
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid var(--badge-audit-border);
+            border: 1px solid #fecdd3;
         }
         .audit-label-strength {
             display: inline-block;
-            background-color: var(--badge-strength-bg);
-            color: var(--badge-strength-text);
+            background-color: #ecfdf5;
+            color: #047857;
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid var(--badge-strength-border);
+            border: 1px solid #a7f3d0;
         }
         .biblio-section {
             margin-top: 48px;
@@ -386,6 +308,7 @@
         .back-link {
             display: inline-block;
             margin-top: 28px;
+            margin-bottom: 24px;
             padding: 7px 14px;
             background-color: #fff7ed;
             border: 1px solid #fdba74;
@@ -402,79 +325,43 @@
             border-color: var(--primary);
         }
         @media (max-width: 768px) {
-            .toc-grid {
-                grid-template-columns: 1fr;
-            }
-            .camp-cards {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 640px) {
-            body { padding: 20px 12px; }
-            .intro-card {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 14px;
-            }
-            .intro-card svg {
-                width: 56px;
-                height: 56px;
-            }
-            .tooltip-term:hover::after,
-            .tooltip-term:focus::after {
-                width: 220px;
-            }
-        }
-        @media print {
-            body { padding: 12px; font-size: 9.5pt; }
-            .intro-card { break-inside: avoid; page-break-inside: avoid; }
-            .toc-card { break-inside: avoid; page-break-inside: avoid; }
-            .forensic-entry { break-inside: avoid; page-break-inside: avoid; border: 1px solid #d6d3d1; }
-            .tooltip-term { border-bottom: none; }
-            .counter-tradition-box { break-inside: avoid; page-break-inside: avoid; }
-            .textbook-impact-box { break-inside: avoid; page-break-inside: avoid; }
+            .camp-cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
     <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>
     <section id="section-7">
         <h2>7. Philosophy, Law &amp; Educational Rights</h2>
+
+        <div class="intro-card">
+            <p>
+                <strong>Module Overview:</strong> This final module synthesizes normative philosophy, legal obligations, and ethical praxis in education. Spanning Paulo Freire's critical pedagogy, relational ethics of care, common law negligence and non-delegable duties of care, UNCRC participatory rights, and Michael Young's social realism, this module prepares educators to navigate professional jurisprudence and ethical responsibility.
+            </p>
+        </div>
+
         <h3 class="tradition-header">Critical Praxis, Ethics &amp; Jurisprudence</h3>
 
         <div class="forensic-entry">
             <h4 class="concept-title">Critical Pedagogy &amp; Praxis (Paulo Freire)</h4>
-            <p>Paulo Freire's critique (<em>Pedagogy of the Oppressed</em>, 1968) of the 'banking model' of education in favor of problem-posing dialogue, conscientisation (critical consciousness), and praxis (uniting reflection and action for liberation).</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Challenges authoritarian rote learning, elevating education into a collaborative project where learners interrogate real-world oppression and democratize classroom power relations.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Cognitive load research consistently demonstrates that novice learners, particularly from disadvantaged backgrounds, suffer under unstructured discovery learning and require explicit, structured instruction. Furthermore, Freirean pedagogy can degenerate into ideological indoctrination where political activism displaces academic mastery.</p>
+            <p>Freire's critique of the banking model of education in favor of problem-posing dialogue, conscientisation, and praxis.</p>
         </div>
-
         <div class="forensic-entry">
             <h4 class="concept-title">Normative Ethics &amp; Relational Care (Nel Noddings / Aristotle)</h4>
-            <p>The philosophical synthesis of Kantian deontology (treating learners as ends, never as means), Aristotelian phronesis (practical wisdom), and Nel Noddings' ethics of care grounded in attentiveness and trust.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Forbids the instrumental use of children as data points for league tables, demanding that teachers anchor their professional duty in empathy and pastoral responsiveness.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> An uncritical ethics of care can lead to sentimentalism, conflating care with lowering academic expectations or avoiding necessary disciplinary boundaries and challenging curricula.</p>
+            <p>Philosophical synthesis of Kantian deontology, Aristotelian phronesis, and Nel Noddings' ethics of care.</p>
         </div>
-
         <div class="forensic-entry">
             <h4 class="concept-title">Non-Delegable Duty of Care &amp; Negligence</h4>
-            <p>The common law tort doctrine imposing an affirmative, non-delegable duty upon schools and teachers to take reasonable precautions against foreseeable risks of physical and psychiatric harm.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Establishes the legal floor of the profession, demanding vigilant supervision across classrooms, playgrounds, and excursions to protect student safety.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Defensive risk aversion driven by tort liability can lead to hyper-sanitized educational environments that ban beneficial physical play, challenging scientific experiments, and outdoor exploration.</p>
+            <p>Common law tort doctrine imposing an affirmative duty upon schools and teachers to take reasonable precautions against foreseeable harm.</p>
         </div>
-
         <div class="forensic-entry">
             <h4 class="concept-title">UNCRC Article 12 &amp; Participatory Rights</h4>
-            <p>The United Nations Convention on the Rights of the Child (1989), specifically Article 12 guaranteeing children the right to express their views freely in all matters affecting them.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Disrupts institutional paternalism by mandating authentic student participation in pedagogical decisions, disciplinary hearings, and school governance.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Participatory rights are frequently hollowed out into tokenistic student councils, or misconstrued by progressive reformers as conferring equal authority to novice children over expert curriculum content.</p>
+            <p>Guarantees children the right to express their views freely in all matters affecting them, disrupting institutional paternalism.</p>
         </div>
-
         <div class="forensic-entry">
             <h4 class="concept-title">Regimes of Truth vs. Powerful Knowledge (Michel Foucault / Michael Young)</h4>
-            <p>The intellectual tension between Foucault's poststructuralist assertion that all knowledge is a power-laden 'regime of truth,' and Michael Young's Social Realism defending universal access to 'powerful knowledge'—specialized, discipline-grounded knowledge.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Foucault exposes curriculum bias, while Young demonstrates that specialized disciplinary knowledge (science, history, mathematics) takes students beyond their localized personal experiences, enabling them to understand and transform the world.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Postmodern rejection of disciplinary knowledge under the banner of fighting hegemonic truth disproportionately damages working-class students, denying them the intellectual tools needed for higher education and democratic agency.</p>
+            <p>Intellectual tension between Foucault's poststructuralist critique of truth regimes and Young's Social Realism defending universal access to powerful knowledge.</p>
         </div>
     </section>
     <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Core Sociological Concepts: Forensic Revision Guide</title>
+    <title>Master Bibliography: Primary Sources & References</title>
     <style>
         :root {
             --primary: #b45309;          /* Refined Warm Amber / Cognac */
@@ -17,14 +17,6 @@
             --bg-banner: #fffbf5;        /* Subtle Warm Paper Tint */
             --border-subtle: #e7e5e4;    /* Light Stone Border */
             --border-accent: #f59e0b;    /* Warm Amber Line Accent */
-            --badge-strength-bg: #ecfdf5;
-            --badge-strength-text: #047857;
-            --badge-strength-border: #a7f3d0;
-            --badge-audit-bg: #fff1f2;
-            --badge-audit-text: #be123c;
-            --badge-audit-border: #fecdd3;
-            --scenario-box-bg: #f5f5f4;
-            --scenario-box-border: #d6d3d1;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -85,19 +77,14 @@
         }
         .intro-card {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 18px;
             background-color: var(--bg-banner);
             border: 1px solid #fed7aa;
             border-left: 4px solid var(--primary);
             border-radius: 6px;
-            padding: 14px 18px;
-            margin-bottom: 20px;
-        }
-        .intro-card svg {
-            flex-shrink: 0;
-            width: 72px;
-            height: 72px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
         }
         .intro-card p {
             margin: 0;
@@ -105,44 +92,6 @@
             color: #44403c;
             line-height: 1.6;
             text-align: justify;
-        }
-        /* Table of Contents Styling */
-        .toc-card {
-            background-color: var(--bg-banner);
-            border: 1px solid #fed7aa;
-            border-left: 4px solid var(--accent-orange);
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin-bottom: 32px;
-        }
-        .toc-card h3 {
-            font-size: 1.02rem;
-            color: var(--primary-dark);
-            margin-top: 0;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        .toc-grid {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px 20px;
-        }
-        .toc-grid li {
-            font-size: 0.88rem;
-        }
-        .toc-grid a {
-            color: var(--primary-dark);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.15s ease-in-out;
-        }
-        .toc-grid a:hover {
-            color: var(--accent-orange);
-            text-decoration: underline;
         }
         .forensic-entry {
             margin-bottom: 20px;
@@ -169,7 +118,7 @@
         .scenario-box {
             margin: 10px 0 14px 0;
             padding: 10px 14px;
-            background-color: var(--scenario-box-bg);
+            background-color: #f5f5f4;
             border-left: 3px solid var(--primary);
             border-radius: 0 4px 4px 0;
             font-size: 0.88rem;
@@ -186,7 +135,6 @@
         .scenario-box ul {
             margin: 4px 0 6px 16px;
         }
-        /* Interactive Tooltip Popovers */
         .tooltip-term {
             position: relative;
             cursor: help;
@@ -215,29 +163,15 @@
             white-space: normal;
             text-align: left;
         }
-        .tooltip-term:hover::before,
-        .tooltip-term:focus::before {
-            content: "";
-            position: absolute;
-            bottom: 110%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 6px;
-            border-style: solid;
-            border-color: #1c1917 transparent transparent transparent;
-            z-index: 100;
-        }
-        /* Visual Flow Diagram Container */
-        .diagram-container {
+        .diagram-container, .counter-svg-container {
             margin: 16px 0;
             text-align: center;
         }
-        .diagram-container svg {
+        .diagram-container svg, .counter-svg-container svg {
             max-width: 100%;
             height: auto;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
         }
-        /* Counter-Tradition Section Styling */
         .counter-tradition-box {
             margin-top: 18px;
             padding: 16px 18px;
@@ -245,15 +179,6 @@
             border: 1px solid #fed7aa;
             border-left: 4px solid var(--accent-orange);
             border-radius: 6px;
-        }
-        .counter-svg-container {
-            margin: 16px 0;
-            text-align: center;
-        }
-        .counter-svg-container svg {
-            max-width: 100%;
-            height: auto;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
         }
         .camp-cards {
             display: grid;
@@ -312,9 +237,6 @@
             margin-bottom: 10px;
             text-align: justify;
         }
-        .textbook-impact-box ul ul {
-            margin-top: 6px;
-        }
         .entry-references {
             margin-top: 14px;
             padding: 10px 14px;
@@ -342,23 +264,23 @@
         }
         .audit-label-critique {
             display: inline-block;
-            background-color: var(--badge-audit-bg);
-            color: var(--badge-audit-text);
+            background-color: #fff1f2;
+            color: #be123c;
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid var(--badge-audit-border);
+            border: 1px solid #fecdd3;
         }
         .audit-label-strength {
             display: inline-block;
-            background-color: var(--badge-strength-bg);
-            color: var(--badge-strength-text);
+            background-color: #ecfdf5;
+            color: #047857;
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid var(--badge-strength-border);
+            border: 1px solid #a7f3d0;
         }
         .biblio-section {
             margin-top: 48px;
@@ -386,6 +308,7 @@
         .back-link {
             display: inline-block;
             margin-top: 28px;
+            margin-bottom: 24px;
             padding: 7px 14px;
             background-color: #fff7ed;
             border: 1px solid #fdba74;
@@ -402,41 +325,12 @@
             border-color: var(--primary);
         }
         @media (max-width: 768px) {
-            .toc-grid {
-                grid-template-columns: 1fr;
-            }
-            .camp-cards {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 640px) {
-            body { padding: 20px 12px; }
-            .intro-card {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 14px;
-            }
-            .intro-card svg {
-                width: 56px;
-                height: 56px;
-            }
-            .tooltip-term:hover::after,
-            .tooltip-term:focus::after {
-                width: 220px;
-            }
-        }
-        @media print {
-            body { padding: 12px; font-size: 9.5pt; }
-            .intro-card { break-inside: avoid; page-break-inside: avoid; }
-            .toc-card { break-inside: avoid; page-break-inside: avoid; }
-            .forensic-entry { break-inside: avoid; page-break-inside: avoid; border: 1px solid #d6d3d1; }
-            .tooltip-term { border-bottom: none; }
-            .counter-tradition-box { break-inside: avoid; page-break-inside: avoid; }
-            .textbook-impact-box { break-inside: avoid; page-break-inside: avoid; }
+            .camp-cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
     <a href="core-concepts.html" class="back-link">&larr; Return to Core Concepts Index</a>
     <section id="master-bibliography" class="biblio-section">
         <h2>Master Bibliography: Primary Sources &amp; Critical References</h2>
@@ -475,6 +369,7 @@
             <li><strong>Gillborn, D. (2005).</strong> 'Education policy as an act of white supremacy: Whiteness, critical race theory and education reform'. <em>Journal of Education Policy</em>, 20(4), 485–505.</li>
             <li><strong>Gillborn, D. (2008).</strong> <em>Racism and Education: Coincidence or Conspiracy?</em> London: Routledge.</li>
             <li><strong>Gonski, D., Boston, K., Greiner, K., Lawrence, C., Scales, B., &amp; Tannock, P. (2011).</strong> <em>Review of Funding for Schooling: Final Report</em>. Canberra: Department of Education, Employment and Workplace Relations.</li>
+            <li><strong>Hall, S. (1980).</strong> 'Encoding/Decoding'. In S. Hall, D. Hobson, A. Lowe, &amp; P. Willis (Eds.), <em>Culture, Media, Language: Working Papers in Cultural Studies, 1972–79</em> (pp. 128–138). London: Hutchinson.</li>
             <li><strong>Kosciw, J. G., Clark, C. M., Truong, N. L., &amp; Zongrone, A. D. (2020).</strong> <em>The 2019 National School Climate Survey: The Experiences of Lesbian, Gay, Bisexual, Transgender, and Queer Youth in Our Nation's Schools</em>. New York: GLSEN.</li>
             <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press.</li>
             <li><strong>Ladson-Billings, G. (1995).</strong> 'Toward a Theory of Culturally Relevant Pedagogy'. <em>American Educational Research Journal</em>, 32(3), 465–491.</li>
