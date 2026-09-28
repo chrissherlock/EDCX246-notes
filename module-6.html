@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 6: Culture & Technology</title>
+    <title>Module 6: Culture &amp; Technology</title>
     <style>
         :root {
             --primary: #b45309;          /* Refined Warm Amber / Cognac */
@@ -101,7 +101,6 @@
             line-height: 1.6;
             text-align: justify;
         }
-        /* Lightweight Typographic Table of Contents */
         .toc-card {
             background-color: var(--bg-banner);
             border: 1px solid #fed7aa;
@@ -141,10 +140,7 @@
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 6px 20px;
         }
-        .toc-grid li {
-            margin: 0;
-            padding: 0;
-        }
+        .toc-grid li { margin: 0; padding: 0; }
         .toc-grid a {
             display: flex;
             align-items: baseline;
@@ -164,15 +160,8 @@
             font-variant-numeric: tabular-nums;
             flex-shrink: 0;
         }
-        .toc-item-label {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .toc-grid a:hover {
-            color: var(--accent-orange);
-            text-decoration: underline;
-        }
+        .toc-item-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .toc-grid a:hover { color: var(--accent-orange); text-decoration: underline; }
         .forensic-entry {
             margin-bottom: 20px;
             padding: 16px 20px;
@@ -212,9 +201,7 @@
             display: block;
             margin-bottom: 4px;
         }
-        .scenario-box ul {
-            margin: 4px 0 6px 16px;
-        }
+        .scenario-box ul { margin: 4px 0 6px 16px; }
         .tooltip-term {
             position: relative;
             cursor: help;
@@ -322,16 +309,8 @@
             text-transform: uppercase;
             letter-spacing: 0.03em;
         }
-        .textbook-impact-box ul {
-            margin: 10px 0 0 20px;
-        }
-        .textbook-impact-box li {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-        .textbook-impact-box ul ul {
-            margin-top: 6px;
-        }
+        .textbook-impact-box ul { margin: 10px 0 0 20px; }
+        .textbook-impact-box li { margin-bottom: 10px; text-align: justify; }
         .entry-references {
             margin-top: 14px;
             padding: 10px 14px;
@@ -349,33 +328,27 @@
             letter-spacing: 0.04em;
             margin-bottom: 4px;
         }
-        .entry-references ul {
-            margin: 2px 0 2px 14px;
-            padding-left: 0;
-            line-height: 1.5;
-        }
-        .entry-references li {
-            margin-bottom: 3px;
-        }
+        .entry-references ul { margin: 2px 0 2px 14px; padding-left: 0; line-height: 1.5; }
+        .entry-references li { margin-bottom: 3px; }
         .audit-label-critique {
             display: inline-block;
-            background-color: var(--badge-audit-bg);
-            color: var(--badge-audit-text);
+            background-color: #fff1f2;
+            color: #be123c;
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid var(--badge-audit-border);
+            border: 1px solid #fecdd3;
         }
         .audit-label-strength {
             display: inline-block;
-            background-color: var(--badge-strength-bg);
-            color: var(--badge-strength-text);
+            background-color: #ecfdf5;
+            color: #047857;
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid var(--badge-strength-border);
+            border: 1px solid #a7f3d0;
         }
         .biblio-section {
             margin-top: 48px;
@@ -389,17 +362,8 @@
             border-bottom: none;
             padding-bottom: 0;
         }
-        .biblio-list {
-            list-style-type: none;
-            padding-left: 0;
-            font-size: 0.88rem;
-            line-height: 1.6;
-        }
-        .biblio-list li {
-            margin-bottom: 12px;
-            padding-left: 24px;
-            text-indent: -24px;
-        }
+        .biblio-list { list-style-type: none; padding-left: 0; font-size: 0.88rem; line-height: 1.6; }
+        .biblio-list li { margin-bottom: 12px; padding-left: 24px; text-indent: -24px; }
         .module-nav {
             display: flex;
             justify-content: space-between;
@@ -423,24 +387,13 @@
             font-weight: 600;
             transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
         }
-        .nav-btn:hover {
-            background-color: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-        }
-        .nav-btn.disabled {
-            opacity: 0.4;
-            pointer-events: none;
-            cursor: default;
-            border-color: var(--border-subtle);
-        }
-        @media (max-width: 768px) {
-            .camp-cards { grid-template-columns: 1fr; }
-        }
+        .nav-btn:hover { background-color: var(--primary); color: #ffffff; border-color: var(--primary); }
+        .nav-btn.disabled { opacity: 0.4; pointer-events: none; cursor: default; border-color: var(--border-subtle); }
+        @media (max-width: 768px) { .camp-cards { grid-template-columns: 1fr; } }
+
     </style>
 </head>
 <body>
-
     <nav class="module-nav" aria-label="Module Navigation">
         <a href="module-5.html" class="nav-btn">&larr; Module 5</a>
         <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
@@ -448,79 +401,229 @@
     </nav>
 
     <div class="intro-card">
-        <p><strong>Module Overview:</strong> This module investigates cultural production, media reception, and cognitive ecology within contemporary digital societies. Spanning Stuart Hall's active audience theory, semiotic democracy, moral panics, media ecology, and the social model of disability, we evaluate how learners negotiate, subvert, or become constrained by technological and cultural messaging.</p>
+        <p>
+            <strong>Module Overview:</strong> This module investigates cultural production, media reception, and cognitive ecology within contemporary digital societies. Spanning Stuart Hall's active audience theory, John Fiske's semiotic democracy, Stanley Cohen and Julia Kristeva's moral panics and intertextuality, and Neil Postman &amp; Mike Oliver's media ecology and the social model of disability, we evaluate how learners negotiate, subvert, or become constrained by technological and cultural messaging.
+        </p>
     </div>
 
     <!-- MODULE IN-PAGE QUICK NAVIGATION -->
     <nav class="toc-card" aria-label="Module Quick Index">
         <div class="toc-header-row">
             <h3>Quick Navigation</h3>
-            <span class="toc-badge">5 Entries</span>
+            <span class="toc-badge">6 Entries</span>
         </div>
         <ul class="toc-grid">
-            <li>
-                <a href="#active-audience-theory-amp-polysemy">
-                    <span class="toc-index">01</span>
-                    <span class="toc-item-label">Active Audience Theory &amp; Polysemy (Stuart Hall)</span>
-                </a>
-            </li>
-            <li>
-                <a href="#semiotic-democracy-amp-textual-poaching">
-                    <span class="toc-index">02</span>
-                    <span class="toc-item-label">Semiotic Democracy &amp; Textual Poaching (John Fiske)</span>
-                </a>
-            </li>
-            <li>
-                <a href="#intertextuality-amp-moral-panics">
-                    <span class="toc-index">03</span>
-                    <span class="toc-item-label">Intertextuality &amp; Moral Panics (Julia Kristeva / Stanley Cohen)</span>
-                </a>
-            </li>
-            <li>
-                <a href="#media-ecology-amp-the-social-model-of-disability">
-                    <span class="toc-index">04</span>
-                    <span class="toc-item-label">Media Ecology &amp; The Social Model of Disability (Neil Postman / Mike Oliver)</span>
-                </a>
-            </li>
-            <li>
-                <a href="#module-references">
-                    <span class="toc-index">05</span>
-                    <span class="toc-item-label">Module References</span>
-                </a>
-            </li>
+            <li><a href="#active-audience-theory-polysemy"><span class="toc-index">01</span><span class="toc-item-label">Active Audience Theory &amp; Polysemy</span></a></li>
+            <li><a href="#semiotic-democracy-textual-poaching"><span class="toc-index">02</span><span class="toc-item-label">Semiotic Democracy &amp; Textual Poaching</span></a></li>
+            <li><a href="#intertextuality-moral-panics"><span class="toc-index">03</span><span class="toc-item-label">Intertextuality &amp; Moral Panics</span></a></li>
+            <li><a href="#media-ecology-social-model"><span class="toc-index">04</span><span class="toc-item-label">Media Ecology &amp; The Social Model</span></a></li>
+            <li><a href="#critical-synthesis"><span class="toc-index">05</span><span class="toc-item-label">Critical Synthesis</span></a></li>
+            <li><a href="#module-references"><span class="toc-index">06</span><span class="toc-item-label">Module References</span></a></li>
         </ul>
     </nav>
 
-<section id="section-6">
+    <section id="section-6">
         <h2>6. Culture &amp; Technology</h2>
         <h3 class="tradition-header">Media Studies, Subcultural Agency &amp; Cognitive Ecology</h3>
 
         <div class="forensic-entry">
-            <h4 class="concept-title" id="active-audience-theory-amp-polysemy">Active Audience Theory &amp; Polysemy (Stuart Hall)</h4>
-            <p>Stuart Hall's encoding/decoding model demonstrating that media texts are polysemic (bearing multiple interpretations) and actively negotiated by audiences through dominant, negotiated, or oppositional stances.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Refutes paternalistic views that school students are passive victims brainwashed by screen media, highlighting their capacity to critically evaluate, mock, and subvert cultural messaging.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Hall\'s theory can lead educators to underestimate the coercive algorithmic engineering of modern social feeds, which exploit neurological dopamine loops far beyond active intellectual negotiation.</p>
+            <h4 class="concept-title" id="active-audience-theory-polysemy">Active Audience Theory &amp; Polysemy (Stuart Hall)</h4>
+            <p>
+                Stuart Hall's cultural studies framework (<span class="tooltip-term" tabindex="0" data-tooltip="Encoding/Decoding (1980), establishing that media texts are polysemic and actively negotiated by audiences through distinct ideological frameworks.">Encoding/Decoding, 1980</span>)
+                demonstrates that media texts are <span class="tooltip-term" tabindex="0" data-tooltip="Bearing multiple, competing potential meanings rather than a single fixed message dictated by the sender.">polysemic</span>—carrying
+                multiple, competing potential meanings—and are actively negotiated by audiences rather than passively absorbed. Rejecting passive hypodermic needle models,
+                Hall's encoding/decoding circuit maps how institutional power constructs preferred meanings at the moment of production, which audiences then decode
+                through three distinct ideological stances: dominant-hegemonic, negotiated, or oppositional.
+            </p>
+
+            <div class="diagram-container">
+                <svg viewBox="0 0 760 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Stuart Hall Encoding Decoding Circuit Diagram">
+                    <rect x="10" y="10" width="740" height="280" rx="8" fill="#FFFDF8" stroke="#FED7AA" stroke-width="1.5"/>
+                    <rect x="230" y="24" width="300" height="42" rx="6" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
+                    <text x="380" y="42" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="800" fill="#FEF3C7" text-anchor="middle">MOMENT OF ENCODING (PRODUCTION)</text>
+                    <text x="380" y="56" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#FDE68A" text-anchor="middle">Institutional frameworks, relations of production &amp; preferred meanings</text>
+                    <line x1="380" y1="66" x2="380" y2="88" stroke="#B45309" stroke-width="2"/>
+                    <polygon points="380,93 376,85 384,85" fill="#B45309"/>
+                    <rect x="250" y="94" width="260" height="38" rx="6" fill="#B45309" stroke="#78350F" stroke-width="1.5"/>
+                    <text x="380" y="110" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">POLYSEMIC MEDIA TEXT</text>
+                    <text x="380" y="123" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#FEF3C7" text-anchor="middle">A structured sign vehicle carrying multiple potential decodings</text>
+                    <line x1="380" y1="132" x2="380" y2="152" stroke="#B45309" stroke-width="2"/>
+                    <polygon points="380,157 376,149 384,149" fill="#B45309"/>
+                    <rect x="220" y="158" width="320" height="28" rx="4" fill="#EA580C" stroke="#9A3412" stroke-width="1.2"/>
+                    <text x="380" y="176" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">MOMENT OF DECODING (RECEPTION)</text>
+                    <path d="M300 186 V 204 H 130 V 214" stroke="#B45309" stroke-width="1.8"/>
+                    <polygon points="130,218 126,210 134,210" fill="#B45309"/>
+                    <path d="M380 186 V 214" stroke="#B45309" stroke-width="1.8"/>
+                    <polygon points="380,218 376,210 384,210" fill="#B45309"/>
+                    <path d="M460 186 V 204 H 630 V 214" stroke="#B45309" stroke-width="1.8"/>
+                    <polygon points="630,218 626,210 634,210" fill="#B45309"/>
+                    <rect x="20" y="219" width="220" height="54" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
+                    <text x="130" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#78350F" text-anchor="middle">DOMINANT-HEGEMONIC</text>
+                    <text x="130" y="249" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#44403C" text-anchor="middle">Accepting the preferred reading</text>
+                    <text x="130" y="261" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">transparently without friction.</text>
+                    <rect x="270" y="219" width="220" height="54" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
+                    <text x="380" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#78350F" text-anchor="middle">NEGOTIATED STANCE</text>
+                    <text x="380" y="249" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#44403C" text-anchor="middle">Acknowledging the preferred code</text>
+                    <text x="380" y="261" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">while tailoring it to local realities.</text>
+                    <rect x="520" y="219" width="220" height="54" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
+                    <text x="630" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#78350F" text-anchor="middle">OPPOSITIONAL DECODING</text>
+                    <text x="630" y="249" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#44403C" text-anchor="middle">Spotting the ideological framing</text>
+                    <text x="630" y="261" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">and actively subverting it.</text>
+                </svg>
+            </div>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The Prime-Time Sitcom &amp; Classroom Reception</strong>
+                Imagine a Year 9 Media Studies class analyzing a corporate-produced television sitcom featuring a wealthy suburban family:
+                <ul>
+                    <li><strong>The Preferred Encoding:</strong> The producers encode meritocratic individualism—suggesting that hard work guarantees wealth, and poverty results from individual personal failure.</li>
+                    <li><strong>Dominant Decoding (Student A):</strong> Accepts the message wholesale, viewing the wealthy characters as natural role models of success.</li>
+                    <li><strong>Negotiated Decoding (Student B):</strong> Enjoys the humor and characters, but modifies the message based on working-class family experience: <em>"Hard work helps, but my dad works two jobs and we still struggle because rent is too high."</em></li>
+                    <li><strong>Oppositional Decoding (Student C):</strong> Completely decodes and rejects the ideological framing, reading the show as capitalist propaganda designed to mask systemic inequality and corporate exploitation.</li>
+                </ul>
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Formulated in 1973 by Stuart Hall at the CCCS in Birmingham. Traditional mass communications assumed that media injected messages directly into passive audiences (hypodermic needle model). However, empirical audience research showed that working-class and minority viewers routinely reinterpreted or mocked mainstream broadcasts.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Operates through four distinct circuit moments (production, circulation, distribution/consumption, reproduction) and three decoding positions (dominant-hegemonic, negotiated, oppositional).</p>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Validates student interpretive agency against patronizing media-effects models. Empowers media literacy education by teaching students how texts are encoded with institutional ideologies and how they can be critically decoded.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Algorithmic Capture Blind Spot:</em> Hall assumed conscious human decoders. Modern social media feeds deploy automated behavioral telemetry and dopamine micro-nudges that steer attention subconsciously, bypassing conscious critical decoding.</li>
+                <li><em>Romanticizing Resistance:</em> Treating every idiosyncratic reading or cynical smirk as authentic political resistance mistakes personal cynicism for substantive structural critique.</li>
+            </ul>
         </div>
 
         <div class="forensic-entry">
-            <h4 class="concept-title" id="semiotic-democracy-amp-textual-poaching">Semiotic Democracy &amp; Textual Poaching (John Fiske)</h4>
-            <p>John Fiske's concept that youth audiences actively seize corporate cultural products (memes, fashion, video games), remixing and subverting corporate signs to construct autonomous meaning.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Validates youth cultural creativity against Frankfurt School pessimism, showing how youth resist cultural homogenization.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Often drifts into romanticized populism, confusing trivial consumer customization (e.g., creating TikTok memes) with substantive political emancipation or critical intellectual work.</p>
+            <h4 class="concept-title" id="semiotic-democracy-textual-poaching">Semiotic Democracy &amp; Textual Poaching (John Fiske)</h4>
+            <p>
+                John Fiske's cultural studies theory (<span class="tooltip-term" tabindex="0" data-tooltip="Television Culture (1987) and Reading the Popular (1989), developing theories of popular pleasure and audience semiotic productivity.">Television Culture, 1987</span>)
+                demonstrates that popular culture is not an imperial package imposed from above, but an active contest where audiences exercise
+                <span class="tooltip-term" tabindex="0" data-tooltip="The decentralization of cultural meaning-making, where audiences actively rewrite and remix corporate media to serve their own social interests.">semiotic democracy</span>.
+                Audiences engage in <span class="tooltip-term" tabindex="0" data-tooltip="The practice of unauthorized audience raiding of corporate cultural texts, appropriating characters and plots to construct autonomous meanings.">textual poaching</span>
+                (borrowed from Michel de Certeau), seizing mass media commodities and excorporating them to generate subcultural dignity and oppositional pleasure.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The Viral TikTok Fan Edit</strong>
+                Imagine a Year 10 student dissecting a billion-dollar superhero film:
+                <ul>
+                    <li><strong>The Corporate Text:</strong> The studio markets a rigid, heterosexual romantic narrative designed for global product merchandising.</li>
+                    <li><strong>The Poaching Act:</strong> The student captures micro-clips of two characters, cuts them together, overlays indie synth music, and publishes a viral queer romantic edit on TikTok.</li>
+                    <li><strong>Semiotic Guerilla Warfare:</strong> The studio did not authorize the queer reading, but the student community embraces it as authentic canon, repurposing corporate intellectual property into a vehicle for marginalized identity.</li>
+                </ul>
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed in the late 1980s by John Fiske, building on Stuart Hall and Michel de Certeau. Classical Frankfurt School critical theory argued that corporate capitalism manufactured homogenizing mass culture that eradicated working-class autonomy. Fiske identified the empirical anomaly: despite corporate saturation, youth culture continually generated rebellious, unanticipated meanings from mass-market fashion, music, and television.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Operates through four gears: producerly texts (texts with loose semiotic threads that invite reader participation); excorporation (making popular culture out of the resources of the dominant system); semiotic productivity (the construction of private and peer meanings); and subcultural capital accumulation.</p>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Validates youth cultural creativity against elitist moralizing. It allows teachers to engage student passion for video games, fan fiction, and memes as legitimate linguistic and semiotic meaning-making rather than cognitive brain rot.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Populist Delusion / Trivialization Trap:</em> Conflating consumer remixing (e.g., editing a TikTok meme) with genuine political emancipation confuses symbolic play with the redistribution of material wealth and political power.</li>
+                <li><em>The Corporate Co-optation Engine:</em> Platform capitalism instantly monitors, packages, and re-monetizes poached youth subcultures, turning organic subversion back into corporate advertising yield within weeks.</li>
+                <li><em>Curricular Displacement:</em> Replacing rigorous, powerful academic knowledge with celebratory discussions of student pop-culture consumption deprives disadvantaged learners of foundational disciplinary mastery.</li>
+            </ul>
         </div>
 
         <div class="forensic-entry">
-            <h4 class="concept-title" id="intertextuality-amp-moral-panics">Intertextuality &amp; Moral Panics (Julia Kristeva / Stanley Cohen)</h4>
-            <p>Kristeva's textual mosaic concept alongside Cohen's sociological model of media-manufactured societal panics framing youth behaviors or educational standards as existential threats.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Unmasks how sensationalist media cycles manufacture synthetic educational crises to justify draconian disciplinary crackdowns and curriculum censorship.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Dismissing all legitimate community anxieties regarding youth mental health, screen addiction, or declining national literacy metrics as manufactured panics avoids addressing real educational decline.</p>
+            <h4 class="concept-title" id="intertextuality-moral-panics">Intertextuality &amp; Moral Panics (Julia Kristeva / Stanley Cohen)</h4>
+            <p>
+                Synthesizing Julia Kristeva's poststructuralist semiotics (<span class="tooltip-term" tabindex="0" data-tooltip="Desire in Language (1980), establishing that every text is an intertextual mosaic of citations and references.">Intertextuality, 1966/1980</span>)
+                with Stanley Cohen's sociological model (<span class="tooltip-term" tabindex="0" data-tooltip="Folk Devils and Moral Panics (1972), analyzing the societal creation and amplification of deviance.">Folk Devils and Moral Panics, 1972</span>),
+                this framework reveals how mass media architectures manufacture synthetic societal panics regarding youth culture and schooling.
+                Through an intertextual echo chamber of sensationalist journalism, political rhetoric, and algorithmic outrage, adolescent subcultures and educational standards
+                are framed as existential threats to the social order, manufacturing <span class="tooltip-term" tabindex="0" data-tooltip="Social groups demonized by moral entrepreneurs as visible personifications of cultural degeneration and moral decay.">folk devils</span>.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The "Screen Time / AI Brain Rot" Panic</strong>
+                Imagine a tabloid media cycle targeting secondary school students:
+                <ul>
+                    <li><strong>The Trigger Event:</strong> An isolated survey reports that teenagers use generative AI apps or social media for homework assistance.</li>
+                    <li><strong>The Deviancy Amplification Spiral:</strong> Headlines scream that youth are losing basic literacy and cognitive ability (<span class="tooltip-term" tabindex="0" data-tooltip="Politicians, media editors, and religious figures who mount crusades to rectify perceived cultural breakdown.">moral entrepreneurs</span>). Shock-jocks echo the story, citing previous panics about calculators and comic books (intertextuality).</li>
+                    <li><strong>The Institutional Climax:</strong> Politicians mandate zero-tolerance phone bans and install invasive software lockdowns to reassure voters, while systemic issues—such as teacher shortages and real funding cuts—are ignored.</li>
+                </ul>
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed by Stanley Cohen in 1972 (studying the British Mods and Rockers youth clashes) alongside Kristeva's semiotic formulation of intertextuality. Cohen confronted the anomaly of why public terror and legislative crackdowns were wildly disproportionate to the actual minor disruptions occurring on coastal beaches. Media did not report crime; it orchestrated symbolic morality plays.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Operates through the five stages of a moral panic (concern, hostility, consensus, disproportionality, volatility); the Deviancy Amplification Spiral; Moral Entrepreneurs; and Intertextual Cross-Referencing across political speeches, tabloids, and parent forums.</p>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Unmasks how sensationalist media cycles manufacture synthetic educational crises to justify draconian disciplinary policies, curriculum censorship, and surveillance. Protects teachers and youth from having situational anxieties scapegoated onto their everyday schooling lives.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Diagnostic Denialism Trap:</em> Dismissing all legitimate community anxieties regarding youth mental health, screen addiction, sleep disruption, or declining national literacy metrics as mere "moral panics" blinds educators to real developmental harms caused by commercial digital technology.</li>
+                <li><em>Administrative Abdication:</em> Teachers who dismiss all behavioral concerns as media panics risk failing their affirmative common law duty of care, ignoring real classroom disruptions and bullying.</li>
+            </ul>
         </div>
 
         <div class="forensic-entry">
-            <h4 class="concept-title" id="media-ecology-amp-the-social-model-of-disability">Media Ecology &amp; The Social Model of Disability (Neil Postman / Mike Oliver)</h4>
-            <p>Postman's Faustian analysis of technological trade-offs paired with Oliver's social model defining disability as an institutional mismatch with inaccessible environments.</p>
-            <p><strong>1. Mechanics &amp; Strengths:</strong> Identifies the cognitive costs of digital fragmentation while championing Universal Design for Learning (UDL) and assistive technologies to eliminate institutional classroom barriers.</p>
-            <p><span class="audit-label-critique">2. Forensic Audit:</span> Extreme social model assertions risk minimizing the painful, biological realities of physical or neurocognitive impairments that require specialized medical and developmental support.</p>
+            <h4 class="concept-title" id="media-ecology-social-model">Media Ecology &amp; The Social Model of Disability (Neil Postman / Mike Oliver)</h4>
+            <p>
+                Synthesizing Neil Postman's technological critique (<span class="tooltip-term" tabindex="0" data-tooltip="Amusing Ourselves to Death (1985) and Technopoly (1992), analyzing technology as an ecological transformation rather than a mere additive tool.">Media Ecology, 1985</span>)
+                with Mike Oliver's foundational disability sociology (<span class="tooltip-term" tabindex="0" data-tooltip="The Politics of Disablement (1990), differentiating biological impairment from socially constructed disability.">Social Model of Disability, 1990</span>),
+                this framework establishes that technology is never neutral: it is an ecological transformation of the communicative and cognitive environment.
+                Concurrently, disability is diagnosed not as an internal biological pathology, but as an institutional failure of environments to accommodate bodily variation.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: The 1-to-1 Device Classroom Mismatch</strong>
+                Imagine a Year 8 English classroom transitioning entirely to digital screens:
+                <ul>
+                    <li><strong>The Ecological Faustian Bargain:</strong> The device provides instant web access, but shatters sustained cognitive reading focus, trading deep contemplation for hyperlinked distraction (Postman).</li>
+                    <li><strong>The Social Model Barrier:</strong> A student with severe visual or motor processing difficulties is handed a standard PDF worksheet on a laptop with no screen-reader optimization. The disability is manufactured by the school's inaccessible software, not the student's biology (Oliver).</li>
+                    <li><strong>The Restructuring:</strong> Implementing Universal Design for Learning (UDL)—offering tactile audiobooks, adjustable fonts, and structured physical print—removes the disabling institutional barrier.</li>
+                </ul>
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Postman formulated media ecology at NYU in the 1980s, building on Marshall McLuhan. Oliver formulated the Social Model in 1990 in the UK, emerging from the Union of the Physically Impaired Against Segregation (UPIAS). Both confronted technocratic solutionism: the naive belief that technology is a purely benevolent add-on and that disabled children are broken medical objects needing pity.</p>
+
+            <p><strong>2. Theoretical Mechanics:</strong> Postman's Faustian Bargain (every technology gives and takes away); Ecological Transformation (new mediums alter the entire sensory environment); Oliver's Impairment vs. Disability distinction; and Universal Design for Learning (UDL) as physical/epistemic restructuring.</p>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Exposes the cognitive fragmentation of uncritical classroom digital adoption. Completely reframes special education from medical defect to institutional design, demanding accessible digital architecture as a civil right.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>Postman's Technophobic Nostalgia:</em> Romanticizing 19th-century print literacy ignores that print culture was historically exclusionary, classist, and hostile to oral or neurodivergent learning modalities.</li>
+                <li><em>The Denial of Biological Impairment:</em> Pushed to ideological extremes, social model purists deny the material reality of chronic physical pain, neurodevelopmental dysregulation, and sensory exhaustion, potentially blocking students from receiving vital medical and neurological support.</li>
+            </ul>
+        </div>
+
+        <!-- MASTER STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON CULTURE & TECHNOLOGY -->
+        <div class="textbook-impact-box" id="critical-synthesis">
+            <h4 class="concept-title">Critical Synthesis: Impact of Cultural Agency &amp; Media Ecology on <em>Making Sense of Mass Education</em></h4>
+            <p>
+                <strong>How do Hall, Fiske, Cohen &amp; Kristeva, and Postman &amp; Oliver collectively shape and challenge the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
+                Together, these frameworks provide the textbook with an indispensable bridge between macro-level cultural structures and micro-level student agency, demonstrating how youth actively navigate the communicative and technological environments of schooling:
+            </p>
+            <ul>
+                <li>
+                    <strong>How they SUPPORT and Empower the Textbook's Thesis:</strong>
+                    <ul>
+                        <li><em>Demolishing Passive Transmission (Hall &amp; Fiske):</em> Proves that students are not blank slates or passive dupes brainwashed by corporate media. They actively decode, poach, and remix cultural products, showing that student meaning-making is a contested democratic process.</li>
+                        <li><em>Deconstructing Crisis Narratives (Cohen &amp; Kristeva):</em> Equips pre-service teachers to recognize how sensationalist media panics over "failing schools," "illiterate youth," and "screen addiction" are manufactured to justify punitive political crackdowns and surveillance.</li>
+                        <li><em>Institutionalizing Inclusive Architecture (Oliver &amp; Postman):</em> Replaces deficit medicalization with structural accessibility, demonstrating that learning barriers are created by inflexible curriculum designs and cognitive fragmentation rather than innate student defect.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Where they CAUSE PROFOUND PROBLEMS for the Textbook (The Forensic Hazards):</strong>
+                    <ul>
+                        <li><em>The Algorithmic Capture Blind Spot:</em> Hall and Fiske's optimistic models of "active resistance" struggle against 21st-century platform capitalism, where predictive machine-learning feeds bypass conscious decoding and exploit neurological dopamine loops directly.</li>
+                        <li><em>The Diagnostic Denialism Trap:</em> Dismissing all concern over youth mental health and screen immersion as "moral panics" risks blinding teachers to the genuine cognitive and social costs of digital dependency.</li>
+                        <li><em>Populist Anti-Intellectualism:</em> Celebrating trivial pop-culture poaching as substantive emancipation can lead progressive educators to abandon powerful disciplinary knowledge, leaving disadvantaged students entertained but academically disarmed.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>The Section 6 Synthesis Verdict:</strong>
+                    Cultural studies and media ecology rescue the textbook from cultural pessimism by centering student agency and inclusive structural design. However, professional teaching requires maintaining a firm boundary: educators must respect student interpretive agency while unapologetically providing explicit instruction in powerful, testable disciplinary knowledge and safeguarding the classroom cognitive ecology from commercial distraction.
+                </li>
+            </ul>
         </div>
     </section>
 
