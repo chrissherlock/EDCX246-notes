@@ -16,10 +16,10 @@
         }
         body {
             font-family: "Georgia", Cambria, "Times New Roman", Times, serif;
-            line-height: 1.8;
-            max-width: 900px;
+            line-height: 1.85;
+            max-width: 920px;
             margin: 0 auto;
-            padding: 56px 32px;
+            padding: 56px 36px;
             color: var(--text-main);
             background-color: var(--bg-page);
         }
@@ -47,53 +47,76 @@
             font-size: 1.35rem;
             border-bottom: 1.5px solid var(--border-subtle);
             padding-bottom: 8px;
-            margin-top: 48px;
+            margin-top: 50px;
             margin-bottom: 20px;
             color: #1e3a8a;
         }
+        h3 {
+            font-size: 1.15rem;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
         p {
-            margin: 0 0 16px 0;
+            margin: 0 0 18px 0;
             text-align: justify;
-            font-size: 1.02rem;
+            font-size: 1.04rem;
         }
         .intro-box {
             background-color: var(--bg-entry);
             border: 1px solid var(--border-subtle);
             border-left: 5px solid #1e40af;
             border-radius: 6px;
-            padding: 22px 26px;
-            margin-bottom: 36px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
         }
         .intro-box p {
-            font-size: 0.95rem;
+            font-size: 0.96rem;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.65;
         }
-        .fallacy-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            margin-top: 20px;
+        .summary-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #1e40af;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 16px 0 22px 0;
+        }
+        .summary-box p {
+            font-size: 0.94rem;
+            margin: 0;
+            line-height: 1.55;
+            color: #334155;
+        }
+        .fallacy-section-block {
+            background-color: var(--bg-entry);
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid #1e40af;
+            border-radius: 6px;
+            padding: 24px 28px;
             margin-bottom: 30px;
         }
         .fallacy-card {
-            background-color: var(--bg-entry);
+            background-color: #ffffff;
             border: 1px solid var(--border-subtle);
-            border-left: 4px solid #475569;
             border-radius: 6px;
-            padding: 18px 22px;
+            padding: 20px 24px;
+            margin-top: 18px;
+            margin-bottom: 18px;
         }
-        .fallacy-card h3 {
+        .fallacy-card h4 {
             margin-top: 0;
-            margin-bottom: 6px;
-            font-size: 1.1rem;
-            color: #0f172a;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            color: #1e3a8a;
+            font-family: system-ui, -apple-system, sans-serif;
         }
         .fallacy-card p {
             margin: 0;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: #334155;
-            line-height: 1.55;
+            line-height: 1.65;
         }
     </style>
 </head>
@@ -104,64 +127,81 @@
 
     <div class="intro-box">
         <p>
-            The following taxonomy divides the logical fallacies and argumentative errors identified across critical educational sociology into two distinct operational spheres: those directly embedded within the methodological architecture of the prescribed text itself, and those characterizing the broader poststructuralist and neo-Marxist theoretical traditions upon which the text relies.
+            The following taxonomy categorizes the structural logical fallacies and argumentative errors identified across critical educational sociology. It provides a systematic division between methodological contradictions directly embedded within the prescribed text itself and broader ideological dogmas characterizing the wider poststructuralist and neo-Marxist traditions.
         </p>
     </div>
 
     <h2>Part I: Fallacies Evident Within the Prescribed Text</h2>
 
-    <div class="fallacy-grid">
+    <div class="fallacy-section-block">
+        <h3>1. The Asymmetric Methodological Paradox (Fallacy of Privileged Ascription / Special Pleading)</h3>
+
+        <div class="summary-box">
+            <p>
+                <strong>Executive Summary:</strong> This fallacy occurs when an analytical framework simultaneously borrows the rigorous epistemic authority of hard positivism to invalidate opposing views while exempting its own assertions from any standard quantitative verification, treating qualitative discourse interpretation as infallible truth.
+            </p>
+        </div>
+
+        <p>
+            The most glaring methodological contradiction within <em>Making Sense of Mass Education</em> (Introduction, p. 2) lies in its treatment of empirical evidence. On page 2, the authors define a "myth" strictly as an idea that is <em>"demonstrably false under empirical analysis."</em> By anchoring their analytical critique in the language of empirical demonstration, the authors borrow the epistemic authority, prestige, and certainty of hard positivism and quantitative science to invalidate opposing or conservative administrative viewpoints.
+        </p>
+
+        <p>
+            However, this framing constitutes a profound epistemological sleight of hand. The authors conduct zero primary quantitative research, longitudinal tracking, or controlled classroom experiments. Instead, they rely exclusively on qualitative discourse analysis—treating ministerial press releases, tabloid headlines, and historical policy documents as self-evident proof of systemic conspiracy. When the text seeks to debunk meritocracy or standardized testing, it demands rigorous, macro-statistical quantification (such as ABS wealth distributions and Gini coefficients). Yet, when establishing its own core orthodoxies—such as characterizing schools as Benthamite carceral panopticons (Chapter 5) or viewing ADHD merely as a social control fiction of the psy-complex (Chapter 6)—the text dispenses with quantitative verification entirely, relying on pure conceptual assertion and historical caricature.
+        </p>
+
+        <p>
+            This operational asymmetry constitutes a textbook instance of special pleading and privileged asscription. Quantitative psychometrics and census metrics are summarily dismissed as instruments of state surveillance and positivist normalization when they support institutional sorting, but qualitative deconstruction is treated as an infallible empirical microscope when it supports critical theory. A scholarly textbook cannot invalidate standardized metrics as administrative surveillance while weaponizing the rhetorical authority of empirical truth to validate its own ideological biases.
+        </p>
+    </div>
+
+    <div class="fallacy-grid" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
         <div class="fallacy-card">
-            <h3>1. The Asymmetric Methodological Paradox (Fallacy of Privileged Ascription / Special Pleading)</h3>
-            <p>Demanding absolute macro-statistical quantification when invalidating meritocracy, while simultaneously relying entirely on qualitative discourse analysis, conceptual assertion, and historical caricature when establishing its own core theoretical claims.</p>
+            <h4>2. Historiographical Generalization (Sweeping Generalization)</h4>
+            <p>Leaning uncritically upon discredited historical theses—most notably Philippe Ari&egrave;s's (1962) medieval childhood claims examined in Chapter 8—to construct sweeping macro-level assertions regarding the institutional invention of human developmental stages, while ignoring contradictory medieval legal codes, coroners' records, and archaeological evidence.</p>
         </div>
 
         <div class="fallacy-card">
-            <h3>2. Historiographical Generalization (Sweeping Generalization)</h3>
-            <p>Leaning uncritically upon discredited historical theses (such as Philippe Ari&egrave;s's medieval childhood claims) to construct sweeping macro-level assertions regarding the institutional invention of human developmental stages.</p>
+            <h4>3. Carceral Hyperbole (Slippery Slope and Equivocation)</h4>
+            <p>Equating basic organizational logistics, attendance tracking, assigned seating, and duty-of-care supervision in comprehensive public schools with Jeremy Bentham's Panopticon prison architecture (Chapter 5), thereby equivocating necessary child protection safety measures with totalitarian physical coercion.</p>
         </div>
 
         <div class="fallacy-card">
-            <h3>3. Carceral Hyperbole (Slippery Slope and Equivocation)</h3>
-            <p>Equating basic organizational logistics, attendance tracking, assigned seating, and duty-of-care supervision in comprehensive public schools with Jeremy Bentham's Panopticon prison architecture and totalitarian physical coercion.</p>
-        </div>
-
-        <div class="fallacy-card">
-            <h3>4. Developmental Denialism (Straw Man and Fallacy of Division)</h3>
-            <p>Characterizing all developmental psychology, psychometrics, and clinical neuroscience as crude biological determinism, while committing a fallacy of division by assuming that because institutional batching is a social construct, biological and cognitive ontogeny are entirely fictitious.</p>
+            <h4>4. Developmental Denialism (Straw Man and Fallacy of Division)</h4>
+            <p>Characterizing all developmental psychology, psychometrics, and clinical neuroscience as crude biological determinism, while committing a fallacy of division in Chapter 8 (p. 181) by assuming that because institutional batching and age-grouping are social constructs, biological and cognitive ontogeny are entirely fictitious.</p>
         </div>
     </div>
 
     <h2>Part II: Fallacies Prevalent in the Wider Field of Critical Educational Sociology</h2>
 
-    <div class="fallacy-grid">
+    <div class="fallacy-grid" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
         <div class="fallacy-card">
-            <h3>5. Structural Fatalism (Ecological and Deterministic Fallacy)</h3>
-            <p>Treating macro-level reproduction theories (such as Bourdieusian habitus and structural class loops) as absolute, airtight determinants that erase human agency, student resilience, and the proven efficacy of explicit instruction.</p>
+            <h4>5. Structural Fatalism (Ecological and Deterministic Fallacy)</h4>
+            <p>Treating macro-level reproduction theories—such as Bourdieusian habitus and structural class loops examined in Chapter 1—as absolute, airtight determinants that erase human agency, student resilience, and the proven efficacy of explicit instruction.</p>
         </div>
 
         <div class="fallacy-card">
-            <h3>6. Curricular Relativism (Genetic and Reductionist Fallacy)</h3>
-            <p>Branding universal scientific truths, formal logic, and specialized disciplinary canons as white European regimes of truth or arbitrary ruling-class power tools, thereby committing the genetic fallacy by dismissing knowledge based solely on its institutional origins.</p>
+            <h4>6. Curricular Relativism (Genetic and Reductionist Fallacy)</h4>
+            <p>Branding universal scientific truths, formal logic, and specialized disciplinary canons as white European regimes of truth or arbitrary ruling-class power tools (Chapter 17), thereby committing the genetic fallacy by dismissing knowledge based solely on its institutional origins.</p>
         </div>
 
         <div class="fallacy-card">
-            <h3>7. Metric Nihilism (Nirvana / Perfectionist Fallacy)</h3>
-            <p>Evaluating existing public educational systems and assessment baselines against an impossible, idealized utopian standard while summarily condemning all standardized metrics as corrupt corporate surveillance.</p>
+            <h4>7. Metric Nihilism (Nirvana / Perfectionist Fallacy)</h4>
+            <p>Evaluating existing public educational systems and assessment baselines against an impossible, idealized utopian standard while summarily condemning all standardized metrics as corrupt corporate surveillance (Chapter 9).</p>
         </div>
 
         <div class="fallacy-card">
-            <h3>8. The Progressive Deficit Trap (False Dilemma / Bifurcation)</h3>
-            <p>Forcing an absolute binary choice between critical sociological deconstruction and uncritical technocratic compliance, assuming that explicit instruction in standard academic codes is synonymous with symbolic violence and cultural erasure.</p>
+            <h4>8. The Progressive Deficit Trap (False Dilemma / Bifurcation)</h4>
+            <p>Forcing an absolute binary choice between critical sociological deconstruction and uncritical technocratic compliance, assuming that explicit instruction in standard academic codes is synonymous with symbolic violence and cultural erasure (Chapters 1 &amp; 2).</p>
         </div>
 
         <div class="fallacy-card">
-            <h3>9. Reification of Abstract Constructs (Hypostatization)</h3>
-            <p>Treating abstract sociological concepts and systemic metaphors (such as "the state," "whiteness," or "the psy-complex") as concrete, acting agents possessing independent consciousness and malicious institutional intent.</p>
+            <h4>9. Reification of Abstract Constructs (Hypostatization)</h4>
+            <p>Treating abstract sociological concepts and systemic metaphors—such as "the state," "whiteness," or "the psy-complex" (Chapters 2, 5, &amp; 6)—as concrete, acting agents possessing independent consciousness and malicious institutional intent.</p>
         </div>
 
         <div class="fallacy-card">
-            <h3>10. Circumstantial Ad Hominem (Poisoning the Well)</h3>
+            <h4>10. Circumstantial Ad Hominem (Poisoning the Well)</h4>
             <p>Preemptively dismissing objective psychometric evaluation, developmental milestones, and administrative policy arguments by attributing them entirely to ruling-class self-interest, positivist bias, or neoliberal governance.</p>
         </div>
     </div>
