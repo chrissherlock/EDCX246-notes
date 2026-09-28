@@ -367,6 +367,104 @@
             border-color: var(--border-subtle, #e7e5e4);
         }
 
+    
+        /* Modernized Sophisticated Table of Contents */
+        .toc-card {
+            background: linear-gradient(180deg, #fffcf8 0%, #faf5ec 100%);
+            border: 1px solid #e7ded0;
+            border-left: 4px solid var(--accent-orange, #ea580c);
+            border-radius: 8px;
+            padding: 18px 22px 20px 22px;
+            margin: 20px 0 28px 0;
+            box-shadow: 0 2px 8px rgba(120, 53, 15, 0.04);
+        }
+        .toc-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e7ded0;
+        }
+        .toc-card h3 {
+            font-size: 0.95rem;
+            color: var(--primary-dark, #78350f);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-orange, #ea580c);
+            background: #ffedd5;
+            padding: 2px 8px;
+            border-radius: 12px;
+            letter-spacing: 0.02em;
+        }
+        .toc-grid {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 8px 12px;
+        }
+        .toc-grid li {
+            margin: 0;
+            padding: 0;
+            font-size: 0.88rem;
+        }
+        .toc-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 12px;
+            background: #ffffff;
+            border: 1px solid #ebdccb;
+            border-radius: 6px;
+            color: var(--text-main, #292524);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.15s ease-in-out;
+        }
+        .toc-item-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .toc-index {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary, #b45309);
+            opacity: 0.85;
+            font-variant-numeric: tabular-nums;
+        }
+        .toc-chevron {
+            font-size: 0.82rem;
+            color: #a8a29e;
+            transition: transform 0.15s ease-in-out, color 0.15s ease-in-out;
+            margin-left: 6px;
+        }
+        .toc-grid a:hover {
+            color: var(--primary-dark, #78350f);
+            border-color: var(--border-accent, #f59e0b);
+            background: #fffdf9;
+            transform: translateY(-1.5px);
+            box-shadow: 0 3px 8px rgba(180, 83, 9, 0.08);
+        }
+        .toc-grid a:hover .toc-chevron {
+            color: var(--accent-orange, #ea580c);
+            transform: translateX(2px);
+        }
+
     </style>
 </head>
 <body>
@@ -385,22 +483,121 @@
                 <strong>Module Overview:</strong> This module examines how modern mass education acts as an apparatus of social class reproduction rather than a neutral engine of meritocracy. Through Pierre Bourdieu's foundational concepts of <em>cultural capital</em>, <em>habitus</em>, and <em>symbolic violence</em>, alongside sociolinguistic codes (Basil Bernstein), working-class resistance (Paul Willis), neo-Weberian social closure, credentialism, and school residualisation, we interrogate the structural mechanisms that convert inherited class privilege into academic success.
             </p>
         </div>
-    <!-- MODULE IN-PAGE TABLE OF CONTENTS -->
-    <nav class="toc-card" aria-label="Module Table of Contents">
-        <h3>Contents in this Module</h3>
+    <!-- REFINED MODULE IN-PAGE TABLE OF CONTENTS -->
+    <nav class="toc-card" aria-label="Module Quick Index">
+        <div class="toc-header-row">
+            <h3>Quick Navigation</h3>
+            <span class="toc-badge">12 Sections</span>
+        </div>
         <ul class="toc-grid">
-            <li><a href="#cultural-capital">Cultural Capital (Pierre Bourdieu)</a></li>
-            <li><a href="#habitus">Habitus (Pierre Bourdieu)</a></li>
-            <li><a href="#symbolic-violence-amp-misrecognition">Symbolic Violence &amp; Misrecognition (Pierre Bourdieu &amp; Jean-Claude Passeron)</a></li>
-            <li><a href="#critical-synthesis-impact-on-making-sense-of-mass-education">Critical Synthesis: Impact on Making Sense of Mass Education (The Bourdieusian Paradigm)</a></li>
-            <li><a href="#restricted-vs-elaborated-codes">Restricted vs. Elaborated Codes (Basil Bernstein &amp; William Labov)</a></li>
-            <li><a href="#counter-school-resistance">Counter-School Resistance (Paul Willis)</a></li>
-            <li><a href="#social-closure">Social Closure (Max Weber)</a></li>
-            <li><a href="#credentialism-amp-the-credential-society">Credentialism &amp; The Credential Society (Randall Collins)</a></li>
-            <li><a href="#residualisation">Residualisation</a></li>
-            <li><a href="#critical-synthesis-impact-of-sociolinguistic-resistance-amp-closure-paradigms-on-making-sense-of-mass-education">Critical Synthesis: Impact of Sociolinguistic, Resistance &amp; Closure Paradigms on Making Sense of Mass Education</a></li>
-            <li><a href="#critical-synthesis">Critical Synthesis</a></li>
-            <li><a href="#module-references">Module References</a></li>
+            <li>
+                <a href="#cultural-capital">
+                    <span class="toc-item-label">
+                        <span class="toc-index">01</span>
+                        <span>Cultural Capital (Pierre Bourdieu)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#habitus">
+                    <span class="toc-item-label">
+                        <span class="toc-index">02</span>
+                        <span>Habitus (Pierre Bourdieu)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#symbolic-violence-amp-misrecognition">
+                    <span class="toc-item-label">
+                        <span class="toc-index">03</span>
+                        <span>Symbolic Violence &amp; Misrecognition (Pierre Bourdieu &amp; Jean-Claude Passeron)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#critical-synthesis-impact-on-making-sense-of-mass-education">
+                    <span class="toc-item-label">
+                        <span class="toc-index">04</span>
+                        <span>Critical Synthesis: Impact on Making Sense of Mass Education (The Bourdieusian Paradigm)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#restricted-vs-elaborated-codes">
+                    <span class="toc-item-label">
+                        <span class="toc-index">05</span>
+                        <span>Restricted vs. Elaborated Codes (Basil Bernstein &amp; William Labov)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#counter-school-resistance">
+                    <span class="toc-item-label">
+                        <span class="toc-index">06</span>
+                        <span>Counter-School Resistance (Paul Willis)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#social-closure">
+                    <span class="toc-item-label">
+                        <span class="toc-index">07</span>
+                        <span>Social Closure (Max Weber)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#credentialism-amp-the-credential-society">
+                    <span class="toc-item-label">
+                        <span class="toc-index">08</span>
+                        <span>Credentialism &amp; The Credential Society (Randall Collins)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#residualisation">
+                    <span class="toc-item-label">
+                        <span class="toc-index">09</span>
+                        <span>Residualisation</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#critical-synthesis-impact-of-sociolinguistic-resistance-amp-closure-paradigms-on-making-sense-of-mass-education">
+                    <span class="toc-item-label">
+                        <span class="toc-index">10</span>
+                        <span>Critical Synthesis: Impact of Sociolinguistic, Resistance &amp; Closure Paradigms on Making Sense of Mass Education</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#critical-synthesis">
+                    <span class="toc-item-label">
+                        <span class="toc-index">11</span>
+                        <span>Critical Synthesis</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#module-references">
+                    <span class="toc-item-label">
+                        <span class="toc-index">12</span>
+                        <span>Module References</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
         </ul>
     </nav>
 

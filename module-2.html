@@ -363,6 +363,104 @@
             border-color: var(--border-subtle, #e7e5e4);
         }
 
+    
+        /* Modernized Sophisticated Table of Contents */
+        .toc-card {
+            background: linear-gradient(180deg, #fffcf8 0%, #faf5ec 100%);
+            border: 1px solid #e7ded0;
+            border-left: 4px solid var(--accent-orange, #ea580c);
+            border-radius: 8px;
+            padding: 18px 22px 20px 22px;
+            margin: 20px 0 28px 0;
+            box-shadow: 0 2px 8px rgba(120, 53, 15, 0.04);
+        }
+        .toc-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e7ded0;
+        }
+        .toc-card h3 {
+            font-size: 0.95rem;
+            color: var(--primary-dark, #78350f);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-orange, #ea580c);
+            background: #ffedd5;
+            padding: 2px 8px;
+            border-radius: 12px;
+            letter-spacing: 0.02em;
+        }
+        .toc-grid {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 8px 12px;
+        }
+        .toc-grid li {
+            margin: 0;
+            padding: 0;
+            font-size: 0.88rem;
+        }
+        .toc-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 12px;
+            background: #ffffff;
+            border: 1px solid #ebdccb;
+            border-radius: 6px;
+            color: var(--text-main, #292524);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.15s ease-in-out;
+        }
+        .toc-item-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .toc-index {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary, #b45309);
+            opacity: 0.85;
+            font-variant-numeric: tabular-nums;
+        }
+        .toc-chevron {
+            font-size: 0.82rem;
+            color: #a8a29e;
+            transition: transform 0.15s ease-in-out, color 0.15s ease-in-out;
+            margin-left: 6px;
+        }
+        .toc-grid a:hover {
+            color: var(--primary-dark, #78350f);
+            border-color: var(--border-accent, #f59e0b);
+            background: #fffdf9;
+            transform: translateY(-1.5px);
+            box-shadow: 0 3px 8px rgba(180, 83, 9, 0.08);
+        }
+        .toc-grid a:hover .toc-chevron {
+            color: var(--accent-orange, #ea580c);
+            transform: translateX(2px);
+        }
+
     </style>
 </head>
 <body>
@@ -381,15 +479,58 @@
                 <strong>Module Overview:</strong> This module interrogates the racialized architectures of modern mass education, moving beyond surface multiculturalism to examine how schools operate as sites of colonial subjugation, epistemic violence, and systemic exclusion. Drawing upon Frantz Fanon, Gayatri Spivak, David Gillborn, and Django Paris &amp; H. Samy Alim, this module evaluates how institutional routines, curricular canons, and colorblind meritocracy preserve white majoritarian dominance while offering pathways toward culturally sustaining sovereignty.
             </p>
         </div>
-    <!-- MODULE IN-PAGE TABLE OF CONTENTS -->
-    <nav class="toc-card" aria-label="Module Table of Contents">
-        <h3>Contents in this Module</h3>
+    <!-- REFINED MODULE IN-PAGE TABLE OF CONTENTS -->
+    <nav class="toc-card" aria-label="Module Quick Index">
+        <div class="toc-header-row">
+            <h3>Quick Navigation</h3>
+            <span class="toc-badge">5 Sections</span>
+        </div>
         <ul class="toc-grid">
-            <li><a href="#colonisation-of-the-mind">Colonisation of the Mind (Frantz Fanon)</a></li>
-            <li><a href="#epistemic-violence">Epistemic Violence (Gayatri Spivak)</a></li>
-            <li><a href="#institutional-racism-amp-whiteness-as-policy">Institutional Racism &amp; Whiteness as Policy (David Gillborn)</a></li>
-            <li><a href="#culturally-sustaining-pedagogy">Culturally Sustaining Pedagogy (Django Paris &amp; H. Samy Alim)</a></li>
-            <li><a href="#module-references">Module References</a></li>
+            <li>
+                <a href="#colonisation-of-the-mind">
+                    <span class="toc-item-label">
+                        <span class="toc-index">01</span>
+                        <span>Colonisation of the Mind (Frantz Fanon)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#epistemic-violence">
+                    <span class="toc-item-label">
+                        <span class="toc-index">02</span>
+                        <span>Epistemic Violence (Gayatri Spivak)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#institutional-racism-amp-whiteness-as-policy">
+                    <span class="toc-item-label">
+                        <span class="toc-index">03</span>
+                        <span>Institutional Racism &amp; Whiteness as Policy (David Gillborn)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#culturally-sustaining-pedagogy">
+                    <span class="toc-item-label">
+                        <span class="toc-index">04</span>
+                        <span>Culturally Sustaining Pedagogy (Django Paris &amp; H. Samy Alim)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#module-references">
+                    <span class="toc-item-label">
+                        <span class="toc-index">05</span>
+                        <span>Module References</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
         </ul>
     </nav>
 

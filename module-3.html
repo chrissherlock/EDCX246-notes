@@ -363,6 +363,104 @@
             border-color: var(--border-subtle, #e7e5e4);
         }
 
+    
+        /* Modernized Sophisticated Table of Contents */
+        .toc-card {
+            background: linear-gradient(180deg, #fffcf8 0%, #faf5ec 100%);
+            border: 1px solid #e7ded0;
+            border-left: 4px solid var(--accent-orange, #ea580c);
+            border-radius: 8px;
+            padding: 18px 22px 20px 22px;
+            margin: 20px 0 28px 0;
+            box-shadow: 0 2px 8px rgba(120, 53, 15, 0.04);
+        }
+        .toc-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e7ded0;
+        }
+        .toc-card h3 {
+            font-size: 0.95rem;
+            color: var(--primary-dark, #78350f);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-orange, #ea580c);
+            background: #ffedd5;
+            padding: 2px 8px;
+            border-radius: 12px;
+            letter-spacing: 0.02em;
+        }
+        .toc-grid {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 8px 12px;
+        }
+        .toc-grid li {
+            margin: 0;
+            padding: 0;
+            font-size: 0.88rem;
+        }
+        .toc-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 12px;
+            background: #ffffff;
+            border: 1px solid #ebdccb;
+            border-radius: 6px;
+            color: var(--text-main, #292524);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.15s ease-in-out;
+        }
+        .toc-item-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .toc-index {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary, #b45309);
+            opacity: 0.85;
+            font-variant-numeric: tabular-nums;
+        }
+        .toc-chevron {
+            font-size: 0.82rem;
+            color: #a8a29e;
+            transition: transform 0.15s ease-in-out, color 0.15s ease-in-out;
+            margin-left: 6px;
+        }
+        .toc-grid a:hover {
+            color: var(--primary-dark, #78350f);
+            border-color: var(--border-accent, #f59e0b);
+            background: #fffdf9;
+            transform: translateY(-1.5px);
+            box-shadow: 0 3px 8px rgba(180, 83, 9, 0.08);
+        }
+        .toc-grid a:hover .toc-chevron {
+            color: var(--accent-orange, #ea580c);
+            transform: translateX(2px);
+        }
+
     </style>
 </head>
 <body>
@@ -381,15 +479,58 @@
                 <strong>Module Overview:</strong> This module explores how gender and sexuality are constructed, regulated, and policed within educational institutions. Moving from Raewyn Connell's structural gender regimes and hegemonic masculinity to Judith Butler's poststructuralist performativity, Adrienne Rich's compulsory heterosexuality, and Ilan Meyer's minority stress epidemiology, this module exposes the heteronormative and patriarchal hidden curriculum of schooling.
             </p>
         </div>
-    <!-- MODULE IN-PAGE TABLE OF CONTENTS -->
-    <nav class="toc-card" aria-label="Module Table of Contents">
-        <h3>Contents in this Module</h3>
+    <!-- REFINED MODULE IN-PAGE TABLE OF CONTENTS -->
+    <nav class="toc-card" aria-label="Module Quick Index">
+        <div class="toc-header-row">
+            <h3>Quick Navigation</h3>
+            <span class="toc-badge">5 Sections</span>
+        </div>
         <ul class="toc-grid">
-            <li><a href="#gender-regimes-amp-hegemonic-masculinity">Gender Regimes &amp; Hegemonic Masculinity (Raewyn Connell)</a></li>
-            <li><a href="#gender-performativity">Gender Performativity (Judith Butler)</a></li>
-            <li><a href="#compulsory-heterosexuality">Compulsory Heterosexuality (Adrienne Rich)</a></li>
-            <li><a href="#minority-stress-amp-affirmative-pedagogy">Minority Stress &amp; Affirmative Pedagogy (Ilan Meyer)</a></li>
-            <li><a href="#module-references">Module References</a></li>
+            <li>
+                <a href="#gender-regimes-amp-hegemonic-masculinity">
+                    <span class="toc-item-label">
+                        <span class="toc-index">01</span>
+                        <span>Gender Regimes &amp; Hegemonic Masculinity (Raewyn Connell)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#gender-performativity">
+                    <span class="toc-item-label">
+                        <span class="toc-index">02</span>
+                        <span>Gender Performativity (Judith Butler)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#compulsory-heterosexuality">
+                    <span class="toc-item-label">
+                        <span class="toc-index">03</span>
+                        <span>Compulsory Heterosexuality (Adrienne Rich)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#minority-stress-amp-affirmative-pedagogy">
+                    <span class="toc-item-label">
+                        <span class="toc-index">04</span>
+                        <span>Minority Stress &amp; Affirmative Pedagogy (Ilan Meyer)</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
+            <li>
+                <a href="#module-references">
+                    <span class="toc-item-label">
+                        <span class="toc-index">05</span>
+                        <span>Module References</span>
+                    </span>
+                    <span class="toc-chevron">&rarr;</span>
+                </a>
+            </li>
         </ul>
     </nav>
 
