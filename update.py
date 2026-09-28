@@ -1,33 +1,53 @@
 #!/usr/bin/env python3
-"""Add a navigation link back to index.html at the top of core-concepts.html
+"""Move the Interactive Forensic Revision Portal banner to be directly under
 
-and sync the changes via git.
+the table of contents in index.html, matching index.html's blue/slate color scheme.
 """
 
 from pathlib import Path
+import re
 import subprocess
 import sys
 
 
-def inject_index_link(root_dir: Path) -> None:
-    target = root_dir / "core-concepts.html"
-    if not target.exists():
-        print("core-concepts.html not found.")
+def update_index_html(root_dir: Path) -> None:
+    index_file = root_dir / "index.html"
+    if not index_file.exists():
+        print("index.html not found.")
         return
 
-    content = target.read_text(encoding="utf-8")
+    content = index_file.read_text(encoding="utf-8")
 
-    back_link_html = """    <nav style="margin-bottom: 20px;">
-        <a href="index.html" style="display: inline-flex; align-items: center; padding: 6px 12px; background-color: #fff7ed; border: 1px solid #fdba74; border-radius: 5px; color: #78350f; text-decoration: none; font-size: 0.88rem; font-weight: 600;">&larr; Back to Main Overview</a>
-    </nav>"""
+    # 1. Clean up any existing access banners to avoid duplicates or old color schemes
+    content = re.sub(
+        r'\s*<!-- ACCESS BANNER TO FORENSIC REVISION PORTAL -->.*?(?=<h2|<div class="book-overview-card"|<nav id="table-of-contents"|<h1|$)',
+        "",
+        content,
+        flags=re.DOTALL,
+    )
 
-    if 'href="index.html"' not in content:
-        # Insert right after <body>
-        content = content.replace("<body>", f"<body>\n{back_link_html}")
-        target.write_text(content, encoding="utf-8")
-        print("Added link back to index.html in core-concepts.html")
+    # 2. Define the new banner matching index.html's blue/slate scheme (#1e40af, #f8fafc, #cbd5e1)
+    blue_banner_html = """
+    <!-- ACCESS BANNER TO FORENSIC REVISION PORTAL -->
+    <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-left: 6px solid #1e40af; border-radius: 8px; padding: 22px 26px; margin: 32px 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="flex-grow: 1; min-width: 280px;">
+            <h3 style="margin: 0 0 6px 0; color: #1e40af; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.03em;">Interactive Forensic Revision Portal</h3>
+            <p style="margin: 0; font-size: 0.94rem; color: #334155; line-height: 1.5; text-align: justify;">Access the complete modular revision guide featuring four-part dossiers, interactive popovers, concrete classroom scenarios, SVG architecture diagrams, and critical rebuttals.</p>
+        </div>
+        <a href="core-concepts.html" style="display: inline-flex; align-items: center; padding: 10px 18px; background-color: #1e40af; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em; transition: background-color 0.15s ease-in-out; flex-shrink: 0;">Launch Portal &rarr;</a>
+    </div>
+"""
+
+    # 3. Locate the table of contents block and insert the banner *after* it
+    toc_pattern = r'(<nav id="table-of-contents".*?</nav>)'
+    match = re.search(toc_pattern, content, re.DOTALL)
+    if match:
+        toc_end_pos = match.end()
+        content = content[:toc_end_pos] + "\n" + blue_banner_html + content[toc_end_pos:]
+        index_file.write_text(content, encoding="utf-8")
+        print("Successfully moved and restyled the forensic portal banner under the table of contents in index.html[cite: 1].")
     else:
-        print("Link back to index.html already present in core-concepts.html")
+        print("Warning: Table of contents element not found in index.html[cite: 1].", file=sys.stderr)
 
 
 def execute_git_sync(repo_path: Path, commit_msg: str) -> None:
@@ -53,12 +73,12 @@ def execute_git_sync(repo_path: Path, commit_msg: str) -> None:
 
 def main() -> None:
     root_directory = Path(__file__).resolve().parent
-    inject_index_link(root_directory)
+    update_index_html(root_directory)
 
     commit_message = (
-        "Add link back to root index.html on core-concepts.html portal\n\n"
-        "Insert a clean navigation link at the top of core-concepts.html\n"
-        "pointing back to the main overview page (index.html)."
+        "Move forensic portal banner under table of contents in index.html\n\n"
+        "Style the portal access banner to match index.html's blue/slate color scheme\n"
+        "and place it directly after the Table of Contents navigation card."
     )
 
     execute_git_sync(repo_path=root_directory, commit_msg=commit_message)
