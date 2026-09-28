@@ -101,7 +101,6 @@
             line-height: 1.6;
             text-align: justify;
         }
-
         /* Lightweight Typographic Table of Contents */
         .toc-card {
             background-color: var(--bg-banner);
@@ -170,14 +169,10 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        .toc-chevron {
-            display: none;
-        }
         .toc-grid a:hover {
             color: var(--accent-orange);
             text-decoration: underline;
         }
-
         .forensic-entry {
             margin-bottom: 20px;
             padding: 16px 20px;
@@ -334,6 +329,9 @@
             margin-bottom: 10px;
             text-align: justify;
         }
+        .textbook-impact-box ul ul {
+            margin-top: 6px;
+        }
         .entry-references {
             margin-top: 14px;
             padding: 10px 14px;
@@ -409,32 +407,32 @@
             gap: 12px;
             margin: 20px 0;
             padding: 10px 0;
-            border-top: 1px solid var(--border-subtle, #e7e5e4);
-            border-bottom: 1px solid var(--border-subtle, #e7e5e4);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
         }
         .nav-btn {
             display: inline-flex;
             align-items: center;
             padding: 8px 16px;
-            background-color: var(--bg-banner, #fffbf5);
-            border: 1px solid var(--border-accent, #f59e0b);
+            background-color: var(--bg-banner);
+            border: 1px solid var(--border-accent);
             border-radius: 6px;
-            color: var(--primary-dark, #78350f);
+            color: var(--primary-dark);
             text-decoration: none;
             font-size: 0.88rem;
             font-weight: 600;
             transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
         }
         .nav-btn:hover {
-            background-color: var(--primary, #b45309);
+            background-color: var(--primary);
             color: #ffffff;
-            border-color: var(--primary, #b45309);
+            border-color: var(--primary);
         }
         .nav-btn.disabled {
             opacity: 0.4;
             pointer-events: none;
             cursor: default;
-            border-color: var(--border-subtle, #e7e5e4);
+            border-color: var(--border-subtle);
         }
         @media (max-width: 768px) {
             .camp-cards { grid-template-columns: 1fr; }
@@ -443,108 +441,102 @@
 </head>
 <body>
 
-    
     <nav class="module-nav" aria-label="Module Navigation">
         <a href="module-6.html" class="nav-btn">&larr; Module 6</a>
         <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
         <a href="bibliography.html" class="nav-btn">Bibliography &rarr;</a>
     </nav>
-<section id="section-7">
-        <h2>7. Philosophy, Law &amp; Educational Rights</h2>
 
-        <div class="intro-card">
-            <p>
-                <strong>Module Overview:</strong> This final module synthesizes normative philosophy, legal obligations, and ethical praxis in education. Spanning Paulo Freire's critical pedagogy, relational ethics of care, common law negligence and non-delegable duties of care, UNCRC participatory rights, and Michael Young's social realism, this module prepares educators to navigate professional jurisprudence and ethical responsibility.
-            </p>
-        </div>
-    <!-- REFINED MODULE IN-PAGE TABLE OF CONTENTS -->
+    <div class="intro-card">
+        <p><strong>Module Overview:</strong> This final module synthesizes normative philosophy, legal obligations, and ethical praxis in education. Spanning Paulo Freire's critical pedagogy, relational ethics of care, common law negligence and non-delegable duties of care, UNCRC participatory rights, and Michael Young's social realism, this module prepares educators to navigate professional jurisprudence and ethical responsibility.</p>
+    </div>
+
+    <!-- MODULE IN-PAGE QUICK NAVIGATION -->
     <nav class="toc-card" aria-label="Module Quick Index">
         <div class="toc-header-row">
             <h3>Quick Navigation</h3>
-            <span class="toc-badge">6 Sections</span>
+            <span class="toc-badge">6 Entries</span>
         </div>
         <ul class="toc-grid">
             <li>
                 <a href="#critical-pedagogy-amp-praxis">
-                    <span class="toc-item-label">
-                        <span class="toc-index">01</span>
-                        <span>Critical Pedagogy &amp; Praxis (Paulo Freire)</span>
-                    </span>
-                    <span class="toc-chevron">&rarr;</span>
+                    <span class="toc-index">01</span>
+                    <span class="toc-item-label">Critical Pedagogy &amp; Praxis (Paulo Freire)</span>
                 </a>
             </li>
             <li>
                 <a href="#normative-ethics-amp-relational-care">
-                    <span class="toc-item-label">
-                        <span class="toc-index">02</span>
-                        <span>Normative Ethics &amp; Relational Care (Nel Noddings / Aristotle)</span>
-                    </span>
-                    <span class="toc-chevron">&rarr;</span>
+                    <span class="toc-index">02</span>
+                    <span class="toc-item-label">Normative Ethics &amp; Relational Care (Nel Noddings / Aristotle)</span>
                 </a>
             </li>
             <li>
                 <a href="#non-delegable-duty-of-care-amp-negligence">
-                    <span class="toc-item-label">
-                        <span class="toc-index">03</span>
-                        <span>Non-Delegable Duty of Care &amp; Negligence</span>
-                    </span>
-                    <span class="toc-chevron">&rarr;</span>
+                    <span class="toc-index">03</span>
+                    <span class="toc-item-label">Non-Delegable Duty of Care &amp; Negligence</span>
                 </a>
             </li>
             <li>
                 <a href="#uncrc-article-12-amp-participatory-rights">
-                    <span class="toc-item-label">
-                        <span class="toc-index">04</span>
-                        <span>UNCRC Article 12 &amp; Participatory Rights</span>
-                    </span>
-                    <span class="toc-chevron">&rarr;</span>
+                    <span class="toc-index">04</span>
+                    <span class="toc-item-label">UNCRC Article 12 &amp; Participatory Rights</span>
                 </a>
             </li>
             <li>
                 <a href="#regimes-of-truth-vs-powerful-knowledge">
-                    <span class="toc-item-label">
-                        <span class="toc-index">05</span>
-                        <span>Regimes of Truth vs. Powerful Knowledge (Michel Foucault / Michael Young)</span>
-                    </span>
-                    <span class="toc-chevron">&rarr;</span>
+                    <span class="toc-index">05</span>
+                    <span class="toc-item-label">Regimes of Truth vs. Powerful Knowledge (Michel Foucault / Michael Young)</span>
                 </a>
             </li>
             <li>
                 <a href="#module-references">
-                    <span class="toc-item-label">
-                        <span class="toc-index">06</span>
-                        <span>Module References</span>
-                    </span>
-                    <span class="toc-chevron">&rarr;</span>
+                    <span class="toc-index">06</span>
+                    <span class="toc-item-label">Module References</span>
                 </a>
             </li>
         </ul>
     </nav>
 
-
+<section id="section-7">
+        <h2>7. Philosophy, Law &amp; Educational Rights</h2>
         <h3 class="tradition-header">Critical Praxis, Ethics &amp; Jurisprudence</h3>
 
         <div class="forensic-entry">
             <h4 class="concept-title" id="critical-pedagogy-amp-praxis">Critical Pedagogy &amp; Praxis (Paulo Freire)</h4>
-            <p>Freire's critique of the banking model of education in favor of problem-posing dialogue, conscientisation, and praxis.</p>
+            <p>Paulo Freire's critique (<em>Pedagogy of the Oppressed</em>, 1968) of the 'banking model' of education in favor of problem-posing dialogue, conscientisation (critical consciousness), and praxis (uniting reflection and action for liberation).</p>
+            <p><strong>1. Mechanics &amp; Strengths:</strong> Challenges authoritarian rote learning, elevating education into a collaborative project where learners interrogate real-world oppression and democratize classroom power relations.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Cognitive load research consistently demonstrates that novice learners, particularly from disadvantaged backgrounds, suffer under unstructured discovery learning and require explicit, structured instruction. Furthermore, Freirean pedagogy can degenerate into ideological indoctrination where political activism displaces academic mastery.</p>
         </div>
+
         <div class="forensic-entry">
             <h4 class="concept-title" id="normative-ethics-amp-relational-care">Normative Ethics &amp; Relational Care (Nel Noddings / Aristotle)</h4>
-            <p>Philosophical synthesis of Kantian deontology, Aristotelian phronesis, and Nel Noddings' ethics of care.</p>
+            <p>The philosophical synthesis of Kantian deontology (treating learners as ends, never as means), Aristotelian phronesis (practical wisdom), and Nel Noddings' ethics of care grounded in attentiveness and trust.</p>
+            <p><strong>1. Mechanics &amp; Strengths:</strong> Forbids the instrumental use of children as data points for league tables, demanding that teachers anchor their professional duty in empathy and pastoral responsiveness.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> An uncritical ethics of care can lead to sentimentalism, conflating care with lowering academic expectations or avoiding necessary disciplinary boundaries and challenging curricula.</p>
         </div>
+
         <div class="forensic-entry">
             <h4 class="concept-title" id="non-delegable-duty-of-care-amp-negligence">Non-Delegable Duty of Care &amp; Negligence</h4>
-            <p>Common law tort doctrine imposing an affirmative duty upon schools and teachers to take reasonable precautions against foreseeable harm.</p>
+            <p>The common law tort doctrine imposing an affirmative, non-delegable duty upon schools and teachers to take reasonable precautions against foreseeable risks of physical and psychiatric harm.</p>
+            <p><strong>1. Mechanics &amp; Strengths:</strong> Establishes the legal floor of the profession, demanding vigilant supervision across classrooms, playgrounds, and excursions to protect student safety.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Defensive risk aversion driven by tort liability can lead to hyper-sanitized educational environments that ban beneficial physical play, challenging scientific experiments, and outdoor exploration.</p>
         </div>
+
         <div class="forensic-entry">
             <h4 class="concept-title" id="uncrc-article-12-amp-participatory-rights">UNCRC Article 12 &amp; Participatory Rights</h4>
-            <p>Guarantees children the right to express their views freely in all matters affecting them, disrupting institutional paternalism.</p>
+            <p>The United Nations Convention on the Rights of the Child (1989), specifically Article 12 guaranteeing children the right to express their views freely in all matters affecting them.</p>
+            <p><strong>1. Mechanics &amp; Strengths:</strong> Disrupts institutional paternalism by mandating authentic student participation in pedagogical decisions, disciplinary hearings, and school governance.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Participatory rights are frequently hollowed out into tokenistic student councils, or misconstrued by progressive reformers as conferring equal authority to novice children over expert curriculum content.</p>
         </div>
+
         <div class="forensic-entry">
             <h4 class="concept-title" id="regimes-of-truth-vs-powerful-knowledge">Regimes of Truth vs. Powerful Knowledge (Michel Foucault / Michael Young)</h4>
-            <p>Intellectual tension between Foucault's poststructuralist critique of truth regimes and Young's Social Realism defending universal access to powerful knowledge.</p>
+            <p>The intellectual tension between Foucault's poststructuralist assertion that all knowledge is a power-laden 'regime of truth,' and Michael Young's Social Realism defending universal access to 'powerful knowledge'—specialized, discipline-grounded knowledge.</p>
+            <p><strong>1. Mechanics &amp; Strengths:</strong> Foucault exposes curriculum bias, while Young demonstrates that specialized disciplinary knowledge (science, history, mathematics) takes students beyond their localized personal experiences, enabling them to understand and transform the world.</p>
+            <p><span class="audit-label-critique">2. Forensic Audit:</span> Postmodern rejection of disciplinary knowledge under the banner of fighting hegemonic truth disproportionately damages working-class students, denying them the intellectual tools needed for higher education and democratic agency.</p>
         </div>
     </section>
+
     <section class="biblio-section" id="module-references">
         <h2>Module 7 References &amp; Foundational Reading</h2>
         <ul class="biblio-list">
@@ -558,11 +550,11 @@
             <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
         </ul>
     </section>
+
     <nav class="module-nav" aria-label="Module Navigation">
         <a href="module-6.html" class="nav-btn">&larr; Module 6</a>
         <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
         <a href="bibliography.html" class="nav-btn">Bibliography &rarr;</a>
     </nav>
-
-    </body>
+</body>
 </html>

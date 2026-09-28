@@ -17,6 +17,14 @@
             --bg-banner: #fffbf5;        /* Subtle Warm Paper Tint */
             --border-subtle: #e7e5e4;    /* Light Stone Border */
             --border-accent: #f59e0b;    /* Warm Amber Line Accent */
+            --badge-strength-bg: #ecfdf5;
+            --badge-strength-text: #047857;
+            --badge-strength-border: #a7f3d0;
+            --badge-audit-bg: #fff1f2;
+            --badge-audit-text: #be123c;
+            --badge-audit-border: #fecdd3;
+            --scenario-box-bg: #f5f5f4;
+            --scenario-box-border: #d6d3d1;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -93,6 +101,78 @@
             line-height: 1.6;
             text-align: justify;
         }
+        /* Lightweight Typographic Table of Contents */
+        .toc-card {
+            background-color: var(--bg-banner);
+            border: 1px solid #fed7aa;
+            border-left: 3px solid var(--primary);
+            border-radius: 6px;
+            padding: 14px 18px 16px 18px;
+            margin: 20px 0 28px 0;
+        }
+        .toc-header-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #fed7aa;
+        }
+        .toc-card h3 {
+            font-size: 0.82rem;
+            color: var(--primary-dark);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 800;
+        }
+        .toc-badge {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .toc-grid {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 6px 20px;
+        }
+        .toc-grid li {
+            margin: 0;
+            padding: 0;
+        }
+        .toc-grid a {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 3px 0;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.15s ease-in-out;
+        }
+        .toc-index {
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.8;
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+        }
+        .toc-item-label {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .toc-grid a:hover {
+            color: var(--accent-orange);
+            text-decoration: underline;
+        }
         .forensic-entry {
             margin-bottom: 20px;
             padding: 16px 20px;
@@ -118,7 +198,7 @@
         .scenario-box {
             margin: 10px 0 14px 0;
             padding: 10px 14px;
-            background-color: #f5f5f4;
+            background-color: var(--scenario-box-bg);
             border-left: 3px solid var(--primary);
             border-radius: 0 4px 4px 0;
             font-size: 0.88rem;
@@ -162,6 +242,18 @@
             z-index: 100;
             white-space: normal;
             text-align: left;
+        }
+        .tooltip-term:hover::before,
+        .tooltip-term:focus::before {
+            content: "";
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: #1c1917 transparent transparent transparent;
+            z-index: 100;
         }
         .diagram-container, .counter-svg-container {
             margin: 16px 0;
@@ -237,6 +329,9 @@
             margin-bottom: 10px;
             text-align: justify;
         }
+        .textbook-impact-box ul ul {
+            margin-top: 6px;
+        }
         .entry-references {
             margin-top: 14px;
             padding: 10px 14px;
@@ -264,23 +359,23 @@
         }
         .audit-label-critique {
             display: inline-block;
-            background-color: #fff1f2;
-            color: #be123c;
+            background-color: var(--badge-audit-bg);
+            color: var(--badge-audit-text);
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid #fecdd3;
+            border: 1px solid var(--badge-audit-border);
         }
         .audit-label-strength {
             display: inline-block;
-            background-color: #ecfdf5;
-            color: #047857;
+            background-color: var(--badge-strength-bg);
+            color: var(--badge-strength-text);
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid #a7f3d0;
+            border: 1px solid var(--badge-strength-border);
         }
         .biblio-section {
             margin-top: 48px;
@@ -305,29 +400,6 @@
             padding-left: 24px;
             text-indent: -24px;
         }
-        .back-link {
-            display: inline-block;
-            margin-top: 28px;
-            margin-bottom: 24px;
-            padding: 7px 14px;
-            background-color: #fff7ed;
-            border: 1px solid #fdba74;
-            border-radius: 5px;
-            color: var(--primary-dark);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
-            transition: all 0.15s ease-in-out;
-        }
-        .back-link:hover {
-            background-color: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-        }
-        @media (max-width: 768px) {
-            .camp-cards { grid-template-columns: 1fr; }
-        }
-    
         .module-nav {
             display: flex;
             justify-content: space-between;
@@ -335,44 +407,46 @@
             gap: 12px;
             margin: 20px 0;
             padding: 10px 0;
-            border-top: 1px solid var(--border-subtle, #e7e5e4);
-            border-bottom: 1px solid var(--border-subtle, #e7e5e4);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
         }
         .nav-btn {
             display: inline-flex;
             align-items: center;
             padding: 8px 16px;
-            background-color: var(--bg-banner, #fffbf5);
-            border: 1px solid var(--border-accent, #f59e0b);
+            background-color: var(--bg-banner);
+            border: 1px solid var(--border-accent);
             border-radius: 6px;
-            color: var(--primary-dark, #78350f);
+            color: var(--primary-dark);
             text-decoration: none;
             font-size: 0.88rem;
             font-weight: 600;
             transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
         }
         .nav-btn:hover {
-            background-color: var(--primary, #b45309);
+            background-color: var(--primary);
             color: #ffffff;
-            border-color: var(--primary, #b45309);
+            border-color: var(--primary);
         }
         .nav-btn.disabled {
             opacity: 0.4;
             pointer-events: none;
             cursor: default;
-            border-color: var(--border-subtle, #e7e5e4);
+            border-color: var(--border-subtle);
         }
-
+        @media (max-width: 768px) {
+            .camp-cards { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-    
     <nav class="module-nav" aria-label="Module Navigation">
         <a href="module-7.html" class="nav-btn">&larr; Module 7</a>
         <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
         <span class="nav-btn disabled">Next &rarr;</span>
     </nav>
+
 <section id="master-bibliography" class="biblio-section">
         <h2>Master Bibliography: Primary Sources &amp; Critical References</h2>
         <ul class="biblio-list">
@@ -410,7 +484,6 @@
             <li><strong>Gillborn, D. (2005).</strong> 'Education policy as an act of white supremacy: Whiteness, critical race theory and education reform'. <em>Journal of Education Policy</em>, 20(4), 485–505.</li>
             <li><strong>Gillborn, D. (2008).</strong> <em>Racism and Education: Coincidence or Conspiracy?</em> London: Routledge.</li>
             <li><strong>Gonski, D., Boston, K., Greiner, K., Lawrence, C., Scales, B., &amp; Tannock, P. (2011).</strong> <em>Review of Funding for Schooling: Final Report</em>. Canberra: Department of Education, Employment and Workplace Relations.</li>
-            <li><strong>Hall, S. (1980).</strong> 'Encoding/Decoding'. In S. Hall, D. Hobson, A. Lowe, &amp; P. Willis (Eds.), <em>Culture, Media, Language: Working Papers in Cultural Studies, 1972–79</em> (pp. 128–138). London: Hutchinson.</li>
             <li><strong>Kosciw, J. G., Clark, C. M., Truong, N. L., &amp; Zongrone, A. D. (2020).</strong> <em>The 2019 National School Climate Survey: The Experiences of Lesbian, Gay, Bisexual, Transgender, and Queer Youth in Our Nation's Schools</em>. New York: GLSEN.</li>
             <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. University of Pennsylvania Press.</li>
             <li><strong>Ladson-Billings, G. (1995).</strong> 'Toward a Theory of Culturally Relevant Pedagogy'. <em>American Educational Research Journal</em>, 32(3), 465–491.</li>
@@ -441,11 +514,11 @@
             <li><strong>Zuboff, S. (2019).</strong> <em>The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power</em>. New York: PublicAffairs.</li>
         </ul>
     </section>
+
     <nav class="module-nav" aria-label="Module Navigation">
         <a href="module-7.html" class="nav-btn">&larr; Module 7</a>
         <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
         <span class="nav-btn disabled">Next &rarr;</span>
     </nav>
-
-    </body>
+</body>
 </html>
