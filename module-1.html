@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Social Class & Stratification</title>
+    <style>
+        :root {
+            --primary: #b45309;          /* Refined Warm Amber / Cognac */
+            --primary-dark: #78350f;     /* Deep Russet */
+            --accent-orange: #ea580c;    /* Terracotta Accent */
+            --text-heading: #1c1917;     /* Warm Charcoal */
+            --text-main: #292524;        /* Crisp Charcoal Body Text */
+            --text-muted: #57534e;       /* Stone Muted Text */
+            --bg-page: #ffffff;          /* Clean White Canvas */
+            --bg-entry: #fafaf9;         /* Very Soft Warm Stone Tint */
+            --bg-banner: #fffbf5;        /* Subtle Warm Paper Tint */
+            --border-subtle: #e7e5e4;    /* Light Stone Border */
+            --border-accent: #f59e0b;    /* Warm Amber Line Accent */
+            --badge-strength-bg: #ecfdf5;
+            --badge-strength-text: #047857;
+            --badge-strength-border: #a7f3d0;
+            --badge-audit-bg: #fff1f2;
+            --badge-audit-text: #be123c;
+            --badge-audit-border: #fecdd3;
+            --scenario-box-bg: #f5f5f4;
+            --scenario-box-border: #d6d3d1;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.65;
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 36px 20px;
+            color: var(--text-main);
+            background-color: var(--bg-page);
+        }
+        h1, h2, h3, h4, h5 {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 1.85rem;
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--border-accent);
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+            letter-spacing: -0.01em;
+        }
+        h2 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 36px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #fed7aa;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        h3.tradition-header {
+            font-size: 1.05rem;
+            color: var(--text-heading);
+            margin-top: 24px;
+            margin-bottom: 16px;
+            background: #fff7ed;
+            padding: 5px 12px;
+            border-left: 3px solid var(--primary);
+            border-radius: 0 4px 4px 0;
+            font-style: normal;
+        }
+        h4.concept-title {
+            font-size: 1.02rem;
+            color: var(--accent-orange);
+            margin-top: 0;
+            margin-bottom: 6px;
+            padding-top: 0;
+        }
+        h5.counter-header {
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            margin-top: 22px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .intro-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background-color: var(--bg-banner);
+            border: 1px solid #fed7aa;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+        }
+        .intro-card svg {
+            flex-shrink: 0;
+            width: 72px;
+            height: 72px;
+        }
+        .intro-card p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #44403c;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        /* Table of Contents Styling */
+        .toc-card {
+            background-color: var(--bg-banner);
+            border: 1px solid #fed7aa;
+            border-left: 4px solid var(--accent-orange);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+        }
+        .toc-card h3 {
+            font-size: 1.02rem;
+            color: var(--primary-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .toc-grid {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 20px;
+        }
+        .toc-grid li {
+            font-size: 0.88rem;
+        }
+        .toc-grid a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.15s ease-in-out;
+        }
+        .toc-grid a:hover {
+            color: var(--accent-orange);
+            text-decoration: underline;
+        }
+        .forensic-entry {
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background-color: var(--bg-entry);
+            border: 1px solid var(--border-subtle);
+            border-left: 3px solid #fbbf24;
+            border-radius: 6px;
+        }
+        .forensic-entry p {
+            margin: 0 0 8px 0;
+            font-size: 0.91rem;
+            text-align: justify;
+        }
+        .forensic-entry ul {
+            margin: 4px 0 10px 18px;
+            font-size: 0.89rem;
+            line-height: 1.55;
+        }
+        .forensic-entry li {
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+        .scenario-box {
+            margin: 10px 0 14px 0;
+            padding: 10px 14px;
+            background-color: var(--scenario-box-bg);
+            border-left: 3px solid var(--primary);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.88rem;
+            color: #334155;
+        }
+        .scenario-box strong.label {
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .scenario-box ul {
+            margin: 4px 0 6px 16px;
+        }
+        /* Interactive Tooltip Popovers */
+        .tooltip-term {
+            position: relative;
+            cursor: help;
+            border-bottom: 1.5px dotted var(--primary);
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        .tooltip-term:hover::after,
+        .tooltip-term:focus::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            padding: 8px 12px;
+            background-color: #1c1917;
+            color: #fefce8;
+            font-size: 0.81rem;
+            font-weight: 400;
+            line-height: 1.45;
+            border-radius: 6px;
+            border: 1px solid #f59e0b;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 100;
+            white-space: normal;
+            text-align: left;
+        }
+        .tooltip-term:hover::before,
+        .tooltip-term:focus::before {
+            content: "";
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: #1c1917 transparent transparent transparent;
+            z-index: 100;
+        }
+        /* Visual Flow Diagram Container */
+        .diagram-container {
+            margin: 16px 0;
+            text-align: center;
+        }
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+        }
+        /* Counter-Tradition Section Styling */
+        .counter-tradition-box {
+            margin-top: 18px;
+            padding: 16px 18px;
+            background-color: #ffffff;
+            border: 1px solid #fed7aa;
+            border-left: 4px solid var(--accent-orange);
+            border-radius: 6px;
+        }
+        .counter-svg-container {
+            margin: 16px 0;
+            text-align: center;
+        }
+        .counter-svg-container svg {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+        }
+        .camp-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .camp-card {
+            background-color: #fffdfa;
+            border: 1px solid #fed7aa;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+        .camp-card h6 {
+            margin: 0 0 4px 0;
+            color: var(--primary-dark);
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+        .camp-card .theorist {
+            color: var(--accent-orange);
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .camp-card p {
+            margin: 0;
+            font-size: 0.84rem;
+            text-align: left;
+            color: #44403c;
+        }
+        .textbook-impact-box {
+            margin-bottom: 24px;
+            padding: 20px 24px;
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 5px solid #d97706;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+        .textbook-impact-box h4.concept-title {
+            color: var(--primary-dark);
+            font-size: 1.12rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .textbook-impact-box ul {
+            margin: 10px 0 0 20px;
+        }
+        .textbook-impact-box li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        .textbook-impact-box ul ul {
+            margin-top: 6px;
+        }
+        .entry-references {
+            margin-top: 14px;
+            padding: 10px 14px;
+            background-color: #fefce8;
+            border: 1px dashed #f59e0b;
+            border-radius: 4px;
+            font-size: 0.84rem;
+            color: #78350f;
+        }
+        .entry-references strong {
+            display: block;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            font-size: 0.76rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+        .entry-references ul {
+            margin: 2px 0 2px 14px;
+            padding-left: 0;
+            line-height: 1.5;
+        }
+        .entry-references li {
+            margin-bottom: 3px;
+        }
+        .audit-label-critique {
+            display: inline-block;
+            background-color: var(--badge-audit-bg);
+            color: var(--badge-audit-text);
+            padding: 1px 7px;
+            border-radius: 3px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            border: 1px solid var(--badge-audit-border);
+        }
+        .audit-label-strength {
+            display: inline-block;
+            background-color: var(--badge-strength-bg);
+            color: var(--badge-strength-text);
+            padding: 1px 7px;
+            border-radius: 3px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            border: 1px solid var(--badge-strength-border);
+        }
+        .biblio-section {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 2px solid #fed7aa;
+        }
+        .biblio-section h2 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .biblio-list {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+        .biblio-list li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            text-indent: -24px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 7px 14px;
+            background-color: #fff7ed;
+            border: 1px solid #fdba74;
+            border-radius: 5px;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.15s ease-in-out;
+        }
+        .back-link:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+        @media (max-width: 768px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .camp-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            body { padding: 20px 12px; }
+            .intro-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 14px;
+            }
+            .intro-card svg {
+                width: 56px;
+                height: 56px;
+            }
+            .tooltip-term:hover::after,
+            .tooltip-term:focus::after {
+                width: 220px;
+            }
+        }
+        @media print {
+            body { padding: 12px; font-size: 9.5pt; }
+            .intro-card { break-inside: avoid; page-break-inside: avoid; }
+            .toc-card { break-inside: avoid; page-break-inside: avoid; }
+            .forensic-entry { break-inside: avoid; page-break-inside: avoid; border: 1px solid #d6d3d1; }
+            .tooltip-term { border-bottom: none; }
+            .counter-tradition-box { break-inside: avoid; page-break-inside: avoid; }
+            .textbook-impact-box { break-inside: avoid; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">&larr; Return to Index Portal</a>
+    <section id="section-1">
+        <h2>1. Social Class &amp; Educational Stratification</h2>
+        <h3 class="tradition-header">The Bourdieusian Paradigm (Pierre Bourdieu &amp; Jean-Claude Passeron)</h3>
+
+        <div class="forensic-entry">
+            <h4 class="concept-title">Cultural Capital (Pierre Bourdieu)</h4>
+            <p>Cultural capital represents the accumulated, embodied labor-time invested in non-financial social assets—syntactic fluency, academic mannerisms, aesthetic dispositions, and formal credentials—that individuals inherit through domestic class socialization and deploy within competitive institutional markets. Rather than reflecting neutral, biological intelligence, it operates as an institutionalized class currency that schools covertly demand and reward while pretending merely to evaluate innate merit.</p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: Julian vs. Marcus</strong>
+                Imagine two 10-year-olds with identical raw working memory and cognitive aptitude:
+                <ul>
+                    <li><strong>Julian (Solicitor &amp; Teacher household):</strong> Absorbs thousands of hours of speculative debate, sophisticated vocabulary (<em>"tentatively"</em>, <em>"contradictory"</em>), and museum visits through domestic osmosis. He instinctively knows how to challenge authority politely, make eye contact, and structure arguments in an essay.</li>
+                    <li><strong>Marcus (Forklift driver &amp; Cleaner household):</strong> Absorbs practical problem-solving, trade knowledge, community solidarity, and direct, protective language (<em>"hurry up"</em>, <em>"don't get into trouble"</em>).</li>
+                </ul>
+                When the school tests <em>"authoritative voice,"</em> <em>"nuanced engagement,"</em> and <em>"formal rhetoric,"</em> it rewards Julian for speaking his home dialect while penalizing Marcus for lacking a code the school never explicitly taught him. The school acts like a foreign currency exchange that demands US Dollars, takes payment from the child raised in America, and penalizes the child holding Pesos—all while claiming to be an objective, meritocratic test.
+            </div>
+
+            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed during the 1960s by Pierre Bourdieu and Jean-Claude Passeron in post-WWII France. State technocrats had eliminated university tuition fees, anticipating that open financial access would establish a pure meritocracy. However, statistical surveys revealed a glaring contradiction: despite free tuition, working-class and peasant students failed and withdrew at dramatically higher rates than bourgeois cohorts. Classical Marxism attributed reproduction almost exclusively to economic capital (property, wealth, and ownership of the means of production), but Bourdieu recognized that financial explanations could not account for why working-class students with adequate funding still struggled with the implicit cultural demands of the academy. Expanding capital into the cultural sphere, the term was formally introduced in print in the 1973 essay <em>Cultural Reproduction and Social Reproduction</em> and later codified into three states in the 1986 essay <em>The Forms of Capital</em>.</p>
+
+            <p><strong>2. Theoretical Mechanics &amp; Advanced Operational Gears:</strong> Bourdieu's foundational texts establish four precise operational gears governing cultural capital:</p>
+            <ul>
+                <li><strong>The Economy of Time &amp; "Wasted Time":</strong> Accumulating embodied capital (<em>Bildung</em>) requires personal labor-time that cannot be delegated. Because children of educated families begin accumulating usable cultural currency from birth, they gain an insurmountable head start. For the working-class child, early domestic socialization represents what Bourdieu terms <em>"wasted time"</em> in the eyes of the school—time that must be expensively spent unlearning, correcting, and retraining home speech patterns and postures. Furthermore, accumulating cultural capital requires <em>free time</em>—the suspension of economic urgency that only affluent families can purchase.</li>
+                <li><strong>The Three Interdependent States (The Ancient Greek Analogy):</strong>
+                    <ul>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="The internal software: vocabulary, accent, posture, and conversational confidence wired into your brain and body over years. Like knowing how to read ancient Greek.">Embodied State (État Incorporé)</span>: <strong>The personal skills, habits, and fluency carried inside you.</strong> This is the mental and bodily software: your vocabulary, accent, conversational ease, posture, and unthinking confidence when speaking to authority. It cannot be handed over like cash; it takes years of personal labor-time to absorb at home. Like knowing how to read ancient Greek, it is physically wired into your nervous system and dies with you.</li>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Physical objects requiring skill to decode: books, grand pianos, art, lab gear. Cash buys the object, but only embodied skill lets you play or read it.">Objectified State (État Objectivé)</span>: <strong>Physical cultural possessions.</strong> Books, art collections, grand pianos, classical music recordings, and scientific instruments. Anyone with lottery winnings can buy a grand piano with cash (economic capital), but it remains an expensive piece of furniture unless someone in the house has the <em>embodied</em> skill to sit down and play Beethoven on it.</li>
+                        <li><span class="tooltip-term" tabindex="0" data-tooltip="Official paper certificates: degrees, diplomas, licenses. Proves competence on paper so you don't have to re-prove your worth every single morning.">Institutionalized State (État Institutionalisé)</span>: <strong>Official qualifications and credentials.</strong> University degrees, diplomas, and state licenses. An uncertified genius must prove their skill from scratch to every employer they meet. But an official degree from an elite university acts as a state-guaranteed stamp of approval, setting an employee's salary and market value on paper without requiring daily proof.</li>
+                    </ul>
+                </li>
+                <li><strong>The Intraclass Divide (Teachers vs. Industrialists):</strong> The ruling class is not monolithic; it is split between the <em>dominant fraction</em> (rich in economic capital, poorer in cultural capital, e.g., corporate heads and commercial executives) and the <em>dominated fraction</em> (rich in cultural capital, poorer in economic capital, e.g., academics, teachers, and artistic producers). Because schooling is run by the cultural fraction, the academic market rewards its own domestic culture above all else. This explains why teachers' children consistently outperform the children of wealthy commercial executives on purely academic tests.</li>
+                <li><strong>Credential Devaluation &amp; Defensive Escalation:</strong> Educational qualifications derive their market exchange value from their <strong>scarcity</strong>. When democratic access expands the supply of basic university degrees, qualifications undergo inevitable inflation and currency devaluation. The dominant classes preserve social closure not by opposing mass education, but by dynamically <em>escalating the threshold</em> of entry:
+                    <ul>
+                        <li><em>Vertical Reconversion &amp; Pedigree:</em> Shifting the baseline goalposts from basic bachelor's degrees to costly postgraduate degrees, elite MBAs, and hyper-selective institutional tiers (e.g., French <em>Grandes Écoles</em>, Oxbridge, or Ivy League networks) that remain disproportionately monopolized by high-capital families.</li>
+                        <li><em>The Retreat to Informal Gatekeeping:</em> As paper qualifications equalize across applicants, employers pivot hiring criteria away from tested technical competence toward non-scholastic filters: unpaid corporate internships (which only wealthy families can financially subsidize), inherited social connections, and the evaluation of <span class="tooltip-term" tabindex="0" data-tooltip="Bodily mannerisms, unthinking confidence, accent, and conversational ease evaluated as 'culture fit'.">embodied 'interview poise'</span> and 'culture fit'—rubrics that covertly reward bourgeois domestic habitus over scholastic effort.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Dismantles the naive meritocracy myth by demonstrating how schools convert inherited class familiarity into academic merit. It exposes why purely material interventions (hardware rollouts, fee waivers) consistently fail to close equity gaps if implicit curriculum and assessment expectations remain unexamined. It accurately diagnoses how subjective, open-ended grading rubrics penalize working-class students for lacking conversational ease and bourgeois manual/linguistic mannerisms.</p>
+
+            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
+            <ul>
+                <li><em>The Relativist Trap (Conflating Arbitrary Culture with Powerful Knowledge):</em> Bourdieu treats curriculum content as an arbitrary ruling-class power tool. However, formal logic, standard grammatical syntax, the calculus, and empirical science are not arbitrary cultural toys; they are objective cognitive amplifiers that allow humans to model, manipulate, and master the material and social world. Treating all curricula as arbitrary class violence collapses the vital distinction between arbitrary manners and empirically grounded, powerful knowledge (Michael Young).</li>
+                <li><em>The Delpit Dilemma &amp; Monday Morning Catastrophe:</em> As African-American educational scholar Lisa Delpit demonstrated, when progressive educators stop explicitly teaching standard grammar and academic rhetoric under the guise of avoiding cultural violence, they do not liberate marginalized kids; they strand them. Middle-class kids acquire the dominant codes at home, while disadvantaged kids are denied the explicit instruction needed to enter higher education and professional fields.</li>
+                <li><em>The Intraclass Paradox:</em> If schooling is driven by the cultural fraction (teachers) against the economic fraction (industrialists), the curriculum cannot be characterized simply as a monolithic ruling-class conspiracy. It is an arena of conflict where teachers routinely promote critical inquiry, social mobility, and democratic debate against purely commercial demands.</li>
+                <li><em>Structural Fatalism &amp; Pedagogical Defeatism:</em> Bourdieu's model operates as an unbroken reproduction loop that minimizes student agency and high-expectations teaching. Empirically, cognitive psychology and explicit instruction research demonstrate that structured, systematic teaching dramatically accelerates domain learning, disproving Bourdieu's assumption that working-class children cannot overcome the domestic time-gap.</li>
+            </ul>
+
+            <!-- THE CRITICAL COUNTER-TRADITION & SVG DIAGRAM -->
+            <div class="counter-tradition-box">
+                <h5 class="counter-header">The Critical Counter-Tradition: Three Camps of Resistance</h5>
+                <p>
+                    Sociological textbooks frequently present Bourdieu's reproduction thesis as an uncontested terminal diagnosis.
+                    In reality, an authoritative counter-tradition of educational realists, sociologists, and philosophers exposes
+                    fatal blind spots in his framework across three distinct vectors of attack:
+                </p>
+
+                <div class="counter-svg-container">
+                    <svg viewBox="0 0 760 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The Three Counter-Argument Camps">
+                        <rect x="10" y="10" width="740" height="240" rx="8" fill="#FFFDF8" stroke="#FED7AA" stroke-width="1.5"/>
+                        <rect x="250" y="25" width="260" height="52" rx="6" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
+                        <text x="380" y="47" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11.5" font-weight="800" fill="#FEF3C7" text-anchor="middle">BOURDIEU'S REPRODUCTION THESIS</text>
+                        <text x="380" y="63" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#FDE68A" text-anchor="middle">Schooling as Closed Symbolic Violence &amp; Arbitrary Sorting</text>
+                        <path d="M310 77 V 110 H 135 V 130" stroke="#B45309" stroke-width="2" stroke-dasharray="3 3"/>
+                        <path d="M380 77 V 130" stroke="#B45309" stroke-width="2"/>
+                        <path d="M450 77 V 110 H 625 V 130" stroke="#B45309" stroke-width="2" stroke-dasharray="3 3"/>
+                        <polygon points="135,135 131,125 139,125" fill="#B45309"/>
+                        <polygon points="380,135 376,125 384,125" fill="#B45309"/>
+                        <polygon points="625,135 621,125 629,125" fill="#B45309"/>
+                        <rect x="25" y="136" width="220" height="98" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
+                        <rect x="25" y="136" width="220" height="24" rx="6" fill="#FEF3C7"/>
+                        <text x="135" y="152" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#78350F" text-anchor="middle">1. THE EPISTEMIC CRITIQUE</text>
+                        <text x="135" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="700" fill="#EA580C" text-anchor="middle">Michael Young (Social Realism)</text>
+                        <text x="135" y="193" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#44403C" text-anchor="middle">Powerful Knowledge vs. Power's Knowledge</text>
+                        <text x="135" y="209" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">Curriculum is not arbitrary etiquette;</text>
+                        <text x="135" y="221" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">it is testable, objective intellectual power.</text>
+                        <rect x="270" y="136" width="220" height="98" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
+                        <rect x="270" y="136" width="220" height="24" rx="6" fill="#FEF3C7"/>
+                        <text x="380" y="152" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#78350F" text-anchor="middle">2. PEDAGOGICAL REALISM</text>
+                        <text x="380" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="700" fill="#EA580C" text-anchor="middle">Lisa Delpit (The Culture of Power)</text>
+                        <text x="380" y="193" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#44403C" text-anchor="middle">Explicit Teaching vs. Progressive Sabotage</text>
+                        <text x="380" y="209" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">Hiding the rules strands poor kids;</text>
+                        <text x="380" y="221" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">equity demands teaching codes explicitly.</text>
+                        <rect x="515" y="136" width="220" height="98" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
+                        <rect x="515" y="136" width="220" height="24" rx="6" fill="#FEF3C7"/>
+                        <text x="625" y="152" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#78350F" text-anchor="middle">3. PHILOSOPHICAL AGENCY</text>
+                        <text x="625" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="700" fill="#EA580C" text-anchor="middle">Jacques Rancière (The Master's Trap)</text>
+                        <text x="625" y="193" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#44403C" text-anchor="middle">Intellectual Equality vs. Sociological Paternalism</text>
+                        <text x="625" y="209" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">The poor are not unthinking cultural dupes;</text>
+                        <text x="625" y="221" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">they see through institutional hypocrisy clearly.</text>
+                    </svg>
+                </div>
+
+                <div class="camp-cards">
+                    <div class="camp-card">
+                        <h6>1. The Epistemic Strike</h6>
+                        <span class="theorist">Michael Young (2008)</span>
+                        <p>
+                            Bourdieu treats academic knowledge as arbitrary ruling-class etiquette. Young demonstrates
+                            the vital boundary between <em>Knowledge of the Powerful</em> (bourgeois accents, social manners)
+                            and <em>Powerful Knowledge</em> (calculus, thermodynamics, historical evidence). Disciplinary
+                            knowledge is testable and universally reliable; denying it to the poor in the name of
+                            "anti-elitism" disarms them intellectually.
+                        </p>
+                    </div>
+                    <div class="camp-card">
+                        <h6>2. The Pedagogical Strike</h6>
+                        <span class="theorist">Lisa Delpit (1988, 1995)</span>
+                        <p>
+                            Progressive educators inspired by reproduction theory abandoned explicit grammar and direct
+                            instruction to avoid "imposing symbolic violence." Delpit proves that middle-class kids
+                            learn the "culture of power" at home, leaving poor and minority students stranded.
+                            True educational equity requires unapologetic, structured instruction in the dominant code.
+                        </p>
+                    </div>
+                    <div class="camp-card">
+                        <h6>3. The Philosophical Strike</h6>
+                        <span class="theorist">Jacques Rancière (1983 / 2004)</span>
+                        <p>
+                            Bourdieu asserts that the working class is "complicit" in its oppression via unconscious
+                            misrecognition. Rancière unmasks this as profound sociological paternalism: it frames
+                            workers as blind dupes unable to perceive reality until an enlightened sociologist demystifies
+                            it for them. In practice, students recognize structural hypocrisy with immense clarity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="forensic-entry">
+            <h4 class="concept-title">Habitus (Pierre Bourdieu)</h4>
+            <p>
+                Habitus is the <strong>social muscle memory</strong> of human action. Just as an experienced tennis player
+                does not pause mid-rally to calculate physics formulas or consult an instruction manual, a person moves through
+                the social world guided by an internalized, subconscious <span class="tooltip-term" tabindex="0" data-tooltip="An intuitive 'feel for the game' operating automatically without conscious mental calculation.">"feel for the game" (sens pratique)</span>.
+                It is the permanent software installed in your nervous system by the class conditions of your upbringing.
+            </p>
+
+            <div class="scenario-box">
+                <strong class="label">Concrete Mechanism in Action: Habitus in the Corridor</strong>
+                Imagine how two students respond when a teacher announces a harsh, unexpected assignment deadline:
+                <ul>
+                    <li><strong>Middle-Class Habitus (Julian):</strong> Grew up in a home where rules were negotiated and adult authority was reasoned with. His gut reaction is relaxed entitlement: he instinctively approaches the teacher after class, maintains confident eye contact, and politely negotiates an extension. He navigates the school <em>"like a fish in water."</em></li>
+                    <li><strong>Working-Class Habitus (Marcus):</strong> Grew up in an environment where adult directives were non-negotiable and challenging authority invited trouble. His gut reaction is protective silence: he accepts the failing mark or quietly disengages, thinking, <em>"That's just how the system is; what's the point of arguing?"</em></li>
+                </ul>
+                Neither student calculated their response using a conscious strategy. Their background simply generated an immediate, physical, and unthinking sense of what is possible, reasonable, and safe to do.
+            </div>
+        </div>
+
+        <div class="forensic-entry">
+            <h4 class="concept-title">Symbolic Violence &amp; Misrecognition (Pierre Bourdieu &amp; Jean-Claude Passeron)</h4>
+            <p>
+                Symbolic violence is <strong>power without physical force</strong>. Instead of using police, threats, or guns,
+                ruling groups maintain dominance quietly through everyday rules, expectations, and cultural standards.
+                Crucially, this system relies on <span class="tooltip-term" tabindex="0" data-tooltip="Failing to recognize that social rules are rigged; mistaking arbitrary upper-class standards for natural talent and objective fairness.">misrecognition (méconnaissance)</span>
+                and <span class="tooltip-term" tabindex="0" data-tooltip="Unknowingly going along with your own oppression because you believe the system is fair and neutral.">complicity</span>:
+                because ordinary people are tricked into believing that the rules are natural and fair, they blame themselves
+                when they fail rather than questioning the system.
+            </p>
+        </div>
+
+        <!-- RE-SCOPED BOURDIEUSIAN CRITICAL SYNTHESIS CARD -->
+        <div class="textbook-impact-box">
+            <h4 class="concept-title">Critical Synthesis: Impact on <em>Making Sense of Mass Education</em> (The Bourdieusian Paradigm)</h4>
+            <p>
+                <strong>Is the textbook's reliance on Bourdieu right, wrong, or fatally incomplete?</strong><br>
+                Evaluating the Bourdieusian pillar within <em>Making Sense of Mass Education</em> requires testing its reproduction thesis against its primary educational merits and its dangerous pedagogical hazards:
+            </p>
+            <ul>
+                <li>
+                    <strong>Where Bourdieu EMPOWERS the Textbook's Thesis (The Diagnostic Core):</strong>
+                    <ul>
+                        <li><em>Demolishing Naive Meritocracy:</em> Cultural Capital provides the textbook with its sharpest weapon to disprove the claim that schools are neutral playing fields. It explains why purely material access (free tuition, digital devices) consistently fails to close equity gaps if implicit curriculum and assessment expectations remain unexamined.</li>
+                        <li><em>Explaining Dislocation without Deficit (Habitus):</em> Accounts for student alienation and voluntary self-elimination—the belief that higher education is <em>"not for the likes of us"</em>—without pathologizing students' raw cognitive capability.</li>
+                        <li><em>Unmasking Symbolic Violence:</em> Explains how unequal educational sorting preserves democratic legitimacy because students misrecognize class-biased curricula as reflections of innate talent and individual moral failure.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Where Bourdieu ENDANGERS the Textbook's Thesis (The Critical Hazards):</strong>
+                    <ul>
+                        <li><em>The Epistemic Relativist Trap (Michael Young):</em> Treating curriculum content as an arbitrary ruling-class power tool collapses the distinction between arbitrary manners and <strong>Powerful Knowledge</strong>. Disciplinary knowledge (calculus, thermodynamics, historical evidence) provides objective intellectual leverage; denying it to disadvantaged children in the name of anti-elitism disarms them intellectually.</li>
+                        <li><em>The Delpit Dilemma:</em> Lisa Delpit demonstrated that when progressive educators refuse to explicitly teach standard grammar and academic rhetoric to avoid "symbolic violence," they abandon disadvantaged children. Affluent children acquire these codes at home; disadvantaged children master them only through direct, unapologetic instruction.</li>
+                        <li><em>Structural Fatalism &amp; Paternalism:</em> Bourdieu's model operates as an unbroken reproduction loop that ignores cognitive science and explicit instruction research proving that systematic teaching accelerates learning. Furthermore, Jacques Rancière unmasks Bourdieu's concept of "misrecognition" as condescending paternalism that reduces working-class agents to unconscious cultural dupes.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>The Forensic Verdict on the Bourdieusian Paradigm:</strong>
+                    Bourdieu's reproduction model within the textbook is <strong>indispensable as an anatomical X-ray of inherited privilege, but toxic as a standalone pedagogical compass</strong>. It correctly diagnoses how schools unconsciously reward domestic bourgeois socialization, but it fails whenever it is used to justify lowered academic expectations, curriculum relativism, or defeatist fatalism.
+                </li>
+            </ul>
+        </div>
+    </section>
+    <a href="index.html" class="back-link">&larr; Return to Index Portal</a>
+</body>
+</html>
