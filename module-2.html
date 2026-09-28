@@ -101,7 +101,6 @@
             line-height: 1.6;
             text-align: justify;
         }
-        /* Lightweight Typographic Table of Contents */
         .toc-card {
             background-color: var(--bg-banner);
             border: 1px solid #fed7aa;
@@ -141,10 +140,7 @@
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 6px 20px;
         }
-        .toc-grid li {
-            margin: 0;
-            padding: 0;
-        }
+        .toc-grid li { margin: 0; padding: 0; }
         .toc-grid a {
             display: flex;
             align-items: baseline;
@@ -164,15 +160,8 @@
             font-variant-numeric: tabular-nums;
             flex-shrink: 0;
         }
-        .toc-item-label {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .toc-grid a:hover {
-            color: var(--accent-orange);
-            text-decoration: underline;
-        }
+        .toc-item-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .toc-grid a:hover { color: var(--accent-orange); text-decoration: underline; }
         .forensic-entry {
             margin-bottom: 20px;
             padding: 16px 20px;
@@ -212,9 +201,7 @@
             display: block;
             margin-bottom: 4px;
         }
-        .scenario-box ul {
-            margin: 4px 0 6px 16px;
-        }
+        .scenario-box ul { margin: 4px 0 6px 16px; }
         .tooltip-term {
             position: relative;
             cursor: help;
@@ -322,16 +309,8 @@
             text-transform: uppercase;
             letter-spacing: 0.03em;
         }
-        .textbook-impact-box ul {
-            margin: 10px 0 0 20px;
-        }
-        .textbook-impact-box li {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-        .textbook-impact-box ul ul {
-            margin-top: 6px;
-        }
+        .textbook-impact-box ul { margin: 10px 0 0 20px; }
+        .textbook-impact-box li { margin-bottom: 10px; text-align: justify; }
         .entry-references {
             margin-top: 14px;
             padding: 10px 14px;
@@ -349,33 +328,27 @@
             letter-spacing: 0.04em;
             margin-bottom: 4px;
         }
-        .entry-references ul {
-            margin: 2px 0 2px 14px;
-            padding-left: 0;
-            line-height: 1.5;
-        }
-        .entry-references li {
-            margin-bottom: 3px;
-        }
+        .entry-references ul { margin: 2px 0 2px 14px; padding-left: 0; line-height: 1.5; }
+        .entry-references li { margin-bottom: 3px; }
         .audit-label-critique {
             display: inline-block;
-            background-color: var(--badge-audit-bg);
-            color: var(--badge-audit-text);
+            background-color: #fff1f2;
+            color: #be123c;
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid var(--badge-audit-border);
+            border: 1px solid #fecdd3;
         }
         .audit-label-strength {
             display: inline-block;
-            background-color: var(--badge-strength-bg);
-            color: var(--badge-strength-text);
+            background-color: #ecfdf5;
+            color: #047857;
             padding: 1px 7px;
             border-radius: 3px;
             font-size: 0.84rem;
             font-weight: 700;
-            border: 1px solid var(--badge-strength-border);
+            border: 1px solid #a7f3d0;
         }
         .biblio-section {
             margin-top: 48px;
@@ -389,17 +362,8 @@
             border-bottom: none;
             padding-bottom: 0;
         }
-        .biblio-list {
-            list-style-type: none;
-            padding-left: 0;
-            font-size: 0.88rem;
-            line-height: 1.6;
-        }
-        .biblio-list li {
-            margin-bottom: 12px;
-            padding-left: 24px;
-            text-indent: -24px;
-        }
+        .biblio-list { list-style-type: none; padding-left: 0; font-size: 0.88rem; line-height: 1.6; }
+        .biblio-list li { margin-bottom: 12px; padding-left: 24px; text-indent: -24px; }
         .module-nav {
             display: flex;
             justify-content: space-between;
@@ -423,24 +387,12 @@
             font-weight: 600;
             transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
         }
-        .nav-btn:hover {
-            background-color: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-        }
-        .nav-btn.disabled {
-            opacity: 0.4;
-            pointer-events: none;
-            cursor: default;
-            border-color: var(--border-subtle);
-        }
-        @media (max-width: 768px) {
-            .camp-cards { grid-template-columns: 1fr; }
-        }
+        .nav-btn:hover { background-color: var(--primary); color: #ffffff; border-color: var(--primary); }
+        .nav-btn.disabled { opacity: 0.4; pointer-events: none; cursor: default; border-color: var(--border-subtle); }
+        @media (max-width: 768px) { .camp-cards { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-
     <nav class="module-nav" aria-label="Module Navigation">
         <a href="module-1.html" class="nav-btn">&larr; Module 1</a>
         <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>

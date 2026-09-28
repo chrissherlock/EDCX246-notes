@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Expand all modules in the EDCX246 revision guide into full forensic dossiers
+"""Restore all unabridged forensic dossiers from git history and regenerate
 
-with fleshed-out Legitimate Diagnostic Strengths and Forensic Audits, keeping
-core-concepts.html as the landing portal and maintaining clean markup free of
-citation tags.
+the modular revision guide with core-concepts.html as the master index portal,
+ensuring all functions and style blocks are fully defined.
 """
 
 from pathlib import Path
+import re
 import subprocess
 import sys
 
@@ -394,256 +394,231 @@ COMMON_STYLE_BLOCK = """        :root {
         }
         .nav-btn:hover { background-color: var(--primary); color: #ffffff; border-color: var(--primary); }
         .nav-btn.disabled { opacity: 0.4; pointer-events: none; cursor: default; border-color: var(--border-subtle); }
-        @media (max-width: 768px) { .camp-cards { grid-template-columns: 1fr; } }
-"""
+        @media (max-width: 768px) { .camp-cards { grid-template-columns: 1fr; } }"""
 
+MODULE_METADATA = {
+    1: {
+        "title": "Module 1: Social Class & Stratification",
+        "prev": None,
+        "prev_lbl": "",
+        "next": "module-2.html",
+        "next_lbl": "Module 2",
+        "overview": (
+            "This module examines how modern mass education acts as an "
+            "apparatus of social class reproduction rather than a neutral "
+            "engine of meritocracy. Through Pierre Bourdieu's foundational "
+            "concepts of cultural capital, habitus, and symbolic violence, "
+            "alongside sociolinguistic codes (Basil Bernstein), working-class "
+            "counter-school resistance (Paul Willis), neo-Weberian social "
+            "closure, credentialism, and school residualisation, we "
+            "interrogate the structural mechanisms that convert inherited "
+            "class privilege into scholastic success."
+        ),
+    },
+    2: {
+        "title": "Module 2: Race, Ethnicity & Indigeneity",
+        "prev": "module-1.html",
+        "prev_lbl": "Module 1",
+        "next": "module-3.html",
+        "next_lbl": "Module 3",
+        "overview": (
+            "This module interrogates the racialized architectures of modern "
+            "mass schooling, moving beyond surface multiculturalism to examine "
+            "how education operates as a site of colonial subjugation, "
+            "epistemic violence, and systemic exclusion. Drawing upon Frantz "
+            "Fanon, Gayatri Spivak, David Gillborn, and Django Paris & H. "
+            "Samy Alim, this module evaluates how institutional routines, "
+            "curricular canons, and colorblind meritocracy preserve white "
+            "majoritarian dominance while offering pathways toward "
+            "culturally sustaining sovereignty."
+        ),
+    },
+    3: {
+        "title": "Module 3: Gender & Sexualities",
+        "prev": "module-2.html",
+        "prev_lbl": "Module 2",
+        "next": "module-4.html",
+        "next_lbl": "Module 4",
+        "overview": (
+            "This module explores how gender and sexuality are constructed, "
+            "regulated, and policed within educational institutions. Moving "
+            "from Raewyn Connell's structural gender regimes and hegemonic "
+            "masculinity to Judith Butler's poststructuralist performativity, "
+            "Adrienne Rich's compulsory heterosexuality, and Ilan Meyer's "
+            "minority stress epidemiology, this module exposes the "
+            "heteronormative and patriarchal hidden curriculum of schooling."
+        ),
+    },
+    4: {
+        "title": "Module 4: Governance & Subjectivity",
+        "prev": "module-3.html",
+        "prev_lbl": "Module 3",
+        "next": "module-5.html",
+        "next_lbl": "Module 5",
+        "overview": (
+            "Drawing primarily upon the genealogical analytics of Michel "
+            "Foucault, alongside Nikolas Rose, Peter Conrad, and critical "
+            "digital sociologists, this module examines how modern schooling "
+            "manufactures compliance not through brute force, but through "
+            "spatial architecture, temporal timetables, psychological "
+            "self-audit, medicalisation, and ambient digital dataveillance."
+        ),
+    },
+    5: {
+        "title": "Module 5: Neoliberalism & Datafication",
+        "prev": "module-4.html",
+        "prev_lbl": "Module 4",
+        "next": "module-6.html",
+        "next_lbl": "Module 6",
+        "overview": (
+            "This module unpacks the macroeconomic transformation of public "
+            "education under neoliberalism, platform capitalism, and New "
+            "Public Management. Analyzing Stephen Ball's performativity, "
+            "horizontal market competition, Bob Lingard's governance by "
+            "numbers, and Shoshana Zuboff's surveillance capitalism, we "
+            "evaluate how audit cultures, league tables, and behavioral data "
+            "harvesting commodify public schooling."
+        ),
+    },
+    6: {
+        "title": "Module 6: Culture & Technology",
+        "prev": "module-5.html",
+        "prev_lbl": "Module 5",
+        "next": "module-7.html",
+        "next_lbl": "Module 7",
+        "overview": (
+            "This module investigates cultural production, media reception, "
+            "and cognitive ecology within contemporary digital societies. "
+            "Spanning Stuart Hall's active audience theory, semiotic democracy, "
+            "moral panics, media ecology, and the social model of disability, "
+            "we evaluate how learners negotiate, subvert, or become constrained "
+            "by technological and cultural messaging."
+        ),
+    },
+    7: {
+        "title": "Module 7: Philosophy, Law & Rights",
+        "prev": "module-6.html",
+        "prev_lbl": "Module 6",
+        "next": "bibliography.html",
+        "next_lbl": "Bibliography",
+        "overview": (
+            "This final module synthesizes normative philosophy, legal "
+            "obligations, and ethical praxis in education. Spanning Paulo "
+            "Freire's critical pedagogy, relational ethics of care, common law "
+            "negligence and non-delegable duties of care, UNCRC participatory "
+            "rights, and Michael Young's social realism, this module prepares "
+            "educators to navigate professional jurisprudence and ethical "
+            "responsibility."
+        ),
+    },
+}
 
-def produce_expanded_module_6() -> str:
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 6: Culture &amp; Technology</title>
-    <style>
-{COMMON_STYLE_BLOCK}
-    </style>
-</head>
-<body>
-    <nav class="module-nav" aria-label="Module Navigation">
-        <a href="module-5.html" class="nav-btn">&larr; Module 5</a>
-        <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
-        <a href="module-7.html" class="nav-btn">Module 7 &rarr;</a>
-    </nav>
-
-    <div class="intro-card">
-        <p>
-            <strong>Module Overview:</strong> This module investigates cultural production, media reception, and cognitive ecology within contemporary digital societies. Spanning Stuart Hall's active audience theory, John Fiske's semiotic democracy, Stanley Cohen and Julia Kristeva's moral panics and intertextuality, and Neil Postman &amp; Mike Oliver's media ecology and the social model of disability, we evaluate how learners negotiate, subvert, or become constrained by technological and cultural messaging.
-        </p>
-    </div>
-
-    <!-- MODULE IN-PAGE QUICK NAVIGATION -->
-    <nav class="toc-card" aria-label="Module Quick Index">
-        <div class="toc-header-row">
-            <h3>Quick Navigation</h3>
-            <span class="toc-badge">6 Entries</span>
-        </div>
-        <ul class="toc-grid">
-            <li><a href="#active-audience-theory-polysemy"><span class="toc-index">01</span><span class="toc-item-label">Active Audience Theory &amp; Polysemy</span></a></li>
-            <li><a href="#semiotic-democracy-textual-poaching"><span class="toc-index">02</span><span class="toc-item-label">Semiotic Democracy &amp; Textual Poaching</span></a></li>
-            <li><a href="#intertextuality-moral-panics"><span class="toc-index">03</span><span class="toc-item-label">Intertextuality &amp; Moral Panics</span></a></li>
-            <li><a href="#media-ecology-social-model"><span class="toc-index">04</span><span class="toc-item-label">Media Ecology &amp; The Social Model</span></a></li>
-            <li><a href="#critical-synthesis"><span class="toc-index">05</span><span class="toc-item-label">Critical Synthesis</span></a></li>
-            <li><a href="#module-references"><span class="toc-index">06</span><span class="toc-item-label">Module References</span></a></li>
+MODULE_BIBLIOGRAPHIES = {
+    1: """    <section class="biblio-section" id="module-references">
+        <h2>Module 1 References &amp; Foundational Reading</h2>
+        <ul class="biblio-list">
+            <li><strong>Bernstein, B. (1971).</strong> <em>Class, Codes and Control: Volume 1, Theoretical Studies Towards a Sociology of Language</em>. London: Routledge &amp; Kegan Paul.</li>
+            <li><strong>Bourdieu, P. (1973).</strong> 'Cultural Reproduction and Social Reproduction'. In R. Brown (Ed.), <em>Knowledge, Education, and Cultural Change: Papers in the Sociology of Education</em> (pp. 71–112). London: Tavistock Publications.</li>
+            <li><strong>Bourdieu, P. (1977).</strong> <em>Outline of a Theory of Practice</em> (R. Nice, Trans.). Cambridge: Cambridge University Press. (Original work published in French 1972).</li>
+            <li><strong>Bourdieu, P. (1984).</strong> <em>Distinction: A Social Critique of the Judgement of Taste</em> (R. Nice, Trans.). Cambridge, MA: Harvard University Press. (Original work published in French 1979).</li>
+            <li><strong>Bourdieu, P. (1986).</strong> 'The Forms of Capital'. In J. G. Richardson (Ed.), <em>Handbook of Theory and Research for the Sociology of Education</em> (pp. 241–258). New York: Greenwood Press.</li>
+            <li><strong>Bourdieu, P. (1990).</strong> <em>The Logic of Practice</em> (R. Nice, Trans.). Stanford: Stanford University Press.</li>
+            <li><strong>Bourdieu, P., &amp; Passeron, J.-C. (1977).</strong> <em>Reproduction in Education, Society and Culture</em> (R. Nice, Trans.). London: Sage Publications. (Original work published in French 1970).</li>
+            <li><strong>Bourdieu, P. (2000).</strong> <em>Pascalian Meditations</em> (R. Nice, Trans.). Stanford: Stanford University Press. (Original work published in French 1997).</li>
+            <li><strong>Collins, R. (1979).</strong> <em>The Credential Society: An Historical Sociology of Education and Stratification</em>. New York: Academic Press.</li>
+            <li><strong>Delpit, L. (1988).</strong> 'The Silenced Dialogue: Power and Pedagogy in Educating Other People's Children'. <em>Harvard Educational Review</em>, 58(3), 280–298.</li>
+            <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
+            <li><strong>Labov, W. (1972).</strong> <em>Language in the Inner City: Studies in the Black English Vernacular</em>. Philadelphia: University of Pennsylvania Press.</li>
+            <li><strong>Rancière, J. (2004).</strong> <em>The Philosopher and His Poor</em> (J. Drury, C. Oster, &amp; A. Parker, Trans.). Durham, NC: Duke University Press. (Original work published in French 1983).</li>
+            <li><strong>Vinson, T. (2002).</strong> <em>Inquiry into the Provision of Public Education in New South Wales</em>. Sydney: NSW Teachers Federation &amp; Principals' Councils.</li>
+            <li><strong>Weber, M. (1978).</strong> <em>Economy and Society: An Outline of Interpretive Sociology</em> (G. Roth &amp; C. Wittich, Eds.). Berkeley: University of California Press. (Original work published 1922).</li>
+            <li><strong>Willis, P. (1977).</strong> <em>Learning to Labour: How Working Class Kids Get Working Class Jobs</em>. Farnborough: Saxon House.</li>
+            <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
         </ul>
-    </nav>
-
-    <section id="section-6">
-        <h2>6. Culture &amp; Technology</h2>
-        <h3 class="tradition-header">Media Studies, Subcultural Agency &amp; Cognitive Ecology</h3>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="active-audience-theory-polysemy">Active Audience Theory &amp; Polysemy (Stuart Hall)</h4>
-            <p>
-                Stuart Hall's cultural studies framework (<span class="tooltip-term" tabindex="0" data-tooltip="Encoding/Decoding (1980), establishing that media texts are polysemic and actively negotiated by audiences through distinct ideological frameworks.">Encoding/Decoding, 1980</span>)
-                demonstrates that media texts are <span class="tooltip-term" tabindex="0" data-tooltip="Bearing multiple, competing potential meanings rather than a single fixed message dictated by the sender.">polysemic</span>—carrying
-                multiple, competing potential meanings—and are actively negotiated by audiences rather than passively absorbed. Rejecting passive hypodermic needle models,
-                Hall's encoding/decoding circuit maps how institutional power constructs preferred meanings at the moment of production, which audiences then decode
-                through three distinct ideological stances: dominant-hegemonic, negotiated, or oppositional.
-            </p>
-
-            <div class="diagram-container">
-                <svg viewBox="0 0 760 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Stuart Hall Encoding Decoding Circuit Diagram">
-                    <rect x="10" y="10" width="740" height="280" rx="8" fill="#FFFDF8" stroke="#FED7AA" stroke-width="1.5"/>
-                    <rect x="230" y="24" width="300" height="42" rx="6" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
-                    <text x="380" y="42" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="800" fill="#FEF3C7" text-anchor="middle">MOMENT OF ENCODING (PRODUCTION)</text>
-                    <text x="380" y="56" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" fill="#FDE68A" text-anchor="middle">Institutional frameworks, relations of production &amp; preferred meanings</text>
-                    <line x1="380" y1="66" x2="380" y2="88" stroke="#B45309" stroke-width="2"/>
-                    <polygon points="380,93 376,85 384,85" fill="#B45309"/>
-                    <rect x="250" y="94" width="260" height="38" rx="6" fill="#B45309" stroke="#78350F" stroke-width="1.5"/>
-                    <text x="380" y="110" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">POLYSEMIC MEDIA TEXT</text>
-                    <text x="380" y="123" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#FEF3C7" text-anchor="middle">A structured sign vehicle carrying multiple potential decodings</text>
-                    <line x1="380" y1="132" x2="380" y2="152" stroke="#B45309" stroke-width="2"/>
-                    <polygon points="380,157 376,149 384,149" fill="#B45309"/>
-                    <rect x="220" y="158" width="320" height="28" rx="4" fill="#EA580C" stroke="#9A3412" stroke-width="1.2"/>
-                    <text x="380" y="176" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">MOMENT OF DECODING (RECEPTION)</text>
-                    <path d="M300 186 V 204 H 130 V 214" stroke="#B45309" stroke-width="1.8"/>
-                    <polygon points="130,218 126,210 134,210" fill="#B45309"/>
-                    <path d="M380 186 V 214" stroke="#B45309" stroke-width="1.8"/>
-                    <polygon points="380,218 376,210 384,210" fill="#B45309"/>
-                    <path d="M460 186 V 204 H 630 V 214" stroke="#B45309" stroke-width="1.8"/>
-                    <polygon points="630,218 626,210 634,210" fill="#B45309"/>
-                    <rect x="20" y="219" width="220" height="54" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
-                    <text x="130" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#78350F" text-anchor="middle">DOMINANT-HEGEMONIC</text>
-                    <text x="130" y="249" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#44403C" text-anchor="middle">Accepting the preferred reading</text>
-                    <text x="130" y="261" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">transparently without friction.</text>
-                    <rect x="270" y="219" width="220" height="54" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
-                    <text x="380" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#78350F" text-anchor="middle">NEGOTIATED STANCE</text>
-                    <text x="380" y="249" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#44403C" text-anchor="middle">Acknowledging the preferred code</text>
-                    <text x="380" y="261" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">while tailoring it to local realities.</text>
-                    <rect x="520" y="219" width="220" height="54" rx="6" fill="#FFFFFF" stroke="#B45309" stroke-width="1.5"/>
-                    <text x="630" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" fill="#78350F" text-anchor="middle">OPPOSITIONAL DECODING</text>
-                    <text x="630" y="249" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#44403C" text-anchor="middle">Spotting the ideological framing</text>
-                    <text x="630" y="261" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#57534E" text-anchor="middle">and actively subverting it.</text>
-                </svg>
-            </div>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Prime-Time Sitcom &amp; Classroom Reception</strong>
-                Imagine a Year 9 Media Studies class analyzing a corporate-produced television sitcom featuring a wealthy suburban family:
-                <ul>
-                    <li><strong>The Preferred Encoding:</strong> The producers encode meritocratic individualism—suggesting that hard work guarantees wealth, and poverty results from individual personal failure.</li>
-                    <li><strong>Dominant Decoding (Student A):</strong> Accepts the message wholesale, viewing the wealthy characters as natural role models of success.</li>
-                    <li><strong>Negotiated Decoding (Student B):</strong> Enjoys the humor and characters, but modifies the message based on working-class family experience: <em>"Hard work helps, but my dad works two jobs and we still struggle because rent is too high."</em></li>
-                    <li><strong>Oppositional Decoding (Student C):</strong> Completely decodes and rejects the ideological framing, reading the show as capitalist propaganda designed to mask systemic inequality and corporate exploitation.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Formulated in 1973 by Stuart Hall at the CCCS in Birmingham. Traditional mass communications assumed that media injected messages directly into passive audiences (hypodermic needle model). However, empirical audience research showed that working-class and minority viewers routinely reinterpreted or mocked mainstream broadcasts.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Operates through four distinct circuit moments (production, circulation, distribution/consumption, reproduction) and three decoding positions (dominant-hegemonic, negotiated, oppositional).</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Validates student interpretive agency against patronizing media-effects models. Empowers media literacy education by teaching students how texts are encoded with institutional ideologies and how they can be critically decoded.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Algorithmic Capture Blind Spot:</em> Hall assumed conscious human decoders. Modern social media feeds deploy automated behavioral telemetry and dopamine micro-nudges that steer attention subconsciously, bypassing conscious critical decoding.</li>
-                <li><em>Romanticizing Resistance:</em> Treating every idiosyncratic reading or cynical smirk as authentic political resistance mistakes personal cynicism for substantive structural critique.</li>
-            </ul>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="semiotic-democracy-textual-poaching">Semiotic Democracy &amp; Textual Poaching (John Fiske)</h4>
-            <p>
-                John Fiske's cultural studies theory (<span class="tooltip-term" tabindex="0" data-tooltip="Television Culture (1987) and Reading the Popular (1989), developing theories of popular pleasure and audience semiotic productivity.">Television Culture, 1987</span>)
-                demonstrates that popular culture is not an imperial package imposed from above, but an active contest where audiences exercise
-                <span class="tooltip-term" tabindex="0" data-tooltip="The decentralization of cultural meaning-making, where audiences actively rewrite and remix corporate media to serve their own social interests.">semiotic democracy</span>.
-                Audiences engage in <span class="tooltip-term" tabindex="0" data-tooltip="The practice of unauthorized audience raiding of corporate cultural texts, appropriating characters and plots to construct autonomous meanings.">textual poaching</span>
-                (borrowed from Michel de Certeau), seizing mass media commodities and excorporating them to generate subcultural dignity and oppositional pleasure.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Viral TikTok Fan Edit</strong>
-                Imagine a Year 10 student dissecting a billion-dollar superhero film:
-                <ul>
-                    <li><strong>The Corporate Text:</strong> The studio markets a rigid, heterosexual romantic narrative designed for global product merchandising.</li>
-                    <li><strong>The Poaching Act:</strong> The student captures micro-clips of two characters, cuts them together, overlays indie synth music, and publishes a viral queer romantic edit on TikTok.</li>
-                    <li><strong>Semiotic Guerilla Warfare:</strong> The studio did not authorize the queer reading, but the student community embraces it as authentic canon, repurposing corporate intellectual property into a vehicle for marginalized identity.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed in the late 1980s by John Fiske, building on Stuart Hall and Michel de Certeau. Classical Frankfurt School critical theory argued that corporate capitalism manufactured homogenizing mass culture that eradicated working-class autonomy. Fiske identified the empirical anomaly: despite corporate saturation, youth culture continually generated rebellious, unanticipated meanings from mass-market fashion, music, and television.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Operates through four gears: producerly texts (texts with loose semiotic threads that invite reader participation); excorporation (making popular culture out of the resources of the dominant system); semiotic productivity (the construction of private and peer meanings); and subcultural capital accumulation.</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Validates youth cultural creativity against elitist moralizing. It allows teachers to engage student passion for video games, fan fiction, and memes as legitimate linguistic and semiotic meaning-making rather than cognitive brain rot.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Populist Delusion / Trivialization Trap:</em> Conflating consumer remixing (e.g., editing a TikTok meme) with genuine political emancipation confuses symbolic play with the redistribution of material wealth and political power.</li>
-                <li><em>The Corporate Co-optation Engine:</em> Platform capitalism instantly monitors, packages, and re-monetizes poached youth subcultures, turning organic subversion back into corporate advertising yield within weeks.</li>
-                <li><em>Curricular Displacement:</em> Replacing rigorous, powerful academic knowledge with celebratory discussions of student pop-culture consumption deprives disadvantaged learners of foundational disciplinary mastery.</li>
-            </ul>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="intertextuality-moral-panics">Intertextuality &amp; Moral Panics (Julia Kristeva / Stanley Cohen)</h4>
-            <p>
-                Synthesizing Julia Kristeva's poststructuralist semiotics (<span class="tooltip-term" tabindex="0" data-tooltip="Desire in Language (1980), establishing that every text is an intertextual mosaic of citations and references.">Intertextuality, 1966/1980</span>)
-                with Stanley Cohen's sociological model (<span class="tooltip-term" tabindex="0" data-tooltip="Folk Devils and Moral Panics (1972), analyzing the societal creation and amplification of deviance.">Folk Devils and Moral Panics, 1972</span>),
-                this framework reveals how mass media architectures manufacture synthetic societal panics regarding youth culture and schooling.
-                Through an intertextual echo chamber of sensationalist journalism, political rhetoric, and algorithmic outrage, adolescent subcultures and educational standards
-                are framed as existential threats to the social order, manufacturing <span class="tooltip-term" tabindex="0" data-tooltip="Social groups demonized by moral entrepreneurs as visible personifications of cultural degeneration and moral decay.">folk devils</span>.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The "Screen Time / AI Brain Rot" Panic</strong>
-                Imagine a tabloid media cycle targeting secondary school students:
-                <ul>
-                    <li><strong>The Trigger Event:</strong> An isolated survey reports that teenagers use generative AI apps or social media for homework assistance.</li>
-                    <li><strong>The Deviancy Amplification Spiral:</strong> Headlines scream that youth are losing basic literacy and cognitive ability (<span class="tooltip-term" tabindex="0" data-tooltip="Politicians, media editors, and religious figures who mount crusades to rectify perceived cultural breakdown.">moral entrepreneurs</span>). Shock-jocks echo the story, citing previous panics about calculators and comic books (intertextuality).</li>
-                    <li><strong>The Institutional Climax:</strong> Politicians mandate zero-tolerance phone bans and install invasive software lockdowns to reassure voters, while systemic issues—such as teacher shortages and real funding cuts—are ignored.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed by Stanley Cohen in 1972 (studying the British Mods and Rockers youth clashes) alongside Kristeva's semiotic formulation of intertextuality. Cohen confronted the anomaly of why public terror and legislative crackdowns were wildly disproportionate to the actual minor disruptions occurring on coastal beaches. Media did not report crime; it orchestrated symbolic morality plays.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Operates through the five stages of a moral panic (concern, hostility, consensus, disproportionality, volatility); the Deviancy Amplification Spiral; Moral Entrepreneurs; and Intertextual Cross-Referencing across political speeches, tabloids, and parent forums.</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Unmasks how sensationalist media cycles manufacture synthetic educational crises to justify draconian disciplinary policies, curriculum censorship, and surveillance. Protects teachers and youth from having situational anxieties scapegoated onto their everyday schooling lives.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Diagnostic Denialism Trap:</em> Dismissing all legitimate community anxieties regarding youth mental health, screen addiction, sleep disruption, or declining national literacy metrics as mere "moral panics" blinds educators to real developmental harms caused by commercial digital technology.</li>
-                <li><em>Administrative Abdication:</em> Teachers who dismiss all behavioral concerns as media panics risk failing their affirmative common law duty of care, ignoring real classroom disruptions and bullying.</li>
-            </ul>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="media-ecology-social-model">Media Ecology &amp; The Social Model of Disability (Neil Postman / Mike Oliver)</h4>
-            <p>
-                Synthesizing Neil Postman's technological critique (<span class="tooltip-term" tabindex="0" data-tooltip="Amusing Ourselves to Death (1985) and Technopoly (1992), analyzing technology as an ecological transformation rather than a mere additive tool.">Media Ecology, 1985</span>)
-                with Mike Oliver's foundational disability sociology (<span class="tooltip-term" tabindex="0" data-tooltip="The Politics of Disablement (1990), differentiating biological impairment from socially constructed disability.">Social Model of Disability, 1990</span>),
-                this framework establishes that technology is never neutral: it is an ecological transformation of the communicative and cognitive environment.
-                Concurrently, disability is diagnosed not as an internal biological pathology, but as an institutional failure of environments to accommodate bodily variation.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The 1-to-1 Device Classroom Mismatch</strong>
-                Imagine a Year 8 English classroom transitioning entirely to digital screens:
-                <ul>
-                    <li><strong>The Ecological Faustian Bargain:</strong> The device provides instant web access, but shatters sustained cognitive reading focus, trading deep contemplation for hyperlinked distraction (Postman).</li>
-                    <li><strong>The Social Model Barrier:</strong> A student with severe visual or motor processing difficulties is handed a standard PDF worksheet on a laptop with no screen-reader optimization. The disability is manufactured by the school's inaccessible software, not the student's biology (Oliver).</li>
-                    <li><strong>The Restructuring:</strong> Implementing Universal Design for Learning (UDL)—offering tactile audiobooks, adjustable fonts, and structured physical print—removes the disabling institutional barrier.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Postman formulated media ecology at NYU in the 1980s, building on Marshall McLuhan. Oliver formulated the Social Model in 1990 in the UK, emerging from the Union of the Physically Impaired Against Segregation (UPIAS). Both confronted technocratic solutionism: the naive belief that technology is a purely benevolent add-on and that disabled children are broken medical objects needing pity.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Postman's Faustian Bargain (every technology gives and takes away); Ecological Transformation (new mediums alter the entire sensory environment); Oliver's Impairment vs. Disability distinction; and Universal Design for Learning (UDL) as physical/epistemic restructuring.</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Exposes the cognitive fragmentation of uncritical classroom digital adoption. Completely reframes special education from medical defect to institutional design, demanding accessible digital architecture as a civil right.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>Postman's Technophobic Nostalgia:</em> Romanticizing 19th-century print literacy ignores that print culture was historically exclusionary, classist, and hostile to oral or neurodivergent learning modalities.</li>
-                <li><em>The Denial of Biological Impairment:</em> Pushed to ideological extremes, social model purists deny the material reality of chronic physical pain, neurodevelopmental dysregulation, and sensory exhaustion, potentially blocking students from receiving vital medical and neurological support.</li>
-            </ul>
-        </div>
-
-        <!-- MASTER STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON CULTURE & TECHNOLOGY -->
-        <div class="textbook-impact-box" id="critical-synthesis">
-            <h4 class="concept-title">Critical Synthesis: Impact of Cultural Agency &amp; Media Ecology on <em>Making Sense of Mass Education</em></h4>
-            <p>
-                <strong>How do Hall, Fiske, Cohen &amp; Kristeva, and Postman &amp; Oliver collectively shape and challenge the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
-                Together, these frameworks provide the textbook with an indispensable bridge between macro-level cultural structures and micro-level student agency, demonstrating how youth actively navigate the communicative and technological environments of schooling:
-            </p>
-            <ul>
-                <li>
-                    <strong>How they SUPPORT and Empower the Textbook's Thesis:</strong>
-                    <ul>
-                        <li><em>Demolishing Passive Transmission (Hall &amp; Fiske):</em> Proves that students are not blank slates or passive dupes brainwashed by corporate media. They actively decode, poach, and remix cultural products, showing that student meaning-making is a contested democratic process.</li>
-                        <li><em>Deconstructing Crisis Narratives (Cohen &amp; Kristeva):</em> Equips pre-service teachers to recognize how sensationalist media panics over "failing schools," "illiterate youth," and "screen addiction" are manufactured to justify punitive political crackdowns and surveillance.</li>
-                        <li><em>Institutionalizing Inclusive Architecture (Oliver &amp; Postman):</em> Replaces deficit medicalization with structural accessibility, demonstrating that learning barriers are created by inflexible curriculum designs and cognitive fragmentation rather than innate student defect.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Where they CAUSE PROFOUND PROBLEMS for the Textbook (The Forensic Hazards):</strong>
-                    <ul>
-                        <li><em>The Algorithmic Capture Blind Spot:</em> Hall and Fiske's optimistic models of "active resistance" struggle against 21st-century platform capitalism, where predictive machine-learning feeds bypass conscious decoding and exploit neurological dopamine loops directly.</li>
-                        <li><em>The Diagnostic Denialism Trap:</em> Dismissing all concern over youth mental health and screen immersion as "moral panics" risks blinding teachers to the genuine cognitive and social costs of digital dependency.</li>
-                        <li><em>Populist Anti-Intellectualism:</em> Celebrating trivial pop-culture poaching as substantive emancipation can lead progressive educators to abandon powerful disciplinary knowledge, leaving disadvantaged students entertained but academically disarmed.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>The Section 6 Synthesis Verdict:</strong>
-                    Cultural studies and media ecology rescue the textbook from cultural pessimism by centering student agency and inclusive structural design. However, professional teaching requires maintaining a firm boundary: educators must respect student interpretive agency while unapologetically providing explicit instruction in powerful, testable disciplinary knowledge and safeguarding the classroom cognitive ecology from commercial distraction.
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="biblio-section" id="module-references">
+    </section>""",
+    2: """    <section class="biblio-section" id="module-references">
+        <h2>Module 2 References &amp; Foundational Reading</h2>
+        <ul class="biblio-list">
+            <li><strong>Achebe, C. (1975).</strong> <em>Morning Yet on Creation Day: Essays</em>. London: Heinemann.</li>
+            <li><strong>Bell, D. A. (1980).</strong> 'Brown v. Board of Education and the Interest-Convergence Dilemma'. <em>Harvard Law Review</em>, 93(3), 518–533.</li>
+            <li><strong>Delpit, L. (1995).</strong> <em>Other People's Children: Cultural Conflict in the Classroom</em>. New York: The New Press.</li>
+            <li><strong>Fanon, F. (1963).</strong> <em>The Wretched of the Earth</em> (C. Farrington, Trans.). New York: Grove Press. (Original work published in French 1961).</li>
+            <li><strong>Fanon, F. (1967).</strong> <em>Black Skin, White Masks</em> (C. L. Markmann, Trans.). New York: Grove Press. (Original work published in French 1952).</li>
+            <li><strong>Fricker, M. (2007).</strong> <em>Epistemic Injustice: Power and the Ethics of Knowing</em>. Oxford: Oxford University Press.</li>
+            <li><strong>Gillborn, D. (2005).</strong> 'Education policy as an act of white supremacy: Whiteness, critical race theory and education reform'. <em>Journal of Education Policy</em>, 20(4), 485–505.</li>
+            <li><strong>Gillborn, D. (2008).</strong> <em>Racism and Education: Coincidence or Conspiracy?</em> London: Routledge.</li>
+            <li><strong>Ladson-Billings, G. (1995).</strong> 'Toward a Theory of Culturally Relevant Pedagogy'. <em>American Educational Research Journal</em>, 32(3), 465–491.</li>
+            <li><strong>Macaulay, T. B. (1835).</strong> <em>Minute on Indian Education</em>. London: British Parliamentary Papers.</li>
+            <li><strong>Macpherson, W. (1999).</strong> <em>The Stephen Lawrence Inquiry: Report of an Inquiry by Sir William Macpherson of Cluny</em>. London: The Stationery Office.</li>
+            <li><strong>Ngũgĩ wa Thiong'o. (1986).</strong> <em>Decolonising the Mind: The Politics of Language in African Literature</em>. London: James Currey.</li>
+            <li><strong>Paris, D. (2012).</strong> 'Culturally Sustaining Pedagogy: A Needed Change in Stance, Terminology, and Practice'. <em>Educational Researcher</em>, 41(3), 93–97.</li>
+            <li><strong>Paris, D., &amp; Alim, H. S. (2014).</strong> 'What Are We Seeking to Sustain Through Culturally Sustaining Pedagogy? A Loving Critique Forward'. <em>Harvard Educational Review</em>, 84(1), 85–100.</li>
+            <li><strong>Paris, D., &amp; Alim, H. S. (Eds.). (2017).</strong> <em>Culturally Sustaining Pedagogies: Teaching and Learning for Justice in a Changing World</em>. New York: Teachers College Press.</li>
+            <li><strong>Sewell, T. (2021).</strong> <em>Commission on Race and Ethnic Disparities: The Report</em>. London: UK Cabinet Office.</li>
+            <li><strong>Spivak, G. C. (1988).</strong> 'Can the Subaltern Speak?' In C. Nelson &amp; L. Grossberg (Eds.), <em>Marxism and the Interpretation of Culture</em> (pp. 271–313). Urbana: University of Illinois Press.</li>
+            <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+        </ul>
+    </section>""",
+    3: """    <section class="biblio-section" id="module-references">
+        <h2>Module 3 References &amp; Foundational Reading</h2>
+        <ul class="biblio-list">
+            <li><strong>Butler, J. (1990).</strong> <em>Gender Trouble: Feminism and the Subversion of Identity</em>. New York: Routledge.</li>
+            <li><strong>Butler, J. (1993).</strong> <em>Bodies That Matter: On the Discursive Limits of "Sex"</em>. New York: Routledge.</li>
+            <li><strong>Connell, R. W. (1987).</strong> <em>Gender and Power: Society, the Person and Sexual Politics</em>. Stanford: Stanford University Press.</li>
+            <li><strong>Connell, R. W. (1995).</strong> <em>Masculinities</em>. Berkeley: University of California Press.</li>
+            <li><strong>Connell, R. W. (2000).</strong> <em>The Men and the Boys</em>. Berkeley: University of California Press.</li>
+            <li><strong>Demetriou, D. Z. (2001).</strong> 'Connell's Concept of Hegemonic Masculinity: A Critique'. <em>Theory and Society</em>, 30(3), 337–361.</li>
+            <li><strong>Ferguson, A., Gottschalk, P. H., Campbell, B. B., &amp; Rich, A. (1981).</strong> 'On "Compulsory Heterosexuality and Lesbian Existence": Defining the Issues'. <em>Signs: Journal of Women in Culture and Society</em>, 7(1), 158–199.</li>
+            <li><strong>Kosciw, J. G., Clark, C. M., Truong, N. L., &amp; Zongrone, A. D. (2020).</strong> <em>The 2019 National School Climate Survey: The Experiences of Lesbian, Gay, Bisexual, Transgender, and Queer Youth in Our Nation's Schools</em>. New York: GLSEN.</li>
+            <li><strong>Mac an Ghaill, M. (1994).</strong> <em>The Making of Men: Masculinities, Sexualities and Schooling</em>. Buckingham: Open University Press.</li>
+            <li><strong>Mayo, C. (2014).</strong> <em>LGBTQ Youth and Education: Policies and Practices</em>. New York: Teachers College Press.</li>
+            <li><strong>Meyer, I. H. (2003).</strong> 'Prejudice, Social Stress, and Mental Health in Lesbian, Gay, and Bisexual Populations: Conceptual Issues and Research Evidence'. <em>Psychological Bulletin</em>, 129(5), 674–697.</li>
+            <li><strong>Nussbaum, M. (1999).</strong> 'The Professor of Parody: The Hip Defeatism of Judith Butler'. <em>The New Republic</em>, 220(8), 37–45.</li>
+            <li><strong>Rich, A. (1980).</strong> 'Compulsory Heterosexuality and Lesbian Existence'. <em>Signs: Journal of Women in Culture and Society</em>, 5(4), 631–660.</li>
+            <li><strong>Ullman, J. (2021).</strong> <em>Free to Be? Exploring the Schooling Experiences of Australia's Sexuality and Gender Diverse High School Students</em>. Penrith: Western Sydney University.</li>
+            <li><strong>Warner, M. (1993).</strong> <em>Fear of a Queer Planet: Queer Politics and Social Theory</em>. Minneapolis: University of Minnesota Press.</li>
+        </ul>
+    </section>""",
+    4: """    <section class="biblio-section" id="module-references">
+        <h2>Module 4 References &amp; Foundational Reading</h2>
+        <ul class="biblio-list">
+            <li><strong>Ball, S. J. (2013).</strong> <em>Foucault, Power, and Education</em>. New York: Routledge.</li>
+            <li><strong>Barkley, R. A. (2015).</strong> <em>Attention-Deficit Hyperactivity Disorder: A Handbook for Diagnosis and Treatment</em> (4th ed.). New York: Guilford Press.</li>
+            <li><strong>Bentham, J. (1791).</strong> <em>Panopticon: or, the Inspection-House</em>. London: T. Payne.</li>
+            <li><strong>Clarke, R. (1988).</strong> 'Information Technology and Dataveillance'. <em>Communications of the ACM</em>, 31(5), 498–512.</li>
+            <li><strong>Conrad, P. (1975).</strong> 'The Discovery of Hyperkinesis: Notes on the Medicalization of Deviant Behavior'. <em>Social Problems</em>, 23(1), 12–21.</li>
+            <li><strong>Conrad, P. (2007).</strong> <em>The Medicalization of Society: On the Transformation of Human Conditions into Treatable Disorders</em>. Baltimore: Johns Hopkins University Press.</li>
+            <li><strong>Foucault, M. (1977).</strong> <em>Discipline and Punish: The Birth of the Prison</em> (A. Sheridan, Trans.). London: Allen Lane. (Original work published in French 1975).</li>
+            <li><strong>Foucault, M. (1980).</strong> <em>Power/Knowledge: Selected Interviews and Other Writings, 1972–1977</em> (C. Gordon, Ed.). New York: Pantheon Books.</li>
+            <li><strong>Foucault, M. (1988).</strong> 'Technologies of the Self'. In L. H. Martin, H. Gutman, &amp; P. H. Hutton (Eds.), <em>Technologies of the Self: A Seminar with Michel Foucault</em> (pp. 16–49). Amherst: University of Massachusetts Press.</li>
+            <li><strong>Foucault, M. (2008).</strong> <em>The Birth of Biopolitics: Lectures at the Collège de France, 1978–1979</em> (G. Burchell, Trans.). Basingstoke: Palgrave Macmillan.</li>
+            <li><strong>Rose, N. (1999).</strong> <em>Governing the Soul: The Shaping of the Private Self</em> (2nd ed.). London: Free Association Books.</li>
+            <li><strong>Rose, N. (1999).</strong> <em>Powers of Freedom: Reframing Political Thought</em>. Cambridge: Cambridge University Press.</li>
+            <li><strong>Selwyn, N. (2016).</strong> <em>Is Technology Good for Education?</em> Cambridge: Polity Press.</li>
+            <li><strong>Williamson, B. (2017).</strong> <em>Big Data in Education: The Digital Future of Learning, Policy and Practice</em>. London: Sage Publications.</li>
+            <li><strong>Zuboff, S. (2019).</strong> <em>The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power</em>. New York: PublicAffairs.</li>
+        </ul>
+    </section>""",
+    5: """    <section class="biblio-section" id="module-references">
+        <h2>Module 5 References &amp; Foundational Reading</h2>
+        <ul class="biblio-list">
+            <li><strong>Ball, S. J. (1994).</strong> <em>Education Reform: A Critical and Post-Structural Approach</em>. Buckingham: Open University Press.</li>
+            <li><strong>Ball, S. J. (2003).</strong> 'The Teacher's Soul and the Terrors of Performativity'. <em>Journal of Education Policy</em>, 18(2), 215–228.</li>
+            <li><strong>Chubb, J. E., &amp; Moe, T. M. (1990).</strong> <em>Politics, Markets and America's Schools</em>. Washington, D.C.: Brookings Institution Press.</li>
+            <li><strong>Friedman, M. (1955).</strong> 'The Role of Government in Education'. In R. A. Solo (Ed.), <em>Economics and the Public Interest</em> (pp. 123–144). New Brunswick: Rutgers University Press.</li>
+            <li><strong>Gonski, D., Boston, K., Greiner, K., Lawrence, C., Scales, B., &amp; Tannock, P. (2011).</strong> <em>Review of Funding for Schooling: Final Report</em>. Canberra: Department of Education, Employment and Workplace Relations.</li>
+            <li><strong>Lingard, B. (2010).</strong> 'Policy borrowing, policy learning, and the politics of education policy: A critical review'. <em>Journal of Education Policy</em>, 25(2), 129–147.</li>
+            <li><strong>Lingard, B., Martino, W., Rezai-Rashti, G., &amp; Sellar, S. (2013).</strong> 'Globalizing education policy: Treating the disease with the disease?'. <em>Globalisation, Societies and Education</em>, 11(3), 390–408.</li>
+            <li><strong>Power, M. (1997).</strong> <em>The Audit Society: Rituals of Verification</em>. Oxford: Oxford University Press.</li>
+            <li><strong>Sellar, S., &amp; Lingard, B. (2014).</strong> 'The OECD and the expansion of PISA: New global modes of governance in education'. <em>British Educational Research Journal</em>, 40(6), 917–936.</li>
+            <li><strong>Selwyn, N. (2016).</strong> <em>Is Technology Good for Education?</em> Cambridge: Polity Press.</li>
+            <li><strong>Waslander, S., Pater, C., &amp; van der Weide, M. (2010).</strong> <em>Markets in Education: An Analytical Review of Empirical Research on Market Mechanisms in Education</em>. OECD Education Working Papers, No. 52. Paris: OECD Publishing.</li>
+            <li><strong>Williamson, B. (2017).</strong> <em>Big Data in Education: The Digital Future of Learning, Policy and Practice</em>. London: Sage Publications.</li>
+            <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
+            <li><strong>Zuboff, S. (2019).</strong> <em>The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power</em>. New York: PublicAffairs.</li>
+        </ul>
+    </section>""",
+    6: """    <section class="biblio-section" id="module-references">
         <h2>Module 6 References &amp; Foundational Reading</h2>
         <ul class="biblio-list">
             <li><strong>Cohen, S. (1972).</strong> <em>Folk Devils and Moral Panics: The Creation of the Mods and Rockers</em>. London: MacGibbon &amp; Kee.</li>
@@ -657,265 +632,8 @@ def produce_expanded_module_6() -> str:
             <li><strong>Postman, N. (1992).</strong> <em>Technopoly: The Surrender of Culture to Technology</em>. New York: Knopf.</li>
             <li><strong>Selwyn, N. (2016).</strong> <em>Is Technology Good for Education?</em> Cambridge: Polity Press.</li>
         </ul>
-    </section>
-
-    <nav class="module-nav" aria-label="Module Navigation">
-        <a href="module-5.html" class="nav-btn">&larr; Module 5</a>
-        <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
-        <a href="module-7.html" class="nav-btn">Module 7 &rarr;</a>
-    </nav>
-</body>
-</html>
-"""
-
-
-def produce_expanded_module_7() -> str:
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 7: Philosophy, Law &amp; Educational Rights</title>
-    <style>
-{COMMON_STYLE_BLOCK}
-    </style>
-</head>
-<body>
-    <nav class="module-nav" aria-label="Module Navigation">
-        <a href="module-6.html" class="nav-btn">&larr; Module 6</a>
-        <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
-        <a href="bibliography.html" class="nav-btn">Bibliography &rarr;</a>
-    </nav>
-
-    <div class="intro-card">
-        <p>
-            <strong>Module Overview:</strong> This final module synthesizes normative philosophy, legal obligations, and ethical praxis in education. Spanning Paulo Freire's critical pedagogy, Nel Noddings and Aristotle's relational ethics of care and phronesis, common law negligence and non-delegable duty of care, UNCRC Article 12 participatory rights, and Michael Young's powerful knowledge versus Foucaultian regimes of truth, this module equips educators to navigate professional jurisprudence and ethical responsibility.
-        </p>
-    </div>
-
-    <!-- MODULE IN-PAGE QUICK NAVIGATION -->
-    <nav class="toc-card" aria-label="Module Quick Index">
-        <div class="toc-header-row">
-            <h3>Quick Navigation</h3>
-            <span class="toc-badge">7 Entries</span>
-        </div>
-        <ul class="toc-grid">
-            <li><a href="#critical-pedagogy-praxis"><span class="toc-index">01</span><span class="toc-item-label">Critical Pedagogy &amp; Praxis</span></a></li>
-            <li><a href="#normative-ethics-care"><span class="toc-index">02</span><span class="toc-item-label">Normative Ethics &amp; Relational Care</span></a></li>
-            <li><a href="#duty-of-care-negligence"><span class="toc-index">03</span><span class="toc-item-label">Duty of Care &amp; Negligence</span></a></li>
-            <li><a href="#uncrc-article-12"><span class="toc-index">04</span><span class="toc-item-label">UNCRC Article 12 &amp; Rights</span></a></li>
-            <li><a href="#regimes-of-truth-powerful-knowledge"><span class="toc-index">05</span><span class="toc-item-label">Regimes of Truth vs Powerful Knowledge</span></a></li>
-            <li><a href="#critical-synthesis"><span class="toc-index">06</span><span class="toc-item-label">Critical Synthesis</span></a></li>
-            <li><a href="#module-references"><span class="toc-index">07</span><span class="toc-item-label">Module References</span></a></li>
-        </ul>
-    </nav>
-
-    <section id="section-7">
-        <h2>7. Philosophy, Law &amp; Educational Rights</h2>
-        <h3 class="tradition-header">Critical Praxis, Ethics &amp; Jurisprudence</h3>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="critical-pedagogy-praxis">Critical Pedagogy &amp; Praxis (Paulo Freire)</h4>
-            <p>
-                Paulo Freire's landmark liberatory pedagogy (<span class="tooltip-term" tabindex="0" data-tooltip="Pedagogy of the Oppressed (1968/1970), articulating problem-posing dialogue against the banking concept of education.">Pedagogy of the Oppressed, 1968</span>)
-                dismantles the authoritarian <span class="tooltip-term" tabindex="0" data-tooltip="An oppressive educational model where teachers deposit narrative information into passive, receptive students, reinforcing fatalism.">banking model of education</span>,
-                where teachers treat students as empty vessels to receive, memorize, and repeat deposits of knowledge. In its place, Freire formulates
-                <span class="tooltip-term" tabindex="0" data-tooltip="An educational approach where teacher and student co-investigate real-world contradictions through dialogue.">problem-posing education</span>,
-                fostering <span class="tooltip-term" tabindex="0" data-tooltip="Learning to perceive social, political, and economic contradictions, and to take action against oppressive elements of reality.">conscientisation (conscientização)</span>
-                and <span class="tooltip-term" tabindex="0" data-tooltip="The indissoluble unity of critical reflection and action directed at the structures to be transformed.">praxis</span>—action
-                and reflection united in the struggle to humanize society.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: Banking vs. Problem-Posing Economics</strong>
-                Imagine two Year 11 Economics classrooms studying regional unemployment:
-                <ul>
-                    <li><strong>The Banking Model:</strong> The teacher lectures on aggregate supply/demand curves from a textbook, writing definitions on the board for students to copy and memorize for an examination. Students sit in passive compliance.</li>
-                    <li><strong>The Problem-Posing Approach:</strong> The teacher presents local factory closures and rising suburban rents as a generative contradiction. Students and teacher co-investigate who owns the local property, who profits from casual labor, and what structural policies maintain youth unemployment.</li>
-                    <li><strong>The Emergence of Praxis:</strong> Reflection leads directly to action: students formulate submissions to local council and develop community advocacy proposals.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed by Brazilian educator Paulo Freire during literacy campaigns among impoverished rural peasants in Recife during the early 1960s. Freire observed that conventional state literacy programs failed because they treated peasants as ignorant, passive objects, teaching isolated syllables that reinforced domestic fatalism. Emancipation required treating illiterate adults as autonomous knowers capable of reading both the word and the world.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> The Banking Concept (teacher teaches, students are taught); Generative Themes (drawing curriculum from community life); Problem-Posing Dialogue (horizontal teacher-student relationship); and Praxis (action-reflection cycle).</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Exposes how passive rote learning reinforces political docility. Elevates students from passive objects of instruction to co-investigators of reality, turning the classroom into an engine of democratic transformation and critical awareness.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Cognitive Load Catastrophe:</em> Cognitive science and educational psychology consistently prove that novice learners, particularly from disadvantaged backgrounds, suffer severe working-memory overload under unstructured problem-posing dialogue. Disadvantaged students require explicit, structured instruction to master reading, algebra, and scientific reasoning before they can critically interrogate systemic problems.</li>
-                <li><em>The Indoctrination Trap:</em> In practice, progressive educators frequently replace critical inquiry with ideological orthodoxy, expecting students to adopt pre-determined political conclusions rather than engaging in authentic, open-ended intellectual inquiry.</li>
-                <li><em>Curriculum Relativism:</em> Neglecting foundational disciplinary mastery in favor of political activism disarms marginalized children of the powerful knowledge needed to succeed in higher education and professional examinations.</li>
-            </ul>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="normative-ethics-care">Normative Ethics &amp; Relational Care (Nel Noddings / Aristotle)</h4>
-            <p>
-                Synthesizing Nel Noddings' feminist philosophy of education (<span class="tooltip-term" tabindex="0" data-tooltip="Caring: A Feminine Approach to Ethics and Moral Education (1984) and The Challenge to Care in Schools (1992/2005).">Caring, 1984/2005</span>)
-                with Aristotelian virtue ethics (<span class="tooltip-term" tabindex="0" data-tooltip="Nicomachean Ethics, establishing virtue as the golden mean cultivated through habit and practical wisdom (phronesis).">Nicomachean Ethics</span>)
-                and Kantian deontology (treating learners as ends in themselves, never merely as means), this framework establishes that education is fundamentally
-                a moral, relational enterprise. Under the <span class="tooltip-term" tabindex="0" data-tooltip="An ethical framework grounding morality in relation, receptivity, and responsiveness rather than abstract, detached universal rules.">ethics of care</span>,
-                pedagogical responsibility requires receptive attentiveness and confirmation between the "one-caring" and the "cared-for," guided by
-                <span class="tooltip-term" tabindex="0" data-tooltip="Practical wisdom: the intellectual virtue that enables a person to determine the right moral action in a particular, contextual circumstance.">phronesis</span>.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Incomplete Assignment &amp; Ethical Deliberation</strong>
-                Imagine a Year 10 student who fails to submit a major assessment on time:
-                <ul>
-                    <li><strong>The Bureaucratic / Utilitarian Approach:</strong> The teacher automatically assigns a zero to maintain algorithmic standardization, treat all students identically, and enforce audit compliance.</li>
-                    <li><strong>The Relational Ethics Approach:</strong> The teacher exercises receptive attentiveness, discovering that the student has been caring for younger siblings during a family housing crisis. The teacher exercises <em>phronesis</em>—balancing academic integrity with human duty of care by providing structured in-school scaffolding and an extension.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Formulated by Nel Noddings in 1984 as a feminist challenge to abstract, rule-based ethical models (Immanuel Kant, Lawrence Kohlberg). Noddings confronted the anomaly of why hyper-rationalist institutional rules in schooling routinely produced alienation, cruelty, and moral indifference toward vulnerable children. Morality does not begin with abstract principles; it begins with relational encounter.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> The Caring Relation (requires receptivity by the one-caring and recognition/response by the cared-for); Confirmation (attributing the best possible motive to the student); Modeling, Dialogue, Practice, and Confirmation; and Phronesis (navigating competing ethical obligations without rigid dogmatism).</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Forbids the instrumental use of children as statistical proxies for school ranking. Establishes that emotional safety and relational trust are necessary neurological conditions for deep academic learning.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Sentimentalism &amp; Soft Bigotry Hazard:</em> Conflating care with removing academic expectations or avoiding necessary behavioral discipline induces the "soft bigotry of low expectations," leaving disadvantaged students illiterate and unprepared for external assessments.</li>
-                <li><em>Emotional Burnout &amp; Boundary Dissolution:</em> Demanding that teachers sustain deep, maternal emotional investment with hundreds of students per week leads to vicarious trauma and severe professional exhaustion.</li>
-                <li><em>Conflict with Universal Justice:</em> Relational care inherently prioritizes immediate personal relationships, which can clash with universal legal equity, fair assessment standardization, and administrative impartiality.</li>
-            </ul>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="duty-of-care-negligence">Non-Delegable Duty of Care &amp; Negligence (Common Law Tort Jurisprudence)</h4>
-            <p>
-                The common law tort of negligence imposes upon school authorities and teachers an affirmative,
-                <span class="tooltip-term" tabindex="0" data-tooltip="A legal duty of care that cannot be delegated to an independent contractor or third party; the school authority remains personally liable for harm caused.">non-delegable duty of care</span>.
-                Arising from the special protective relationship between schools and vulnerable minors (<span class="tooltip-term" tabindex="0" data-tooltip="Commonwealth v Introvigne (1982) 150 CLR 258 and NSW v Lepore (2003) 212 CLR 511.">Introvigne, 1982; Lepore, 2003</span>),
-                educators must take all reasonable precautions to protect students against <span class="tooltip-term" tabindex="0" data-tooltip="A risk of harm that is not far-fetched or fanciful, requiring reasonable steps to prevent injury.">reasonably foreseeable risks</span>
-                of physical and psychiatric harm.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Unsupervised Wet-Weather Playground</strong>
-                Imagine an elementary school recess during sudden rain:
-                <ul>
-                    <li><strong>The Breach:</strong> The teacher rostered for playground duty retreats into the staffroom to prepare lesson slides, leaving the active play area unattended for 12 minutes.</li>
-                    <li><strong>The Foreseeable Injury:</strong> Two students run on the wet concrete veranda, collide, and one suffers a compound fracture.</li>
-                    <li><strong>The Legal Tort Finding:</strong> The risk of wet concrete slips was reasonably foreseeable; the school had an affirmative duty to supervise; the absence of supervision breached the standard of care; and the breach directly caused the physical harm. The school authority is held vicariously and non-delegably liable.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed through 20th-century Anglo-Australian common law (originating in <em>Donoghue v Stevenson</em> [1932] and codified in school settings in <em>Commonwealth v Introvigne</em> [1982] HCA). School authorities previously attempted to avoid liability by claiming teachers were independent actors or contractors. The High Court affirmed that the duty owed to pupils is personal and non-delegable because children are compulsory captives under state power.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> The Tripartite Negligence Test (Duty owed, Breach of standard of care, Causation of recognized damage); The Reasonable Person / Prudent Parent Standard (in loco parentis); Foreseeability vs. Fanciful Risk; and the Non-Delegable Doctrine.</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Establishes the non-negotiable legal floor of educational practice, mandating active physical and psychological supervision across all learning spaces, excursions, and laboratory practicals to protect vulnerable children from institutional negligence.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>Defensive Teaching &amp; Hyper-Risk Aversion:</em> Fear of tort liability leads schools to cancel beneficial scientific chemistry experiments, ban contact physical education, and sanitize outdoor play, depriving children of resilience and physical mastery.</li>
-                <li><em>Bureaucratic Paralysis:</em> Teachers spend countless hours completing administrative risk assessments, diverting time away from pedagogical instruction and pastoral relationships.</li>
-            </ul>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="uncrc-article-12">UNCRC Article 12 &amp; Participatory Rights (International Human Rights Law)</h4>
-            <p>
-                Article 12 of the <span class="tooltip-term" tabindex="0" data-tooltip="United Nations Convention on the Rights of the Child (1989), the most widely ratified human rights treaty in history.">UN Convention on the Rights of the Child (1989)</span>
-                establishes that children who are capable of forming their own views have the fundamental right to express those views freely in all matters
-                affecting them, with the views being given due weight in accordance with their age and maturity. This human rights standard challenges
-                traditional adultist paternalism, operationalized through Laura Lundy's model:
-                <span class="tooltip-term" tabindex="0" data-tooltip="Lundy's four-part model of child rights: Space (safe opportunity), Voice (supported expression), Audience (listened to), and Influence (acted upon).">Space, Voice, Audience, and Influence</span>.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Disciplinary Suspension Hearing</strong>
-                Imagine a Year 9 student facing an executive suspension inquiry:
-                <ul>
-                    <li><strong>Adultist Paternalism:</strong> Administrators talk over the student, read the behavior report, and issue a 5-day suspension without allowing the child to articulate the context of peer provocation.</li>
-                    <li><strong>UNCRC Article 12 Compliance:</strong> The school provides safe space, allows the student an advocate, listens attentively, and documents the student's perspective, incorporating it directly into the restorative resolution (Audience and Influence).</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Adopted by the UN General Assembly in 1989. Historically, international jurisprudence viewed children solely as passive objects of adult protection and property. The UNCRC shifted the legal paradigm by framing children as active, rights-bearing human subjects.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> The Lundy Model (Space, Voice, Audience, Influence); Evolving Capacities (balancing emerging autonomy with protection); and the Prohibition of Age Discrimination in Decision-Making.</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Directly disrupts institutional authoritarianism, democratizing school governance by mandating that student voice must inform disciplinary proceedings, uniform policies, and classroom pedagogical choices.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>Performative Tokenism:</em> Schools frequently establish cosmetic "student councils" that debate playground bench colors, creating an illusion of democracy while excluding students from real budgetary and curriculum governance.</li>
-                <li><em>The Epistemic Inversion Fallacy:</em> Confusing democratic rights with disciplinary expertise. Novice children have the right to be treated with dignity, but they do not have the epistemic authority to vote on the laws of physics, mathematical proofs, or historical curricula. Expert teachers must guide knowledge acquisition.</li>
-            </ul>
-        </div>
-
-        <div class="forensic-entry">
-            <h4 class="concept-title" id="regimes-of-truth-powerful-knowledge">Regimes of Truth vs. Powerful Knowledge (Michel Foucault / Michael Young)</h4>
-            <p>
-                This conceptual tension contrasts Michel Foucault's poststructuralist critique of
-                <span class="tooltip-term" tabindex="0" data-tooltip="Foucault's concept that truth is not absolute, but produced through discursive institutions and power apparatuses that define what counts as true.">regimes of truth (régimes de vérité)</span>
-                against Michael Young's Social Realist defense of
-                <span class="tooltip-term" tabindex="0" data-tooltip="Young's concept of specialized, disciplinary knowledge that is reliable, testable, and takes students beyond their localized daily experience.">powerful knowledge</span>.
-                While Foucault demonstrates how educational curricula embody historical power relations and institutional sorting, Young proves that
-                abandoning objective disciplinary knowledge under the banner of fighting hegemonic power disarms working-class youth, denying them universal epistemic leverage.
-            </p>
-
-            <div class="scenario-box">
-                <strong class="label">Concrete Mechanism in Action: The Disciplinary Canon Debate</strong>
-                Imagine a secondary curriculum review committee debating a Year 11 Science syllabus:
-                <ul>
-                    <li><strong>The Poststructuralist Standpoint:</strong> Argues that Western physics is merely a localized "white European regime of truth" and replaces empirical physics equations with open-ended cultural storytelling.</li>
-                    <li><strong>The Social Realist Standpoint:</strong> Acknowledges that historical physicists were privileged white men, but insists that thermodynamics, gravitational calculus, and chemical stoichiometry are objective, testable intellectual tools (Powerful Knowledge) that belong to all humans. Denying working-class and minority students rigorous calculus prevents them from ever becoming aerospace engineers or physicians.</li>
-                </ul>
-            </div>
-
-            <p><strong>1. History &amp; The Empirical Anomaly:</strong> Developed through the intellectual clash between 1970s poststructuralism (Foucault) and the late-2000s Social Realist turn in educational sociology (Michael Young). Young, who originally co-founded radical constructivism in 1971, observed the tragic empirical anomaly: postmodern curriculum reforms that abolished disciplinary rigor in the name of "anti-elitism" ended up stranding working-class youth in low-status vocational courses while elites continued to teach calculus and literature.</p>
-
-            <p><strong>2. Theoretical Mechanics:</strong> Power/Knowledge Nexus; The Distinction between Knowledge of the Powerful (social accents, bourgeois etiquette) and Powerful Knowledge (testable disciplinary concepts); Epistemic Borders; Specialized vs. Everyday Common-Sense Knowledge.</p>
-
-            <p><span class="audit-label-strength">3. Legitimate Diagnostic Strengths:</span> Combines critical vigilance against curriculum bias with an uncompromising defense of educational equity, showing that true social justice requires giving every child access to specialized disciplinary knowledge that transcends their immediate socio-economic background.</p>
-
-            <p><span class="audit-label-critique">4. Forensic Audit (Contradictions, Empirical Limits &amp; Practical Hazards):</span></p>
-            <ul>
-                <li><em>The Re-entrenchment of Eurocentric Canons:</em> Defining "powerful knowledge" strictly through traditional Western academic disciplines risks excluding rich non-Western philosophical and scientific traditions from curriculum legitimacy.</li>
-                <li><em>Pedagogical Detachment Hazard:</em> Teaching abstract disciplinary concepts without connecting them to students' lived cultural experiences can create cognitive alienation and widespread student disengagement.</li>
-            </ul>
-        </div>
-
-        <!-- MASTER STANDALONE SECTION CARD: CRITICAL SYNTHESIS ON PHILOSOPHY, LAW & RIGHTS -->
-        <div class="textbook-impact-box" id="critical-synthesis">
-            <h4 class="concept-title">Critical Synthesis: Impact of Philosophy, Law &amp; Educational Rights on <em>Making Sense of Mass Education</em></h4>
-            <p>
-                <strong>How do Freire, Noddings, Tort Jurisprudence, UNCRC Article 12, and Foucault vs. Young collectively shape and challenge the central thesis of <em>Making Sense of Mass Education</em>?</strong><br>
-                Together, these frameworks provide the normative, ethical, and legal spine of educational sociology, defining the professional boundaries and moral purpose of mass schooling:
-            </p>
-            <ul>
-                <li>
-                    <strong>How they SUPPORT and Empower the Textbook's Thesis:</strong>
-                    <ul>
-                        <li><em>Demolishing Authoritarian Banking (Freire):</em> Proves that education is never politically neutral; it either domesticates learners into accepting inequality or empowers them into critical praxis.</li>
-                        <li><em>Humanizing Institutional Governance (Noddings &amp; Aristotle):</em> Anchors teacher professionalism in relational ethics and practical wisdom, forbidding the reduction of children to numerical performance indicators.</li>
-                        <li><em>Enforcing Student Safety and Voice (Tort Law &amp; UNCRC):</em> Establishes non-negotiable legal and human rights standards, ensuring that schools are legally accountable for student physical safety and democratically bound to hear student voice.</li>
-                        <li><em>Defending Epistemic Leverage (Young):</em> Proves that educational equity does not mean abandoning academic rigor, but democratizing access to powerful disciplinary knowledge.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Where they CAUSE PROFOUND PROBLEMS for the Textbook (The Forensic Hazards):</strong>
-                    <ul>
-                        <li><em>The Discovery Learning Fallacy (Freire):</em> Over-indexing on unstructured dialogue contradicts cognitive load research proving that disadvantaged novice learners require explicit, systematic instruction to build foundational skills.</li>
-                        <li><em>The Soft Bigotry of Sentimental Care (Noddings):</em> Conflating care with removing academic expectations leaves disadvantaged children unprepared for high-stakes tertiary gatekeeping.</li>
-                        <li><em>Legalistic Risk Aversion (Tort Law):</em> Fear of negligence claims leads to hyper-sanitized environments that ban scientific exploration and risky play.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>The Section 7 Synthesis Verdict:</strong>
-                    Educational philosophy and law establish that mass schooling is simultaneously a legal responsibility, a human rights arena, and a moral endeavor. True professional mastery requires balancing compassionate relational care and legal vigilance with unapologetic, explicit instruction in powerful knowledge.
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="biblio-section" id="module-references">
+    </section>""",
+    7: """    <section class="biblio-section" id="module-references">
         <h2>Module 7 References &amp; Foundational Reading</h2>
         <ul class="biblio-list">
             <li><strong>Aristotle. (2009).</strong> <em>The Nicomachean Ethics</em> (D. Ross, Trans.; L. Brown, Ed.). Oxford: Oxford University Press.</li>
@@ -927,13 +645,282 @@ def produce_expanded_module_7() -> str:
             <li><strong>United Nations. (1989).</strong> <em>Convention on the Rights of the Child</em>. Treaty Series, 1577, 3. New York: United Nations General Assembly.</li>
             <li><strong>Young, M. (2008).</strong> <em>Bringing Knowledge Back In: From Social Constructivism to Social Realism in the Sociology of Education</em>. London: Routledge.</li>
         </ul>
-    </section>
+    </section>""",
+}
 
-    <nav class="module-nav" aria-label="Module Navigation">
-        <a href="module-6.html" class="nav-btn">&larr; Module 6</a>
-        <a href="core-concepts.html" class="nav-btn">&#8962; Home</a>
-        <a href="bibliography.html" class="nav-btn">Bibliography &rarr;</a>
-    </nav>
+
+def obtain_master_content(root_dir: Path) -> str:
+    source_file = root_dir / "core-concepts.html"
+    content = ""
+    if source_file.exists():
+        content = source_file.read_text(encoding="utf-8")
+
+    if '<section id="section-2">' not in content or '<section id="section-3">' not in content:
+        print("Fetching complete original document from git commit b16eae7...")
+        res = subprocess.run(
+            ["git", "show", "b16eae7:core-concepts.html"],
+            cwd=root_dir,
+            capture_output=True,
+            text=True,
+        )
+        if res.returncode == 0 and '<section id="section-2">' in res.stdout:
+            content = res.stdout
+            print("Successfully retrieved full original document from git history.")
+        else:
+            print("Error: Could not retrieve full content from commit b16eae7.", file=sys.stderr)
+            sys.exit(1)
+
+    return content
+
+
+def build_nav_bar(prev_url: str | None, prev_lbl: str, next_url: str | None, next_lbl: str) -> str:
+    back_html = (
+        f'<a href="{prev_url}" class="nav-btn">&larr; {prev_lbl}</a>'
+        if prev_url
+        else '<span class="nav-btn disabled">&larr; Previous</span>'
+    )
+    home_html = '<a href="core-concepts.html" class="nav-btn">&#8962; Home</a>'
+    next_html = (
+        f'<a href="{next_url}" class="nav-btn">{next_lbl} &rarr;</a>'
+        if next_url
+        else '<span class="nav-btn disabled">Next &rarr;</span>'
+    )
+
+    return f"""    <nav class="module-nav" aria-label="Module Navigation">
+        {back_html}
+        {home_html}
+        {next_html}
+    </nav>"""
+
+
+def slugify_heading(title_text: str) -> str:
+    cleaned = re.sub(r"<[^>]+>", "", title_text)
+    cleaned = re.sub(r"\(.*?\)", "", cleaned)
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", cleaned.strip().lower())
+    return slug.strip("-")
+
+
+def build_toc(section_html: str) -> tuple[str, str]:
+    toc_items = []
+
+    def repl_h4(match: re.Match) -> str:
+        full_tag = match.group(0)
+        text = match.group(1).strip()
+        clean_text = re.sub(r"<[^>]+>", "", text)
+        slug = slugify_heading(clean_text)
+        toc_items.append((slug, clean_text))
+        if 'id="' not in full_tag:
+            return f'<h4 class="concept-title" id="{slug}">{text}</h4>'
+        return full_tag
+
+    updated_section_html = re.sub(r'<h4 class="concept-title"[^>]*>(.*?)</h4>', repl_h4, section_html)
+
+    if 'class="textbook-impact-box"' in updated_section_html:
+        if 'id="critical-synthesis"' not in updated_section_html:
+            updated_section_html = updated_section_html.replace(
+                '<div class="textbook-impact-box"',
+                '<div class="textbook-impact-box" id="critical-synthesis"',
+                1,
+            )
+        toc_items.append(("critical-synthesis", "Critical Synthesis"))
+
+    toc_items.append(("module-references", "Module References"))
+
+    total_items = len(toc_items)
+    items_markup = []
+    for idx, (slug, label) in enumerate(toc_items, start=1):
+        num_str = f"{idx:02d}"
+        item_html = (
+            f'            <li>\n'
+            f'                <a href="#{slug}">\n'
+            f'                    <span class="toc-index">{num_str}</span>\n'
+            f'                    <span class="toc-item-label">{label}</span>\n'
+            f'                </a>\n'
+            f'            </li>'
+        )
+        items_markup.append(item_html)
+
+    list_block = "\n".join(items_markup)
+
+    toc_html = f"""    <!-- MODULE IN-PAGE QUICK NAVIGATION -->
+    <nav class="toc-card" aria-label="Module Quick Index">
+        <div class="toc-header-row">
+            <h3>Quick Navigation</h3>
+            <span class="toc-badge">{total_items} Entries</span>
+        </div>
+        <ul class="toc-grid">
+{list_block}
+        </ul>
+    </nav>"""
+
+    return toc_html, updated_section_html
+
+
+def render_module(mod_num: int, raw_sec_html: str) -> str:
+    meta = MODULE_METADATA[mod_num]
+    head_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{meta["title"]}</title>
+    <style>
+{COMMON_STYLE_BLOCK}
+    </style>
+</head>
+<body>"""
+    nav_bar = build_nav_bar(meta["prev"], meta["prev_lbl"], meta["next"], meta["next_lbl"])
+
+    toc_html, sec_with_ids = build_toc(raw_sec_html)
+
+    overview_box = f"""    <div class="intro-card">
+        <p><strong>Module Overview:</strong> {meta["overview"]}</p>
+    </div>"""
+
+    biblio_html = MODULE_BIBLIOGRAPHIES.get(mod_num, "")
+
+    doc_html = f"""{head_html}
+{nav_bar}
+
+{overview_box}
+
+{toc_html}
+
+{sec_with_ids}
+
+{biblio_html}
+
+{nav_bar}
+</body>
+</html>
+"""
+    return doc_html
+
+
+def render_master_bibliography(raw_bib_html: str) -> str:
+    head_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Bibliography: Primary Sources &amp; References</title>
+    <style>
+{COMMON_STYLE_BLOCK}
+    </style>
+</head>
+<body>"""
+    nav_bar = build_nav_bar("module-7.html", "Module 7", None, "")
+
+    return f"""{head_html}
+{nav_bar}
+
+{raw_bib_html}
+
+{nav_bar}
+</body>
+</html>
+"""
+
+
+def render_portal_index() -> str:
+    head_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Sociological Concepts: Exam Revision Portal</title>
+    <style>
+{COMMON_STYLE_BLOCK}
+    </style>
+</head>
+<body>"""
+    return f"""{head_html}
+    <h1>EDCX246 Exam Revision Guide: Forensic Concept Analysis</h1>
+
+    <div class="intro-card">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Forensic Dossier Icon" style="flex-shrink: 0; width: 72px; height: 72px;">
+            <path d="M14 26C14 22.6863 16.6863 20 20 20H44L52 30H100C103.314 30 106 32.6863 106 36V90C106 93.3137 103.314 96 100 96H20C16.6863 96 14 93.3137 14 90V26Z" fill="#D97706"/>
+            <rect x="25" y="22" width="70" height="68" rx="3" fill="#F5F5F4" stroke="#D6D3D1" stroke-width="1.2"/>
+            <rect x="29" y="15" width="70" height="75" rx="3" fill="#FFFFFF" stroke="#A8A29E" stroke-width="1.2"/>
+            <line x1="38" y1="27" x2="65" y2="27" stroke="#B45309" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="38" y1="35" x2="88" y2="35" stroke="#78716C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="38" y1="41" x2="84" y2="41" stroke="#A8A29E" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="38" y1="47" x2="76" y2="47" stroke="#A8A29E" stroke-width="1.3" stroke-linecap="round"/>
+            <rect x="58" y="55" width="34" height="15" rx="2" fill="#FFF1F2" stroke="#BE123C" stroke-width="1.2"/>
+            <text x="61" y="66" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="700" fill="#BE123C" letter-spacing="0.8">AUDIT</text>
+            <path d="M12 44C12 40.6863 14.6863 38 18 38H102C105.314 38 108 40.6863 108 44L103 94C103 97.3137 100.314 100 97 100H23C19.6863 100 17 97.3137 17 94L12 44Z" fill="#B45309"/>
+            <circle cx="60" cy="52" r="4.5" fill="#FEF3C7" stroke="#78350F" stroke-width="1.5"/>
+            <line x1="60" y1="48" x2="60" y2="56" stroke="#78350F" stroke-width="1.5"/>
+            <circle cx="86" cy="80" r="13" fill="#FFFFFF" fill-opacity="0.25" stroke="#44403C" stroke-width="2.5"/>
+            <circle cx="86" cy="80" r="11" stroke="#F59E0B" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <line x1="95" y1="89" x2="106" y2="100" stroke="#44403C" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div>
+            <p style="margin: 0 0 10px 0; font-size: 0.94rem; color: #44403c; line-height: 1.65; text-align: justify;">
+                Welcome to the official exam revision portal for <strong>EDCX246 (Sociology of Education)</strong>, designed around
+                <em>Making Sense of Mass Education</em> (4th Edition). This resource applies an uncompromising
+                <strong>four-part forensic audit</strong> to core sociological theories: unpacking historical genesis and empirical anomalies,
+                internal theoretical mechanisms, legitimate diagnostic strengths, and rigorous critical blind spots.
+            </p>
+            <p style="margin: 0; font-size: 0.94rem; color: #44403c; line-height: 1.65; text-align: justify;">
+                Select a thematic module below to enter the modular study dossiers, complete with interactive popover definitions,
+                concrete classroom scenario models, and inline architectural SVG flow diagrams.
+            </p>
+        </div>
+    </div>
+
+    <h2>Examination Revision Modules</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 40px;">
+        <a href="module-1.html" style="background-color: var(--bg-entry); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-orange); border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.05rem; color: var(--primary-dark); margin-top: 0; margin-bottom: 8px;">1. Social Class &amp; Stratification</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; text-align: justify;">Examines cultural capital, habitus, symbolic violence, sociolinguistic codes, counter-school resistance, social closure, credentialism, and residualisation.</p>
+            <span style="margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 0.03em;">Open Module 1 &rarr;</span>
+        </a>
+
+        <a href="module-2.html" style="background-color: var(--bg-entry); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-orange); border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.05rem; color: var(--primary-dark); margin-top: 0; margin-bottom: 8px;">2. Race, Ethnicity &amp; Indigeneity</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; text-align: justify;">Investigates colonial psychology, epistemic violence, institutional racism, whiteness as policy, and culturally sustaining pedagogies.</p>
+            <span style="margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 0.03em;">Open Module 2 &rarr;</span>
+        </a>
+
+        <a href="module-3.html" style="background-color: var(--bg-entry); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-orange); border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.05rem; color: var(--primary-dark); margin-top: 0; margin-bottom: 8px;">3. Gender &amp; Sexualities</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; text-align: justify;">Analyzes institutional gender regimes, hegemonic masculinity, gender performativity, compulsory heterosexuality, and minority stress models.</p>
+            <span style="margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 0.03em;">Open Module 3 &rarr;</span>
+        </a>
+
+        <a href="module-4.html" style="background-color: var(--bg-entry); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-orange); border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.05rem; color: var(--primary-dark); margin-top: 0; margin-bottom: 8px;">4. Governance &amp; Subjectivity</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; text-align: justify;">Deconstructs Foucaultian disciplinary power, panopticism, governmentality, technologies of the self, the psy-complex, and digital dataveillance.</p>
+            <span style="margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 0.03em;">Open Module 4 &rarr;</span>
+        </a>
+
+        <a href="module-5.html" style="background-color: var(--bg-entry); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-orange); border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.05rem; color: var(--primary-dark); margin-top: 0; margin-bottom: 8px;">5. Neoliberalism &amp; Datafication</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; text-align: justify;">Evaluates performativity, audit cultures, horizontal market competition, governance by numbers, accountability washback, and surveillance capitalism.</p>
+            <span style="margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 0.03em;">Open Module 5 &rarr;</span>
+        </a>
+
+        <a href="module-6.html" style="background-color: var(--bg-entry); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-orange); border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.05rem; color: var(--primary-dark); margin-top: 0; margin-bottom: 8px;">6. Culture &amp; Technology</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; text-align: justify;">Explores active audience theory, polysemy, semiotic democracy, moral panics, media ecology, and the social model of disability.</p>
+            <span style="margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 0.03em;">Open Module 6 &rarr;</span>
+        </a>
+
+        <a href="module-7.html" style="background-color: var(--bg-entry); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-orange); border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.05rem; color: var(--primary-dark); margin-top: 0; margin-bottom: 8px;">7. Philosophy, Law &amp; Rights</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; text-align: justify;">Synthesizes critical pedagogy, normative ethics, non-delegable duty of care, UNCRC participatory rights, and powerful knowledge frameworks.</p>
+            <span style="margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 0.03em;">Open Module 7 &rarr;</span>
+        </a>
+
+        <a href="bibliography.html" style="grid-column: span 2; background-color: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #d97706; border-radius: 6px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.05rem; color: #78350f; margin-top: 0; margin-bottom: 8px;">Master Bibliography &amp; References</h3>
+            <p style="margin: 0; font-size: 0.88rem; color: #78350f; line-height: 1.5; text-align: justify;">Comprehensive, alphabetized catalogue of all primary sociological texts, empirical studies, and critical counter-texts referenced across the revision modules.</p>
+            <span style="margin-top: 10px; font-size: 0.85rem; font-weight: 700; color: #d97706; text-transform: uppercase; letter-spacing: 0.03em; display: inline-block;">Open Master Bibliography &rarr;</span>
+        </a>
+    </div>
+
 </body>
 </html>
 """
@@ -962,28 +949,42 @@ def sync_repository(repo_path: Path, commit_msg: str) -> None:
 
 def main() -> None:
     root_directory = Path(__file__).resolve().parent
+    master_html = obtain_master_content(root_directory)
 
-    # Write expanded Module 6
-    mod6_file = root_directory / "module-6.html"
-    mod6_file.write_text(produce_expanded_module_6(), encoding="utf-8")
-    print(f"Generated expanded: {mod6_file.name}")
+    # 1. Generate individual module files from master_html
+    for i in range(1, 8):
+        pattern = rf'(<section id="section-{i}"\s*>.*?</section>)'
+        match = re.search(pattern, master_html, re.DOTALL)
+        if not match:
+            print(f"Warning: Could not find section-{i} in master content!", file=sys.stderr)
+            continue
 
-    # Write expanded Module 7
-    mod7_file = root_directory / "module-7.html"
-    mod7_file.write_text(produce_expanded_module_7(), encoding="utf-8")
-    print(f"Generated expanded: {mod7_file.name}")
+        raw_sec = match.group(1)
+        mod_page_content = render_module(i, raw_sec)
+        out_file = root_directory / f"module-{i}.html"
+        out_file.write_text(mod_page_content, encoding="utf-8")
+        print(f"Restored full content in: {out_file.name}")
+
+    # 2. Extract and generate master bibliography
+    bib_match = re.search(r'(<section id="master-bibliography".*?</section>)', master_html, re.DOTALL)
+    if bib_match:
+        raw_bib = bib_match.group(1)
+        bib_doc = render_master_bibliography(raw_bib)
+        bib_file = root_directory / "bibliography.html"
+        bib_file.write_text(bib_doc, encoding="utf-8")
+        print(f"Restored: {bib_file.name}")
+
+    # 3. Generate master index portal
+    index_file = root_directory / "core-concepts.html"
+    index_file.write_text(render_portal_index(), encoding="utf-8")
+    print(f"Generated index portal: {index_file.name}")
 
     commit_message = (
-        "Expand all modules with complete diagnostic strengths and forensic audits\n\n"
-        "Upgrade all concept entries in module-6.html and module-7.html into full\n"
-        "four-part forensic dossiers, flesh out diagnostic strengths and forensic\n"
-        "audits across the curriculum, and inject dedicated synthesis cards.\n\n"
-        "- Expand Fiske, Kristeva, Cohen, Postman, and Oliver in Module 6.\n"
-        "- Expand Freire, Noddings, Tort Law, UNCRC, and Young in Module 7.\n"
-        "- Add classroom mechanism scenarios, operational gears, and audits.\n"
-        "- Insert master Critical Synthesis cards for Modules 6 and 7.\n"
-        "- Rebuild core-concepts.html as the primary landing index portal.\n"
-        "- Maintain dual linear navigation and 100% citation-free markup."
+        "Restore full forensic dossiers from git history\n\n"
+        "Recover complete, unabridged sociological dossiers from git commit\n"
+        "b16eae7 and distribute them across dedicated module pages (module-1.html\n"
+        "to module-7.html) with core-concepts.html as the primary landing portal,\n"
+        "while using lightweight typographic styling for module Tables of Contents."
     )
 
     sync_repository(repo_path=root_directory, commit_msg=commit_message)
