@@ -158,15 +158,30 @@
             border-radius: 9999px;
             border: 1px solid #bfdbfe;
         }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .toc-column h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #1e3a8a;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 4px;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
         .toc-list {
             list-style: none;
             padding: 0;
             margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            font-weight: 600;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
-        .toc-list li { margin-bottom: 12px; }
+        .toc-list li { margin-bottom: 6px; }
+        .toc-list li.toc-subitem { padding-left: 14px; font-size: 0.85rem; color: #4b5563; }
         .toc-list a { color: #1e40af; text-decoration: none; transition: color 0.15s ease-in-out; }
         .toc-list a:hover { color: #1d4ed8; text-decoration: underline; }
 
@@ -243,18 +258,52 @@
 
     <h1>A Foundational Primer: Intersex Biology and Australian Legislation</h1>
 
-    <!-- TABLE OF CONTENTS -->
+    <!-- EXPANDED TABLE OF CONTENTS -->
     <nav id="table-of-contents" class="toc-card" aria-label="Table of Contents">
         <div class="toc-card-header">
             <h2>Table of Contents</h2>
-            <span class="toc-badge">Quick Navigation</span>
+            <span class="toc-badge">Detailed Navigation</span>
         </div>
-        <ul class="toc-list" style="columns: 2; -webkit-columns: 2; column-gap: 40px;">
-            <li><a href="#orientation">1. Orientation & Definitions</a></li>
-            <li><a href="#biology">2. Biological Foundations</a></li>
-            <li><a href="#identity">3. Identity & Expression</a></li>
-            <li><a href="#legislation">4. The Sex Discrimination Act 1984 (Cth)</a></li>
-        </ul>
+        <div class="toc-grid">
+            <div class="toc-column">
+                <h4>1. Orientation</h4>
+                <ul class="toc-list">
+                    <li><a href="#orientation">Conceptual Overview</a></li>
+                    <li class="toc-subitem"><a href="#definitions-dictionary">Definitions Dictionary</a></li>
+                </ul>
+                <h4 style="margin-top: 18px;">2. Biology</h4>
+                <ul class="toc-list">
+                    <li><a href="#biology">Biological Foundations</a></li>
+                    <li class="toc-subitem"><a href="#sec2">Jacob's Syndrome (47,XYY)</a></li>
+                    <li class="toc-subitem"><a href="#sec3">Reproductive Capabilities</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <h4>3. Identity</h4>
+                <ul class="toc-list">
+                    <li><a href="#sec3-identity">Identity & Expression</a></li>
+                    <li class="toc-subitem"><a href="#sec3-identity">Sex vs. Gender</a></li>
+                    <li class="toc-subitem"><a href="#sec3-identity">Clinical Precedents</a></li>
+                </ul>
+                <h4 style="margin-top: 18px;">4. Legislation</h4>
+                <ul class="toc-list">
+                    <li><a href="#legislation">Sex Discrimination Act 1984</a></li>
+                    <li class="toc-subitem"><a href="#legislation">Legislative History</a></li>
+                    <li class="toc-subitem"><a href="#legislation">Protected Attributes</a></li>
+                </ul>
+            </div>
+            <div class="toc-column">
+                <h4>4. SDA (Cont.)</h4>
+                <ul class="toc-list">
+                    <li class="toc-subitem"><a href="#legislation">Direct & Indirect Tests</a></li>
+                    <li class="toc-subitem"><a href="#legislation">Covered Public Areas</a></li>
+                    <li class="toc-subitem"><a href="#legislation">Harassment & Duty</a></li>
+                    <li class="toc-subitem"><a href="#legislation">Exemptions & Exceptions</a></li>
+                    <li class="toc-subitem"><a href="#legislation">Landmark Cases</a></li>
+                    <li class="toc-subitem"><a href="#legislation">Liability & Enforcement</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- SECTION 1 -->
