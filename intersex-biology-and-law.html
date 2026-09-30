@@ -34,14 +34,14 @@
             line-height: 1.2;
         }
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 6px;
             margin-top: 48px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-top: 28px;
             margin-bottom: 12px;
             color: #0f172a;
@@ -90,13 +90,12 @@
         }
 
         @media print {
-            h1, h2, h3 { page-break-after: avoid; }
+            h1, h2, h3, h4 { page-break-after: avoid; }
             table { page-break-inside: avoid; }
         }
 
-        .section-summary {
-            margin-bottom: 28px;
-            padding-bottom: 16px;
+        .section-block {
+            margin-bottom: 36px;
         }
 
         figure {
@@ -160,11 +159,11 @@
         }
         .toc-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 20px;
         }
         .toc-column h4 {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: #1e3a8a;
@@ -181,7 +180,7 @@
             line-height: 1.5;
         }
         .toc-list li { margin-bottom: 6px; }
-        .toc-list li.toc-subitem { padding-left: 14px; font-size: 0.85rem; color: #4b5563; }
+        .toc-list li.toc-subitem { padding-left: 12px; font-size: 0.85rem; }
         .toc-list a { color: #1e40af; text-decoration: none; transition: color 0.15s ease-in-out; }
         .toc-list a:hover { color: #1d4ed8; text-decoration: underline; }
 
@@ -258,58 +257,62 @@
 
     <h1>A Foundational Primer: Intersex Biology and Australian Legislation</h1>
 
-    <!-- EXPANDED TABLE OF CONTENTS -->
+    <!-- TABLE OF CONTENTS -->
     <nav id="table-of-contents" class="toc-card" aria-label="Table of Contents">
         <div class="toc-card-header">
             <h2>Table of Contents</h2>
-            <span class="toc-badge">Detailed Navigation</span>
+            <span class="toc-badge">Document Index</span>
         </div>
         <div class="toc-grid">
             <div class="toc-column">
                 <h4>1. Orientation</h4>
                 <ul class="toc-list">
-                    <li><a href="#orientation">Conceptual Overview</a></li>
-                    <li class="toc-subitem"><a href="#definitions-dictionary">Definitions Dictionary</a></li>
+                    <li><a href="#sec1">Orientation &amp; Definitions</a></li>
+                    <li class="toc-subitem"><a href="#sec1-overview">Conceptual Overview</a></li>
+                    <li class="toc-subitem"><a href="#sec1-dict">Definitions Dictionary</a></li>
                 </ul>
-                <h4 style="margin-top: 18px;">2. Biology</h4>
+            </div>
+            <div class="toc-column">
+                <h4>2. Biology</h4>
                 <ul class="toc-list">
-                    <li><a href="#biology">Biological Foundations</a></li>
-                    <li class="toc-subitem"><a href="#sec2">Jacob's Syndrome (47,XYY)</a></li>
-                    <li class="toc-subitem"><a href="#sec3">Reproductive Capabilities</a></li>
+                    <li><a href="#sec2">Biological Foundations</a></li>
+                    <li class="toc-subitem"><a href="#sec2-assembly">The Assembly Line</a></li>
+                    <li class="toc-subitem"><a href="#sec2-variations">Common Variations</a></li>
+                    <li class="toc-subitem"><a href="#sec2-xyy">Jacob's Syndrome</a></li>
+                    <li class="toc-subitem"><a href="#sec2-fertility">Reproductive Capabilities</a></li>
                 </ul>
             </div>
             <div class="toc-column">
                 <h4>3. Identity</h4>
                 <ul class="toc-list">
-                    <li><a href="#sec3-identity">Identity & Expression</a></li>
-                    <li class="toc-subitem"><a href="#sec3-identity">Sex vs. Gender</a></li>
-                    <li class="toc-subitem"><a href="#sec3-identity">Clinical Precedents</a></li>
-                </ul>
-                <h4 style="margin-top: 18px;">4. Legislation</h4>
-                <ul class="toc-list">
-                    <li><a href="#legislation">Sex Discrimination Act 1984</a></li>
-                    <li class="toc-subitem"><a href="#legislation">Legislative History</a></li>
-                    <li class="toc-subitem"><a href="#legislation">Protected Attributes</a></li>
+                    <li><a href="#sec3">Identity &amp; Expression</a></li>
+                    <li class="toc-subitem"><a href="#sec3-distinction">Sex vs. Gender</a></li>
+                    <li class="toc-subitem"><a href="#sec3-elements">Elements of Gender</a></li>
+                    <li class="toc-subitem"><a href="#sec3-clinical">Clinical Precedents</a></li>
                 </ul>
             </div>
             <div class="toc-column">
-                <h4>4. SDA (Cont.)</h4>
+                <h4>4. Legislation</h4>
                 <ul class="toc-list">
-                    <li class="toc-subitem"><a href="#legislation">Direct & Indirect Tests</a></li>
-                    <li class="toc-subitem"><a href="#legislation">Covered Public Areas</a></li>
-                    <li class="toc-subitem"><a href="#legislation">Harassment & Duty</a></li>
-                    <li class="toc-subitem"><a href="#legislation">Exemptions & Exceptions</a></li>
-                    <li class="toc-subitem"><a href="#legislation">Landmark Cases</a></li>
-                    <li class="toc-subitem"><a href="#legislation">Liability & Enforcement</a></li>
+                    <li><a href="#sec4">Sex Discrimination Act 1984</a></li>
+                    <li class="toc-subitem"><a href="#sec4-history">Legislative History</a></li>
+                    <li class="toc-subitem"><a href="#sec4-attributes">Protected Attributes</a></li>
+                    <li class="toc-subitem"><a href="#sec4-tests">Discrimination Tests</a></li>
+                    <li class="toc-subitem"><a href="#sec4-areas">Covered Areas</a></li>
+                    <li class="toc-subitem"><a href="#sec4-harassment">Harassment &amp; Duty</a></li>
+                    <li class="toc-subitem"><a href="#sec4-exemptions">Exemptions</a></li>
+                    <li class="toc-subitem"><a href="#sec4-cases">Precedents &amp; Inquiries</a></li>
+                    <li class="toc-subitem"><a href="#sec4-enforcement">Enforcement</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- SECTION 1 -->
-    <h2 id="orientation">1. Orientation & Definitions</h2>
-    <div class="section-summary">
-        <h3>Conceptual Overview</h3>
+    <section id="sec1" class="section-block">
+        <h2>1. Orientation &amp; Definitions</h2>
+
+        <h3 id="sec1-overview">Conceptual Overview</h3>
         <p>
             Biological sex is frequently introduced in education as a simple, binary on/off switch determined definitively at the moment of conception by XX or XY chromosomes. In reality, human sexual differentiation is a multi-stage developmental cascade.
         </p>
@@ -317,7 +320,7 @@
             This guide provides an empirical overview of the biological mechanics of sex differentiation alongside statutory legal definitions. By exploring chromosomal variations, physiological development, and psychological definitions, it aims to establish an objective foundation for understanding the legal and operational obligations organizations face under Australian law.
         </p>
 
-        <h3>Definitions Dictionary</h3>
+        <h3 id="sec1-dict">Definitions Dictionary</h3>
         <table>
             <thead>
                 <tr>
@@ -352,16 +355,16 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </section>
 
     <!-- SECTION 2 -->
-    <h2 id="biology">2. Biological Foundations</h2>
-    <div class="section-summary">
+    <section id="sec2" class="section-block">
+        <h2>2. Biological Foundations</h2>
         <p>
             This section maps the multi-stage chemical assembly line of fetal development, detailing the physiological checkpoints where intersex variations naturally emerge.
         </p>
 
-        <h3>The Biological Assembly Line</h3>
+        <h3 id="sec2-assembly">The Biological Assembly Line</h3>
         <p>
             For the first six weeks of gestation, human embryos undergo identical anatomical development regardless of their chromosomal makeup. During this period, the embryo possesses <strong>bipotential gonads</strong>—undifferentiated internal tissues capable of developing into either ovaries or testes. Simultaneously, the embryo contains two distinct sets of internal physiological precursors: the Müllerian ducts (foundational structures for the uterus and fallopian tubes) and the Wolffian ducts (foundational structures for the vas deferens and seminal vesicles).
         </p>
@@ -386,100 +389,84 @@
             </div>
         </aside>
 
-        <h3>Atypical Pathways and Checkpoints</h3>
+        <h3 id="sec2-variations">Common Variations and Checkpoints</h3>
         <p>
-            Variations occurring at any stage in this pathway produce variations in sex characteristics:
+            Variations occurring at any stage in this pathway produce differences in sex characteristics:
         </p>
         <ul>
-            <li><strong>Klinefelter Syndrome (47,XXY):</strong> An individual inherits an extra X chromosome. The presence of the Y chromosome ensures the development of male internal and external anatomy. However, the additional X chromosome alters testicular function, typically resulting in reduced testosterone production during adolescence and impaired spermatogenesis (sperm production).</li>
-            <li><strong>Turner Syndrome (45,X0):</strong> An individual is born with a single X chromosome. Without the presence of a Y chromosome, the external anatomy typically develops as female. However, the absence of the second X chromosome usually prevents the ovaries from fully maturing into functional organs, resulting in "streak gonads" that do not produce standard levels of estrogen or viable ova (eggs).</li>
+            <li><strong>Klinefelter Syndrome (47,XXY):</strong> An individual inherits an extra X chromosome. The presence of the Y chromosome ensures the development of male internal and external anatomy. However, the additional X chromosome alters testicular function, typically resulting in reduced testosterone production during adolescence and impaired spermatogenesis.</li>
+            <li><strong>Turner Syndrome (45,X0):</strong> An individual is born with a single X chromosome. Without the presence of a Y chromosome, the external anatomy typically develops as female. However, the absence of the second X chromosome usually prevents the ovaries from fully maturing into functional organs, resulting in fibrous "streak gonads".</li>
+            <li><strong>Swyer Syndrome (46,XY Gonadal Dysgenesis):</strong> An individual possesses an XY chromosomal pairing, but the SRY gene on the Y chromosome is missing or mutated. Consequently, the signal to develop testes is never generated. The internal assembly defaults to the female pathway, producing female external anatomy and a uterus alongside non-functional streak tissue.</li>
+            <li><strong>Androgen Insensitivity Syndrome (AIS):</strong> In 46,XY individuals, testes develop and produce testosterone. However, a genetic mutation renders target cell androgen receptors unresponsive. Masculinization fails to occur, resulting in female external anatomy. Concurrently, the testes produce AMH, which dissolves the Müllerian ducts, resulting in undescended testes and an absent uterus.</li>
+            <li><strong>Congenital Adrenal Hyperplasia (CAH):</strong> Individuals with CAH (typically 46,XX) develop a standard uterus and ovaries. However, an enzyme deficiency causes adrenal glands to overproduce androgens during fetal development, frequently resulting in masculinized external genitalia despite functional internal female organs.</li>
+            <li><strong>5-Alpha Reductase Deficiency (5-ARD):</strong> 46,XY individuals possess functional testes producing testosterone, but lack the enzyme required to convert it into DHT in utero. Infants present with female or ambiguous external genitalia. During puberty, a secondary surge of standard testosterone bypasses the need for DHT, driving penile growth and testicular descent.</li>
         </ul>
 
-        <h4>Gonadal Differentiation (The SRY Gene)</h4>
-        <p>
-            The Y chromosome's primary role in sexual differentiation is carrying the <strong>SRY gene</strong> (Sex-determining Region Y). The SRY gene acts as a biological catalyst; its activation triggers the bipotential gonads to differentiate into testes. If the SRY gene is absent, the gonads default to developing as ovaries.
-        </p>
-        <ul>
-            <li><strong>Swyer Syndrome (XY Gonadal Dysgenesis):</strong> An individual possesses an XY chromosomal pairing, but the SRY gene on the Y chromosome is either missing or mutated. Consequently, the signal to develop testes is never generated. The internal assembly defaults to the female pathway, resulting in typical female external anatomy and a uterus. However, the gonads do not fully form inside.</li>
-        </ul>
-
-        <h4>Hormonal Secretion and Receptor Binding</h4>
-        <p>
-            Once differentiated, the gonads take control of development by secreting hormones. Testes produce androgens (such as testosterone) to stimulate the Wolffian ducts and external male genitalia, while simultaneously secreting Anti-Müllerian Hormone (AMH) to actively dissolve the female Müllerian ducts. Ovaries secrete estrogens to facilitate the maturation of the Müllerian ducts into a uterus.
-        </p>
-        <p>
-            Intersex variations frequently occur when the body's cellular receptors fail to bind with these hormones, or when hormonal production itself is altered:
-        </p>
-        <ul>
-            <li><strong>Androgen Insensitivity Syndrome (AIS):</strong> In individuals with AIS (chromosomally XY), the testes develop and successfully produce testosterone. However, a genetic mutation renders the body's androgen receptors unresponsive. Because the cellular tissue cannot "read" the testosterone, masculinization does not occur, and the external anatomy develops as female. Concurrently, the testes successfully produce AMH, which dissolves the Müllerian ducts. The result is an individual with external female anatomy, undescended testes, and an absent uterus.</li>
-            <li><strong>Congenital Adrenal Hyperplasia (CAH):</strong> Individuals with CAH (typically chromosomally XX) develop a standard uterus and ovaries. However, an enzyme deficiency causes their adrenal glands to overproduce androgens during fetal development. This heavy in-utero exposure to male-typical hormones often leads to the masculinization of the external genitalia, despite the presence of functional internal female reproductive organs.</li>
-            <li><strong>5-Alpha Reductase Deficiency (5-ARD):</strong> Individuals with 5-ARD (chromosomally XY) possess testes that produce standard testosterone. However, they lack the specific enzyme (5-alpha reductase) required to convert testosterone into dihydrotestosterone (DHT)—the highly potent androgen strictly required to masculinize external genitalia in utero. Consequently, these individuals are typically born with female-appearing or ambiguous genitalia. During the onset of puberty, however, a massive secondary surge of standard testosterone occurs, bypassing the need for DHT and naturally catalyzing rapid male physical development.</li>
-        </ul>
-    </div>
-
-    <!-- SECTION 2 -->
-    <h2 id="sec2">Jacob's Syndrome (47,XYY)</h2>
-    <div class="section-summary">
+        <h3 id="sec2-xyy">Diagnostic Note: Jacob's Syndrome (47,XYY)</h3>
         <p>
             Jacob's Syndrome involves an individual inheriting an extra Y chromosome. While this is a chromosomal variation, it is clinically <strong>not classified as an intersex condition.</strong>
         </p>
         <p>
-            This distinction exists because the extra Y chromosome does not disrupt or create ambiguity within the biological differentiation cascade. The Y chromosome dictates male development; possessing an additional copy simply reiterates the same genetic instruction, allowing physiological development to proceed unambiguously along the typical male pathway.
+            This distinction exists because the extra Y chromosome does not disrupt or create ambiguity within the biological differentiation cascade. Male development proceeds along typical physiological pathways, and reproductive anatomy and fertility are generally preserved. The primary observable traits relate to growth (such as above-average height) rather than atypical sexual differentiation.
         </p>
+
+        <h3 id="sec2-fertility">Reproductive Capabilities</h3>
         <p>
-            Because reproductive anatomy and gonadal function develop as expected, an estimated 85% to 90% of men with 47,XYY remain undiagnosed. The primary observable traits relate to physical growth and neurodevelopment—such as significantly above-average height—rather than sexual differentiation.
+            A common assumption is that intersex individuals are universally infertile. In reality, reproductive capabilities depend entirely upon the specific underlying variation:
         </p>
-    </div>
+        <ul>
+            <li><strong>Uterine Gestation:</strong> Individuals with functional uterine anatomy but non-functional ovaries (such as Swyer Syndrome or Turner Syndrome) can frequently carry a pregnancy to term through IVF using donor ova.</li>
+            <li><strong>Testicular Extraction:</strong> Men with non-obstructive azoospermia resulting from Klinefelter Syndrome (47,XXY) can frequently achieve biological fatherhood through Microdissection Testicular Sperm Extraction (Micro-TESE).</li>
+            <li><strong>Complete Agenesis:</strong> Individuals with Complete Androgen Insensitivity Syndrome (CAIS) lack both a uterus for gestation and functional spermatogenesis, currently precluding biological reproduction.</li>
+        </ul>
+    </section>
 
     <!-- SECTION 3 -->
-    <h2 id="sec3">Reproductive Capabilities</h2>
-    <div class="section-summary">
-        <p>
-            A common assumption is that intersex individuals are universally infertile. In reality, reproductive capabilities are highly individualized and depend entirely upon the specific underlying biological variation.
-        </p>
-        <p>
-            Certain variations preserve the structural integrity of the uterus, even if ovarian function is altered. Individuals with <strong>Swyer Syndrome (XY)</strong> or <strong>Turner Syndrome (X0)</strong> typically do not produce viable ova. However, because their uterine anatomy is fully formed, they can often carry a pregnancy to term via IVF using donor ova.
-        </p>
-        <p>
-            Conversely, individuals with <strong>Klinefelter Syndrome (47,XXY)</strong>, historically considered infertile, can now frequently achieve biological fatherhood through advanced surgical extraction techniques like <strong>Micro-TESE</strong>.
-        </p>
-        <p>
-            Certain anatomical variations do preclude biological reproduction using current medical technology. Individuals with <strong>Complete Androgen Insensitivity Syndrome (CAIS)</strong> possess neither a uterus for gestation nor functional spermatogenesis, rendering biological reproduction currently impossible.
-        </p>
-    </div>
+    <section id="sec3" class="section-block">
+        <h2>3. Identity &amp; Expression</h2>
 
-    <!-- PART 2 DIVIDER -->
-    <div class="part-divider-banner" id="part-2">
-        <div class="part-banner-header">
-            <h3>Part 2: Identity & Expression</h3>
-            <span class="part-pill">Psychology & Definitions</span>
-        </div>
-        <p class="part-lead-summary">
-            Part 2 transitions from the physical body to the internal and social dimensions of an individual, outlining the strict definitional differences between biological sex and psychological gender identity.
-        </p>
-        <div class="part-chapter-roadmaps">
-            <div class="roadmap-item">
-                <strong>Section 3: Identity & Expression</strong>
-                <p>Deconstructs the conflation of biology and identity, formally distinguishing between internal gender identity, external expression, and societal roles.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 3 (Identity) -->
-    <div class="section-summary" id="sec3-identity">
-        <h3>The Distinction Between Sex and Gender</h3>
+        <h3 id="sec3-distinction">The Distinction Between Sex and Gender</h3>
         <p>
             To accurately navigate clinical, legal, and administrative frameworks, it is necessary to distinguish between the physical reality of biological sex and the psychological and societal dimensions of gender.
         </p>
         <p>
-            While biological sex relates to physiological characteristics (chromosomes, gonads, and hormones), gender operates distinctly; it encompasses an individual's internal sense of self and their social presentation. It is formally understood across medicine and psychology through three distinct components:
+            In evolutionary biology, sexual reproduction across species is categorized by <strong>anisogamy</strong>—the presence of two distinct gamete sizes (large ova and small spermatozoa). Evolutionary biology therefore classifies the reproductive architecture of the species as binary. However, individual embryological development results in multi-layered physiological variations across chromosomes, gonads, hormones, and anatomical traits:
         </p>
 
+        <div class="svg-container">
+            <svg viewBox="0 0 800 120" width="100%" height="100%" style="max-width: 800px; display: block; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#1e40af" />
+                    </marker>
+                </defs>
+                <rect x="5" y="25" width="165" height="70" rx="6" fill="#f1f5f9" stroke="#1e40af" stroke-width="2"/>
+                <text x="87.5" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">Chromosomal Sex</text>
+                <text x="87.5" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#4b5563" text-anchor="middle">(XX, XY)</text>
+                <line x1="170" y1="60" x2="205" y2="60" stroke="#1e40af" stroke-width="3" marker-end="url(#arrow)"/>
+                <rect x="215" y="25" width="155" height="70" rx="6" fill="#f1f5f9" stroke="#1e40af" stroke-width="2"/>
+                <text x="292.5" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">Gonadal Sex</text>
+                <text x="292.5" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#4b5563" text-anchor="middle">(Ovaries, Testes)</text>
+                <line x1="370" y1="60" x2="405" y2="60" stroke="#1e40af" stroke-width="3" marker-end="url(#arrow)"/>
+                <rect x="415" y="25" width="165" height="70" rx="6" fill="#f1f5f9" stroke="#1e40af" stroke-width="2"/>
+                <text x="497.5" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">Hormonal Sex</text>
+                <text x="497.5" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#4b5563" text-anchor="middle">(Estrogen, Androgens)</text>
+                <line x1="580" y1="60" x2="615" y2="60" stroke="#1e40af" stroke-width="3" marker-end="url(#arrow)"/>
+                <rect x="625" y="25" width="170" height="70" rx="6" fill="#f1f5f9" stroke="#1e40af" stroke-width="2"/>
+                <text x="710" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">Anatomical Sex</text>
+                <text x="710" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#4b5563" text-anchor="middle">(Genitalia, Traits)</text>
+            </svg>
+        </div>
+
+        <h3 id="sec3-elements">Elements of Gender</h3>
+        <p>
+            Gender operates distinctly from biological development; it encompasses an individual's internal sense of self and social presentation:
+        </p>
         <table>
             <thead>
                 <tr>
                     <th style="width: 25%;">Component</th>
-                    <th style="width: 75%;">Clinical & Psychological Definition</th>
+                    <th style="width: 75%;">Clinical &amp; Psychological Definition</th>
                 </tr>
             </thead>
             <tbody>
@@ -498,40 +485,23 @@
             </tbody>
         </table>
 
-        <h3>Clinical Precedents and Psychological Stability</h3>
+        <h3 id="sec3-clinical">Clinical Precedents and Psychological Stability</h3>
         <p>
-            During the mid-to-late twentieth century, medical protocols for infants born with ambiguous genitalia frequently recommended early cosmetic surgery to align external anatomy with an assigned sex, operating under the theory that gender identity was purely malleable and shaped by socialization—believing that if an infant's anatomy was surgically aligned to a specific sex and they were raised accordingly, their internal identity would simply adapt to match the surgical outcome.
+            During the mid-to-late twentieth century, medical protocols for infants born with ambiguous genitalia frequently recommended early cosmetic surgery to align external anatomy with an assigned sex, operating under the theory that gender identity was purely malleable and shaped by socialization.
         </p>
         <p>
             Longitudinal clinical outcomes demonstrated that this approach can lead to significant psychological distress when an individual's inherent gender identity does not align with the biological sex medically assigned to them in infancy. These clinical outcomes have solidified the contemporary medical understanding that gender identity possesses an innate psychological component that cannot be reliably engineered or altered by early surgical intervention.
         </p>
-    </div>
-
-    <!-- PART 3 DIVIDER -->
-    <div class="part-divider-banner" id="part-3">
-        <div class="part-banner-header">
-            <h3>Part 3: Law & Human Rights</h3>
-            <span class="part-pill">Australian Legislation</span>
-        </div>
-        <p class="part-lead-summary">
-            Part 3 examines how the Australian legal system codifies the biological realities of sex and intersex status, establishing enforceable human rights and bodily autonomy protections.
-        </p>
-        <div class="part-chapter-roadmaps">
-            <div class="roadmap-item">
-                <strong>Section 4: The Sex Discrimination Act 1984 (Cth)</strong>
-                <p>Covers the legislative history, judicial interpretation, statutory definitions, direct/indirect discrimination tests, and enforcement mechanisms.</p>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- SECTION 4 -->
-    <h2 id="legislation">4. The Sex Discrimination Act 1984 (Cth)</h2>
-    <div class="section-summary">
+    <section id="sec4" class="section-block">
+        <h2>4. The Sex Discrimination Act 1984 (Cth)</h2>
         <p>
-            The <em>Sex Discrimination Act 1984</em> (Cth) (SDA) is the primary federal law that protects people across Australia from discrimination and harassment.
+            The <em>Sex Discrimination Act 1984</em> (Cth) (SDA) is the primary federal law protecting individuals across Australia from discrimination and harassment.
         </p>
 
-        <h3>History and Creation of the Act</h3>
+        <h3 id="sec4-history">History and Creation of the Act</h3>
         <p>
             Prior to the 1980s, Australian women faced widespread systemic inequality, including limited access to credit and housing, restrictions in male-dominated professions, and an absence of legal recourse for workplace sexual harassment.
         </p>
@@ -542,109 +512,95 @@
             Following the election of the Hawke Labor Government in 1983, Senator Susan Ryan introduced the Sex Discrimination Bill into the Senate. The bill faced intense opposition from conservative politicians and traditional lobby groups who argued federal intervention would undermine state rights and the nuclear family. Following major parliamentary debate and compromises—including temporary exemptions for superannuation, insurance, and religious bodies—the bill passed and commenced operation on August 1, 1984, establishing the Office of the Sex Discrimination Commissioner.
         </p>
         <p>
-            Key historical amendments over the decades include the 1995 removal of military combat exclusions for women, the landmark 2013 amendments adding explicit protections against discrimination based on <strong>sexual orientation, gender identity, and intersex status</strong>, and the 2021–2022 <em>Respect@Work</em> reforms introducing a positive statutory duty on employers to actively prevent workplace harassment.
+            Key historical amendments include the 1995 removal of combat exclusions for women, the 2013 amendments establishing explicit protections for <strong>sexual orientation, gender identity, and intersex status</strong>, and the 2021–2022 <em>Respect@Work</em> reforms introducing an enforceable positive duty on employers.
         </p>
 
-        <h3>What the Law Aims to Achieve</h3>
+        <h3 id="sec4-attributes">Protected Attributes</h3>
         <p>
-            The main goals of the Act are to:
-        </p>
-        <ul>
-            <li>Stop discrimination in everyday areas of public life (like work, school, and housing) based on sex, sexual orientation, gender identity, intersex status, relationship status, pregnancy, breastfeeding, or family responsibilities.</li>
-            <li>Eliminate sexual harassment, sex-based harassment, and hostile workplaces.</li>
-            <li>Promote equality between men and women.</li>
-        </ul>
-
-        <h3>Protected Attributes</h3>
-        <p>
-            The law protects people from being treated unfairly based on specific personal traits:
+            The SDA makes discrimination unlawful based on eight protected personal attributes:
         </p>
         <ul>
             <li><strong>Sex:</strong> Being male or female.</li>
-            <li><strong>Intersex Status:</strong> Having physical, hormonal, or genetic features that are neither wholly female nor wholly male, a combination of both, or neither. This is treated strictly as a biological attribute, completely separate from gender identity or sexual orientation.</li>
+            <li><strong>Intersex Status:</strong> Having physical, hormonal, or genetic features that are neither wholly female nor wholly male, a combination of both, or neither. This is codified strictly as an objective biological attribute, distinct from identity or orientation.</li>
             <li><strong>Gender Identity:</strong> A person's internal sense of gender, appearance, or mannerisms, regardless of the sex they were assigned at birth.</li>
-            <li><strong>Sexual Orientation:</strong> Being attracted to people of the same sex, a different sex, or both.</li>
+            <li><strong>Sexual Orientation:</strong> Attraction toward persons of the same sex, a different sex, or both.</li>
             <li><strong>Marital or Relationship Status:</strong> Being single, married, separated, divorced, in a de facto relationship, or a surviving partner.</li>
-            <li><strong>Pregnancy and Breastfeeding:</strong> Protecting women who are pregnant, planning to become pregnant, or breastfeeding.</li>
-            <li><strong>Family Responsibilities:</strong> Protecting employees who need to care for dependent children or family members.</li>
+            <li><strong>Pregnancy and Breastfeeding:</strong> Protecting women who are pregnant, planning to become pregnant, or breastfeeding/expressing milk.</li>
+            <li><strong>Family Responsibilities:</strong> Protecting employees who care for dependent children or immediate family members.</li>
         </ul>
 
-        <h3>How Discrimination Happens Under the Law</h3>
+        <h3 id="sec4-tests">How Discrimination Happens Under the Law</h3>
         <p>
-            The Act recognizes two main types of discrimination:
+            The Act recognizes two distinct legal mechanisms of discrimination:
         </p>
         <ul>
-            <li><strong>Direct Discrimination:</strong> Treating someone worse than you would treat another person in the same situation, simply because of a protected trait (like their intersex status or sex). If an action was done for several reasons, it is still unlawful as long as discrimination was one of the reasons, even if it wasn't the main one.</li>
-            <li><strong>Indirect Discrimination:</strong> Imposing a rule or practice that is the same for everyone, but unfairly disadvantages people with a certain protected trait. However, this is not unlawful if the rule can be proven to be <strong>reasonable in the circumstances</strong>. The person or organization applying the rule has to prove it is fair and balanced.</li>
+            <li><strong>Direct Discrimination:</strong> Treating someone less favourably than another person in the same or not materially different circumstances because of a protected attribute. If an act is done for multiple reasons, it remains unlawful as long as the discriminatory ground was an operative reason, even if not the dominant one.</li>
+            <li><strong>Indirect Discrimination:</strong> Imposing a neutral condition, requirement, or practice that disadvantages people sharing a protected attribute. An indirect rule is not unlawful if it is proven to be <strong>reasonable in the circumstances</strong>. The respondent carries the burden of proving that the requirement is reasonable and proportionate.</li>
         </ul>
         <p>
-            The Act also allows organizations to take <strong>special measures</strong> (affirmative action) specifically designed to help achieve true equality for groups that face disadvantage.
+            Section 7D authorizes <strong>special measures</strong> (affirmative action) designed to achieve substantive equality for disadvantaged groups, which are not considered unlawful discrimination.
         </p>
 
-        <h3>Areas of Covered Public Activity</h3>
+        <h3 id="sec4-areas">Areas of Covered Public Activity</h3>
         <p>
-            Discrimination is illegal under the SDA in several key areas of public life:
+            The Act prohibits discrimination in defined public spheres:
         </p>
         <ul>
-            <li><strong>Employment:</strong> Hiring, firing, promotions, pay, and training (covering regular employees, contract workers, and commission agents).</li>
-            <li><strong>Education:</strong> School and university admissions, student rules, access to facilities, and expulsions.</li>
-            <li><strong>Goods, Services, and Facilities:</strong> Accessing businesses, banking, insurance, entertainment, and government services.</li>
-            <li><strong>Accommodation and Land:</strong> Renting a home, staying in a hotel, or buying real estate.</li>
-            <li><strong>Clubs:</strong> Sporting, social, or cultural clubs with 30 or more members that supply alcohol and maintain facilities.</li>
-            <li><strong>Administration of Laws and Programs:</strong> Binds government officials carrying out public laws or running federal programs.</li>
-            <li><strong>Prohibited Requests for Information:</strong> Makes it unlawful to ask job applicants invasive questions (such as asking about pregnancy plans or marital status) if people without that attribute wouldn't be asked.</li>
+            <li><strong>Employment and Work:</strong> Hiring, conditions, promotions, training, transfers, and dismissals across employees, contractors, and commission agents.</li>
+            <li><strong>Education:</strong> Student admissions, terms, benefits, disciplinary actions, and expulsions.</li>
+            <li><strong>Goods, Services, and Facilities:</strong> Provision of business, professional, entertainment, retail, and public services.</li>
+            <li><strong>Accommodation and Land:</strong> Tenancy applications, lease terms, evictions, and land dispositions.</li>
+            <li><strong>Clubs:</strong> Membership admission and access to facilities in associations of 30 or more persons supplying alcohol.</li>
+            <li><strong>Administration of Laws and Programs:</strong> Performance of statutory duties by federal officials and delivery of Commonwealth programs.</li>
+            <li><strong>Prohibited Inquiries:</strong> Requesting information (such as parental intentions during interviews) that would not be asked of persons without that attribute.</li>
         </ul>
 
-        <h3>Harassment and Hostile Work Environments</h3>
+        <h3 id="sec4-harassment">Harassment and Positive Duties</h3>
         <p>
-            The Act prohibits specific forms of harassment:
+            The Act establishes distinct protections regarding workplace conduct:
         </p>
         <ul>
-            <li><strong>Sexual Harassment:</strong> Unwelcome sexual advances, requests for favors, or sexual conduct that a reasonable person would expect to offend, humiliate, or intimidate someone.</li>
-            <li><strong>Sex-Based Harassment:</strong> Unwelcome, demeaning behavior directed at someone because of their sex.</li>
-            <li><strong>Hostile Work Environments:</strong> Subjecting someone to an offensive, intimidating, or humiliating workplace based on sex.</li>
+            <li><strong>Sexual Harassment:</strong> Unwelcome sexual advances, requests for favors, or sexual conduct where a reasonable person would anticipate offense, humiliation, or intimidation.</li>
+            <li><strong>Sex-Based Harassment:</strong> Unwelcome, demeaning conduct directed at someone because of their sex.</li>
+            <li><strong>Hostile Work Environments:</strong> Subjecting someone to a workplace environment that is offensive, intimidating, or humiliating on the ground of sex.</li>
+            <li><strong>The Positive Duty (Part IIA):</strong> Employers and persons conducting a business or undertaking (PCBUs) must take reasonable and proportionate measures to eliminate sex discrimination, sexual harassment, and hostile environments as far as possible.</li>
         </ul>
 
-        <h3>The Positive Duty</h3>
+        <h3 id="sec4-exemptions">Statutory Exemptions and Exceptions</h3>
         <p>
-            Employers and business owners have an active legal obligation to take reasonable, proactive steps to prevent workplace sex discrimination, sexual harassment, and hostile work environments before they happen. Compliance is judged based on the size of the business, its resources, and what practical steps could reasonably be taken. The Australian Human Rights Commission (AHRC) monitors compliance and can issue compliance notices.
-        </p>
-
-        <h3>Statutory Exemptions and Exceptions</h3>
-        <p>
-            The law provides specific, limited exceptions where differential treatment is lawful:
+            The SDA provides specific statutory exemptions where differential treatment remains lawful:
         </p>
         <ul>
-            <li><strong>Genuine Occupational Qualifications:</strong> Jobs where specific physical attributes (excluding brute strength), privacy, decency (such as conducting body searches), or dramatic authenticity make it necessary to hire someone of a particular sex.</li>
-            <li><strong>Pregnancy Rights:</strong> Allowing employers to grant women special privileges or leave related to pregnancy, childbirth, or breastfeeding without men being able to claim discrimination.</li>
-            <li><strong>Single-Sex Services:</strong> Services that can only naturally be provided to members of one sex.</li>
-            <li><strong>Religious Bodies and Schools:</strong> Exemptions allowing religious organizations and faith-based schools to operate in line with their religious doctrines, particularly regarding ordination or staff employment (though religious bodies are not exempt from discrimination laws when providing Commonwealth-funded aged care).</li>
-            <li><strong>Competitive Sport:</strong> Excluding participants from competitive sports where physical strength, stamina, or physique are relevant. This does not apply to children under 12, coaching, or officiating.</li>
-            <li><strong>Record-Keeping:</strong> Systems are not unlawful merely because they do not provide an option to identify as neither male nor female.</li>
-            <li><strong>Temporary Exemptions:</strong> The AHRC can grant short-term exemptions (up to 5 years) in specific circumstances.</li>
+            <li><strong>Genuine Occupational Qualifications:</strong> Roles where sex is an authentic job requirement for physical attributes (excluding brute strength), authenticity in dramatic roles, or personal privacy (such as fitting clothing or conducting searches).</li>
+            <li><strong>Pregnancy Rights:</strong> Granting women special privileges or leave regarding pregnancy, childbirth, or breastfeeding without men claiming discrimination.</li>
+            <li><strong>Single-Sex Services:</strong> Facilities or services that can only naturally be provided to members of one sex.</li>
+            <li><strong>Religious Bodies and Educational Institutions:</strong> Exceptions for religious bodies regarding ordination and doctrine, and faith-based schools regarding staff employment and student enrollment (excluding Commonwealth-funded aged care).</li>
+            <li><strong>Competitive Sport:</strong> Excluding participants on grounds of sex, gender identity, or intersex status where strength, stamina, or physique are relevant. Does not apply to children under 12, coaching, or refereeing.</li>
+            <li><strong>Record-Keeping:</strong> Systems are not unlawful merely because they do not accommodate non-binary markers.</li>
+            <li><strong>Temporary Exemptions:</strong> The AHRC may grant administrative exemptions for up to 5 years.</li>
         </ul>
 
-        <h3>Landmark Commission Inquiries and Court Cases</h3>
+        <h3 id="sec4-cases">Landmark Commission Inquiries and Court Cases</h3>
         <p>
-            While thousands of complaints are resolved through confidential conciliation at the AHRC, formal inquiry decisions and federal court judgments have shaped how the SDA operates in practice:
+            The practical operation of the Act has been defined through significant judicial and tribunal decisions:
         </p>
         <ul>
-            <li><strong>Pregnancy and Workplace Rights (<em>Hickie v Hunt & Hunt</em>, 1998):</strong> Sharon Hickie, a solicitor and partner at a major law firm, took maternity leave and experienced a reduction in her practice portfolio, failure to reappoint her as a partner, and termination upon her part-time return. The Human Rights and Equal Opportunity Commission inquiry found that reducing a returning mother's workload and treating part-time return-to-work arrangements unfavourably constituted unlawful direct and indirect sex discrimination.</li>
-            <li><strong>Vicarious Liability and Reasonable Steps (<em>Lee v Smith</em> and Related Workplace Precedents):</strong> Courts have established that employers cannot shield themselves from liability merely by having an anti-harassment policy on paper. Under section 106(2), an employer must prove they took <strong>all reasonable steps</strong> to actively prevent harassment, requiring active training, grievance monitoring, and swift disciplinary enforcement.</li>
-            <li><strong>Gender Identity and Public Accommodation (<em>Tickle v Giggle</em>, 2024–2025):</strong> Roxanne Tickle, a transgender woman, initiated legal proceedings against "Giggle for Girls," a women-only social networking app, after her profile was blocked and she was denied access on the basis that she was assigned male at birth. This litigation tested the interaction between gender identity protections under section 5B and single-sex exceptions in digital spaces, culminating in judgments addressing direct discrimination in the provision of goods and services.</li>
+            <li><strong>Pregnancy and Workplace Rights (<em>Hickie v Hunt &amp; Hunt</em>, 1998):</strong> A partner in a law firm took maternity leave and experienced reduced client portfolios, non-renewal of partnership, and constructive dismissal upon returning part-time. The HREOC inquiry established that refusing reasonable part-time arrangements and stripping portfolios from returning mothers constituted unlawful direct and indirect sex discrimination.</li>
+            <li><strong>Vicarious Liability and Reasonable Steps (<em>Lee v Smith</em> and Related Workplace Precedents):</strong> Courts established that employers cannot avoid vicarious liability under section 106 simply by having passive written anti-harassment policies. Employers must actively demonstrate <strong>all reasonable steps</strong> were taken through proactive training, monitoring, and swift complaint resolution.</li>
+            <li><strong>Gender Identity and Public Accommodation (<em>Tickle v Giggle</em>, 2024–2025):</strong> A transgender woman brought proceedings against a women-only social networking app after her account was terminated on the basis of designated sex at birth. The litigation examined how section 5B gender identity protections interact with single-sex exceptions in digital platforms, clarifying direct discrimination in service delivery.</li>
         </ul>
 
-        <h3>Vicarious Liability, Victimisation, and Enforcement</h3>
+        <h3 id="sec4-enforcement">Vicarious Liability, Victimisation, and Enforcement</h3>
         <p>
-            Employers are legally responsible for discriminatory acts or harassment committed by their staff unless the employer can prove they took <strong>all reasonable steps</strong> to prevent it. Individuals who help or induce discrimination can also be held personally liable.
+            Employers are vicariously liable for unlawful discrimination or harassment committed by employees or agents in connection with their employment, unless the employer proves it took all reasonable steps to prevent the conduct. Individuals who induce, cause, or aid unlawful acts face personal accessorial liability.
         </p>
         <p>
-            It is both a civil wrong and a criminal offense to punish, threaten, or retaliate against someone (victimisation) for making a complaint or speaking up about discrimination.
+            Retaliating against, threatening, or subjecting someone to detriment for asserting their rights, lodging complaints, or giving evidence is unlawful victimisation under civil law and an indictable criminal offence carrying up to three months' imprisonment.
         </p>
         <p>
-            Complaints are handled through the Australian Human Rights Commission (AHRC) for investigation and conciliation. If conciliation fails, matters can be taken to the Federal Court for legal remedies, including court orders and financial compensation.
+            Complaints are investigated and conciliated by the Sex Discrimination Commissioner within the Australian Human Rights Commission. If conciliation is unsuccessful or terminated, applicants may commence proceedings in the Federal Court of Australia or the Federal Circuit and Family Court of Australia for binding declarations, injunctions, and uncapped compensatory damages.
         </p>
-    </div>
+    </section>
 
 </body>
 </html>
