@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDCX246 Key Figures & Core Ideas</title>
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #dbeafe;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border-color: #cbd5e1;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            color: var(--text-main);
+            background-color: #f8fafc;
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 0;
+        }
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 12px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        /* Module Banners */
+        .part-divider-banner {
+            background: linear-gradient(135deg, #1e293b, #1e40af);
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 20px 28px;
+            margin: 48px 0 24px 0;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+            border-left: 6px solid #2563eb;
+        }
+        .part-banner-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .part-banner-header h3 {
+            color: #ffffff !important;
+            margin: 0 !important;
+            font-size: 1.35rem !important;
+            letter-spacing: 0.02em;
+        }
+        .part-pill {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #dbeafe;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        /* Flexbox Card Layout (Replaces Table) */
+        .theorist-box {
+            display: flex;
+            flex-direction: row;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .theorist-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .theorist-image-col {
+            width: 280px;
+            background-color: #f1f5f9;
+            padding: 24px 20px;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .theorist-portrait-img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+        }
+
+        .theorist-name {
+            font-size: 1.2rem;
+            color: #1e40af;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        .theorist-tradition-tag {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            background: #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-top: 4px;
+        }
+
+        .theorist-content-col {
+            padding: 24px 32px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-heading {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+
+        .concept-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #3730a3;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+
+        .idea-text {
+            font-size: 1.05rem;
+            color: #1e293b;
+            margin: 0;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* Highlight classes */
+        strong.hl-concept {
+            color: #5b21b6;
+            font-weight: 700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .theorist-box {
+                flex-direction: column;
+            }
+            .theorist-image-col {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 24px;
+            }
+            .theorist-content-col {
+                padding: 24px;
+            }
+            .part-banner-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>EDCX246: Key Figures &amp; Core Ideas</h1>
+
+    <!-- MODULE 1 -->
+    <div class="part-divider-banner">
+        <div class="part-banner-header">
+            <h3>Module 1: Pillars of Sociology</h3>
+            <span class="part-pill">Class, Gender, Race &amp; Credentials</span>
+        </div>
+    </div>
+
+    <!-- Bourdieu -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/bourdieu.jpg" alt="Pierre Bourdieu" class="theorist-portrait-img">
+            <span class="theorist-name">Pierre Bourdieu</span>
+            <span class="theorist-tradition-tag">Cultural Reproduction Theory</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Cultural Capital (embodied, objectified, institutionalized), Habitus, Field, Symbolic Violence</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Mass education is not a neutral meritocracy. Schools treat middle-class <strong class="hl-concept">cultural capital</strong> (language codes, tastes, posture) as natural intelligence or diligence, while committing <strong class="hl-concept">symbolic violence</strong> against working-class students by misrecognizing inherited class privilege as innate academic merit.</p>
+        </div>
+    </div>
+
+    <!-- Willis -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/willis.jpg" alt="Paul Willis" class="theorist-portrait-img">
+            <span class="theorist-name">Paul Willis</span>
+            <span class="theorist-tradition-tag">Counter-School Resistance</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Anti-school counter-culture, "The Lads" vs. "The Ear'oles", Cultural Penetration, Self-Exclusion</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Working-class "lads" construct an aggressive <strong class="hl-concept">counter-culture</strong> that rejects scholastic authority and celebrates manual labor. Through cultural penetration, they see through the myth of meritocracy, but their active defiance paradoxically results in self-exclusion into the dead-end factory jobs they celebrated.</p>
+        </div>
+    </div>
+
+    <!-- Connell -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/connell.jpg" alt="R.W. Connell" class="theorist-portrait-img">
+            <span class="theorist-name">R.W. Connell</span>
+            <span class="theorist-tradition-tag">Sociology of Gender &amp; Hegemony</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Hegemonic Masculinity, Gender Order, Gender Regimes</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Gender is a relational power hierarchy rather than a fixed biological trait. Schools function as active <strong class="hl-concept">gender regimes</strong> where <strong class="hl-concept">hegemonic masculinity</strong> (physical dominance, emotional stoicism, athleticism, heteronormativity) sits at the apex, subordinating complicit, marginalized, and gay masculinities.</p>
+        </div>
+    </div>
+
+    <!-- Weber & Collins -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/weber.jpg" alt="Max Weber" class="theorist-portrait-img">
+            <span class="theorist-name">Max Weber &amp; Randall Collins</span>
+            <span class="theorist-tradition-tag">Status Group Closure</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Multidimensional Stratification (Class, Status, Party), Social Closure, Credentialism &amp; Credential Inflation</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Weber showed that social power operates across status groups seeking <strong class="hl-concept">social closure</strong>. Collins applied this to show that rising degree requirements are driven by dominant status groups using diplomas as gatekeeping currencies, causing <strong class="hl-concept">credential inflation</strong> where degrees steadily depreciate in value.</p>
+        </div>
+    </div>
+
+    <!-- Bernstein & Labov -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/bernstein.png" alt="Basil Bernstein" class="theorist-portrait-img">
+            <span class="theorist-name">Basil Bernstein &amp; William Labov</span>
+            <span class="theorist-tradition-tag">Sociolinguistics</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Restricted vs. Elaborated Codes, Classification &amp; Framing, Rule-Governed Non-Standard Dialects</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Bernstein showed that schooling relies on <strong class="hl-concept">elaborated codes</strong> (context-free, explicit syntax), placing working-class children accustomed to <strong class="hl-concept">restricted codes</strong> (context-dependent) at a severe disadvantage. Labov demolished "deficit" theories by proving that non-standard dialects (like Black English Vernacular) are logical, rule-governed linguistic systems, not broken English.</p>
+        </div>
+    </div>
+
+    <!-- MODULE 2 -->
+    <div class="part-divider-banner">
+        <div class="part-banner-header">
+            <h3>Module 2: Governance &amp; Subjectivity</h3>
+            <span class="part-pill">Institutional Control</span>
+        </div>
+    </div>
+
+    <!-- Foucault -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/foucault.jpg" alt="Michel Foucault" class="theorist-portrait-img">
+            <span class="theorist-name">Michel Foucault</span>
+            <span class="theorist-tradition-tag">Poststructuralism</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Sovereign vs. Disciplinary Power, Docile Bodies, The Panopticon, Regimes of Truth</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Modern power shifted from public physical coercion (sovereign power) to diffuse surveillance (<strong class="hl-concept">disciplinary power</strong>). Timetables, cellular seating, and the <strong class="hl-concept">Panopticon</strong> compel individuals to internalize observation, training them to become self-policing, docile bodies.</p>
+        </div>
+    </div>
+
+    <!-- Ball & Lingard -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/ball.webp" alt="Stephen Ball" class="theorist-portrait-img">
+            <span class="theorist-name">Stephen Ball &amp; Bob Lingard</span>
+            <span class="theorist-tradition-tag">Neoliberal Policy</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Performativity, Audit Culture, Fabrications, Governance by Numbers, Remote Steering</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Ball unmasks how neoliberal audit culture forces teachers into <strong class="hl-concept">performativity</strong>—aligning work with measurable targets at the expense of authentic teaching. Lingard shows how standardized testing (NAPLAN) functions as "<strong class="hl-concept">governance by numbers</strong>," allowing governments to steer schools remotely without physical intervention.</p>
+        </div>
+    </div>
+
+    <!-- MODULE 3 -->
+    <div class="part-divider-banner">
+        <div class="part-banner-header">
+            <h3>Module 3: Cultural Contexts &amp; Media</h3>
+            <span class="part-pill">Semiotic Interpretation</span>
+        </div>
+    </div>
+
+    <!-- Hall -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/hall.jpg" alt="Stuart Hall" class="theorist-portrait-img">
+            <span class="theorist-name">Stuart Hall</span>
+            <span class="theorist-tradition-tag">Cultural Studies</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Encoding/Decoding Model, Polysemy, Active Audience</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Media texts do not brainwash passive viewers; audiences act as an <strong class="hl-concept">active audience</strong> to decode <strong class="hl-concept">polysemic</strong> media messages using dominant-hegemonic, negotiated, or oppositional frameworks based on their own socio-cultural backgrounds and class positions.</p>
+        </div>
+    </div>
+
+    <!-- MODULE 4 -->
+    <div class="part-divider-banner">
+        <div class="part-banner-header">
+            <h3>Module 4: Philosophy, Law &amp; Educational Rights</h3>
+            <span class="part-pill">Normative Foundations</span>
+        </div>
+    </div>
+
+    <!-- Freire -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/freire.jpg" alt="Paulo Freire" class="theorist-portrait-img">
+            <span class="theorist-name">Paulo Freire</span>
+            <span class="theorist-tradition-tag">Critical Pedagogy</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">The Banking Model vs. Problem-Posing Education, Conscientisation, Praxis</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Traditional education operates as a "<strong class="hl-concept">banking model</strong>" where teachers deposit static facts into passive students. Freire proposes problem-posing education through dialogue, fostering critical consciousness (<strong class="hl-concept">conscientisation</strong>) and action (<strong class="hl-concept">praxis</strong>) to transform oppressive realities.</p>
+        </div>
+    </div>
+
+    <!-- Noddings -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/noddings.jpg" alt="Nel Noddings" class="theorist-portrait-img">
+            <span class="theorist-name">Nel Noddings</span>
+            <span class="theorist-tradition-tag">Feminist Relational Ethics</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">Relational Ethics of Care, The "One-Caring" and the "Cared-For"</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Critiques detached, rule-bound justice frameworks by proposing an <strong class="hl-concept">ethics of care</strong> centered on attentiveness, trust, and emotional responsiveness within the reciprocal relationships formed between educators and individual learners.</p>
+        </div>
+    </div>
+
+    <!-- Nakata -->
+    <div class="theorist-box">
+        <div class="theorist-image-col">
+            <img src="images/nakata.jpg" alt="Martin Nakata" class="theorist-portrait-img">
+            <span class="theorist-name">Martin Nakata</span>
+            <span class="theorist-tradition-tag">Indigenous Standpoint Theory</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">The Cultural Interface, Dual Epistemological Navigation</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">The <strong class="hl-concept">Cultural Interface</strong> is the contested, dynamic space where First Nations oral traditions and Western disciplinary systems meet. First Nations students should be equipped to navigate this space critically, mastering Western academic tools without surrendering their cultural sovereignty.</p>
+        </div>
+    </div>
+
+    <!-- HIGH YIELD NUANCE -->
+    <div class="part-divider-banner" style="background: linear-gradient(135deg, #4c1d95, #7c3aed); border-left-color: #a78bfa;">
+        <div class="part-banner-header">
+            <h3>High-Yield Exam Nuance: The Social Realist Counter-Critique</h3>
+            <span class="part-pill" style="color: #f3e8ff; border-color: rgba(255,255,255,0.4);">Advanced Synthesis</span>
+        </div>
+    </div>
+
+    <!-- Young & Delpit -->
+    <div class="theorist-box" style="border-left: 6px solid #7c3aed;">
+        <div class="theorist-image-col">
+            <img src="images/young.jpg" alt="Michael Young" class="theorist-portrait-img">
+            <span class="theorist-name">Michael Young &amp; Lisa Delpit</span>
+            <span class="theorist-tradition-tag" style="background: #ede9fe; color: #5b21b6;">Social Realism &amp; Equity</span>
+        </div>
+        <div class="theorist-content-col">
+            <div class="section-heading">Key Concepts</div>
+            <p class="concept-text">"Powerful Knowledge" vs. "Knowledge of the Powerful", The "Codes of Power", Explicit Instruction</p>
+
+            <div class="section-heading">Core Idea</div>
+            <p class="idea-text">Young warns against treating all school knowledge as arbitrary ruling-class etiquette, distinguishing between knowledge of the powerful (bourgeois manners) and <strong class="hl-concept">powerful knowledge</strong> (testable, domain-specific disciplinary knowledge). Delpit demonstrates that when progressive teachers refuse to explicitly teach standard grammar and academic registers, they abandon disadvantaged students who do not learn these "<strong class="hl-concept">codes of power</strong>" at home.</p>
+        </div>
+    </div>
+
+</body>
+</html>
